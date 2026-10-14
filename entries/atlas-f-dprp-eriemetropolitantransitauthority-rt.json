@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dprp-eriemetropolitantransitauthority-rt",
+  "domain": "transit.vehicles",
+  "name": "Erie Metropolitan Transit Authority",
+  "provider": "Erie Metropolitan Transit Authority",
+  "coverage": {
+    "bbox": [
+      41.8881,
+      -80.1675,
+      42.17,
+      -79.9476
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://emta.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://ride-the-e.com/developerlicenseagreement/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Erie Metropolitan Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no ANTHROPIC_API_KEY"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dprp-eriemetropolitantransitauthority~rt"
+  ]
+}

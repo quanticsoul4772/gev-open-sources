@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 404"
+        "quote": "terms page unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:57.677Z"
+    "at": "2026-10-14T16:46:39.538Z"
   },
   "provenance": [
     "gbfs-systems:bird-montlucon"

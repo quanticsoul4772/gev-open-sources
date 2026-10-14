@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-indygo-rt",
+  "domain": "transit.vehicles",
+  "name": "indygo.net",
+  "provider": "indygo.net",
+  "coverage": {
+    "bbox": [
+      39.6129,
+      -86.3474,
+      39.9365,
+      -85.9421
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://realtime.indygo.net/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "indygo.net"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.568Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-indygo~rt"
+  ]
+}

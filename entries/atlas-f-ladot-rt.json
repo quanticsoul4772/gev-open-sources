@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ladot-rt",
+  "domain": "transit.vehicles",
+  "name": "lacitydot.com",
+  "provider": "lacitydot.com",
+  "coverage": {
+    "bbox": [
+      33.707,
+      -118.8811,
+      34.3339,
+      -118.1499
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ladotbus.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "lacitydot.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.568Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ladot~rt"
+  ]
+}

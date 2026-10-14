@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-pee-dee-sc-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Pee Dee Regional Transportation Authority",
+  "provider": "Pee Dee Regional Transportation Authority",
+  "coverage": {
+    "bbox": [
+      33.8516,
+      -80.117,
+      34.7197,
+      -79.6548
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/pdtransit.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pee Dee Regional Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-pee~dee~sc~us~rt"
+  ]
+}

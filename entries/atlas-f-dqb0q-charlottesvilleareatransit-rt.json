@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dqb0q-charlottesvilleareatransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Charlottesville Area Transit",
+  "provider": "Charlottesville Area Transit",
+  "coverage": {
+    "bbox": [
+      37.9936,
+      -78.5289,
+      38.1164,
+      -78.4215
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/catpublic.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Charlottesville Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dqb0q-charlottesvilleareatransit~rt"
+  ]
+}

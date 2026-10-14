@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ametis-amiens-fr-rt",
+  "domain": "transit.vehicles",
+  "name": "Ametis",
+  "provider": "Ametis",
+  "coverage": {
+    "bbox": [
+      49.8174,
+      2.2261,
+      49.9563,
+      2.4432
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/ametis-amiens-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Ametis"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ametis~amiens~fr~rt"
+  ]
+}

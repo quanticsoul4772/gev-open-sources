@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-mta-nyc-rt-mnr",
+  "domain": "transit.vehicles",
+  "name": "MTA Metro-North Railroad",
+  "provider": "MTA Metro-North Railroad",
+  "coverage": {
+    "bbox": [
+      40.7401,
+      -73.9919,
+      41.4008,
+      -73.1668
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/mnr%2Fgtfs-mnr",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://api.mta.info/#/DataFeedAgreement",
+    "display": false,
+    "commercial": null,
+    "attribution": "MTA Metro-North Railroad"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.570Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-mta~nyc~rt~mnr"
+  ]
+}

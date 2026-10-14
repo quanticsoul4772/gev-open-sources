@@ -1,0 +1,45 @@
+{
+  "id": "atlas-f-brightline-trails-rt",
+  "domain": "transit.vehicles",
+  "name": "Brightline Trains LLC",
+  "provider": "Brightline Trains LLC",
+  "coverage": {
+    "bbox": [
+      25.9001,
+      -81.3285,
+      28.4718,
+      -80.0977
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://feed.gobrightline.com/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Brightline Trains LLC"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-brightline~trails~rt",
+    "via:http://feed.gobrightline.com/position_updates.pb"
+  ]
+}

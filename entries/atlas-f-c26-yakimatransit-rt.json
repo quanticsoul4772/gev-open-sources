@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-c26-yakimatransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Yakima Transit",
+  "provider": "Yakima Transit",
+  "coverage": {
+    "bbox": [
+      46.5655,
+      -120.6243,
+      46.6298,
+      -120.4796
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://yakima.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Yakima Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-c26-yakimatransit~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dp3-pace-rt",
+  "domain": "transit.vehicles",
+  "name": "Pace Suburban Bus",
+  "provider": "Pace Suburban Bus",
+  "coverage": {
+    "bbox": [
+      41.4268,
+      -88.3954,
+      42.4501,
+      -87.5032
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://tmweb.pacebus.com/TMGTFSRealTimeWebService/vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pace Suburban Bus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dp3-pace~rt"
+  ]
+}

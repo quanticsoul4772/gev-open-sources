@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9qc-yubasutter-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Yuba-Sutter Transit",
+  "provider": "Yuba-Sutter Transit",
+  "coverage": {
+    "bbox": [
+      38.7576,
+      -121.6726,
+      39.1767,
+      -121.5174
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/yubasutter/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Yuba-Sutter Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.562Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9qc-yubasutter~ca~us~rt"
+  ]
+}

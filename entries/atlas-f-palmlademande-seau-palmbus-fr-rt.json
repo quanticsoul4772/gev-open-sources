@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-palmlademande-seau-palmbus-fr-rt",
+  "domain": "transit.vehicles",
+  "name": "Palm Bus",
+  "provider": "Palm Bus",
+  "coverage": {
+    "bbox": [
+      43.4982,
+      6.9074,
+      43.6457,
+      7.0749
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/palmbus-cannes-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Palm Bus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.570Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-palmlademande~seau~palmbus~fr~rt"
+  ]
+}

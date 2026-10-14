@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-lila-presquile-fr-rt",
+  "domain": "transit.vehicles",
+  "name": "Lila Presqu'île",
+  "provider": "Lila Presqu'île",
+  "coverage": {
+    "bbox": [
+      47.2507,
+      -2.5381,
+      47.502,
+      -2.2762
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/lila-presquile-cap-atlantique-gtfs-rt",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Lila Presqu'île"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-lila~presquile~fr~rt"
+  ]
+}

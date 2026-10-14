@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dn5b-cobbavl-rt",
+  "domain": "transit.vehicles",
+  "name": "Cobb Community Transit",
+  "provider": "Cobb Community Transit",
+  "coverage": {
+    "bbox": [
+      33.7332,
+      -84.6377,
+      34.0396,
+      -84.3753
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://cobb.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cobb Community Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dn5b-cobbavl~rt"
+  ]
+}

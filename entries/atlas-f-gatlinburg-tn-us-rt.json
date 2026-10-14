@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-gatlinburg-tn-us-rt",
+  "domain": "transit.vehicles",
+  "name": "City of Gatlinburg Trolley",
+  "provider": "City of Gatlinburg Trolley",
+  "coverage": {
+    "bbox": [
+      35.6923,
+      -83.5397,
+      35.7559,
+      -83.4177
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Gatlinburg Trolley"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.568Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-gatlinburg~tn~us~rt"
+  ]
+}

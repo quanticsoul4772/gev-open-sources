@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-baldwinpark-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Baldwin Park Transit",
+  "provider": "Baldwin Park Transit",
+  "coverage": {
+    "bbox": [
+      34.0526,
+      -118.0171,
+      34.1231,
+      -117.9372
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/baldwinpark/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Baldwin Park Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-baldwinpark~ca~us~rt"
+  ]
+}

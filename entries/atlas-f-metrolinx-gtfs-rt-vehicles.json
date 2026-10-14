@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-metrolinx-gtfs-rt-vehicles",
+  "domain": "transit.vehicles",
+  "name": "Belleville Transit",
+  "provider": "Belleville Transit",
+  "coverage": {
+    "bbox": [
+      42.7547,
+      -84.4069,
+      48.5185,
+      -74.6641
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://metrolinx.tmix.se/gtfs-realtime-belleville/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Belleville Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-metrolinx~gtfs~rt~vehicles"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-c22y-kitsaptransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Kitsap Transit",
+  "provider": "Kitsap Transit",
+  "coverage": {
+    "bbox": [
+      47.4627,
+      -122.7779,
+      47.8323,
+      -122.3252
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://kttracker.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Kitsap Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-c22y-kitsaptransit~rt"
+  ]
+}

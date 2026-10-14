@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-zest-menton-fr-rt",
+  "domain": "transit.vehicles",
+  "name": "Zest",
+  "provider": "Zest",
+  "coverage": {
+    "bbox": [
+      43.7136,
+      7.3939,
+      43.824,
+      7.6218
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/zest-menton-riviera-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Zest"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.572Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-zest~menton~fr~rt"
+  ]
+}

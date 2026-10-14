@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-bay-area-transportation-authority-mi-rt",
+  "domain": "transit.vehicles",
+  "name": "Bay Area Transportation Authority",
+  "provider": "Bay Area Transportation Authority",
+  "coverage": {
+    "bbox": [
+      44.626,
+      -85.7165,
+      44.7842,
+      -85.5089
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://batabustracker.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bay Area Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-bay~area~transportation~authority~mi~rt"
+  ]
+}

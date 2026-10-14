@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dht-collierareatransit-cat-rt",
+  "domain": "transit.vehicles",
+  "name": "Collier Area Transit",
+  "provider": "Collier Area Transit",
+  "coverage": {
+    "bbox": [
+      26.0659,
+      -81.8215,
+      26.4506,
+      -81.4007
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://cat.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-CAT/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Collier Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dht-collierareatransit~cat~rt"
+  ]
+}

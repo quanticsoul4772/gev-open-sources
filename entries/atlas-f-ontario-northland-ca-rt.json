@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ontario-northland-ca-rt",
+  "domain": "transit.vehicles",
+  "name": "Ontario Northland",
+  "provider": "Ontario Northland",
+  "coverage": {
+    "bbox": [
+      43.7049,
+      -97.0882,
+      49.9182,
+      -77.1301
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ontarionorthland.tmix.se/gtfs-realtime/vehicleupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Ontario Northland"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.570Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ontario~northland~ca~rt"
+  ]
+}

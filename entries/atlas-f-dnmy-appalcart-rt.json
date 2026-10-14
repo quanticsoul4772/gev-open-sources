@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dnmy-appalcart-rt",
+  "domain": "transit.vehicles",
+  "name": "Appalachian Campus Area Rapid Transit",
+  "provider": "Appalachian Campus Area Rapid Transit",
+  "coverage": {
+    "bbox": [
+      36.1781,
+      -81.7264,
+      36.2444,
+      -81.6229
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/appalcart.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Appalachian Campus Area Rapid Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dnmy-appalcart~rt"
+  ]
+}

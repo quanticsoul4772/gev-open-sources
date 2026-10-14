@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-bangor-me-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Bangor Community Connector",
+  "provider": "Bangor Community Connector",
+  "coverage": {
+    "bbox": [
+      44.7249,
+      -68.8649,
+      44.9193,
+      -68.6476
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/bangor/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bangor Community Connector"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-bangor~me~us~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-cb74-matbus-rt",
+  "domain": "transit.vehicles",
+  "name": "Fargo Moorhead Metro Area Transit",
+  "provider": "Fargo Moorhead Metro Area Transit",
+  "coverage": {
+    "bbox": [
+      46.8038,
+      -96.8954,
+      46.9347,
+      -96.695
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ridematbus.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Fargo Moorhead Metro Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-cb74-matbus~rt"
+  ]
+}

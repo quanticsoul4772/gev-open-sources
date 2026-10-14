@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9y68-clevelandarearapidtransitcart-rt",
+  "domain": "transit.vehicles",
+  "name": "Campus Area Rapid Transit",
+  "provider": "Campus Area Rapid Transit",
+  "coverage": {
+    "bbox": [
+      35.1689,
+      -97.4645,
+      35.2262,
+      -97.4242
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://www.cartgps.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Campus Area Rapid Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9y68-clevelandarearapidtransitcart~rt"
+  ]
+}

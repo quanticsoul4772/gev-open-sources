@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9zep-siouxareametro-sd-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Sioux Area Metro",
+  "provider": "Sioux Area Metro",
+  "coverage": {
+    "bbox": [
+      43.4949,
+      -96.8056,
+      43.5821,
+      -96.6543
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/siouxareametro.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sioux Area Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9zep-siouxareametro~sd~us~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-piercecountyferries-wa-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Pierce County Ferries",
+  "provider": "Pierce County Ferries",
+  "coverage": {
+    "bbox": [
+      47.1611,
+      -122.6706,
+      47.2011,
+      -122.6306
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://hbwest.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pierce County Ferries"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-piercecountyferries~wa~us~rt"
+  ]
+}

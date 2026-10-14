@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 404"
+        "quote": "terms page unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.331Z"
+    "at": "2026-10-14T16:46:39.574Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1607"

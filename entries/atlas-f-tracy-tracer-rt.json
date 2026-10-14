@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-tracy-tracer-rt",
+  "domain": "transit.vehicles",
+  "name": "City of Tracy",
+  "provider": "City of Tracy",
+  "coverage": {
+    "bbox": [
+      37.6795,
+      -121.4757,
+      37.7814,
+      -121.4011
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Tracy"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.572Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-tracy~tracer~rt"
+  ]
+}

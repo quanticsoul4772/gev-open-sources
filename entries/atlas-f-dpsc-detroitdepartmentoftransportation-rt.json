@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dpsc-detroitdepartmentoftransportation-rt",
+  "domain": "transit.vehicles",
+  "name": "Detroit Department of Transportation",
+  "provider": "Detroit Department of Transportation",
+  "coverage": {
+    "bbox": [
+      42.2658,
+      -83.3161,
+      42.4788,
+      -82.8918
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://www.myddotbus.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Detroit Department of Transportation"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dpsc-detroitdepartmentoftransportation~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dnq8-ninertransit-rt",
+  "domain": "transit.vehicles",
+  "name": "UNC Charlotte",
+  "provider": "UNC Charlotte",
+  "coverage": {
+    "bbox": [
+      35.2811,
+      -80.7602,
+      35.3335,
+      -80.7074
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/uncc/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "UNC Charlotte"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dnq8-ninertransit~rt"
+  ]
+}

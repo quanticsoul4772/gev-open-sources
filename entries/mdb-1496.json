@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 502"
+        "quote": "pdf terms"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:40:13.685Z"
+    "at": "2026-10-14T16:46:39.574Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1496",

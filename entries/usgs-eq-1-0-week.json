@@ -1,0 +1,44 @@
+{
+  "id": "usgs-eq-1-0-week",
+  "domain": "hazards.earthquakes",
+  "name": "USGS M1.0+ earthquakes, past week",
+  "provider": "U.S. Geological Survey",
+  "coverage": {
+    "bbox": [
+      -90,
+      -180,
+      90,
+      180
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojson",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "geojson.earthquakes",
+  "licence": {
+    "id": "USGS-public-domain",
+    "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "display": true,
+    "commercial": true,
+    "attribution": "U.S. Geological Survey"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.587Z"
+  },
+  "provenance": [
+    "usgs:earthquake-summary-feeds"
+  ]
+}

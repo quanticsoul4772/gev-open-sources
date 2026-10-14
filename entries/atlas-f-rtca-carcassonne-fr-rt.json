@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-rtca-carcassonne-fr-rt",
+  "domain": "transit.vehicles",
+  "name": "RTCA",
+  "provider": "RTCA",
+  "coverage": {
+    "bbox": [
+      43.1565,
+      2.2931,
+      43.2718,
+      2.4365
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/rtca-carcassonne-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "RTCA"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-rtca~carcassonne~fr~rt"
+  ]
+}

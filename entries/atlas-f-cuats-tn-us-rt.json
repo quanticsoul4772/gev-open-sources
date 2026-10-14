@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-cuats-tn-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Cleveland Urban Area Transit System",
+  "provider": "Cleveland Urban Area Transit System",
+  "coverage": {
+    "bbox": [
+      35.1478,
+      -84.8931,
+      35.2029,
+      -84.8462
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/cuats/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cleveland Urban Area Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-cuats~tn~us~rt"
+  ]
+}

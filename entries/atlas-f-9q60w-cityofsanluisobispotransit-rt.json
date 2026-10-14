@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9q60w-cityofsanluisobispotransit-rt",
+  "domain": "transit.vehicles",
+  "name": "City of San Luis Obispo Transit",
+  "provider": "City of San Luis Obispo Transit",
+  "coverage": {
+    "bbox": [
+      35.2277,
+      -120.7118,
+      35.3156,
+      -120.6226
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://slocity.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of San Luis Obispo Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.562Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9q60w-cityofsanluisobispotransit~rt"
+  ]
+}

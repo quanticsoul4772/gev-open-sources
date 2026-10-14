@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-apple-country-public-transit-nc-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Apple Country Public Transit",
+  "provider": "Apple Country Public Transit",
+  "coverage": {
+    "bbox": [
+      35.2957,
+      -82.4903,
+      35.3537,
+      -82.4375
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://applecountry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Apple Country Public Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-apple~country~public~transit~nc~us~rt"
+  ]
+}

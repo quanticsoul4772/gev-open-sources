@@ -1,0 +1,45 @@
+{
+  "id": "atlas-f-u3tm-ztm-gdansk-rt",
+  "domain": "transit.vehicles",
+  "name": "Gdańsk GTFS-RT",
+  "provider": "Gdańsk GTFS-RT",
+  "coverage": {
+    "bbox": [
+      54.2346,
+      18.335,
+      54.4944,
+      18.8764
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ckan2.multimediagdansk.pl/gtfs-rt?feed=vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Gdańsk GTFS-RT"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.572Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-u3tm-ztm~gdansk~rt",
+    "via:http://ckan2.multimediagdansk.pl/gtfs-rt?feed=vehiclePositions"
+  ]
+}

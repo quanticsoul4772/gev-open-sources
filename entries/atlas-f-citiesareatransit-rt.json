@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-citiesareatransit-rt",
+  "domain": "transit.vehicles",
+  "name": "gfgis.com",
+  "provider": "gfgis.com",
+  "coverage": {
+    "bbox": [
+      47.8705,
+      -97.1017,
+      47.9586,
+      -97.0045
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://catprowler.org/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "gfgis.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-citiesareatransit~rt"
+  ]
+}

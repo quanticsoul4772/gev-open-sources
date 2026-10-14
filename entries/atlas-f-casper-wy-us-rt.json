@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-casper-wy-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Casper Area Transit",
+  "provider": "Casper Area Transit",
+  "coverage": {
+    "bbox": [
+      42.8085,
+      -106.3877,
+      42.8796,
+      -106.2394
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/casper/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Casper Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-casper~wy~us~rt"
+  ]
+}

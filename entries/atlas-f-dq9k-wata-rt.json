@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dq9k-wata-rt",
+  "domain": "transit.vehicles",
+  "name": "Williamsburg Area Transit Authority",
+  "provider": "Williamsburg Area Transit Authority",
+  "coverage": {
+    "bbox": [
+      37.1743,
+      -76.7904,
+      37.3981,
+      -76.5516
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Williamsburg Area Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dq9k-wata~rt"
+  ]
+}

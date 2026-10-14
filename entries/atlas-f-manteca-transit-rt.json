@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-manteca-transit-rt",
+  "domain": "transit.vehicles",
+  "name": "Manteca Transit",
+  "provider": "Manteca Transit",
+  "coverage": {
+    "bbox": [
+      37.7458,
+      -121.2626,
+      37.8323,
+      -121.1695
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Manteca Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-manteca~transit~rt"
+  ]
+}

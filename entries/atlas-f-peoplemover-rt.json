@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-peoplemover-rt",
+  "domain": "transit.vehicles",
+  "name": "muni.org",
+  "provider": "muni.org",
+  "coverage": {
+    "bbox": [
+      61.0901,
+      -149.9993,
+      61.3386,
+      -149.5514
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://bustracker.muni.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "muni.org"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-peoplemover~rt"
+  ]
+}

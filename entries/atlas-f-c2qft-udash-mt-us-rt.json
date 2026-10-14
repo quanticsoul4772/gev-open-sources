@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-c2qft-udash-mt-us-rt",
+  "domain": "transit.vehicles",
+  "name": "University of Montana",
+  "provider": "University of Montana",
+  "coverage": {
+    "bbox": [
+      46.8288,
+      -114.0104,
+      46.8892,
+      -113.9693
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/montanau/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "University of Montana"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-c2qft-udash~mt~us~rt"
+  ]
+}

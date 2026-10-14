@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-jackson-wy-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Southern Teton Area Rapid Transit",
+  "provider": "Southern Teton Area Rapid Transit",
+  "coverage": {
+    "bbox": [
+      43.4503,
+      -110.8457,
+      43.6066,
+      -110.7454
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.start.cadavl.com/ProfilGtfsRt2_0RSProducer-START/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Southern Teton Area Rapid Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.568Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-jackson~wy~us~rt"
+  ]
+}

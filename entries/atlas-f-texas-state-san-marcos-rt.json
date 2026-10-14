@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-texas-state-san-marcos-rt",
+  "domain": "transit.vehicles",
+  "name": "Bobcat Transit",
+  "provider": "Bobcat Transit",
+  "coverage": {
+    "bbox": [
+      29.8308,
+      -97.9829,
+      29.9215,
+      -97.8813
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/bobcatshuttle.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bobcat Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.572Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-texas~state~san~marcos~rt"
+  ]
+}

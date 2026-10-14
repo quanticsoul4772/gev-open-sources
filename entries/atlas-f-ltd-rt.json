@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ltd-rt",
+  "domain": "transit.vehicles",
+  "name": "Lane Transit District",
+  "provider": "Lane Transit District",
+  "coverage": {
+    "bbox": [
+      43.9895,
+      -123.1921,
+      44.1996,
+      -122.0953
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://feed.ltd.org/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lane Transit District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ltd~rt"
+  ]
+}

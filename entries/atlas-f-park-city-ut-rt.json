@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-park-city-ut-rt",
+  "domain": "transit.vehicles",
+  "name": "Park City Transit",
+  "provider": "Park City Transit",
+  "coverage": {
+    "bbox": [
+      40.6,
+      -111.5363,
+      40.6878,
+      -111.4576
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.parkcity.cadavl.com/ProfilGtfsRt2_0RSProducer-PARKCITY/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Park City Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.570Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-park~city~ut~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-alhambra-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Alhambra Community Transit",
+  "provider": "Alhambra Community Transit",
+  "coverage": {
+    "bbox": [
+      34.0585,
+      -118.1667,
+      34.1098,
+      -118.0913
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/alhambraca/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Alhambra Community Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-alhambra~ca~us~rt"
+  ]
+}

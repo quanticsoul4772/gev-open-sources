@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dpsk-masstransportationauthorityflint-rt",
+  "domain": "transit.vehicles",
+  "name": "Mass Transportation Authority Flint",
+  "provider": "Mass Transportation Authority Flint",
+  "coverage": {
+    "bbox": [
+      42.8728,
+      -83.7928,
+      43.0896,
+      -83.5789
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://flint.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Mass Transportation Authority Flint"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dpsk-masstransportationauthorityflint~rt"
+  ]
+}
