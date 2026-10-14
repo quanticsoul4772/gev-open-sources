@@ -12,7 +12,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { summary } from './health.js';
-import { DIST_DIR, ROOT, STATE_DIR, readEntries, readState, writeState } from './store.js';
+import { DIST_DIR, ROOT, STATE_DIR, readEntries, readState, removeEntry, writeState } from './store.js';
+import { entryHasCredential, hasCredential } from './util/secrets.js';
 
 export const STATE_FILES = ['health.json', 'licence-cache.json', 'tombstones.json', 'harvest-rejects.json', 'published.json'];
 
@@ -56,8 +57,45 @@ export function buildDirectory(entries, health, now) {
   };
 }
 
+/**
+ * State files keyed or valued by URL, with every credential-bearing URL
+ * removed: they are published next to the directory.
+ * @returns {number} URLs removed
+ */
+export function scrubState() {
+  let removed = 0;
+  for (const name of ['harvest-rejects.json', 'licence-cache.json']) {
+    const state = readState(name, {});
+    for (const url of Object.keys(state))
+      if (hasCredential(url)) {
+        delete state[url];
+        removed += 1;
+      }
+    writeState(name, state);
+  }
+  const tombstones = readState('tombstones.json', {});
+  for (const t of Object.values(tombstones))
+    if (t.url && hasCredential(t.url)) {
+      t.url = null;
+      removed += 1;
+    }
+  writeState('tombstones.json', tombstones);
+  return removed;
+}
+
 export function build(now = Math.floor(Date.now() / 1000)) {
-  const directory = buildDirectory(readEntries(), readState('health.json', {}), now);
+  // Publishing gate: an entry with a credential-bearing URL is removed, not
+  // published (src/scan-secrets.js re-checks every output file afterwards).
+  const entries = readEntries();
+  for (const [id, entry] of entries)
+    if (entryHasCredential(entry)) {
+      removeEntry(id);
+      entries.delete(id);
+      console.log(`build: removed ${id}: a URL carries a credential`);
+    }
+  const scrubbed = scrubState();
+  if (scrubbed) console.log(`build: ${scrubbed} credential-bearing URLs removed from state`);
+  const directory = buildDirectory(entries, readState('health.json', {}), now);
   const published = readState('published.json', []);
   const problem = sizeProblem(published, directory.counts.entries, now);
   if (problem) throw new Error(`build: directory size change refused: ${problem}`);

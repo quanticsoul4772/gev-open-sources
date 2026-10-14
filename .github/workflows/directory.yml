@@ -37,6 +37,8 @@ jobs:
         run: npm run cycle
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Scan for credentials (blocks commit and publish)
+        run: node src/scan-secrets.js entries dist
       - name: Commit entry changes
         run: |
           git config user.name "github-actions[bot]"

@@ -1,4 +1,5 @@
-import { USER_AGENT, hasCredentialParam } from '../util/http.js';
+import { USER_AGENT } from '../util/http.js';
+import { hasCredential } from '../util/secrets.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 
 /**
@@ -50,7 +51,7 @@ export async function resolveRedirects(entries, fetchImpl = fetch) {
   entries.forEach((entry, i) => {
     const target = typeof targets[i] === 'string' ? targets[i] : null;
     if (!target) return;
-    if (hasCredentialParam(target)) {
+    if (hasCredential(target)) {
       const host = new URL(target).hostname;
       if (!entry.access.redirectHosts.includes(host))
         changed.push({ ...entry, access: { ...entry.access, redirectHosts: [...entry.access.redirectHosts, host] } });

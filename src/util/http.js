@@ -2,25 +2,6 @@ export const USER_AGENT =
   'gev-open-sources/0.1 (+https://github.com/quanticsoul4772/gev-open-sources)';
 
 /**
- * Query parameters that carry a credential: a URL with one is not keyless.
- * Any name containing key/token/secret/password/signature/credential counts
- * (accesskey, apiKey, x-api-key, sessionToken, …); skipping a harmless feed
- * is cheaper than publishing a key.
- */
-const CREDENTIAL_PARAM = /key|token|secret|passw|pwd|signature|credential|^(sig|auth|code)$/i;
-
-/** @param {string} url @returns {boolean} */
-export function hasCredentialParam(url) {
-  try {
-    for (const key of new URL(url).searchParams.keys())
-      if (CREDENTIAL_PARAM.test(key)) return true;
-    return false;
-  } catch {
-    return true;
-  }
-}
-
-/**
  * GET with an identifying User-Agent, a timeout, a byte cap, and redirects
  * followed by hand: at most 3 hops, each to the URL's own origin or a host the
  * entry lists in `redirectHosts` (any host with `anyRedirect`, for one-off

@@ -1,5 +1,6 @@
 import { parseCsv } from '../util/csv.js';
-import { fetchCapped, hasCredentialParam } from '../util/http.js';
+import { fetchCapped } from '../util/http.js';
+import { hasCredential } from '../util/secrets.js';
 import { slugId } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 
@@ -48,7 +49,7 @@ export function keylessSystems(rows) {
     (r) =>
       !r['Authentication Type'] &&
       /^https:\/\//.test(r['Auto-Discovery URL']) &&
-      !hasCredentialParam(r['Auto-Discovery URL']),
+      !hasCredential(r['Auto-Discovery URL']),
   );
 }
 
@@ -66,7 +67,9 @@ export async function resolveGbfsSystem(system, { fetchImpl, anyRedirect = false
   const { version, feeds } = gbfsFeeds(json(discovery.body));
   const status = feeds.station_status;
   const info = feeds.station_information;
-  if (!status || !info || hasCredentialParam(status)) return null;
+  if (!status || !info) return null;
+  // Every URL the entry would publish must be keyless, not only station_status.
+  if ([system.discoveryUrl, status, info, feeds.system_information].filter(Boolean).some(hasCredential)) return null;
   const stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
   const bbox = stations.status === 200 ? stationBbox(json(stations.body)) : null;
   if (!bbox) return null;

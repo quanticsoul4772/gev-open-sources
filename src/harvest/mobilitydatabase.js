@@ -1,5 +1,6 @@
 import { parseCsv } from '../util/csv.js';
-import { fetchCapped, hasCredentialParam } from '../util/http.js';
+import { fetchCapped } from '../util/http.js';
+import { hasCredential } from '../util/secrets.js';
 import { slugId } from '../util/ids.js';
 
 export const MDB_CSV_URL = 'https://files.mobilitydatabase.org/feeds_v2.csv';
@@ -28,7 +29,7 @@ export function mobilityDatabaseEntries(rows) {
     if (row.data_type !== 'gtfs_rt') continue;
     if (!row.entity_type.split('|').includes('vp')) continue;
     const url = row['urls.direct_download'];
-    if (row['urls.authentication_type'] !== '0' || hasCredentialParam(url)) {
+    if (row['urls.authentication_type'] !== '0' || hasCredential(url)) {
       rejected.keyed += 1;
       continue;
     }
