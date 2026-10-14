@@ -10,6 +10,10 @@
       "then": { "type": "object", "properties": { "licence_decision": { "type": "object", "properties": { "by": { "not": { "const": "none" } } } } } }
     },
     {
+      "if": { "type": "object", "properties": { "format": { "const": "gbfs.vehicle-status" } }, "required": ["format"] },
+      "then": { "type": "object", "properties": { "gbfs": { "type": "object", "properties": { "form_factors": { "type": "array" } }, "required": ["form_factors"] } }, "required": ["gbfs"] }
+    },
+    {
       "if": { "type": "object", "properties": { "format": { "const": "cameras.list" } }, "required": ["format"] },
       "then": { "type": "object", "properties": { "mapping": { "type": "object" } }, "required": ["mapping"] }
     }
@@ -21,7 +25,7 @@
   },
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
-    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes", "cameras.stills"] },
+    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes", "cameras.stills", "sharedmobility.vehicles"] },
     "name": { "type": "string", "minLength": 1 },
     "provider": { "type": "string", "minLength": 1 },
     "coverage": {
@@ -55,7 +59,7 @@
         "min_interval_s": { "type": "number", "minimum": 0 }
       }
     },
-    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes", "cameras.list"] },
+    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes", "cameras.list", "gbfs.vehicle-status"] },
     "licence": {
       "type": "object",
       "required": ["id", "url", "display", "commercial", "attribution"],
@@ -78,6 +82,20 @@
       }
     },
     "provenance": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "gbfs": {
+      "description": "GBFS entries: the system and spec version; vehicles entries also list form_factors (empty means unknown).",
+      "type": "object",
+      "properties": {
+        "system_id": { "type": ["string", "null"] },
+        "version": { "type": ["string", "null"] },
+        "catalogue_licence": { "$ref": "#/$defs/httpUrl" },
+        "form_factors": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["bicycle", "cargo_bicycle", "car", "moped", "scooter_standing", "scooter_seated", "other"] }
+        }
+      }
+    },
     "mapping": {
       "description": "cameras.list: where each camera's fields sit in the list document. Paths are dot segments relative to each item; a number indexes an array; [key=value] picks the array item whose key equals value.",
       "type": "object",

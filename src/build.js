@@ -13,10 +13,10 @@
  *
  * Size guard: God's Eye View refreshes the directory once a day and refuses a
  * copy that has under 80 % or over twice the entries of the one it holds, in
- * total and per domain. A directory outside 85 %–180 % of any copy published
- * in the last 30 hours, in total or in a domain that had at least
- * DOMAIN_FLOOR (50) entries, is not published (the run fails and the previous copy
- * stays live).
+ * total and per domain. A directory whose total is outside 85 %–180 % of any
+ * copy published in the last 30 hours is not published (the run fails and the
+ * previous copy stays live). A domain of at least DOMAIN_FLOOR (50) entries
+ * that moves out of that range only logs a warning.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -43,21 +43,36 @@ export const MAX_SIZE_RATIO = 1.8;
 const outOfRange = (next, before) => next < before * MIN_SIZE_RATIO || next > before * MAX_SIZE_RATIO;
 
 /**
- * Why a directory of these sizes may not be published, or null when it may.
+ * Why a directory of these sizes may not be published (the total moved out of
+ * range), or null when it may.
  * @param {Array<{at: number, entries: number, domains?: Record<string, number>}>} published recent copies
  * @param {{entries: number, domains: Record<string, number>}} sizes
  */
 export function sizeProblem(published, sizes, now) {
   for (const p of published) {
-    if (now - p.at > SIZE_WINDOW_S) continue;
-    const when = new Date(p.at * 1000).toISOString();
-    if (p.entries && outOfRange(sizes.entries, p.entries))
-      return `${sizes.entries} entries vs ${p.entries} published ${when} (allowed ${MIN_SIZE_RATIO}–${MAX_SIZE_RATIO}×)`;
-    for (const [domain, before] of Object.entries(p.domains || {}))
-      if (before >= DOMAIN_FLOOR && outOfRange(sizes.domains[domain] ?? 0, before))
-        return `${domain}: ${sizes.domains[domain] ?? 0} entries vs ${before} published ${when} (allowed ${MIN_SIZE_RATIO}–${MAX_SIZE_RATIO}×)`;
+    if (now - p.at > SIZE_WINDOW_S || !p.entries) continue;
+    if (outOfRange(sizes.entries, p.entries))
+      return `${sizes.entries} entries vs ${p.entries} published ${new Date(p.at * 1000).toISOString()} (allowed ${MIN_SIZE_RATIO}–${MAX_SIZE_RATIO}×)`;
   }
   return null;
+}
+
+/**
+ * Domains (of at least DOMAIN_FLOOR entries) whose size moved out of range: a
+ * warning, not a refusal. One operator going dark (e.g. Getaround, 18 % of the
+ * vehicles domain) must not stop every domain publishing; the app keeps its
+ * own copy of a domain that moves too much.
+ * @returns {string[]}
+ */
+export function domainSizeWarnings(published, sizes, now) {
+  const warnings = new Set();
+  for (const p of published) {
+    if (now - p.at > SIZE_WINDOW_S) continue;
+    for (const [domain, before] of Object.entries(p.domains || {}))
+      if (before >= DOMAIN_FLOOR && outOfRange(sizes.domains[domain] ?? 0, before))
+        warnings.add(`${domain}: ${sizes.domains[domain] ?? 0} entries vs ${before} published ${new Date(p.at * 1000).toISOString()}`);
+  }
+  return [...warnings];
 }
 
 const countsOf = (entries) => ({
@@ -158,6 +173,7 @@ export function build(now = Math.floor(Date.now() / 1000)) {
   const published = readState('published.json', []);
   const problem = sizeProblem(published, sizes, now);
   if (problem) throw new Error(`build: directory size change refused: ${problem}`);
+  for (const w of domainSizeWarnings(published, sizes, now)) console.warn(`build: warning: domain size moved out of range: ${w}`);
   writeState('published.json', [...published.filter((p) => now - p.at <= SIZE_WINDOW_S), { at: now, ...sizes }]);
   const versionDir = path.join(DIST_DIR, `v${CONTRACT_VERSION}`);
   fs.mkdirSync(path.join(DIST_DIR, 'state'), { recursive: true });

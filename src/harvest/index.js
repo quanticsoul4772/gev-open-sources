@@ -10,8 +10,8 @@ import { entryHasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas } from './atlas.js';
 import { harvestCameras } from './cameras.js';
-import { fillTransitCoverage } from './catalogue.js';
-import { harvestGbfs } from './gbfs.js';
+import { REJECT_RETRY_S, fillTransitCoverage } from './catalogue.js';
+import { GBFS_PHASE_MS, harvestGbfs, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
@@ -19,11 +19,23 @@ import { harvestTransitous } from './transitous.js';
 import { USGS_ENTRIES } from './usgs.js';
 
 /**
- * New entries per run, as a share of the directory: four runs a day stay
- * well inside the app's daily refresh limit (at most twice the entries), and
- * the build's size guard is the backstop. The rest wait for later runs.
+ * New entries per run, as a share of the directory and of each domain: four
+ * runs a day stay well inside the app's daily refresh limit (at most twice the
+ * entries), and seven runs in 30 hours (1.08^7 ≈ 1.71) stay inside the build's
+ * 1.8× size guard, so extra manual runs can't trip it. The rest wait.
  */
-export const MAX_ADDED_RATIO = 0.1;
+export const MAX_ADDED_RATIO = 0.08;
+
+const VEHICLES = 'sharedmobility.vehicles';
+
+/** `<normalized GBFS discovery URL>#stations|vehicles` for every GBFS output the directory already serves. */
+export function knownOutputsOf(entries) {
+  const out = new Set();
+  for (const e of entries.values())
+    if (e.access.related?.gbfs)
+      out.add(outputKey(normalizeUrl(e.access.related.gbfs), e.domain === VEHICLES ? 'vehicles' : 'stations'));
+  return out;
+}
 
 /** How many new entries a directory (or domain) of `size` may take in one run. */
 export const addLimit = (size) => (size > 0 ? Math.max(1, Math.floor(size * MAX_ADDED_RATIO)) : Infinity);
@@ -99,19 +111,36 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     }
   const tombstones = readState('tombstones.json', {});
   const rejects = readState('harvest-rejects.json', {});
+  // Expired rejects are retried anyway; drop them so the file doesn't grow forever.
+  for (const [key, r] of Object.entries(rejects)) if (now - r.at >= REJECT_RETRY_S) delete rejects[key];
   const knownIds = new Set(existing.keys());
+  const knownOutputs = knownOutputsOf(existing);
+  // Vehicle systems resolved beyond what the add limit can take are thrown away, so cap them.
+  const vehicleSize = [...existing.values()].filter((e) => e.domain === VEHICLES).length;
+  const vehicleBudget = 2 * addLimit(vehicleSize || existing.size);
+  const gbfsOptions = { knownIds, knownOutputs, rejects, now, vehicleBudget, deadlineMs: Date.now() + GBFS_PHASE_MS };
   const mdb = await harvestMobilityDatabase();
   // Atlas and Transitous see the Mobility Database's feeds as known, so they
   // only check URLs that would be new.
   const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]));
   const atlas = await harvestAtlas({ knownUrls, rejects, now });
   for (const e of atlas.entries) knownUrls.add(normalizeUrl(e.access.url));
-  const transitous = await harvestTransitous({ knownIds, knownUrls, rejects, now });
-  const gbfs = await harvestGbfs({ known: knownIds });
+  const transitous = await harvestTransitous({ ...gbfsOptions, knownUrls });
+  const gbfs = await harvestGbfs(gbfsOptions);
   const cameras = await harvestCameras({ knownIds });
   const merged = mergeCandidates(
     existing,
-    [...USGS_ENTRIES, ...cameras, ...mdb.entries, ...gbfs, ...atlas.entries, ...transitous.entries],
+    // Vehicles last, so a large first batch doesn't take the transit additions' slots.
+    [
+      ...USGS_ENTRIES,
+      ...cameras,
+      ...mdb.entries,
+      ...gbfs.filter((e) => e.domain !== VEHICLES),
+      ...atlas.entries,
+      ...transitous.entries.filter((e) => e.domain !== VEHICLES),
+      ...gbfs.filter((e) => e.domain === VEHICLES),
+      ...transitous.entries.filter((e) => e.domain === VEHICLES),
+    ],
     tombstones,
   );
   // New entries, and existing ones whose last probe failed, may be permalinks
@@ -147,12 +176,16 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
   const dedupedIds = new Set(deduped.map((e) => e.id));
   for (const e of [...atlas.entries, ...transitous.entries])
-    if (!dedupedIds.has(e.id)) rejects[e.access.related?.gbfs || e.access.url] = { reason: 'duplicate', at: now };
+    if (!dedupedIds.has(e.id)) {
+      const gbfsUrl = e.access.related?.gbfs;
+      const key = gbfsUrl ? outputKey(gbfsUrl, e.domain === VEHICLES ? 'vehicles' : 'stations') : e.access.url;
+      rejects[key] = { reason: 'duplicate', at: now };
+    }
   writeState('harvest-rejects.json', rejects);
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

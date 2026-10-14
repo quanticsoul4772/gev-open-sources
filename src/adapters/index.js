@@ -20,16 +20,18 @@ function share(points, bbox) {
   return Math.round((n / points.length) * 1000) / 1000;
 }
 
-/** GBFS `last_updated`: POSIX seconds up to v2.3, RFC 3339 string in v3. */
+/**
+ * GBFS `last_updated`: POSIX seconds up to v2.3, RFC 3339 string in v3. Zero
+ * or negative means no time (some feeds send 0 when empty), not 1970.
+ */
 export function gbfsTime(value) {
-  if (typeof value === 'number' && Number.isFinite(value)) return value;
-  if (typeof value === 'string') {
-    const ms = Date.parse(value);
-    if (Number.isFinite(ms)) return Math.floor(ms / 1000);
+  let t = null;
+  if (typeof value === 'number') t = value;
+  else if (typeof value === 'string' && value.trim()) {
     const n = Number(value);
-    if (Number.isFinite(n)) return n;
+    t = Number.isFinite(n) ? n : Math.floor(Date.parse(value) / 1000);
   }
-  return null;
+  return Number.isFinite(t) && t > 0 ? t : null;
 }
 
 export const ADAPTERS = Object.freeze({
@@ -51,6 +53,26 @@ export const ADAPTERS = Object.freeze({
     const stations = doc?.data?.stations;
     if (!Array.isArray(stations)) throw new Error('no data.stations');
     return { records: stations.length, newest: gbfsTime(doc.last_updated), inCoverage: null };
+  },
+  /**
+   * GBFS vehicle_status (v3) / free_bike_status (v1-v2): records are the
+   * free-floating vehicles, those without a station_id (docked ones belong to
+   * the system's stations entry). `docked` is reported for logs.
+   */
+  'gbfs.vehicle-status'(body, bbox) {
+    const doc = JSON.parse(new TextDecoder().decode(body));
+    const list = doc?.data?.vehicles ?? doc?.data?.bikes;
+    if (!Array.isArray(list)) throw new Error('no data.vehicles or data.bikes');
+    const free = list.filter((v) => v && !v.station_id);
+    const points = free
+      .map((v) => [Number(v.lat), Number(v.lon)])
+      .filter(([lat, lon]) => Number.isFinite(lat) && Number.isFinite(lon) && !(lat === 0 && lon === 0));
+    return {
+      records: free.length,
+      docked: list.length - free.length,
+      newest: gbfsTime(doc.last_updated),
+      inCoverage: share(points, bbox),
+    };
   },
   /** Camera list read through the entry's mapping; no timestamps, so a sample image proves it live. */
   'cameras.list'(body, bbox, entry) {

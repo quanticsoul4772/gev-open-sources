@@ -282,8 +282,8 @@ test('redirects: a final URL carrying a key is never stored; the host is allowed
   assert.deepEqual(await resolveRedirects([changed], fetchImpl), [], 'already allowed: no change');
 });
 
-test('size guard: refuses a directory outside 85–180 % of any copy published in 30 h, in total and per domain', async () => {
-  const { sizeProblem } = await import('../src/build.js');
+test('size guard: the total outside 85–180 % of a copy from the last 30 h refuses; a domain only warns', async () => {
+  const { domainSizeWarnings, sizeProblem } = await import('../src/build.js');
   const now = 100 * 3600;
   const sizes = (entries, domains = {}) => ({ entries, domains });
   const published = [
@@ -293,11 +293,13 @@ test('size guard: refuses a directory outside 85–180 % of any copy published i
   ];
   const ok = { 'transit.vehicles': 650, 'bikeshare.stations': 490, 'hazards.earthquakes': 5, cams: 50 };
   assert.equal(sizeProblem(published, sizes(1200, ok), now), null);
-  assert.equal(sizeProblem(published, sizes(1200, { ...ok, 'hazards.earthquakes': 4 }), now), null, 'one dead feed in a small domain never blocks publishing');
+  assert.deepEqual(domainSizeWarnings(published, sizes(1200, ok), now), []);
   assert.match(sizeProblem(published, sizes(900, ok), now), /0\.85/, 'total drop below 85 % of the newest');
   assert.match(sizeProblem(published, sizes(1900, ok), now), /1000 published/, 'over 1.8× the day-old copy');
-  assert.match(sizeProblem(published, sizes(1100, { ...ok, 'bikeshare.stations': 300 }), now), /^bikeshare\.stations: 300/, 'domain drop');
-  assert.match(sizeProblem(published, sizes(1100, { ...ok, cams: 40 }), now), /^cams: 40/, 'a domain at the floor of 50 is guarded');
+  assert.equal(sizeProblem(published, sizes(1100, { ...ok, 'bikeshare.stations': 300 }), now), null, 'a domain drop never refuses');
+  assert.match(domainSizeWarnings(published, sizes(1100, { ...ok, 'bikeshare.stations': 300 }), now)[0], /^bikeshare\.stations: 300/);
+  assert.match(domainSizeWarnings(published, sizes(1100, { ...ok, cams: 40 }), now)[0], /^cams: 40/, 'a domain at the floor of 50 warns');
+  assert.deepEqual(domainSizeWarnings(published, sizes(1100, { ...ok, 'hazards.earthquakes': 1 }), now), [], 'under the floor: silent');
   assert.equal(sizeProblem([], sizes(5000), now), null, 'first publish');
 });
 
@@ -327,11 +329,12 @@ test('publish: v1 files per domain, and an index of counts and bytes', async () 
   assert.ok(!('sha256' in index.files[0]));
 });
 
-test('harvest: new entries capped at 10 % of the directory and of each domain per run', async () => {
+test('harvest: new entries capped at 8 % of the directory and of each domain per run', async () => {
   const { addLimit, withinAddLimits } = await import('../src/harvest/index.js');
-  assert.equal(addLimit(1200), 120);
+  assert.equal(addLimit(1200), 96);
   assert.equal(addLimit(5), 1);
   assert.equal(addLimit(0), Infinity, 'first harvest (or a new domain) unlimited');
+  assert.ok(1.08 ** 7 < 1.8, 'seven runs in 30 h stay inside the build guard');
   const existing = new Map();
   for (let i = 0; i < 100; i += 1) existing.set(`t${i}`, { domain: 'transit' });
   for (let i = 0; i < 20; i += 1) existing.set(`b${i}`, { domain: 'bikes' });
@@ -342,9 +345,9 @@ test('harvest: new entries capped at 10 % of the directory and of each domain pe
   ];
   const added = withinAddLimits(ready, existing);
   const by = (d) => added.filter((e) => e.domain === d).length;
-  assert.equal(added.length, 12, '10 % of 120');
-  assert.equal(by('bikes'), 2, '10 % of 20');
-  assert.equal(by('transit'), 10, 'the rest of the total');
+  assert.equal(added.length, 9, '8 % of 120');
+  assert.equal(by('bikes'), 1, '8 % of 20');
+  assert.equal(by('transit'), 8, '8 % of 100');
   assert.equal(by('quakes'), 0, 'the total limit was reached first');
 });
 
@@ -406,6 +409,17 @@ test('credentials: text that only starts like a URL (a schema pattern) is not a 
   assert.equal(scanJson({ note: 'feed at https://a.example/vp?apikey=abc' }).length, 1, 'a real URL in text is still checked');
   assert.equal(hasCredential('not a url'), true, 'entry URLs stay strict');
 });
+
+test('pool: tasks waiting on a busy host all run, with perHost 1', async () => {
+  const { runPooled } = await import('../src/util/pool.js');
+  const order = [];
+  const results = await runPooled([1, 2, 3, 4], () => 'same.example', async (x) => {
+    order.push(x);
+    await new Promise((r) => setTimeout(r, 1));
+    return x * 10;
+  }, { perHost: 1 });
+  assert.deepEqual(results, [10, 20, 30, 40], 'none dropped when the last running task finishes');
+  assert.deepEqual(order, [1, 2, 3, 4]);
 
 test('credentials: same rule as the app — key-like segment variants, path parameters, AIza and Bearer', () => {
   for (const u of [
