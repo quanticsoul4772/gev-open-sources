@@ -6,7 +6,7 @@
  */
 import { pathToFileURL } from 'node:url';
 import { readEntries, readState, removeEntry, writeEntry, writeState } from '../store.js';
-import { hasCredentialParam } from '../util/http.js';
+import { entryHasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas } from './atlas.js';
 import { fillTransitCoverage } from './catalogue.js';
@@ -51,10 +51,10 @@ export function knownUrlsOf(entries) {
 
 export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const existing = readEntries();
-  // An entry whose URL carries a credential is not keyless: drop it (it may
-  // predate a stricter credential check).
+  // An entry with a URL that carries a credential is not keyless: drop it (it
+  // may predate a stricter credential check).
   for (const [id, e] of existing)
-    if ([e.access.url, ...Object.values(e.access.related || {})].some(hasCredentialParam)) {
+    if (entryHasCredential(e)) {
       removeEntry(id);
       existing.delete(id);
       console.log(`harvest: removed ${id}: URL carries a credential`);
@@ -95,7 +95,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     .map((e) => covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
   const added = ready.slice(0, addLimit(existing.size));
-  for (const entry of added) writeEntry(entry);
+  for (const entry of added) if (!entryHasCredential(entry)) writeEntry(entry);
   for (const entry of updated) if (redirected.has(entry.id) || covered.has(entry.id)) writeEntry(covered.get(entry.id) || entry);
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
   const dedupedIds = new Set(deduped.map((e) => e.id));
