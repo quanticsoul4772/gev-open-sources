@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-rosevilletransit-rt",
+  "domain": "transit.vehicles",
+  "name": "tripshot.com",
+  "provider": "tripshot.com",
+  "coverage": {
+    "bbox": [
+      38.7112,
+      -121.3375,
+      38.7977,
+      -121.2333
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://cityofroseville.tripshot.com/v1/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "tripshot.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.233Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-rosevilletransit~rt"
+  ]
+}

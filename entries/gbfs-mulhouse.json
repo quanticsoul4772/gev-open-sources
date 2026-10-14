@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unavailable"
+        "quote": "pdf terms"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.550Z"
+    "at": "2026-10-14T17:12:54.211Z"
   },
   "provenance": [
     "gbfs-systems:mulhouse"

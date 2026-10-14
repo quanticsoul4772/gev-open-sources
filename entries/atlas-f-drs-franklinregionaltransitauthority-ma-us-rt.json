@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-drs-franklinregionaltransitauthority-ma-us-rt",
+  "domain": "transit.vehicles",
+  "name": "passio3.com",
+  "provider": "passio3.com",
+  "coverage": {
+    "bbox": [
+      42.3888,
+      -72.6441,
+      42.629,
+      -72.4746
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/frta/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "passio3.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.228Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-drs-franklinregionaltransitauthority~ma~us~rt"
+  ]
+}

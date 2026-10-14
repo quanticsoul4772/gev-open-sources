@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9muy-tritontransit-rt",
+  "domain": "transit.vehicles",
+  "name": "UC San Diego Transportation Services",
+  "provider": "UC San Diego Transportation Services",
+  "coverage": {
+    "bbox": [
+      32.8514,
+      -117.2624,
+      32.9007,
+      -117.1986
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "UC San Diego Transportation Services"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.222Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9muy-tritontransit~rt"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-cz-jdf-merged",
+  "domain": "transit.vehicles",
+  "name": "JDF-merged",
+  "provider": "JDF-merged",
+  "coverage": {
+    "bbox": [
+      48.6082,
+      12.841,
+      51.0235,
+      18.8076
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://motis.obehy.cz/get-feeds/cz-jdf-gtfs-rt.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "JDF-merged"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.258Z"
+  },
+  "provenance": [
+    "transitous:cz/JDF-merged"
+  ]
+}

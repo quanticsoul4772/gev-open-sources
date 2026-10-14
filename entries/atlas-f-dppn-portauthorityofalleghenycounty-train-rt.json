@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dppn-portauthorityofalleghenycounty-train-rt",
+  "domain": "transit.vehicles",
+  "name": "portauthority.org",
+  "provider": "portauthority.org",
+  "coverage": {
+    "bbox": [
+      40.2679,
+      -80.0798,
+      40.4681,
+      -79.9777
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://truetime.rideprt.org/gtfsrt-train/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "portauthority.org"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.227Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dppn-portauthorityofalleghenycounty~train~rt"
+  ]
+}

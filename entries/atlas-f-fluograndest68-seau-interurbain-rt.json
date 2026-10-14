@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-fluograndest68-seau-interurbain-rt",
+  "domain": "transit.vehicles",
+  "name": "REGION GRAND EST",
+  "provider": "REGION GRAND EST",
+  "coverage": {
+    "bbox": [
+      47.4987,
+      7.116,
+      48.225,
+      7.558
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/fluo-haut-rhin-68-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "REGION GRAND EST"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.229Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-fluograndest68~seau~interurbain~rt"
+  ]
+}

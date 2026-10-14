@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9qj-sunlinetransitagency-rt",
+  "domain": "transit.vehicles",
+  "name": "SunLine Transit Agency",
+  "provider": "SunLine Transit Agency",
+  "coverage": {
+    "bbox": [
+      33.6221,
+      -117.3161,
+      34.1199,
+      -116.1161
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://sunlinebus.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "SunLine Transit Agency"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.223Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9qj-sunlinetransitagency~rt"
+  ]
+}

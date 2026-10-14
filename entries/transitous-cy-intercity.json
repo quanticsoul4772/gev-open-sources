@@ -1,0 +1,46 @@
+{
+  "id": "transitous-cy-intercity",
+  "domain": "transit.vehicles",
+  "name": "Intercity",
+  "provider": "Intercity",
+  "coverage": {
+    "bbox": [
+      34.6354,
+      32.4019,
+      35.1906,
+      34.0229
+    ],
+    "countries": [
+      "CY"
+    ]
+  },
+  "access": {
+    "url": "http://20.19.98.194:8328/Api/api/gtfs-realtime/5",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Intercity"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.257Z"
+  },
+  "provenance": [
+    "transitous:cy/Intercity"
+  ]
+}

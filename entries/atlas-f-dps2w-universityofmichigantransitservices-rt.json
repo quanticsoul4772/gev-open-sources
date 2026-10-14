@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dps2w-universityofmichigantransitservices-rt",
+  "domain": "transit.vehicles",
+  "name": "University of Michigan Transit Services",
+  "provider": "University of Michigan Transit Services",
+  "coverage": {
+    "bbox": [
+      42.2444,
+      -83.7644,
+      42.4614,
+      -83.412
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://mbus.ltp.umich.edu/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "University of Michigan Transit Services"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.227Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dps2w-universityofmichigantransitservices~rt"
+  ]
+}

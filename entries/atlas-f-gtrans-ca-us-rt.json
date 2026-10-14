@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-gtrans-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "City of Gardena",
+  "provider": "City of Gardena",
+  "coverage": {
+    "bbox": [
+      33.7671,
+      -118.4975,
+      33.9664,
+      -118.2042
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://mygtbus.ridegtrans.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Gardena"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.229Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-gtrans~ca~us~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-selkirks-pend-oreille-transit-authority-rt",
+  "domain": "transit.vehicles",
+  "name": "Selkirks-Pend Oreille Transit Authority",
+  "provider": "Selkirks-Pend Oreille Transit Authority",
+  "coverage": {
+    "bbox": [
+      48.2571,
+      -116.5703,
+      48.3212,
+      -116.5253
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/spotbus/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Selkirks-Pend Oreille Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.234Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-selkirks~pend~oreille~transit~authority~rt"
+  ]
+}

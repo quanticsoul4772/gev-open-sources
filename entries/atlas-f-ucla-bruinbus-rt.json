@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ucla-bruinbus-rt",
+  "domain": "transit.vehicles",
+  "name": "UCLA BruinBus",
+  "provider": "UCLA BruinBus",
+  "coverage": {
+    "bbox": [
+      33.9928,
+      -118.4699,
+      34.0886,
+      -118.3974
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://uclabruinbus.tripshot.com/v1/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "UCLA BruinBus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.236Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ucla~bruinbus~rt"
+  ]
+}

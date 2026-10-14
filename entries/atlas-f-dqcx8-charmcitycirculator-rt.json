@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dqcx8-charmcitycirculator-rt",
+  "domain": "transit.vehicles",
+  "name": "Charm City Circulator",
+  "provider": "Charm City Circulator",
+  "coverage": {
+    "bbox": [
+      39.2529,
+      -76.6349,
+      39.3064,
+      -76.5877
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/charmcity/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Charm City Circulator"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.228Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dqcx8-charmcitycirculator~rt"
+  ]
+}

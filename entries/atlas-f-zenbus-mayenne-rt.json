@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-zenbus-mayenne-rt",
+  "domain": "transit.vehicles",
+  "name": "Transport collectif de la Ville de Mayenne",
+  "provider": "Transport collectif de la Ville de Mayenne",
+  "coverage": {
+    "bbox": [
+      48.2791,
+      -0.648,
+      48.3217,
+      -0.5919
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=maybus",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Transport collectif de la Ville de Mayenne"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.238Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-zenbus~mayenne~rt"
+  ]
+}

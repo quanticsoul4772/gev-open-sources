@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dph4-greaterdaytonrta-rt",
+  "domain": "transit.vehicles",
+  "name": "Greater Dayton RTA",
+  "provider": "Greater Dayton RTA",
+  "coverage": {
+    "bbox": [
+      39.5927,
+      -84.4342,
+      40.3068,
+      -84.0432
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ridetime.greaterdaytonrta.org/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Greater Dayton RTA"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.227Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dph4-greaterdaytonrta~rt"
+  ]
+}

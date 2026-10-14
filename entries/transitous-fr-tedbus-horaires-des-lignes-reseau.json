@@ -1,0 +1,47 @@
+{
+  "id": "transitous-fr-tedbus-horaires-des-lignes-reseau",
+  "domain": "transit.vehicles",
+  "name": "tedbus-horaires-des-lignes-reseau",
+  "provider": "tedbus-horaires-des-lignes-reseau",
+  "coverage": {
+    "bbox": [
+      43.4372,
+      6.4394,
+      43.5603,
+      6.5547
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://pysae.com/api/v2/groups/draguignan/gtfs-rt",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "tedbus-horaires-des-lignes-reseau"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.259Z"
+  },
+  "provenance": [
+    "transitous:fr/tedbus-horaires-des-lignes-reseau",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/f32c61d5-30b7-4e06-a05e-a2fc934ba7d9"
+  ]
+}

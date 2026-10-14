@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-mocacommunautdecommunescauxaustreberthe-seau-moca-rt",
+  "domain": "transit.vehicles",
+  "name": "MOCA (Communauté de Communes Caux Austreberthe)",
+  "provider": "MOCA (Communauté de Communes Caux Austreberthe)",
+  "coverage": {
+    "bbox": [
+      49.5297,
+      0.9211,
+      49.5759,
+      0.973
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/moca-caux-austreberthe-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "MOCA (Communauté de Communes Caux Austreberthe)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.232Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-mocacommunautdecommunescauxaustreberthe~seau~moca~rt"
+  ]
+}

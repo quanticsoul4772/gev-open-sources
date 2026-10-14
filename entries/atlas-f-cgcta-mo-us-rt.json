@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-cgcta-mo-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Cape Girardeau County Transit Authority",
+  "provider": "Cape Girardeau County Transit Authority",
+  "coverage": {
+    "bbox": [
+      37.2785,
+      -89.5738,
+      37.3285,
+      -89.5033
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cape Girardeau County Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.225Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-cgcta~mo~us~rt"
+  ]
+}

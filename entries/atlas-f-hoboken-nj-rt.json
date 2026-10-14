@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-hoboken-nj-rt",
+  "domain": "transit.vehicles",
+  "name": "City of Hoboken",
+  "provider": "City of Hoboken",
+  "coverage": {
+    "bbox": [
+      40.7128,
+      -74.0603,
+      40.7699,
+      -74.0084
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/hoboken/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Hoboken"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.230Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-hoboken~nj~rt"
+  ]
+}

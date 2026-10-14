@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-tulare-county-regional-transit-agency-rt",
+  "domain": "transit.vehicles",
+  "name": "Tulare County Regional Transit Agency",
+  "provider": "Tulare County Regional Transit Agency",
+  "coverage": {
+    "bbox": [
+      35.9239,
+      -119.413,
+      36.5617,
+      -119.0249
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "http://data.peaktransit.com/gtfsrt/120/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Tulare County Regional Transit Agency"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.235Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-tulare~county~regional~transit~agency~rt"
+  ]
+}

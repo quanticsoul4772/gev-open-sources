@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-pullman-transit-wa-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Pullman Transit",
+  "provider": "Pullman Transit",
+  "coverage": {
+    "bbox": [
+      46.7078,
+      -117.2085,
+      46.7633,
+      -117.1348
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://pullmanbusbeacon.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pullman Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.233Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-pullman~transit~wa~us~rt"
+  ]
+}

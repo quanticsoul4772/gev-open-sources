@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-mid-county-transit-authority-rt",
+  "domain": "transit.vehicles",
+  "name": "Mid-County Transit Authority",
+  "provider": "Mid-County Transit Authority",
+  "coverage": {
+    "bbox": [
+      40.758,
+      -79.5431,
+      40.82,
+      -79.4951
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://tact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Mid-County Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.231Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-mid~county~transit~authority~rt"
+  ]
+}

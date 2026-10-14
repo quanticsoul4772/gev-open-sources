@@ -1,0 +1,46 @@
+{
+  "id": "transitous-fr-caen-la-mer-reseau-twisto-gtfs-siri",
+  "domain": "transit.vehicles",
+  "name": "caen-la-mer-reseau-twisto-gtfs-siri",
+  "provider": "caen-la-mer-reseau-twisto-gtfs-siri",
+  "coverage": {
+    "bbox": [
+      49.1178,
+      -0.483,
+      49.3248,
+      -0.1678
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/caen/",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "caen-la-mer-reseau-twisto-gtfs-siri"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.258Z"
+  },
+  "provenance": [
+    "transitous:fr/caen-la-mer-reseau-twisto-gtfs-siri"
+  ]
+}

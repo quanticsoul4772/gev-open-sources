@@ -1,0 +1,46 @@
+{
+  "id": "transitous-cy-npt",
+  "domain": "transit.vehicles",
+  "name": "NPT",
+  "provider": "NPT",
+  "coverage": {
+    "bbox": [
+      34.9065,
+      32.8867,
+      35.2044,
+      33.5642
+    ],
+    "countries": [
+      "CY"
+    ]
+  },
+  "access": {
+    "url": "http://20.19.98.194:8328/Api/api/gtfs-realtime/9",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "NPT"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.258Z"
+  },
+  "provenance": [
+    "transitous:cy/NPT"
+  ]
+}
