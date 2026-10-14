@@ -243,3 +243,24 @@ test('redirects: a final URL carrying a key is never stored; the host is allowed
   assert.deepEqual(changed.provenance, ['test']);
   assert.deepEqual(await resolveRedirects([changed], fetchImpl), [], 'already allowed: no change');
 });
+
+test('size guard: refuses a directory outside 85–180 % of any copy published in 30 h', async () => {
+  const { sizeProblem } = await import('../src/build.js');
+  const now = 100 * 3600;
+  const published = [
+    { at: now - 40 * 3600, entries: 100 }, // too old to count
+    { at: now - 20 * 3600, entries: 1000 },
+    { at: now - 6 * 3600, entries: 1100 },
+  ];
+  assert.equal(sizeProblem(published, 1200, now), null);
+  assert.match(sizeProblem(published, 900, now), /935|0\.85/, 'drop below 85 % of the newest');
+  assert.match(sizeProblem(published, 1900, now), /1000 published/, 'over 1.8× the day-old copy');
+  assert.equal(sizeProblem([], 5000, now), null, 'first publish');
+});
+
+test('harvest: new entries capped at 10 % of the directory per run', async () => {
+  const { addLimit } = await import('../src/harvest/index.js');
+  assert.equal(addLimit(1200), 120);
+  assert.equal(addLimit(5), 1);
+  assert.equal(addLimit(0), Infinity, 'first harvest unlimited');
+});
