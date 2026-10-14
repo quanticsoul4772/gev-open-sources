@@ -28,11 +28,32 @@ export async function probeEntry(entry, { now, fetchImpl } = {}) {
   if (res.status !== 200) return { at: now, ...classify({ status: res.status }) };
   try {
     const body = entry.access.unzip ? readZipEntry(res.body, entry.access.unzip) : res.body;
-    const decoded = ADAPTERS[entry.format](body, entry.coverage.bbox);
+    const decoded = ADAPTERS[entry.format](body, entry.coverage.bbox, entry);
+    if (decoded.sample) {
+      const sample = await checkSample(decoded.sample, fetchImpl);
+      if (sample) return { at: now, ...sample };
+    }
     return { at: now, ...classify({ status: 200, decoded, now }) };
   } catch {
     return { at: now, ...classify({ error: 'decode' }) };
   }
+}
+
+/** A sample (camera image) smaller than this is a placeholder, not a picture. */
+export const MIN_SAMPLE_BYTES = 2_000;
+
+/** A failed probe result when a sample URL isn't a real image, else null. */
+async function checkSample(url, fetchImpl) {
+  let res;
+  try {
+    res = await fetchCapped(url, { fetchImpl, timeoutMs: 15_000, maxBytes: 5 * 2 ** 20 });
+  } catch {
+    return classify({ error: 'network' });
+  }
+  if (res.status !== 200) return classify({ status: res.status });
+  const type = res.headers.get('content-type') || '';
+  if (!/^image\//i.test(type) || res.body.byteLength < MIN_SAMPLE_BYTES) return classify({ error: 'decode' });
+  return null;
 }
 
 /** Probes per run for a candidate that keeps passing: 1 + EXTRA_ROUNDS. */

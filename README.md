@@ -14,10 +14,16 @@ hours a GitHub Actions run:
      and Transitous.
    - USGS [earthquake summary feeds](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
      (`hazards.earthquakes`, GeoJSON, public domain).
+   - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
+     Digitraffic weather cameras (CC BY 4.0), TfL JamCams and Caltrans CCTV
+     (12 districts). Each entry carries a `mapping` that says where each
+     camera's id, position and image sit in the list; the prober also checks
+     one sample image (200, an image type, at least 2 KB). TfL and Caltrans
+     stay referral-only until the licence job verifies their terms.
 
    URLs that carry a credential parameter, and catalogue entries marked as
    needing a key, are skipped. Cross-domain permalinks are pointed at their
-   final URL.
+   final URL, and plain-http feeds move to https when it serves the same data.
 2. **Decides licences** with no human step: a known open licence
    (`src/licence/known-licences.json`); GBFS 3.x systems with no licence are
    CC0 per the spec; operator terms pages are read by Claude and accepted only

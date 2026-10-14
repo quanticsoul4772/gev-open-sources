@@ -9,6 +9,7 @@ import { readEntries, readState, removeEntry, writeEntry, writeState } from '../
 import { entryHasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas } from './atlas.js';
+import { harvestCameras } from './cameras.js';
 import { fillTransitCoverage } from './catalogue.js';
 import { harvestGbfs } from './gbfs.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
@@ -106,9 +107,10 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   for (const e of atlas.entries) knownUrls.add(normalizeUrl(e.access.url));
   const transitous = await harvestTransitous({ knownIds, knownUrls, rejects, now });
   const gbfs = await harvestGbfs({ known: knownIds });
+  const cameras = await harvestCameras({ knownIds });
   const merged = mergeCandidates(
     existing,
-    [...USGS_ENTRIES, ...mdb.entries, ...gbfs, ...atlas.entries, ...transitous.entries],
+    [...USGS_ENTRIES, ...cameras, ...mdb.entries, ...gbfs, ...atlas.entries, ...transitous.entries],
     tombstones,
   );
   // New entries, and existing ones whose last probe failed, may be permalinks
@@ -141,7 +143,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

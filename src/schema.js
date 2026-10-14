@@ -4,11 +4,12 @@
  * `schema/entry.schema.json` is the published form of the same rules.
  */
 
-export const DOMAINS = Object.freeze(['transit.vehicles', 'bikeshare.stations', 'hazards.earthquakes']);
+export const DOMAINS = Object.freeze(['transit.vehicles', 'bikeshare.stations', 'hazards.earthquakes', 'cameras.stills']);
 export const FORMATS = Object.freeze([
   'gtfs-rt.vehicle-positions',
   'gbfs.station-status',
   'geojson.earthquakes',
+  'cameras.list',
 ]);
 export const LICENCE_DECIDERS = Object.freeze([
   'known-licence',
@@ -69,6 +70,16 @@ export function validateEntry(entry) {
     for (const [k, v] of Object.entries(a.related))
       need(isUrl(v), `access.related.${k} invalid`);
   need(FORMATS.includes(entry.format), `format "${entry.format}" unknown`);
+  if (entry.format === 'cameras.list') {
+    const m = entry.mapping;
+    need(m && typeof m === 'object', 'mapping missing');
+    for (const k of ['items', 'id', 'lat', 'lon', 'image']) need(typeof m?.[k] === 'string', `mapping.${k} missing`);
+    for (const k of ['name', 'active']) need(m?.[k] === undefined || typeof m[k] === 'string', `mapping.${k} invalid`);
+    need(
+      m?.image_template === undefined || (/^https:\/\/[\x21-\x7e]+$/.test(m.image_template) && m.image_template.includes('{value}')),
+      'mapping.image_template invalid',
+    );
+  }
   const l = entry.licence;
   need(l && typeof l.display === 'boolean', 'licence.display missing');
   need(l?.url === null || isUrl(l?.url), 'licence.url invalid');

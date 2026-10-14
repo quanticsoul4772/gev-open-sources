@@ -4,8 +4,16 @@
   "title": "Keyless data source entry",
   "type": "object",
   "required": ["id", "domain", "name", "provider", "coverage", "access", "format", "licence", "licence_decision", "provenance"],
-  "if": { "type": "object", "properties": { "licence": { "type": "object", "properties": { "display": { "const": true } }, "required": ["display"] } }, "required": ["licence"] },
-  "then": { "type": "object", "properties": { "licence_decision": { "type": "object", "properties": { "by": { "not": { "const": "none" } } } } } },
+  "allOf": [
+    {
+      "if": { "type": "object", "properties": { "licence": { "type": "object", "properties": { "display": { "const": true } }, "required": ["display"] } }, "required": ["licence"] },
+      "then": { "type": "object", "properties": { "licence_decision": { "type": "object", "properties": { "by": { "not": { "const": "none" } } } } } }
+    },
+    {
+      "if": { "type": "object", "properties": { "format": { "const": "cameras.list" } }, "required": ["format"] },
+      "then": { "type": "object", "properties": { "mapping": { "type": "object" } }, "required": ["mapping"] }
+    }
+  ],
   "$defs": {
     "httpUrl": { "type": "string", "format": "uri", "pattern": "^https?://" },
     "lat": { "type": "number", "minimum": -90, "maximum": 90 },
@@ -13,7 +21,7 @@
   },
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
-    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes"] },
+    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes", "cameras.stills"] },
     "name": { "type": "string", "minLength": 1 },
     "provider": { "type": "string", "minLength": 1 },
     "coverage": {
@@ -47,7 +55,7 @@
         "min_interval_s": { "type": "number", "minimum": 0 }
       }
     },
-    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes"] },
+    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes", "cameras.list"] },
     "licence": {
       "type": "object",
       "required": ["id", "url", "display", "commercial", "attribution"],
@@ -70,6 +78,21 @@
       }
     },
     "provenance": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "mapping": {
+      "description": "cameras.list: where each camera's fields sit in the list document. Paths are dot segments relative to each item; a number indexes an array; [key=value] picks the array item whose key equals value.",
+      "type": "object",
+      "required": ["items", "id", "lat", "lon", "image"],
+      "properties": {
+        "items": { "type": "string", "description": "path from the document to the camera array; empty when the document is the array" },
+        "id": { "type": "string" },
+        "lat": { "type": "string" },
+        "lon": { "type": "string" },
+        "image": { "type": "string", "description": "path to the image URL, or to the value put into image_template" },
+        "name": { "type": "string" },
+        "active": { "type": "string", "description": "path to a flag; items where it is not true are skipped" },
+        "image_template": { "type": "string", "pattern": "^https://[!-~]+$", "description": "image URL with {value} replaced by the URL-encoded image value" }
+      }
+    },
     "health": {
       "description": "Present in published directories, not in entries/. Probe summary over the last 7 days.",
       "type": "object",
