@@ -1,3 +1,4 @@
+# Every 6 h: restore state, harvest, decide licences, probe, build, publish to Pages.
 name: directory
 
 on:
