@@ -8,11 +8,10 @@
  * vehicle positions before it is added.
  */
 import { fetchCapped } from '../util/http.js';
-import { normalizeUrl, slugId } from '../util/ids.js';
-import { hostOfUrl, runPooled } from '../util/pool.js';
+import { slugId } from '../util/ids.js';
 import { readZipEntries } from '../util/zip.js';
-import { catalogueLicenceUrl, recentlyRejected, resolveTransitCandidates } from './catalogue.js';
-import { resolveGbfsSystem } from './gbfs.js';
+import { catalogueLicenceUrl, resolveTransitCandidates } from './catalogue.js';
+import { resolveGbfsSystems } from './gbfs.js';
 
 export const TRANSITOUS_ZIP_URL =
   'https://codeload.github.com/public-transport/transitous/zip/refs/heads/main';
@@ -54,6 +53,7 @@ export function transitousSources(docs) {
       else if (s.spec === 'gbfs')
         gbfs.push({
           id,
+          vehicleId: slugId('transitous', `${id}-vehicles`),
           name: s.name,
           provider: s.license?.publisher || s.name,
           country,
@@ -68,11 +68,11 @@ export function transitousSources(docs) {
 }
 
 /**
- * @param {{knownIds: Set<string>, knownUrls: Set<string>, rejects: object, now: number,
- *   fetchImpl?: typeof fetch}} options
+ * @param {{knownIds: Set<string>, knownUrls: Set<string>, knownOutputs: Set<string>, rejects: object,
+ *   now: number, fetchImpl?: typeof fetch, vehicleBudget?: number, deadlineMs?: number}} options
  */
 export async function harvestTransitous(options) {
-  const { knownIds, knownUrls, rejects, now, fetchImpl } = options;
+  const { fetchImpl } = options;
   const res = await fetchCapped(TRANSITOUS_ZIP_URL, { maxBytes: 64 * 2 ** 20, timeoutMs: 120_000, fetchImpl });
   if (res.status !== 200) throw new Error(`Transitous: HTTP ${res.status}`);
   const files = readZipEntries(res.body, (name) => /^[^/]+\/feeds\/[^/]+\.json$/.test(name));
@@ -82,19 +82,7 @@ export async function harvestTransitous(options) {
   }));
   const { rt, gbfs } = transitousSources(docs);
   const rtEntries = await resolveTransitCandidates(rt, options);
-  // GBFS: resolve systems not known by id or discovery URL and not rejected recently.
-  const todo = gbfs.filter(
-    (s) => !knownIds.has(s.id) && !knownUrls.has(normalizeUrl(s.discoveryUrl)) && !recentlyRejected(rejects, s.discoveryUrl, now),
-  );
-  const resolved = await runPooled(todo, (s) => hostOfUrl(s.discoveryUrl), (s) => resolveGbfsSystem(s, { fetchImpl, anyRedirect: true }), {
-    global: 24,
-    perHost: 3,
-  });
-  const gbfsEntries = [];
-  todo.forEach((s, i) => {
-    const entry = resolved[i];
-    if (entry && !entry.error) gbfsEntries.push(entry);
-    else rejects[s.discoveryUrl] = { reason: entry?.error ? `resolve: ${entry.error.message}`.slice(0, 120) : 'no keyless station feeds', at: now };
-  });
+  // GBFS: the stations and vehicles outputs each system still lacks (shared with systems.csv).
+  const gbfsEntries = await resolveGbfsSystems(gbfs, { ...options, anyRedirect: true });
   return { candidates: rt.length + gbfs.length, entries: [...rtEntries, ...gbfsEntries] };
 }

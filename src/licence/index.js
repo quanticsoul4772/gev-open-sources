@@ -62,17 +62,33 @@ export function gbfsText(value) {
 }
 
 /** GBFS: licence fields from system_information. */
-async function gbfsDecision(entry, fetchImpl) {
+/** Whether an entry is a GBFS feed (stations or vehicles), decided from system_information. */
+const isGbfs = (e) => e.format.startsWith('gbfs.');
+
+/**
+ * system_information `data`, or null. A stations entry without the related URL
+ * falls back to its sibling file; a vehicles entry must name it (guessing would
+ * read the vehicle feed, and a v3 system would then default to CC0).
+ * `memo` shares one fetch per URL between a system's entries in a run.
+ */
+async function systemInformation(entry, fetchImpl, memo) {
   const url =
     entry.access.related?.system_information ||
-    entry.access.url.replace(/station_status(\.json)?$/, 'system_information$1');
-  let info = null;
-  try {
-    const res = await fetchCapped(url, { fetchImpl, timeoutMs: 15_000, maxBytes: 2 ** 20 });
-    if (res.status === 200) info = JSON.parse(new TextDecoder().decode(res.body))?.data || null;
-  } catch {
-    info = null;
-  }
+    (entry.format === 'gbfs.station-status' ? entry.access.url.replace(/station_status(\.json)?$/, 'system_information$1') : null);
+  if (!url) return null;
+  if (!memo.has(url))
+    memo.set(
+      url,
+      fetchCapped(url, { fetchImpl, timeoutMs: 15_000, maxBytes: 2 ** 20 }).then(
+        (res) => (res.status === 200 ? JSON.parse(new TextDecoder().decode(res.body))?.data || null : null),
+        () => null,
+      ).catch(() => null),
+    );
+  return memo.get(url);
+}
+
+export async function gbfsDecision(entry, fetchImpl, memo = new Map()) {
+  const info = await systemInformation(entry, fetchImpl, memo);
   // The licence a catalogue (Transitous) declared for the system: used only
   // when the system publishes none itself, and only if it is a known licence.
   const catalogue = entry.gbfs?.catalogue_licence || null;
@@ -122,11 +138,12 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
   const entries = readEntries();
   const cache = readState('licence-cache.json', {});
   const plan = new Map(); // id → {decided} | {termsUrl, attribution}
-  const gbfs = [...entries.values()].filter((e) => e.domain === 'bikeshare.stations');
-  const gbfsResults = await runPooled(gbfs, (e) => hostOfUrl(e.access.url), (e) => gbfsDecision(e, fetchImpl), { global: 24, perHost: 3 });
+  const gbfs = [...entries.values()].filter(isGbfs);
+  const memo = new Map();
+  const gbfsResults = await runPooled(gbfs, (e) => hostOfUrl(e.access.url), (e) => gbfsDecision(e, fetchImpl, memo), { global: 24, perHost: 3 });
   gbfs.forEach((e, i) => plan.set(e.id, gbfsResults[i]?.error ? { decided: undecided(e, 'system_information error') } : gbfsResults[i]));
   for (const e of entries.values()) {
-    if (e.domain === 'bikeshare.stations') continue;
+    if (isGbfs(e)) continue;
     const known = knownLicence(e.licence.url);
     if (known) plan.set(e.id, { decided: fromKnown(e, known, e.licence.url, e.licence.attribution) });
     else if (e.licence.url && !e.provenance.some((p) => p.startsWith('licence-borrowed:')))

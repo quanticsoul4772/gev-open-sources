@@ -4,12 +4,29 @@
  * `schema/entry.schema.json` is the published form of the same rules.
  */
 
-export const DOMAINS = Object.freeze(['transit.vehicles', 'bikeshare.stations', 'hazards.earthquakes', 'cameras.stills']);
+export const DOMAINS = Object.freeze([
+  'transit.vehicles',
+  'bikeshare.stations',
+  'hazards.earthquakes',
+  'cameras.stills',
+  'sharedmobility.vehicles',
+]);
 export const FORMATS = Object.freeze([
   'gtfs-rt.vehicle-positions',
   'gbfs.station-status',
   'geojson.earthquakes',
   'cameras.list',
+  'gbfs.vehicle-status',
+]);
+/** GBFS v3 form factors (v2.x `scooter` is normalised to `scooter_standing`). */
+export const FORM_FACTORS = Object.freeze([
+  'bicycle',
+  'cargo_bicycle',
+  'car',
+  'moped',
+  'scooter_standing',
+  'scooter_seated',
+  'other',
 ]);
 export const LICENCE_DECIDERS = Object.freeze([
   'known-licence',
@@ -70,6 +87,13 @@ export function validateEntry(entry) {
     for (const [k, v] of Object.entries(a.related))
       need(isUrl(v), `access.related.${k} invalid`);
   need(FORMATS.includes(entry.format), `format "${entry.format}" unknown`);
+  if (entry.format === 'gbfs.vehicle-status') {
+    const f = entry.gbfs?.form_factors;
+    need(
+      Array.isArray(f) && f.every((x) => FORM_FACTORS.includes(x)) && new Set(f).size === f.length,
+      'gbfs.form_factors invalid',
+    );
+  }
   if (entry.format === 'cameras.list') {
     const m = entry.mapping;
     need(m && typeof m === 'object', 'mapping missing');

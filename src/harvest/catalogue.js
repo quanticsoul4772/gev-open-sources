@@ -136,3 +136,25 @@ export async function fillTransitCoverage(entries, { fetchImpl } = {}) {
   });
   return filled;
 }
+
+/**
+ * bbox of points, robust to strays: out-of-range points and (0,0) are
+ * dropped, and with 20 or more points the 1st–99th percentile is kept on each
+ * axis, so one vehicle parked in a far depot doesn't stretch the box.
+ * @param {Array<[number, number]>} points [lat, lon]
+ */
+export function robustBbox(points, pad = 0.02) {
+  const ok = points.filter(
+    ([lat, lon]) =>
+      Number.isFinite(lat) && Number.isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180 && !(lat === 0 && lon === 0),
+  );
+  if (!ok.length) return null;
+  if (ok.length < 20) return pointsBbox(ok, pad);
+  const lats = ok.map((p) => p[0]).sort((a, b) => a - b);
+  const lons = ok.map((p) => p[1]).sort((a, b) => a - b);
+  // Inward rounding: from 20 points on, at least the single most extreme point
+  // on each side is trimmed.
+  const lo = Math.ceil(0.01 * (ok.length - 1));
+  const hi = Math.floor(0.99 * (ok.length - 1));
+  return pointsBbox([[lats[lo], lons[lo]], [lats[hi], lons[hi]]], pad);
+}

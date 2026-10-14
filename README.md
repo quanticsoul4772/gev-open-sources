@@ -11,7 +11,15 @@ hours a GitHub Actions run:
      feeds are fetched once and added only if they carry vehicle positions;
      failures are retried after a week (`harvest-rejects.json`).
    - Bike-share systems from MobilityData's [GBFS systems list](https://github.com/MobilityData/gbfs)
-     and Transitous.
+     and Transitous: docked stations (`bikeshare.stations`, `gbfs.station-status`)
+     and free-floating vehicles (`sharedmobility.vehicles`, `gbfs.vehicle-status`:
+     scooters, bikes, mopeds and cars from `vehicle_status`, or
+     `free_bike_status` before v3). A system with both gets one entry for
+     each. Vehicles entries count only vehicles without a `station_id`
+     (docked ones belong to the stations entry) and list
+     `gbfs.form_factors` from `vehicle_types` (empty means unknown).
+     Getaround car-sharing systems publish no licence and are displayed
+     under the GBFS 3.x CC0 default.
    - USGS [earthquake summary feeds](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
      (`hazards.earthquakes`, GeoJSON, public domain).
    - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
@@ -74,14 +82,18 @@ Version policy:
   untrusted input and validate every entry yourself. It publishes facts
   (access recipe, coverage, licence, health), never a per-app "compatible"
   flag, so consumer rules can't drift from a copy kept here.
-- Its size changes gradually. A harvest adds at most 10 % of the current
-  entries per run (the rest wait for later runs), and a directory under 85 %
-  or over 180 % of any copy published in the last 30 hours is not published
-  (`published.json` in the state). Both rules also hold per domain, for a
-  domain that had at least 50 entries (smaller domains never block a
-  publish). A consumer that refreshes daily can
-  therefore reject copies under 80 % or over twice its own, in total or per
-  domain file.
+- Its size changes gradually. A harvest adds at most 8 % of the current
+  entries, and of each domain's, per run (the rest wait for later runs), and
+  a directory whose total is under 85 % or over 180 % of any copy published
+  in the last 30 hours is not published (`published.json` in the state). A
+  domain of 50 or more entries that moves out of that range only logs a
+  warning: one operator going dark must not stop every domain publishing. A
+  consumer that refreshes daily can reject copies under 80 % or over twice
+  its own in total, and should keep its own copy of a domain file that moves
+  out of range.
+- Free-floating vehicle feeds carry per-vehicle ids and rental links. GBFS
+  2.0+ asks operators to rotate ids after each trip, but not all do (car
+  sharing in particular): don't keep per-vehicle history or trails.
 - Redirects are followed only to the same origin or a host in
   `access.redirectHosts`; transit and bike-share entries carry
   `coverage.bbox`; URLs never carry credentials. New `domain` and `format`

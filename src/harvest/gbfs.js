@@ -1,8 +1,10 @@
 import { parseCsv } from '../util/csv.js';
 import { fetchCapped } from '../util/http.js';
+import { FORM_FACTORS } from '../schema.js';
 import { hasCredential } from '../util/secrets.js';
-import { slugId } from '../util/ids.js';
+import { normalizeUrl, slugId } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
+import { recentlyRejected, robustBbox } from './catalogue.js';
 
 export const GBFS_SYSTEMS_URL =
   'https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv';
@@ -53,83 +55,233 @@ export function keylessSystems(rows) {
   );
 }
 
+export { FORM_FACTORS };
+
+/** Sorted unique v3 form factors of a vehicle_types document; empty means unknown. */
+export function formFactors(doc) {
+  const types = doc?.data?.vehicle_types;
+  if (!Array.isArray(types)) return [];
+  const out = new Set();
+  for (const t of types) {
+    const f = String(t?.form_factor || '').toLowerCase();
+    if (!f) continue;
+    out.add(f === 'scooter' ? 'scooter_standing' : FORM_FACTORS.includes(f) ? f : 'other');
+  }
+  return [...out].sort();
+}
+
+/** Union of two bboxes (either may be null). */
+const bboxUnion = (a, b) =>
+  a && b ? [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])] : a || b;
+
+const OVER_CAP = /^response over \d+ bytes$/;
+
 /**
- * Resolve one system's auto-discovery URL into a station-status entry, or null
- * when it has no keyless station feeds or no located stations.
- * @param {{id: string, name: string, provider: string, country: string|null,
+ * Resolve one system's auto-discovery URL into the entries it wants: a
+ * bike-share stations entry (station_status) and/or a free-floating vehicles
+ * entry (vehicle_status, or free_bike_status before v3). A vehicles entry
+ * needs vehicles without a station_id (docked vehicles belong to the stations
+ * entry). An output it can't produce gets a reason, which the caller
+ * remembers; network errors throw, so the caller's host breaker counts them
+ * and nothing is remembered.
+ * @param {{id: string, vehicleId: string, name: string, provider: string, country: string|null,
  *   discoveryUrl: string, systemId: string|null, catalogueLicence?: string|null,
  *   provenance: string[]}} system
- * @param {{fetchImpl?: typeof fetch, anyRedirect?: boolean}} [options]
+ * @param {{want: {stations: boolean, vehicles: boolean}, fetchImpl?: typeof fetch, anyRedirect?: boolean}} options
+ * @returns {Promise<{stations?: object, vehicles?: object, reasons: {stations?: string, vehicles?: string}}>}
  */
-export async function resolveGbfsSystem(system, { fetchImpl, anyRedirect = false } = {}) {
+export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect = false }) {
+  const out = { reasons: {} };
+  const fail = (reason) => {
+    for (const kind of ['stations', 'vehicles']) if (want[kind]) out.reasons[kind] = reason;
+    return out;
+  };
   const discovery = await fetchCapped(system.discoveryUrl, { fetchImpl, anyRedirect, timeoutMs: 15_000 });
-  if (discovery.status !== 200) return null;
-  const { version, feeds } = gbfsFeeds(json(discovery.body));
-  const status = feeds.station_status;
+  if (discovery.status !== 200) return fail(`discovery HTTP ${discovery.status}`);
+  let parsed;
+  try {
+    parsed = gbfsFeeds(json(discovery.body));
+  } catch {
+    return fail('discovery is not JSON');
+  }
+  const { feeds } = parsed;
   const info = feeds.station_information;
-  if (!status || !info) return null;
-  // Every URL the entry would publish must be keyless, not only station_status.
-  if ([system.discoveryUrl, status, info, feeds.system_information].filter(Boolean).some(hasCredential)) return null;
-  const stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
-  const bbox = stations.status === 200 ? stationBbox(json(stations.body)) : null;
-  if (!bbox) return null;
-  return {
-    id: system.id,
-    domain: 'bikeshare.stations',
+  const sysInfo = feeds.system_information;
+  if ([system.discoveryUrl, sysInfo].filter(Boolean).some(hasCredential)) return fail('keyed URL');
+  const countries = system.country ? [system.country] : [];
+  const common = {
     name: system.name,
     provider: system.provider,
-    coverage: { bbox, countries: system.country ? [system.country] : [] },
-    access: {
-      url: status,
-      related: {
-        station_information: info,
-        ...(feeds.system_information ? { system_information: feeds.system_information } : {}),
-        gbfs: system.discoveryUrl,
-      },
-      redirectHosts: [],
-      unzip: null,
-      headers: {},
-      min_interval_s: 60,
-    },
-    format: 'gbfs.station-status',
-    gbfs: {
-      system_id: system.systemId,
-      version,
-      ...(system.catalogueLicence ? { catalogue_licence: system.catalogueLicence } : {}),
-    },
     licence: { id: null, url: null, display: false, commercial: null, attribution: system.provider },
     licence_decision: { by: 'none', evidence: [], terms_sha256: null, at: null },
     provenance: system.provenance,
   };
+  const gbfsMeta = (version, extra = {}) => ({
+    system_id: system.systemId,
+    version,
+    ...extra,
+    ...(system.catalogueLicence ? { catalogue_licence: system.catalogueLicence } : {}),
+  });
+  const access = (url, related) => ({ url, related, redirectHosts: [], unzip: null, headers: {}, min_interval_s: 60 });
+
+  // Stations: for the stations entry, and for the vehicles entry's coverage.
+  const status = feeds.station_status;
+  const stationsKeyless = Boolean(status && info) && !hasCredential(status) && !hasCredential(info);
+  let stationsBbox = null;
+  if (stationsKeyless) {
+    const stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
+    if (stations.status === 200)
+      try {
+        stationsBbox = stationBbox(json(stations.body));
+      } catch {
+        stationsBbox = null;
+      }
+  }
+  if (want.stations) {
+    if (!stationsKeyless) out.reasons.stations = 'no keyless station feeds';
+    else if (!stationsBbox) out.reasons.stations = 'no located stations';
+    else
+      out.stations = {
+        id: system.id,
+        domain: 'bikeshare.stations',
+        ...common,
+        coverage: { bbox: stationsBbox, countries },
+        access: access(status, {
+          station_information: info,
+          ...(sysInfo ? { system_information: sysInfo } : {}),
+          gbfs: system.discoveryUrl,
+        }),
+        format: 'gbfs.station-status',
+        gbfs: gbfsMeta(parsed.version),
+      };
+  }
+
+  if (want.vehicles) {
+    const url = feeds.vehicle_status || feeds.free_bike_status;
+    const typesUrl = feeds.vehicle_types;
+    if (!url) out.reasons.vehicles = 'no vehicle feed';
+    else if ([url, typesUrl].filter(Boolean).some(hasCredential)) out.reasons.vehicles = 'keyed URL';
+    else {
+      let res = null;
+      try {
+        res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000 });
+      } catch (error) {
+        if (!OVER_CAP.test(error.message)) throw error;
+        out.reasons.vehicles = 'over the size cap';
+      }
+      if (res && res.status !== 200) out.reasons.vehicles = `vehicle feed HTTP ${res.status}`;
+      else if (res) {
+        let doc = null;
+        try {
+          doc = json(res.body);
+        } catch {
+          doc = null;
+        }
+        const list = doc?.data?.vehicles ?? doc?.data?.bikes;
+        const free = Array.isArray(list) ? list.filter((v) => v && !v.station_id) : [];
+        const bbox = bboxUnion(robustBbox(free.map((v) => [Number(v.lat), Number(v.lon)])), stationsBbox);
+        if (!Array.isArray(list)) out.reasons.vehicles = 'no vehicle list';
+        else if (!list.length) out.reasons.vehicles = 'empty feed';
+        else if (!free.length) out.reasons.vehicles = 'no free-floating vehicles';
+        else if (!bbox) out.reasons.vehicles = 'no located vehicles';
+        else {
+          let factors = [];
+          if (typesUrl)
+            try {
+              const types = await fetchCapped(typesUrl, { fetchImpl, timeoutMs: 15_000, maxBytes: 2 * 2 ** 20 });
+              if (types.status === 200) factors = formFactors(json(types.body));
+            } catch {
+              factors = [];
+            }
+          out.vehicles = {
+            id: system.vehicleId,
+            domain: 'sharedmobility.vehicles',
+            ...common,
+            coverage: { bbox, countries },
+            access: access(url, {
+              ...(typesUrl ? { vehicle_types: typesUrl } : {}),
+              ...(sysInfo ? { system_information: sysInfo } : {}),
+              gbfs: system.discoveryUrl,
+            }),
+            format: 'gbfs.vehicle-status',
+            gbfs: gbfsMeta(parsed.version || (doc?.version ? String(doc.version) : null), { form_factors: factors }),
+          };
+        }
+      }
+    }
+  }
+  return out;
+}
+
+/** Reject-cache key for one output (`stations` | `vehicles`) of a system. */
+export const outputKey = (discoveryUrl, kind) => `${discoveryUrl}#${kind}`;
+
+/** Stops starting new GBFS systems this long into a run (the job has 60 min). */
+export const GBFS_PHASE_MS = 15 * 60_000;
+
+/**
+ * Resolve the outputs systems still lack. An output is wanted unless its id is
+ * known, a directory entry already serves it (`knownOutputs` holds
+ * `<normalized discovery URL>#<kind>`), or it was rejected recently. Systems
+ * wanting only vehicles are capped at `vehicleBudget`; no system starts after
+ * `deadlineMs`; a host is skipped after 3 consecutive network failures.
+ * @param {object[]} systems as for resolveGbfsSystem
+ * @param {{knownIds: Set<string>, knownOutputs: Set<string>, rejects: object, now: number,
+ *   fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number, deadlineMs?: number}} options
+ * @returns {Promise<object[]>} new entries; `rejects` is updated in place
+ */
+export async function resolveGbfsSystems(systems, options) {
+  const { knownIds, knownOutputs, rejects, now, fetchImpl, anyRedirect = false } = options;
+  const { vehicleBudget = Infinity, deadlineMs = Infinity } = options;
+  const wanted = (s, kind) =>
+    !knownIds.has(kind === 'stations' ? s.id : s.vehicleId) &&
+    !knownOutputs.has(outputKey(normalizeUrl(s.discoveryUrl), kind)) &&
+    !recentlyRejected(rejects, outputKey(s.discoveryUrl, kind), now);
+  let vehiclesOnly = 0;
+  const todo = [];
+  for (const s of systems) {
+    const want = { stations: wanted(s, 'stations'), vehicles: wanted(s, 'vehicles') };
+    if (!want.stations && !want.vehicles) continue;
+    if (!want.stations) {
+      if (vehiclesOnly >= vehicleBudget) continue;
+      vehiclesOnly += 1;
+    }
+    todo.push({ s, want });
+  }
+  const results = await runPooled(
+    todo,
+    ({ s }) => hostOfUrl(s.discoveryUrl),
+    ({ s, want }) => resolveGbfsSystem(s, { want, fetchImpl, anyRedirect }),
+    { global: 24, perHost: 3, deadlineMs, breakAfter: 3 },
+  );
+  const entries = [];
+  todo.forEach(({ s }, i) => {
+    const r = results[i];
+    if (!r || r.error || r.skipped) return;
+    for (const kind of ['stations', 'vehicles']) {
+      if (r[kind]) entries.push(r[kind]);
+      else if (r.reasons[kind]) rejects[outputKey(s.discoveryUrl, kind)] = { reason: r.reasons[kind], at: now };
+    }
+  });
+  return entries;
 }
 
 /**
- * Resolve each keyless system not already known into a station-status entry.
- * @param {{known: Set<string>, fetchImpl?: typeof fetch}} options
+ * systems.csv: the stations and vehicles entries keyless systems still lack.
+ * @param {Parameters<typeof resolveGbfsSystems>[1]} options
  */
-export async function harvestGbfs({ known, fetchImpl } = {}) {
-  const res = await fetchCapped(GBFS_SYSTEMS_URL, { fetchImpl });
+export async function harvestGbfs(options) {
+  const res = await fetchCapped(GBFS_SYSTEMS_URL, { fetchImpl: options.fetchImpl });
   if (res.status !== 200) throw new Error(`GBFS systems.csv: HTTP ${res.status}`);
-  const systems = keylessSystems(parseCsv(new TextDecoder().decode(res.body))).filter(
-    (r) => !known.has(slugId('gbfs', r['System ID'])),
-  );
-  const results = await runPooled(
-    systems,
-    (r) => hostOfUrl(r['Auto-Discovery URL']),
-    (r) =>
-      resolveGbfsSystem(
-        {
-          id: slugId('gbfs', r['System ID']),
-          name: `${r.Name}${r.Location ? ` — ${r.Location}` : ''}`,
-          provider: r.Name,
-          country: r['Country Code'] || null,
-          discoveryUrl: r['Auto-Discovery URL'],
-          systemId: r['System ID'],
-          provenance: [`gbfs-systems:${r['System ID']}`],
-        },
-        { fetchImpl },
-      ),
-    { global: 24, perHost: 3 },
-  );
-  return results.filter((e) => e && !e.error);
+  const systems = keylessSystems(parseCsv(new TextDecoder().decode(res.body))).map((r) => ({
+    id: slugId('gbfs', r['System ID']),
+    vehicleId: slugId('gbfs', `${r['System ID']}-vehicles`),
+    name: `${r.Name}${r.Location ? ` — ${r.Location}` : ''}`,
+    provider: r.Name,
+    country: r['Country Code'] || null,
+    discoveryUrl: r['Auto-Discovery URL'],
+    systemId: r['System ID'],
+    provenance: [`gbfs-systems:${r['System ID']}`],
+  }));
+  return resolveGbfsSystems(systems, options);
 }
