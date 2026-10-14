@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_NagoyaHousingCityPlanningBureau_NagoyaSRT_AllLines_vehicle",
+    "url": "https://gtfsrt.busyohou.jp/nagoya-srt/vehicle.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.564Z"
   },
   "provenance": [
-    "mobilitydatabase:odpt-NagoyaHousingCityPlanningBureau-NagoyaSRT_AllLines-vp"
+    "mobilitydatabase:odpt-NagoyaHousingCityPlanningBureau-NagoyaSRT_AllLines-vp",
+    "via:https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_NagoyaHousingCityPlanningBureau_NagoyaSRT_AllLines_vehicle"
   ]
 }

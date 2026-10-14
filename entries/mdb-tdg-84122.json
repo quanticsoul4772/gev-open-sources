@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/74975bc9-525c-4ecd-b6cb-d1ca08863ba8",
+    "url": "https://ara-api.enroute.mobi/transvilles/gtfs",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.655Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84122"
+    "mobilitydatabase:tdg-84122",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/74975bc9-525c-4ecd-b6cb-d1ca08863ba8"
   ]
 }

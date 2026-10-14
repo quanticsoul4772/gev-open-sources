@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/5b42006f-d97b-4f58-9edd-82fd9022efff",
+    "url": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=COROLIS_URB&dataFormat=gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.596Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81126"
+    "mobilitydatabase:tdg-81126",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/5b42006f-d97b-4f58-9edd-82fd9022efff"
   ]
 }

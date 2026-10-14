@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/e6917aac-3de0-456f-8296-385ab4954c9b",
+    "url": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=TIC_INT&dataFormat=gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.600Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81150"
+    "mobilitydatabase:tdg-81150",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/e6917aac-3de0-456f-8296-385ab4954c9b"
   ]
 }

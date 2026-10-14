@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/8bd532f4-8813-4313-be7c-304b8f8f47a7",
+    "url": "https://api.pysae.com/api/v4/groups/nosbus/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.579Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-40392"
+    "mobilitydatabase:tdg-40392",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/8bd532f4-8813-4313-be7c-304b8f8f47a7"
   ]
 }

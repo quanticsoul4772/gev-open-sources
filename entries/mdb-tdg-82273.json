@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/793437a0-d3df-4b77-89d5-72525d49800b",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?src=true&dataset=sankeo-scolaire",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.615Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-82273"
+    "mobilitydatabase:tdg-82273",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/793437a0-d3df-4b77-89d5-72525d49800b"
   ]
 }

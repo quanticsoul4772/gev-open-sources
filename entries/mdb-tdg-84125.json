@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/78b3c0a0-6e4f-443d-88f1-325e534f67e6",
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/tango/vehicle-positions",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.656Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84125"
+    "mobilitydatabase:tdg-84125",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/78b3c0a0-6e4f-443d-88f1-325e534f67e6"
   ]
 }

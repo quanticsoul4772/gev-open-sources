@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/7c1a4aee-6445-4a2e-90aa-250ade5b9e80",
+    "url": "https://api.pysae.com/api/v4/groups/moulins/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.640Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83840"
+    "mobilitydatabase:tdg-83840",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/7c1a4aee-6445-4a2e-90aa-250ade5b9e80"
   ]
 }
