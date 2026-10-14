@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "awaiting classification"
+        "quote": "confidence below 0.8"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T18:51:37.544Z"
+    "at": "2026-10-14T21:38:53.173Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2422"

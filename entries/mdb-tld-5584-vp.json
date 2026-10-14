@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://gtfsr.tri-rail.com/download.aspx?file=position_updates.pb",
+    "url": "https://gtfsr.tri-rail.com/download.aspx?file=position_updates.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.740Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-5584-vp"
+    "mobilitydatabase:tld-5584-vp",
+    "via:http://gtfsr.tri-rail.com/download.aspx?file=position_updates.pb"
   ]
 }

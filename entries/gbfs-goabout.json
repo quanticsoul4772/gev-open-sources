@@ -17,8 +17,8 @@
   "access": {
     "url": "https://gbfs.goabout.com/2/station_status.json",
     "related": {
-      "station_information": "http://gbfs.goabout.com/2/station_information.json",
-      "system_information": "http://gbfs.goabout.com/2/system_information.json",
+      "station_information": "https://gbfs.goabout.com/2/station_information.json",
+      "system_information": "https://gbfs.goabout.com/2/system_information.json",
       "gbfs": "https://gbfs.goabout.com/2/gbfs.json"
     },
     "redirectHosts": [],
@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unavailable"
+        "quote": "no licence published"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.545Z"
+    "at": "2026-10-14T21:38:53.140Z"
   },
   "provenance": [
     "gbfs-systems:goabout",

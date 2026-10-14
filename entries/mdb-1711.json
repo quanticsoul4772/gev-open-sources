@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://truetime.portauthority.org/gtfsrt-train/vehicles",
+    "url": "https://truetime.portauthority.org/gtfsrt-train/vehicles",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.354Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1711"
+    "mobilitydatabase:mdb-1711",
+    "via:http://truetime.portauthority.org/gtfsrt-train/vehicles"
   ]
 }

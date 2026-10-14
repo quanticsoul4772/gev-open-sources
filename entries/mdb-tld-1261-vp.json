@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "url": "https://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -42,6 +42,7 @@
   },
   "provenance": [
     "mobilitydatabase:tld-1261-vp",
-    "licence-borrowed:mdb-41"
+    "licence-borrowed:mdb-41",
+    "via:http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition"
   ]
 }

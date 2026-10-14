@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-hakodatecity-alllines-jp-rt",
+  "domain": "transit.vehicles",
+  "name": "函館市企業局",
+  "provider": "函館市企業局",
+  "coverage": {
+    "bbox": [
+      41.7461,
+      140.7023,
+      41.8093,
+      140.8069
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "函館市企業局"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.161Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-hakodatecity~alllines~jp~rt"
+  ]
+}

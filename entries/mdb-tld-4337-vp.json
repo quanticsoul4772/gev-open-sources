@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "url": "https://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -42,6 +42,7 @@
   },
   "provenance": [
     "mobilitydatabase:tld-4337-vp",
-    "licence-borrowed:mdb-515"
+    "licence-borrowed:mdb-515",
+    "via:http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition"
   ]
 }

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-mybas-rapid-bus-kl-rt",
+  "domain": "transit.vehicles",
+  "name": "Prasarana Malaysia",
+  "provider": "Prasarana Malaysia",
+  "coverage": {
+    "bbox": [
+      2.9789,
+      101.5121,
+      3.281,
+      101.8697
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/prasarana?category=rapid-bus-kl",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Prasarana Malaysia"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.162Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-mybas~rapid~bus~kl~rt"
+  ]
+}

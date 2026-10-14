@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb",
+    "url": "https://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T16:46:39.574Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1607"
+    "mobilitydatabase:mdb-1607",
+    "via:http://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb"
   ]
 }

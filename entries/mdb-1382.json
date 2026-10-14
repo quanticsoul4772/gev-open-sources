@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb",
+    "url": "https://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -42,6 +42,7 @@
   },
   "provenance": [
     "mobilitydatabase:mdb-1382",
-    "licence-borrowed:mdb-3"
+    "licence-borrowed:mdb-3",
+    "via:http://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb"
   ]
 }

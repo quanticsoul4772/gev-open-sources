@@ -1,0 +1,55 @@
+{
+  "id": "cameras-digitraffic-weathercam",
+  "domain": "cameras.stills",
+  "name": "Digitraffic road weather cameras — Finland",
+  "provider": "Fintraffic",
+  "coverage": {
+    "bbox": [
+      59.8365,
+      19.5987,
+      70.1085,
+      31.2971
+    ],
+    "countries": [
+      "FI"
+    ]
+  },
+  "access": {
+    "url": "https://tie.digitraffic.fi/api/weathercam/v1/stations",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 300
+  },
+  "format": "cameras.list",
+  "mapping": {
+    "items": "features",
+    "id": "properties.id",
+    "name": "properties.name",
+    "lat": "geometry.coordinates.1",
+    "lon": "geometry.coordinates.0",
+    "image": "properties.presets.0.id",
+    "image_template": "https://weathercam.digitraffic.fi/{value}.jpg"
+  },
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Source: Fintraffic / digitraffic.fi, license CC 4.0 BY"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.167Z"
+  },
+  "provenance": [
+    "cameras:digitraffic-weathercam"
+  ]
+}

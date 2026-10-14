@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-kochiseinantraffic-localbus-jp-rt",
+  "domain": "transit.vehicles",
+  "name": "高知西南交通株式会社",
+  "provider": "高知西南交通株式会社",
+  "coverage": {
+    "bbox": [
+      32.7175,
+      132.926,
+      32.8064,
+      132.9874
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KochiSeinanTraffic_Localbus_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "高知西南交通株式会社"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.161Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-kochiseinantraffic~localbus~jp~rt"
+  ]
+}

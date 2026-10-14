@@ -15,10 +15,10 @@
     ]
   },
   "access": {
-    "url": "http://reddybikeshare.socialbicycles.com/opendata/station_status.json",
+    "url": "https://reddybikeshare.socialbicycles.com/opendata/station_status.json",
     "related": {
-      "station_information": "http://reddybikeshare.socialbicycles.com/opendata/station_information.json",
-      "system_information": "http://reddybikeshare.socialbicycles.com/opendata/system_information.json",
+      "station_information": "https://reddybikeshare.socialbicycles.com/opendata/station_information.json",
+      "system_information": "https://reddybikeshare.socialbicycles.com/opendata/system_information.json",
       "gbfs": "https://reddybikeshare.socialbicycles.com/opendata/gbfs.json"
     },
     "redirectHosts": [],
@@ -50,6 +50,7 @@
     "at": "2026-10-14T15:21:58.216Z"
   },
   "provenance": [
-    "gbfs-systems:reddy_bikeshare"
+    "gbfs-systems:reddy_bikeshare",
+    "via:http://reddybikeshare.socialbicycles.com/opendata/station_status.json"
   ]
 }

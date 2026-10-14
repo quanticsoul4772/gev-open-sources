@@ -1,0 +1,55 @@
+{
+  "id": "cameras-caltrans-d08",
+  "domain": "cameras.stills",
+  "name": "Caltrans CCTV — District 8",
+  "provider": "Caltrans",
+  "coverage": {
+    "bbox": [
+      33.4185,
+      -117.7638,
+      35.622,
+      -114.5303
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cwwp2.dot.ca.gov/data/d8/cctv/cctvStatusD08.json",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 120
+  },
+  "format": "cameras.list",
+  "mapping": {
+    "items": "data",
+    "id": "cctv.index",
+    "name": "cctv.location.locationName",
+    "lat": "cctv.location.latitude",
+    "lon": "cctv.location.longitude",
+    "image": "cctv.imageData.static.currentImageURL",
+    "active": "cctv.inService"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://dot.ca.gov/conditions-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "Caltrans"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.8"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.166Z"
+  },
+  "provenance": [
+    "cameras:caltrans-d08"
+  ]
+}

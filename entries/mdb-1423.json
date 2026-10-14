@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://files.transport.act.gov.au/feeds/lightrail.pb",
+    "url": "https://files.transport.act.gov.au/feeds/lightrail.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.306Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1423"
+    "mobilitydatabase:mdb-1423",
+    "via:http://files.transport.act.gov.au/feeds/lightrail.pb"
   ]
 }

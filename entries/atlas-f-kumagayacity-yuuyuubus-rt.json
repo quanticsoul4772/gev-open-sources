@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-kumagayacity-yuuyuubus-rt",
+  "domain": "transit.vehicles",
+  "name": "熊谷市ゆうゆうバス - Vehicle Positions",
+  "provider": "熊谷市",
+  "coverage": {
+    "bbox": [
+      36.0568,
+      139.3437,
+      36.142,
+      139.4372
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "http://kumagaya.bus-go.com/GTFS-RT/encode_vehicle.php",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "熊谷市"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.161Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-kumagayacity~yuuyuubus~rt"
+  ]
+}

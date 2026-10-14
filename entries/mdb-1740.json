@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://realtimevotran.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition",
+    "url": "https://realtimevotran.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T16:46:39.576Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1740"
+    "mobilitydatabase:mdb-1740",
+    "via:http://realtimevotran.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition"
   ]
 }

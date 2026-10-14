@@ -1,0 +1,55 @@
+{
+  "id": "cameras-caltrans-d11",
+  "domain": "cameras.stills",
+  "name": "Caltrans CCTV — District 11",
+  "provider": "Caltrans",
+  "coverage": {
+    "bbox": [
+      32.5314,
+      -117.4083,
+      33.3623,
+      -115.4786
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cwwp2.dot.ca.gov/data/d11/cctv/cctvStatusD11.json",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 120
+  },
+  "format": "cameras.list",
+  "mapping": {
+    "items": "data",
+    "id": "cctv.index",
+    "name": "cctv.location.locationName",
+    "lat": "cctv.location.latitude",
+    "lon": "cctv.location.longitude",
+    "image": "cctv.imageData.static.currentImageURL",
+    "active": "cctv.inService"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://dot.ca.gov/conditions-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "Caltrans"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.8"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.167Z"
+  },
+  "provenance": [
+    "cameras:caltrans-d11"
+  ]
+}

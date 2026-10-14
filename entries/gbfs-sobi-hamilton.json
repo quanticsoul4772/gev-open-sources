@@ -15,10 +15,10 @@
     ]
   },
   "access": {
-    "url": "http://hamilton.socialbicycles.com/opendata/station_status.json",
+    "url": "https://hamilton.socialbicycles.com/opendata/station_status.json",
     "related": {
-      "station_information": "http://hamilton.socialbicycles.com/opendata/station_information.json",
-      "system_information": "http://hamilton.socialbicycles.com/opendata/system_information.json",
+      "station_information": "https://hamilton.socialbicycles.com/opendata/station_information.json",
+      "system_information": "https://hamilton.socialbicycles.com/opendata/system_information.json",
       "gbfs": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
     },
     "redirectHosts": [],
@@ -50,6 +50,7 @@
     "at": "2026-10-14T15:21:58.236Z"
   },
   "provenance": [
-    "gbfs-systems:sobi_hamilton"
+    "gbfs-systems:sobi_hamilton",
+    "via:http://hamilton.socialbicycles.com/opendata/station_status.json"
   ]
 }

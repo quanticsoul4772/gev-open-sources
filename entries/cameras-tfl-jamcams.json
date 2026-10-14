@@ -1,0 +1,55 @@
+{
+  "id": "cameras-tfl-jamcams",
+  "domain": "cameras.stills",
+  "name": "TfL JamCams — London",
+  "provider": "Transport for London",
+  "coverage": {
+    "bbox": [
+      51.2969,
+      -0.5132,
+      51.6999,
+      0.2516
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://api.tfl.gov.uk/Place/Type/JamCam",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 120
+  },
+  "format": "cameras.list",
+  "mapping": {
+    "items": "",
+    "id": "id",
+    "name": "commonName",
+    "lat": "lat",
+    "lon": "lon",
+    "image": "additionalProperties[key=imageUrl].value",
+    "active": "additionalProperties[key=available].value"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service",
+    "display": false,
+    "commercial": null,
+    "attribution": "Powered by TfL Open Data"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T21:38:53.168Z"
+  },
+  "provenance": [
+    "cameras:tfl-jamcams"
+  ]
+}

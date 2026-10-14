@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "url": "https://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.679Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4336-vp"
+    "mobilitydatabase:tld-4336-vp",
+    "via:http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition"
   ]
 }

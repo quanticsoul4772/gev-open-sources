@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "url": "https://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.733Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-5553-vp"
+    "mobilitydatabase:tld-5553-vp",
+    "via:http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition"
   ]
 }

@@ -17,8 +17,8 @@
   "access": {
     "url": "https://www.mibicitubici.gob.ar/opendata/station_status.json",
     "related": {
-      "station_information": "http://www.mibicitubici.gob.ar/opendata/station_information.json",
-      "system_information": "http://www.mibicitubici.gob.ar/opendata/system_information.json",
+      "station_information": "https://www.mibicitubici.gob.ar/opendata/station_information.json",
+      "system_information": "https://www.mibicitubici.gob.ar/opendata/system_information.json",
       "gbfs": "https://www.mibicitubici.gob.ar/opendata/gbfs.json"
     },
     "redirectHosts": [],
@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unavailable"
+        "quote": "no licence published"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.533Z"
+    "at": "2026-10-14T21:38:53.131Z"
   },
   "provenance": [
     "gbfs-systems:biketobike",

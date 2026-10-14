@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition?ProjectID=PC",
+    "url": "https://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition?ProjectID=PC",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.717Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4780-vp"
+    "mobilitydatabase:tld-4780-vp",
+    "via:http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition?ProjectID=PC"
   ]
 }

@@ -23,22 +23,41 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
+    "id": "terms:www.valleyregionaltransit.org",
     "url": "https://www.valleyregionaltransit.org/about-us/resources/",
-    "display": false,
-    "commercial": null,
-    "attribution": "Valley Regional Transit"
+    "display": true,
+    "commercial": true,
+    "attribution": "Valley Regional Transit, licensed under CC BY 3.0",
+    "obligations": [
+      "attribution"
+    ]
   },
   "licence_decision": {
-    "by": "none",
+    "by": "llm-terms",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "awaiting classification"
+        "field": "applies_to_this_data",
+        "quote": "There are currently three real-time GTFS files available below presented using the Protocol Buffer Format (.pb)"
+      },
+      {
+        "field": "applies_to_this_data",
+        "quote": "GTFS Realtime Vehicle Positions"
+      },
+      {
+        "field": "display",
+        "quote": "GTFS &#8220;feeds&#8221; let public transit agencies publish their transit data and developers write applications that consume that data in an interoperable way. We provide these files for public use"
+      },
+      {
+        "field": "commercial",
+        "quote": "All of the aforementioned GTFS works are licensed for use under the Creative Commons Attribution 3.0 Unported License ."
+      },
+      {
+        "field": "requires_acceptance",
+        "quote": "We provide these files for public use as a single dataset for both our Ada County and County Services."
       }
     ],
-    "terms_sha256": null,
-    "at": "2026-10-14T18:51:37.544Z"
+    "terms_sha256": "b3a8586bda31e8681c82074e5044c2c68e2f05d79b118449aa4182a6c0bff7eb",
+    "at": "2026-10-14T21:38:34.020Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2454"

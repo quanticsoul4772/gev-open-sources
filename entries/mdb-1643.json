@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://api.octa.net/GTFSRealTime/protoBuf/VehiclePositions.aspx",
+    "url": "https://api.octa.net/GTFSRealTime/protoBuf/VehiclePositions.aspx",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T16:46:39.575Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1643"
+    "mobilitydatabase:mdb-1643",
+    "via:http://api.octa.net/GTFSRealTime/protoBuf/VehiclePositions.aspx"
   ]
 }
