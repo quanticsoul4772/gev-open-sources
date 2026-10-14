@@ -20,6 +20,7 @@ const MAX_TEXT_CHARS = 120_000;
  * polling), or clauses that ask nothing of it (disclaimers, liability limits,
  * no implied endorsement, lawful use, the provider's right to end access).
  * `no_commercial` sets commercial = false instead of blocking display.
+ * `indemnify` blocks: it moves legal liability onto whoever runs the app.
  */
 export const MEETABLE = new Set([
   'attribution',
@@ -35,7 +36,6 @@ export const MEETABLE = new Set([
   'no_trademark_use',
   'governing_law',
   'provider_owns_data',
-  'indemnify',
   'https_only',
   'data_freshness',
   'no_sublicense',
@@ -196,6 +196,11 @@ const DECISION_FIELDS = ['applies_to_this_data', 'display', 'commercial', 'requi
  * Accept or reject two runs' decisions against the text.
  * @returns {{accepted: boolean, reason: string}}
  */
+/** Whether every obligation in a decision is one the app meets on its own. */
+export function obligationsMeetable(decision) {
+  return decision.obligations.every((o) => MEETABLE.has(o.type));
+}
+
 export function judge(a, b, text) {
   for (const f of DECISION_FIELDS) if (a[f] !== b[f]) return { accepted: false, reason: `runs disagree on ${f}` };
   // Runs may label harmless clauses differently; they must agree on the blocking ones.

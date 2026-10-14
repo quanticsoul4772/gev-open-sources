@@ -20,6 +20,7 @@ import {
   htmlToText,
   judge,
   needsReclassification,
+  obligationsMeetable,
   PROMPT_VERSION,
   sentenceSignature,
 } from './terms.js';
@@ -147,7 +148,8 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
     let decided = p.decided;
     if (!decided) {
       const r = termsResults.get(p.termsUrl);
-      decided = r?.accepted
+      // Re-check cached decisions against the current rules (no API call).
+      decided = r?.accepted && obligationsMeetable(r.decision)
         ? {
             licence: {
               id: `terms:${hostOfUrl(p.termsUrl)}`,
