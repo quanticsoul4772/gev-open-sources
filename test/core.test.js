@@ -10,7 +10,7 @@ import { DAY_S, applyProbe, classify, emptyHealth, summary } from '../src/health
 import { validateEntry } from '../src/schema.js';
 import { BODS_ENTRY } from '../src/seed.js';
 import { parseCsv } from '../src/util/csv.js';
-import { hasCredentialParam, registrableDomain } from '../src/util/http.js';
+import { fetchCapped, hasCredentialParam } from '../src/util/http.js';
 import { normalizeUrl, slugId } from '../src/util/ids.js';
 import { readZipEntry } from '../src/util/zip.js';
 
@@ -37,10 +37,20 @@ test('ids are schema-valid, prefixes not doubled, long ids hashed', () => {
   assert.equal(normalizeUrl('https://A.example/p/?t=1#f'), 'https://a.example/p/?t=1');
 });
 
-test('registrable domain handles public second levels', () => {
-  assert.equal(registrableDomain('data.bus-data.dft.gov.uk'), 'dft.gov.uk');
-  assert.equal(registrableDomain('download.bus-data.dft.gov.uk'), 'dft.gov.uk');
-  assert.equal(registrableDomain('cdn.mbta.com'), 'mbta.com');
+test('prober redirects: same origin or a listed host, like the app proxy', async () => {
+  const hops = {
+    'https://a.example.com/old': 'https://a.example.com/new',
+    'https://a.example.com/sub': 'https://b.example.com/feed',
+    'https://a.example.com/listed': 'https://cdn.other.net/feed',
+  };
+  const fetchImpl = async (url) =>
+    hops[url]
+      ? new Response(null, { status: 302, headers: { location: hops[url] } })
+      : new Response('ok', { status: 200 });
+  assert.equal((await fetchCapped('https://a.example.com/old', { fetchImpl })).url, 'https://a.example.com/new');
+  await assert.rejects(fetchCapped('https://a.example.com/sub', { fetchImpl }), /unlisted host b\.example\.com/);
+  assert.equal((await fetchCapped('https://a.example.com/listed', { fetchImpl, redirectHosts: ['cdn.other.net'] })).status, 200);
+  assert.equal((await fetchCapped('https://a.example.com/sub', { fetchImpl, anyRedirect: true })).status, 200);
 });
 
 test('zip: reads a deflated entry by name', () => {
@@ -200,19 +210,23 @@ test('directory: dead entries left out, counts', () => {
   assert.deepEqual(d.counts, { entries: 1, verified: 1, display: 1, usable: 1 });
 });
 
-test('redirects: a cross-domain permalink resolves to its final URL', async () => {
-  const { crossDomainTarget } = await import('../src/harvest/redirects.js');
+test('redirects: a cross-origin permalink resolves to its final URL', async () => {
+  const { crossOriginTarget } = await import('../src/harvest/redirects.js');
   const hops = {
     'https://www.data.gouv.fr/fr/datasets/r/abc': 'https://zenbus.net/gtfs/rt/x.pb',
     'https://a.example.org/old': 'https://a.example.org/new',
+    'https://x.example.org/feed': 'https://y.example.org/feed',
+    'http://h.example.org/feed': 'https://h.example.org/feed',
   };
   const fetchImpl = async (url) =>
     hops[url]
       ? new Response(null, { status: 302, headers: { location: hops[url] } })
       : new Response('ok', { status: 200 });
-  assert.equal(await crossDomainTarget('https://www.data.gouv.fr/fr/datasets/r/abc', fetchImpl), 'https://zenbus.net/gtfs/rt/x.pb');
-  assert.equal(await crossDomainTarget('https://a.example.org/old', fetchImpl), null, 'same-domain redirect left to the prober');
-  assert.equal(await crossDomainTarget('https://b.example/feed', fetchImpl), null);
+  assert.equal(await crossOriginTarget('https://www.data.gouv.fr/fr/datasets/r/abc', fetchImpl), 'https://zenbus.net/gtfs/rt/x.pb');
+  assert.equal(await crossOriginTarget('https://a.example.org/old', fetchImpl), null, 'same-origin redirect left to the prober');
+  assert.equal(await crossOriginTarget('https://x.example.org/feed', fetchImpl), 'https://y.example.org/feed', 'another subdomain is another origin');
+  assert.equal(await crossOriginTarget('http://h.example.org/feed', fetchImpl), 'https://h.example.org/feed', 'http → https');
+  assert.equal(await crossOriginTarget('https://b.example/feed', fetchImpl), null);
 });
 
 test('redirects: a final URL carrying a key is never stored; the host is allowed instead', async () => {

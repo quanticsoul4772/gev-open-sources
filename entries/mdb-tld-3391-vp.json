@@ -4,7 +4,12 @@
   "name": "Sacramento Regional Transit",
   "provider": "Sacramento Regional Transit",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      38.4342,
+      -121.7844,
+      38.7424,
+      -121.1603
+    ],
     "countries": [
       "US"
     ]

@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://ride.smtd.org/gtfsrt/vehicles",
+    "url": "https://ride.smtd.org/gtfsrt/vehicles",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.361Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1781"
+    "mobilitydatabase:mdb-1781",
+    "via:http://ride.smtd.org/gtfsrt/vehicles"
   ]
 }

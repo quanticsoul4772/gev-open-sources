@@ -1,14 +1,14 @@
-import { USER_AGENT, hasCredentialParam, registrableDomain } from '../util/http.js';
+import { USER_AGENT, hasCredentialParam } from '../util/http.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 
 /**
  * Follow redirects hop by hop (≤ 3) without downloading bodies, and return the
- * final URL when it lands on another registrable domain — e.g. data.gouv.fr
- * dataset permalinks that 302 to the operator's own feed host. Same-domain
- * redirects are left alone (the prober follows those itself).
+ * final URL when it lands on another origin — e.g. data.gouv.fr dataset
+ * permalinks that 302 to the operator's own feed host, or http → https.
+ * Same-origin redirects are left alone (the prober and the app follow those).
  * @returns {Promise<string|null>}
  */
-export async function crossDomainTarget(url, fetchImpl = fetch) {
+export async function crossOriginTarget(url, fetchImpl = fetch) {
   let current = url;
   for (let hop = 0; hop < 3; hop += 1) {
     let response;
@@ -27,14 +27,11 @@ export async function crossDomainTarget(url, fetchImpl = fetch) {
     current = new URL(location, current).href;
   }
   if (current === url) return null;
-  return registrableDomain(new URL(current).hostname) ===
-    registrableDomain(new URL(url).hostname)
-    ? null
-    : current;
+  return new URL(current).origin === new URL(url).origin ? null : current;
 }
 
 /**
- * Point entries that redirect to another domain at their final URL; the
+ * Point entries that redirect to another origin at their final URL; the
  * original stays in provenance. A final URL that carries a credential (an
  * operator key the permalink hands out) is never stored: the entry keeps the
  * permalink and lists the target host in `redirectHosts`, so the prober
@@ -46,7 +43,7 @@ export async function resolveRedirects(entries, fetchImpl = fetch) {
   const targets = await runPooled(
     entries,
     (e) => hostOfUrl(e.access.url),
-    (e) => crossDomainTarget(e.access.url, fetchImpl),
+    (e) => crossOriginTarget(e.access.url, fetchImpl),
     { global: 16, perHost: 3 },
   );
   const changed = [];

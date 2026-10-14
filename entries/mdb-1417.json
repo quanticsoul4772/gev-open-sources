@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb",
+    "url": "https://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -42,6 +42,7 @@
   },
   "provenance": [
     "mobilitydatabase:mdb-1417",
-    "licence-borrowed:mdb-724"
+    "licence-borrowed:mdb-724",
+    "via:http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb"
   ]
 }

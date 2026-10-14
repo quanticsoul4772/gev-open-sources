@@ -4,7 +4,12 @@
   "name": "BAS.MY Johor Bahru",
   "provider": "BAS.MY Johor Bahru",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      1.4377,
+      103.5788,
+      1.7391,
+      103.9363
+    ],
     "countries": []
   },
   "access": {
