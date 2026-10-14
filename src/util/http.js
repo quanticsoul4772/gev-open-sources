@@ -1,9 +1,13 @@
 export const USER_AGENT =
   'gev-open-sources/0.1 (+https://github.com/quanticsoul4772/gev-open-sources)';
 
-/** Query parameters that carry a credential: a URL with one is not keyless. */
-const CREDENTIAL_PARAM =
-  /^(api[_-]?key|apikey|key|token|access[_-]?token|auth|auth[_-]?token|secret|client[_-]?secret|subscription[_-]?key|password|pwd|sig|signature)$/i;
+/**
+ * Query parameters that carry a credential: a URL with one is not keyless.
+ * Any name containing key/token/secret/password/signature/credential counts
+ * (accesskey, apiKey, x-api-key, sessionToken, …); skipping a harmless feed
+ * is cheaper than publishing a key.
+ */
+const CREDENTIAL_PARAM = /key|token|secret|passw|pwd|signature|credential|^(sig|auth|code)$/i;
 
 /** @param {string} url @returns {boolean} */
 export function hasCredentialParam(url) {
