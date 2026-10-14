@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-medicine-hat-transit-rt",
+  "domain": "transit.vehicles",
+  "name": "Medicine Hat Transit",
+  "provider": "Medicine Hat Transit",
+  "coverage": {
+    "bbox": [
+      49.9748,
+      -110.7221,
+      50.0681,
+      -110.6187
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://medicinehat.tmix.se/gtfs-realtime/vehicleupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Medicine Hat Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-medicine~hat~transit~rt"
+  ]
+}

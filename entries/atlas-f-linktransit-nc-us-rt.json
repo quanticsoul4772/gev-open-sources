@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-linktransit-nc-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Link Transit",
+  "provider": "Link Transit",
+  "coverage": {
+    "bbox": [
+      36.0485,
+      -79.4876,
+      36.1267,
+      -79.3941
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://mylinktransit.org/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Link Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-linktransit~nc~us~rt"
+  ]
+}

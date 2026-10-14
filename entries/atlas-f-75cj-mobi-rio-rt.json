@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-75cj-mobi-rio-rt",
+  "domain": "transit.vehicles",
+  "name": "dados.mobilidade.rio",
+  "provider": "dados.mobilidade.rio",
+  "coverage": {
+    "bbox": [
+      -23.0411,
+      -43.7248,
+      -22.7752,
+      -43.1616
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://dados.mobilidade.rio/gtfs/realtime",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "dados.mobilidade.rio"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.562Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-75cj-mobi~rio~rt"
+  ]
+}

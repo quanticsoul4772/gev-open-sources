@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-stony-brook-university-ny-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Stony Brook University",
+  "provider": "Stony Brook University",
+  "coverage": {
+    "bbox": [
+      40.8279,
+      -73.1535,
+      40.9364,
+      -72.7188
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/stonybrook.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Stony Brook University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-stony~brook~university~ny~us~rt"
+  ]
+}

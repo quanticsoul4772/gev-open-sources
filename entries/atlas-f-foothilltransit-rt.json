@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-foothilltransit-rt",
+  "domain": "transit.vehicles",
+  "name": "foothilltransit.org",
+  "provider": "foothilltransit.org",
+  "coverage": {
+    "bbox": [
+      33.9216,
+      -118.287,
+      34.1693,
+      -117.6697
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfs-rt.myavail.cloud/GtfsProtoBuf?FeedLabel=Foothill&FeedType=VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "http://foothilltransit.org/about/developer-resources/developer-license-agreement/",
+    "display": false,
+    "commercial": null,
+    "attribution": "foothilltransit.org"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.568Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-foothilltransit~rt"
+  ]
+}

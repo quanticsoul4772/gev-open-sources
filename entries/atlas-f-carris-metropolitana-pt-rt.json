@@ -1,0 +1,45 @@
+{
+  "id": "atlas-f-carris-metropolitana-pt-rt",
+  "domain": "transit.vehicles",
+  "name": "Carris Metropolitana",
+  "provider": "Carris Metropolitana",
+  "coverage": {
+    "bbox": [
+      38.4063,
+      -9.4957,
+      39.0597,
+      -8.5451
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api.carrismetropolitana.pt/v2/vehicles.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Carris Metropolitana"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no ANTHROPIC_API_KEY"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-carris~metropolitana~pt~rt",
+    "via:http://api.carrismetropolitana.pt/vehicles.pb"
+  ]
+}

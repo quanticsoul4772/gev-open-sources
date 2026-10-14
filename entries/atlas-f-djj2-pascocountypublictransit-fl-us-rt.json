@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-djj2-pascocountypublictransit-fl-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Pasco County Public Transportation",
+  "provider": "Pasco County Public Transportation",
+  "coverage": {
+    "bbox": [
+      28.1615,
+      -82.7602,
+      28.4845,
+      -82.1599
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gopasco.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pasco County Public Transportation"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-djj2-pascocountypublictransit~fl~us~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-c20g-c-tran-rt",
+  "domain": "transit.vehicles",
+  "name": "Clark County Public Transportation Benefit Area",
+  "provider": "Clark County Public Transportation Benefit Area",
+  "coverage": {
+    "bbox": [
+      45.5104,
+      -122.7039,
+      45.787,
+      -122.3799
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Clark County Public Transportation Benefit Area"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-c20g-c~tran~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dpnz-bcta-rt",
+  "domain": "transit.vehicles",
+  "name": "Beaver County Transit Authority",
+  "provider": "Beaver County Transit Authority",
+  "coverage": {
+    "bbox": [
+      40.423,
+      -80.3443,
+      40.7885,
+      -79.9768
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://bcta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Beaver County Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dpnz-bcta~rt"
+  ]
+}

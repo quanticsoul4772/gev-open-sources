@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-brockton-ma-us-rt",
+  "domain": "transit.vehicles",
+  "name": "passio3.com",
+  "provider": "passio3.com",
+  "coverage": {
+    "bbox": [
+      41.9682,
+      -71.1681,
+      42.2905,
+      -70.9544
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/brockton/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "passio3.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-brockton~ma~us~rt"
+  ]
+}

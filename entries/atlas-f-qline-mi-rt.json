@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-qline-mi-rt",
+  "domain": "transit.vehicles",
+  "name": "etaspot.net",
+  "provider": "etaspot.net",
+  "coverage": {
+    "bbox": [
+      42.3099,
+      -83.0939,
+      42.3911,
+      -83.0255
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "etaspot.net"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-qline~mi~rt"
+  ]
+}

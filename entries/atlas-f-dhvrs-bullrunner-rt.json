@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dhvrs-bullrunner-rt",
+  "domain": "transit.vehicles",
+  "name": "USF Bull Runner",
+  "provider": "USF Bull Runner",
+  "coverage": {
+    "bbox": [
+      28.0365,
+      -82.4506,
+      28.0985,
+      -82.3828
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/usf/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "USF Bull Runner"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dhvrs-bullrunner~rt"
+  ]
+}

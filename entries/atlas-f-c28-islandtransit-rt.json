@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-c28-islandtransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Island Transit",
+  "provider": "Island Transit",
+  "coverage": {
+    "bbox": [
+      47.9548,
+      -122.7635,
+      48.4736,
+      -122.3262
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/islandtransit/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Island Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-c28-islandtransit~rt"
+  ]
+}

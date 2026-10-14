@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9rb-cherriots-rt",
+  "domain": "transit.vehicles",
+  "name": "Cherriots",
+  "provider": "Cherriots",
+  "coverage": {
+    "bbox": [
+      44.8111,
+      -123.3282,
+      45.0266,
+      -122.8097
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://cherriots.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cherriots"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9rb-cherriots~rt"
+  ]
+}

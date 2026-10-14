@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dpz2-bramptontransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Brampton Transit",
+  "provider": "Brampton Transit",
+  "coverage": {
+    "bbox": [
+      43.5768,
+      -79.8786,
+      43.814,
+      -79.5049
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfs-rt-merge.prod.bt-cadavl.com/BramptonTransit/GTFS/merged_VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Brampton Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dpz2-bramptontransit~rt"
+  ]
+}

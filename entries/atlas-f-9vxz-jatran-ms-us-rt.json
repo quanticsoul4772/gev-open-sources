@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9vxz-jatran-ms-us-rt",
+  "domain": "transit.vehicles",
+  "name": "City of Jackson",
+  "provider": "City of Jackson",
+  "coverage": {
+    "bbox": [
+      32.2453,
+      -90.2807,
+      32.406,
+      -90.1267
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/jtran/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Jackson"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9vxz-jatran~ms~us~rt"
+  ]
+}

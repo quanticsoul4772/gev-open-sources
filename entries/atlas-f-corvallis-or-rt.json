@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-corvallis-or-rt",
+  "domain": "transit.vehicles",
+  "name": "corvallistransit.com",
+  "provider": "corvallistransit.com",
+  "coverage": {
+    "bbox": [
+      44.5404,
+      -123.3001,
+      44.6137,
+      -123.2217
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "corvallistransit.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-corvallis~or~rt"
+  ]
+}

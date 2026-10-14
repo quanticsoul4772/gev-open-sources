@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-connect-douglas-ga-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Connect Douglas",
+  "provider": "Connect Douglas",
+  "coverage": {
+    "bbox": [
+      33.7028,
+      -84.7661,
+      33.7956,
+      -84.5537
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/douglas/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Connect Douglas"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-connect~douglas~ga~us~rt"
+  ]
+}

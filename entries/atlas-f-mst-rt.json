@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-mst-rt",
+  "domain": "transit.vehicles",
+  "name": "Monterey-Salinas Transit",
+  "provider": "Monterey-Salinas Transit",
+  "coverage": {
+    "bbox": [
+      36.1847,
+      -121.9424,
+      36.9295,
+      -121.1069
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfs.mst.org/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://mst.org/about-mst/developer-resources/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Monterey-Salinas Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no ANTHROPIC_API_KEY"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.570Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-mst~rt"
+  ]
+}

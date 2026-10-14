@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-octa-rt",
+  "domain": "transit.vehicles",
+  "name": "Orange County Transportation Authority",
+  "provider": "Orange County Transportation Authority",
+  "coverage": {
+    "bbox": [
+      33.4193,
+      -118.1335,
+      33.9519,
+      -117.5602
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api.octa.net/GTFSRealTime/protoBuf/VehiclePositions.aspx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Orange County Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.570Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-octa~rt"
+  ]
+}

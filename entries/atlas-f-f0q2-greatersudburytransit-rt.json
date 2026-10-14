@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-f0q2-greatersudburytransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Greater Sudbury Transit",
+  "provider": "Greater Sudbury Transit",
+  "coverage": {
+    "bbox": [
+      46.3762,
+      -81.2026,
+      46.7348,
+      -80.8137
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://sudbury.tmix.se/gtfs-realtime/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Greater Sudbury Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.568Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-f0q2-greatersudburytransit~rt"
+  ]
+}

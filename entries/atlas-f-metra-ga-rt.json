@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-metra-ga-rt",
+  "domain": "transit.vehicles",
+  "name": "metracolumbus.com",
+  "provider": "metracolumbus.com",
+  "coverage": {
+    "bbox": [
+      32.3942,
+      -85.0075,
+      32.5744,
+      -84.8569
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://metracolumbus.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "metracolumbus.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-metra~ga~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-north-bay-transit-rt",
+  "domain": "transit.vehicles",
+  "name": "North Bay Transit",
+  "provider": "North Bay Transit",
+  "coverage": {
+    "bbox": [
+      43.5258,
+      -79.8986,
+      46.3783,
+      -79.3911
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://northbay.tmix.se/gtfs-realtime/vehicleupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "North Bay Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.570Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-north~bay~transit~rt"
+  ]
+}

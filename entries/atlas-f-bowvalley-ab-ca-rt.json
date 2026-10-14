@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-bowvalley-ab-ca-rt",
+  "domain": "transit.vehicles",
+  "name": "Bow Valley Regional Transit Services Commission",
+  "provider": "Bow Valley Regional Transit Services Commission",
+  "coverage": {
+    "bbox": [
+      51.0698,
+      -116.0277,
+      51.317,
+      -114.4468
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://bowvalley.tmix.se/gtfs-realtime/vehicleupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bow Valley Regional Transit Services Commission"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.564Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-bowvalley~ab~ca~rt"
+  ]
+}

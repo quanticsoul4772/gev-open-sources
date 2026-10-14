@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-drm-thegreaterattleborotauntonregionaltransitau-17dab06c",
+  "domain": "transit.vehicles",
+  "name": "Greater Attleboro Taunton Regional Transit Authority",
+  "provider": "Greater Attleboro Taunton Regional Transit Authority",
+  "coverage": {
+    "bbox": [
+      41.7415,
+      -71.3768,
+      42.1252,
+      -70.5174
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.gatra.cadavl.com/ProfilGtfsRt2_0RSProducer-GATRA/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Greater Attleboro Taunton Regional Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-drm-thegreaterattleborotauntonregionaltransitauthority~rt"
+  ]
+}

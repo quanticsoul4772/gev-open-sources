@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-7h2w-empresadetransportesetransitodebelohorizontes-a-rt",
+  "domain": "transit.vehicles",
+  "name": "Superintendência de Mobilidade Urbana de Belo Horizonte",
+  "provider": "Superintendência de Mobilidade Urbana de Belo Horizonte",
+  "coverage": {
+    "bbox": [
+      -20.0462,
+      -44.0795,
+      -19.7545,
+      -43.8512
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "http://realtime4.mobilibus.com/web/4ch6j/vehicle-positions?accesskey=REDACTED",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.562Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-cota-rt",
+  "domain": "transit.vehicles",
+  "name": "Central Ohio Transit Authority",
+  "provider": "Central Ohio Transit Authority",
+  "coverage": {
+    "bbox": [
+      39.8101,
+      -83.1889,
+      40.1696,
+      -82.7686
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfs-rt.cota.vontascloud.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Central Ohio Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-cota~rt"
+  ]
+}

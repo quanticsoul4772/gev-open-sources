@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-u0sr-lemet-proxis-rt",
+  "domain": "transit.vehicles",
+  "name": "LE MET'",
+  "provider": "LE MET'",
+  "coverage": {
+    "bbox": [
+      48.9783,
+      5.9904,
+      49.2225,
+      6.296
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/lemet-metz-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "LE MET'"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.572Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-u0sr-lemet~proxis~rt"
+  ]
+}

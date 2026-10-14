@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-setram-seau-culemans-fr-rt",
+  "domain": "transit.vehicles",
+  "name": "SETRAM",
+  "provider": "SETRAM",
+  "coverage": {
+    "bbox": [
+      47.911,
+      0.0977,
+      48.0828,
+      0.3554
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/setram-lemans-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "SETRAM"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-setram~seau~culemans~fr~rt"
+  ]
+}

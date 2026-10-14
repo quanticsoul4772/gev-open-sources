@@ -1,0 +1,44 @@
+{
+  "id": "usgs-eq-4-5-month",
+  "domain": "hazards.earthquakes",
+  "name": "USGS M4.5+ earthquakes, past month",
+  "provider": "U.S. Geological Survey",
+  "coverage": {
+    "bbox": [
+      -90,
+      -180,
+      90,
+      180
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "geojson.earthquakes",
+  "licence": {
+    "id": "USGS-public-domain",
+    "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "display": true,
+    "commercial": true,
+    "attribution": "U.S. Geological Survey"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.588Z"
+  },
+  "provenance": [
+    "usgs:earthquake-summary-feeds"
+  ]
+}

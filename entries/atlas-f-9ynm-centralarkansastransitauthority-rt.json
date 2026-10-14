@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9ynm-centralarkansastransitauthority-rt",
+  "domain": "transit.vehicles",
+  "name": "Rock Region Metro",
+  "provider": "Rock Region Metro",
+  "coverage": {
+    "bbox": [
+      34.6493,
+      -92.4271,
+      34.814,
+      -92.1909
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.rrmetro.cadavl.com/ProfilGtfsRt2_0RSProducer-RRMETRO/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Rock Region Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9ynm-centralarkansastransitauthority~rt"
+  ]
+}

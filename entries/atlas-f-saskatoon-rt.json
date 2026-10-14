@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-saskatoon-rt",
+  "domain": "transit.vehicles",
+  "name": "Saskatoon Transit",
+  "provider": "Saskatoon Transit",
+  "coverage": {
+    "bbox": [
+      52.0594,
+      -106.748,
+      52.1929,
+      -106.541
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://saskprdtmgtfs.sasktrpcloud.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Saskatoon Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-saskatoon~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9q7-getbus-rt",
+  "domain": "transit.vehicles",
+  "name": "Golden Empire Transit District",
+  "provider": "Golden Empire Transit District",
+  "coverage": {
+    "bbox": [
+      35.2541,
+      -119.1481,
+      35.452,
+      -118.9102
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://get.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Golden Empire Transit District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.562Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9q7-getbus~rt"
+  ]
+}

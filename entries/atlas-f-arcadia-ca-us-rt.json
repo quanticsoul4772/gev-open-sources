@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-arcadia-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Arcadia Transit",
+  "provider": "Arcadia Transit",
+  "coverage": {
+    "bbox": [
+      34.1093,
+      -118.0652,
+      34.1576,
+      -118.0081
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/ArcadiaCity/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Arcadia Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.563Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-arcadia~ca~us~rt"
+  ]
+}

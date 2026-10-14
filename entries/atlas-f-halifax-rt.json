@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-halifax-rt",
+  "domain": "transit.vehicles",
+  "name": "Halifax Transit",
+  "provider": "Halifax Transit",
+  "coverage": {
+    "bbox": [
+      44.569,
+      -63.7578,
+      44.8642,
+      -63.4637
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Halifax Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.568Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-halifax~rt"
+  ]
+}

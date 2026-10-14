@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-columbus-in-us-rt",
+  "domain": "transit.vehicles",
+  "name": "City of Columbus",
+  "provider": "City of Columbus",
+  "coverage": {
+    "bbox": [
+      39.1799,
+      -85.9683,
+      39.2645,
+      -85.8666
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://columbusindianatransit.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Columbus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-columbus~in~us~rt"
+  ]
+}

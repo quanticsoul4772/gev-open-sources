@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-pigeon-forge-tn-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Pigeon Forge Mass Transit",
+  "provider": "Pigeon Forge Mass Transit",
+  "coverage": {
+    "bbox": [
+      35.7504,
+      -83.6032,
+      35.8446,
+      -83.509
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pigeon Forge Mass Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-pigeon~forge~tn~us~rt"
+  ]
+}

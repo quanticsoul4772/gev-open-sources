@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-rochester-mn-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Rochester Public Transit",
+  "provider": "Rochester Public Transit",
+  "coverage": {
+    "bbox": [
+      43.9441,
+      -92.5535,
+      44.1099,
+      -92.4041
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Rochester Public Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.571Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-rochester~mn~us~rt"
+  ]
+}

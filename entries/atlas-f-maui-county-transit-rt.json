@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-maui-county-transit-rt",
+  "domain": "transit.vehicles",
+  "name": "County of Maui Department of Transportation",
+  "provider": "County of Maui Department of Transportation",
+  "coverage": {
+    "bbox": [
+      20.732,
+      -156.7139,
+      21.0052,
+      -156.2999
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://mauibus.org/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "County of Maui Department of Transportation"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-maui~county~transit~rt"
+  ]
+}

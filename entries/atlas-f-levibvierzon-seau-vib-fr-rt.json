@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-levibvierzon-seau-vib-fr-rt",
+  "domain": "transit.vehicles",
+  "name": "Le VIB (Vierzon)",
+  "provider": "Le VIB (Vierzon)",
+  "coverage": {
+    "bbox": [
+      47.2016,
+      2.0451,
+      47.2416,
+      2.0851
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/le-vib-vierzon-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Le VIB (Vierzon)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.569Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-levibvierzon~seau~vib~fr~rt"
+  ]
+}

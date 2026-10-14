@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-cooperative-alliance-for-seacoast-transportation-rt",
+  "domain": "transit.vehicles",
+  "name": "Cooperative Alliance For Seacoast Transportation",
+  "provider": "Cooperative Alliance For Seacoast Transportation",
+  "coverage": {
+    "bbox": [
+      43.0324,
+      -71.0662,
+      43.3902,
+      -70.7378
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/COAST/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cooperative Alliance For Seacoast Transportation"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.565Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-cooperative~alliance~for~seacoast~transportation~rt"
+  ]
+}

@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no ANTHROPIC_API_KEY"
+        "quote": "terms page unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:40:13.685Z"
+    "at": "2026-10-14T16:46:39.575Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1612"

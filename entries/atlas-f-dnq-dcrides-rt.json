@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dnq-dcrides-rt",
+  "domain": "transit.vehicles",
+  "name": "Davidson County Transportation System",
+  "provider": "Davidson County Transportation System",
+  "coverage": {
+    "bbox": [
+      35.7995,
+      -80.2683,
+      35.9009,
+      -80.0658
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://dcridestracker.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Davidson County Transportation System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dnq-dcrides~rt"
+  ]
+}

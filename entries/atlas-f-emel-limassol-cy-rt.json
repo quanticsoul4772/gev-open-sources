@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-emel-limassol-cy-rt",
+  "domain": "transit.vehicles",
+  "name": "EMEL (Limassol)",
+  "provider": "EMEL (Limassol)",
+  "coverage": {
+    "bbox": [
+      34.5883,
+      32.8006,
+      34.9169,
+      33.1953
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "http://20.19.98.194:8328/Api/api/gtfs-realtime/6",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "EMEL (Limassol)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.567Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-emel~limassol~cy~rt"
+  ]
+}

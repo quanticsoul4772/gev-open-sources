@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-csulbshuttle-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Cal State Long Beach Shuttle",
+  "provider": "Cal State Long Beach Shuttle",
+  "coverage": {
+    "bbox": [
+      33.7552,
+      -118.1561,
+      33.807,
+      -118.091
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/longbeachcal/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cal State Long Beach Shuttle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.566Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-csulbshuttle~ca~us~rt"
+  ]
+}
