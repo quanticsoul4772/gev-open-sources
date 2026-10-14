@@ -6,7 +6,7 @@
   "required": ["id", "domain", "name", "provider", "coverage", "access", "format", "licence", "licence_decision", "provenance"],
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
-    "domain": { "enum": ["transit.vehicles", "bikeshare.stations"] },
+    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes"] },
     "name": { "type": "string", "minLength": 1 },
     "provider": { "type": "string", "minLength": 1 },
     "coverage": {
@@ -32,7 +32,7 @@
         "min_interval_s": { "type": "number", "minimum": 0 }
       }
     },
-    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status"] },
+    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes"] },
     "licence": {
       "type": "object",
       "required": ["id", "url", "display", "commercial", "attribution"],
