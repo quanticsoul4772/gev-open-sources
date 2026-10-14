@@ -4,7 +4,12 @@
   "name": "Lexington Transit Authority",
   "provider": "Lexington Transit Authority",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      37.9592,
+      -84.5634,
+      38.1031,
+      -84.4017
+    ],
     "countries": [
       "US"
     ]

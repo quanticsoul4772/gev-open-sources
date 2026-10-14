@@ -4,7 +4,12 @@
   "name": "BAS.MY Seremban A",
   "provider": "BAS.MY Seremban A",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      2.7362,
+      101.6598,
+      2.8306,
+      101.824
+    ],
     "countries": []
   },
   "access": {

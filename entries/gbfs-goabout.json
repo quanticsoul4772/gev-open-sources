@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://gbfs.goabout.com/2/station_status.json",
+    "url": "https://gbfs.goabout.com/2/station_status.json",
     "related": {
       "station_information": "http://gbfs.goabout.com/2/station_information.json",
       "system_information": "http://gbfs.goabout.com/2/system_information.json",
@@ -50,6 +50,7 @@
     "at": "2026-10-14T15:21:57.877Z"
   },
   "provenance": [
-    "gbfs-systems:goabout"
+    "gbfs-systems:goabout",
+    "via:http://gbfs.goabout.com/2/station_status.json"
   ]
 }

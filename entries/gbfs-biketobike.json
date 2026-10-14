@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://www.mibicitubici.gob.ar/opendata/station_status.json",
+    "url": "https://www.mibicitubici.gob.ar/opendata/station_status.json",
     "related": {
       "station_information": "http://www.mibicitubici.gob.ar/opendata/station_information.json",
       "system_information": "http://www.mibicitubici.gob.ar/opendata/system_information.json",
@@ -50,6 +50,7 @@
     "at": "2026-10-14T15:21:57.657Z"
   },
   "provenance": [
-    "gbfs-systems:biketobike"
+    "gbfs-systems:biketobike",
+    "via:http://www.mibicitubici.gob.ar/opendata/station_status.json"
   ]
 }

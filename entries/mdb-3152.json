@@ -4,7 +4,12 @@
   "name": "BAS.MY Kuching",
   "provider": "BAS.MY Kuching",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      1.1462,
+      110.5468,
+      1.1862,
+      110.5868
+    ],
     "countries": []
   },
   "access": {
