@@ -180,3 +180,38 @@ test('coverage: a missing transit bbox is filled from the vehicles; others untou
   assert.deepEqual([...filled.keys()], ['none']);
   assert.deepEqual(filled.get('none').coverage.bbox, pointsBbox([[45.5, -73.6]]));
 });
+
+test('https upgrade: switch only on 200, same content type and decodable data; http kept as via:', async () => {
+  const { upgradeToHttps } = await import('../src/harvest/https.js');
+  const pb = { 'content-type': 'application/octet-stream' };
+  const fetchImpl = fakeFetch({
+    'http://ok.example/vp': { body: feedBytes([[45, 7]]), headers: pb },
+    'https://ok.example/vp': { body: feedBytes([[45, 7]]), headers: pb },
+    'http://html.example/vp': { body: feedBytes([[45, 7]]), headers: pb },
+    'https://html.example/vp': { body: '<html>hi</html>', headers: { 'content-type': 'text/html' } },
+    'http://junk.example/vp': { body: 'x', headers: pb },
+    'https://junk.example/vp': { body: '{"not":"protobuf"', headers: pb },
+    'http://plain.example/vp': { body: feedBytes([[45, 7]]), headers: pb },
+  });
+  const entry = (id, url) => ({
+    id,
+    domain: 'transit.vehicles',
+    format: 'gtfs-rt.vehicle-positions',
+    coverage: { bbox: null, countries: [] },
+    access: { url, redirectHosts: [], unzip: null, headers: {}, min_interval_s: 15 },
+    provenance: ['test'],
+  });
+  const rejects = {};
+  const upgraded = await upgradeToHttps(
+    [entry('ok', 'http://ok.example/vp'), entry('html', 'http://html.example/vp'), entry('junk', 'http://junk.example/vp'), entry('plain', 'http://plain.example/vp'), entry('secure', 'https://ok.example/vp')],
+    { rejects, now: 1000, fetchImpl },
+  );
+  assert.deepEqual([...upgraded.keys()], ['ok']);
+  assert.equal(upgraded.get('ok').access.url, 'https://ok.example/vp');
+  assert.deepEqual(upgraded.get('ok').provenance, ['test', 'via:http://ok.example/vp']);
+  assert.match(rejects['https://html.example/vp'].reason, /content type/);
+  assert.match(rejects['https://junk.example/vp'].reason, /does not decode/);
+  assert.match(rejects['https://plain.example/vp'].reason, /HTTP 404/);
+  const again = await upgradeToHttps([entry('plain', 'http://plain.example/vp')], { rejects, now: 2000, fetchImpl });
+  assert.equal(again.size, 0, 'a recent failure is not retried');
+});

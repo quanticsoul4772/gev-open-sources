@@ -12,6 +12,7 @@ import { harvestAtlas } from './atlas.js';
 import { harvestCameras } from './cameras.js';
 import { fillTransitCoverage } from './catalogue.js';
 import { harvestGbfs } from './gbfs.js';
+import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
 import { harvestTransitous } from './transitous.js';
@@ -127,14 +128,22 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const deduped = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);
   // Transit entries need a bbox: fill missing ones from their vehicles. A new
   // entry still without one waits for a later run; an existing one keeps trying.
-  const updated = [...existing.values()].map((e) => redirected.get(e.id) || e);
-  const covered = await fillTransitCoverage([...deduped, ...updated]);
-  const ready = deduped
+  // Plain-http feeds move to https when it serves the same data.
+  const upgraded = await upgradeToHttps(
+    [...deduped, ...[...existing.values()].map((e) => redirected.get(e.id) || e)],
+    { rejects, now },
+  );
+  const fresh = deduped.map((e) => upgraded.get(e.id) || e);
+  const updated = [...existing.values()].map((e) => upgraded.get(e.id) || redirected.get(e.id) || e);
+  const covered = await fillTransitCoverage([...fresh, ...updated]);
+  const ready = fresh
     .map((e) => covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
   const added = withinAddLimits(ready, existing);
   for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withAsciiUrls(entry));
-  for (const entry of updated) if (redirected.has(entry.id) || covered.has(entry.id)) writeEntry(covered.get(entry.id) || entry);
+  for (const entry of updated)
+    if (redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id))
+      writeEntry(covered.get(entry.id) || entry);
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
   const dedupedIds = new Set(deduped.map((e) => e.id));
   for (const e of [...atlas.entries, ...transitous.entries])
@@ -143,7 +152,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 
