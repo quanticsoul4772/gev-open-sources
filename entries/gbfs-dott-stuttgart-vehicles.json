@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-stuttgart-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Stuttgart — Stuttgart",
+  "provider": "Dott Stuttgart",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Stuttgart"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.188Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-stuttgart"
+  ],
+  "coverage": {
+    "bbox": [
+      48.6969,
+      9.0757,
+      48.8545,
+      9.2743
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/stuttgart/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/stuttgart/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/stuttgart/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/stuttgart/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-stuttgart",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

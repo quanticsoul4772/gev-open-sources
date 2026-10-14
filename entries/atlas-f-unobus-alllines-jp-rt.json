@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-unobus-alllines-jp-rt",
+  "domain": "transit.vehicles",
+  "name": "宇野自動車株式会社",
+  "provider": "宇野自動車株式会社",
+  "coverage": {
+    "bbox": [
+      34.6415,
+      133.8997,
+      34.7836,
+      134.1663
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_UnoBus_AllLines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "宇野自動車株式会社"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.223Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-unobus~alllines~jp~rt"
+  ]
+}

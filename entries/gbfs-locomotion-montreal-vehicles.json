@@ -1,0 +1,61 @@
+{
+  "id": "gbfs-locomotion-montreal-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "LocoMotion Montreal — Montreal",
+  "provider": "LocoMotion Montreal",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "LocoMotion Montreal"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.194Z"
+  },
+  "provenance": [
+    "gbfs-systems:locomotion_montreal"
+  ],
+  "coverage": {
+    "bbox": [
+      45.4266,
+      -73.6883,
+      45.5795,
+      -73.5402
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://locomotion.app/api/gbfs/3.0/montreal/vehicle_status",
+    "related": {
+      "vehicle_types": "https://locomotion.app/api/gbfs/3.0/montreal/vehicle_types",
+      "system_information": "https://locomotion.app/api/gbfs/3.0/montreal/system_information",
+      "gbfs": "https://locomotion.app/api/gbfs/3.0/montreal/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "locomotion_montreal",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "car",
+      "cargo_bicycle",
+      "other"
+    ]
+  }
+}

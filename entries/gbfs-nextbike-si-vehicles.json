@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-nextbike-si-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Stadtrad Innsbruck Austria — Innsbruck",
+  "provider": "Stadtrad Innsbruck Austria",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.205Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_si"
+  ],
+  "coverage": {
+    "bbox": [
+      47.2342,
+      11.3446,
+      47.2909,
+      11.4653
+    ],
+    "countries": [
+      "AT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_si/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_si/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_si/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_si/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_si",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

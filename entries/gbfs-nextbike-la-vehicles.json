@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-nextbike-la-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "nextbike Niederösterreich — Austria",
+  "provider": "nextbike Niederösterreich",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Radland GmbH, Werkstättenstraße 13, 3100 St. Pölten"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.202Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_la"
+  ],
+  "coverage": {
+    "bbox": [
+      47.7787,
+      14.8048,
+      48.7398,
+      16.9412
+    ],
+    "countries": [
+      "AT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_la",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

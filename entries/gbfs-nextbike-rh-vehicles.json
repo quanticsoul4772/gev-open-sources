@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-rh-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "AW-bike — Remagen, DE",
+  "provider": "AW-bike",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike by TIER - Karl-Heine-Str. 46 - D-04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.205Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_rh"
+  ],
+  "coverage": {
+    "bbox": [
+      50.383,
+      6.9297,
+      50.5778,
+      7.3323
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rh/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rh/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rh/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rh/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_rh",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

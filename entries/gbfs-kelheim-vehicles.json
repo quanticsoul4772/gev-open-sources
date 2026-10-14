@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-kelheim-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Kelheim — Kelheim",
+  "provider": "Donkey Kelheim",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Kelheim"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.190Z"
+  },
+  "provenance": [
+    "gbfs-systems:Kelheim"
+  ],
+  "coverage": {
+    "bbox": [
+      48.8521,
+      11.857,
+      48.9252,
+      12.6321
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/Kelheim/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/Kelheim/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Kelheim/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/Kelheim/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "Kelheim",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

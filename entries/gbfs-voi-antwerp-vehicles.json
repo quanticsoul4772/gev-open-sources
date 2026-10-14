@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-voi-antwerp-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "VOI Antwerp — Antwerp",
+  "provider": "VOI Antwerp",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "VOI Antwerp"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.215Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_Antwerp"
+  ],
+  "coverage": {
+    "bbox": [
+      50.7687,
+      4.259,
+      51.3502,
+      4.4906
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/vehicle_types.json",
+      "system_information": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/system_information.json",
+      "gbfs": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "voi_Antwerp",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "gbfs-sobi-hamilton-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Sobi Hamilton — Hamilton",
+  "provider": "Sobi Hamilton",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sobi Hamilton"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.213Z"
+  },
+  "provenance": [
+    "gbfs-systems:sobi_hamilton",
+    "via:http://hamilton.socialbicycles.com/opendata/free_bike_status.json"
+  ],
+  "coverage": {
+    "bbox": [
+      43.2189,
+      -79.9538,
+      43.2935,
+      -79.7657
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://hamilton.socialbicycles.com/opendata/free_bike_status.json",
+    "related": {
+      "system_information": "https://hamilton.socialbicycles.com/opendata/system_information.json",
+      "gbfs": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "sobi_hamilton",
+    "version": null,
+    "form_factors": []
+  }
+}

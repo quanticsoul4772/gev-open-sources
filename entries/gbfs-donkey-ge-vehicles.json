@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-ge-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Geneva — Geneva",
+  "provider": "Donkey Republic Geneva",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.177Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_ge"
+  ],
+  "coverage": {
+    "bbox": [
+      46.1441,
+      6.0328,
+      46.3107,
+      6.2215
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_ge",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

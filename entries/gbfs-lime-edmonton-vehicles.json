@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-edmonton-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Edmonton — Edmonton",
+  "provider": "Lime Edmonton",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Edmonton"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.191Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_edmonton"
+  ],
+  "coverage": {
+    "bbox": [
+      53.3301,
+      -113.9796,
+      53.6721,
+      -113.3636
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_edmonton",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

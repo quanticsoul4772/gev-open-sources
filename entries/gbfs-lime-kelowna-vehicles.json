@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-kelowna-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Kelowna — Kelowna",
+  "provider": "Lime Kelowna",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Kelowna"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.192Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_kelowna"
+  ],
+  "coverage": {
+    "bbox": [
+      49.7731,
+      -119.5353,
+      49.975,
+      -119.3584
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/kelowna/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/kelowna/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/kelowna/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/kelowna/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_kelowna",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-kortrijk-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Kortrijk — Kortrijk",
+  "provider": "Lime Kortrijk",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Kortrijk"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.192Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_kortrijk"
+  ],
+  "coverage": {
+    "bbox": [
+      50.7574,
+      3.2061,
+      50.8625,
+      3.3196
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_kortrijk",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

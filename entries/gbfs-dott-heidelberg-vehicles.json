@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-heidelberg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Heidelberg — Heidelberg",
+  "provider": "Dott Heidelberg",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Heidelberg"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.184Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-heidelberg"
+  ],
+  "coverage": {
+    "bbox": [
+      49.3273,
+      8.6184,
+      49.4558,
+      8.7373
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/heidelberg/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/heidelberg/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/heidelberg/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/heidelberg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-heidelberg",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

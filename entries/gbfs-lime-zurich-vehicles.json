@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-zurich-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Zurich — Zurich",
+  "provider": "Lime Zurich",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Zurich"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.194Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_zurich"
+  ],
+  "coverage": {
+    "bbox": [
+      47.3122,
+      8.4479,
+      47.4468,
+      8.6118
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_zurich/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_zurich/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_zurich/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_zurich/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_zurich",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

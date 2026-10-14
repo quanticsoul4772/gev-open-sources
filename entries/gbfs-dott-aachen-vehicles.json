@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-aachen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Aachen — Aachen",
+  "provider": "Dott Aachen",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Aachen"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.180Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-aachen"
+  ],
+  "coverage": {
+    "bbox": [
+      50.7252,
+      6.0195,
+      50.8223,
+      6.1877
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/aachen/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/aachen/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/aachen/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/aachen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-aachen",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

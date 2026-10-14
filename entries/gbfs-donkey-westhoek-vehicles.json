@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-westhoek-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Westhoek — Westhoek",
+  "provider": "Donkey Republic Westhoek",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.180Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_westhoek"
+  ],
+  "coverage": {
+    "bbox": [
+      51.0035,
+      2.5654,
+      51.1405,
+      2.7008
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_westhoek/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_westhoek/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_westhoek/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_westhoek/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_westhoek",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

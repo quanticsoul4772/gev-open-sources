@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-bolt-reutlingen-tuebingen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bolt Technology OÜ — Reutlingen",
+  "provider": "Bolt Technology OÜ",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Bolt"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.172Z"
+  },
+  "provenance": [
+    "gbfs-systems:bolt_reutlingen_tuebingen"
+  ],
+  "coverage": {
+    "bbox": [
+      48.457,
+      9.0079,
+      48.5623,
+      9.2562
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_reutlingen_tuebingen/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_reutlingen_tuebingen/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_reutlingen_tuebingen/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_reutlingen_tuebingen/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bolt_reutlingen_tuebingen",
+    "version": "3.0",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

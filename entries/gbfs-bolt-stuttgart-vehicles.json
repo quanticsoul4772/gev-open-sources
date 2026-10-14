@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-bolt-stuttgart-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bolt Technology OÜ — Stuttgart",
+  "provider": "Bolt Technology OÜ",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Bolt"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.172Z"
+  },
+  "provenance": [
+    "gbfs-systems:bolt_stuttgart"
+  ],
+  "coverage": {
+    "bbox": [
+      48.7018,
+      9.0712,
+      48.8612,
+      9.2858
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_stuttgart/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_stuttgart/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_stuttgart/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_stuttgart/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bolt_stuttgart",
+    "version": "3.0",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

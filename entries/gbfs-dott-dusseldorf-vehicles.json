@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-dott-dusseldorf-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Dusseldorf — Dusseldorf",
+  "provider": "Dott Dusseldorf",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Dusseldorf"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.183Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-dusseldorf"
+  ],
+  "coverage": {
+    "bbox": [
+      51.1438,
+      6.7038,
+      51.293,
+      6.8922
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/dusseldorf/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/dusseldorf/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/dusseldorf/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/dusseldorf/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-dusseldorf",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-tg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "nextbike Praha — Czechia",
+  "provider": "nextbike Praha",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike Czech Republic, Libusina 526/101, 779 00 Olomouc"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.206Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_tg"
+  ],
+  "coverage": {
+    "bbox": [
+      49.9632,
+      14.2799,
+      50.1627,
+      14.7038
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tg/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tg/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tg/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_tg",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-quickrent-ch-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "QuickRent — Switzerland",
+  "provider": "QuickRent",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "QuickRent"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.212Z"
+  },
+  "provenance": [
+    "gbfs-systems:quickrent.ch"
+  ],
+  "coverage": {
+    "bbox": [
+      46.3989,
+      6.6781,
+      47.591,
+      9.48
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://quickrent.ch/sbb/api/v1/gbfs/vehicle-status",
+    "related": {
+      "vehicle_types": "https://quickrent.ch/sbb/api/v1/gbfs/vehicle-types",
+      "system_information": "https://quickrent.ch/sbb/api/v1/gbfs/system-information",
+      "gbfs": "https://quickrent.ch/sbb/api/v1/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "quickrent.ch",
+    "version": "3.0",
+    "form_factors": [
+      "car"
+    ]
+  }
+}

@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "awaiting classification"
+        "quote": "obligation other"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T18:51:37.562Z"
+    "at": "2026-10-14T23:36:06.239Z"
   },
   "provenance": [
     "mobilitydatabase:tld-4491-vp"

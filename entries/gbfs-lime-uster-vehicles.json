@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-uster-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Uster — Uster",
+  "provider": "Lime Uster",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Uster"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.194Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_uster"
+  ],
+  "coverage": {
+    "bbox": [
+      47.3088,
+      8.6576,
+      47.3943,
+      8.7674
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_uster/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_uster/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_uster/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_uster/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_uster",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

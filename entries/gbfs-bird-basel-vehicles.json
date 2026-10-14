@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-basel-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Basel — Basel",
+  "provider": "Bird Basel",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Basel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.168Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-basel"
+  ],
+  "coverage": {
+    "bbox": [
+      47.5122,
+      7.538,
+      47.5996,
+      7.6405
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/basel/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/basel/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/basel/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/basel/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-basel",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

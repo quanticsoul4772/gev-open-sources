@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-basel-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Basel — Basel",
+  "provider": "Lime Basel",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Basel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.191Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_basel"
+  ],
+  "coverage": {
+    "bbox": [
+      47.4919,
+      7.5124,
+      47.6097,
+      7.6791
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_basel/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_basel/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_basel/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/lime_basel/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_basel",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

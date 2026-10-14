@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-vancouver-bc-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Vancouver — Vancouver",
+  "provider": "Lime Vancouver",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Vancouver"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.194Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_vancouver_bc"
+  ],
+  "coverage": {
+    "bbox": [
+      49.2085,
+      -123.1845,
+      49.3118,
+      -123.0056
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_vancouver_bc",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

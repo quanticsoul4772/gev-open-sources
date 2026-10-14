@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bolteu-brussels-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bolt Technology OÜ — Brussels",
+  "provider": "Bolt Technology OÜ",
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Technology OÜ"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.173Z"
+  },
+  "provenance": [
+    "gbfs-systems:BoltEU_Brussels"
+  ],
+  "coverage": {
+    "bbox": [
+      50.7633,
+      4.2466,
+      50.9276,
+      4.4812
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bolt.eu/gbfs/3/336/vehicle_status",
+    "related": {
+      "vehicle_types": "https://mds.bolt.eu/gbfs/3/336/vehicle_types",
+      "system_information": "https://mds.bolt.eu/gbfs/3/336/system_information",
+      "gbfs": "https://mds.bolt.eu/gbfs/3/336/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "BoltEU_Brussels",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

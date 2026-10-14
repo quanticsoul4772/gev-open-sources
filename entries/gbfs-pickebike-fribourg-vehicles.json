@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-pickebike-fribourg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "PickeBike Fribourg — Fribourg",
+  "provider": "PickeBike Fribourg",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "PickeBike"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.212Z"
+  },
+  "provenance": [
+    "gbfs-systems:pickebike_fribourg"
+  ],
+  "coverage": {
+    "bbox": [
+      46.4861,
+      6.8117,
+      46.9573,
+      7.1775
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_fribourg/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_fribourg/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_fribourg/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_fribourg/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "pickebike_fribourg",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "moped"
+    ]
+  }
+}

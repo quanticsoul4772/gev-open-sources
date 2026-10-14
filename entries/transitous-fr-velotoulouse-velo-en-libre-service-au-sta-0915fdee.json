@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-velotoulouse-velo-en-libre-service-au-sta-0915fdee",
+  "domain": "bikeshare.stations",
+  "name": "velotoulouse-velo-en-libre-service-au-standard-gbfs",
+  "provider": "velotoulouse-velo-en-libre-service-au-standard-gbfs",
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "velotoulouse-velo-en-libre-service-au-standard-gbfs"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.217Z"
+  },
+  "provenance": [
+    "transitous:fr/velotoulouse-velo-en-libre-service-au-standard-gbfs"
+  ],
+  "coverage": {
+    "bbox": [
+      43.5392,
+      1.0002,
+      43.6675,
+      1.517
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/toulouse/gbfs/v2/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/toulouse/gbfs/v2/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/toulouse/gbfs/v2/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/ca5c6590-57a5-418a-83e6-e8343bfe2be7"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/ODbL-1.0"
+  }
+}

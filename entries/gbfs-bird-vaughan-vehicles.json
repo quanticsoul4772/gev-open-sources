@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-vaughan-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Vaughan — Vaughan",
+  "provider": "Bird Vaughan",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Vaughan"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.171Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-vaughan"
+  ],
+  "coverage": {
+    "bbox": [
+      43.7645,
+      -79.5941,
+      43.8835,
+      -79.4226
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/vaughan/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/vaughan/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/vaughan/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/vaughan/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-vaughan",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

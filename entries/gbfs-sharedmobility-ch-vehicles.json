@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-sharedmobility-ch-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "sharedmobility.ch — Switzerland",
+  "provider": "sharedmobility.ch",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "sharedmobility.ch"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.213Z"
+  },
+  "provenance": [
+    "gbfs-systems:sharedmobility.ch"
+  ],
+  "coverage": {
+    "bbox": [
+      43.6075,
+      -73.5514,
+      47.7382,
+      10.3697
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://www.sharedmobility.ch/free_bike_status.json",
+    "related": {
+      "system_information": "https://www.sharedmobility.ch/system_information.json",
+      "gbfs": "https://www.sharedmobility.ch/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "sharedmobility.ch",
+    "version": "2.0",
+    "form_factors": []
+  }
+}

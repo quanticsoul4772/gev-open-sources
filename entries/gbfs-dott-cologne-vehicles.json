@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-cologne-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Cologne — Cologne",
+  "provider": "Dott Cologne",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Cologne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.182Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-cologne"
+  ],
+  "coverage": {
+    "bbox": [
+      50.8263,
+      6.811,
+      51.0098,
+      7.1265
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/cologne/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/cologne/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/cologne/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/cologne/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-cologne",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

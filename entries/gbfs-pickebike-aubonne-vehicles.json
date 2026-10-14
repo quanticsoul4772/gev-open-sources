@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-pickebike-aubonne-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "PickeBike Aubonne — Aubonne",
+  "provider": "PickeBike Aubonne",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "PickeBike"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.211Z"
+  },
+  "provenance": [
+    "gbfs-systems:pickebike_aubonne"
+  ],
+  "coverage": {
+    "bbox": [
+      46.455,
+      6.3531,
+      46.5406,
+      6.4755
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "pickebike_aubonne",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "moped"
+    ]
+  }
+}

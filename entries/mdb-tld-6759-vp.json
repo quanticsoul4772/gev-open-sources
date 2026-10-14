@@ -4,7 +4,12 @@
   "name": "Keretapi Tanah Melayu Berhad",
   "provider": "Keretapi Tanah Melayu Berhad",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      5.0713,
+      100.2372,
+      6.485,
+      100.5149
+    ],
     "countries": [
       "MY"
     ]

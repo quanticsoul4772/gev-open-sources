@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-zurich-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Zurich — Zurich",
+  "provider": "Bird Zurich",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Zurich"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.171Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-zurich"
+  ],
+  "coverage": {
+    "bbox": [
+      47.3324,
+      8.4633,
+      47.44,
+      8.609
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/zurich/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/zurich/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/zurich/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/zurich/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-zurich",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

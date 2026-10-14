@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-calgary-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Calgary — Calgary",
+  "provider": "Bird Calgary",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Calgary"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T23:36:06.169Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-calgary"
+  ],
+  "coverage": {
+    "bbox": [
+      50.9448,
+      -114.2261,
+      51.1503,
+      -114.0007
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/calgary/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/calgary/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/calgary/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/calgary/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-calgary",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
