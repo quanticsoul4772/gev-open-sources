@@ -36,16 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "language": "de",
-        "text": ""
-      },
-      {
-        "language": "en",
-        "text": ""
-      }
-    ]
+    "attribution": "Donkey Republic Bayern Komplett"
   },
   "licence_decision": {
     "by": "gbfs-v3-default",

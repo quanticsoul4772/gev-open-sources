@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "teilAuto e.V.",
-        "language": "de"
-      }
-    ]
+    "attribution": "teilAuto e.V."
   },
   "licence_decision": {
     "by": "known-licence",

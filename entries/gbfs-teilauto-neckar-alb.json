@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "teilAuto Neckar-Alb eG",
-        "language": "de"
-      }
-    ]
+    "attribution": "teilAuto Neckar-Alb eG"
   },
   "licence_decision": {
     "by": "known-licence",

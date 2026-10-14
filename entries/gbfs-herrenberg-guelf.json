@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Gülf - das Gültsteiner Lastenrad",
-        "language": "de"
-      }
-    ]
+    "attribution": "Gülf - das Gültsteiner Lastenrad"
   },
   "licence_decision": {
     "by": "known-licence",

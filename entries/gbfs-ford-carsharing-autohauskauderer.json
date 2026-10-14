@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Autohaus Kauderer GmbH & Co. KG",
-        "language": "de"
-      }
-    ]
+    "attribution": "Autohaus Kauderer GmbH & Co. KG"
   },
   "licence_decision": {
     "by": "known-licence",

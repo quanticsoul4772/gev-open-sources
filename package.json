@@ -20,5 +20,9 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
     "pbf": "^5.1.2"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
   }
 }

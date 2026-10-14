@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "SCIC Autotrement",
-        "language": "fr"
-      }
-    ]
+    "attribution": "SCIC Autotrement"
   },
   "licence_decision": {
     "by": "known-licence",

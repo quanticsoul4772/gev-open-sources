@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Stadtwerke Wertheim GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "Stadtwerke Wertheim GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

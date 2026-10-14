@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "LIEmobil",
-        "language": "en"
-      }
-    ]
+    "attribution": "LIEmobil"
   },
   "licence_decision": {
     "by": "gbfs-v3-default",

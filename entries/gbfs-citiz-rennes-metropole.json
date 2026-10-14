@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "SPL Citédia Métropole",
-        "language": "fr"
-      }
-    ]
+    "attribution": "SPL Citédia Métropole"
   },
   "licence_decision": {
     "by": "known-licence",

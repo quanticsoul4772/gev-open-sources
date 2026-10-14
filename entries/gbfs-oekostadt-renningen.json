@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Ökostadt Renningen e.V.",
-        "language": "de"
-      }
-    ]
+    "attribution": "Ökostadt Renningen e.V."
   },
   "licence_decision": {
     "by": "known-licence",

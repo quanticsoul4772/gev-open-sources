@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "naturenergie sharing GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "naturenergie sharing GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

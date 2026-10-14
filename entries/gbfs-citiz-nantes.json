@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Citiz Nantes",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Citiz Nantes"
   },
   "licence_decision": {
     "by": "known-licence",
