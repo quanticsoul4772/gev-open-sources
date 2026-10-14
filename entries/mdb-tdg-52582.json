@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/0fbf9dc8-d2db-405d-ade4-fdd04a6f8272",
+    "url": "https://gtfs-rt.infra-hubup.fr/reso/realtime",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.581Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-52582"
+    "mobilitydatabase:tdg-52582",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/0fbf9dc8-d2db-405d-ade4-fdd04a6f8272"
   ]
 }

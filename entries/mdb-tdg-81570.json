@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/e42910ec-336a-48de-86ff-1183f0ffb68d",
+    "url": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=HOPLA&dataFormat=gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.605Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81570"
+    "mobilitydatabase:tdg-81570",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/e42910ec-336a-48de-86ff-1183f0ffb68d"
   ]
 }

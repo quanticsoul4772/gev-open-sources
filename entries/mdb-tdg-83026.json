@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/df0af5aa-7f1d-43b3-aa90-39469f8cc65e",
+    "url": "https://bdx.mecatran.com/utw/ws/gtfsfeed/vehicles/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.624Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83026"
+    "mobilitydatabase:tdg-83026",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/df0af5aa-7f1d-43b3-aa90-39469f8cc65e"
   ]
 }

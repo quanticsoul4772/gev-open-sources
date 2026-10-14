@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/120182b0-e338-4917-b2bb-ee37b60de1ba",
+    "url": "https://app.pysae.com/api/v2/groups/keolis-9cc4/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.584Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-79036"
+    "mobilitydatabase:tdg-79036",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/120182b0-e338-4917-b2bb-ee37b60de1ba"
   ]
 }

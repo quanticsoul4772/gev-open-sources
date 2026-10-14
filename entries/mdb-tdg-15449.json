@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/0e17b681-e017-46e2-a792-b3b6ead2c06c",
+    "url": "https://pysae.com/api/v2/groups/luneo/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.574Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-15449"
+    "mobilitydatabase:tdg-15449",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/0e17b681-e017-46e2-a792-b3b6ead2c06c"
   ]
 }

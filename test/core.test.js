@@ -199,3 +199,18 @@ test('directory: dead entries left out, counts', () => {
   assert.equal(d.entries.length, 1);
   assert.deepEqual(d.counts, { entries: 1, verified: 1, display: 1, usable: 1 });
 });
+
+test('redirects: a cross-domain permalink resolves to its final URL', async () => {
+  const { crossDomainTarget } = await import('../src/harvest/redirects.js');
+  const hops = {
+    'https://www.data.gouv.fr/fr/datasets/r/abc': 'https://zenbus.net/gtfs/rt/x.pb',
+    'https://a.example.org/old': 'https://a.example.org/new',
+  };
+  const fetchImpl = async (url) =>
+    hops[url]
+      ? new Response(null, { status: 302, headers: { location: hops[url] } })
+      : new Response('ok', { status: 200 });
+  assert.equal(await crossDomainTarget('https://www.data.gouv.fr/fr/datasets/r/abc', fetchImpl), 'https://zenbus.net/gtfs/rt/x.pb');
+  assert.equal(await crossDomainTarget('https://a.example.org/old', fetchImpl), null, 'same-domain redirect left to the prober');
+  assert.equal(await crossDomainTarget('https://b.example/feed', fetchImpl), null);
+});

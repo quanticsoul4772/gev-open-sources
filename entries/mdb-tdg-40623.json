@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/7dab24f0-3114-49b9-827d-376d10a4b193",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=agdecapbus68429531",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.580Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-40623"
+    "mobilitydatabase:tdg-40623",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/7dab24f0-3114-49b9-827d-376d10a4b193"
   ]
 }

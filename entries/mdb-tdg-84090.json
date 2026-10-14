@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/3577ce0e-7581-455c-81ec-f50008b7d6c0",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=saint-sulpice-la-pointe",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.654Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84090"
+    "mobilitydatabase:tdg-84090",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/3577ce0e-7581-455c-81ec-f50008b7d6c0"
   ]
 }

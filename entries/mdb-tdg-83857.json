@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/39f7ea92-6ad5-4a02-ad14-4019ce4a8ecb",
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/dunkerque/",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.643Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83857"
+    "mobilitydatabase:tdg-83857",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/39f7ea92-6ad5-4a02-ad14-4019ce4a8ecb"
   ]
 }
