@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6744-vp",
+  "domain": "transit.vehicles",
+  "name": "North Central Regional Transit District",
+  "provider": "North Central Regional Transit District",
+  "coverage": {
+    "bbox": [
+      35.000311,
+      -108.18002,
+      36.978963,
+      -105.209957
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://bluebustracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "North Central Regional Transit District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.762Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6744-vp"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4758-sa-tu-vp",
+  "domain": "transit.vehicles",
+  "name": "Alexandria Transit Company",
+  "provider": "Alexandria Transit Company",
+  "coverage": {
+    "bbox": [
+      38.797661,
+      -77.142937,
+      38.869044,
+      -77.040534
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.prod.dash.obaweb.org/agency/71/tripUpdates",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Alexandria Transit Company"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.716Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4758-sa_tu_vp"
+  ]
+}

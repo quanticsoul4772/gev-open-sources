@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-whitebikes-bratislava",
+  "domain": "bikeshare.stations",
+  "name": "White bikes — Bratislava",
+  "provider": "White bikes",
+  "coverage": {
+    "bbox": [
+      48.097,
+      17.0425,
+      48.2117,
+      17.1735
+    ],
+    "countries": [
+      "SK"
+    ]
+  },
+  "access": {
+    "url": "https://whitebikes.info/gbfs/en/station_status.json",
+    "related": {
+      "station_information": "https://whitebikes.info/gbfs/en/station_information.json",
+      "system_information": "https://whitebikes.info/gbfs/en/system_information.json",
+      "gbfs": "https://whitebikes.info/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "whitebikes_bratislava",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "White bikes"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.290Z"
+  },
+  "provenance": [
+    "gbfs-systems:whitebikes_bratislava"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2707",
+  "domain": "transit.vehicles",
+  "name": "South Metro Area Regional Transit (SMART)",
+  "provider": "South Metro Area Regional Transit (SMART)",
+  "coverage": {
+    "bbox": [
+      44.937789,
+      -123.03502,
+      45.437505,
+      -122.56816
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mysmartbus.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "South Metro Area Regional Transit (SMART)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.449Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2707"
+  ]
+}

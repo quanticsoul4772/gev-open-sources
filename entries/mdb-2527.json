@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2527",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Comox Valley Transit System)",
+  "provider": "BC Transit (Comox Valley Transit System)",
+  "coverage": {
+    "bbox": [
+      49.46441,
+      -125.14771,
+      49.87338,
+      -124.72595
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=45",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Comox Valley Transit System)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.840Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2527"
+  ]
+}

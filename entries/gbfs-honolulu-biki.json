@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-honolulu-biki",
+  "domain": "bikeshare.stations",
+  "name": "Biki — Honolulu, HI",
+  "provider": "Biki",
+  "coverage": {
+    "bbox": [
+      20.4984,
+      -158.7261,
+      22.1154,
+      -156.9905
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://hon.publicbikesystem.net/customer/gbfs/v2/en/station_status.json",
+    "related": {
+      "station_information": "https://hon.publicbikesystem.net/customer/gbfs/v2/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Biki"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.887Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

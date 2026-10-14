@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5581-vp",
+  "domain": "transit.vehicles",
+  "name": "Greater Peoria Mass Transit",
+  "provider": "Greater Peoria Mass Transit",
+  "coverage": {
+    "bbox": [
+      40.538532,
+      -89.694888,
+      40.816821,
+      -89.481697
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://clk.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Greater Peoria Mass Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.738Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5581-vp"
+  ]
+}

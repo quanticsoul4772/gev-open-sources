@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-tosadentraffic-airportbus-vp",
+  "domain": "transit.vehicles",
+  "name": "とさでん交通 空港連絡バス",
+  "provider": "とさでん交通株式会社",
+  "coverage": {
+    "bbox": [
+      33.547681,
+      133.542862,
+      33.56788,
+      133.679814
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosadenTraffic_Airportbus_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "とさでん交通株式会社"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.570Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-TosadenTraffic-Airportbus-vp"
+  ]
+}

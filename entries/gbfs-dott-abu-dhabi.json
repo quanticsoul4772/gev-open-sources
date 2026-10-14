@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-abu-dhabi",
+  "domain": "bikeshare.stations",
+  "name": "Dott Abu Dhabi — Abu Dhabi",
+  "provider": "Dott Abu Dhabi",
+  "coverage": {
+    "bbox": [
+      24.206,
+      54.3169,
+      24.5128,
+      55.781
+    ],
+    "countries": [
+      "AE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/abu-dhabi/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/abu-dhabi/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/abu-dhabi/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/abu-dhabi/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-abu-dhabi",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Abu Dhabi"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.799Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-abu-dhabi"
+  ]
+}

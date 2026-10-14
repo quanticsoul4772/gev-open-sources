@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-joshinhire-alllines-vp",
+  "domain": "transit.vehicles",
+  "name": "上信ハイヤー株式会社",
+  "provider": "上信ハイヤー株式会社",
+  "coverage": {
+    "bbox": [
+      36.25427,
+      138.9845,
+      36.28587,
+      139.124374
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinHire_AllLines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "上信ハイヤー株式会社"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.557Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-JoshinHire-AllLines-vp"
+  ]
+}

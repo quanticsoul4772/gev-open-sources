@@ -1,0 +1,48 @@
+{
+  "id": "bods-england",
+  "domain": "transit.vehicles",
+  "name": "Bus Open Data Service — England",
+  "provider": "Department for Transport",
+  "coverage": {
+    "bbox": [
+      49.86,
+      -6.42,
+      55.82,
+      1.77
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://data.bus-data.dft.gov.uk/avl/download/gtfsrt",
+    "redirectHosts": [
+      "download.bus-data.dft.gov.uk"
+    ],
+    "unzip": "gtfsrt.bin",
+    "headers": {},
+    "min_interval_s": 20
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "OGL-UK-3.0",
+    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Contains Department for Transport Bus Open Data Service data"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.294Z"
+  },
+  "provenance": [
+    "seed:bods"
+  ]
+}

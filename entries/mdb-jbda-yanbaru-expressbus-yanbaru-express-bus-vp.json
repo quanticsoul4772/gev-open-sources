@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-yanbaru-expressbus-yanbaru-express-bus-vp",
+  "domain": "transit.vehicles",
+  "name": "やんばる急行バス",
+  "provider": "合同会社やんばる急行バス",
+  "coverage": {
+    "bbox": [
+      26.206395,
+      127.651128,
+      26.710303,
+      128.024507
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.yanbaru-bus-navi.com/gtfs-rt/yanbaru/vehicle_position.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "合同会社やんばる急行バス"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.553Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-yanbaru-expressbus-yanbaru-express-bus-vp"
+  ]
+}

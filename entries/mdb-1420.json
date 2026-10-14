@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1420",
+  "domain": "transit.vehicles",
+  "name": "Calgary Transit",
+  "provider": "Calgary Transit",
+  "coverage": {
+    "bbox": [
+      50.85307,
+      -114.271659,
+      51.190259,
+      -113.821508
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://transitdata.calgary.ca/ctransit/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://data.calgary.ca/stories/s/u45n-7awa/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Calgary Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.804Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1420"
+  ]
+}

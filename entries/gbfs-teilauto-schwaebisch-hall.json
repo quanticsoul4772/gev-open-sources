@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-teilauto-schwaebisch-hall",
+  "domain": "bikeshare.stations",
+  "name": "TeilAuto Schwäbisch Hall — Schwäbisch Hall",
+  "provider": "TeilAuto Schwäbisch Hall",
+  "coverage": {
+    "bbox": [
+      49.0554,
+      9.68,
+      49.1168,
+      9.771
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_schwaebisch_hall/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_schwaebisch_hall/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_schwaebisch_hall/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_schwaebisch_hall/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "teilauto_schwaebisch_hall",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "teilAuto e.V.",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.246Z"
+  },
+  "provenance": [
+    "gbfs-systems:teilauto_schwaebisch_hall"
+  ]
+}

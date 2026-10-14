@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1601",
+  "domain": "transit.vehicles",
+  "name": "Metropolitan Atlanta Rapid Transit Authority (MARTA)",
+  "provider": "Metropolitan Atlanta Rapid Transit Authority (MARTA)",
+  "coverage": {
+    "bbox": [
+      33.432372,
+      -84.669803,
+      34.105573,
+      -84.083398
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt.itsmarta.com/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Metropolitan Atlanta Rapid Transit Authority (MARTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.330Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1601"
+  ]
+}

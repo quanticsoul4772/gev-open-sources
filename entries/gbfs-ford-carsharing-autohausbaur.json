@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-ford-carsharing-autohausbaur",
+  "domain": "bikeshare.stations",
+  "name": "Ford Carsharing (Autohaus Baur) — Germany",
+  "provider": "Ford Carsharing (Autohaus Baur)",
+  "coverage": {
+    "bbox": [
+      48.6534,
+      9.6007,
+      49.0869,
+      10.1585
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohausbaur/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohausbaur/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohausbaur/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohausbaur/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "ford_carsharing_autohausbaur",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Autohaus Baur GmbH",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.870Z"
+  },
+  "provenance": [
+    "gbfs-systems:ford_carsharing_autohausbaur"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-nottingham",
+  "domain": "bikeshare.stations",
+  "name": "Dott Nottingham — Nottingham",
+  "provider": "Dott Nottingham",
+  "coverage": {
+    "bbox": [
+      52.8972,
+      -1.2408,
+      53.0157,
+      -1.095
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/nottingham/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/nottingham/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/nottingham/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/nottingham/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-nottingham",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Nottingham"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.832Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-nottingham"
+  ]
+}

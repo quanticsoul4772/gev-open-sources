@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-sf-bay-wheels",
+  "domain": "bikeshare.stations",
+  "name": "Bay Wheels — San Francisco, CA",
+  "provider": "Bay Wheels",
+  "coverage": {
+    "bbox": [
+      36.7868,
+      -123.6695,
+      38.763,
+      -121.1693
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/bay/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.lyft.com/gbfs/2.3/bay/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bay Wheels"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.232Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

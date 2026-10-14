@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-stj-rdal",
+  "domain": "bikeshare.stations",
+  "name": "Dott Stjørdal — Stjørdal",
+  "provider": "Dott Stjørdal",
+  "coverage": {
+    "bbox": [
+      63.4359,
+      10.8629,
+      63.4918,
+      10.983
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/stjørdal/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-stjørdal",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Stjørdal"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.850Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-stjørdal"
+  ]
+}

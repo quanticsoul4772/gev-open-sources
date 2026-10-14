@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-voi-antwerp",
+  "domain": "bikeshare.stations",
+  "name": "VOI Antwerp — Antwerp",
+  "provider": "VOI Antwerp",
+  "coverage": {
+    "bbox": [
+      50.7756,
+      4.259,
+      51.3502,
+      4.4827
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/station_status.json",
+    "related": {
+      "station_information": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/station_information.json",
+      "system_information": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/system_information.json",
+      "gbfs": "https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "voi_Antwerp",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "VOI Antwerp"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.279Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_Antwerp"
+  ]
+}

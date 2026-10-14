@@ -1,0 +1,52 @@
+{
+  "id": "capmetro-austin",
+  "domain": "transit.vehicles",
+  "name": "CapMetro",
+  "provider": "Capital Metropolitan Transportation Authority",
+  "coverage": {
+    "bbox": [
+      29.7282,
+      -98.3672,
+      30.8062,
+      -97.119
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://data.texas.gov/download/eiei-9rpf/application%2Foctet-stream",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.capmetro.org/developertools",
+    "display": false,
+    "commercial": null,
+    "attribution": "Capital Metropolitan Transportation Authority — data.texas.gov",
+    "obligations": [
+      "governing_law",
+      "liability_limitation",
+      "no_trademark_use",
+      "provider_may_revoke",
+      "provider_owns_data",
+      "warranty_disclaimer"
+    ]
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "runs disagree on blocking obligations"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.568Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

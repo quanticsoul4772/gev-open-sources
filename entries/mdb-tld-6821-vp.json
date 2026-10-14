@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6821-vp",
+  "domain": "transit.vehicles",
+  "name": "GoCary",
+  "provider": "GoCary",
+  "coverage": {
+    "bbox": [
+      35.714045,
+      -78.896151,
+      35.83141,
+      -78.705152
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.gocarylive.org/gtfs/Realtime/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "GoCary"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.769Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6821-vp"
+  ]
+}

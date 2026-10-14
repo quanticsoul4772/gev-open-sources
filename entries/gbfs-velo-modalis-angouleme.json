@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-velo-modalis-angouleme",
+  "domain": "bikeshare.stations",
+  "name": "Vélo Modalis Angoulême — Angoulême",
+  "provider": "Vélo Modalis Angoulême",
+  "coverage": {
+    "bbox": [
+      45.512,
+      0.0114,
+      45.7851,
+      0.3561
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/angouleme/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/angouleme/en/station_information.json",
+      "system_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/angouleme/en/system_information.json",
+      "gbfs": "https://gbfs.partners.fifteen.eu/gbfs/2.2/angouleme/en/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "velo_modalis_angouleme",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "Fifteen"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.262Z"
+  },
+  "provenance": [
+    "gbfs-systems:velo_modalis_angouleme"
+  ]
+}

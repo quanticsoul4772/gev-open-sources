@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-zaragoza",
+  "domain": "bikeshare.stations",
+  "name": "Bizi — Zaragoza",
+  "provider": "Bizi",
+  "coverage": {
+    "bbox": [
+      41.6082,
+      -0.9623,
+      41.688,
+      -0.8231
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://zaragoza.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://zaragoza.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://zaragoza.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://zaragoza.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "zaragoza",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Bizi"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.291Z"
+  },
+  "provenance": [
+    "gbfs-systems:zaragoza"
+  ]
+}

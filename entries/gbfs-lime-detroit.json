@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-detroit",
+  "domain": "bikeshare.stations",
+  "name": "Lime Detroit — Detroit, MI",
+  "provider": "Lime Detroit",
+  "coverage": {
+    "bbox": [
+      42.3642,
+      -83.1381,
+      42.3642,
+      -83.1381
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/detroit/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/detroit/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/detroit/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/detroit/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_detroit",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Detroit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.916Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_detroit"
+  ]
+}

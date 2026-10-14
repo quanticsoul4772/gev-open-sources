@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2645",
+  "domain": "transit.vehicles",
+  "name": "Greater Portland Metro Bus",
+  "provider": "Greater Portland Metro Bus",
+  "coverage": {
+    "bbox": [
+      43.5872711,
+      -70.4481677,
+      43.913782,
+      -69.8139105
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrt.gptd.cadavl.com/ProfilGtfsRt2_0RSProducer-GPTD/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.gpmetro.org/about-us/projects-initiatives/developers/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Greater Portland Metro Bus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.736Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2645"
+  ]
+}

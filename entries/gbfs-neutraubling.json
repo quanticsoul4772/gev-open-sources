@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-neutraubling",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Neutraubling — Neutraubling",
+  "provider": "Donkey Neutraubling",
+  "coverage": {
+    "bbox": [
+      48.9821,
+      12.1945,
+      48.9954,
+      12.2095
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/Neutraubling/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Neutraubling/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Neutraubling/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/Neutraubling/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "Neutraubling",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "de",
+        "text": ""
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.993Z"
+  },
+  "provenance": [
+    "gbfs-systems:Neutraubling"
+  ]
+}

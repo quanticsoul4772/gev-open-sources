@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1797",
+  "domain": "transit.vehicles",
+  "name": "Go-Ahead",
+  "provider": "Go-Ahead",
+  "coverage": {
+    "bbox": [
+      47.263266,
+      4.51278,
+      78.246751,
+      31.11253
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/realtime/v1/gtfs-rt/vehicle-positions?datasource=GOA",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "NLOD-2.0",
+    "url": "https://data.norge.no/nlod/en/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Go-Ahead"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://data.norge.no/nlod/en/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.365Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1797"
+  ]
+}

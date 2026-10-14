@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-donkey-bamberg",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Bamberg — Bamberg",
+  "provider": "Donkey Republic Bamberg",
+  "coverage": {
+    "bbox": [
+      49.8926,
+      10.8866,
+      49.9029,
+      10.9133
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/Bamberg/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Bamberg/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Bamberg/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/Bamberg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_bamberg",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "de",
+        "text": ""
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.757Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_bamberg"
+  ]
+}

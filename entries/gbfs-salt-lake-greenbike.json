@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-salt-lake-greenbike",
+  "domain": "bikeshare.stations",
+  "name": "GREENbike — Salt Lake City, UT",
+  "provider": "GREENbike",
+  "coverage": {
+    "bbox": [
+      39.8625,
+      -113.077,
+      41.6591,
+      -110.705
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_greenbikeslc/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_greenbikeslc/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "GREENbike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.224Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

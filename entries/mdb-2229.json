@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2229",
+  "domain": "transit.vehicles",
+  "name": "Foothill Transit",
+  "provider": "Foothill Transit",
+  "coverage": {
+    "bbox": [
+      33.91615,
+      -118.267203,
+      34.151292,
+      -117.690366
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://foothill_3rdparty.rideralerts.com/myStop/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.foothilltransit.org/about/developer-resources/developer-license-agreement/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Foothill Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.706Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2229"
+  ]
+}

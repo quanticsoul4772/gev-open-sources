@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2485",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Revelstoke)",
+  "provider": "BC Transit (Revelstoke)",
+  "coverage": {
+    "bbox": [
+      50.9547,
+      -118.23056,
+      51.02136,
+      -118.16085
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=36",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Revelstoke)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.831Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2485"
+  ]
+}

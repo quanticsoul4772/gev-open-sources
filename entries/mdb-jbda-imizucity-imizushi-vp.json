@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-imizucity-imizushi-vp",
+  "domain": "transit.vehicles",
+  "name": "きときとバス",
+  "provider": "射水市",
+  "coverage": {
+    "bbox": [
+      36.665106,
+      137.026994,
+      36.7824413333334,
+      137.173087
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/imizu-city/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "射水市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.505Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-imizucity-imizushi-vp"
+  ]
+}

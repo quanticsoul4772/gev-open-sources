@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bergen-city-bike",
+  "domain": "bikeshare.stations",
+  "name": "Bergen City Bike — Bergen",
+  "provider": "Bergen City Bike",
+  "coverage": {
+    "bbox": [
+      60.3578,
+      5.2865,
+      60.4129,
+      5.3612
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.urbansharing.com/bergenbysykkel.no/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.urbansharing.com/bergenbysykkel.no/station_information.json",
+      "system_information": "https://gbfs.urbansharing.com/bergenbysykkel.no/system_information.json",
+      "gbfs": "https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bergen-city-bike",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bergen City Bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.618Z"
+  },
+  "provenance": [
+    "gbfs-systems:bergen-city-bike"
+  ]
+}

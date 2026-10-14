@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2835",
+  "domain": "transit.vehicles",
+  "name": "Renfe commuter trains (Cercanias)",
+  "provider": "Renfe commuter trains (Cercanias)",
+  "coverage": {
+    "bbox": [
+      36.4087561,
+      -8.2310664,
+      43.735649,
+      3.16314935
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrt.renfe.com/vehicle_positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://data.renfe.com/dataset/ubicacion-vehiculos",
+    "display": false,
+    "commercial": null,
+    "attribution": "Renfe commuter trains (Cercanias)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.738Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2835"
+  ]
+}

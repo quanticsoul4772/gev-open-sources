@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-nagoyahousingcityplanningbureau-nagoyasrt-alllines-vp",
+  "domain": "transit.vehicles",
+  "name": "名古屋市　SRT",
+  "provider": "名古屋市住宅都市局",
+  "coverage": {
+    "bbox": [
+      35.16786,
+      136.88011,
+      35.181405,
+      136.90878
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_NagoyaHousingCityPlanningBureau_NagoyaSRT_AllLines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "名古屋市住宅都市局"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.564Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-NagoyaHousingCityPlanningBureau-NagoyaSRT_AllLines-vp"
+  ]
+}

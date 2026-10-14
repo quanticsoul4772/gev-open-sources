@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-36515",
+  "domain": "transit.vehicles",
+  "name": "Réseau interurbain Cars Jaunes",
+  "provider": "Région Réunion",
+  "coverage": {
+    "bbox": [
+      -21.38037,
+      55.218722,
+      -20.87433,
+      55.826848
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/c0a17be1-e89a-48a3-aca1-d8eb8e89a55e",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Région Réunion"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.577Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-36515"
+  ]
+}

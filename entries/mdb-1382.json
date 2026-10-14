@@ -1,0 +1,47 @@
+{
+  "id": "mdb-1382",
+  "domain": "transit.vehicles",
+  "name": "Barrie Transit",
+  "provider": "Barrie Transit",
+  "coverage": {
+    "bbox": [
+      44.3218044,
+      -79.73602517,
+      44.42020676,
+      -79.611327
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.barrie.ca/services-payments/transportation-parking/barrie-transit/barrie-gtfs",
+    "display": false,
+    "commercial": null,
+    "attribution": "Barrie Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.302Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1382",
+    "licence-borrowed:mdb-3"
+  ]
+}

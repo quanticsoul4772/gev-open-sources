@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-owariasahicity-communitybus-vp",
+  "domain": "transit.vehicles",
+  "name": "尾張旭市あさぴー号",
+  "provider": "尾張旭市",
+  "coverage": {
+    "bbox": [
+      35.191452,
+      137.005739,
+      35.232911,
+      137.063511
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/owariasahi-city/asapygo/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "尾張旭市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.530Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-owariasahicity-communitybus-vp"
+  ]
+}

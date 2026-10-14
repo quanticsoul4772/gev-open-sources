@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-herrenberg-alf",
+  "domain": "bikeshare.stations",
+  "name": "ALF - das Affstätter Lastenfahrrad — Herrenberg",
+  "provider": "ALF - das Affstätter Lastenfahrrad",
+  "coverage": {
+    "bbox": [
+      48.6072,
+      8.859,
+      48.6072,
+      8.859
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_alf/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_alf/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_alf/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_alf/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "herrenberg_alf",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "ALF - das Affstätter Lastenfahrrad",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.882Z"
+  },
+  "provenance": [
+    "gbfs-systems:herrenberg_alf"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-seattle",
+  "domain": "bikeshare.stations",
+  "name": "Lime Seattle — Seattle, WA",
+  "provider": "Lime Seattle",
+  "coverage": {
+    "bbox": [
+      47.6137,
+      -122.3395,
+      47.6137,
+      -122.3395
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/seattle/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/seattle/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/seattle/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_seattle",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Seattle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.941Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_seattle"
+  ]
+}

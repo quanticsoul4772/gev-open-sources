@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-versailles-grand-parc",
+  "domain": "bikeshare.stations",
+  "name": "Dott Versailles Grand-Parc — Versailles",
+  "provider": "Dott Versailles Grand-Parc",
+  "coverage": {
+    "bbox": [
+      48.8147,
+      2.1073,
+      48.8706,
+      2.155
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/versailles-grand-parc/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/versailles-grand-parc/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/versailles-grand-parc/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/versailles-grand-parc/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-versailles-grand-parc",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Versailles Grand-Parc"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.853Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-versailles-grand-parc"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81126",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Corolis",
+  "provider": "Oise Mobilité - Syndicat mixte des transports collectifs de l'Oise",
+  "coverage": {
+    "bbox": [
+      49.408366,
+      2.049785,
+      49.464347,
+      2.11782
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/5b42006f-d97b-4f58-9edd-82fd9022efff",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Oise Mobilité - Syndicat mixte des transports collectifs de l'Oise"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.596Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81126"
+  ]
+}

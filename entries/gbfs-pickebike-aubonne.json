@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-pickebike-aubonne",
+  "domain": "bikeshare.stations",
+  "name": "PickeBike Aubonne — Aubonne",
+  "provider": "PickeBike Aubonne",
+  "coverage": {
+    "bbox": [
+      46.475,
+      6.3663,
+      46.5199,
+      6.4555
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "pickebike_aubonne",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "PickeBike",
+        "language": "en"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.196Z"
+  },
+  "provenance": [
+    "gbfs-systems:pickebike_aubonne"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bolteu-austin",
+  "domain": "bikeshare.stations",
+  "name": "Bolt Technology OÜ — Austin, TX",
+  "provider": "Bolt Technology OÜ",
+  "coverage": {
+    "bbox": [
+      30.2632,
+      -97.7588,
+      30.2632,
+      -97.7588
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bolt.eu/gbfs/3/339/station_status",
+    "related": {
+      "station_information": "https://mds.bolt.eu/gbfs/3/339/station_information",
+      "system_information": "https://mds.bolt.eu/gbfs/3/339/system_information",
+      "gbfs": "https://mds.bolt.eu/gbfs/3/339/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "BoltEU_Austin",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Technology OÜ"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.451Z"
+  },
+  "provenance": [
+    "gbfs-systems:BoltEU_Austin"
+  ]
+}

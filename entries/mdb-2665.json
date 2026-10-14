@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2665",
+  "domain": "transit.vehicles",
+  "name": "Transit Authority of River City (TARC)",
+  "provider": "Transit Authority of River City (TARC)",
+  "coverage": {
+    "bbox": [
+      38.0959283799,
+      -85.875395,
+      38.346096,
+      -85.542623
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://tarc.rideralerts.com/InfoPoint/GTFS-realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Transit Authority of River City (TARC)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.443Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2665"
+  ]
+}

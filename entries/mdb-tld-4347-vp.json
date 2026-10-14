@@ -1,0 +1,47 @@
+{
+  "id": "mdb-tld-4347-vp",
+  "domain": "transit.vehicles",
+  "name": "Fairfax Connector",
+  "provider": "Fairfax Connector",
+  "coverage": {
+    "bbox": [
+      38.687795,
+      -77.465336,
+      39.027003,
+      -77.02373
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.fairfaxcounty.gov/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.fairfaxcounty.gov/connector/bustracker/data",
+    "display": false,
+    "commercial": null,
+    "attribution": "Fairfax Connector"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.681Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4347-vp",
+    "licence-borrowed:mdb-483"
+  ]
+}

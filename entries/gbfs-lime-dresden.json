@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-dresden",
+  "domain": "bikeshare.stations",
+  "name": "Lime Dresden — Dresden",
+  "provider": "Lime Dresden",
+  "coverage": {
+    "bbox": [
+      51.0443,
+      13.7715,
+      51.0443,
+      13.7715
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/dresden/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/dresden/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/dresden/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/dresden/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_dresden",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Dresden"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.917Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_dresden"
+  ]
+}

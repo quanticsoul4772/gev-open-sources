@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-donkey-store-heddinge",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Store Heddinge — Store Heddinge",
+  "provider": "Donkey Republic Store Heddinge",
+  "coverage": {
+    "bbox": [
+      55.2794,
+      12.29,
+      55.3972,
+      12.4497
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_store_heddinge/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_store_heddinge/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_store_heddinge/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_store_heddinge/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_store_heddinge",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "Donkey Republic"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.792Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_store_heddinge"
+  ]
+}

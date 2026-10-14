@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2578",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (West Coast)",
+  "provider": "BC Transit (West Coast)",
+  "coverage": {
+    "bbox": [
+      48.938,
+      -125.90901,
+      49.15361,
+      -125.52496
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=51",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (West Coast)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.851Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2578"
+  ]
+}

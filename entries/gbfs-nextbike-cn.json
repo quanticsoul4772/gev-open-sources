@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-cn",
+  "domain": "bikeshare.stations",
+  "name": "Nomago Bikes - KOLESCE — Slovenia",
+  "provider": "Nomago Bikes - KOLESCE",
+  "coverage": {
+    "bbox": [
+      46.006,
+      15.0406,
+      46.3751,
+      15.4799
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_cn",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Nomago d.o.o., Vošnjakova 3, 1000 Ljubljana, Slovenia"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.032Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_cn"
+  ]
+}

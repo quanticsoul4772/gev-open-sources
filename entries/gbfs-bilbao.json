@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bilbao",
+  "domain": "bikeshare.stations",
+  "name": "Bilbao Bizi — Bilbao",
+  "provider": "Bilbao Bizi",
+  "coverage": {
+    "bbox": [
+      43.2404,
+      -2.974,
+      43.2844,
+      -2.8993
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://bilbao.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://bilbao.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://bilbao.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://bilbao.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bilbao",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Bilbao Bizi"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.662Z"
+  },
+  "provenance": [
+    "gbfs-systems:bilbao"
+  ]
+}

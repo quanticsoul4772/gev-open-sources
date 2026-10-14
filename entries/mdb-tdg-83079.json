@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83079",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Envia",
+  "provider": "ENVIA",
+  "coverage": {
+    "bbox": [
+      43.351049,
+      4.365837,
+      43.865587,
+      4.824023
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/8e45727d-487f-4a14-823b-d906d6ebaa43",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "ENVIA"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.625Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83079"
+  ]
+}

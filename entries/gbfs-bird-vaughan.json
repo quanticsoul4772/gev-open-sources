@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-vaughan",
+  "domain": "bikeshare.stations",
+  "name": "Bird Vaughan — Vaughan",
+  "provider": "Bird Vaughan",
+  "coverage": {
+    "bbox": [
+      43.7797,
+      -79.59,
+      43.8835,
+      -79.4226
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/vaughan/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/vaughan/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/vaughan/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/vaughan/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-vaughan",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Vaughan"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.683Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-vaughan"
+  ]
+}

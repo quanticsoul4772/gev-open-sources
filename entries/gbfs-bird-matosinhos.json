@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-matosinhos",
+  "domain": "bikeshare.stations",
+  "name": "Bird Matosinhos — Matosinhos",
+  "provider": "Bird Matosinhos",
+  "coverage": {
+    "bbox": [
+      41.173,
+      -8.7266,
+      41.2673,
+      -8.5982
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/matosinhos/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/matosinhos/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/matosinhos/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/matosinhos/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-matosinhos",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Matosinhos"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.675Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-matosinhos"
+  ]
+}

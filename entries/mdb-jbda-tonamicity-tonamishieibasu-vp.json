@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-tonamicity-tonamishieibasu-vp",
+  "domain": "transit.vehicles",
+  "name": "砺波市営バス",
+  "provider": "砺波市",
+  "coverage": {
+    "bbox": [
+      36.5666781483197,
+      136.916918453872,
+      36.6751600776044,
+      137.055446504876
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/tonami-city/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "砺波市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.538Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-tonamicity-tonamishieibasu-vp"
+  ]
+}

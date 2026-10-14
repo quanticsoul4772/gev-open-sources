@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3489",
+  "domain": "transit.vehicles",
+  "name": "LMT Metrobus Realtime (Vehicle Positions)",
+  "provider": "Lanka Metro Transit",
+  "coverage": {
+    "bbox": [
+      6.7147539,
+      79.8443694,
+      7.100574,
+      79.99401627
+    ],
+    "countries": [
+      "LK"
+    ]
+  },
+  "access": {
+    "url": "https://api.transit.seyone.dev/api/v1/realtime/vehicle-positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Lanka Metro Transit"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.499Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3489"
+  ]
+}

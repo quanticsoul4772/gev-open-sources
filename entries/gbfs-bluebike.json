@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bluebike",
+  "domain": "bikeshare.stations",
+  "name": "Blue-bike — Antwerp",
+  "provider": "Blue-bike",
+  "coverage": {
+    "bbox": [
+      49.92,
+      2.6016,
+      51.4632,
+      5.7885
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://api.delijn.be/gbfs/station_status.json",
+    "related": {
+      "station_information": "https://api.delijn.be/gbfs/station_information.json",
+      "system_information": "https://api.delijn.be/gbfs/system_information.json",
+      "gbfs": "https://api.delijn.be/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bluebike",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Blue-bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.686Z"
+  },
+  "provenance": [
+    "gbfs-systems:bluebike"
+  ]
+}

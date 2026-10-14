@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3074",
+  "domain": "transit.vehicles",
+  "name": "Everett Transit",
+  "provider": "Everett Transit",
+  "coverage": {
+    "bbox": [
+      47.87995148,
+      -122.3063812,
+      48.009836,
+      -122.184499
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://everett.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "Everett Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.742Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3074"
+  ]
+}

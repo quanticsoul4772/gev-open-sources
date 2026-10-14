@@ -1,0 +1,47 @@
+{
+  "id": "mdb-2698",
+  "domain": "transit.vehicles",
+  "name": "Bilbobus",
+  "provider": "Bilbobus",
+  "coverage": {
+    "bbox": [
+      43.22639641048432,
+      -2.974966286077684,
+      43.28960714718568,
+      -2.883058318396478
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://www.euskadi.eus/gtfs-realtime-posicion-autobuses-bilbobus/web01-a2inform/eu/#:~:text=OCTET%2DSTREAM%20%2D%20OCTET%2DSTREAM",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://nap.transportes.gob.es/licencia-datos",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bilbobus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.446Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2698",
+    "licence-borrowed:mdb-2681"
+  ]
+}

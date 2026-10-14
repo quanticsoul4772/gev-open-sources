@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-ckl",
+  "domain": "bikeshare.stations",
+  "name": "Cykl — Wageningen",
+  "provider": "Cykl",
+  "coverage": {
+    "bbox": [
+      51.9665,
+      5.649,
+      52.0271,
+      5.6745
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://www.cykl.nl/gbfs/en/station_status.json",
+    "related": {
+      "station_information": "https://www.cykl.nl/gbfs/en/station_information.json",
+      "system_information": "https://www.cykl.nl/gbfs/en/system_information.json",
+      "gbfs": "https://www.cykl.nl/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "CKL",
+    "version": "2.1"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cykl"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.738Z"
+  },
+  "provenance": [
+    "gbfs-systems:CKL"
+  ]
+}

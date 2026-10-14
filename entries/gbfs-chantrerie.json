@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-chantrerie",
+  "domain": "bikeshare.stations",
+  "name": "Naolib Micromob' — Chantrerie",
+  "provider": "Naolib Micromob'",
+  "coverage": {
+    "bbox": [
+      47.2163,
+      -1.6506,
+      47.2937,
+      -1.5016
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/chantrerie/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v3.0.ecovelo.mobi/chantrerie/station_information.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/chantrerie/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/chantrerie/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "chantrerie",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Naolib Micromob'"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.716Z"
+  },
+  "provenance": [
+    "gbfs-systems:chantrerie"
+  ]
+}

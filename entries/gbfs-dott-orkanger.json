@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-orkanger",
+  "domain": "bikeshare.stations",
+  "name": "Dott Orkanger — Orkanger",
+  "provider": "Dott Orkanger",
+  "coverage": {
+    "bbox": [
+      63.2961,
+      9.8393,
+      63.3056,
+      9.8525
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/orkanger/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/orkanger/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/orkanger/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/orkanger/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-orkanger",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Orkanger"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.834Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-orkanger"
+  ]
+}

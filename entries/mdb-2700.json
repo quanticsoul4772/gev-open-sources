@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2700",
+  "domain": "transit.vehicles",
+  "name": "Capital District Transportation Authority",
+  "provider": "Capital District Transportation Authority",
+  "coverage": {
+    "bbox": [
+      42.467161,
+      -74.219321,
+      43.558901,
+      -73.451967
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs.cdta.org:8080/gtfsrealtime/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Capital District Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.448Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2700"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-portland-biketown",
+  "domain": "bikeshare.stations",
+  "name": "BIKETOWN — Portland, OR",
+  "provider": "BIKETOWN",
+  "coverage": {
+    "bbox": [
+      44.6618,
+      -123.8963,
+      46.3686,
+      -121.4605
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.biketownpdx.com/gbfs/2.3/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.biketownpdx.com/gbfs/2.3/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BIKETOWN"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.212Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6882-vp",
+  "domain": "transit.vehicles",
+  "name": "Bloomington Transit",
+  "provider": "Bloomington Transit",
+  "coverage": {
+    "bbox": [
+      39.121337890625,
+      -86.59918212890625,
+      39.20846939086914,
+      -86.47242736816406
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/bloomingtontransit.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bloomington Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.770Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6882-vp"
+  ]
+}

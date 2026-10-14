@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2454",
+  "domain": "transit.vehicles",
+  "name": "Valley Regional Transit",
+  "provider": "Valley Regional Transit",
+  "coverage": {
+    "bbox": [
+      43.56417083740234,
+      -116.6757583618164,
+      43.678070068359375,
+      -116.11832427978516
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/valleyregionaltransit.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.valleyregionaltransit.org/about-us/resources/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Valley Regional Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.712Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2454"
+  ]
+}

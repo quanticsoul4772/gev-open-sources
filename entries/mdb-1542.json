@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1542",
+  "domain": "transit.vehicles",
+  "name": "King County Metro",
+  "provider": "King County Metro",
+  "coverage": {
+    "bbox": [
+      47.189117,
+      -122.506622,
+      47.865589,
+      -121.785835
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/kcm-alerts-realtime-prod/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://kingcounty.gov/depts/transportation/metro/travel-options/bus/app-center/developer-resources/terms-of-use.aspx",
+    "display": false,
+    "commercial": null,
+    "attribution": "King County Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.620Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1542"
+  ]
+}

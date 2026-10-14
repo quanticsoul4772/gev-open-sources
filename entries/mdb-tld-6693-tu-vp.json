@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-6693-tu-vp",
+  "domain": "transit.vehicles",
+  "name": "MRC du Haut-Saint-Laurent",
+  "provider": "MRC du Haut-Saint-Laurent",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt.infra-hubup.fr/mrchsl/realtime",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "MRC du Haut-Saint-Laurent"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.757Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6693-tu_vp"
+  ]
+}

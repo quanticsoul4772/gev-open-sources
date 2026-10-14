@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-frankfurt",
+  "domain": "bikeshare.stations",
+  "name": "Lime Frankfurt — Frankfurt",
+  "provider": "Lime Frankfurt",
+  "coverage": {
+    "bbox": [
+      50.1338,
+      8.6945,
+      50.1338,
+      8.6945
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/frankfurt/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/frankfurt/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/frankfurt/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/frankfurt/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_frankfurt",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Frankfurt"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.920Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_frankfurt"
+  ]
+}

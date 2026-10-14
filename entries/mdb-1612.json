@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1612",
+  "domain": "transit.vehicles",
+  "name": "MiWay",
+  "provider": "MiWay",
+  "coverage": {
+    "bbox": [
+      43.4693,
+      -79.797798,
+      43.838078,
+      -79.512877
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "http://www.mississauga.ca/portal/miway/developerdownload",
+    "display": false,
+    "commercial": null,
+    "attribution": "MiWay"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.8"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.621Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1612"
+  ]
+}

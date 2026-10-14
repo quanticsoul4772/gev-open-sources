@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2218",
+  "domain": "transit.vehicles",
+  "name": "Montebello Bus Lines",
+  "provider": "Montebello Bus Lines",
+  "coverage": {
+    "bbox": [
+      33.891737,
+      -118.266356,
+      34.11098,
+      -117.994749
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mbl.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Montebello Bus Lines"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.385Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2218"
+  ]
+}

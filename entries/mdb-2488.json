@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2488",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Salt Spring Island)",
+  "provider": "BC Transit (Salt Spring Island)",
+  "coverage": {
+    "bbox": [
+      48.76902,
+      -123.57247,
+      48.91476,
+      -123.44576
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=39",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Salt Spring Island)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.832Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2488"
+  ]
+}

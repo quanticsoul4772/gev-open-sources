@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-oslobysykkel",
+  "domain": "bikeshare.stations",
+  "name": "Oslo Bysykkel — Oslo",
+  "provider": "Oslo Bysykkel",
+  "coverage": {
+    "bbox": [
+      59.8984,
+      10.6511,
+      59.9534,
+      10.8143
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.urbansharing.com/oslobysykkel.no/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.urbansharing.com/oslobysykkel.no/station_information.json",
+      "system_information": "https://gbfs.urbansharing.com/oslobysykkel.no/system_information.json",
+      "gbfs": "https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "oslobysykkel",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Oslo Bysykkel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.189Z"
+  },
+  "provenance": [
+    "gbfs-systems:oslobysykkel"
+  ]
+}

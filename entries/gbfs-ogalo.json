@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-ogalo",
+  "domain": "bikeshare.stations",
+  "name": "Ogalo Cyclette — Saumur",
+  "provider": "Ogalo Cyclette",
+  "coverage": {
+    "bbox": [
+      47.2377,
+      -0.1001,
+      47.2782,
+      -0.0227
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/ogalo/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v3.0.ecovelo.mobi/ogalo/station_information.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/ogalo/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/ogalo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "ogalo",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Ogalo Cyclette"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.186Z"
+  },
+  "provenance": [
+    "gbfs-systems:ogalo"
+  ]
+}

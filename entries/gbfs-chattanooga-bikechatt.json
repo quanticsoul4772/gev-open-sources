@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-chattanooga-bikechatt",
+  "domain": "bikeshare.stations",
+  "name": "Bike Chattanooga — Chattanooga, TN",
+  "provider": "Bike Chattanooga",
+  "coverage": {
+    "bbox": [
+      34.2371,
+      -86.2972,
+      35.8541,
+      -84.3222
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://chat.publicbikesystem.net/customer/gbfs/v2/en/station_status.json",
+    "related": {
+      "station_information": "https://chat.publicbikesystem.net/customer/gbfs/v2/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bike Chattanooga"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.717Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

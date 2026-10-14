@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-greater-manchester",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - Greater Manchester — Manchester",
+  "provider": "Beryl - Greater Manchester",
+  "coverage": {
+    "bbox": [
+      53.4382,
+      -2.32,
+      53.5019,
+      -2.1846
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Greater_Manchester/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Greater_Manchester/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Greater_Manchester/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Greater_Manchester/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_greater_manchester",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.504Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_greater_manchester"
+  ]
+}

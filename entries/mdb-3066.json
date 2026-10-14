@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3066",
+  "domain": "transit.vehicles",
+  "name": "dBus (Donostiabus)",
+  "provider": "dBus (Donostiabus)",
+  "coverage": {
+    "bbox": [
+      43.2777689602104,
+      -2.0455710983006994,
+      43.3259392475332,
+      -1.9187707349818064
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_vehicle_positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://nap.transportes.gob.es/licencia-datos",
+    "display": false,
+    "commercial": null,
+    "attribution": "dBus (Donostiabus)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.741Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3066"
+  ]
+}

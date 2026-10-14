@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3077",
+  "domain": "transit.vehicles",
+  "name": "South Bend Public Transportation Corporation",
+  "provider": "South Bend Public Transportation Corporation",
+  "coverage": {
+    "bbox": [
+      41.524071,
+      -87.623976,
+      41.8841667,
+      -86.310951
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/transpo/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "South Bend Public Transportation Corporation"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.460Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3077"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-ottawa",
+  "domain": "bikeshare.stations",
+  "name": "Lime Ottawa — Ottawa",
+  "provider": "Lime Ottawa",
+  "coverage": {
+    "bbox": [
+      44.8464,
+      -76.0811,
+      44.8464,
+      -76.0811
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/ottawa/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/ottawa/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/ottawa/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/ottawa/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_ottawa",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Ottawa"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.935Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_ottawa"
+  ]
+}

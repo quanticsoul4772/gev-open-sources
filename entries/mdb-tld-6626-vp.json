@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6626-vp",
+  "domain": "transit.vehicles",
+  "name": "Chapel Hill Transit",
+  "provider": "Chapel Hill Transit",
+  "coverage": {
+    "bbox": [
+      35.854069,
+      -79.101639,
+      35.970835,
+      -78.996651
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://mychtransit.org/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Chapel Hill Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.754Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6626-vp"
+  ]
+}

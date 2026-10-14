@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-isecity-communitybus-vp",
+  "domain": "transit.vehicles",
+  "name": "伊勢市コミュニティバス「おかげバス」",
+  "provider": "伊勢市",
+  "coverage": {
+    "bbox": [
+      34.464066,
+      136.64891,
+      34.564335,
+      136.79968
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://bus-vision.jp/realtime/iseshi_vpos_update_v2.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "伊勢市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.506Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-isecity-communitybus-vp"
+  ]
+}

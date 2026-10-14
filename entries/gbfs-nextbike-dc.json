@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-dc",
+  "domain": "bikeshare.stations",
+  "name": "Potsdam Rad — Potsdam",
+  "provider": "Potsdam Rad",
+  "coverage": {
+    "bbox": [
+      52.2318,
+      12.8838,
+      52.4745,
+      13.1414
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dc/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dc/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dc/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dc/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_dc",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.040Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_dc"
+  ]
+}

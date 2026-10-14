@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2221",
+  "domain": "transit.vehicles",
+  "name": "Spirit Bus",
+  "provider": "Spirit Bus",
+  "coverage": {
+    "bbox": [
+      34.035095427,
+      -118.168829564,
+      34.0707535,
+      -118.108725112
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/montereyp/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Spirit Bus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.386Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2221"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-fa",
+  "domain": "bikeshare.stations",
+  "name": "Fa.Mo.Se — Senigallia, IT",
+  "provider": "Fa.Mo.Se",
+  "coverage": {
+    "bbox": [
+      43.6772,
+      13.0968,
+      43.7776,
+      13.2877
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_fa",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "TIER Mobility SE Filiale Italiana, Corso Massimo d'Azeglio 57, 10126 Torino, Italia"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.063Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_fa"
+  ]
+}

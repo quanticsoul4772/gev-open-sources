@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bolteu-liverpool",
+  "domain": "bikeshare.stations",
+  "name": "Bolt Liverpool — Liverpool",
+  "provider": "Bolt Liverpool",
+  "coverage": {
+    "bbox": [
+      53.3362,
+      -3.0017,
+      53.4698,
+      -2.8211
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bolt.eu/gbfs/3/412/station_status",
+    "related": {
+      "station_information": "https://mds.bolt.eu/gbfs/3/412/station_information",
+      "system_information": "https://mds.bolt.eu/gbfs/3/412/system_information",
+      "gbfs": "https://mds.bolt.eu/gbfs/3/412/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "BoltEU_Liverpool",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Liverpool"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.457Z"
+  },
+  "provenance": [
+    "gbfs-systems:BoltEU_Liverpool"
+  ]
+}

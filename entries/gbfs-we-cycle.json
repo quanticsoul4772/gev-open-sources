@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-we-cycle",
+  "domain": "bikeshare.stations",
+  "name": "WE-cycle — Aspen, CO",
+  "provider": "WE-cycle",
+  "coverage": {
+    "bbox": [
+      39.181,
+      -107.2219,
+      39.4131,
+      -106.8084
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://aspen.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://aspen.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://aspen.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://aspen.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "we_cycle",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "WE-cycle"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.289Z"
+  },
+  "provenance": [
+    "gbfs-systems:we_cycle"
+  ]
+}

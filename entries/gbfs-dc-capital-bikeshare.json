@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-dc-capital-bikeshare",
+  "domain": "bikeshare.stations",
+  "name": "Capital Bikeshare — Washington, DC",
+  "provider": "Capital Bikeshare",
+  "coverage": {
+    "bbox": [
+      37.8292,
+      -78.4222,
+      39.9852,
+      -75.6516
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/dca-cabi/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.lyft.com/gbfs/2.3/dca-cabi/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Capital Bikeshare"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.747Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

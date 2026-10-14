@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1910",
+  "domain": "transit.vehicles",
+  "name": "Santa Cruz Metro (SCMTD)",
+  "provider": "Santa Cruz Metro (SCMTD)",
+  "coverage": {
+    "bbox": [
+      36.90448,
+      -122.222061,
+      37.338436,
+      -121.732437
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://rt.scmetro.org/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://scmtd.com/en/riders-guide/google-transit/gtfs-dev-data",
+    "display": false,
+    "commercial": null,
+    "attribution": "Santa Cruz Metro (SCMTD)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.370Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1910"
+  ]
+}

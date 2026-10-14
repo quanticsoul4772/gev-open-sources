@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4677-vp",
+  "domain": "transit.vehicles",
+  "name": "Kalamazoo Metro Transit",
+  "provider": "Kalamazoo Metro Transit",
+  "coverage": {
+    "bbox": [
+      42.1647109985,
+      -85.691495,
+      42.3328857422,
+      -85.510246
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://trackmybus.kmetro.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Kalamazoo Metro Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.709Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4677-vp"
+  ]
+}

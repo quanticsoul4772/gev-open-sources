@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2477",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Hazelton | Kitimat | Terrace)",
+  "provider": "BC Transit (Hazelton | Kitimat | Terrace)",
+  "coverage": {
+    "bbox": [
+      53.96613,
+      -128.70983,
+      55.35218,
+      -127.16697
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=26",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Hazelton | Kitimat | Terrace)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.829Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2477"
+  ]
+}

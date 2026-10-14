@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-le-velo-star",
+  "domain": "bikeshare.stations",
+  "name": "LE vélo STAR — Rennes",
+  "provider": "LE vélo STAR",
+  "coverage": {
+    "bbox": [
+      48.0873,
+      -1.7051,
+      48.1299,
+      -1.6339
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://eu.ftp.opendatasoft.com/star/gbfs/station_status.json",
+    "related": {
+      "station_information": "https://eu.ftp.opendatasoft.com/star/gbfs/station_information.json",
+      "system_information": "https://eu.ftp.opendatasoft.com/star/gbfs/system_information.json",
+      "gbfs": "https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "le_velo_star",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "LE vélo STAR"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.902Z"
+  },
+  "provenance": [
+    "gbfs-systems:le_velo_star"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83748",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Qub",
+  "provider": "Quimper Bretagne Occidentale",
+  "coverage": {
+    "bbox": [
+      47.910764,
+      -4.229707,
+      48.151912,
+      -3.869734
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/6b7622db-c941-4d85-9856-c0315ddb78e1",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Quimper Bretagne Occidentale"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.639Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83748"
+  ]
+}

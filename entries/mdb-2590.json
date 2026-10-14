@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2590",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Williams Lake)",
+  "provider": "BC Transit (Williams Lake)",
+  "coverage": {
+    "bbox": [
+      52.10826,
+      -122.16661,
+      52.16798,
+      -121.99199
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=33",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Williams Lake)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.854Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2590"
+  ]
+}

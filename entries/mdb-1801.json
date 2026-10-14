@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1801",
+  "domain": "transit.vehicles",
+  "name": "Vy Buss (SE)",
+  "provider": "Vy Buss (SE)",
+  "coverage": {
+    "bbox": [
+      47.263266,
+      4.51278,
+      78.246751,
+      31.11253
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/realtime/v1/gtfs-rt/vehicle-positions?datasource=VYB",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "NLOD-2.0",
+    "url": "https://data.norge.no/nlod/en/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Vy Buss (SE)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://data.norge.no/nlod/en/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.366Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1801"
+  ]
+}

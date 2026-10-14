@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-velospot-ch",
+  "domain": "bikeshare.stations",
+  "name": "Velospot — Switzerland",
+  "provider": "Velospot",
+  "coverage": {
+    "bbox": [
+      45.8261,
+      6.393,
+      47.603,
+      9.0659
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/velospot_ch/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/velospot_ch/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/velospot_ch/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/velospot_ch/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "velospot_ch",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Velospot",
+        "language": "en"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.271Z"
+  },
+  "provenance": [
+    "gbfs-systems:velospot_ch"
+  ]
+}

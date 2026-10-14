@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1646",
+  "domain": "transit.vehicles",
+  "name": "Netherlands aggregate",
+  "provider": "OVapi",
+  "coverage": {
+    "bbox": [
+      0,
+      -0.12515,
+      55.67283,
+      21.05204
+    ],
+    "countries": [
+      "AT"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs.ovapi.nl/nl/vehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://old.datahub.io/dataset/gtfs-nl",
+    "display": false,
+    "commercial": null,
+    "attribution": "OVapi"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.692Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1646"
+  ]
+}

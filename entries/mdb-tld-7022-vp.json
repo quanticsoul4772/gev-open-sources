@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-7022-vp",
+  "domain": "transit.vehicles",
+  "name": "Endless Mountains Transportation Authority",
+  "provider": "Endless Mountains Transportation Authority",
+  "coverage": {
+    "bbox": [
+      41.424022,
+      -77.545923,
+      42.001998,
+      -76.250322
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://best.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Endless Mountains Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.775Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-7022-vp"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-levelo-inurba-marseille",
+  "domain": "bikeshare.stations",
+  "name": "levélo - Marseille — Marseille",
+  "provider": "levélo - Marseille",
+  "coverage": {
+    "bbox": [
+      43.2256,
+      5.3497,
+      43.3414,
+      5.4839
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.omega.fifteen.eu/gbfs/2.2/marseille/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.omega.fifteen.eu/gbfs/2.2/marseille/en/station_information.json",
+      "system_information": "https://gbfs.omega.fifteen.eu/gbfs/2.2/marseille/en/system_information.json",
+      "gbfs": "https://gbfs.omega.fifteen.eu/gbfs/2.2/marseille/en/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "levelo_inurba_marseille",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "levélo"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.904Z"
+  },
+  "provenance": [
+    "gbfs-systems:levelo_inurba_marseille"
+  ]
+}

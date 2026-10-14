@@ -1,0 +1,64 @@
+{
+  "id": "gbfs-donkey-kreuzlingen",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Kreuzlingen — Kreuzlingen",
+  "provider": "Donkey Republic Kreuzlingen",
+  "coverage": {
+    "bbox": [
+      47.6165,
+      9.1327,
+      47.6597,
+      9.2462
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_kreuzlingen",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "Donkey Republic"
+      },
+      {
+        "language": "de",
+        "text": "Donkey Republic"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.778Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_kreuzlingen"
+  ]
+}

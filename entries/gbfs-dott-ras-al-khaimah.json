@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-ras-al-khaimah",
+  "domain": "bikeshare.stations",
+  "name": "Dott Ras Al Khaimah — Ras Al Khaimah",
+  "provider": "Dott Ras Al Khaimah",
+  "coverage": {
+    "bbox": [
+      25.6601,
+      55.7335,
+      25.7885,
+      55.995
+    ],
+    "countries": [
+      "AE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/ras-al-khaimah/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/ras-al-khaimah/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/ras-al-khaimah/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/ras-al-khaimah/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-ras-al-khaimah",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Ras Al Khaimah"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.838Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-ras-al-khaimah"
+  ]
+}

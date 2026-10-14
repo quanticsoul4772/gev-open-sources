@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-pickebike-basel",
+  "domain": "bikeshare.stations",
+  "name": "PickeBike Basel — Basel",
+  "provider": "PickeBike Basel",
+  "coverage": {
+    "bbox": [
+      47.386,
+      7.5006,
+      47.5927,
+      7.779
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_basel/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_basel/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_basel/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_basel/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "pickebike_basel",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "PickeBike",
+        "language": "en"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.197Z"
+  },
+  "provenance": [
+    "gbfs-systems:pickebike_basel"
+  ]
+}

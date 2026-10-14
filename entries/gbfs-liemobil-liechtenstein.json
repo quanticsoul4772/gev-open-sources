@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-liemobil-liechtenstein",
+  "domain": "bikeshare.stations",
+  "name": "LIEmobil Liechtenstein — Liechtenstein",
+  "provider": "LIEmobil Liechtenstein",
+  "coverage": {
+    "bbox": [
+      47.0617,
+      9.478,
+      47.2488,
+      9.5623
+    ],
+    "countries": [
+      "LI"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/liemobil_liechtenstein/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/liemobil_liechtenstein/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/liemobil_liechtenstein/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/liemobil_liechtenstein/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "liemobil_liechtenstein",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "LIEmobil",
+        "language": "en"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.906Z"
+  },
+  "provenance": [
+    "gbfs-systems:liemobil_liechtenstein"
+  ]
+}

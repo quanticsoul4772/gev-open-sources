@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-paris",
+  "domain": "bikeshare.stations",
+  "name": "Vélib' Metropole — Paris",
+  "provider": "Vélib' Metropole",
+  "coverage": {
+    "bbox": [
+      48.7434,
+      2.1655,
+      48.9576,
+      2.5382
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_status.json",
+    "related": {
+      "station_information": "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_information.json",
+      "system_information": "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/system_information.json",
+      "gbfs": "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "Paris",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Vélib' Metropole"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.190Z"
+  },
+  "provenance": [
+    "gbfs-systems:Paris"
+  ]
+}

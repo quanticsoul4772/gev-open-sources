@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5539-vp",
+  "domain": "transit.vehicles",
+  "name": "rabbittransit",
+  "provider": "rabbittransit",
+  "coverage": {
+    "bbox": [
+      39.39941459,
+      -77.276039679,
+      40.29388372,
+      -76.4998531173
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.rabbittransit.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "rabbittransit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.728Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5539-vp"
+  ]
+}

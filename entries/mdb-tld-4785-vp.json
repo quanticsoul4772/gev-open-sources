@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4785-vp",
+  "domain": "transit.vehicles",
+  "name": "Lehigh and Northampton Transportation Authority",
+  "provider": "Lehigh and Northampton Transportation Authority",
+  "coverage": {
+    "bbox": [
+      40.527096,
+      -75.894966,
+      40.884444,
+      -75.204932
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtimelanta.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lehigh and Northampton Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.719Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4785-vp"
+  ]
+}

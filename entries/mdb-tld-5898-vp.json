@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5898-vp",
+  "domain": "transit.vehicles",
+  "name": "Lakeland Area Mass Transit District",
+  "provider": "Lakeland Area Mass Transit District",
+  "coverage": {
+    "bbox": [
+      27.93756,
+      -81.81774,
+      28.347197,
+      -81.44906
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.ccbusinfo.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lakeland Area Mass Transit District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.750Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5898-vp"
+  ]
+}

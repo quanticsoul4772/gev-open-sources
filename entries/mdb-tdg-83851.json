@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83851",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Filibus",
+  "provider": "Filibus - Chartres Métropole Transports",
+  "coverage": {
+    "bbox": [
+      48.264299,
+      1.2377102,
+      48.5890493,
+      1.7077922
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/7e4b9d82-0863-4eaa-8051-a1dcf5e086f5",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Filibus - Chartres Métropole Transports"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.641Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83851"
+  ]
+}

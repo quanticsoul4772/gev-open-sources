@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1969",
+  "domain": "transit.vehicles",
+  "name": "Minnesota Valley Transit Authority",
+  "provider": "Minnesota Valley Transit Authority",
+  "coverage": {
+    "bbox": [
+      44.688092,
+      -93.5546553314,
+      44.98045,
+      -93.0545407277
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://srv.mvta.com/infoPoint/GTFS-realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Minnesota Valley Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.373Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1969"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2110",
+  "domain": "transit.vehicles",
+  "name": "Mountain View Transportation Management Association (MVgo)",
+  "provider": "Mountain View Transportation Management Association (MVgo)",
+  "coverage": {
+    "bbox": [
+      37.387655512462,
+      -122.111623478335,
+      37.4314288965063,
+      -122.047760594783
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://mvgo.org/developers/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Mountain View Transportation Management Association (MVgo)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.701Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2110"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2696",
+  "domain": "transit.vehicles",
+  "name": "Gruppo Torinese Trasporti",
+  "provider": "Gruppo Torinese Trasporti",
+  "coverage": {
+    "bbox": [
+      44.3852,
+      7.14396,
+      45.53567,
+      8.45961
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://percorsieorari.gtt.to.it/das_gtfsrt/vehicle_position.aspx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Gruppo Torinese Trasporti"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.445Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2696"
+  ]
+}

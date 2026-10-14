@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-34266",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain La Navette Oloron Sainte-Marie",
+  "provider": "Zenbus",
+  "coverage": {
+    "bbox": [
+      43.15562,
+      -0.657445,
+      43.21725,
+      -0.58062
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/afee6b6e-2c3f-4317-9d0a-d70540acf8d8",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Zenbus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.576Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-34266"
+  ]
+}

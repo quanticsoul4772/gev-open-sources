@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-mobility-ch",
+  "domain": "bikeshare.stations",
+  "name": "Mobility — Switzerland",
+  "provider": "Mobility",
+  "coverage": {
+    "bbox": [
+      45.8318,
+      6.0017,
+      47.7135,
+      10.2859
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/mobility_ch/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/mobility_ch/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/mobility_ch/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/mobility_ch/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "mobility_ch",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Mobility",
+        "language": "en"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.968Z"
+  },
+  "provenance": [
+    "gbfs-systems:mobility_ch"
+  ]
+}

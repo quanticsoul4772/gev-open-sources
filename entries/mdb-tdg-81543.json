@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81543",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain TCAT",
+  "provider": "TCAT - Transports en Commun de l'Agglomération Troyenne",
+  "coverage": {
+    "bbox": [
+      48.183986,
+      3.905314,
+      48.3988783,
+      4.244121
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/98230d13-cccb-4c27-b0bc-d1b9341ca77b",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "TCAT - Transports en Commun de l'Agglomération Troyenne"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.604Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81543"
+  ]
+}

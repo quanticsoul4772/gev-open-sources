@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-stadtmobil-stuttgart",
+  "domain": "bikeshare.stations",
+  "name": "Stadtmobil Stuttgart — Stuttgart",
+  "provider": "Stadtmobil Stuttgart",
+  "coverage": {
+    "bbox": [
+      48.5866,
+      8.8623,
+      48.9604,
+      9.5779
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_stuttgart/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_stuttgart/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_stuttgart/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_stuttgart/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "stadtmobil_stuttgart",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "stadtmobil carsharing AG",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.238Z"
+  },
+  "provenance": [
+    "gbfs-systems:stadtmobil_stuttgart"
+  ]
+}

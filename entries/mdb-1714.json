@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1714",
+  "domain": "transit.vehicles",
+  "name": "Port Authority of Allegheny County Bus",
+  "provider": "Port Authority of Allegheny County",
+  "coverage": {
+    "bbox": [
+      40.273078,
+      -80.249098,
+      40.667597,
+      -79.70545
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://truetime.portauthority.org/gtfsrt-bus/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.portauthority.org/business-center/developer-resources/developer-license-agreement/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Port Authority of Allegheny County"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.355Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1714"
+  ]
+}

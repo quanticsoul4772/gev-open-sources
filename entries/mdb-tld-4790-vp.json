@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4790-vp",
+  "domain": "transit.vehicles",
+  "name": "Norwalk Transit District",
+  "provider": "Norwalk Transit District",
+  "coverage": {
+    "bbox": [
+      41.02168,
+      -73.630856,
+      41.237034,
+      -73.032568
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mystop.norwalktransit.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Norwalk Transit District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.721Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4790-vp"
+  ]
+}

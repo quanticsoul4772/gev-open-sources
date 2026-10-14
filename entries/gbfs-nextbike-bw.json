@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-bw",
+  "domain": "bikeshare.stations",
+  "name": "bizkaibizi (Spain) — Bilbao, ES",
+  "provider": "bizkaibizi (Spain)",
+  "coverage": {
+    "bbox": [
+      43.2559,
+      -3.0461,
+      43.3782,
+      -2.9271
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bw/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bw/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bw/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bw/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_bw",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "UTE Bizkaiabizi LEIOA, C/ P.A.E. IBARRABARRI, PAB. 13 E,48940 LEIOA - BIZKAIA"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.019Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_bw"
+  ]
+}

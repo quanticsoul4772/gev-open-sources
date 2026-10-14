@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-donkey-hillerod",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Hillerød — Hillerød",
+  "provider": "Donkey Republic Hillerød",
+  "coverage": {
+    "bbox": [
+      55.9277,
+      12.3105,
+      55.9277,
+      12.3105
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_hillerod/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_hillerod/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_hillerod/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_hillerod/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_hillerod",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "Donkey Republic"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.769Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_hillerod"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-porto",
+  "domain": "bikeshare.stations",
+  "name": "Bird Porto — Porto",
+  "provider": "Bird Porto",
+  "coverage": {
+    "bbox": [
+      41.1409,
+      -8.6849,
+      41.1808,
+      -8.5826
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/porto/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/porto/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/porto/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/porto/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-porto",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Porto"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.679Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-porto"
+  ]
+}

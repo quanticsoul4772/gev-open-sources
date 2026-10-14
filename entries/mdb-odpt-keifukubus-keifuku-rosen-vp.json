@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-keifukubus-keifuku-rosen-vp",
+  "domain": "transit.vehicles",
+  "name": "京福バス（路線バス）",
+  "provider": "京福バス株式会社",
+  "coverage": {
+    "bbox": [
+      35.1692955765385,
+      136.011988047127,
+      36.4021924981209,
+      136.884146759551
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KeifukuBus_keifuku_rosen_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "京福バス株式会社"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.560Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-KeifukuBus-keifuku_rosen-vp"
+  ]
+}

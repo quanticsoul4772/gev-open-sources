@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bikr-lisbon",
+  "domain": "bikeshare.stations",
+  "name": "Bird Lisbon — Lisbon",
+  "provider": "Bird Lisbon",
+  "coverage": {
+    "bbox": [
+      38.6921,
+      -9.2839,
+      38.7958,
+      -9.0913
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/lisbon/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/lisbon/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/lisbon/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/lisbon/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bikr-lisbon",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Lisbon"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.661Z"
+  },
+  "provenance": [
+    "gbfs-systems:bikr-lisbon"
+  ]
+}

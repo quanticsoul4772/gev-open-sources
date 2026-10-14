@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4780-vp",
+  "domain": "transit.vehicles",
+  "name": "Philomath Connection",
+  "provider": "Philomath Connection",
+  "coverage": {
+    "bbox": [
+      44.538806,
+      -123.37697,
+      44.568894,
+      -123.2632
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition?ProjectID=PC",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Philomath Connection"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.717Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4780-vp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "mdb-1776",
+  "domain": "transit.vehicles",
+  "name": "Roma Servizi per la Mobilità",
+  "provider": "Roma Servizi per la Mobilità",
+  "coverage": {
+    "bbox": [
+      41.654548,
+      12.23882,
+      42.091957,
+      12.789177
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://romamobilita.it/sites/default/files/rome_rtgtfs_vehicle_positions_feed.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://romamobilita.it/it/tecnologie/open-data/dataset",
+    "display": false,
+    "commercial": null,
+    "attribution": "Roma Servizi per la Mobilità"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.361Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1776",
+    "licence-borrowed:mdb-1294"
+  ]
+}

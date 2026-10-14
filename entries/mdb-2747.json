@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2747",
+  "domain": "transit.vehicles",
+  "name": "Sandy Area Metro",
+  "provider": "Sandy Area Metro",
+  "coverage": {
+    "bbox": [
+      45.285218,
+      -122.573786124,
+      45.502878367,
+      -121.7089955
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/sandyor/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sandy Area Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.450Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2747"
+  ]
+}

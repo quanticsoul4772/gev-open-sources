@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bolteu-brussels",
+  "domain": "bikeshare.stations",
+  "name": "Bolt Technology OÜ — Brussels",
+  "provider": "Bolt Technology OÜ",
+  "coverage": {
+    "bbox": [
+      50.7755,
+      4.259,
+      50.9098,
+      4.4681
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bolt.eu/gbfs/3/336/station_status",
+    "related": {
+      "station_information": "https://mds.bolt.eu/gbfs/3/336/station_information",
+      "system_information": "https://mds.bolt.eu/gbfs/3/336/system_information",
+      "gbfs": "https://mds.bolt.eu/gbfs/3/336/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "BoltEU_Brussels",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Technology OÜ"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.455Z"
+  },
+  "provenance": [
+    "gbfs-systems:BoltEU_Brussels"
+  ]
+}

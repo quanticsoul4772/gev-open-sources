@@ -1,0 +1,57 @@
+name: directory
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: directory
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Restore previous state
+        run: node src/restore-state.js "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+      - name: Harvest, decide licences, probe, build
+        run: npm run cycle
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Commit entry changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add entries
+          if ! git diff --cached --quiet; then
+            git commit -m "directory: $(git diff --cached --name-only | wc -l) entries changed"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Keep the schedule enabled
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/directory.yml/enable"
+        env:
+          GH_TOKEN: ${{ github.token }}

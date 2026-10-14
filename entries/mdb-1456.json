@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1456",
+  "domain": "transit.vehicles",
+  "name": "Denton County Transportation Authority",
+  "provider": "Denton County Transportation Authority",
+  "coverage": {
+    "bbox": [
+      32.9219927592917,
+      -97.318639869811,
+      33.253687,
+      -96.926476
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://api.transitime.org/api/v1/key/dca04420/agency/dcta/command/gtfs-rt/vehiclePositions?format=bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.dcta.net/resources/open-data",
+    "display": false,
+    "commercial": null,
+    "attribution": "Denton County Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.8"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.617Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1456"
+  ]
+}

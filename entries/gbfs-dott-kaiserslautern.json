@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-kaiserslautern",
+  "domain": "bikeshare.stations",
+  "name": "Dott Kaiserslautern — Kaiserslautern",
+  "provider": "Dott Kaiserslautern",
+  "coverage": {
+    "bbox": [
+      49.4168,
+      7.6786,
+      49.4538,
+      7.8212
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/kaiserslautern/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/kaiserslautern/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/kaiserslautern/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/kaiserslautern/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-kaiserslautern",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Kaiserslautern"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.822Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-kaiserslautern"
+  ]
+}

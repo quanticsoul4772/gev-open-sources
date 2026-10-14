@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84069",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain U Vagabondu",
+  "provider": "Régie de transport Communauté de communes Spelunca-Liamone",
+  "coverage": {
+    "bbox": [
+      42.028438,
+      8.596073,
+      42.326667,
+      8.984154
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/c854a422-f68a-469b-af72-b35c2d4dc84c",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Régie de transport Communauté de communes Spelunca-Liamone"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.651Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84069"
+  ]
+}

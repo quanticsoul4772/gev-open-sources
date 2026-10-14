@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2383",
+  "domain": "transit.vehicles",
+  "name": "Vilnius Transport",
+  "provider": "SĮ 'Susisiekimo paslaugos'",
+  "coverage": {
+    "bbox": [
+      54.57716,
+      25.04569,
+      54.85708,
+      25.5165
+    ],
+    "countries": [
+      "LT"
+    ]
+  },
+  "access": {
+    "url": "https://www.stops.lt/vilnius/vehicle_positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "SĮ 'Susisiekimo paslaugos'"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.394Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2383"
+  ]
+}

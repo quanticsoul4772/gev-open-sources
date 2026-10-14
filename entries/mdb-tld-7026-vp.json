@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-7026-vp",
+  "domain": "transit.vehicles",
+  "name": "Pottstown Area Rapid Transit",
+  "provider": "Pottstown Area Rapid Transit",
+  "coverage": {
+    "bbox": [
+      40.228407,
+      -75.687774,
+      40.333906,
+      -75.570766
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://part.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pottstown Area Rapid Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.778Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-7026-vp"
+  ]
+}

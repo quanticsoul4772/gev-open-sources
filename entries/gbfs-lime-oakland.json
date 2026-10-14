@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-oakland",
+  "domain": "bikeshare.stations",
+  "name": "Lime Oakland — Oakland, CA",
+  "provider": "Lime Oakland",
+  "coverage": {
+    "bbox": [
+      37.7903,
+      -122.2287,
+      37.7903,
+      -122.2287
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/oakland/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/oakland/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/oakland/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/oakland/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_oakland",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Oakland"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.933Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_oakland"
+  ]
+}

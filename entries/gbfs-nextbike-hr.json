@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-hr",
+  "domain": "bikeshare.stations",
+  "name": "nextbike Croatia — Croatia",
+  "provider": "nextbike Croatia",
+  "coverage": {
+    "bbox": [
+      42.96,
+      13.7483,
+      46.2087,
+      17.6503
+    ],
+    "countries": [
+      "HR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hr/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hr/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hr/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hr/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_hr",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.078Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_hr"
+  ]
+}

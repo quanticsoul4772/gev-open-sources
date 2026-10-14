@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4753-vp",
+  "domain": "transit.vehicles",
+  "name": "Société de Transport de Sherbrooke, Service opéré par Taxis de Sherbrooke",
+  "provider": "Société de Transport de Sherbrooke, Service opéré par Taxis de Sherbrooke",
+  "coverage": {
+    "bbox": [
+      45.314276,
+      -72.080038,
+      45.481662,
+      -71.815462
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.sts.qc.ca:8443/gtfsrt/vehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Société de Transport de Sherbrooke, Service opéré par Taxis de Sherbrooke"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.715Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4753-vp"
+  ]
+}

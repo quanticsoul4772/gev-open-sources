@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1631",
+  "domain": "transit.vehicles",
+  "name": "NYC Subway BDFM Lines",
+  "provider": "Metropolitan Transit Authority (MTA)",
+  "coverage": {
+    "bbox": [
+      40.512764,
+      -74.251961,
+      40.903125,
+      -73.755405
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://api.mta.info/#/DataFeedAgreement",
+    "display": false,
+    "commercial": null,
+    "attribution": "Metropolitan Transit Authority (MTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.338Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1631"
+  ]
+}

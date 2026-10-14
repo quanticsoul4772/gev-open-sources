@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-long-beach-ca-bikeshare",
+  "domain": "bikeshare.stations",
+  "name": "Long Beach CA Bikeshare — Long Beach, CA",
+  "provider": "Long Beach CA Bikeshare",
+  "coverage": {
+    "bbox": [
+      33.7459,
+      -118.2156,
+      33.875,
+      -118.0979
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://www.longbeachbikeshare.com/opendata/station_status.json",
+    "related": {
+      "station_information": "http://www.longbeachbikeshare.com/opendata/station_information.json",
+      "system_information": "http://www.longbeachbikeshare.com/opendata/system_information.json",
+      "gbfs": "https://www.longbeachbikeshare.com/opendata/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "long_beach_ca_bikeshare",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Long Beach CA Bikeshare"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.950Z"
+  },
+  "provenance": [
+    "gbfs-systems:long_beach_ca_bikeshare"
+  ]
+}

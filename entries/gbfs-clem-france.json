@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-clem-france",
+  "domain": "bikeshare.stations",
+  "name": "Clem — France",
+  "provider": "Clem",
+  "coverage": {
+    "bbox": [
+      14.6027,
+      -61.0735,
+      50.8553,
+      6.718
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.clem.mobi/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.clem.mobi/station_information.json",
+      "system_information": "https://gbfs.clem.mobi/system_information.json",
+      "gbfs": "https://gbfs.clem.mobi/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "clem-france",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Clem'",
+        "language": "fr"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.739Z"
+  },
+  "provenance": [
+    "gbfs-systems:clem-france"
+  ]
+}

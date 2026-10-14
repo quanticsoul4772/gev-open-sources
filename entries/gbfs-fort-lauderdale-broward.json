@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-fort-lauderdale-broward",
+  "domain": "bikeshare.stations",
+  "name": "Broward B-cycle — Fort Lauderdale, FL",
+  "provider": "Broward B-cycle",
+  "coverage": {
+    "bbox": [
+      25.2241,
+      -81.1378,
+      27.0207,
+      -79.1368
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_broward/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_broward/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Broward B-cycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unavailable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.873Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

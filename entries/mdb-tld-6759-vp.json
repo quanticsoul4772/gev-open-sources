@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-6759-vp",
+  "domain": "transit.vehicles",
+  "name": "Keretapi Tanah Melayu Berhad",
+  "provider": "Keretapi Tanah Melayu Berhad",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "MY"
+    ]
+  },
+  "access": {
+    "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/ktmb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Keretapi Tanah Melayu Berhad"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.763Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6759-vp"
+  ]
+}

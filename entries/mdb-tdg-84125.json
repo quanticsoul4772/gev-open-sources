@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84125",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Tango",
+  "provider": "Tango",
+  "coverage": {
+    "bbox": [
+      43.67123,
+      4.125444,
+      43.976132,
+      4.565333
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/78b3c0a0-6e4f-443d-88f1-325e534f67e6",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Tango"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.656Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84125"
+  ]
+}

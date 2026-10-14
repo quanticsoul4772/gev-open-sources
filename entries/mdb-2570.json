@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2570",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Sunshine Coast Transit System)",
+  "provider": "BC Transit (Sunshine Coast Transit System)",
+  "coverage": {
+    "bbox": [
+      49.39185,
+      -123.9115,
+      49.51393,
+      -123.47496
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=18",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Sunshine Coast Transit System)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.850Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2570"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1466",
+  "domain": "transit.vehicles",
+  "name": "Durham Region Transit",
+  "provider": "Durham Region Transit",
+  "coverage": {
+    "bbox": [
+      43.774202,
+      -79.258755,
+      44.43565000000001,
+      -78.580493
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://opendata.durham.ca/search?q=service%20alert",
+    "display": false,
+    "commercial": null,
+    "attribution": "Durham Region Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.315Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1466"
+  ]
+}

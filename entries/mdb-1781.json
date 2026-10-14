@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1781",
+  "domain": "transit.vehicles",
+  "name": "Springfield Mass Transit District (SMTD)",
+  "provider": "Springfield Mass Transit District (SMTD)",
+  "coverage": {
+    "bbox": [
+      39.706586,
+      -89.752394,
+      39.860092,
+      -89.594535
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://ride.smtd.org/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.smtd.org/gtfs-information/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Springfield Mass Transit District (SMTD)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.361Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1781"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-baltimore",
+  "domain": "bikeshare.stations",
+  "name": "Lime Baltimore — Baltimore, MD",
+  "provider": "Lime Baltimore",
+  "coverage": {
+    "bbox": [
+      39.2729,
+      -76.5807,
+      39.2729,
+      -76.5807
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_baltimore",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Baltimore"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.909Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_baltimore"
+  ]
+}

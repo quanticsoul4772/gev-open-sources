@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4670-vp",
+  "domain": "transit.vehicles",
+  "name": "Altoona Metro Transit",
+  "provider": "Altoona Metro Transit",
+  "coverage": {
+    "bbox": [
+      40.428089,
+      -78.445224,
+      40.680805,
+      -78.236795
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://amtran.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Altoona Metro Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.704Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4670-vp"
+  ]
+}

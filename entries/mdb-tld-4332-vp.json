@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4332-vp",
+  "domain": "transit.vehicles",
+  "name": "Akron Metro Regional Transit Authority",
+  "provider": "Akron Metro Regional Transit Authority",
+  "coverage": {
+    "bbox": [
+      40.910605,
+      -81.697066,
+      41.514208,
+      -81.383453
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Akron Metro Regional Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.678Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4332-vp"
+  ]
+}

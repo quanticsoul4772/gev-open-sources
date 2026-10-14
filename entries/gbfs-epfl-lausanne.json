@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-epfl-lausanne",
+  "domain": "bikeshare.stations",
+  "name": "Donkey EPFL - Lausanne — Lausanne",
+  "provider": "Donkey EPFL - Lausanne",
+  "coverage": {
+    "bbox": [
+      46.5172,
+      6.5608,
+      46.5207,
+      6.5716
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "epfl_lausanne",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "EPFL"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.859Z"
+  },
+  "provenance": [
+    "gbfs-systems:epfl_lausanne"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-nyc-citibike",
+  "domain": "bikeshare.stations",
+  "name": "Citi Bike — New York, NY",
+  "provider": "Citi Bike",
+  "coverage": {
+    "bbox": [
+      39.4908,
+      -75.6568,
+      42.006,
+      -72.3366
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/bkn/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.lyft.com/gbfs/2.3/bkn/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Citi Bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.181Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

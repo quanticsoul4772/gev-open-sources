@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bogota-bike",
+  "domain": "bikeshare.stations",
+  "name": "Bogotá — Bogotá",
+  "provider": "Bogotá",
+  "coverage": {
+    "bbox": [
+      -23.4009,
+      -74.1197,
+      4.7365,
+      -46.3972
+    ],
+    "countries": [
+      "CO"
+    ]
+  },
+  "access": {
+    "url": "https://bogota.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://bogota.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://bogota.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://bogota.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bogota_bike",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Bogotá"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.688Z"
+  },
+  "provenance": [
+    "gbfs-systems:bogota_bike"
+  ]
+}

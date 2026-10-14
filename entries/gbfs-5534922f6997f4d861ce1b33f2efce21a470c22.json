@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-5534922f6997f4d861ce1b33f2efce21a470c22",
+  "domain": "bikeshare.stations",
+  "name": "AB mit Lara — Aschaffenburg",
+  "provider": "AB mit Lara",
+  "coverage": {
+    "bbox": [
+      49.9343,
+      9.0116,
+      50.0771,
+      9.178
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://abmitlara.de/wp-json/commonsbooking/v1/station_status.json",
+    "related": {
+      "station_information": "https://abmitlara.de/wp-json/commonsbooking/v1/station_information.json",
+      "system_information": "https://abmitlara.de/wp-json/commonsbooking/v1/system_information.json",
+      "gbfs": "https://abmitlara.de/wp-json/commonsbooking/v1/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "5534922f6997f4d861ce1b33f2efce21a470c22",
+    "version": "3.1-RC3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "AB mit Lara"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.1-RC3: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:19:48.864Z"
+  },
+  "provenance": [
+    "gbfs-systems:5534922f6997f4d861ce1b33f2efce21a470c22"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-citiz-nantes",
+  "domain": "bikeshare.stations",
+  "name": "Citiz Nantes — Nantes",
+  "provider": "Citiz Nantes",
+  "coverage": {
+    "bbox": [
+      47.1899,
+      -1.5914,
+      47.262,
+      -1.5208
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://backend.citiz.fr/public/provider/15/gbfs/v3.0/station_status.json",
+    "related": {
+      "station_information": "https://backend.citiz.fr/public/provider/15/gbfs/v3.0/station_information.json",
+      "system_information": "https://backend.citiz.fr/public/provider/15/gbfs/v3.0/system_information.json",
+      "gbfs": "https://backend.citiz.fr/public/provider/15/gbfs/3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "citiz_nantes",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Citiz Nantes",
+        "language": "fr"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.733Z"
+  },
+  "provenance": [
+    "gbfs-systems:citiz_nantes"
+  ]
+}

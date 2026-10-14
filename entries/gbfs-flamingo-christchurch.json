@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-flamingo-christchurch",
+  "domain": "bikeshare.stations",
+  "name": "Flamingo Christchurch — Christchurch",
+  "provider": "Flamingo Christchurch",
+  "coverage": {
+    "bbox": [
+      -43.5817,
+      172.5685,
+      -43.5072,
+      172.759
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/christchurch/station_status.json",
+    "related": {
+      "station_information": "https://data.rideflamingo.com/gbfs/3/christchurch/station_information.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/christchurch/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/christchurch/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "flamingo_christchurch",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Christchurch"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.862Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_christchurch"
+  ]
+}

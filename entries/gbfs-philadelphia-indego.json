@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-philadelphia-indego",
+  "domain": "bikeshare.stations",
+  "name": "Indego — Philadelphia, PA",
+  "provider": "Indego",
+  "coverage": {
+    "bbox": [
+      39.0543,
+      -76.337,
+      40.8509,
+      -73.9934
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_indego/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_indego/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Indego"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.195Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-las-vegas-rtc-bike-share",
+  "domain": "bikeshare.stations",
+  "name": "RTC Bike Share — Las Vegas, NV",
+  "provider": "RTC Bike Share",
+  "coverage": {
+    "bbox": [
+      35.2716,
+      -116.2526,
+      37.0682,
+      -114.027
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_rtcbikeshare/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_rtcbikeshare/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "RTC Bike Share"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.899Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

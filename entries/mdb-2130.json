@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2130",
+  "domain": "transit.vehicles",
+  "name": "Milwaukee County Transit System (MCTS)",
+  "provider": "Milwaukee County Transit System (MCTS)",
+  "coverage": {
+    "bbox": [
+      42.8707516,
+      -88.0700638,
+      43.189245,
+      -87.84947
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.ridemcts.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.ridemcts.com/policies/developer-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Milwaukee County Transit System (MCTS)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.703Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2130"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-montenvelo-mont-blanc",
+  "domain": "bikeshare.stations",
+  "name": "MontenVélo — Mont Blanc",
+  "provider": "MontenVélo",
+  "coverage": {
+    "bbox": [
+      45.812,
+      6.5718,
+      45.9426,
+      6.7268
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/station_information.json",
+      "system_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/system_information.json",
+      "gbfs": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "montenvelo_mont_blanc",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "Fifteen"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.973Z"
+  },
+  "provenance": [
+    "gbfs-systems:montenvelo_mont_blanc"
+  ]
+}

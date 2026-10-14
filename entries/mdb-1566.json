@@ -1,0 +1,42 @@
+{
+  "id": "mdb-1566",
+  "domain": "transit.vehicles",
+  "name": "Beach Cities Transit",
+  "provider": "Beach Cities Transit",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://redondobeachbct.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.redondo.org/depts/recreation/transit/trip_planner/gtfs_data.asp",
+    "display": false,
+    "commercial": null,
+    "attribution": "Beach Cities Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.329Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1566",
+    "licence-borrowed:mdb-803"
+  ]
+}

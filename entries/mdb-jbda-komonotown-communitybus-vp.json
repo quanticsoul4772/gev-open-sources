@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-komonotown-communitybus-vp",
+  "domain": "transit.vehicles",
+  "name": "菰野町「かもしか号」",
+  "provider": "菰野町",
+  "coverage": {
+    "bbox": [
+      34.996838,
+      136.4787,
+      35.09032,
+      136.54166
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://bus-vision.jp/realtime/komono_vpos_update_v2.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "菰野町"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.511Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-komonotown-communitybus-vp"
+  ]
+}

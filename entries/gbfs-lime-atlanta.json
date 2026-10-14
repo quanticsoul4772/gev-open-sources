@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-atlanta",
+  "domain": "bikeshare.stations",
+  "name": "Lime Atlanta — Atlanta, GA",
+  "provider": "Lime Atlanta",
+  "coverage": {
+    "bbox": [
+      33.8133,
+      -84.3066,
+      33.8133,
+      -84.3066
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_atlanta",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Atlanta"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.909Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_atlanta"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2271",
+  "domain": "transit.vehicles",
+  "name": "Middletown Area Transit",
+  "provider": "Middletown Area Transit",
+  "coverage": {
+    "bbox": [
+      41.26143113595336,
+      -72.80042806742782,
+      41.60872926547566,
+      -72.0934518
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/9town/passioTransit/gtfs/realtime",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Middletown Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.389Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2271"
+  ]
+}

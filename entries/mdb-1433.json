@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1433",
+  "domain": "transit.vehicles",
+  "name": "Kingston Transit",
+  "provider": "Kingston Transit",
+  "coverage": {
+    "bbox": [
+      44.17952,
+      -76.78815,
+      44.27897,
+      -76.43906
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://api.cityofkingston.ca/gtfs-realtime/vehicleupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Kingston Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.308Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1433"
+  ]
+}

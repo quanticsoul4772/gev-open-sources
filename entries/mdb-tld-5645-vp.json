@@ -1,0 +1,47 @@
+{
+  "id": "mdb-tld-5645-vp",
+  "domain": "transit.vehicles",
+  "name": "Transavold",
+  "provider": "Transavold",
+  "coverage": {
+    "bbox": [
+      48.9221,
+      6.58078,
+      49.168912,
+      6.784604
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=transavold-stavold",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-transavold-saint-avold-gtfs-gtfs-rt",
+    "display": false,
+    "commercial": null,
+    "attribution": "Transavold"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.743Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5645-vp",
+    "licence-borrowed:mdb-1896"
+  ]
+}

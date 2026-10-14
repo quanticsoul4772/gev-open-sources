@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2535",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Shuswap | Vernon)",
+  "provider": "BC Transit (Shuswap | Vernon)",
+  "coverage": {
+    "bbox": [
+      49.93997,
+      -119.48817,
+      50.93248,
+      -118.96294
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=14",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Shuswap | Vernon)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.841Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2535"
+  ]
+}

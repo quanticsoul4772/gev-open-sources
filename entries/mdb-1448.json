@@ -1,0 +1,70 @@
+{
+  "id": "mdb-1448",
+  "domain": "transit.vehicles",
+  "name": "Community Transit",
+  "provider": "Community Transit",
+  "coverage": {
+    "bbox": [
+      47.59201,
+      -122.38471,
+      48.278539,
+      -121.601001
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/commtrans-realtime-prod/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "terms:www.communitytransit.org",
+    "url": "https://www.communitytransit.org/OpenData",
+    "display": true,
+    "commercial": true,
+    "attribution": "Community Transit",
+    "obligations": [
+      "indemnify",
+      "keep_current",
+      "liability_limitation",
+      "no_trademark_use",
+      "provider_may_revoke",
+      "warranty_disclaimer"
+    ]
+  },
+  "licence_decision": {
+    "by": "llm-terms",
+    "evidence": [
+      {
+        "field": "applies_to_this_data",
+        "quote": "By accessing Community Transit’s GIS, GTFS and GTFS-RT Data, you acknowledge Community Transit's Open Data Terms of Use ."
+      },
+      {
+        "field": "applies_to_this_data",
+        "quote": "Vehicle Positions. This feed provides the locations of vehicles currently in service."
+      },
+      {
+        "field": "display",
+        "quote": "Community Transit makes data available to software developers, researchers, and other members of the public."
+      },
+      {
+        "field": "commercial",
+        "quote": "Community Transit makes data available to software developers, researchers, and other members of the public."
+      },
+      {
+        "field": "requires_acceptance",
+        "quote": "If you continue to use the Service or access any materials on the Site, you agree to these Terms of Use, as they may be updated"
+      }
+    ],
+    "terms_sha256": "e5102c0ea60474f0ec638a162ce146a86d6eddac90c0602a2b6fa46e1374d6c9",
+    "at": "2026-10-14T15:28:44.789Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1448"
+  ]
+}

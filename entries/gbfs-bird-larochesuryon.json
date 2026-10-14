@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-larochesuryon",
+  "domain": "bikeshare.stations",
+  "name": "Bird Larochesuryon — La Roche-sur-Yon",
+  "provider": "Bird Larochesuryon",
+  "coverage": {
+    "bbox": [
+      46.644,
+      -1.4575,
+      46.6972,
+      -1.3941
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/larochesuryon/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/larochesuryon/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/larochesuryon/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/larochesuryon/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-larochesuryon",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Larochesuryon"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.672Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-larochesuryon"
+  ]
+}

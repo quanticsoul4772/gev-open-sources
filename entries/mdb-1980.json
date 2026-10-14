@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1980",
+  "domain": "transit.vehicles",
+  "name": "Mountain Line Transit",
+  "provider": "Mountain Line Transit",
+  "coverage": {
+    "bbox": [
+      35.160293,
+      -111.69558,
+      35.238969,
+      -111.573353
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mountainline.syncromatics.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Mountain Line Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.374Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1980"
+  ]
+}

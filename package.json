@@ -1,0 +1,24 @@
+{
+  "name": "gev-open-sources",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A self-maintaining directory of keyless live data sources: discovered, health-checked and licence-classified automatically.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "seed": "node src/seed.js",
+    "harvest": "node src/harvest/index.js",
+    "licence": "node src/licence/index.js",
+    "probe": "node src/probe.js",
+    "build": "node src/build.js",
+    "cycle": "node src/harvest/index.js && node src/licence/index.js && node src/probe.js && node src/build.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "pbf": "^5.1.2"
+  }
+}

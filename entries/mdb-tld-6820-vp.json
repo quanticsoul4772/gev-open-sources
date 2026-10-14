@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6820-vp",
+  "domain": "transit.vehicles",
+  "name": "City of Jacksonville",
+  "provider": "City of Jacksonville",
+  "coverage": {
+    "bbox": [
+      34.582764167,
+      -77.47343967,
+      34.802328,
+      -77.320563775
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/jacksonville/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Jacksonville"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.768Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6820-vp"
+  ]
+}

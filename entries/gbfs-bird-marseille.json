@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-marseille",
+  "domain": "bikeshare.stations",
+  "name": "Bird Marseille — Marseille",
+  "provider": "Bird Marseille",
+  "coverage": {
+    "bbox": [
+      43.2153,
+      5.2879,
+      43.3747,
+      5.4932
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/marseille/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/marseille/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/marseille/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/marseille/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-marseille",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Marseille"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.674Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-marseille"
+  ]
+}

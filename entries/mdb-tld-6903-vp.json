@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6903-vp",
+  "domain": "transit.vehicles",
+  "name": "Bryce Canyon National Park Shuttle",
+  "provider": "Bryce Canyon National Park Shuttle",
+  "coverage": {
+    "bbox": [
+      37.6045609926,
+      -112.172311,
+      37.674476,
+      -112.153943
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://brycecanyonshuttle.com/subscriptions/gtfsrt/vehicles.ashx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bryce Canyon National Park Shuttle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.774Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6903-vp"
+  ]
+}

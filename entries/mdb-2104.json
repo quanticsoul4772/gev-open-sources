@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2104",
+  "domain": "transit.vehicles",
+  "name": "Asociația de Dezvoltare Intercomunitară pentru Transport Public București – Ilfov (TPBI)",
+  "provider": "Asociația de Dezvoltare Intercomunitară pentru Transport Public București – Ilfov (TPBI)",
+  "coverage": {
+    "bbox": [
+      44.256653,
+      25.870012,
+      44.75059,
+      26.386173
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.tpbi.ro/api/gtfs-rt/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Asociația de Dezvoltare Intercomunitară pentru Transport Public București – Ilfov (TPBI)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.378Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2104"
+  ]
+}

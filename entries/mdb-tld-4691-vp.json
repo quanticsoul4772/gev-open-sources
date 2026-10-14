@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4691-vp",
+  "domain": "transit.vehicles",
+  "name": "Regional Municipality of Wood Buffalo Transit",
+  "provider": "Regional Municipality of Wood Buffalo Transit",
+  "coverage": {
+    "bbox": [
+      56.65388779,
+      -111.4841937,
+      56.788512,
+      -111.3264264
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://rmwb-gtfsrt.civilia.ca/pb/vehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Regional Municipality of Wood Buffalo Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.712Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4691-vp"
+  ]
+}

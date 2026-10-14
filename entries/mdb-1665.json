@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1665",
+  "domain": "transit.vehicles",
+  "name": "Riverside Transit Agency",
+  "provider": "Riverside Transit Agency",
+  "coverage": {
+    "bbox": [
+      33.452304,
+      -117.915548,
+      34.10009,
+      -116.875799
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://rtabus.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Riverside Transit Agency"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.349Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1665"
+  ]
+}

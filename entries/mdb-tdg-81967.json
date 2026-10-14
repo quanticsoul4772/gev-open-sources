@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81967",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain CarSud",
+  "provider": "Réseau CARSUD",
+  "coverage": {
+    "bbox": [
+      -21.387115,
+      55.460252,
+      -21.182288,
+      55.801908
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/146fe36f-16c5-44bc-ac1a-06c0fedcc4dd",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Réseau CARSUD"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.611Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81967"
+  ]
+}

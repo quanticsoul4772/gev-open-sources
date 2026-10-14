@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5892-vp",
+  "domain": "transit.vehicles",
+  "name": "Culver CityBus",
+  "provider": "Culver CityBus",
+  "coverage": {
+    "bbox": [
+      33.950849,
+      -118.471525,
+      34.068294,
+      -118.36869
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://nextccbus.org/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Culver CityBus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.748Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5892-vp"
+  ]
+}

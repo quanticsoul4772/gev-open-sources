@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4783-vp",
+  "domain": "transit.vehicles",
+  "name": "Athens Clarke County Transit",
+  "provider": "Athens Clarke County Transit",
+  "coverage": {
+    "bbox": [
+      33.911022,
+      -83.47546,
+      34.029076,
+      -83.302761
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://bustracker.accgov.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Athens Clarke County Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.718Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4783-vp"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-herrenberg-guelf",
+  "domain": "bikeshare.stations",
+  "name": "Gülf - das Gültsteiner Lastenrad — Herrenberg",
+  "provider": "Gülf - das Gültsteiner Lastenrad",
+  "coverage": {
+    "bbox": [
+      48.5763,
+      8.8806,
+      48.5763,
+      8.8806
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_guelf/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_guelf/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_guelf/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_guelf/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "herrenberg_guelf",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Gülf - das Gültsteiner Lastenrad",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.884Z"
+  },
+  "provenance": [
+    "gbfs-systems:herrenberg_guelf"
+  ]
+}

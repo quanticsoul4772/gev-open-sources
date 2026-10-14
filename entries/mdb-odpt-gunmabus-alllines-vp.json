@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-gunmabus-alllines-vp",
+  "domain": "transit.vehicles",
+  "name": "株式会社群馬バス",
+  "provider": "株式会社群馬バス",
+  "coverage": {
+    "bbox": [
+      35.08410582406465,
+      138.59644636002176,
+      36.62063472820784,
+      139.34332091477393
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_GunmaBus_AllLines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "株式会社群馬バス"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.555Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-GunmaBus-AllLines-vp"
+  ]
+}

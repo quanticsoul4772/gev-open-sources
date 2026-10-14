@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1740",
+  "domain": "transit.vehicles",
+  "name": "Votran",
+  "provider": "Votran",
+  "coverage": {
+    "bbox": [
+      28.856002,
+      -81.506774,
+      29.383995,
+      -80.847351
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://realtimevotran.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "http://www.votran.org/about-us/data.stml",
+    "display": false,
+    "commercial": null,
+    "attribution": "Votran"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.356Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1740"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-karu",
+  "domain": "bikeshare.stations",
+  "name": "Karu'Vélo — Pointe-à-Pitre",
+  "provider": "Karu'Vélo",
+  "coverage": {
+    "bbox": [
+      16.2062,
+      -61.5886,
+      16.2692,
+      -61.2699
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/karu/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v3.0.ecovelo.mobi/karu/station_information.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/karu/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/karu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "karu",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Karu'Vélo"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.894Z"
+  },
+  "provenance": [
+    "gbfs-systems:karu"
+  ]
+}

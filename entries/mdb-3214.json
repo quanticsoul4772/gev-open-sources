@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3214",
+  "domain": "transit.vehicles",
+  "name": "Acadia National Park - Island Explorer",
+  "provider": "Acadia National Park - Island Explorer",
+  "coverage": {
+    "bbox": [
+      44.230378,
+      -68.371437,
+      44.50078,
+      -68.027183
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://islandexplorertracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Acadia National Park - Island Explorer"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.478Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3214"
+  ]
+}

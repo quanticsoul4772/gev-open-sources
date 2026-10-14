@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-citiz-lille-arras",
+  "domain": "bikeshare.stations",
+  "name": "Citiz Lille Arras — Lille",
+  "provider": "Citiz Lille Arras",
+  "coverage": {
+    "bbox": [
+      50.2864,
+      1.7464,
+      50.9012,
+      3.1751
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://backend.citiz.fr/public/provider/16/gbfs/v3.0/station_status.json",
+    "related": {
+      "station_information": "https://backend.citiz.fr/public/provider/16/gbfs/v3.0/station_information.json",
+      "system_information": "https://backend.citiz.fr/public/provider/16/gbfs/v3.0/system_information.json",
+      "gbfs": "https://backend.citiz.fr/public/provider/16/gbfs/3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "citiz_lille_arras",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Lilas Autopartage",
+        "language": "fr"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.731Z"
+  },
+  "provenance": [
+    "gbfs-systems:citiz_lille_arras"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4532-vp",
+  "domain": "transit.vehicles",
+  "name": "Charlotte Area Transit System",
+  "provider": "Charlotte Area Transit System",
+  "coverage": {
+    "bbox": [
+      35.049359,
+      -81.179888,
+      35.502996,
+      -80.639319
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrealtime.ridetransit.org/GTFSRealTime/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Charlotte Area Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.694Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4532-vp"
+  ]
+}

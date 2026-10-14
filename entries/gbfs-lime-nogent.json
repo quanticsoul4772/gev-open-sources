@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-nogent",
+  "domain": "bikeshare.stations",
+  "name": "Lime Nogent-sur-Marne — Nogent-sur-Marne",
+  "provider": "Lime Nogent-sur-Marne",
+  "coverage": {
+    "bbox": [
+      48.8362,
+      2.4811,
+      48.8362,
+      2.4811
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/nogent/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/nogent/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/nogent/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/nogent/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_nogent",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Nogent-sur-Marne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.932Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_nogent"
+  ]
+}

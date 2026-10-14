@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1506",
+  "domain": "transit.vehicles",
+  "name": "Merced County Transit (The Bus)",
+  "provider": "Merced County Transit (The Bus)",
+  "coverage": {
+    "bbox": [
+      36.9645033416456,
+      -121.02023996456528,
+      37.5217855174328,
+      -120.248
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://thebuslive.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Merced County Transit (The Bus)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.320Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1506"
+  ]
+}

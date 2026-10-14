@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-peacehealth-rides",
+  "domain": "bikeshare.stations",
+  "name": "PeaceHealth Rides — Eugene, OR",
+  "provider": "PeaceHealth Rides",
+  "coverage": {
+    "bbox": [
+      44.0228,
+      -123.1144,
+      44.0878,
+      -123.016
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://peacehealthrides.com/opendata/station_status.json",
+    "related": {
+      "station_information": "http://peacehealthrides.com/opendata/station_information.json",
+      "system_information": "http://peacehealthrides.com/opendata/system_information.json",
+      "gbfs": "https://peacehealthrides.com/opendata/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "peacehealth_rides",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "PeaceHealth Rides"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.192Z"
+  },
+  "provenance": [
+    "gbfs-systems:peacehealth_rides"
+  ]
+}

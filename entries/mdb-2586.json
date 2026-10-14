@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2586",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Whistler)",
+  "provider": "BC Transit (Whistler)",
+  "coverage": {
+    "bbox": [
+      50.07712,
+      -123.04364,
+      50.15907,
+      -122.92684
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=44",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Whistler)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.853Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2586"
+  ]
+}

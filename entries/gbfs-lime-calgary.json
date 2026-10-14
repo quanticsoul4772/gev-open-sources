@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-calgary",
+  "domain": "bikeshare.stations",
+  "name": "Lime Calgary — Calgary",
+  "provider": "Lime Calgary",
+  "coverage": {
+    "bbox": [
+      51.142,
+      -114.0524,
+      51.142,
+      -114.0524
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/calgary/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/calgary/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/calgary/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/calgary/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_calgary",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Calgary"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.911Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_calgary"
+  ]
+}

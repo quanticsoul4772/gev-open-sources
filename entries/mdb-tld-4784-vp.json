@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4784-vp",
+  "domain": "transit.vehicles",
+  "name": "Manatee County Area Transit",
+  "provider": "Manatee County Area Transit",
+  "coverage": {
+    "bbox": [
+      27.337576,
+      -82.780165,
+      27.811741,
+      -82.451822
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtimemcat.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Manatee County Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.718Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4784-vp"
+  ]
+}

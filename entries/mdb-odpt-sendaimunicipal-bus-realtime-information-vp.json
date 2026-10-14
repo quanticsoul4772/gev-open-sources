@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-sendaimunicipal-bus-realtime-information-vp",
+  "domain": "transit.vehicles",
+  "name": "仙台市交通局　バス関連情報（GTFS-JP及びGTFSリアルタイム）",
+  "provider": "仙台市交通局",
+  "coverage": {
+    "bbox": [
+      38.184285,
+      140.552233,
+      38.418969,
+      141.004552
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SendaiMunicipal_bus_realtime_information_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "仙台市交通局"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.566Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-SendaiMunicipal-bus_realtime_information-vp"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "mdb-3172",
+  "domain": "transit.vehicles",
+  "name": "BAS.MY Seremban B",
+  "provider": "BAS.MY Seremban B",
+  "coverage": {
+    "bbox": null,
+    "countries": []
+  },
+  "access": {
+    "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-seremban-b",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BAS.MY Seremban B"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.471Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3172"
+  ]
+}

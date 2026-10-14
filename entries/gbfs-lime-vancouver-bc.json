@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-vancouver-bc",
+  "domain": "bikeshare.stations",
+  "name": "Lime Vancouver — Vancouver",
+  "provider": "Lime Vancouver",
+  "coverage": {
+    "bbox": [
+      49.2272,
+      -123.1649,
+      49.2933,
+      -123.024
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/vancouver_bc/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_vancouver_bc",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Vancouver"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.943Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_vancouver_bc"
+  ]
+}

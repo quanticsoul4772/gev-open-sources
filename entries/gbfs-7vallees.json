@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-7vallees",
+  "domain": "bikeshare.stations",
+  "name": "7 Vallées Vélo — Marconne",
+  "provider": "7 Vallées Vélo",
+  "coverage": {
+    "bbox": [
+      50.3721,
+      1.8951,
+      50.423,
+      2.1023
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/7vallees/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v3.0.ecovelo.mobi/7vallees/station_information.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/7vallees/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/7vallees/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "7vallees",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "7 Vallées Vélo"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:19:48.868Z"
+  },
+  "provenance": [
+    "gbfs-systems:7vallees"
+  ]
+}

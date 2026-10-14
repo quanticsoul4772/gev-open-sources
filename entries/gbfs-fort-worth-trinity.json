@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-fort-worth-trinity",
+  "domain": "bikeshare.stations",
+  "name": "Trinity Metro — Fort Worth, TX",
+  "provider": "Trinity Metro",
+  "coverage": {
+    "bbox": [
+      31.8572,
+      -98.399,
+      33.6538,
+      -96.2626
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_fortworth/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_fortworth/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Trinity Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unavailable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.874Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

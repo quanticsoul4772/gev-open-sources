@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-calais-velos",
+  "domain": "bikeshare.stations",
+  "name": "Vel’in — Calais",
+  "provider": "Vel’in",
+  "coverage": {
+    "bbox": [
+      50.8653,
+      1.7468,
+      50.9824,
+      1.9672
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://stce.transdev-hdf.fr/gbfs/station_status.php",
+    "related": {
+      "station_information": "https://stce.transdev-hdf.fr/gbfs/station_information.php",
+      "system_information": "https://stce.transdev-hdf.fr/gbfs/system_information.php",
+      "gbfs": "https://stce.transdev-hdf.fr/gbfs/"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "calais-velos",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Vel’in"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.704Z"
+  },
+  "provenance": [
+    "gbfs-systems:calais-velos"
+  ]
+}

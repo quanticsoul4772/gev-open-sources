@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-donkey-ochtrup",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Ochtrup — Ochtrup",
+  "provider": "Donkey Ochtrup",
+  "coverage": {
+    "bbox": [
+      52.2018,
+      7.1846,
+      52.2115,
+      7.2004
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ochtrup/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ochtrup/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ochtrup/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ochtrup/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_ochtrup",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "de",
+        "text": ""
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.784Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_ochtrup"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4664-vp",
+  "domain": "transit.vehicles",
+  "name": "Shenango Valley Shuttle Service",
+  "provider": "Shenango Valley Shuttle Service",
+  "coverage": {
+    "bbox": [
+      41.202259,
+      -80.519109,
+      41.265614,
+      -80.448526
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://svss.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Shenango Valley Shuttle Service"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.702Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4664-vp"
+  ]
+}

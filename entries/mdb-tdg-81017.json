@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81017",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Tout'enbus",
+  "provider": "Tout'enbus",
+  "coverage": {
+    "bbox": [
+      44.55428,
+      4.312625,
+      44.680355,
+      4.461427
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/af576ebf-d3a4-4a0f-b692-8ee580cb1877",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Tout'enbus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.591Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81017"
+  ]
+}

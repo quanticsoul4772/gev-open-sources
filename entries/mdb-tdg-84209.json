@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84209",
+  "domain": "transit.vehicles",
+  "name": "Réseau européen AVE Renfe",
+  "provider": "RENFE VIAJEROS SOCIEDAD MERCANTIL ESTATAL SA",
+  "coverage": {
+    "bbox": [
+      40.406442,
+      -3.690886,
+      45.760281,
+      5.382236
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/cb62a16d-f879-44e6-8e8b-8eafded361b7",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "RENFE VIAJEROS SOCIEDAD MERCANTIL ESTATAL SA"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.660Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84209"
+  ]
+}

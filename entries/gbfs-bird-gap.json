@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-gap",
+  "domain": "bikeshare.stations",
+  "name": "Bird Gap — Gap",
+  "provider": "Bird Gap",
+  "coverage": {
+    "bbox": [
+      44.5281,
+      6.0437,
+      44.5695,
+      6.1037
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/gap/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/gap/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/gap/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/gap/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-gap",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Gap"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.670Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-gap"
+  ]
+}

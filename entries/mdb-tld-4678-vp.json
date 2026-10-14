@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4678-vp",
+  "domain": "transit.vehicles",
+  "name": "Palm Tran",
+  "provider": "Palm Tran",
+  "coverage": {
+    "bbox": [
+      26.329128,
+      -80.720899,
+      27.26379,
+      -80.033662
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.palmtran.org/TripPlanner/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Palm Tran"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.709Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4678-vp"
+  ]
+}

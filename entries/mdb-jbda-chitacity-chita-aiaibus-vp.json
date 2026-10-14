@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-chitacity-chita-aiaibus-vp",
+  "domain": "transit.vehicles",
+  "name": "知多市コミュニティバス「あいあいバス」",
+  "provider": "知多市",
+  "coverage": {
+    "bbox": [
+      34.935346,
+      136.828827,
+      35.001914,
+      136.915017
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.gtfs.info/chita/vehicle.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "知多市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.502Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-chitacity-chita-aiaibus-vp"
+  ]
+}

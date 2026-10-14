@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2213",
+  "domain": "transit.vehicles",
+  "name": "Empresa Malagueña de Transportes (EMT)",
+  "provider": "Empresa Malagueña de Transportes (EMT)",
+  "coverage": {
+    "bbox": [
+      36.64636358663,
+      -4.5761065131992,
+      36.7800300544653,
+      -4.33577227570503
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.emtmalaga.es/GTFSRTapi/api/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Empresa Malagueña de Transportes (EMT)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.384Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2213"
+  ]
+}

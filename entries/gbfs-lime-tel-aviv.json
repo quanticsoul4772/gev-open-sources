@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-tel-aviv",
+  "domain": "bikeshare.stations",
+  "name": "Lime Tel Aviv — Tel Aviv",
+  "provider": "Lime Tel Aviv",
+  "coverage": {
+    "bbox": [
+      32.0583,
+      34.8075,
+      32.0583,
+      34.8075
+    ],
+    "countries": [
+      "IL"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/tel_aviv/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/tel_aviv/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/tel_aviv/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/tel_aviv/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_tel_aviv",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Tel Aviv"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.941Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_tel_aviv"
+  ]
+}

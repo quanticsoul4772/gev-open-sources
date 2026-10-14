@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-edrivecarsharing-ch",
+  "domain": "bikeshare.stations",
+  "name": "edrive carsharing — Switzerland",
+  "provider": "edrive carsharing",
+  "coverage": {
+    "bbox": [
+      46.4759,
+      7.1914,
+      47.5255,
+      9.561
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/edrivecarsharing_ch/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/edrivecarsharing_ch/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/edrivecarsharing_ch/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/edrivecarsharing_ch/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "edrivecarsharing_ch",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.edrivecarsharing.ch/",
+    "display": false,
+    "commercial": null,
+    "attribution": "edrive carsharing"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms do not apply to this data"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.556Z"
+  },
+  "provenance": [
+    "gbfs-systems:edrivecarsharing_ch"
+  ]
+}

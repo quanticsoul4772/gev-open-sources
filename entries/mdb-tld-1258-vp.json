@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-1258-vp",
+  "domain": "transit.vehicles",
+  "name": "Modesto Area Express",
+  "provider": "Modesto Area Express",
+  "coverage": {
+    "bbox": [
+      37.311133,
+      -121.897669,
+      37.954866,
+      -120.749415
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://stanrta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Modesto Area Express"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.670Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-1258-vp"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3418",
+  "domain": "transit.vehicles",
+  "name": "ELRON",
+  "provider": "ELRON",
+  "coverage": {
+    "bbox": [
+      0.2206108,
+      21.8616849,
+      59.6539063,
+      60.5537851
+    ],
+    "countries": [
+      "EE"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/elron/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "ELRON"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.484Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3418"
+  ]
+}

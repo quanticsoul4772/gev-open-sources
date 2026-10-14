@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-1125-vp",
+  "domain": "transit.vehicles",
+  "name": "VIA Metropolitan Transit",
+  "provider": "VIA Metropolitan Transit",
+  "coverage": {
+    "bbox": [
+      29.27663,
+      -98.743459,
+      29.650497,
+      -98.306831
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs.viainfo.net/vehicle/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "VIA Metropolitan Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.668Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-1125-vp"
+  ]
+}

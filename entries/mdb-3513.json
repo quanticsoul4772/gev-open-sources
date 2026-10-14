@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3513",
+  "domain": "transit.vehicles",
+  "name": "Knoxville Area Transit (KAT)",
+  "provider": "Knoxville Area Transit (KAT)",
+  "coverage": {
+    "bbox": [
+      35.906298,
+      -84.103121,
+      36.044794,
+      -83.838728
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://knoxville.syncromatics.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.knoxvilletn.gov/government/opendata/knoxville_area_transit_kat_gtfs_feed",
+    "display": false,
+    "commercial": null,
+    "attribution": "Knoxville Area Transit (KAT)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.501Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3513"
+  ]
+}

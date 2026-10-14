@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1616",
+  "domain": "transit.vehicles",
+  "name": "Monterey-Salinas Transit",
+  "provider": "Monterey-Salinas Transit",
+  "coverage": {
+    "bbox": [
+      35.622688,
+      -121.936034,
+      37.004346,
+      -120.687893
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://206.128.158.191/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Monterey-Salinas Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.334Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1616"
+  ]
+}

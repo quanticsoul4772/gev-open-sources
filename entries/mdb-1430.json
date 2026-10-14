@@ -1,0 +1,72 @@
+{
+  "id": "mdb-1430",
+  "domain": "transit.vehicles",
+  "name": "Central Ohio Transit Authority",
+  "provider": "Central Ohio Transit Authority",
+  "coverage": {
+    "bbox": [
+      39.829576,
+      -83.168121,
+      40.154474,
+      -82.771722
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://realtime.cota.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "terms:www.cota.com",
+    "url": "https://www.cota.com/data/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Central Ohio Transit Authority",
+    "obligations": [
+      "governing_law",
+      "indemnify",
+      "liability_limitation",
+      "no_endorsement",
+      "no_trademark_use",
+      "provider_may_revoke",
+      "provider_owns_data",
+      "warranty_disclaimer"
+    ]
+  },
+  "licence_decision": {
+    "by": "llm-terms",
+    "evidence": [
+      {
+        "field": "applies_to_this_data",
+        "quote": "The Central Ohio Transit Authority (“COTA”) hereby grants you (Licensee) non-exclusive, limited and revocable rights to use, reproduce and redistribute COTA Data (Data) subject to the following Terms."
+      },
+      {
+        "field": "applies_to_this_data",
+        "quote": "Real-Time Feeds \n Alerts \n Trip Updates \n Vehicle Positions"
+      },
+      {
+        "field": "display",
+        "quote": "non-exclusive, limited and revocable rights to use, reproduce and redistribute COTA Data (Data) subject to the following Terms."
+      },
+      {
+        "field": "commercial",
+        "quote": "non-exclusive, limited and revocable rights to use, reproduce and redistribute COTA Data (Data) subject to the following Terms."
+      },
+      {
+        "field": "requires_acceptance",
+        "quote": "By using COTA Data, you agree to be bound by all of the Terms and Conditions set forth in this agreement."
+      }
+    ],
+    "terms_sha256": "3b9179ecca51ae4e94b72872076dfc6adb519cfbb786b32909923681edfbd5a4",
+    "at": "2026-10-14T15:28:35.285Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1430"
+  ]
+}

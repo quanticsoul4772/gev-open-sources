@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-mikar",
+  "domain": "bikeshare.stations",
+  "name": "Mikar — Germany",
+  "provider": "Mikar",
+  "coverage": {
+    "bbox": [
+      47.5682,
+      6.6958,
+      52.8632,
+      13.8637
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/mikar/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/mikar/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/mikar/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/mikar/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "mikar",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "mikar GmbH",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.964Z"
+  },
+  "provenance": [
+    "gbfs-systems:mikar"
+  ]
+}

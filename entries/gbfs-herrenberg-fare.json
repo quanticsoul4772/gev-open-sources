@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-herrenberg-fare",
+  "domain": "bikeshare.stations",
+  "name": "FaRe - das Bananologen Lastenrad — Herrenberg",
+  "provider": "FaRe - das Bananologen Lastenrad",
+  "coverage": {
+    "bbox": [
+      48.5968,
+      8.8507,
+      48.5968,
+      8.8507
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_fare/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_fare/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_fare/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_fare/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "herrenberg_fare",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "FaRe - das Bananologen Lastenrad",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.883Z"
+  },
+  "provenance": [
+    "gbfs-systems:herrenberg_fare"
+  ]
+}

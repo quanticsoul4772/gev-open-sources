@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5549-vp",
+  "domain": "transit.vehicles",
+  "name": "CityBus of Greater Lafayette Indiana",
+  "provider": "CityBus of Greater Lafayette Indiana",
+  "coverage": {
+    "bbox": [
+      40.365249,
+      -86.96219622407,
+      40.4807968413885,
+      -86.804833
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://bus.gocitybus.com/GTFSRT/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "CityBus of Greater Lafayette Indiana"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.731Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5549-vp"
+  ]
+}

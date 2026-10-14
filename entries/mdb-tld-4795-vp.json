@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4795-vp",
+  "domain": "transit.vehicles",
+  "name": "Missoula Urban Transportation District (MUTD)",
+  "provider": "Missoula Urban Transportation District (MUTD)",
+  "coverage": {
+    "bbox": [
+      46.819761,
+      -114.08799,
+      46.924218,
+      -113.865247
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://bt.mountainline.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Missoula Urban Transportation District (MUTD)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.723Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4795-vp"
+  ]
+}

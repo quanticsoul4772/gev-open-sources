@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-san-jose",
+  "domain": "bikeshare.stations",
+  "name": "Lime San Jose — San Jose, CA",
+  "provider": "Lime San Jose",
+  "coverage": {
+    "bbox": [
+      37.2739,
+      -121.9824,
+      37.2739,
+      -121.9824
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_san_jose",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime San Jose"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.940Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_san_jose"
+  ]
+}

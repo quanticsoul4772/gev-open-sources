@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3475",
+  "domain": "transit.vehicles",
+  "name": "Broward County Transit",
+  "provider": "Broward County Transit",
+  "coverage": {
+    "bbox": [
+      25.76178,
+      -80.431742,
+      26.350903,
+      -80.076136
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://myride2.broward.org/gtfsrealtime/api/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Broward County Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.496Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3475"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5554-vp",
+  "domain": "transit.vehicles",
+  "name": "StarTran",
+  "provider": "StarTran",
+  "coverage": {
+    "bbox": [
+      40.726212,
+      -96.789195,
+      40.879581,
+      -96.593608
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://startran.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "StarTran"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.734Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5554-vp"
+  ]
+}

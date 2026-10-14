@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81998",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain TLP",
+  "provider": "TLP Mobilités",
+  "coverage": {
+    "bbox": [
+      43.083811,
+      -0.078158,
+      43.294371,
+      0.122453
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/38611abb-fb76-4072-8be9-514fdbc4b13a",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "TLP Mobilités"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.613Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81998"
+  ]
+}

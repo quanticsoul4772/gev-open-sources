@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-biketobike",
+  "domain": "bikeshare.stations",
+  "name": "MiBiciTuBici — Rosario",
+  "provider": "MiBiciTuBici",
+  "coverage": {
+    "bbox": [
+      -33.0079,
+      -60.7131,
+      -32.8736,
+      -60.6236
+    ],
+    "countries": [
+      "AR"
+    ]
+  },
+  "access": {
+    "url": "http://www.mibicitubici.gob.ar/opendata/station_status.json",
+    "related": {
+      "station_information": "http://www.mibicitubici.gob.ar/opendata/station_information.json",
+      "system_information": "http://www.mibicitubici.gob.ar/opendata/system_information.json",
+      "gbfs": "https://www.mibicitubici.gob.ar/opendata/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "biketobike",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "MiBiciTuBici"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.657Z"
+  },
+  "provenance": [
+    "gbfs-systems:biketobike"
+  ]
+}

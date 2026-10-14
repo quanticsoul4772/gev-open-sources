@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-rivi-bike",
+  "domain": "bikeshare.stations",
+  "name": "Rivi Bike — Largo Dos Coqueiros",
+  "provider": "Rivi Bike",
+  "coverage": {
+    "bbox": [
+      -23.8068,
+      -46.0325,
+      -23.7898,
+      -46.006
+    ],
+    "countries": [
+      "BR"
+    ]
+  },
+  "access": {
+    "url": "https://riviera.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://riviera.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://riviera.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://riviera.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "rivi_bike",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Rivi Bike"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.220Z"
+  },
+  "provenance": [
+    "gbfs-systems:rivi_bike"
+  ]
+}

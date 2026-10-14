@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1700",
+  "domain": "transit.vehicles",
+  "name": "TransLink South East Queensland (TransLink SEQ)",
+  "provider": "TransLink South East Queensland (TransLink SEQ)",
+  "coverage": {
+    "bbox": [
+      -28.172196,
+      152.124238,
+      -26.15939,
+      153.543374
+    ],
+    "countries": [
+      "AU"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrt.api.translink.com.au/api/realtime/SEQ/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "TransLink South East Queensland (TransLink SEQ)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.352Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1700"
+  ]
+}

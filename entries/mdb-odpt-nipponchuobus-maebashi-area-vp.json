@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-nipponchuobus-maebashi-area-vp",
+  "domain": "transit.vehicles",
+  "name": "日本中央バス　全線 (2025.9/30までは奥多野線を除く)",
+  "provider": "日本中央バス株式会社",
+  "coverage": {
+    "bbox": [
+      34.666565,
+      135.43274074064985,
+      38.259454,
+      140.884324
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_NipponChuoBus_Maebashi_Area_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "日本中央バス株式会社"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.565Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-NipponChuoBus-Maebashi_Area-vp"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-v-lille",
+  "domain": "bikeshare.stations",
+  "name": "V'lille — Lille",
+  "provider": "V'lille",
+  "coverage": {
+    "bbox": [
+      50.603,
+      2.9839,
+      50.7368,
+      3.1989
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://media.ilevia.fr/opendata/station_status.json",
+    "related": {
+      "station_information": "https://media.ilevia.fr/opendata/station_information.json",
+      "system_information": "https://media.ilevia.fr/opendata/system_information.json",
+      "gbfs": "https://media.ilevia.fr/opendata/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "v_lille",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "V'lille"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.257Z"
+  },
+  "provenance": [
+    "gbfs-systems:v_lille"
+  ]
+}

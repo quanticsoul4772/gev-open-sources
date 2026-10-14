@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5545-vp",
+  "domain": "transit.vehicles",
+  "name": "Concord Kannapolis Area Transit",
+  "provider": "Concord Kannapolis Area Transit",
+  "coverage": {
+    "bbox": [
+      35.31144226,
+      -80.74585338,
+      35.5339389,
+      -80.57713256
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/concordk/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Concord Kannapolis Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.729Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5545-vp"
+  ]
+}

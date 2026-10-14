@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2227",
+  "domain": "transit.vehicles",
+  "name": "Emery Go-Round",
+  "provider": "Emery Go-Round",
+  "coverage": {
+    "bbox": [
+      37.829424,
+      -122.313403,
+      37.852317,
+      -122.266983
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://emerygoround.tripshot.com/v1/gtfs/realtime/feed/egr?types=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.foothilltransit.org/about/developer-resources/developer-license-agreement/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Emery Go-Round"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.705Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2227"
+  ]
+}

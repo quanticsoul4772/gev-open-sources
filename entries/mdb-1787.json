@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1787",
+  "domain": "transit.vehicles",
+  "name": "Towson Loop",
+  "provider": "Towson Loop",
+  "coverage": {
+    "bbox": [
+      39.372778069,
+      -76.627403725,
+      39.411576961,
+      -76.576382763
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/towson/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Towson Loop"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.362Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1787"
+  ]
+}

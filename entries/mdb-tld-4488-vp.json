@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4488-vp",
+  "domain": "transit.vehicles",
+  "name": "Translink",
+  "provider": "Translink",
+  "coverage": {
+    "bbox": [
+      -25.560525,
+      152.558177,
+      -25.183824,
+      152.908899
+    ],
+    "countries": [
+      "AU"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrt.api.translink.com.au/api/realtime/MHB/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://translink.com.au/about-translink/open-data/gtfs-rt",
+    "display": false,
+    "commercial": null,
+    "attribution": "Translink"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.760Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4488-vp"
+  ]
+}

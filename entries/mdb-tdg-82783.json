@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-82783",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain beeMob",
+  "provider": "Réseau beeMob - Transports en commun de l'Agglomération Béziers Méditerranée",
+  "coverage": {
+    "bbox": [
+      43.23550259076341,
+      3.1697804662704288,
+      43.47077973282346,
+      3.3753045622529454
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/ed8b8b27-96bd-4e46-b6c7-56b27fd0eb14",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Réseau beeMob - Transports en commun de l'Agglomération Béziers Méditerranée"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.621Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-82783"
+  ]
+}

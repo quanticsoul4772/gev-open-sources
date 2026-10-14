@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3410",
+  "domain": "transit.vehicles",
+  "name": "Greater Cleveland Regional Transit Authority (GCRTA)",
+  "provider": "Greater Cleveland Regional Transit Authority (GCRTA)",
+  "coverage": {
+    "bbox": [
+      41.283093,
+      -81.96736,
+      41.637051,
+      -81.437811
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt.gcrta.vontascloud.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.riderta.com/developers",
+    "display": false,
+    "commercial": null,
+    "attribution": "Greater Cleveland Regional Transit Authority (GCRTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.745Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3410"
+  ]
+}

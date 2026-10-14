@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4360-vp",
+  "domain": "transit.vehicles",
+  "name": "Santa Barbara Metropolitan Transit District",
+  "provider": "Santa Barbara Metropolitan Transit District",
+  "coverage": {
+    "bbox": [
+      34.383217,
+      -119.905809,
+      34.454905,
+      -119.480564
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://bustracker.sbmtd.gov/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Santa Barbara Metropolitan Transit District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.683Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4360-vp"
+  ]
+}

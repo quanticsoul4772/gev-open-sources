@@ -1,0 +1,47 @@
+{
+  "id": "mdb-1750",
+  "domain": "transit.vehicles",
+  "name": "York Region Transit",
+  "provider": "York Region Transit",
+  "coverage": {
+    "bbox": [
+      43.729119,
+      -79.659397,
+      44.32131,
+      -79.212178
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://rtu.york.ca/gtfsrealtime/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.yrt.ca/en/about-us/open-data-licence-agreement.aspx",
+    "display": false,
+    "commercial": null,
+    "attribution": "York Region Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.357Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1750",
+    "licence-borrowed:mdb-728"
+  ]
+}

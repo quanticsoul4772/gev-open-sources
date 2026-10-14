@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-milwaukee-bublr",
+  "domain": "bikeshare.stations",
+  "name": "Bublr — Milwaukee, WI",
+  "provider": "Bublr",
+  "coverage": {
+    "bbox": [
+      42.1406,
+      -89.1356,
+      43.9372,
+      -86.6774
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_bublr/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_bublr/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bublr"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.966Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

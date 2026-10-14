@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5582-vp",
+  "domain": "transit.vehicles",
+  "name": "Racine Transit",
+  "provider": "Racine Transit",
+  "coverage": {
+    "bbox": [
+      42.68181,
+      -87.959541,
+      42.786374,
+      -87.781806
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://racine.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Racine Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.739Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5582-vp"
+  ]
+}

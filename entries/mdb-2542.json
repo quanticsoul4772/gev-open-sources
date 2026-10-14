@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2542",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Dawson Creek)",
+  "provider": "BC Transit (Dawson Creek)",
+  "coverage": {
+    "bbox": [
+      55.7387,
+      -120.25691,
+      55.77627,
+      -120.20964
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=27",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Dawson Creek)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.843Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2542"
+  ]
+}

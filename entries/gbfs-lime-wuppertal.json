@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-wuppertal",
+  "domain": "bikeshare.stations",
+  "name": "Lime Wuppertal — Wuppertal",
+  "provider": "Lime Wuppertal",
+  "coverage": {
+    "bbox": [
+      51.2569,
+      7.2093,
+      51.2569,
+      7.2093
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_wuppertal",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Wuppertal"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.944Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_wuppertal"
+  ]
+}

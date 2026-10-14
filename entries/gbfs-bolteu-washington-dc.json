@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bolteu-washington-dc",
+  "domain": "bikeshare.stations",
+  "name": "Bolt Technology OÜ — Washington, DC",
+  "provider": "Bolt Technology OÜ",
+  "coverage": {
+    "bbox": [
+      38.8661,
+      -77.0639,
+      38.927,
+      -76.9684
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bolt.eu/gbfs/3/23/station_status",
+    "related": {
+      "station_information": "https://mds.bolt.eu/gbfs/3/23/station_information",
+      "system_information": "https://mds.bolt.eu/gbfs/3/23/system_information",
+      "gbfs": "https://mds.bolt.eu/gbfs/3/23/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "BoltEU_Washington DC",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Technology OÜ"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.458Z"
+  },
+  "provenance": [
+    "gbfs-systems:BoltEU_Washington DC"
+  ]
+}

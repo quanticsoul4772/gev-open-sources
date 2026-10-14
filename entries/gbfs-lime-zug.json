@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-zug",
+  "domain": "bikeshare.stations",
+  "name": "Lime Zug — Zug",
+  "provider": "Lime Zug",
+  "coverage": {
+    "bbox": [
+      47.1528,
+      8.516,
+      47.1528,
+      8.516
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/zug/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/zug/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/zug/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/zug/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_zug",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Zug"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.945Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_zug"
+  ]
+}

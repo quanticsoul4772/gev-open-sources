@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83857",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain DK'BUS",
+  "provider": "Communauté Urbaine de Dunkerque / Réseau Dk Bus",
+  "coverage": {
+    "bbox": [
+      50.940872,
+      2.099884,
+      51.082111,
+      2.601023
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/39f7ea92-6ad5-4a02-ad14-4019ce4a8ecb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté Urbaine de Dunkerque / Réseau Dk Bus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.643Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83857"
+  ]
+}

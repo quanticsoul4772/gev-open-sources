@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4788-vp",
+  "domain": "transit.vehicles",
+  "name": "Sarasota County Area Transit",
+  "provider": "Sarasota County Area Transit",
+  "coverage": {
+    "bbox": [
+      27.0388126367811,
+      -82.5876874115126,
+      27.493355,
+      -82.205356
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://breezerider.tripsparkhost.com/gtfs/Realtime/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sarasota County Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.720Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4788-vp"
+  ]
+}

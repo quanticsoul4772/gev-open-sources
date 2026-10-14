@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-halifax",
+  "domain": "bikeshare.stations",
+  "name": "Bird Halifax — Halifax",
+  "provider": "Bird Halifax",
+  "coverage": {
+    "bbox": [
+      44.5949,
+      -63.6913,
+      44.722,
+      -63.4519
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/halifax/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/halifax/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/halifax/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/halifax/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-halifax",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Halifax"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.671Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-halifax"
+  ]
+}

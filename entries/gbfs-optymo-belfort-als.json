@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-optymo-belfort-als",
+  "domain": "bikeshare.stations",
+  "name": "Optymo Belfort Auto libre-service — Belfort",
+  "provider": "Optymo Belfort Auto libre-service",
+  "coverage": {
+    "bbox": [
+      47.618,
+      6.818,
+      47.6649,
+      6.8766
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.optymo.fr/als/station_status.json",
+    "related": {
+      "station_information": "https://data.optymo.fr/als/station_information.json",
+      "system_information": "https://data.optymo.fr/als/system_information.json",
+      "gbfs": "https://data.optymo.fr/als/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "Optymo_Belfort_ALS",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Optymo Belfort Auto libre-service"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.188Z"
+  },
+  "provenance": [
+    "gbfs-systems:Optymo_Belfort_ALS"
+  ]
+}

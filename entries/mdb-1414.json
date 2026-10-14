@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1414",
+  "domain": "transit.vehicles",
+  "name": "Metro St. Louis",
+  "provider": "Metro St. Louis",
+  "coverage": {
+    "bbox": [
+      38.469747,
+      -90.662094,
+      38.808606,
+      -89.874657
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.metrostlouis.org/developer-resources/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Metro St. Louis"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "runs disagree on blocking obligations"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.574Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1414"
+  ]
+}

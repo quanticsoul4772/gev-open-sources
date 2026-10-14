@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-tucson-tugo",
+  "domain": "bikeshare.stations",
+  "name": "Tugo — Tucson, AZ",
+  "provider": "Tugo",
+  "coverage": {
+    "bbox": [
+      31.3243,
+      -112.0366,
+      33.1209,
+      -109.9128
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_tugo/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_tugo/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Tugo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unavailable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.254Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

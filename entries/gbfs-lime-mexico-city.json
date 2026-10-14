@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-mexico-city",
+  "domain": "bikeshare.stations",
+  "name": "Lime Mexico City — Mexico City",
+  "provider": "Lime Mexico City",
+  "coverage": {
+    "bbox": [
+      19.3207,
+      -99.1526,
+      19.3207,
+      -99.1526
+    ],
+    "countries": [
+      "MX"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/mexico_city/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/mexico_city/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/mexico_city/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/mexico_city/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_mexico_city",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Mexico City"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.928Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_mexico_city"
+  ]
+}

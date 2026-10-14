@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5584-vp",
+  "domain": "transit.vehicles",
+  "name": "South Florida Regional Transportation Authority",
+  "provider": "South Florida Regional Transportation Authority",
+  "coverage": {
+    "bbox": [
+      25.7809696198,
+      -80.2596206665,
+      26.7587432861,
+      -80.062538147
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfsr.tri-rail.com/download.aspx?file=position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "South Florida Regional Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.740Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5584-vp"
+  ]
+}

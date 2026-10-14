@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-jeddah",
+  "domain": "bikeshare.stations",
+  "name": "Dott Jeddah — Jeddah",
+  "provider": "Dott Jeddah",
+  "coverage": {
+    "bbox": [
+      21.6344,
+      39.1006,
+      21.6491,
+      39.1023
+    ],
+    "countries": [
+      "SA"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/jeddah/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/jeddah/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/jeddah/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/jeddah/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-jeddah",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Jeddah"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.821Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-jeddah"
+  ]
+}

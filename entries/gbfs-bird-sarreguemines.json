@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-sarreguemines",
+  "domain": "bikeshare.stations",
+  "name": "Bird Sarreguemines — Sarreguemines",
+  "provider": "Bird Sarreguemines",
+  "coverage": {
+    "bbox": [
+      49.0927,
+      7.0407,
+      49.1246,
+      7.1036
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/sarreguemines/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/sarreguemines/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/sarreguemines/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/sarreguemines/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-sarreguemines",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Sarreguemines"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.681Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-sarreguemines"
+  ]
+}

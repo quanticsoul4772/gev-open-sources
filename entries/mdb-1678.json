@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1678",
+  "domain": "transit.vehicles",
+  "name": "Regional Transportation District (RTD)",
+  "provider": "Regional Transportation District (RTD)",
+  "coverage": {
+    "bbox": [
+      38.835175,
+      -108.564,
+      40.59005,
+      -104.669533
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.rtd-denver.com/files/gtfs-rt/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.rtd-denver.com/business-center/open-spatial-data/gtfs-realtime-license-agreement",
+    "display": false,
+    "commercial": null,
+    "attribution": "Regional Transportation District (RTD)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.696Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1678"
+  ]
+}

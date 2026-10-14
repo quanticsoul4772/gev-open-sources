@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84017",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Le Bus",
+  "provider": "Estérel Côte d'Azur Agglomération",
+  "coverage": {
+    "bbox": [
+      43.34137344,
+      6.63325405,
+      43.53482056,
+      6.93070889
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/24e2ecf9-82a3-4bfc-bf86-db6ec81c480f",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Estérel Côte d'Azur Agglomération"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.647Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84017"
+  ]
+}

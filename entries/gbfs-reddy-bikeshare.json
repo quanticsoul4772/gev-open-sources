@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-reddy-bikeshare",
+  "domain": "bikeshare.stations",
+  "name": "Reddy Bikeshare — Buffalo, NY",
+  "provider": "Reddy Bikeshare",
+  "coverage": {
+    "bbox": [
+      42.8453,
+      -79.0702,
+      43.1329,
+      -78.7771
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://reddybikeshare.socialbicycles.com/opendata/station_status.json",
+    "related": {
+      "station_information": "http://reddybikeshare.socialbicycles.com/opendata/station_information.json",
+      "system_information": "http://reddybikeshare.socialbicycles.com/opendata/system_information.json",
+      "gbfs": "https://reddybikeshare.socialbicycles.com/opendata/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "reddy_bikeshare",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Reddy Bikeshare"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.216Z"
+  },
+  "provenance": [
+    "gbfs-systems:reddy_bikeshare"
+  ]
+}

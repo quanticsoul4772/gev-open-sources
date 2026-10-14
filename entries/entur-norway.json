@@ -1,0 +1,46 @@
+{
+  "id": "entur-norway",
+  "domain": "transit.vehicles",
+  "name": "Entur",
+  "provider": "Entur AS (Norwegian national transit data)",
+  "coverage": {
+    "bbox": [
+      57.5322,
+      -3.2543,
+      70.4678,
+      26.2543
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api.entur.io/realtime/v1/gtfs-rt/vehicle-positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {
+      "ET-Client-Name": "gods-eye-view-transit"
+    },
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://developer.entur.org/pages-intro-authentication",
+    "display": false,
+    "commercial": null,
+    "attribution": "Entur — data under NLOD"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "runs disagree on blocking obligations"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.572Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

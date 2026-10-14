@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-lille",
+  "domain": "bikeshare.stations",
+  "name": "Lime Lille — Lille",
+  "provider": "Lime Lille",
+  "coverage": {
+    "bbox": [
+      50.6528,
+      2.9643,
+      50.6528,
+      2.9643
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/lille/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/lille/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/lille/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/lille/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_lille",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Lille"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.924Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_lille"
+  ]
+}

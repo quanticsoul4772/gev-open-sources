@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1530",
+  "domain": "transit.vehicles",
+  "name": "Suffolk County Transit",
+  "provider": "Suffolk County Transit",
+  "coverage": {
+    "bbox": [
+      40.623699,
+      -73.429017,
+      41.155227,
+      -72.194203
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfsrealtime.suffolkcountyny.gov:8080/gtfsrealtime/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.suffolkcountyny.gov/Departments/Public-Works/Transportation/Terms-and-Conditions",
+    "display": false,
+    "commercial": null,
+    "attribution": "Suffolk County Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.324Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1530"
+  ]
+}

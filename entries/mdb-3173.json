@@ -1,0 +1,39 @@
+{
+  "id": "mdb-3173",
+  "domain": "transit.vehicles",
+  "name": "BAS.MY Melaka",
+  "provider": "BAS.MY Melaka",
+  "coverage": {
+    "bbox": null,
+    "countries": []
+  },
+  "access": {
+    "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-melaka",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BAS.MY Melaka"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.472Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3173"
+  ]
+}

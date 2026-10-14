@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1614",
+  "domain": "transit.vehicles",
+  "name": "Stanislaus Regional Transit Authority (StanRTA)",
+  "provider": "Stanislaus Regional Transit Authority (StanRTA)",
+  "coverage": {
+    "bbox": [
+      37.31121,
+      -121.898961,
+      37.954866,
+      -120.74953
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Stanislaus Regional Transit Authority (StanRTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.333Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1614"
+  ]
+}

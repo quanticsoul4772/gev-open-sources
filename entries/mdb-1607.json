@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1607",
+  "domain": "transit.vehicles",
+  "name": "Halifax Transit",
+  "provider": "Halifax Transit",
+  "coverage": {
+    "bbox": [
+      44.565098,
+      -63.858243,
+      44.886253,
+      -63.28321
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "http://www.halifax.ca/opendata/transit.php",
+    "display": false,
+    "commercial": null,
+    "attribution": "Halifax Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.331Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1607"
+  ]
+}

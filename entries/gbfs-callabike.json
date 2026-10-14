@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-callabike",
+  "domain": "bikeshare.stations",
+  "name": "Call a Bike — Germany",
+  "provider": "Call a Bike",
+  "coverage": {
+    "bbox": [
+      48.1077,
+      6.8698,
+      52.556,
+      13.5266
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/callabike/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/callabike/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/callabike/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/callabike/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "callabike",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Deutsche Bahn Connect GmbH",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.708Z"
+  },
+  "provenance": [
+    "gbfs-systems:callabike"
+  ]
+}

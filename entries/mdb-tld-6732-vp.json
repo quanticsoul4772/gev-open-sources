@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6732-vp",
+  "domain": "transit.vehicles",
+  "name": "Rosemead Explorer",
+  "provider": "Rosemead Explorer",
+  "coverage": {
+    "bbox": [
+      34.03651,
+      -118.10379,
+      34.08384,
+      -118.0585
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/rosemead/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Rosemead Explorer"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.761Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6732-vp"
+  ]
+}

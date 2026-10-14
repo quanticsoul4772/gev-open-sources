@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-brussels",
+  "domain": "bikeshare.stations",
+  "name": "Dott Brussels — Brussels",
+  "provider": "Dott Brussels",
+  "coverage": {
+    "bbox": [
+      50.7755,
+      4.259,
+      50.9098,
+      4.4681
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/brussels/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/brussels/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/brussels/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/brussels/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-brussels",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Brussels"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.806Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-brussels"
+  ]
+}

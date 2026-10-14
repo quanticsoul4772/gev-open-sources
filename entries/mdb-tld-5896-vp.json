@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5896-vp",
+  "domain": "transit.vehicles",
+  "name": "Skagit Transit",
+  "provider": "Skagit Transit",
+  "coverage": {
+    "bbox": [
+      47.9732683573543,
+      -122.688354,
+      48.750672,
+      -121.738907
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://strweb.skagittransit.org/GTFS/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Skagit Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.749Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5896-vp"
+  ]
+}

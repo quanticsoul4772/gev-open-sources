@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2422",
+  "domain": "transit.vehicles",
+  "name": "Connecticut Transit",
+  "provider": "Connecticut Transit",
+  "coverage": {
+    "bbox": [
+      41.000207,
+      -73.773779,
+      42.02084,
+      -71.794509
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cttprdtmgtfs.ctttrpcloud.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.cttransit.com/about/developers/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "Connecticut Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.711Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2422"
+  ]
+}

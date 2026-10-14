@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bixi-mtl",
+  "domain": "bikeshare.stations",
+  "name": "BIXI Montréal — Montreal",
+  "provider": "BIXI Montréal",
+  "coverage": {
+    "bbox": [
+      45.3798,
+      -73.9415,
+      45.7023,
+      -71.8726
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.velobixi.com/gbfs/2-2/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.velobixi.com/gbfs/2-2/en/station_information.json",
+      "system_information": "https://gbfs.velobixi.com/gbfs/2-2/en/system_information.json",
+      "gbfs": "https://gbfs.velobixi.com/gbfs/2-2/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "Bixi_MTL",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BIXI Montréal"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.685Z"
+  },
+  "provenance": [
+    "gbfs-systems:Bixi_MTL"
+  ]
+}

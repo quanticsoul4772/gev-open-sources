@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-pony-limoges",
+  "domain": "bikeshare.stations",
+  "name": "Pony Limoges — Limoges",
+  "provider": "Pony Limoges",
+  "coverage": {
+    "bbox": [
+      45.8046,
+      1.1936,
+      45.9147,
+      1.3332
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-limoges-gbfs/station_status.json",
+    "related": {
+      "station_information": "https://proxy.transport.data.gouv.fr/resource/pony-limoges-gbfs/station_information.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-limoges-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-limoges-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "pony_Limoges",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "pony"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.206Z"
+  },
+  "provenance": [
+    "gbfs-systems:pony_Limoges"
+  ]
+}

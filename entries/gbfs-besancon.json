@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-besancon",
+  "domain": "bikeshare.stations",
+  "name": "VéloCité — Besançon",
+  "provider": "VéloCité",
+  "coverage": {
+    "bbox": [
+      47.2312,
+      5.9869,
+      47.2489,
+      6.0364
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/besancon/gbfs/v3/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/besancon/gbfs/v3/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/besancon/gbfs/v3/system_information.json",
+      "gbfs": "https://api.cyclocity.fr/contracts/besancon/gbfs/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "besancon",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "VéloCité"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.641Z"
+  },
+  "provenance": [
+    "gbfs-systems:besancon"
+  ]
+}

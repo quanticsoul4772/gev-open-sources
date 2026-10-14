@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2847",
+  "domain": "transit.vehicles",
+  "name": "Urban Mobility Center - Sofia Traffic",
+  "provider": "Urban Mobility Center - Sofia Traffic",
+  "coverage": {
+    "bbox": [
+      42.47956466674805,
+      23.07800674438477,
+      42.85449981689453,
+      23.60716819763184
+    ],
+    "countries": [
+      "BG"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.sofiatraffic.bg/api/v1/vehicle-positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.sofiatraffic.bg/bg/info-center/gtfs-danni",
+    "display": false,
+    "commercial": null,
+    "attribution": "Urban Mobility Center - Sofia Traffic"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.452Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2847"
+  ]
+}

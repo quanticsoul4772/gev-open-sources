@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83192",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain CVL Mobilité",
+  "provider": "Communauté de Communes Chinon Vienne et Loire",
+  "coverage": {
+    "bbox": [
+      47.163436,
+      0.156412,
+      47.28484,
+      0.291587
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/8d37ead3-7887-438b-9b0b-e2675d0e3f2c",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté de Communes Chinon Vienne et Loire"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.626Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83192"
+  ]
+}

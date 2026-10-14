@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-al",
+  "domain": "bikeshare.stations",
+  "name": "city bike Linz — Linz",
+  "provider": "city bike Linz",
+  "coverage": {
+    "bbox": [
+      48.2911,
+      14.2801,
+      48.3372,
+      14.3204
+    ],
+    "countries": [
+      "AT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_al/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_al/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_al/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_al/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_al",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "City Bike Linz Rental Service GmbH, Wischerstraße 2, 4040 Linz, Österreich"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.002Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_al"
+  ]
+}

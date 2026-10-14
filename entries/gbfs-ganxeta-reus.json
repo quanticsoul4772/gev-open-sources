@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-ganxeta-reus",
+  "domain": "bikeshare.stations",
+  "name": "Ganxeta — Reus",
+  "provider": "Ganxeta",
+  "coverage": {
+    "bbox": [
+      41.1391,
+      1.0853,
+      41.1616,
+      1.1183
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.ganxeta.cat/v3/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.ganxeta.cat/v3/station_information.json",
+      "system_information": "https://gbfs.ganxeta.cat/v3/system_information.json",
+      "gbfs": "https://gbfs.ganxeta.cat/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "ganxeta_reus",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "REUS MOBILITAT I SERVEIS SA"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.876Z"
+  },
+  "provenance": [
+    "gbfs-systems:ganxeta_reus"
+  ]
+}

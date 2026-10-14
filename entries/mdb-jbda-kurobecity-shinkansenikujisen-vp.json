@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-kurobecity-shinkansenikujisen-vp",
+  "domain": "transit.vehicles",
+  "name": "新幹線生地線",
+  "provider": "黒部市",
+  "coverage": {
+    "bbox": [
+      36.8742033,
+      137.418700238129,
+      36.9057392406,
+      137.485134047652
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/kurobe_shinkansen/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "黒部市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.516Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-kurobecity-shinkansenikujisen-vp"
+  ]
+}
