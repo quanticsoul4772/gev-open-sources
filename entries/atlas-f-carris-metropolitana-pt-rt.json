@@ -32,11 +32,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no ANTHROPIC_API_KEY"
+        "quote": "confidence below 0.8"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.564Z"
+    "at": "2026-10-14T18:51:37.530Z"
   },
   "provenance": [
     "transitland-atlas:f-carris~metropolitana~pt~rt",

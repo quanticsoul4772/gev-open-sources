@@ -21,10 +21,10 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
+    "id": "terms:www.capmetro.org",
     "url": "https://www.capmetro.org/developertools",
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "Capital Metropolitan Transportation Authority — data.texas.gov",
     "obligations": [
       "governing_law",
@@ -36,15 +36,35 @@
     ]
   },
   "licence_decision": {
-    "by": "none",
+    "by": "llm-terms",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "no ANTHROPIC_API_KEY"
+        "field": "applies_to_this_data",
+        "quote": "This data may include one or more of the following: CMTA Vehicle Location data, CMTA Service Alerts data, CMTA Trip Update Data, General Transit Feed Specification (&ldquo;GTFS&rdquo;) formatted data sets, Scheduled Service data, and Maps data."
+      },
+      {
+        "field": "applies_to_this_data",
+        "quote": "grants you (Licensee) non-exclusive, limited and revocable rights to use, reproduce, and redistribute CMTA Data (Data) hosted on the Socrata (http://www.socrata.com/) platform on data.texas.gov portal"
+      },
+      {
+        "field": "display",
+        "quote": "This data is provided by CapMetro and is available for everyone to use, explore, and share."
+      },
+      {
+        "field": "display",
+        "quote": "encourage developer participation to create innovative apps that will help Central Texans use our services efficiently."
+      },
+      {
+        "field": "commercial",
+        "quote": "Capital Metropolitan Transportation Authority (CMTA) hereby grants you (Licensee) non-exclusive, limited and revocable rights to use, reproduce, and redistribute CMTA Data"
+      },
+      {
+        "field": "requires_acceptance",
+        "quote": "By using CMTA Data, you agree to be bound by all of the Terms and Conditions set forth in this agreement."
       }
     ],
-    "terms_sha256": null,
-    "at": "2026-10-14T15:40:13.681Z"
+    "terms_sha256": "33f4e16fb1335a8ec5a7495f057cad3b454209c0cacaf2c902a36fefab65d019",
+    "at": "2026-10-14T18:50:56.075Z"
   },
   "provenance": [
     "seed:gods-eye-view"

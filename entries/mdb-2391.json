@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no ANTHROPIC_API_KEY"
+        "quote": "awaiting classification"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:41:07.342Z"
+    "at": "2026-10-14T18:51:37.543Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2391"

@@ -32,11 +32,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no ANTHROPIC_API_KEY"
+        "quote": "confidence below 0.8"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T17:12:54.226Z"
+    "at": "2026-10-14T18:51:37.531Z"
   },
   "provenance": [
     "transitland-atlas:f-dngy-transitauthorityofnorthernkentucky~rt"

@@ -44,11 +44,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no ANTHROPIC_API_KEY"
+        "quote": "obligation indemnify"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.573Z"
+    "at": "2026-10-14T18:51:37.538Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1430"

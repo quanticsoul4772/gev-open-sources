@@ -31,14 +31,9 @@
   },
   "licence_decision": {
     "by": "none",
-    "evidence": [
-      {
-        "field": "reason",
-        "quote": "no ANTHROPIC_API_KEY"
-      }
-    ],
+    "evidence": [],
     "terms_sha256": null,
-    "at": "2026-10-14T15:41:07.363Z"
+    "at": "2026-10-14T18:51:37.554Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-3390"

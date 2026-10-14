@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-zenbus-limocar-rt",
+  "domain": "transit.vehicles",
+  "name": "Limocar",
+  "provider": "Limocar",
+  "coverage": {
+    "bbox": [
+      45.4659,
+      -73.5706,
+      45.5059,
+      -73.5306
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=limocar",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Limocar"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:51:37.535Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-zenbus~limocar~rt"
+  ]
+}
