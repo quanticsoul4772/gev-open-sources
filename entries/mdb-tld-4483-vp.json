@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4483-vp",
+  "domain": "transit.vehicles",
+  "name": "Fresno Area Express",
+  "provider": "Fresno Area Express",
+  "coverage": {
+    "bbox": [
+      36.678042,
+      -119.908969,
+      36.888538,
+      -119.681909
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gis4u.fresno.gov/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Fresno Area Express"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.689Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4483-vp"
+  ]
+}

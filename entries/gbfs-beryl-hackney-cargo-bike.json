@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-hackney-cargo-bike",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - Hackney Cargo Bike — Hackney",
+  "provider": "Beryl - Hackney Cargo Bike",
+  "coverage": {
+    "bbox": [
+      51.5265,
+      -0.0838,
+      51.5623,
+      -0.0621
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Hackney_Cargo_Bike/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Hackney_Cargo_Bike/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Hackney_Cargo_Bike/system_information.json",
+      "gbfs": "https://gbfs.beryl.cc/v2_2/Hackney_Cargo_Bike/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_hackney_cargo_bike",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.505Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_hackney_cargo_bike"
+  ]
+}

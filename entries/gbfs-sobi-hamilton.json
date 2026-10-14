@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-sobi-hamilton",
+  "domain": "bikeshare.stations",
+  "name": "Sobi Hamilton — Hamilton",
+  "provider": "Sobi Hamilton",
+  "coverage": {
+    "bbox": [
+      43.2351,
+      -79.9538,
+      43.2895,
+      -79.7657
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://hamilton.socialbicycles.com/opendata/station_status.json",
+    "related": {
+      "station_information": "http://hamilton.socialbicycles.com/opendata/station_information.json",
+      "system_information": "http://hamilton.socialbicycles.com/opendata/system_information.json",
+      "gbfs": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "sobi_hamilton",
+    "version": null
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sobi Hamilton"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.236Z"
+  },
+  "provenance": [
+    "gbfs-systems:sobi_hamilton"
+  ]
+}

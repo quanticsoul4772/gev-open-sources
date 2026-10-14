@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5865-vp",
+  "domain": "transit.vehicles",
+  "name": "Concho Valley Transit District",
+  "provider": "Concho Valley Transit District",
+  "coverage": {
+    "bbox": [
+      31.403552945,
+      -100.512349606,
+      33.920309,
+      -84.383005
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/conchovt/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Concho Valley Transit District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.746Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5865-vp"
+  ]
+}

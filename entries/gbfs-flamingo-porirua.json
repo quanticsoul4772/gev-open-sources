@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-flamingo-porirua",
+  "domain": "bikeshare.stations",
+  "name": "Flamingo Porirua — Porirua",
+  "provider": "Flamingo Porirua",
+  "coverage": {
+    "bbox": [
+      -41.1698,
+      174.8251,
+      -41.0376,
+      174.894
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/porirua/station_status.json",
+    "related": {
+      "station_information": "https://data.rideflamingo.com/gbfs/3/porirua/station_information.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/porirua/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/porirua/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "flamingo_porirua",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Porirua"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.865Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_porirua"
+  ]
+}

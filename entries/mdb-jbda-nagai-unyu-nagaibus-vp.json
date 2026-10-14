@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-nagai-unyu-nagaibus-vp",
+  "domain": "transit.vehicles",
+  "name": "永井バス",
+  "provider": "永井運輸株式会社",
+  "coverage": {
+    "bbox": [
+      36.273268,
+      139.047567,
+      36.458699,
+      139.193544
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://nagai.nolbe.net/buslocation/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "永井運輸株式会社"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.525Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-nagai-unyu-Nagaibus-vp"
+  ]
+}

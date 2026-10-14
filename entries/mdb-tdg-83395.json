@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83395",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Cmonbus",
+  "provider": "CA Luberon Monts de Vaucluse",
+  "coverage": {
+    "bbox": [
+      43.816224,
+      5.006284,
+      43.882607,
+      5.105504
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/cc043d19-1258-433c-9d55-5c62fef2d038",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "CA Luberon Monts de Vaucluse"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.633Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83395"
+  ]
+}

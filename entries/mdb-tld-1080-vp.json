@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-1080-vp",
+  "domain": "transit.vehicles",
+  "name": "Calgary Transit",
+  "provider": "Calgary Transit",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.calgary.ca/download/am7c-qe3u/application%2Foctet-stream",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Calgary Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.667Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-1080-vp"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-mie-kotsu-sancochusei-vp",
+  "domain": "transit.vehicles",
+  "name": "中勢営業所",
+  "provider": "三重交通",
+  "coverage": {
+    "bbox": [
+      34.608604,
+      136.35048,
+      34.885765,
+      136.59497
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://bus-vision.jp/realtime/chusei_vpos_update_v2.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "三重交通"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.518Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-mie-kotsu-sancochusei-vp"
+  ]
+}

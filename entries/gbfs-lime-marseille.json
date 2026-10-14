@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-marseille",
+  "domain": "bikeshare.stations",
+  "name": "Lime Marseille — Marseille",
+  "provider": "Lime Marseille",
+  "coverage": {
+    "bbox": [
+      43.3909,
+      5.4266,
+      43.3909,
+      5.4266
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/marseille/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/marseille/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/marseille/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/marseille/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_marseille",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Marseille"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.927Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_marseille"
+  ]
+}

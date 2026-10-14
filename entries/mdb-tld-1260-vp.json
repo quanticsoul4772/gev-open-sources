@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-1260-vp",
+  "domain": "transit.vehicles",
+  "name": "Long Beach Transit",
+  "provider": "Long Beach Transit",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://lbtgtfs.lbtransit.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Long Beach Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.671Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-1260-vp"
+  ]
+}

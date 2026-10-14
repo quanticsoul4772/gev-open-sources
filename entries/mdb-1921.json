@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1921",
+  "domain": "transit.vehicles",
+  "name": "C-TRAN",
+  "provider": "C-TRAN",
+  "coverage": {
+    "bbox": [
+      45.496521,
+      -122.708257,
+      45.86686,
+      -122.321559
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePostions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://c-tran.com/about-c-tran/business/c-tran-gtfs-data",
+    "display": false,
+    "commercial": null,
+    "attribution": "C-TRAN"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.371Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1921"
+  ]
+}

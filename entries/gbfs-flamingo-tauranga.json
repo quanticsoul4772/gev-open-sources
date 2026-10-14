@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-flamingo-tauranga",
+  "domain": "bikeshare.stations",
+  "name": "Flamingo Tauranga — Tauranga",
+  "provider": "Flamingo Tauranga",
+  "coverage": {
+    "bbox": [
+      -37.7252,
+      176.1286,
+      -37.6327,
+      176.2258
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/tauranga/station_status.json",
+    "related": {
+      "station_information": "https://data.rideflamingo.com/gbfs/3/tauranga/station_information.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/tauranga/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/tauranga/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "flamingo_tauranga",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Tauranga"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.865Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_tauranga"
+  ]
+}

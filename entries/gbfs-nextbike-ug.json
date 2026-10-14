@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-ug",
+  "domain": "bikeshare.stations",
+  "name": "StadtRad Greifswald — Greifswald",
+  "provider": "StadtRad Greifswald",
+  "coverage": {
+    "bbox": [
+      54.0731,
+      13.3495,
+      54.1196,
+      13.4538
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ug/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ug/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ug/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ug/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_ug",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "UsedomRad GmbH, Hauptstraße 8, 17459 Ückeritz"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.153Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_ug"
+  ]
+}

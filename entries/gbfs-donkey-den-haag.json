@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-donkey-den-haag",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Den Haag — Den Haag",
+  "provider": "Donkey Republic Den Haag",
+  "coverage": {
+    "bbox": [
+      51.9811,
+      4.2145,
+      52.121,
+      4.5291
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_den_haag/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_den_haag/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_den_haag/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_den_haag/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_den_haag",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "nl",
+        "text": "Donkey Republic"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.761Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_den_haag"
+  ]
+}

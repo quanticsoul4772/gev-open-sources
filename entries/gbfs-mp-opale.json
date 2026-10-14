@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-mp-opale",
+  "domain": "bikeshare.stations",
+  "name": "PAYS D'OPALE — Pays d'Opale",
+  "provider": "PAYS D'OPALE",
+  "coverage": {
+    "bbox": [
+      50.782,
+      1.8186,
+      50.8662,
+      1.9737
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.mobility-parc.net/gbfs/v3/Opale/station_status.json",
+    "related": {
+      "station_information": "https://www.mobility-parc.net/gbfs/v3/Opale/station_information.json",
+      "system_information": "https://www.mobility-parc.net/gbfs/v3/Opale/system_information.json",
+      "gbfs": "https://www.mobility-parc.net/gbfs/v3/Opale/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "mp_Opale",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "PAYS D'OPALE"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.981Z"
+  },
+  "provenance": [
+    "gbfs-systems:mp_Opale"
+  ]
+}

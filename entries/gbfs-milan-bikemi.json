@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-milan-bikemi",
+  "domain": "bikeshare.stations",
+  "name": "Milan Bikemi — Milan",
+  "provider": "Milan Bikemi",
+  "coverage": {
+    "bbox": [
+      45.437,
+      9.0943,
+      45.5268,
+      9.2368
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.urbansharing.com/bikemi.com/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.urbansharing.com/bikemi.com/station_information.json",
+      "system_information": "https://gbfs.urbansharing.com/bikemi.com/system_information.json",
+      "gbfs": "https://gbfs.urbansharing.com/bikemi.com/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "milan-bikemi",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Milan Bikemi"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.965Z"
+  },
+  "provenance": [
+    "gbfs-systems:milan-bikemi"
+  ]
+}

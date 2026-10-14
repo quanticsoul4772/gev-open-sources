@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-quickrent-ch",
+  "domain": "bikeshare.stations",
+  "name": "QuickRent — Switzerland",
+  "provider": "QuickRent",
+  "coverage": {
+    "bbox": [
+      46.3989,
+      6.6781,
+      47.5826,
+      9.48
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://quickrent.ch/sbb/api/v1/gbfs/station-status",
+    "related": {
+      "station_information": "https://quickrent.ch/sbb/api/v1/gbfs/station-information",
+      "system_information": "https://quickrent.ch/sbb/api/v1/gbfs/system-information",
+      "gbfs": "https://quickrent.ch/sbb/api/v1/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "quickrent.ch",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "QuickRent"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.215Z"
+  },
+  "provenance": [
+    "gbfs-systems:quickrent.ch"
+  ]
+}

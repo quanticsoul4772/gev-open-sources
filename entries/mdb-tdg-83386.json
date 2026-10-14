@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83386",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Agglobus",
+  "provider": "Communauté d’Agglomération du Centre Littoral de Guyane",
+  "coverage": {
+    "bbox": [
+      4.822652,
+      -52.365129,
+      4.9354710874831,
+      52.296379
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/16f3e3ea-8527-4a6a-a37e-2b7eb312da51",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté d’Agglomération du Centre Littoral de Guyane"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.632Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83386"
+  ]
+}

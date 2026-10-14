@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3436",
+  "domain": "transit.vehicles",
+  "name": "Pocono Pony",
+  "provider": "Monroe County Transportation Authority (MCTA)",
+  "coverage": {
+    "bbox": [
+      40.9825553894,
+      -75.415588,
+      41.2190895081,
+      -75.038175
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://ponytracker.availtec.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Monroe County Transportation Authority (MCTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.489Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3436"
+  ]
+}

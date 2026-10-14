@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1766",
+  "domain": "transit.vehicles",
+  "name": "Central Florida Regional Transit Authority (LYNX)",
+  "provider": "Central Florida Regional Transit Authority (LYNX)",
+  "coverage": {
+    "bbox": [
+      28.10932,
+      -81.67681,
+      28.741781,
+      -81.205343
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfsrt.golynx.com/gtfsrt/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Central Florida Regional Transit Authority (LYNX)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.358Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1766"
+  ]
+}

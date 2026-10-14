@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83319",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Lignes d'Azur",
+  "provider": "Métropole Nice Côte d'Azur",
+  "coverage": {
+    "bbox": [
+      43.651165,
+      6.866431,
+      44.28372,
+      7.382698
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/5f571595-aef1-480f-acde-b9315d9f5f3b",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Métropole Nice Côte d'Azur"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.630Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83319"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-sosnowiec",
+  "domain": "bikeshare.stations",
+  "name": "Dott Sosnowiec — Sosnowiec",
+  "provider": "Dott Sosnowiec",
+  "coverage": {
+    "bbox": [
+      50.2535,
+      19.1059,
+      50.3123,
+      19.2414
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/sosnowiec/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/sosnowiec/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/sosnowiec/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/sosnowiec/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-sosnowiec",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Sosnowiec"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.848Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-sosnowiec"
+  ]
+}

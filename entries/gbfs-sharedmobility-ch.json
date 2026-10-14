@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-sharedmobility-ch",
+  "domain": "bikeshare.stations",
+  "name": "sharedmobility.ch — Switzerland",
+  "provider": "sharedmobility.ch",
+  "coverage": {
+    "bbox": [
+      43.6075,
+      -73.5514,
+      47.7382,
+      10.3697
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://www.sharedmobility.ch/station_status.json",
+    "related": {
+      "station_information": "https://www.sharedmobility.ch/station_information.json",
+      "system_information": "https://www.sharedmobility.ch/system_information.json",
+      "gbfs": "https://www.sharedmobility.ch/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "sharedmobility.ch",
+    "version": "2.0"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "sharedmobility.ch"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.234Z"
+  },
+  "provenance": [
+    "gbfs-systems:sharedmobility.ch"
+  ]
+}

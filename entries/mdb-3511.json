@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3511",
+  "domain": "transit.vehicles",
+  "name": "ArroyoBus",
+  "provider": "La Regional Vallisoletana S.A",
+  "coverage": {
+    "bbox": [
+      41.6109561,
+      -4.8144399,
+      41.66496,
+      -4.70562
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://enzeyiwpoomhlxmcjivn.supabase.co/functions/v1/gtfs-rt",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "La Regional Vallisoletana S.A"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.500Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3511"
+  ]
+}

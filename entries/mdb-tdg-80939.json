@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-80939",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Illygo",
+  "provider": "Transdev • Pays de la Loire",
+  "coverage": {
+    "bbox": [
+      47.817246,
+      -0.150787,
+      48.212808,
+      0.5391
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/476d53cd-374b-41b7-b11a-a158cc9abfaa",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Transdev • Pays de la Loire"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.589Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-80939"
+  ]
+}

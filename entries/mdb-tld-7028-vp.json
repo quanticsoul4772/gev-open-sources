@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-7028-vp",
+  "domain": "transit.vehicles",
+  "name": "Fayette Area Coordinated Transportation",
+  "provider": "Fayette Area Coordinated Transportation",
+  "coverage": {
+    "bbox": [
+      39.795652,
+      -80.021348,
+      40.444855,
+      -79.539104
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://fact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Fayette Area Coordinated Transportation"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.779Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-7028-vp"
+  ]
+}

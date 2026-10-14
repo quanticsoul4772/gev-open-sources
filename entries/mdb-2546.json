@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2546",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Port Edward | Prince Rupert)",
+  "provider": "BC Transit (Port Edward | Prince Rupert)",
+  "coverage": {
+    "bbox": [
+      54.21791,
+      -130.35283,
+      54.33055,
+      -130.26746
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=23",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Port Edward | Prince Rupert)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.844Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2546"
+  ]
+}

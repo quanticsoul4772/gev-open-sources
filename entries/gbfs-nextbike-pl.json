@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-pl",
+  "domain": "bikeshare.stations",
+  "name": "WRM nextbike Poland — Wrocław",
+  "provider": "WRM nextbike Poland",
+  "coverage": {
+    "bbox": [
+      51.0254,
+      16.8656,
+      51.2448,
+      17.2767
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pl/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pl/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pl/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pl/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_pl",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Nextbike Polska S.A. ul. Staniewicka 5, 03-310 Warszawa KRS 0000646950 NIP: 895-198-10-07 REGON: 021336152"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.117Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_pl"
+  ]
+}

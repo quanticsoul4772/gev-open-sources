@@ -1,0 +1,44 @@
+{
+  "id": "hsl-helsinki",
+  "domain": "transit.vehicles",
+  "name": "HSL",
+  "provider": "Helsinki Region Transport (HSL)",
+  "coverage": {
+    "bbox": [
+      59.5411,
+      23.6743,
+      60.7987,
+      26.2025
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://realtime.hsl.fi/realtime/vehicle-positions/v2/hsl",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.hsl.fi/en/hsl/open-data",
+    "display": false,
+    "commercial": null,
+    "attribution": "HSL (Helsinki Region Transport)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.298Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

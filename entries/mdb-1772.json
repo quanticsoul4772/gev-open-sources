@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1772",
+  "domain": "transit.vehicles",
+  "name": "Adelaide Metro",
+  "provider": "Adelaide Metro",
+  "coverage": {
+    "bbox": [
+      -37.847791,
+      133.67641,
+      -32.12521,
+      140.986893
+    ],
+    "countries": [
+      "AU"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.adelaidemetro.com.au/v1/realtime/vehicle_positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Adelaide Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.360Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1772"
+  ]
+}

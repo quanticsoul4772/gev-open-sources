@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-7044-vp",
+  "domain": "transit.vehicles",
+  "name": "Lexington Transit Authority",
+  "provider": "Lexington Transit Authority",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mystop.lextran.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lexington Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.782Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-7044-vp"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-lastenkarle",
+  "domain": "bikeshare.stations",
+  "name": "Lastenkarle Karlsruhe — Karlsruhe",
+  "provider": "Lastenkarle Karlsruhe",
+  "coverage": {
+    "bbox": [
+      48.808,
+      8.1956,
+      49.1013,
+      8.6449
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/lastenkarle/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/lastenkarle/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/lastenkarle/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/lastenkarle/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lastenkarle",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Lastenrad-Initiative für die Region Karlsruhe",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.900Z"
+  },
+  "provenance": [
+    "gbfs-systems:lastenkarle"
+  ]
+}

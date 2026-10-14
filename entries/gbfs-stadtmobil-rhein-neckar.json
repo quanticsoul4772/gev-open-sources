@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-stadtmobil-rhein-neckar",
+  "domain": "bikeshare.stations",
+  "name": "Stadtmobil Rhein-Neckar — Rhein-Neckar",
+  "provider": "Stadtmobil Rhein-Neckar",
+  "coverage": {
+    "bbox": [
+      49.2655,
+      7.7524,
+      49.6367,
+      9.1423
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_rhein-neckar/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_rhein-neckar/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_rhein-neckar/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_rhein-neckar/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "stadtmobil_rhein-neckar",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Stadtmobil Rhein-Neckar AG",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.238Z"
+  },
+  "provenance": [
+    "gbfs-systems:stadtmobil_rhein-neckar"
+  ]
+}

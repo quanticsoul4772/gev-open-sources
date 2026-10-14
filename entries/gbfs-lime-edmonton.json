@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-edmonton",
+  "domain": "bikeshare.stations",
+  "name": "Lime Edmonton — Edmonton",
+  "provider": "Lime Edmonton",
+  "coverage": {
+    "bbox": [
+      53.5338,
+      -113.9796,
+      53.5338,
+      -113.9796
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/edmonton/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_edmonton",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Edmonton"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.919Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_edmonton"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nantes",
+  "domain": "bikeshare.stations",
+  "name": "Naolib — Nantes",
+  "provider": "Naolib",
+  "coverage": {
+    "bbox": [
+      47.1845,
+      -1.5949,
+      47.2463,
+      -1.5205
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/nantes/gbfs/v3/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/nantes/gbfs/v3/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/nantes/gbfs/v3/system_information.json",
+      "gbfs": "https://api.cyclocity.fr/contracts/nantes/gbfs/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nantes",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Naolib"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.990Z"
+  },
+  "provenance": [
+    "gbfs-systems:nantes"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-targumures",
+  "domain": "bikeshare.stations",
+  "name": "Targu Mures — Targu Mures",
+  "provider": "Targu Mures",
+  "coverage": {
+    "bbox": [
+      46.5543,
+      24.5731,
+      46.5576,
+      24.5816
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://targumures.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://targumures.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://targumures.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://targumures.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "targumures",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Targu Mures"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.243Z"
+  },
+  "provenance": [
+    "gbfs-systems:targumures"
+  ]
+}

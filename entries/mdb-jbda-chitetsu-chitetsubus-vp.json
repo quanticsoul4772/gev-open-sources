@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-chitetsu-chitetsubus-vp",
+  "domain": "transit.vehicles",
+  "name": "富山地方鉄道バス",
+  "provider": "富山地方鉄道",
+  "coverage": {
+    "bbox": [
+      36.56161353,
+      136.987061812381,
+      36.9060161,
+      137.510317753334
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/chitetsu/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "富山地方鉄道"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.503Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-chitetsu-chitetsubus-vp"
+  ]
+}

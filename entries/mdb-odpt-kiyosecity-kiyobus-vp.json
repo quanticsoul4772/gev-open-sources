@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-kiyosecity-kiyobus-vp",
+  "domain": "transit.vehicles",
+  "name": "きよバス",
+  "provider": "清瀬市",
+  "coverage": {
+    "bbox": [
+      35.764,
+      139.49705,
+      35.78203,
+      139.52046
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KiyoseCity_KiyoBus_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "清瀬市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.561Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-KiyoseCity-KiyoBus-vp"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-zg",
+  "domain": "bikeshare.stations",
+  "name": "Styr & Ställ (Sweden, Göteborg) — Göteborg",
+  "provider": "Styr & Ställ (Sweden, Göteborg)",
+  "coverage": {
+    "bbox": [
+      57.6404,
+      11.8454,
+      57.7288,
+      12.0341
+    ],
+    "countries": [
+      "SE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zg/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zg/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zg/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_zg",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike Sverige AB, Flöjelbergsgatan 7 B, 431 37 Mölndal"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.176Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_zg"
+  ]
+}

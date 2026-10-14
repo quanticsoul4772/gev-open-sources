@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1537",
+  "domain": "transit.vehicles",
+  "name": "Intercity Transit",
+  "provider": "Intercity Transit",
+  "coverage": {
+    "bbox": [
+      46.93304,
+      -122.977127,
+      47.161066,
+      -122.483242
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://its.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Intercity Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.325Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1537"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-voi-marseille",
+  "domain": "bikeshare.stations",
+  "name": "Voi Marseille — Marseille",
+  "provider": "Voi Marseille",
+  "coverage": {
+    "bbox": [
+      43.2117,
+      5.3461,
+      43.3601,
+      5.5253
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/station_status.json",
+    "related": {
+      "station_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/station_information.json",
+      "system_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/system_information.json",
+      "gbfs": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "voi_Marseille",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Voi Marseille"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.286Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_Marseille"
+  ]
+}

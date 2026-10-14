@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-amiens",
+  "domain": "bikeshare.stations",
+  "name": "Velam — Amiens",
+  "provider": "Velam",
+  "coverage": {
+    "bbox": [
+      49.8709,
+      2.2554,
+      49.9102,
+      2.3212
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/amiens/gbfs/v3/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/amiens/gbfs/v3/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/amiens/gbfs/v3/system_information.json",
+      "gbfs": "https://api.cyclocity.fr/contracts/amiens/gbfs/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "amiens",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Velam"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:19:48.874Z"
+  },
+  "provenance": [
+    "gbfs-systems:amiens"
+  ]
+}

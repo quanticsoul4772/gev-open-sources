@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-82273",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain et scolaire Sankéo",
+  "provider": "Sankéo",
+  "coverage": {
+    "bbox": [
+      42.616804817749134,
+      2.61143947,
+      42.869746992834976,
+      3.03958154
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/793437a0-d3df-4b77-89d5-72525d49800b",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Sankéo"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.615Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-82273"
+  ]
+}

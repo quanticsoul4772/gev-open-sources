@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-kan-etsutransportation-alllines-vp",
+  "domain": "transit.vehicles",
+  "name": "関越交通バス",
+  "provider": "関越交通株式会社",
+  "coverage": {
+    "bbox": [
+      36.32163,
+      138.730024695396,
+      36.876314404695,
+      139.422958163522
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_Kan_etsuTransportation_AllLines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "関越交通株式会社"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.559Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-Kan_etsuTransportation-AllLines-vp"
+  ]
+}

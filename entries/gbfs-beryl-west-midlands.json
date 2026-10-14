@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-west-midlands",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - West Midlands — West Midlands",
+  "provider": "Beryl - West Midlands",
+  "coverage": {
+    "bbox": [
+      52.3767,
+      -2.1535,
+      52.5908,
+      -1.4604
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/West_Midlands/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/West_Midlands/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/West_Midlands/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/West_Midlands/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_west_midlands",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.513Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_west_midlands"
+  ]
+}

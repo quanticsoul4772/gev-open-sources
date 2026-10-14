@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-hellocycling",
+  "domain": "bikeshare.stations",
+  "name": "HELLO CYCLING — Japan",
+  "provider": "HELLO CYCLING",
+  "coverage": {
+    "bbox": [
+      24.7789,
+      125.2611,
+      43.1139,
+      141.573
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gbfs/hellocycling/station_status.json",
+    "related": {
+      "station_information": "https://api-public.odpt.org/api/v4/gbfs/hellocycling/station_information.json",
+      "system_information": "https://api-public.odpt.org/api/v4/gbfs/hellocycling/system_information.json",
+      "gbfs": "https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "hellocycling",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://d1yl7kw204zjxn.cloudfront.net/gbfs/v2/public/hellocycling_gbfs_licence.txt",
+    "display": false,
+    "commercial": null,
+    "attribution": "HELLO CYCLING"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.881Z"
+  },
+  "provenance": [
+    "gbfs-systems:hellocycling"
+  ]
+}

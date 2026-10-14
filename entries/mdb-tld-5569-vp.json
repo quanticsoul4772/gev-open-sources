@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5569-vp",
+  "domain": "transit.vehicles",
+  "name": "Santa Ynez Valley Transit",
+  "provider": "Santa Ynez Valley Transit",
+  "coverage": {
+    "bbox": [
+      34.59586896,
+      -120.20517659,
+      34.665449,
+      -120.077077
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=santa-ynez-valley-transit",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Santa Ynez Valley Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.737Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5569-vp"
+  ]
+}

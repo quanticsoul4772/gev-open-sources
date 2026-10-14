@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-vu",
+  "domain": "bikeshare.stations",
+  "name": "Grad Vukovar (Croatia) — Vukovar",
+  "provider": "Grad Vukovar (Croatia)",
+  "coverage": {
+    "bbox": [
+      45.3518,
+      18.9644,
+      45.3782,
+      19.0028
+    ],
+    "countries": [
+      "HR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vu/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vu/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vu/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_vu",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.161Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_vu"
+  ]
+}

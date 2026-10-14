@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-cornwall",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - Cornwall — Cornwall",
+  "provider": "Beryl - Cornwall",
+  "coverage": {
+    "bbox": [
+      50.0854,
+      -5.5521,
+      50.4298,
+      -4.7349
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Cornwall/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Cornwall/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Cornwall/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Cornwall/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_cornwall",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.501Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_cornwall"
+  ]
+}

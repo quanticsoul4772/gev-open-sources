@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2897",
+  "domain": "transit.vehicles",
+  "name": "Clovis Transit",
+  "provider": "Clovis Transit",
+  "coverage": {
+    "bbox": [
+      36.786897964,
+      -119.754093,
+      36.88854,
+      -119.636906963
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/clovis/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Clovis Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.454Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2897"
+  ]
+}

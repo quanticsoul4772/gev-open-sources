@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1794",
+  "domain": "transit.vehicles",
+  "name": "Commerce Municipal Bus Lines",
+  "provider": "Commerce Municipal Bus Lines",
+  "coverage": {
+    "bbox": [
+      33.965568,
+      -118.264252,
+      34.063141,
+      -118.127642
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://citycommbus.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Commerce Municipal Bus Lines"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.364Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1794"
+  ]
+}

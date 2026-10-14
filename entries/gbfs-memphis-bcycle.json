@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-memphis-bcycle",
+  "domain": "bikeshare.stations",
+  "name": "BCycle — Memphis, TN",
+  "provider": "BCycle",
+  "coverage": {
+    "bbox": [
+      34.2512,
+      -91.1476,
+      36.0478,
+      -88.9504
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_memphis/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_memphis/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BCycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.958Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

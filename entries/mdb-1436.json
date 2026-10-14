@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1436",
+  "domain": "transit.vehicles",
+  "name": "Big Blue Bus",
+  "provider": "Big Blue Bus",
+  "coverage": {
+    "bbox": [
+      33.951481,
+      -118.549205,
+      34.075669,
+      -118.237266
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs.bigbluebus.com/vehiclepositions.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "http://gtfs.bigbluebus.com/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Big Blue Bus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "runs disagree on blocking obligations"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.578Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1436"
+  ]
+}

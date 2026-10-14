@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2647",
+  "domain": "transit.vehicles",
+  "name": "South Portland",
+  "provider": "South Portland",
+  "coverage": {
+    "bbox": [
+      43.61424,
+      -70.357592,
+      43.657989,
+      -70.230007
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://api.goswift.ly/real-time/south-portland-transit/gtfs-rt-vehicle-positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.gpmetro.org/about-us/projects-initiatives/developers/",
+    "display": false,
+    "commercial": null,
+    "attribution": "South Portland"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.737Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2647"
+  ]
+}

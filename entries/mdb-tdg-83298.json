@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83298",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Astuce",
+  "provider": "Métropole Rouen Normandie",
+  "coverage": {
+    "bbox": [
+      49.262402,
+      0.728486,
+      49.53909,
+      1.259097
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/e28a981d-7f5f-4bd8-a4c1-e74a822f13f8",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Métropole Rouen Normandie"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.629Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83298"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2930",
+  "domain": "transit.vehicles",
+  "name": "Carris",
+  "provider": "Carris",
+  "coverage": {
+    "bbox": [
+      38.6678922,
+      -9.2525218,
+      38.7987017,
+      -9.0928851
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://gateway.carris.pt/gateway/gtfs/api/v2.11/GTFS/realtime/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Carris"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.455Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2930"
+  ]
+}

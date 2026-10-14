@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-leslilas",
+  "domain": "bikeshare.stations",
+  "name": "Lime Les Lilas — Les Lilas",
+  "provider": "Lime Les Lilas",
+  "coverage": {
+    "bbox": [
+      48.8819,
+      2.4203,
+      48.8819,
+      2.4203
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/leslilas/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/leslilas/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/leslilas/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/leslilas/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_leslilas",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Les Lilas"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.923Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_leslilas"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2428",
+  "domain": "transit.vehicles",
+  "name": "Butte Regional Transit (B-Line)",
+  "provider": "Butte Regional Transit (B-Line)",
+  "coverage": {
+    "bbox": [
+      39.3632006265641,
+      -121.898691618365,
+      39.8184077333455,
+      -121.463442830053
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://planmyride.blinetransit.com/gtfsrealtime/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Butte Regional Transit (B-Line)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.400Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2428"
+  ]
+}

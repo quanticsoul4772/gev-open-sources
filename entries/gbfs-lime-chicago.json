@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-chicago",
+  "domain": "bikeshare.stations",
+  "name": "Lime Chicago — Chicago, IL",
+  "provider": "Lime Chicago",
+  "coverage": {
+    "bbox": [
+      41.8484,
+      -87.6934,
+      41.8484,
+      -87.6934
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/chicago/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/chicago/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/chicago/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/chicago/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_chicago",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Chicago"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.913Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_chicago"
+  ]
+}

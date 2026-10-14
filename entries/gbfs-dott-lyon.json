@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-lyon",
+  "domain": "bikeshare.stations",
+  "name": "Dott Lyon — Lyon",
+  "provider": "Dott Lyon",
+  "coverage": {
+    "bbox": [
+      45.7192,
+      4.7732,
+      45.8351,
+      4.9159
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/lyon/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/lyon/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/lyon/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/lyon/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-lyon",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Lyon"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.824Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-lyon"
+  ]
+}

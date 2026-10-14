@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-grand-rapids",
+  "domain": "bikeshare.stations",
+  "name": "Lime Grand Rapids — Grand Rapid, MI",
+  "provider": "Lime Grand Rapids",
+  "coverage": {
+    "bbox": [
+      43.0034,
+      -85.7612,
+      43.0034,
+      -85.7612
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/grand_rapids/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/grand_rapids/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/grand_rapids/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/grand_rapids/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_grand_rapids",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Grand Rapids"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.921Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_grand_rapids"
+  ]
+}

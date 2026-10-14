@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-region-h",
+  "domain": "bikeshare.stations",
+  "name": "Dott Region Hovedstaden — Region Hovedstaden",
+  "provider": "Dott Region Hovedstaden",
+  "coverage": {
+    "bbox": [
+      55.6068,
+      12.2541,
+      55.9119,
+      12.6022
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/region-h/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/region-h/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/region-h/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/region-h/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-region-h",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Region Hovedstaden"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.838Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-region-h"
+  ]
+}

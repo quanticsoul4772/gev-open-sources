@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-79015",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Ritmo",
+  "provider": "Zenbus",
+  "coverage": {
+    "bbox": [
+      48.710846,
+      7.608429,
+      48.852772,
+      7.870991
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/ae8b5fd2-283a-462c-aa34-27e02f6fc4a5",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Zenbus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.584Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-79015"
+  ]
+}

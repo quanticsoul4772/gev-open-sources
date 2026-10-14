@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6067-vp",
+  "domain": "transit.vehicles",
+  "name": "Zarząd Transportu Miejskiego w Warszawie",
+  "provider": "Zarząd Transportu Miejskiego w Warszawie",
+  "coverage": {
+    "bbox": [
+      51.921869,
+      20.586367,
+      52.493519,
+      21.463783
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://mkuran.pl/gtfs/warsaw/alerts.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zarząd Transportu Miejskiego w Warszawie"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.751Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6067-vp"
+  ]
+}

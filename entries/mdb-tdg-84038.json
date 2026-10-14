@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84038",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain LiA",
+  "provider": "Réseau de transport en commun Le Havre Seine Métropole LiA",
+  "coverage": {
+    "bbox": [
+      49.459106,
+      0.069242,
+      49.704922,
+      0.432748
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/d499d5a2-8bba-4862-847a-0423f7d8cf23",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Réseau de transport en commun Le Havre Seine Métropole LiA"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.648Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84038"
+  ]
+}

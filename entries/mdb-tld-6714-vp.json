@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6714-vp",
+  "domain": "transit.vehicles",
+  "name": "New River Transit Authority",
+  "provider": "New River Transit Authority",
+  "coverage": {
+    "bbox": [
+      37.569655352,
+      -81.5402554,
+      38.056659698,
+      -81.103942871
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/beckley/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "New River Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.759Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6714-vp"
+  ]
+}

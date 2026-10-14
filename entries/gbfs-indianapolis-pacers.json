@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-indianapolis-pacers",
+  "domain": "bikeshare.stations",
+  "name": "Pacers Bikeshare — Indianapolis, IN",
+  "provider": "Pacers Bikeshare",
+  "coverage": {
+    "bbox": [
+      38.8701,
+      -87.3268,
+      40.6667,
+      -84.9894
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pacers Bikeshare"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.890Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

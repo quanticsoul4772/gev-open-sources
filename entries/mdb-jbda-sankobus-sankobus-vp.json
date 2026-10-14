@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-sankobus-sankobus-vp",
+  "domain": "transit.vehicles",
+  "name": "産交バス",
+  "provider": "産交バス",
+  "coverage": {
+    "bbox": [
+      32.127693,
+      129.99173,
+      33.599438,
+      131.67195
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://km.bus-vision.jp/realtime/sankobus_vpos_update.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "産交バス"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.533Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-sankobus-sankobus-vp"
+  ]
+}

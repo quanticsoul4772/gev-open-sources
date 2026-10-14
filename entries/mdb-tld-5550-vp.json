@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5550-vp",
+  "domain": "transit.vehicles",
+  "name": "Ride Gwinnett",
+  "provider": "Ride Gwinnett",
+  "coverage": {
+    "bbox": [
+      33.769789,
+      -84.27971,
+      34.094463,
+      -83.97707
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtimegwinnett.availtec.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Ride Gwinnett"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.732Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5550-vp"
+  ]
+}

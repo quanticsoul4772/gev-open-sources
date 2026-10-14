@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-santacruz",
+  "domain": "bikeshare.stations",
+  "name": "Santa Cruz BCycle — Santa Cruz, CA",
+  "provider": "Santa Cruz BCycle",
+  "coverage": {
+    "bbox": [
+      36.927,
+      -122.0668,
+      37.0018,
+      -121.7637
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_santacruz/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_santacruz/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/bcycle_santacruz/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_santacruz/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_santacruz",
+    "version": "1.1"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Santa Cruz BCycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.615Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_santacruz"
+  ]
+}

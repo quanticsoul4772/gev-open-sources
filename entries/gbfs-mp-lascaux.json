@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-mp-lascaux",
+  "domain": "bikeshare.stations",
+  "name": "VELO VEZERE LASCAUX — Lascaux",
+  "provider": "VELO VEZERE LASCAUX",
+  "coverage": {
+    "bbox": [
+      44.9182,
+      0.9275,
+      45.0642,
+      1.163
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.mobility-parc.net/gbfs/v3/LASCAUX/station_status.json",
+    "related": {
+      "station_information": "https://www.mobility-parc.net/gbfs/v3/LASCAUX/station_information.json",
+      "system_information": "https://www.mobility-parc.net/gbfs/v3/LASCAUX/system_information.json",
+      "gbfs": "https://www.mobility-parc.net/gbfs/v3/LASCAUX/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "mp_LASCAUX",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "VELO VEZERE LASCAUX"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.979Z"
+  },
+  "provenance": [
+    "gbfs-systems:mp_LASCAUX"
+  ]
+}

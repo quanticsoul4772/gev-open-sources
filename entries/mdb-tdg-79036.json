@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-79036",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Ruban",
+  "provider": "Communauté d'agglomération Porte de l'Isère",
+  "coverage": {
+    "bbox": [
+      45.49838239,
+      5.093956,
+      45.695884,
+      5.381583
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/120182b0-e338-4917-b2bb-ee37b60de1ba",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté d'agglomération Porte de l'Isère"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.584Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-79036"
+  ]
+}

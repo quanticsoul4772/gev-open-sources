@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3231",
+  "domain": "transit.vehicles",
+  "name": "Kiev",
+  "provider": "Kiev",
+  "coverage": {
+    "bbox": [
+      50.22585678100586,
+      30.281478881835938,
+      50.5668830871582,
+      30.771907806396484
+    ],
+    "countries": [
+      "UA"
+    ]
+  },
+  "access": {
+    "url": "http://193.23.225.214:732/api/realtime",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Kiev"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.479Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3231"
+  ]
+}

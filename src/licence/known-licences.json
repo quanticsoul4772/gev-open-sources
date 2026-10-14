@@ -1,0 +1,266 @@
+{
+  "creativecommons.org/publicdomain/zero/1.0": {
+    "id": "CC0-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "opendefinition.org/licenses/cc-zero": {
+    "id": "CC0-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "creativecommons.org/publicdomain/mark/1.0": {
+    "id": "PDM-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "creativecommons.org/licenses/by/4.0": {
+    "id": "CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by/3.0": {
+    "id": "CC-BY-3.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by/2.5": {
+    "id": "CC-BY-2.5",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by/2.0": {
+    "id": "CC-BY-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by-sa/4.0": {
+    "id": "CC-BY-SA-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by-sa/3.0": {
+    "id": "CC-BY-SA-3.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by-nc/4.0": {
+    "id": "CC-BY-NC-4.0",
+    "display": true,
+    "commercial": false,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by-nc-sa/4.0": {
+    "id": "CC-BY-NC-SA-4.0",
+    "display": true,
+    "commercial": false,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by-nd/4.0": {
+    "id": "CC-BY-ND-4.0",
+    "display": false,
+    "commercial": true,
+    "attribution": true
+  },
+  "creativecommons.org/licenses/by-nc-nd/4.0": {
+    "id": "CC-BY-NC-ND-4.0",
+    "display": false,
+    "commercial": false,
+    "attribution": true
+  },
+  "opendatacommons.org/licenses/odbl/1.0": {
+    "id": "ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "opendatacommons.org/licenses/odbl/1-0": {
+    "id": "ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "opendatacommons.org/licenses/odbl": {
+    "id": "ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "opendatacommons.org/licenses/by/1.0": {
+    "id": "ODC-By-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "opendatacommons.org/licenses/pddl/1.0": {
+    "id": "PDDL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "data.gouv.fr/pages/legal/licences/etalab-2.0": {
+    "id": "etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "etalab.gouv.fr/licence-ouverte-open-licence": {
+    "id": "etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "etalab.gouv.fr/wp-content/uploads/2017/04/etalab-licence-ouverte-v2.0.pdf": {
+    "id": "etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "github.com/etalab/licence-ouverte/blob/master/lo.md": {
+    "id": "etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "data.norge.no/nlod/en": {
+    "id": "NLOD-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "data.norge.no/nlod/en/2.0": {
+    "id": "NLOD-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "data.norge.no/nlod/no/2.0": {
+    "id": "NLOD-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "govdata.de/dl-de/by-2-0": {
+    "id": "DL-DE-BY-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "govdata.de/dl-de/zero-2-0": {
+    "id": "DL-DE-ZERO-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "nationalarchives.gov.uk/doc/open-government-licence/version/3": {
+    "id": "OGL-UK-3.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:cc0-1.0": {
+    "id": "CC0-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "spdx:cc-by-4.0": {
+    "id": "CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:cc-by-3.0": {
+    "id": "CC-BY-3.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:cc-by-sa-4.0": {
+    "id": "CC-BY-SA-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:cc-by-nc-4.0": {
+    "id": "CC-BY-NC-4.0",
+    "display": true,
+    "commercial": false,
+    "attribution": true
+  },
+  "spdx:odbl-1.0": {
+    "id": "ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:odc-by-1.0": {
+    "id": "ODC-By-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:pddl-1.0": {
+    "id": "PDDL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "spdx:etalab-2.0": {
+    "id": "etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:nlod-2.0": {
+    "id": "NLOD-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:dl-de-by-2.0": {
+    "id": "DL-DE-BY-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:dl-de-zero-2.0": {
+    "id": "DL-DE-ZERO-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": false
+  },
+  "spdx:ogl-uk-3.0": {
+    "id": "OGL-UK-3.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "spdx:cdla-permissive-2.0": {
+    "id": "CDLA-Permissive-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "cdla.dev/permissive-2-0": {
+    "id": "CDLA-Permissive-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "cdla.dev/permissive-1-0": {
+    "id": "CDLA-Permissive-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  }
+}

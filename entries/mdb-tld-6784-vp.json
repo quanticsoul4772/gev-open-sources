@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6784-vp",
+  "domain": "transit.vehicles",
+  "name": "Capital Area Transit System",
+  "provider": "Capital Area Transit System",
+  "coverage": {
+    "bbox": [
+      30.3463459,
+      -91.199974,
+      30.5881443,
+      -91.000862
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cats.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Capital Area Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.766Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6784-vp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-austin-capmetro",
+  "domain": "bikeshare.stations",
+  "name": "CapMetro — Austin, TX",
+  "provider": "CapMetro",
+  "coverage": {
+    "bbox": [
+      29.4587,
+      -98.6792,
+      31.0757,
+      -96.807
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://austin.publicbikesystem.net/customer/gbfs/v2/en/station_status.json",
+    "related": {
+      "station_information": "https://austin.publicbikesystem.net/customer/gbfs/v2/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "CapMetro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.606Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

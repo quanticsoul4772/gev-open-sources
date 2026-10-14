@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-watford",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - Watford — Watford",
+  "provider": "Beryl - Watford",
+  "coverage": {
+    "bbox": [
+      51.6372,
+      -0.4557,
+      51.6966,
+      -0.347
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Watford/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Watford/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Watford/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Watford/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_watford",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.513Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_watford"
+  ]
+}

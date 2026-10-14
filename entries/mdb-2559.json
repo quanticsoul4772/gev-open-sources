@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2559",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Powell River)",
+  "provider": "BC Transit (Powell River)",
+  "coverage": {
+    "bbox": [
+      49.65439,
+      -124.76096,
+      49.98142,
+      -124.17795
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=29",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Powell River)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.847Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2559"
+  ]
+}

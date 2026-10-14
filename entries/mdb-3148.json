@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3148",
+  "domain": "transit.vehicles",
+  "name": "Lane Transit District LTD",
+  "provider": "Lane Transit District LTD",
+  "coverage": {
+    "bbox": [
+      43.7849362,
+      -123.3561683,
+      44.2226569,
+      -122.1152746
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://feed.ltd.org/TMGTFSRealTimeWebService/GTFS/google_transit.zip",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lane Transit District LTD"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.464Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3148"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-velivert-saint-etienne",
+  "domain": "bikeshare.stations",
+  "name": "Vélivert — Saint-Étienne",
+  "provider": "Vélivert",
+  "coverage": {
+    "bbox": [
+      45.3845,
+      4.2509,
+      45.5423,
+      4.6273
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.saint-etienne-metropole.fr/velivert/api/station_status.json",
+    "related": {
+      "station_information": "https://api.saint-etienne-metropole.fr/velivert/api/station_information.json",
+      "system_information": "https://api.saint-etienne-metropole.fr/velivert/api/system_information.json",
+      "gbfs": "https://api.saint-etienne-metropole.fr/velivert/api/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "velivert_saint_etienne",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "Fifteen"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.261Z"
+  },
+  "provenance": [
+    "gbfs-systems:velivert_saint_etienne"
+  ]
+}

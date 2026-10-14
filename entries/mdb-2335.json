@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2335",
+  "domain": "transit.vehicles",
+  "name": "Zarząd Transportu Miejskiego Poznań (ZTM Poznań)",
+  "provider": "Zarząd Transportu Miejskiego Poznań (ZTM Poznań)",
+  "coverage": {
+    "bbox": [
+      52.15166197,
+      16.4575328952,
+      52.58722581,
+      17.2811525082
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://www.ztm.poznan.pl/pl/dla-deweloperow/getGtfsRtFile/?file=vehicle_positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.ztm.poznan.pl/otwarte-dane/dla-deweloperow/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Zarząd Transportu Miejskiego Poznań (ZTM Poznań)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.708Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2335"
+  ]
+}

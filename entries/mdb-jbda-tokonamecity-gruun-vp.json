@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-tokonamecity-gruun-vp",
+  "domain": "transit.vehicles",
+  "name": "コミュニティバスグルーン",
+  "provider": "常滑市",
+  "coverage": {
+    "bbox": [
+      34.807413,
+      136.825424,
+      34.936854,
+      136.91636
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.gtfs.info/gruun/vehicle.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "常滑市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.537Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-tokonamecity-Gruun-vp"
+  ]
+}

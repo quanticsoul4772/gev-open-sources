@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84229",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Alliance",
+  "provider": "Communauté d'agglomération Grand Auch Coeur de Gascogne ",
+  "coverage": {
+    "bbox": [
+      43.605552,
+      0.559899,
+      43.712101,
+      0.690744
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/6974ab10-1b0f-4c59-aec0-9924bccb8dbc",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté d'agglomération Grand Auch Coeur de Gascogne "
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.660Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84229"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2744",
+  "domain": "transit.vehicles",
+  "name": "ClackCo Connects (Clackamas County)",
+  "provider": "ClackCo Connects (Clackamas County)",
+  "coverage": {
+    "bbox": [
+      45.286129802,
+      -122.63994314,
+      45.442542881,
+      -122.333976624
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/clackamas/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "ClackCo Connects (Clackamas County)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.449Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2744"
+  ]
+}

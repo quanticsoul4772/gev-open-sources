@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2562",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (South Okanagan-Similkameen)",
+  "provider": "BC Transit (South Okanagan-Similkameen)",
+  "coverage": {
+    "bbox": [
+      49.02001,
+      -120.50977,
+      49.88713,
+      -119.44801
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=15",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (South Okanagan-Similkameen)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.848Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2562"
+  ]
+}

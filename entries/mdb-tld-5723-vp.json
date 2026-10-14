@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5723-vp",
+  "domain": "transit.vehicles",
+  "name": "L'Inter des Laurentides",
+  "provider": "L'Inter des Laurentides",
+  "coverage": {
+    "bbox": [
+      45.773617,
+      -74.582222,
+      46.123719,
+      -74.00032
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=linter",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "L'Inter des Laurentides"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.744Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5723-vp"
+  ]
+}

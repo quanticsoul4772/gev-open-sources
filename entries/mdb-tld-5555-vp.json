@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5555-vp",
+  "domain": "transit.vehicles",
+  "name": "Yamhill County Transit Area",
+  "provider": "Yamhill County Transit Area",
+  "coverage": {
+    "bbox": [
+      44.951319,
+      -123.617235,
+      45.52211,
+      -122.768607
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Yamhill County Transit Area"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.736Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5555-vp"
+  ]
+}

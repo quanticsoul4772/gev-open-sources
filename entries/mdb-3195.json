@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3195",
+  "domain": "transit.vehicles",
+  "name": "CobbLinc",
+  "provider": "CobbLinc",
+  "coverage": {
+    "bbox": [
+      33.752732,
+      -84.620026,
+      34.041286,
+      -84.387119
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cobb.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition&Debug=True",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "CobbLinc"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.475Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3195"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83924",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain et TAD zonal Libellule",
+  "provider": "Oise Mobilité - Syndicat mixte des transports collectifs de l'Oise",
+  "coverage": {
+    "bbox": [
+      49.3123328,
+      2.4357018,
+      49.3545717,
+      2.4966276
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/abe147f7-a064-43fe-be9e-6f35f5a9597f",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Oise Mobilité - Syndicat mixte des transports collectifs de l'Oise"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.645Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83924"
+  ]
+}

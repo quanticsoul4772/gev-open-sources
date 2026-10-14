@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-7029-vp",
+  "domain": "transit.vehicles",
+  "name": "Freedom Transit",
+  "provider": "Freedom Transit",
+  "coverage": {
+    "bbox": [
+      40.155923,
+      -80.282812,
+      40.444846,
+      -79.92598
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://freedom.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Freedom Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.780Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-7029-vp"
+  ]
+}

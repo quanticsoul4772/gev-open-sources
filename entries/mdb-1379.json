@@ -1,0 +1,47 @@
+{
+  "id": "mdb-1379",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Cowichan Valley Regional Transit System)",
+  "provider": "BC Transit (Cowichan Valley Regional Transit System)",
+  "coverage": {
+    "bbox": [
+      48.41583,
+      -124.21862,
+      48.99831,
+      -123.36445
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=10",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Cowichan Valley Regional Transit System)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.301Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1379",
+    "licence-borrowed:mdb-2528"
+  ]
+}

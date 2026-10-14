@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nancy",
+  "domain": "bikeshare.stations",
+  "name": "VélOstan'lib — Nancy",
+  "provider": "VélOstan'lib",
+  "coverage": {
+    "bbox": [
+      48.6624,
+      6.1549,
+      48.7072,
+      6.2047
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/nancy/gbfs/v3/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/nancy/gbfs/v3/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/nancy/gbfs/v3/system_information.json",
+      "gbfs": "https://api.cyclocity.fr/contracts/nancy/gbfs/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nancy",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "VélOstan'lib"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.511Z"
+  },
+  "provenance": [
+    "gbfs-systems:nancy"
+  ]
+}

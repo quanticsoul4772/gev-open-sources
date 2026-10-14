@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-80381",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Move",
+  "provider": "Alliance Atlantique",
+  "coverage": {
+    "bbox": [
+      47.744908,
+      0.686523,
+      47.829418,
+      1.101814
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/68fc6b99-b51c-4a3c-9740-2edbc4a705bf",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Alliance Atlantique"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.587Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-80381"
+  ]
+}

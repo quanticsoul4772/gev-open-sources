@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-7024-vp",
+  "domain": "transit.vehicles",
+  "name": "Lower Anthracite Transit System",
+  "provider": "Lower Anthracite Transit System",
+  "coverage": {
+    "bbox": [
+      40.771556,
+      -76.848287,
+      40.872867,
+      -76.354736
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://lats.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lower Anthracite Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.776Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-7024-vp"
+  ]
+}

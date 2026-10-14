@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-obertraubling",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Obertraubling — Obertraubling",
+  "provider": "Donkey Obertraubling",
+  "coverage": {
+    "bbox": [
+      48.9341,
+      12.128,
+      48.9673,
+      12.1783
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/Obertraubling/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Obertraubling/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Obertraubling/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/Obertraubling/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "Obertraubling",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "de",
+        "text": ""
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.184Z"
+  },
+  "provenance": [
+    "gbfs-systems:Obertraubling"
+  ]
+}

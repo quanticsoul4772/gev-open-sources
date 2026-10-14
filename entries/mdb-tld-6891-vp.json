@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6891-vp",
+  "domain": "transit.vehicles",
+  "name": "Jefferson Parish Transit",
+  "provider": "Jefferson Parish Transit",
+  "coverage": {
+    "bbox": [
+      29.840603,
+      -90.273809,
+      30.043595,
+      -90.016142
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://jetapp.jptransit.org/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Jefferson Parish Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.773Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6891-vp"
+  ]
+}

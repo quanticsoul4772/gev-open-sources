@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-citiz-gironde",
+  "domain": "bikeshare.stations",
+  "name": "Citiz Gironde — Bordeaux",
+  "provider": "Citiz Gironde",
+  "coverage": {
+    "bbox": [
+      44.5533,
+      -0.6586,
+      44.916,
+      -0.0328
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://backend.citiz.fr/public/provider/4/gbfs/v3.0/station_status.json",
+    "related": {
+      "station_information": "https://backend.citiz.fr/public/provider/4/gbfs/v3.0/station_information.json",
+      "system_information": "https://backend.citiz.fr/public/provider/4/gbfs/v3.0/system_information.json",
+      "gbfs": "https://backend.citiz.fr/public/provider/4/gbfs/3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "citiz_gironde",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Autocool",
+        "language": "fr"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.727Z"
+  },
+  "provenance": [
+    "gbfs-systems:citiz_gironde"
+  ]
+}

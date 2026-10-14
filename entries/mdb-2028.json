@@ -1,0 +1,47 @@
+{
+  "id": "mdb-2028",
+  "domain": "transit.vehicles",
+  "name": "Carris Metropolitana",
+  "provider": "Carris Metropolitana",
+  "coverage": {
+    "bbox": [
+      38.419378,
+      -9.497247,
+      39.079196,
+      -8.457528
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://api.carrismetropolitana.pt/vehicles.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://github.com/carrismetropolitana/gtfs",
+    "display": false,
+    "commercial": null,
+    "attribution": "Carris Metropolitana"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.375Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2028",
+    "licence-borrowed:mdb-2027"
+  ]
+}

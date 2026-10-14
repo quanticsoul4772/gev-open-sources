@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-flamingo-dunedin",
+  "domain": "bikeshare.stations",
+  "name": "Flamingo Dunedin — Dunedin",
+  "provider": "Flamingo Dunedin",
+  "coverage": {
+    "bbox": [
+      -45.9115,
+      170.3995,
+      -45.8153,
+      170.6222
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/dunedin/station_status.json",
+    "related": {
+      "station_information": "https://data.rideflamingo.com/gbfs/3/dunedin/station_information.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/dunedin/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/dunedin/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "flamingo_dunedin",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Dunedin"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.863Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_dunedin"
+  ]
+}

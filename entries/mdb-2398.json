@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2398",
+  "domain": "transit.vehicles",
+  "name": "Via Mobility",
+  "provider": "Via Mobility",
+  "coverage": {
+    "bbox": [
+      39.648778612,
+      -105.525464188,
+      40.22544,
+      -105.016674627
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/viaboulder/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Via Mobility"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.396Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2398"
+  ]
+}

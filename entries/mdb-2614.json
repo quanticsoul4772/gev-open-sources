@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2614",
+  "domain": "transit.vehicles",
+  "name": "Compania de Transport Public Cluj-Napoca",
+  "provider": "Compania de Transport Public Cluj-Napoca",
+  "coverage": {
+    "bbox": [
+      46.57892,
+      23.28878,
+      46.898272,
+      23.840866
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://cluj-rt-feed.gtfs.ro/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Compania de Transport Public Cluj-Napoca"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.438Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2614"
+  ]
+}

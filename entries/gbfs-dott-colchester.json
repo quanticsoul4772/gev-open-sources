@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-colchester",
+  "domain": "bikeshare.stations",
+  "name": "Dott Colchester — Colchester",
+  "provider": "Dott Colchester",
+  "coverage": {
+    "bbox": [
+      51.8529,
+      0.7571,
+      51.9301,
+      0.9674
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/colchester/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/colchester/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/colchester/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/colchester/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-colchester",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Colchester"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.808Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-colchester"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81786",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Irigo",
+  "provider": "Angers Loire Métropole",
+  "coverage": {
+    "bbox": [
+      47.34288,
+      -0.751186,
+      47.616506,
+      -0.296042
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/83582223-990a-452d-ba3d-49f2977d0292",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Angers Loire Métropole"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.609Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81786"
+  ]
+}

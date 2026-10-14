@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2503",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Merritt)",
+  "provider": "BC Transit (Merritt)",
+  "coverage": {
+    "bbox": [
+      50.10234,
+      -120.88264,
+      50.17715,
+      -120.74949
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=37",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Merritt)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.836Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2503"
+  ]
+}

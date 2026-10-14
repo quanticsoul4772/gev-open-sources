@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-15449",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Lunéo",
+  "provider": "Lulu en Bus (Ex. Lunéo)",
+  "coverage": {
+    "bbox": [
+      48.571792,
+      6.476206,
+      48.605305,
+      6.534705
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/0e17b681-e017-46e2-a792-b3b6ead2c06c",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Lulu en Bus (Ex. Lunéo)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.574Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-15449"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-zebullo",
+  "domain": "bikeshare.stations",
+  "name": "Zebullo — Reims",
+  "provider": "Zebullo",
+  "coverage": {
+    "bbox": [
+      49.2039,
+      3.978,
+      49.2877,
+      4.0964
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/zebullo/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v3.0.ecovelo.mobi/zebullo/station_information.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/zebullo/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/zebullo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "zebullo",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Zebullo"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.292Z"
+  },
+  "provenance": [
+    "gbfs-systems:zebullo"
+  ]
+}

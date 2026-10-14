@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1471",
+  "domain": "transit.vehicles",
+  "name": "Régie intermunicipale de transport des Collines (Transcollines)",
+  "provider": "Régie intermunicipale de transport des Collines (Transcollines)",
+  "coverage": {
+    "bbox": [
+      45.407263,
+      -77.076469,
+      45.919647,
+      -75.6176
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://67.212.79.244:8080/hermes_st_Transcollines/pb/vehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://github.com/transcollines/GTFS-RT/blob/master/LICENCE.MD",
+    "display": false,
+    "commercial": null,
+    "attribution": "Régie intermunicipale de transport des Collines (Transcollines)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 503"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.581Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1471"
+  ]
+}

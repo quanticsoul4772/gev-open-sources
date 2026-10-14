@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-teilauto-neckar-alb",
+  "domain": "bikeshare.stations",
+  "name": "TeilAuto Neckar-Alb — Neckar-Alb",
+  "provider": "TeilAuto Neckar-Alb",
+  "coverage": {
+    "bbox": [
+      48.215,
+      8.8089,
+      48.6082,
+      9.3976
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_neckar-alb/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_neckar-alb/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_neckar-alb/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_neckar-alb/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "teilauto_neckar-alb",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "teilAuto Neckar-Alb eG",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.245Z"
+  },
+  "provenance": [
+    "gbfs-systems:teilauto_neckar-alb"
+  ]
+}

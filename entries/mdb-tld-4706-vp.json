@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4706-vp",
+  "domain": "transit.vehicles",
+  "name": "SunLine Transit Agency",
+  "provider": "SunLine Transit Agency",
+  "coverage": {
+    "bbox": [
+      33.522632,
+      -117.326156,
+      34.179853,
+      -115.921462
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://infopoint.sunline.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "SunLine Transit Agency"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.714Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4706-vp"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-schaffhausen",
+  "domain": "bikeshare.stations",
+  "name": "Bird Schaffhausen — Schaffhausen",
+  "provider": "Bird Schaffhausen",
+  "coverage": {
+    "bbox": [
+      47.6744,
+      8.5805,
+      47.7342,
+      8.6667
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/schaffhausen/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/schaffhausen/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/schaffhausen/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/schaffhausen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-schaffhausen",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Schaffhausen"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.682Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-schaffhausen"
+  ]
+}

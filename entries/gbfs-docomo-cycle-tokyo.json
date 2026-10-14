@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-docomo-cycle-tokyo",
+  "domain": "bikeshare.stations",
+  "name": "docomo bike share service — Tokyo",
+  "provider": "docomo bike share service",
+  "coverage": {
+    "bbox": [
+      35.5061,
+      139.5658,
+      35.7786,
+      139.8464
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/station_status.json",
+    "related": {
+      "station_information": "https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/station_information.json",
+      "system_information": "https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/system_information.json",
+      "gbfs": "https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "docomo-cycle-tokyo",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "docomo bike share service"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.752Z"
+  },
+  "provenance": [
+    "gbfs-systems:docomo-cycle-tokyo"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-tv",
+  "domain": "bikeshare.stations",
+  "name": "nextbike Zlín — Zlín",
+  "provider": "nextbike Zlín",
+  "coverage": {
+    "bbox": [
+      49.2041,
+      17.5694,
+      49.2702,
+      17.7464
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tv/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tv/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tv/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tv/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_tv",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike Czech Republic, Libusina 526/101, 779 00 Olomouc"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.148Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_tv"
+  ]
+}

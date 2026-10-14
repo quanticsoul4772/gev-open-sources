@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-lincoln-bikelnk",
+  "domain": "bikeshare.stations",
+  "name": "BikeLNK — Lincoln, NE",
+  "provider": "BikeLNK",
+  "coverage": {
+    "bbox": [
+      39.9153,
+      -97.8895,
+      41.7119,
+      -95.5157
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_bikelnk/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_bikelnk/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BikeLNK"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.947Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

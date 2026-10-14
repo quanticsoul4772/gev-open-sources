@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1528",
+  "domain": "transit.vehicles",
+  "name": "Hillsborough Area Regional Transit",
+  "provider": "Hillsborough Area Regional Transit",
+  "coverage": {
+    "bbox": [
+      27.705746,
+      -82.584559,
+      28.195777,
+      -82.225979
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://api.tampa.onebusaway.org:8088/vehicle-positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Hillsborough Area Regional Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.322Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1528"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-toyama-asahitown-asahimachibus-vp",
+  "domain": "transit.vehicles",
+  "name": "あさひまちバス",
+  "provider": "富山県朝日町",
+  "coverage": {
+    "bbox": [
+      36.85715204,
+      137.53415108,
+      36.98358044,
+      137.65847683
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/asahimachi/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "富山県朝日町"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.539Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-toyama-asahitown-asahimachibus-vp"
+  ]
+}

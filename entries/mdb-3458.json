@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3458",
+  "domain": "transit.vehicles",
+  "name": "Rogue Valley Transportation District",
+  "provider": "Rogue Valley Transportation District",
+  "coverage": {
+    "bbox": [
+      42.1761686,
+      -122.9197641,
+      42.4437253,
+      -122.6715995
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrt.rvtd.cadavl.com/ProfilGtfsRt2_0RSProducer-RVTD/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Rogue Valley Transportation District"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.493Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3458"
+  ]
+}

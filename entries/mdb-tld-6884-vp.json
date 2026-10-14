@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6884-vp",
+  "domain": "transit.vehicles",
+  "name": "Rochester Institute of Technology",
+  "provider": "Rochester Institute of Technology",
+  "coverage": {
+    "bbox": [
+      33.916562026,
+      -84.388012,
+      43.159018,
+      -77.593878954
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/ritech/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Rochester Institute of Technology"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.771Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6884-vp"
+  ]
+}

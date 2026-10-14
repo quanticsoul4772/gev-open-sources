@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81808",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain A Citadina",
+  "provider": "Communauté de Communes du Sud Corse",
+  "coverage": {
+    "bbox": [
+      41.579638,
+      9.265679,
+      41.605973,
+      9.283983
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/a792a365-b5bc-48b8-81eb-512e8e83af08",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté de Communes du Sud Corse"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.610Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81808"
+  ]
+}

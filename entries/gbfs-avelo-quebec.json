@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-avelo-quebec",
+  "domain": "bikeshare.stations",
+  "name": "àVélo — Ville de Québec",
+  "provider": "àVélo",
+  "coverage": {
+    "bbox": [
+      46.7475,
+      -71.3686,
+      46.8921,
+      -71.1443
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://quebec.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://quebec.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://quebec.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://quebec.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "avelo_quebec",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "àVélo"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.609Z"
+  },
+  "provenance": [
+    "gbfs-systems:avelo_quebec"
+  ]
+}

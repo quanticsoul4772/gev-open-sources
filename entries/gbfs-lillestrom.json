@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lillestrom",
+  "domain": "bikeshare.stations",
+  "name": "Bysykkel — Lillestrom",
+  "provider": "Bysykkel",
+  "coverage": {
+    "bbox": [
+      59.9513,
+      11.0408,
+      59.9739,
+      11.0619
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/lillestrom/gbfs/v3/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/lillestrom/gbfs/v3/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/lillestrom/gbfs/v3/system_information.json",
+      "gbfs": "https://api.cyclocity.fr/contracts/lillestrom/gbfs/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lillestrom",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bysykkel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unavailable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.490Z"
+  },
+  "provenance": [
+    "gbfs-systems:lillestrom"
+  ]
+}

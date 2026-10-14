@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-arlington",
+  "domain": "bikeshare.stations",
+  "name": "Lime Arlington — Arlington, VA",
+  "provider": "Lime Arlington",
+  "coverage": {
+    "bbox": [
+      38.8811,
+      -77.1024,
+      38.8811,
+      -77.1024
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/arlington/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/arlington/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/arlington/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/arlington/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_arlington",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Arlington"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.908Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_arlington"
+  ]
+}

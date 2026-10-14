@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1662",
+  "domain": "transit.vehicles",
+  "name": "Rhode Island Public Transit Authority",
+  "provider": "Rhode Island Public Transit Authority",
+  "coverage": {
+    "bbox": [
+      41.373951,
+      -71.829808,
+      42.018803,
+      -71.154292
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://realtime.ripta.com:81/api/vehiclepositions?format=gtfs.proto",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Rhode Island Public Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.348Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1662"
+  ]
+}

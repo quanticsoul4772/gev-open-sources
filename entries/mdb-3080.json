@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3080",
+  "domain": "transit.vehicles",
+  "name": "Cecil Transit",
+  "provider": "Cecil Transit",
+  "coverage": {
+    "bbox": [
+      39.549997,
+      -76.076335,
+      39.68319,
+      -75.743525914
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/cecil/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cecil Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.461Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3080"
+  ]
+}

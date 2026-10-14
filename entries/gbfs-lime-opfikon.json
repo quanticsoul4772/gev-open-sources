@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-opfikon",
+  "domain": "bikeshare.stations",
+  "name": "Lime Opfikon — Opfikon",
+  "provider": "Lime Opfikon",
+  "coverage": {
+    "bbox": [
+      47.4386,
+      8.5773,
+      47.4386,
+      8.5773
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/opfikon/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/opfikon/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/opfikon/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/opfikon/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_opfikon",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Opfikon"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.935Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_opfikon"
+  ]
+}

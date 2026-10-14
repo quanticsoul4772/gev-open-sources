@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lyft-den",
+  "domain": "bikeshare.stations",
+  "name": "Lyft Scooters Denver — Denver, CO",
+  "provider": "Lyft Scooters Denver",
+  "coverage": {
+    "bbox": [
+      39.6787,
+      -105.0509,
+      39.7766,
+      -104.9417
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/den/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.lyft.com/gbfs/2.3/den/en/station_information.json",
+      "system_information": "https://gbfs.lyft.com/gbfs/2.3/den/en/system_information.json",
+      "gbfs": "https://gbfs.lyft.com/gbfs/2.3/den/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lyft_den",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lyft Scooters Denver"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.953Z"
+  },
+  "provenance": [
+    "gbfs-systems:lyft_den"
+  ]
+}

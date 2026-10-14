@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1690",
+  "domain": "transit.vehicles",
+  "name": "Thunder Bay Transit",
+  "provider": "Thunder Bay Transit",
+  "coverage": {
+    "bbox": [
+      48.34626,
+      -89.38849,
+      48.47868,
+      -89.182
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://api.nextlift.ca/gtfs-realtime/vehicleupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Thunder Bay Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.350Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1690"
+  ]
+}

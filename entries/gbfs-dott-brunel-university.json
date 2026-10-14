@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-brunel-university",
+  "domain": "bikeshare.stations",
+  "name": "Dott brunel-university — Uxbridge",
+  "provider": "Dott brunel-university",
+  "coverage": {
+    "bbox": [
+      51.5084,
+      -0.4806,
+      51.5471,
+      -0.4646
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/brunel-university/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/brunel-university/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/brunel-university/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/brunel-university/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-brunel-university",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott brunel-university"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.805Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-brunel-university"
+  ]
+}

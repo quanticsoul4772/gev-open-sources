@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-voi-de",
+  "domain": "bikeshare.stations",
+  "name": "Voi — Germany",
+  "provider": "Voi",
+  "coverage": {
+    "bbox": [
+      48.5113,
+      8.3594,
+      49.5439,
+      9.2494
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "voi_de",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "VOI",
+        "language": "en"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.281Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_de"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "mbta",
+  "domain": "transit.vehicles",
+  "name": "MBTA",
+  "provider": "Massachusetts Bay Transportation Authority",
+  "coverage": {
+    "bbox": [
+      41.7313,
+      -71.9099,
+      42.9889,
+      -70.2079
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://cdn.mbta.com/realtime/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://cdn.mbta.com/sites/default/files/2023-08/mbta-massdot-develop-license-agreement.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "MBTA / MassDOT"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.299Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

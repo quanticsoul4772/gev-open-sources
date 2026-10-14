@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5532-vp",
+  "domain": "transit.vehicles",
+  "name": "Lebanon Transit",
+  "provider": "Lebanon Transit",
+  "coverage": {
+    "bbox": [
+      40.06818,
+      -76.884729,
+      40.4355,
+      -76.188737
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.lebanontransit.org/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lebanon Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.727Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5532-vp"
+  ]
+}

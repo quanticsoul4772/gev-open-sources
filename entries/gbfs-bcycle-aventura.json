@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-aventura",
+  "domain": "bikeshare.stations",
+  "name": "Aventura BCycle — Aventura, FL",
+  "provider": "Aventura BCycle",
+  "coverage": {
+    "bbox": [
+      25.9564,
+      -80.1336,
+      25.9661,
+      -80.1306
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_aventura/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_aventura/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/bcycle_aventura/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_aventura/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_aventura",
+    "version": "1.1"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Aventura BCycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.611Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_aventura"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-kamiichitown-kamiichi-vp",
+  "domain": "transit.vehicles",
+  "name": "上市町営バス",
+  "provider": "上市町",
+  "coverage": {
+    "bbox": [
+      36.663021,
+      137.320017188636,
+      36.733743,
+      137.399596
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/kamiichi-town/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "上市町"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.510Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-kamiichitown-kamiichi-vp"
+  ]
+}

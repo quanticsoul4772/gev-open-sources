@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6786-vp",
+  "domain": "transit.vehicles",
+  "name": "Westmoreland County Transit Authority",
+  "provider": "Westmoreland County Transit Authority",
+  "coverage": {
+    "bbox": [
+      40.093403,
+      -80.004792,
+      40.61699,
+      -78.916532
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://wcta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Westmoreland County Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.767Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6786-vp"
+  ]
+}

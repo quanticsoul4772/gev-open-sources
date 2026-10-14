@@ -1,0 +1,47 @@
+{
+  "id": "mdb-tld-1261-vp",
+  "domain": "transit.vehicles",
+  "name": "Pasadena Transit",
+  "provider": "Pasadena Transit",
+  "coverage": {
+    "bbox": [
+      34.10971,
+      -118.19336,
+      34.197933,
+      -118.068852
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.cityofpasadena.net/pasadena-transit/real-time-applications/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Pasadena Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.672Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-1261-vp",
+    "licence-borrowed:mdb-41"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2592",
+  "domain": "transit.vehicles",
+  "name": "Guelph Transit",
+  "provider": "Guelph Transit",
+  "coverage": {
+    "bbox": [
+      43.482661,
+      -80.322631,
+      43.580844,
+      -80.175244
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://glphprdtmgtfs.glphtrpcloud.com/tmgtfsrealtimewebservice/vehicle/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://explore.guelph.ca/pages/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "Guelph Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.437Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2592"
+  ]
+}

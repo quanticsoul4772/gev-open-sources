@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-libelo",
+  "domain": "bikeshare.stations",
+  "name": "Libélo — Valence",
+  "provider": "Libélo",
+  "coverage": {
+    "bbox": [
+      44.8757,
+      4.8411,
+      45.0564,
+      5.0603
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://valence.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://valence.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://valence.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://valence.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "libelo",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Libélo"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.905Z"
+  },
+  "provenance": [
+    "gbfs-systems:libelo"
+  ]
+}

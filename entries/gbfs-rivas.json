@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-rivas",
+  "domain": "bikeshare.stations",
+  "name": "BicinRivas — Rivas-Vaciamadrid",
+  "provider": "BicinRivas",
+  "coverage": {
+    "bbox": [
+      40.3237,
+      -3.5518,
+      40.3833,
+      -3.5121
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://rivas.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://rivas.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://rivas.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://rivas.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "rivas",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "BicinRivas"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.219Z"
+  },
+  "provenance": [
+    "gbfs-systems:rivas"
+  ]
+}

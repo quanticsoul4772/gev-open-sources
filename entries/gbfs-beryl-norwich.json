@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-norwich",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - Norwich — Norwich",
+  "provider": "Beryl - Norwich",
+  "coverage": {
+    "bbox": [
+      52.5568,
+      1.1095,
+      52.6892,
+      1.379
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Norwich/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Norwich/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Norwich/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Norwich/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_norwich",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.509Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_norwich"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5903-vp",
+  "domain": "transit.vehicles",
+  "name": "Housatonic Area Regional Transit",
+  "provider": "Housatonic Area Regional Transit",
+  "coverage": {
+    "bbox": [
+      41.118856643,
+      -73.68374,
+      41.606836204,
+      -73.379386521
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/hart/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Housatonic Area Regional Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.750Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5903-vp"
+  ]
+}

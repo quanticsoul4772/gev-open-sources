@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3443",
+  "domain": "transit.vehicles",
+  "name": "Shore Transit",
+  "provider": "Shore Transit",
+  "coverage": {
+    "bbox": [
+      37.978176307305,
+      -75.8551239660101,
+      38.4552842273981,
+      -75.0888529848184
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://myride.shoretransit.org/gtfs/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Shore Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.491Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3443"
+  ]
+}

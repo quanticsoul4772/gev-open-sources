@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1489",
+  "domain": "transit.vehicles",
+  "name": "Cincinnati Metro",
+  "provider": "Cincinnati Metro",
+  "coverage": {
+    "bbox": [
+      39.064281,
+      -84.794051,
+      39.356487,
+      -84.259987
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://tmgtfsprd.sorttrpcloud.com/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cincinnati Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.318Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1489"
+  ]
+}

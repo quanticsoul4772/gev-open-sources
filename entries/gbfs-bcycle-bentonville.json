@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-bentonville",
+  "domain": "bikeshare.stations",
+  "name": "Bentonville BCycle — Bentonville, AR",
+  "provider": "Bentonville BCycle",
+  "coverage": {
+    "bbox": [
+      36.341,
+      -94.2008,
+      36.3695,
+      -94.1806
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_bentonville/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_bentonville/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/bcycle_bentonville/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_bentonville/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_bentonville",
+    "version": "1.1"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bentonville BCycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.612Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_bentonville"
+  ]
+}

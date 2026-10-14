@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-bristol",
+  "domain": "bikeshare.stations",
+  "name": "Dott Bristol — Bristol",
+  "provider": "Dott Bristol",
+  "coverage": {
+    "bbox": [
+      51.4036,
+      -2.6987,
+      51.5589,
+      -2.3798
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/bristol/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/bristol/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/bristol/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/bristol/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-bristol",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Bristol"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.804Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-bristol"
+  ]
+}

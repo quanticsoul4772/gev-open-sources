@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6725-vp",
+  "domain": "transit.vehicles",
+  "name": "City of Irvine",
+  "provider": "City of Irvine",
+  "coverage": {
+    "bbox": [
+      33.651539,
+      -117.809192,
+      33.731875,
+      -117.732860708
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/irvine/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Irvine"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.760Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6725-vp"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-plymouth",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - Plymouth — Plymouth",
+  "provider": "Beryl - Plymouth",
+  "coverage": {
+    "bbox": [
+      50.3519,
+      -4.2412,
+      50.4304,
+      -4.0249
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Plymouth/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Plymouth/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Plymouth/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Plymouth/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_plymouth",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.510Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_plymouth"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "mdb-3120",
+  "domain": "transit.vehicles",
+  "name": "Tükebusz",
+  "provider": "Tükebusz",
+  "coverage": {
+    "bbox": null,
+    "countries": []
+  },
+  "access": {
+    "url": "http://menobusz.tukebusz.hu:30080/mobilapp/GTFS/RTx_positions.x",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Tükebusz"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.463Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3120"
+  ]
+}

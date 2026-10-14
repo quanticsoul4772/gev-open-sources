@@ -1,0 +1,47 @@
+{
+  "id": "mdb-tld-4337-vp",
+  "domain": "transit.vehicles",
+  "name": "NYC Ferry",
+  "provider": "NYC Ferry",
+  "coverage": {
+    "bbox": [
+      40.566157,
+      -74.074231,
+      40.805455,
+      -73.76914
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.ferry.nyc/developer-tools/",
+    "display": false,
+    "commercial": null,
+    "attribution": "NYC Ferry"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.680Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4337-vp",
+    "licence-borrowed:mdb-515"
+  ]
+}

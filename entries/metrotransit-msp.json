@@ -1,0 +1,44 @@
+{
+  "id": "metrotransit-msp",
+  "domain": "transit.vehicles",
+  "name": "Metro Transit",
+  "provider": "Metro Transit (Metropolitan Council)",
+  "coverage": {
+    "bbox": [
+      44.349,
+      -94.1539,
+      45.6066,
+      -92.3761
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://svc.metrotransit.org/mtgtfs/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://svc.metrotransit.org/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Metro Transit — Metropolitan Council"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.777Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1622",
+  "domain": "transit.vehicles",
+  "name": "Nashville MTA WeGo Public Transit",
+  "provider": "Nashville MTA WeGo Public Transit",
+  "coverage": {
+    "bbox": [
+      35.7416,
+      -87.379122,
+      36.525005,
+      -86.29724
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.wegotransit.com/contact-us/data-request-submission/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Nashville MTA WeGo Public Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.8"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.584Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1622"
+  ]
+}

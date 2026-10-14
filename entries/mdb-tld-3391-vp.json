@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-3391-vp",
+  "domain": "transit.vehicles",
+  "name": "Sacramento Regional Transit",
+  "provider": "Sacramento Regional Transit",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://bustime.sacrt.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sacramento Regional Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.674Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-3391-vp"
+  ]
+}

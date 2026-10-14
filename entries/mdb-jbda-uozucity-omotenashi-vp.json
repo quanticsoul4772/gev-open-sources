@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-uozucity-omotenashi-vp",
+  "domain": "transit.vehicles",
+  "name": "おもてなし魚津直行便",
+  "provider": "魚津市",
+  "coverage": {
+    "bbox": [
+      36.820697,
+      137.40596,
+      36.873892,
+      137.481616
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/uozu_omotenashi/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "魚津市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.552Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-uozucity-omotenashi-vp"
+  ]
+}

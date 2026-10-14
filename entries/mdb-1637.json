@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1637",
+  "domain": "transit.vehicles",
+  "name": "Staten Island Railway",
+  "provider": "Staten Island Railway",
+  "coverage": {
+    "bbox": [
+      40.512764,
+      -74.251961,
+      40.903125,
+      -73.755405
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-si",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://api.mta.info/#/DataFeedAgreement",
+    "display": false,
+    "commercial": null,
+    "attribution": "Staten Island Railway"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.343Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1637"
+  ]
+}

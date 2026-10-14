@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-southampton",
+  "domain": "bikeshare.stations",
+  "name": "Beryl - Southampton — Southampton",
+  "provider": "Beryl - Southampton",
+  "coverage": {
+    "bbox": [
+      50.8888,
+      -1.4574,
+      50.9462,
+      -1.3591
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Southampton/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Southampton/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Southampton/system_information.json",
+      "gbfs": "https://gbfs.beryl.cc/v2_2/Southampton/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_southampton",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.511Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_southampton"
+  ]
+}

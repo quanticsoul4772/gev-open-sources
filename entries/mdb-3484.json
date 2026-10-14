@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3484",
+  "domain": "transit.vehicles",
+  "name": "Orosháza Bus",
+  "provider": "FlexCom Kommunikációs Kft.",
+  "coverage": {
+    "bbox": [
+      46.5571,
+      20.59613,
+      46.59143,
+      20.67188
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.gpspositions.net/storage/realtime/OROSH_V_ONK/vehicle_positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "FlexCom Kommunikációs Kft."
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.498Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3484"
+  ]
+}

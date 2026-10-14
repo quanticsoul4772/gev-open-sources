@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-beryl-belfast",
+  "domain": "bikeshare.stations",
+  "name": "Beryl Belfast — Belfast",
+  "provider": "Beryl Belfast",
+  "coverage": {
+    "bbox": [
+      54.5728,
+      -5.9779,
+      54.6213,
+      -5.8686
+    ],
+    "countries": [
+      "IE"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Belfast/station_status.json",
+    "related": {
+      "station_information": "https://beryl-gbfs-production.web.app/v2_2/Belfast/station_information.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Belfast/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Belfast/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "beryl_belfast",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.494Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_belfast"
+  ]
+}

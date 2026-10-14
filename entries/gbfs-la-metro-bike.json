@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-la-metro-bike",
+  "domain": "bikeshare.stations",
+  "name": "Metro Bike — Los Angeles, CA",
+  "provider": "Metro Bike",
+  "coverage": {
+    "bbox": [
+      32.9742,
+      -119.5448,
+      35.1302,
+      -116.9426
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_lametro/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_lametro/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Metro Bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.896Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

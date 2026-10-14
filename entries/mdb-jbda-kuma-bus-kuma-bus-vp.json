@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-kuma-bus-kuma-bus-vp",
+  "domain": "transit.vehicles",
+  "name": "熊本バス",
+  "provider": "熊本バス",
+  "coverage": {
+    "bbox": [
+      32.61403,
+      130.66951,
+      32.803623,
+      130.99182
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://km.bus-vision.jp/realtime/kumabus_vpos_update.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "熊本バス"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.512Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-kuma-bus-kuma-bus-vp"
+  ]
+}

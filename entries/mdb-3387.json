@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3387",
+  "domain": "transit.vehicles",
+  "name": "Cotral - BusOne",
+  "provider": "Cotral - BusOne",
+  "coverage": {
+    "bbox": [
+      41.2083834083,
+      11.3233823358,
+      43.3311428011,
+      13.9884722796
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/cotral/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/cotral/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "Cotral - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.743Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3387"
+  ]
+}

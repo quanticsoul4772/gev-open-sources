@@ -1,0 +1,64 @@
+{
+  "id": "gbfs-augsburg",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Augsburg — Augsburg",
+  "provider": "Donkey Republic Augsburg",
+  "coverage": {
+    "bbox": [
+      48.3574,
+      10.8719,
+      48.3799,
+      10.9135
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "Augsburg",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "de",
+        "text": ""
+      },
+      {
+        "language": "en",
+        "text": ""
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.599Z"
+  },
+  "provenance": [
+    "gbfs-systems:Augsburg"
+  ]
+}

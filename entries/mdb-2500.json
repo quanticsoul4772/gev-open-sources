@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2500",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Pemberton Valley)",
+  "provider": "BC Transit (Pemberton Valley)",
+  "coverage": {
+    "bbox": [
+      50.11391,
+      -122.96128,
+      50.33306,
+      -122.65617
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=50",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Pemberton Valley)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.835Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2500"
+  ]
+}

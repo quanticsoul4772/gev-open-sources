@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-donkey-raasepori",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Raasepori — Raasepori",
+  "provider": "Donkey Republic Raasepori",
+  "coverage": {
+    "bbox": [
+      59.9747,
+      23.4301,
+      60.1307,
+      23.6618
+    ],
+    "countries": [
+      "FI"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_raasepori",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "Donkey Republic"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.787Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_raasepori"
+  ]
+}

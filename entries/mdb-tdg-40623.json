@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-40623",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Cap’Bus",
+  "provider": "Communauté d'Agglomération Hérault Méditerranée",
+  "coverage": {
+    "bbox": [
+      43.274083,
+      3.407112,
+      43.4628,
+      3.523256
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/7dab24f0-3114-49b9-827d-376d10a4b193",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté d'Agglomération Hérault Méditerranée"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.580Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-40623"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3063",
+  "domain": "transit.vehicles",
+  "name": "SEPTA Bus",
+  "provider": "Southeastern Pennsylvania Transportation Authority (SEPTA)",
+  "coverage": {
+    "bbox": [
+      39.803811,
+      -75.834693,
+      40.334014,
+      -74.754202
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www3.septa.org/gtfsrt/septa-pa-us/Vehicle/rtVehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www3.septa.org/developer/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Southeastern Pennsylvania Transportation Authority (SEPTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.741Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3063"
+  ]
+}

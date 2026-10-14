@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-stadtmobil-karlsruhe",
+  "domain": "bikeshare.stations",
+  "name": "Stadtmobil Karlsruhe — Karlsruhe",
+  "provider": "Stadtmobil Karlsruhe",
+  "coverage": {
+    "bbox": [
+      48.6919,
+      8.0814,
+      49.3082,
+      9.467
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_karlsruhe/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_karlsruhe/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_karlsruhe/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_karlsruhe/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "stadtmobil_karlsruhe",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Stadtmobil CarSharing GmbH & Co. KG",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.237Z"
+  },
+  "provenance": [
+    "gbfs-systems:stadtmobil_karlsruhe"
+  ]
+}

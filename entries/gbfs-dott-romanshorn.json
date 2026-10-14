@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-romanshorn",
+  "domain": "bikeshare.stations",
+  "name": "Dott Romanshorn — Romanshorn",
+  "provider": "Dott Romanshorn",
+  "coverage": {
+    "bbox": [
+      47.4037,
+      9.1829,
+      47.5726,
+      9.5156
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/romanshorn/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/romanshorn/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/romanshorn/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/romanshorn/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-romanshorn",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Romanshorn"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.840Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-romanshorn"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-nantocity-nanbus-vp",
+  "domain": "transit.vehicles",
+  "name": "南砺市営バス",
+  "provider": "南砺市",
+  "coverage": {
+    "bbox": [
+      36.351976,
+      136.798883,
+      36.612299,
+      137.138188
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/nanto-city/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "南砺市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.528Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-nantocity-nanbus-vp"
+  ]
+}

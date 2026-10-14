@@ -1,0 +1,47 @@
+{
+  "id": "mdb-2693",
+  "domain": "transit.vehicles",
+  "name": "Kitsap Transit",
+  "provider": "Kitsap Transit",
+  "coverage": {
+    "bbox": [
+      47.411738,
+      -122.85144,
+      47.854812,
+      -122.338923
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://kttracker.com/gtfsrt/vehicles?debug",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "http://www.kitsaptransit.com/privacy-policy#developer",
+    "display": false,
+    "commercial": null,
+    "attribution": "Kitsap Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.445Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2693",
+    "licence-borrowed:mdb-1304"
+  ]
+}

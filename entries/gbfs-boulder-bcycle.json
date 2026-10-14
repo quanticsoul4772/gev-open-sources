@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-boulder-bcycle",
+  "domain": "bikeshare.stations",
+  "name": "BCycle — Boulder, CO",
+  "provider": "BCycle",
+  "coverage": {
+    "bbox": [
+      39.1167,
+      -106.4434,
+      40.9133,
+      -104.0976
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_boulder/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_boulder/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BCycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.699Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

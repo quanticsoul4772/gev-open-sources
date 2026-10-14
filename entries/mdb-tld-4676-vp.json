@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4676-vp",
+  "domain": "transit.vehicles",
+  "name": "The Rapid",
+  "provider": "The Rapid",
+  "coverage": {
+    "bbox": [
+      42.8378740122,
+      -85.909981,
+      43.6924582128,
+      -85.4799276402
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://connect.ridetherapid.org/infopoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "The Rapid"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.708Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4676-vp"
+  ]
+}

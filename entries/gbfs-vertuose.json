@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-vertuose",
+  "domain": "bikeshare.stations",
+  "name": "Vertuose — Longwy",
+  "provider": "Vertuose",
+  "coverage": {
+    "bbox": [
+      49.444,
+      5.6841,
+      49.544,
+      5.9302
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/vertuose/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v3.0.ecovelo.mobi/vertuose/station_information.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/vertuose/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/vertuose/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "vertuose",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Vertuose"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.275Z"
+  },
+  "provenance": [
+    "gbfs-systems:vertuose"
+  ]
+}

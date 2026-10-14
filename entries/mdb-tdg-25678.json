@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-25678",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Figeac - Le Bus",
+  "provider": "Zenbus",
+  "coverage": {
+    "bbox": [
+      44.57117,
+      1.975267,
+      44.628341,
+      2.044955
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/0057d63f-cf69-4d67-8c44-3c546ec7d403",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Zenbus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.575Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-25678"
+  ]
+}

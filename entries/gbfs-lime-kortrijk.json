@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-kortrijk",
+  "domain": "bikeshare.stations",
+  "name": "Lime Kortrijk — Kortrijk",
+  "provider": "Lime Kortrijk",
+  "coverage": {
+    "bbox": [
+      50.8206,
+      3.2848,
+      50.8206,
+      3.2848
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/kortrijk/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_kortrijk",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Kortrijk"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.923Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_kortrijk"
+  ]
+}

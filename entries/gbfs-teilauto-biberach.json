@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-teilauto-biberach",
+  "domain": "bikeshare.stations",
+  "name": "TeilAuto Biberach — Biberach",
+  "provider": "TeilAuto Biberach",
+  "coverage": {
+    "bbox": [
+      48.0651,
+      9.7717,
+      48.1297,
+      9.8291
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_biberach/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_biberach/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_biberach/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_biberach/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "teilauto_biberach",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "teilAuto Biberach e.V.",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.244Z"
+  },
+  "provenance": [
+    "gbfs-systems:teilauto_biberach"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-san-francisco",
+  "domain": "bikeshare.stations",
+  "name": "Lime San Francisco — San Francisco, CA",
+  "provider": "Lime San Francisco",
+  "coverage": {
+    "bbox": [
+      37.7432,
+      -122.5152,
+      37.7432,
+      -122.5152
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_san_francisco",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime San Francisco"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.939Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_san_francisco"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2118",
+  "domain": "transit.vehicles",
+  "name": "Compania de Transport Public Iași",
+  "provider": "Compania de Transport Public Iași",
+  "coverage": {
+    "bbox": [
+      47.06498,
+      27.44606,
+      47.28792,
+      27.7572611
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://iasi-rt-feed.gtfs.ro/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Compania de Transport Public Iași"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.381Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2118"
+  ]
+}

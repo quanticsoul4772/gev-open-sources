@@ -1,0 +1,47 @@
+{
+  "id": "mdb-1445",
+  "domain": "transit.vehicles",
+  "name": "Saskatoon Transit",
+  "provider": "Saskatoon Transit",
+  "coverage": {
+    "bbox": [
+      52.078661,
+      -106.760746,
+      52.202189,
+      -106.532035
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://apps2.saskatoon.ca/app/data/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.saskatoon.ca/services-residents/connect-your-city/open-data#:~:text=The%20data%20and%20information%20shared%20on%20Open%20Data,on%20services%20such%20as%20transit%20and%20procurement%20%28purchasing%29",
+    "display": false,
+    "commercial": null,
+    "attribution": "Saskatoon Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.310Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1445",
+    "licence-borrowed:mdb-716"
+  ]
+}

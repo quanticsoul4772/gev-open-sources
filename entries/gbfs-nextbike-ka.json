@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-ka",
+  "domain": "bikeshare.stations",
+  "name": "nextbike Klagenfurt Austria — Klagenfurt",
+  "provider": "nextbike Klagenfurt Austria",
+  "coverage": {
+    "bbox": [
+      46.5903,
+      14.0439,
+      46.6564,
+      14.343
+    ],
+    "countries": [
+      "AT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ka/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ka/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ka/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ka/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_ka",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike AT GmbH, Karl-Heine-Str. 46, 04229 Leipzig, Germany"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.081Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_ka"
+  ]
+}

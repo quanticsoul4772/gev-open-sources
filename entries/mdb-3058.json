@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3058",
+  "domain": "transit.vehicles",
+  "name": "Metro Bilbao",
+  "provider": "Metro Bilbao",
+  "coverage": {
+    "bbox": [
+      43.23521,
+      -3.03896,
+      43.40162,
+      -2.88125
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://ctb-gtfs-rt.s3.eu-south-2.amazonaws.com/metro-bilbao-vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://data.ctb.eus/en/pages/legal-notice",
+    "display": false,
+    "commercial": null,
+    "attribution": "Metro Bilbao"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.739Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3058"
+  ]
+}

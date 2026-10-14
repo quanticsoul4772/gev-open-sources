@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5504-vp",
+  "domain": "transit.vehicles",
+  "name": "Mid Mon Valley Transit Authority",
+  "provider": "Mid Mon Valley Transit Authority",
+  "coverage": {
+    "bbox": [
+      40.026674,
+      -80.033009,
+      40.454161,
+      -79.840492
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mmvta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Mid Mon Valley Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.727Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5504-vp"
+  ]
+}

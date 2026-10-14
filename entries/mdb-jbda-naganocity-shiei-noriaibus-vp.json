@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-naganocity-shiei-noriaibus-vp",
+  "domain": "transit.vehicles",
+  "name": "長野市営バス・循環バス（RT対応）",
+  "provider": "長野市",
+  "coverage": {
+    "bbox": [
+      36.5587156164607,
+      137.9308,
+      36.68159,
+      138.25828
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.gtfs.info/api/vehicle/F23EA2FD-DAB8-4E7D-AC4F-67E482555472",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "長野市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.526Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-naganocity-shiei_noriaibus-vp"
+  ]
+}

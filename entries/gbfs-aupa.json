@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-aupa",
+  "domain": "bikeshare.stations",
+  "name": "Citiz AUPA — Bayonne",
+  "provider": "Citiz AUPA",
+  "coverage": {
+    "bbox": [
+      43.4805,
+      -1.5589,
+      43.5428,
+      -1.4606
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://backend.citiz.fr/public/provider/20/gbfs/v3.0/station_status.json",
+    "related": {
+      "station_information": "https://backend.citiz.fr/public/provider/20/gbfs/v3.0/station_information.json",
+      "system_information": "https://backend.citiz.fr/public/provider/20/gbfs/v3.0/system_information.json",
+      "gbfs": "https://backend.citiz.fr/public/provider/20/gbfs/3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "aupa",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "SCIC AUPA ",
+        "language": "fr"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.603Z"
+  },
+  "provenance": [
+    "gbfs-systems:aupa"
+  ]
+}

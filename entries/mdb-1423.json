@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1423",
+  "domain": "transit.vehicles",
+  "name": "Canberra Metro Light Rail",
+  "provider": "Canberra Metro Operations",
+  "coverage": {
+    "bbox": [
+      -35.2779344,
+      149.1293069,
+      -35.1856039,
+      149.1510139
+    ],
+    "countries": [
+      "AU"
+    ]
+  },
+  "access": {
+    "url": "http://files.transport.act.gov.au/feeds/lightrail.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    "display": true,
+    "commercial": true,
+    "attribution": "Canberra Metro Operations"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/legalcode"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.306Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1423"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-2266-vp-1",
+  "domain": "transit.vehicles",
+  "name": "Greenlink",
+  "provider": "Greenlink",
+  "coverage": {
+    "bbox": [
+      34.7048432,
+      -82.4642448,
+      34.9251542,
+      -82.2328106
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrt.greenlink.cadavl.com/ProfilGtfsRt2_0RSProducer-GTA/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Greenlink"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.673Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-2266-vp_1"
+  ]
+}

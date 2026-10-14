@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-gs",
+  "domain": "bikeshare.stations",
+  "name": "Prishtina bike (Kosovo) — Prishtina",
+  "provider": "Prishtina bike (Kosovo)",
+  "coverage": {
+    "bbox": [
+      42.6469,
+      21.1251,
+      42.6658,
+      21.178
+    ],
+    "countries": [
+      "XK"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_gs",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "SHA Prishtina Parking, Zyra Qendrore, Rr. Luan Haradinaj, objekti i ish ASK, Pristhtine 10000, Kosovo"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.070Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_gs"
+  ]
+}

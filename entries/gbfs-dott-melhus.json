@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-melhus",
+  "domain": "bikeshare.stations",
+  "name": "Dott Melhus — Melhus",
+  "provider": "Dott Melhus",
+  "coverage": {
+    "bbox": [
+      63.2682,
+      10.2355,
+      63.2916,
+      10.2819
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/melhus/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/melhus/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/melhus/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/melhus/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-melhus",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Melhus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.826Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-melhus"
+  ]
+}

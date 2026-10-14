@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81570",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Hoplà",
+  "provider": "Oise Mobilité - Syndicat mixte des transports collectifs de l'Oise",
+  "coverage": {
+    "bbox": [
+      49.31423,
+      2.55444,
+      49.472436,
+      2.732774
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/e42910ec-336a-48de-86ff-1183f0ffb68d",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Oise Mobilité - Syndicat mixte des transports collectifs de l'Oise"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.605Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81570"
+  ]
+}

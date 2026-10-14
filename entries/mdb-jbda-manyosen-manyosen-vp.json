@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-manyosen-manyosen-vp",
+  "domain": "transit.vehicles",
+  "name": "万葉線",
+  "provider": "万葉線",
+  "coverage": {
+    "bbox": [
+      36.7415838010496,
+      137.013049,
+      36.7890394785136,
+      137.111771964297
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/manyo_line/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "万葉線"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.517Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-manyosen-manyosen-vp"
+  ]
+}

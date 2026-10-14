@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-joshinkankobus-alllines-vp",
+  "domain": "transit.vehicles",
+  "name": "株式会社上信観光バス　乗合事業課",
+  "provider": "株式会社上信観光バス",
+  "coverage": {
+    "bbox": [
+      36.270446,
+      138.972899,
+      36.391008,
+      139.072807714286
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "株式会社上信観光バス"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.558Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-JoshinKankoBus-AllLines-vp"
+  ]
+}

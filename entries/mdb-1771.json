@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1771",
+  "domain": "transit.vehicles",
+  "name": "Des Moines Area Regional Transit Authority (DART)",
+  "provider": "Des Moines Area Regional Transit Authority (DART)",
+  "coverage": {
+    "bbox": [
+      41.511821,
+      -93.809416,
+      41.732005,
+      -93.503229
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.ridedart.com/gtfs/real-time/vehicle-positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.ridedart.com/open-data-policy-and-terms-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "Des Moines Area Regional Transit Authority (DART)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 202"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.359Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1771"
+  ]
+}

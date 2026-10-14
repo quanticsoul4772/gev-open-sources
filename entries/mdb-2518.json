@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2518",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Clearwater)",
+  "provider": "BC Transit (Clearwater)",
+  "coverage": {
+    "bbox": [
+      50.65533,
+      -120.37239,
+      51.67949,
+      -119.72799
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=35",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Clearwater)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.839Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2518"
+  ]
+}

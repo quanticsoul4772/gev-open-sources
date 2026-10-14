@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3390",
+  "domain": "transit.vehicles",
+  "name": "Transportes Metropolitanos de Lisboa",
+  "provider": "Transportes Metropolitanos de Lisboa",
+  "coverage": {
+    "bbox": [
+      37.013994,
+      -9.497247,
+      42.024677,
+      -6.828972
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://go.tmlmobilidade.pt/hub/api/v1/realtime/vehicles/positions/gtfs",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://github.com/tmlmobilidade/go?tab=AGPL-3.0-1-ov-file",
+    "display": false,
+    "commercial": null,
+    "attribution": "Transportes Metropolitanos de Lisboa"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.650Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3390"
+  ]
+}

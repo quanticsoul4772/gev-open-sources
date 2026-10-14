@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3468",
+  "domain": "transit.vehicles",
+  "name": "Marne Bois Bateau Bus",
+  "provider": "Marne Bois Bateau Bus",
+  "coverage": {
+    "bbox": [
+      48.816324,
+      2.4673369,
+      48.851516,
+      2.5168046
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt.infra-hubup.fr/rivercat/vehicle_positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Marne Bois Bateau Bus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.495Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3468"
+  ]
+}

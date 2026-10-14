@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-83868",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Linead",
+  "provider": "JVMALIN",
+  "coverage": {
+    "bbox": [
+      48.52581,
+      0.9005,
+      48.933815,
+      1.555579
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/cf98048e-7419-46ec-a1e3-36a34e1e11a9",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "JVMALIN"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.644Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83868"
+  ]
+}

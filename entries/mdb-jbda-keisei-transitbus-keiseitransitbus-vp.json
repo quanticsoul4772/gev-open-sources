@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-keisei-transitbus-keiseitransitbus-vp",
+  "domain": "transit.vehicles",
+  "name": "京成バス千葉ウエスト　塩浜営業所（市川市コミュニティバス　南部ルート　わくわくバス含む）",
+  "provider": "京成バス千葉ウエスト株式会社",
+  "coverage": {
+    "bbox": [
+      35.635399,
+      139.88383,
+      35.728658,
+      139.956302
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://s3-ajt-mobusta-gtfs.s3.ap-northeast-1.amazonaws.com/realtime/35/vehicle_position.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "京成バス千葉ウエスト株式会社"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.510Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-keisei-transitbus-keiseitransitbus-vp"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2631",
+  "domain": "transit.vehicles",
+  "name": "Transports en Commun de l’Agglomération Troyenne (TCAT)",
+  "provider": "Transports en Commun de l’Agglomération Troyenne (TCAT)",
+  "coverage": {
+    "bbox": [
+      48.183986,
+      3.905314,
+      48.3988783,
+      4.244121
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "http://94.143.218.42:13485/ProfilGtfsRt2_0RSProducer-TCAT/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://transport.data.gouv.fr/datasets/offres-de-services-bus-tram-et-scolaire-au-format-gtfs-gtfs-rt-siri-lite-1",
+    "display": false,
+    "commercial": null,
+    "attribution": "Transports en Commun de l’Agglomération Troyenne (TCAT)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.735Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2631"
+  ]
+}

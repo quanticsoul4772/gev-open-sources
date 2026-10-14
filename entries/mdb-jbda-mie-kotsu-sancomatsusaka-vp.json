@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-mie-kotsu-sancomatsusaka-vp",
+  "domain": "transit.vehicles",
+  "name": "松阪営業所",
+  "provider": "三重交通",
+  "coverage": {
+    "bbox": [
+      34.378754,
+      136.2162,
+      34.62572,
+      136.552
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://bus-vision.jp/realtime/matsusaka_vpos_update_v2.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "三重交通"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.522Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-mie-kotsu-sancomatsusaka-vp"
+  ]
+}

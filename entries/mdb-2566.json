@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2566",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Squamish)",
+  "provider": "BC Transit (Squamish)",
+  "coverage": {
+    "bbox": [
+      49.69626,
+      -123.15751,
+      49.77435,
+      -123.09908
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=43",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Squamish)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.849Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2566"
+  ]
+}

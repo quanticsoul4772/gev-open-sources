@@ -1,0 +1,39 @@
+{
+  "id": "mdb-3481",
+  "domain": "transit.vehicles",
+  "name": "Sivas Belediye Başkanlığı",
+  "provider": "Sivas Belediye Başkanlığı",
+  "coverage": {
+    "bbox": null,
+    "countries": []
+  },
+  "access": {
+    "url": "https://mobilapi.sivas.bel.tr/gtfs/realtime/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sivas Belediye Başkanlığı"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.497Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3481"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2554",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Kamloops Transit System)",
+  "provider": "BC Transit (Kamloops Transit System)",
+  "coverage": {
+    "bbox": [
+      50.63416,
+      -120.42291,
+      50.86045,
+      -120.07874
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=46",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Kamloops Transit System)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.845Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2554"
+  ]
+}

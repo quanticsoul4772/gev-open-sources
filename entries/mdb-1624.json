@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1624",
+  "domain": "transit.vehicles",
+  "name": "Long Island Rail Road",
+  "provider": "Metropolitan Transit Authority (MTA)",
+  "coverage": {
+    "bbox": [
+      40.5901817,
+      -73.99358408,
+      41.09970991,
+      -71.95388103
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/lirr%2Fgtfs-lirr",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://api.mta.info/#/DataFeedAgreement",
+    "display": false,
+    "commercial": null,
+    "attribution": "Metropolitan Transit Authority (MTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.336Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1624"
+  ]
+}

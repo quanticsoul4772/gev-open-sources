@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-redding",
+  "domain": "bikeshare.stations",
+  "name": "Redding Bikeshare — Redding, CA",
+  "provider": "Redding Bikeshare",
+  "coverage": {
+    "bbox": [
+      40.5734,
+      -122.4015,
+      40.595,
+      -122.3775
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_redding/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_redding/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/bcycle_redding/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_redding/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_redding",
+    "version": "1.1"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Redding Bikeshare"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.614Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_redding"
+  ]
+}

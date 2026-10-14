@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3466",
+  "domain": "transit.vehicles",
+  "name": "Tango Bus",
+  "provider": "Tango Bus",
+  "coverage": {
+    "bbox": [
+      43.67123,
+      4.125444,
+      43.976132,
+      4.565333
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "http://185.220.72.38:8085/ProfilGtfsRt2_0RSProducer-TANGO/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Tango Bus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.494Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3466"
+  ]
+}

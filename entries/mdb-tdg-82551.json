@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-82551",
+  "domain": "transit.vehicles",
+  "name": "Réseau scolaire de Flers",
+  "provider": "NEMUS (Réseau de transports de Flers Agglo)",
+  "coverage": {
+    "bbox": [
+      48.585559470402586,
+      -0.683349219308029,
+      48.87293064254873,
+      -0.346998981938784
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/9030bf31-561f-4ed2-b8c4-74e6189e46bf",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "NEMUS (Réseau de transports de Flers Agglo)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.618Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-82551"
+  ]
+}

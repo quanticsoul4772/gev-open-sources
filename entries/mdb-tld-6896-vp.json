@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6896-vp",
+  "domain": "transit.vehicles",
+  "name": "NCSU Wolfline",
+  "provider": "NCSU Wolfline",
+  "coverage": {
+    "bbox": [
+      35.766168495,
+      -78.720836952,
+      35.802421902,
+      -78.663751749
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/ncstateuni/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "NCSU Wolfline"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.773Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6896-vp"
+  ]
+}

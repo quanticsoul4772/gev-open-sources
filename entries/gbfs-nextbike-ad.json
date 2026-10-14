@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-ad",
+  "domain": "bikeshare.stations",
+  "name": "BiciMislata — Mislata",
+  "provider": "BiciMislata",
+  "coverage": {
+    "bbox": [
+      39.4476,
+      -0.4275,
+      39.488,
+      -0.3468
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ad/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ad/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ad/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ad/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_ad",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Movilidad Urbana Sostenible, S.L., c/ Manyo 24, Parque Empresarial Táctica, 46980, Patenta - Valencia, Spain"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.996Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_ad"
+  ]
+}

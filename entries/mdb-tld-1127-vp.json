@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-1127-vp",
+  "domain": "transit.vehicles",
+  "name": "Virginia Railway Express",
+  "provider": "Virginia Railway Express",
+  "coverage": {
+    "bbox": [
+      38.22086691,
+      -77.52557175,
+      38.89826017,
+      -77.00526139
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.vre.org/containercdngtfsupload/VehiclePositionFeed",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Virginia Railway Express"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.669Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-1127-vp"
+  ]
+}

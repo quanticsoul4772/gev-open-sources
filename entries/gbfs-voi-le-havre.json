@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-voi-le-havre",
+  "domain": "bikeshare.stations",
+  "name": "Voi Le Havre — Le Havre",
+  "provider": "Voi Le Havre",
+  "coverage": {
+    "bbox": [
+      49.479,
+      0.0698,
+      49.5799,
+      0.1842
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/336/station_status.json",
+    "related": {
+      "station_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/336/station_information.json",
+      "system_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/336/system_information.json",
+      "gbfs": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/336/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "voi_Le_Havre",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Voi Le Havre"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.285Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_Le_Havre"
+  ]
+}

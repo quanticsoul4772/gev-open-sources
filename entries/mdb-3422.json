@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3422",
+  "domain": "transit.vehicles",
+  "name": "Azienda del Consorzio Trasporti Veneziano (ACTV) Navigazione",
+  "provider": "Azienda del Consorzio Trasporti Veneziano (ACTV) Navigazione",
+  "coverage": {
+    "bbox": [
+      45.22369,
+      12.28028,
+      45.49509,
+      12.447123
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://tpl.actv.it/nav/GTFSRT/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://actv.avmspa.it/it/content/catalogo-dei-dati-metadati-e-banche-dati-actv",
+    "display": false,
+    "commercial": null,
+    "attribution": "Azienda del Consorzio Trasporti Veneziano (ACTV) Navigazione"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.745Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3422"
+  ]
+}

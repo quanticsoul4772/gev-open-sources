@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-stuttgart",
+  "domain": "bikeshare.stations",
+  "name": "Dott Stuttgart — Stuttgart",
+  "provider": "Dott Stuttgart",
+  "coverage": {
+    "bbox": [
+      48.7262,
+      9.112,
+      48.8301,
+      9.2494
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/stuttgart/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/stuttgart/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/stuttgart/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/stuttgart/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-stuttgart",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Stuttgart"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.851Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-stuttgart"
+  ]
+}

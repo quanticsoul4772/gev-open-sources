@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-cincinnati-red-bike",
+  "domain": "bikeshare.stations",
+  "name": "Red Bike — Cincinnati, OH",
+  "provider": "Red Bike",
+  "coverage": {
+    "bbox": [
+      38.2048,
+      -85.6696,
+      40.0014,
+      -83.3544
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_cincyredbike/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_cincyredbike/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Red Bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.720Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "mdb-2405",
+  "domain": "transit.vehicles",
+  "name": "RLV Mobilités",
+  "provider": "RLV Mobilités",
+  "coverage": {
+    "bbox": [
+      45.81437233,
+      2.881944,
+      45.966012,
+      3.298453
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/riom-rlv-mobilites-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://transport.data.gouv.fr/datasets/horaires-rlv-mobilites",
+    "display": false,
+    "commercial": null,
+    "attribution": "RLV Mobilités"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.398Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2405",
+    "licence-borrowed:mdb-2404"
+  ]
+}

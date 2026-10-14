@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-4364-vp",
+  "domain": "transit.vehicles",
+  "name": "Torrance Transit",
+  "provider": "Torrance Transit",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://www.mybusinfo.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Torrance Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.685Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4364-vp"
+  ]
+}

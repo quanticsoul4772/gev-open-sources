@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1649",
+  "domain": "transit.vehicles",
+  "name": "Tompkins Consolidated Area Transit (TCAT)",
+  "provider": "Tompkins Consolidated Area Transit (TCAT)",
+  "coverage": {
+    "bbox": [
+      42.3279,
+      -76.677613,
+      42.59069,
+      -76.281221
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Tompkins Consolidated Area Transit (TCAT)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.346Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1649"
+  ]
+}

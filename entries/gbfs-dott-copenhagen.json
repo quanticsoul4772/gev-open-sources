@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-copenhagen",
+  "domain": "bikeshare.stations",
+  "name": "Dott Copenhagen — Copenhagen",
+  "provider": "Dott Copenhagen",
+  "coverage": {
+    "bbox": [
+      55.6174,
+      12.4606,
+      55.7304,
+      12.6509
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/copenhagen/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/copenhagen/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/copenhagen/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/copenhagen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-copenhagen",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Copenhagen"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.810Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-copenhagen"
+  ]
+}

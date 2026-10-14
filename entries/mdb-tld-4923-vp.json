@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4923-vp",
+  "domain": "transit.vehicles",
+  "name": "Bustang",
+  "provider": "Bustang",
+  "coverage": {
+    "bbox": [
+      38.835175,
+      -108.564,
+      40.59005,
+      -104.814988
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.rtd-denver.com/files/bustang/gtfs-rt/Bustang_VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bustang"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.725Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4923-vp"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2376",
+  "domain": "transit.vehicles",
+  "name": "Lvivavtodor",
+  "provider": "Lvivavtodor",
+  "coverage": {
+    "bbox": [
+      49.772404,
+      23.860631,
+      49.975036,
+      24.16313
+    ],
+    "countries": [
+      "UA"
+    ]
+  },
+  "access": {
+    "url": "https://track.ua-gis.com/gtfs/lviv/vehicle_position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://opendata.city-adm.lviv.ua/ne/dataset/lviv-public-transport-gtfs-real-time/resource/d45fd95a-ffc9-45b1-be05-52012707d51f?inner_span=True",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lvivavtodor"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.392Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2376"
+  ]
+}

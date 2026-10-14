@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-columbus-cogo",
+  "domain": "bikeshare.stations",
+  "name": "CoGo — Columbus, OH",
+  "provider": "CoGo",
+  "coverage": {
+    "bbox": [
+      39.1527,
+      -84.0536,
+      40.7697,
+      -81.944
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.cogobikeshare.com/gbfs/2.3/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.cogobikeshare.com/gbfs/2.3/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "CoGo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unavailable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.740Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

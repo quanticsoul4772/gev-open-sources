@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-4666-vp",
+  "domain": "transit.vehicles",
+  "name": "Hazleton Public Transit",
+  "provider": "Hazleton Public Transit",
+  "coverage": {
+    "bbox": [
+      40.900944,
+      -76.104251,
+      41.268238,
+      -75.812443
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtimehpts.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Hazleton Public Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.703Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-4666-vp"
+  ]
+}

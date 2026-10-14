@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-nice",
+  "domain": "bikeshare.stations",
+  "name": "Lime Nice — Nice",
+  "provider": "Lime Nice",
+  "coverage": {
+    "bbox": [
+      43.7173,
+      7.2413,
+      43.7173,
+      7.2413
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/nice/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/nice/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/nice/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/nice/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_nice",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Nice"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.931Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_nice"
+  ]
+}

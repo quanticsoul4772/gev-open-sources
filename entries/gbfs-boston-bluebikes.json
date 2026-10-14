@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-boston-bluebikes",
+  "domain": "bikeshare.stations",
+  "name": "Blue Bikes — Boston, MA",
+  "provider": "Blue Bikes",
+  "coverage": {
+    "bbox": [
+      41.4618,
+      -72.2746,
+      43.2584,
+      -69.8432
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bluebikes.com/gbfs/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bluebikes.com/gbfs/en/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Blue Bikes"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.698Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

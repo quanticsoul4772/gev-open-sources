@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1496",
+  "domain": "transit.vehicles",
+  "name": "Edmonton Transit System",
+  "provider": "Edmonton Transit System",
+  "coverage": {
+    "bbox": [
+      53.250444,
+      -113.934863,
+      53.714491,
+      -113.203377
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.edmonton.ca/transportation/Web-version2.1-OpenDataAgreement.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Edmonton Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.319Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1496"
+  ]
+}

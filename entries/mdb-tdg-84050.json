@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84050",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain TADAO",
+  "provider": "TADAO",
+  "coverage": {
+    "bbox": [
+      50.36814174180917,
+      2.321316017510821,
+      50.63285494832237,
+      3.070860071729508
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/c4563dcc-f547-489a-b63a-efb4dbb37262",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "TADAO"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.649Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84050"
+  ]
+}

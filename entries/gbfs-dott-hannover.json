@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-hannover",
+  "domain": "bikeshare.stations",
+  "name": "Dott Hannover — Hannover",
+  "provider": "Dott Hannover",
+  "coverage": {
+    "bbox": [
+      52.2856,
+      9.6114,
+      52.4405,
+      9.8662
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/hannover/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/hannover/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/hannover/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/hannover/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-hannover",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Hannover"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.818Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-hannover"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "mdb-1561",
+  "domain": "transit.vehicles",
+  "name": "London Transit Commission",
+  "provider": "London Transit Commission",
+  "coverage": {
+    "bbox": [
+      42.905244,
+      -81.36311,
+      43.051188,
+      -81.132066
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs.ltconline.ca/Vehicle/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.londontransit.ca/open-data/ltcs-open-data-terms-of-use/",
+    "display": false,
+    "commercial": null,
+    "attribution": "London Transit Commission"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.328Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1561",
+    "licence-borrowed:mdb-2"
+  ]
+}

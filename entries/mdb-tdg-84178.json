@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84178",
+  "domain": "transit.vehicles",
+  "name": "Réseau interurbain Rémi",
+  "provider": "JVMALIN",
+  "coverage": {
+    "bbox": [
+      46.434139,
+      -0.083938,
+      48.867382,
+      3.085756
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/abf87e83-dde3-4ecb-83ba-3e434ec90251",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "JVMALIN"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.657Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84178"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2494",
+  "domain": "transit.vehicles",
+  "name": "BC Transit (Ashcroft-Cache-Creek-Clinton)",
+  "provider": "BC Transit (Ashcroft-Cache-Creek-Clinton)",
+  "coverage": {
+    "bbox": [
+      50.71437,
+      -121.58412,
+      51.09333,
+      -121.27924
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=38",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "BC Transit (Ashcroft-Cache-Creek-Clinton)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.834Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2494"
+  ]
+}

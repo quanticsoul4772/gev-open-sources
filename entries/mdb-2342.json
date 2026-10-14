@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2342",
+  "domain": "transit.vehicles",
+  "name": "Regia Transport Electric Chișinău, Î.M. Parcul Urban de Autobuze",
+  "provider": "Regia Transport Electric Chișinău, Î.M. Parcul Urban de Autobuze",
+  "coverage": {
+    "bbox": [
+      46.88323,
+      28.684298,
+      47.14711,
+      29.109
+    ],
+    "countries": [
+      "MD"
+    ]
+  },
+  "access": {
+    "url": "https://chisinau-rt-feed.gtfs.ro/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Regia Transport Electric Chișinău, Î.M. Parcul Urban de Autobuze"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.391Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2342"
+  ]
+}

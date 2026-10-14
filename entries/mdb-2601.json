@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2601",
+  "domain": "transit.vehicles",
+  "name": "Zarząd Transportu Publicznego w Krakowie (ZTP Kraków)",
+  "provider": "Zarząd Transportu Publicznego w Krakowie (ZTP Kraków)",
+  "coverage": {
+    "bbox": [
+      49.90249,
+      19.58379,
+      50.24532,
+      20.35261
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.ztp.krakow.pl/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zarząd Transportu Publicznego w Krakowie (ZTP Kraków)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.437Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2601"
+  ]
+}

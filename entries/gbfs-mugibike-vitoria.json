@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-mugibike-vitoria",
+  "domain": "bikeshare.stations",
+  "name": "MugiBIKE (Vitoria) — Vitoria-Gasteiz",
+  "provider": "MugiBIKE (Vitoria)",
+  "coverage": {
+    "bbox": [
+      42.8372,
+      -2.7051,
+      42.8673,
+      -2.6521
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/vitoria/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/vitoria/en/station_information.json",
+      "system_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/vitoria/en/system_information.json",
+      "gbfs": "https://gbfs.partners.fifteen.eu/gbfs/2.2/vitoria/en/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "mugibike_vitoria",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "Fifteen and Movus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.985Z"
+  },
+  "provenance": [
+    "gbfs-systems:mugibike_vitoria"
+  ]
+}

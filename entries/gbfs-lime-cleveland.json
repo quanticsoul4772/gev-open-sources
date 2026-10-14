@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-cleveland",
+  "domain": "bikeshare.stations",
+  "name": "Lime Cleveland — Cleveland, OH",
+  "provider": "Lime Cleveland",
+  "coverage": {
+    "bbox": [
+      41.6201,
+      -81.6752,
+      41.6201,
+      -81.6752
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/cleveland/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/cleveland/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/cleveland/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/cleveland/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_cleveland",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Cleveland"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.914Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_cleveland"
+  ]
+}

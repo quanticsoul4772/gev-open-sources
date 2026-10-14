@@ -1,0 +1,41 @@
+{
+  "id": "mdb-1521",
+  "domain": "transit.vehicles",
+  "name": "Grand River Transit",
+  "provider": "Grand River Transit",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.regionofwaterloo.ca/en/regional-government/open-data.aspx",
+    "display": false,
+    "commercial": null,
+    "attribution": "Grand River Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.321Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1521"
+  ]
+}

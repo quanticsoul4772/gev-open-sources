@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-52918",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain L'va",
+  "provider": "Vienne Condrieu Agglomération",
+  "coverage": {
+    "bbox": [
+      45.406183,
+      4.600544,
+      45.619851,
+      5.108024
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/4e87a135-b46e-46b3-8aaa-0233ec3c242a",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Vienne Condrieu Agglomération"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.582Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-52918"
+  ]
+}

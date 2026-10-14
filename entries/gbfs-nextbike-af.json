@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-af",
+  "domain": "bikeshare.stations",
+  "name": "VéloCité Mulhouse — Mulhouse",
+  "provider": "VéloCité Mulhouse",
+  "coverage": {
+    "bbox": [
+      47.7174,
+      7.2969,
+      47.816,
+      7.4084
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_af/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_af/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_af/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_af/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_af",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike France, 17 Avenue de Strasbourg, 68350 Brunstatt-Didenheim"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.998Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_af"
+  ]
+}

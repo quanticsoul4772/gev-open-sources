@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6096-vp",
+  "domain": "transit.vehicles",
+  "name": "Bis-Man Transit",
+  "provider": "Bis-Man Transit",
+  "coverage": {
+    "bbox": [
+      46.725424032,
+      -100.904369915,
+      46.85619202,
+      -100.72917111
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/bisman/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bis-Man Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.754Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6096-vp"
+  ]
+}

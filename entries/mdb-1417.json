@@ -1,0 +1,47 @@
+{
+  "id": "mdb-1417",
+  "domain": "transit.vehicles",
+  "name": "Burlington Transit",
+  "provider": "Burlington Transit",
+  "coverage": {
+    "bbox": [
+      43.256679,
+      -79.892603,
+      43.411717,
+      -79.725184
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://opendata.burlington.ca/opendata-terms-of-use/City%20of%20Burlington%20-%20Open%20Data%20Terms%20of%20Use.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Burlington Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.304Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1417",
+    "licence-borrowed:mdb-724"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-5631-vp",
+  "domain": "transit.vehicles",
+  "name": "Saint Jean Sur Richelieu",
+  "provider": "Saint Jean Sur Richelieu",
+  "coverage": {
+    "bbox": [
+      45.274707,
+      -73.468087,
+      45.466423,
+      -73.229914
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=saint-jean-sur-richelieu",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Saint Jean Sur Richelieu"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.742Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-5631-vp"
+  ]
+}

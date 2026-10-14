@@ -1,0 +1,64 @@
+{
+  "id": "gbfs-donkey-ge",
+  "domain": "bikeshare.stations",
+  "name": "Donkey Republic Geneva — Geneva",
+  "provider": "Donkey Republic Geneva",
+  "coverage": {
+    "bbox": [
+      46.1441,
+      6.0328,
+      46.2956,
+      6.2215
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_ge/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "donkey_ge",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "fr",
+        "text": "Donkey Republic"
+      },
+      {
+        "language": "de",
+        "text": "Donkey Republic"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.763Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_ge"
+  ]
+}

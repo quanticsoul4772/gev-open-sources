@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-paris",
+  "domain": "bikeshare.stations",
+  "name": "Dott Paris — Paris",
+  "provider": "Dott Paris",
+  "coverage": {
+    "bbox": [
+      48.8172,
+      2.2288,
+      48.9219,
+      2.4614
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/paris/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/paris/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/paris/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/paris/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-paris",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Paris"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.836Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-paris"
+  ]
+}

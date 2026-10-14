@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3199",
+  "domain": "transit.vehicles",
+  "name": "NY Waterway",
+  "provider": "NY Waterway",
+  "coverage": {
+    "bbox": [
+      40.433438,
+      -74.274482,
+      41.192803,
+      -73.871415
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://nywaterway.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "NY Waterway"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.476Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3199"
+  ]
+}

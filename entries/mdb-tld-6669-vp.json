@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6669-vp",
+  "domain": "transit.vehicles",
+  "name": "Wichita Transit",
+  "provider": "Wichita Transit",
+  "coverage": {
+    "bbox": [
+      37.605752,
+      -97.46258,
+      37.757113,
+      -97.189437
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://bus.wichitatransit.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Wichita Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.755Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6669-vp"
+  ]
+}

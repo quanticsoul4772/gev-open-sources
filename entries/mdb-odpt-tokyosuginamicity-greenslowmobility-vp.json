@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-tokyosuginamicity-greenslowmobility-vp",
+  "domain": "transit.vehicles",
+  "name": "杉並区グリーンスローモビリティ",
+  "provider": "杉並区",
+  "coverage": {
+    "bbox": [
+      35.698334,
+      139.617976,
+      35.704232,
+      139.624049
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TokyoSuginamiCity_GreenSlowMobility_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "杉並区"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.569Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-TokyoSuginamiCity-GreenSlowMobility-vp"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-pony-nice",
+  "domain": "bikeshare.stations",
+  "name": "Pony Nice — Nice",
+  "provider": "Pony Nice",
+  "coverage": {
+    "bbox": [
+      43.2964,
+      5.366,
+      43.8013,
+      7.5234
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-nice-gbfs/station_status.json",
+    "related": {
+      "station_information": "https://proxy.transport.data.gouv.fr/resource/pony-nice-gbfs/station_information.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-nice-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-nice-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "pony_Nice",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "language": "en",
+        "text": "pony"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.209Z"
+  },
+  "provenance": [
+    "gbfs-systems:pony_Nice"
+  ]
+}

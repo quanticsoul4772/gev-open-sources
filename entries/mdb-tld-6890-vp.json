@@ -1,0 +1,41 @@
+{
+  "id": "mdb-tld-6890-vp",
+  "domain": "transit.vehicles",
+  "name": "Green Bay Metro",
+  "provider": "Green Bay Metro",
+  "coverage": {
+    "bbox": null,
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbm.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GBM/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Green Bay Metro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.772Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6890-vp"
+  ]
+}

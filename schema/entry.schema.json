@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quanticsoul4772.github.io/gev-open-sources/entry.schema.json",
+  "title": "Keyless data source entry",
+  "type": "object",
+  "required": ["id", "domain", "name", "provider", "coverage", "access", "format", "licence", "licence_decision", "provenance"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
+    "domain": { "enum": ["transit.vehicles", "bikeshare.stations"] },
+    "name": { "type": "string", "minLength": 1 },
+    "provider": { "type": "string", "minLength": 1 },
+    "coverage": {
+      "type": "object",
+      "required": ["bbox", "countries"],
+      "properties": {
+        "bbox": {
+          "description": "[minLat, minLon, maxLat, maxLon]",
+          "oneOf": [{ "type": "null" }, { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4 }]
+        },
+        "countries": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "access": {
+      "type": "object",
+      "required": ["url", "redirectHosts", "unzip", "headers", "min_interval_s"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "related": { "type": "object", "additionalProperties": { "type": "string", "format": "uri" } },
+        "redirectHosts": { "type": "array", "items": { "type": "string" } },
+        "unzip": { "type": ["string", "null"] },
+        "headers": { "type": "object", "additionalProperties": { "type": "string" } },
+        "min_interval_s": { "type": "number", "minimum": 0 }
+      }
+    },
+    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status"] },
+    "licence": {
+      "type": "object",
+      "required": ["id", "url", "display", "commercial", "attribution"],
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "url": { "type": ["string", "null"] },
+        "display": { "type": "boolean" },
+        "commercial": { "type": ["boolean", "null"] },
+        "attribution": { "type": ["string", "null"] }
+      }
+    },
+    "licence_decision": {
+      "type": "object",
+      "required": ["by", "evidence"],
+      "properties": {
+        "by": { "enum": ["known-licence", "gbfs-v3-default", "llm-terms", "none"] },
+        "evidence": { "type": "array", "items": { "type": "object" } },
+        "terms_sha256": { "type": ["string", "null"] },
+        "at": { "type": ["string", "null"] }
+      }
+    },
+    "provenance": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+  }
+}

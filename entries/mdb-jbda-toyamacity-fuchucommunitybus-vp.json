@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-toyamacity-fuchucommunitybus-vp",
+  "domain": "transit.vehicles",
+  "name": "婦中コミュニティバス",
+  "provider": "富山市",
+  "coverage": {
+    "bbox": [
+      36.618714,
+      137.086905,
+      36.680617,
+      137.181387
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/toyama-city-fuchu/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "富山市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.540Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-toyamacity-fuchucommunitybus-vp"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-odpt-tosacity-alllines-vp",
+  "domain": "transit.vehicles",
+  "name": "土佐市ドラゴンバス",
+  "provider": "土佐市",
+  "coverage": {
+    "bbox": [
+      33.432002,
+      133.336277,
+      33.547838,
+      133.465546
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosaCity_AllLines_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "土佐市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.569Z"
+  },
+  "provenance": [
+    "mobilitydatabase:odpt-TosaCity-AllLines-vp"
+  ]
+}

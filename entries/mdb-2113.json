@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2113",
+  "domain": "transit.vehicles",
+  "name": "Transbus Buzău",
+  "provider": "Transbus Buzău",
+  "coverage": {
+    "bbox": [
+      44.96452242863011,
+      26.476416800000003,
+      45.33750261357772,
+      27.1481777
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsagent.transportpublic.ro/transbus/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Transbus Buzău"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.380Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2113"
+  ]
+}

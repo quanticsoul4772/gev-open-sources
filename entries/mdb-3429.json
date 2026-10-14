@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3429",
+  "domain": "transit.vehicles",
+  "name": "Rzeszowski Transport Miejski",
+  "provider": "Rzeszowski Transport Miejski",
+  "coverage": {
+    "bbox": [
+      49.9186906634921,
+      21.8079203367233,
+      50.1227208745006,
+      22.22934
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://www.mpkrzeszow.pl/gtfs/rt/gtfsrt.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.mpkrzeszow.pl/otwartedane/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Rzeszowski Transport Miejski"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.747Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3429"
+  ]
+}

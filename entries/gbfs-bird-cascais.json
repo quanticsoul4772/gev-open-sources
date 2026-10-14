@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-cascais",
+  "domain": "bikeshare.stations",
+  "name": "Bird Cascais — Cascais",
+  "provider": "Bird Cascais",
+  "coverage": {
+    "bbox": [
+      38.6776,
+      -9.4746,
+      38.7531,
+      -9.3127
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/cascais/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/cascais/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/cascais/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/cascais/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-cascais",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Cascais"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.668Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-cascais"
+  ]
+}

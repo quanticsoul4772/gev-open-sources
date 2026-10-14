@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3431",
+  "domain": "transit.vehicles",
+  "name": "City-Line Trolley (City of Kokomo)",
+  "provider": "City-Line Trolley (City of Kokomo)",
+  "coverage": {
+    "bbox": [
+      40.4203533596215,
+      -86.1664653704806,
+      40.51990281,
+      -86.0992129703936
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://drive.google.com/uc?export=download&id=12OWJm28dWakSVM3TnmajNWmUrmcytZPq",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City-Line Trolley (City of Kokomo)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.489Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3431"
+  ]
+}

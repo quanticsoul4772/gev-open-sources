@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bird-adeje",
+  "domain": "bikeshare.stations",
+  "name": "Bird Adeje — Adeje",
+  "provider": "Bird Adeje",
+  "coverage": {
+    "bbox": [
+      28.0065,
+      -16.7559,
+      28.104,
+      -16.6416
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/adeje/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/adeje/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/adeje/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/adeje/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bird-adeje",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Adeje"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 404"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.664Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-adeje"
+  ]
+}

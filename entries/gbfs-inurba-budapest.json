@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-inurba-budapest",
+  "domain": "bikeshare.stations",
+  "name": "Bubi 3.0 — Budapest",
+  "provider": "Bubi 3.0",
+  "coverage": {
+    "bbox": [
+      47.4441,
+      18.9932,
+      47.5484,
+      19.2586
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.urbansharing.com/molbubi.hu/station_information.json",
+      "system_information": "https://gbfs.urbansharing.com/molbubi.hu/system_information.json",
+      "gbfs": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "inurba-budapest",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bubi 3.0"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.891Z"
+  },
+  "provenance": [
+    "gbfs-systems:inurba-budapest"
+  ]
+}

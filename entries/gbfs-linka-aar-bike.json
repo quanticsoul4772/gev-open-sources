@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-linka-aar-bike",
+  "domain": "bikeshare.stations",
+  "name": "AAR Bike — Konya",
+  "provider": "AAR Bike",
+  "coverage": {
+    "bbox": [
+      37.8287,
+      29.0184,
+      41.0764,
+      32.5935
+    ],
+    "countries": [
+      "TR"
+    ]
+  },
+  "access": {
+    "url": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/station_status.json",
+    "related": {
+      "station_information": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/station_information.json",
+      "system_information": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/system_information.json",
+      "gbfs": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "linka_aar_bike",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "AAR Bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.948Z"
+  },
+  "provenance": [
+    "gbfs-systems:linka_aar_bike"
+  ]
+}

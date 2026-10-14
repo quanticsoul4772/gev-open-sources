@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-kaetsunou-kaetsunouhimi-vp",
+  "domain": "transit.vehicles",
+  "name": "加越能バス（氷見市街地周遊バス）",
+  "provider": "加越能バス",
+  "coverage": {
+    "bbox": [
+      36.8492203,
+      136.9688273,
+      36.86478549,
+      136.9903561
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/kaetsuno_himi/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "加越能バス"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.507Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-kaetsunou-kaetsunouhimi-vp"
+  ]
+}

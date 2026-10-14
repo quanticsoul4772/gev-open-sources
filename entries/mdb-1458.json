@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1458",
+  "domain": "transit.vehicles",
+  "name": "Hamilton Street Railway",
+  "provider": "Hamilton Street Railway",
+  "coverage": {
+    "bbox": [
+      43.156343,
+      -80.1281,
+      43.337134,
+      -79.63931
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://opendata.hamilton.ca/GTFS-RT/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.hamilton.ca/city-council/data-maps/open-data/open-data-licence-terms-and-conditions",
+    "display": false,
+    "commercial": null,
+    "attribution": "Hamilton Street Railway"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:26:14.618Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1458"
+  ]
+}

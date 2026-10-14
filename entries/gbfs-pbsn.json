@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-pbsn",
+  "domain": "bikeshare.stations",
+  "name": "PBSC HQ — Montreal",
+  "provider": "PBSC HQ",
+  "coverage": {
+    "bbox": [
+      40.7539,
+      -79.381,
+      45.5565,
+      -73.4723
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://pbsn.publicbikesystem.net/customer/gbfs/v3.0/station_status",
+    "related": {
+      "station_information": "https://pbsn.publicbikesystem.net/customer/gbfs/v3.0/station_information",
+      "system_information": "https://pbsn.publicbikesystem.net/customer/gbfs/v3.0/system_information",
+      "gbfs": "https://pbsn.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "pbsn",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "PBSC HQ"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.191Z"
+  },
+  "provenance": [
+    "gbfs-systems:pbsn"
+  ]
+}

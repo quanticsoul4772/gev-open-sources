@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lime-new-york",
+  "domain": "bikeshare.stations",
+  "name": "Lime New York — New York, NY",
+  "provider": "Lime New York",
+  "coverage": {
+    "bbox": [
+      40.918,
+      -74.0899,
+      40.918,
+      -74.0899
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/new_york/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/new_york/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/new_york/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/new_york/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lime_new_york",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime New York"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.930Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_new_york"
+  ]
+}

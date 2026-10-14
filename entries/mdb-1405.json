@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1405",
+  "domain": "transit.vehicles",
+  "name": "Port Alberni",
+  "provider": "Port Alberni",
+  "coverage": {
+    "bbox": [
+      49.21849,
+      -124.85043,
+      49.27741,
+      -124.78265
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=11",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.bctransit.com/open-data/terms-of-use",
+    "display": false,
+    "commercial": null,
+    "attribution": "Port Alberni"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation other"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:27:34.801Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1405"
+  ]
+}

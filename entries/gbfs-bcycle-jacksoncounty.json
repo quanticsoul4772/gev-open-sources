@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-jacksoncounty",
+  "domain": "bikeshare.stations",
+  "name": "Jackson County — Jackson, MI",
+  "provider": "Jackson County",
+  "coverage": {
+    "bbox": [
+      42.2081,
+      -84.4392,
+      42.2081,
+      -84.4392
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_jacksoncounty/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_jacksoncounty/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/bcycle_jacksoncounty/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_jacksoncounty",
+    "version": "1.1"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Jackson County"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.613Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_jacksoncounty"
+  ]
+}

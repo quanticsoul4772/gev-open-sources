@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1968",
+  "domain": "transit.vehicles",
+  "name": "Zarząd Dróg i Transportu Miejskiego (ZDiTM)",
+  "provider": "Zarząd Dróg i Transportu Miejskiego (ZDiTM)",
+  "coverage": {
+    "bbox": [
+      53.28248,
+      14.309758,
+      53.594587,
+      14.779141
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://www.zditm.szczecin.pl/storage/gtfs/gtfs-rt-vehicles.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Zarząd Dróg i Transportu Miejskiego (ZDiTM)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.372Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1968"
+  ]
+}

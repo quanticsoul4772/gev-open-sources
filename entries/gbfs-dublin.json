@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dublin",
+  "domain": "bikeshare.stations",
+  "name": "Dublinbikes — Dublin",
+  "provider": "Dublinbikes",
+  "coverage": {
+    "bbox": [
+      53.3301,
+      -6.31,
+      53.36,
+      -6.2309
+    ],
+    "countries": [
+      "IE"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/dublin/gbfs/v3/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/dublin/gbfs/v3/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/dublin/gbfs/v3/system_information.json",
+      "gbfs": "https://api.cyclocity.fr/contracts/dublin/gbfs/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dublin",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Dublinbikes"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:28:52.479Z"
+  },
+  "provenance": [
+    "gbfs-systems:dublin"
+  ]
+}

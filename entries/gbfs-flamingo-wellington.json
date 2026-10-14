@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-flamingo-wellington",
+  "domain": "bikeshare.stations",
+  "name": "Flamingo Wellington — Wellington",
+  "provider": "Flamingo Wellington",
+  "coverage": {
+    "bbox": [
+      -41.3407,
+      174.7376,
+      -41.2024,
+      174.8164
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/wellington/station_status.json",
+    "related": {
+      "station_information": "https://data.rideflamingo.com/gbfs/3/wellington/station_information.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/wellington/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/wellington/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "flamingo_wellington",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Wellington"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.867Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_wellington"
+  ]
+}

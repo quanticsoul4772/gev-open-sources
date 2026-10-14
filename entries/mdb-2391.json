@@ -1,0 +1,46 @@
+{
+  "id": "mdb-2391",
+  "domain": "transit.vehicles",
+  "name": "Prazska integrovana doprava (PID)",
+  "provider": "Prazska integrovana doprava (PID)",
+  "coverage": {
+    "bbox": [
+      49.013668,
+      12.831547,
+      50.956219,
+      15.908509
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://api.golemio.cz/v2/vehiclepositions/gtfsrt/vehicle_positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://pid.cz/o-systemu/opendata/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Prazska integrovana doprava (PID)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.710Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-2391"
+  ]
+}

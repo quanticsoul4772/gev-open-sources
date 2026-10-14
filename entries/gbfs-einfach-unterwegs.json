@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-einfach-unterwegs",
+  "domain": "bikeshare.stations",
+  "name": "Einfach Unterwegs — Germany",
+  "provider": "Einfach Unterwegs",
+  "coverage": {
+    "bbox": [
+      47.6137,
+      8.7491,
+      52.0821,
+      12.7371
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/einfach_unterwegs/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/einfach_unterwegs/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/einfach_unterwegs/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/einfach_unterwegs/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "einfach_unterwegs",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "überall GmbH",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.857Z"
+  },
+  "provenance": [
+    "gbfs-systems:einfach_unterwegs"
+  ]
+}

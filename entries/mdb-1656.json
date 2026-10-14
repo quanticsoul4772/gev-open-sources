@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1656",
+  "domain": "transit.vehicles",
+  "name": "Anchorage People Mover",
+  "provider": "Anchorage People Mover",
+  "coverage": {
+    "bbox": [
+      61.108556,
+      -149.979292,
+      61.327765,
+      -149.570575
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://gtfs-rt.codeforanchorage.org/people_mover.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Anchorage People Mover"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.347Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1656"
+  ]
+}

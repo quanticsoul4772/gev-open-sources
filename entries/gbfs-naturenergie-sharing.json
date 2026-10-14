@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-naturenergie-sharing",
+  "domain": "bikeshare.stations",
+  "name": "Naturenergie sharing — South Baden",
+  "provider": "Naturenergie sharing",
+  "coverage": {
+    "bbox": [
+      47.5466,
+      7.5572,
+      48.6669,
+      9.2059
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/naturenergie_sharing/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/naturenergie_sharing/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/naturenergie_sharing/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/naturenergie_sharing/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "naturenergie_sharing",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "naturenergie sharing GmbH",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.991Z"
+  },
+  "provenance": [
+    "gbfs-systems:naturenergie_sharing"
+  ]
+}

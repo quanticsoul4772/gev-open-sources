@@ -1,0 +1,47 @@
+{
+  "id": "gbfs-el-paso-bcycle",
+  "domain": "bikeshare.stations",
+  "name": "BCycle — El Paso, TX",
+  "provider": "BCycle",
+  "coverage": {
+    "bbox": [
+      30.8636,
+      -107.5415,
+      32.6602,
+      -105.4285
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/bcycle_elpaso/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/bcycle_elpaso/station_information.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BCycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.858Z"
+  },
+  "provenance": [
+    "seed:gods-eye-view"
+  ]
+}

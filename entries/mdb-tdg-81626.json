@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-81626",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain L'Agglo en Bus",
+  "provider": "Communauté d'Agglomération Gap-Tallard-Durance",
+  "coverage": {
+    "bbox": [
+      44.48420346,
+      6.031117,
+      44.58155,
+      6.121213
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/11f653e9-0d6a-4e87-8cda-3069b3c6b441",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté d'Agglomération Gap-Tallard-Durance"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.607Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-81626"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3060",
+  "domain": "transit.vehicles",
+  "name": "SEPTA Rail",
+  "provider": "Southeastern Pennsylvania Transportation Authority (SEPTA)",
+  "coverage": {
+    "bbox": [
+      39.66969,
+      -75.76361,
+      40.30639,
+      -74.75393
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www3.septa.org/gtfsrt/septarail-pa-us/Vehicle/rtVehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www3.septa.org/developer/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Southeastern Pennsylvania Transportation Authority (SEPTA)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "awaiting classification"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:24:28.740Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3060"
+  ]
+}

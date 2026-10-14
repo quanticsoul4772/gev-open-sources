@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1474",
+  "domain": "transit.vehicles",
+  "name": "Shreveport Area Transit System (SporTran)",
+  "provider": "Shreveport Area Transit System (SporTran)",
+  "coverage": {
+    "bbox": [
+      32.381981,
+      -93.900225,
+      32.561997,
+      -93.628643
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://sportranbus.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Shreveport Area Transit System (SporTran)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.317Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1474"
+  ]
+}

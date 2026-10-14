@@ -1,0 +1,46 @@
+{
+  "id": "mdb-jbda-namerikawacity-norumycar-vp",
+  "domain": "transit.vehicles",
+  "name": "コミュニティバス「のるmycar」",
+  "provider": "滑川市",
+  "coverage": {
+    "bbox": [
+      36.7203093654,
+      137.317022902,
+      36.798777,
+      137.436759480143
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs-rt-files.buscatch.jp/toyama/namerikawa-city/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja",
+    "display": true,
+    "commercial": true,
+    "attribution": "滑川市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/deed.ja"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.527Z"
+  },
+  "provenance": [
+    "mobilitydatabase:jbda-namerikawacity-norumycar-vp"
+  ]
+}

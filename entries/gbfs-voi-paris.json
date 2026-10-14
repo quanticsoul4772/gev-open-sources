@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-voi-paris",
+  "domain": "bikeshare.stations",
+  "name": "Voi Paris — Paris",
+  "provider": "Voi Paris",
+  "coverage": {
+    "bbox": [
+      48.8171,
+      2.2288,
+      48.9016,
+      2.4614
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/352/station_status.json",
+    "related": {
+      "station_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/352/station_information.json",
+      "system_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/352/system_information.json",
+      "gbfs": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/352/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "voi_Paris",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Voi Paris"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.287Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_Paris"
+  ]
+}

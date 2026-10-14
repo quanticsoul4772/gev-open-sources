@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tld-6774-vp",
+  "domain": "transit.vehicles",
+  "name": "City of Mobile",
+  "provider": "City of Mobile",
+  "coverage": {
+    "bbox": [
+      30.589393,
+      -88.201419,
+      30.738548,
+      -88.0387032728427
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://realtimemobile.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Mobile"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.764Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tld-6774-vp"
+  ]
+}

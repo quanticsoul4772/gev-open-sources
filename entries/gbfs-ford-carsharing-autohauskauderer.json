@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-ford-carsharing-autohauskauderer",
+  "domain": "bikeshare.stations",
+  "name": "Ford Carsharing (Autohaus Kauderer) — Eislingen",
+  "provider": "Ford Carsharing (Autohaus Kauderer)",
+  "coverage": {
+    "bbox": [
+      48.6962,
+      9.7053,
+      48.6962,
+      9.7053
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohauskauderer/station_status",
+    "related": {
+      "station_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohauskauderer/station_information",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohauskauderer/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohauskauderer/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "ford_carsharing_autohauskauderer",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": "DL-DE-BY-2.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": [
+      {
+        "text": "Autohaus Kauderer GmbH & Co. KG",
+        "language": "de"
+      }
+    ]
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "DL-DE-BY-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:57.872Z"
+  },
+  "provenance": [
+    "gbfs-systems:ford_carsharing_autohauskauderer"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-pony-marseille",
+  "domain": "bikeshare.stations",
+  "name": "Pony Marseille — Marseille",
+  "provider": "Pony Marseille",
+  "coverage": {
+    "bbox": [
+      43.2117,
+      5.3461,
+      43.3601,
+      5.5253
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-marseille-gbfs/station_status.json",
+    "related": {
+      "station_information": "https://proxy.transport.data.gouv.fr/resource/pony-marseille-gbfs/station_information.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-marseille-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-marseille-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "pony_Marseille",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pony Marseille"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.208Z"
+  },
+  "provenance": [
+    "gbfs-systems:pony_Marseille"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-share-birrer-ch",
+  "domain": "bikeshare.stations",
+  "name": "Share Birrer — Switzerland",
+  "provider": "Share Birrer",
+  "coverage": {
+    "bbox": [
+      46.6054,
+      8.0568,
+      47.2134,
+      9.5445
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://auto-birrer.ch/station_status",
+    "related": {
+      "station_information": "https://auto-birrer.ch/station_information",
+      "system_information": "https://auto-birrer.ch/gbfs/en/system_information.json",
+      "gbfs": "https://www.share-birrer.ch/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "share_birrer_ch",
+    "version": "2.2"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Share Birrer"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.233Z"
+  },
+  "provenance": [
+    "gbfs-systems:share_birrer_ch"
+  ]
+}

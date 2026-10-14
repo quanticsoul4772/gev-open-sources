@@ -1,0 +1,46 @@
+{
+  "id": "mdb-1619",
+  "domain": "transit.vehicles",
+  "name": "MARC Train",
+  "provider": "Maryland Transit Administration",
+  "coverage": {
+    "bbox": [
+      38.899036,
+      -77.960739,
+      39.558112,
+      -76.073792
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mdotmta-gtfs-rt.s3.amazonaws.com/MARC+RT/marc.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Maryland Transit Administration"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.335Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-1619"
+  ]
+}

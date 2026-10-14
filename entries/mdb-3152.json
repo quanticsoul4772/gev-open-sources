@@ -1,0 +1,39 @@
+{
+  "id": "mdb-3152",
+  "domain": "transit.vehicles",
+  "name": "BAS.MY Kuching",
+  "provider": "BAS.MY Kuching",
+  "coverage": {
+    "bbox": null,
+    "countries": []
+  },
+  "access": {
+    "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-kuching",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BAS.MY Kuching"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:21:58.465Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3152"
+  ]
+}
