@@ -203,3 +203,22 @@ test('schema: vehicles entries need valid form_factors under both validators', (
     assert.ok(validateEntry(e).length > 0, JSON.stringify(bad));
   }
 });
+
+test('peer-to-peer car sharing is left out; fleet car sharing stays', async () => {
+  const { isPeerToPeer } = await import('../src/harvest/gbfs.js');
+  const sys = (provider, discoveryUrl) => ({ provider, name: provider, discoveryUrl });
+  assert.equal(isPeerToPeer(sys('Getaround', 'https://getaround.com/gbfs/v3/paris/gbfs.json')), true);
+  assert.equal(isPeerToPeer(sys('City cars', 'https://gbfs.getaround.com/x/gbfs.json')), true, 'by host');
+  assert.equal(isPeerToPeer(sys('Drivy', 'https://a.example/gbfs.json')), true);
+  assert.equal(isPeerToPeer(sys('Turo', 'https://a.example/gbfs.json')), true);
+  assert.equal(isPeerToPeer(sys('Saturo Bikes', 'https://a.example/gbfs.json')), false, 'word boundary');
+  for (const fleet of ['Flinkster', 'Stadtmobil Karlsruhe', 'Ford Carsharing', 'zeo Carsharing', 'Lime', 'Bird'])
+    assert.equal(isPeerToPeer(sys(fleet, 'https://a.example/gbfs.json')), false, fleet);
+  let fetched = 0;
+  const entries = await resolveGbfsSystems([{ ...system('https://getaround.com/x'), provider: 'Getaround' }], {
+    knownIds: new Set(), knownOutputs: new Set(), rejects: {}, now: 1,
+    fetchImpl: async () => { fetched += 1; return new Response('{}'); },
+  });
+  assert.deepEqual(entries, []);
+  assert.equal(fetched, 0, 'skipped before any fetch');
+});

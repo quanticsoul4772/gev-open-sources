@@ -213,6 +213,18 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
   return out;
 }
 
+/**
+ * Peer-to-peer car sharing: private owners' cars, often parked at home, with
+ * ids that look stable per car. Left out of the directory (user decision,
+ * 2026-10-14); fleet car sharing (company cars) stays. GBFS has no
+ * peer-to-peer flag, so known operators are matched by name and host.
+ */
+const PEER_TO_PEER = /getaround|drivy|snappcar|\bturo\b|gomore|hiyacar|ouicar/i;
+
+/** Whether a system is peer-to-peer car sharing (by provider, name or discovery host). */
+export const isPeerToPeer = (system) =>
+  PEER_TO_PEER.test(`${system.provider} ${system.name} ${hostOfUrl(system.discoveryUrl)}`);
+
 /** Reject-cache key for one output (`stations` | `vehicles`) of a system. */
 export const outputKey = (discoveryUrl, kind) => `${discoveryUrl}#${kind}`;
 
@@ -225,6 +237,7 @@ export const GBFS_PHASE_MS = 15 * 60_000;
  * `<normalized discovery URL>#<kind>`), or it was rejected recently. Systems
  * wanting only vehicles are capped at `vehicleBudget`; no system starts after
  * `deadlineMs`; a host is skipped after 3 consecutive network failures.
+ * Peer-to-peer car sharing is skipped entirely (isPeerToPeer).
  * @param {object[]} systems as for resolveGbfsSystem
  * @param {{knownIds: Set<string>, knownOutputs: Set<string>, rejects: object, now: number,
  *   fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number, deadlineMs?: number}} options
@@ -240,6 +253,7 @@ export async function resolveGbfsSystems(systems, options) {
   let vehiclesOnly = 0;
   const todo = [];
   for (const s of systems) {
+    if (isPeerToPeer(s)) continue;
     const want = { stations: wanted(s, 'stations'), vehicles: wanted(s, 'vehicles') };
     if (!want.stations && !want.vehicles) continue;
     if (!want.stations) {
