@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-tuscaloosa-county-parking-and-transit-authority-rt",
+  "domain": "transit.vehicles",
+  "name": "Tuscaloosa Transit Authority",
+  "provider": "Tuscaloosa Transit Authority",
+  "coverage": {
+    "bbox": [
+      33.1293,
+      -87.6107,
+      33.2267,
+      -87.497
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/tuscaloosatransit/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Tuscaloosa Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.235Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-tuscaloosa~county~parking~and~transit~authority~rt"
+  ]
+}

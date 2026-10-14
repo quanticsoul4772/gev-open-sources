@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-zenbus-sel-et-vermois-rt",
+  "domain": "transit.vehicles",
+  "name": "Navette Sel et Vermois",
+  "provider": "Navette Sel et Vermois",
+  "coverage": {
+    "bbox": [
+      48.6166,
+      6.301,
+      48.6566,
+      6.341
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sel-et-vermois",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Navette Sel et Vermois"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.239Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-zenbus~sel~et~vermois~rt"
+  ]
+}

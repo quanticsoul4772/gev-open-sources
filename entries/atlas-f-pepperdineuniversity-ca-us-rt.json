@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-pepperdineuniversity-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Pepperdine University",
+  "provider": "Pepperdine University",
+  "coverage": {
+    "bbox": [
+      34.0197,
+      -118.7348,
+      34.0673,
+      -118.6865
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/pepperdine/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pepperdine University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.233Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-pepperdineuniversity~ca~us~rt"
+  ]
+}

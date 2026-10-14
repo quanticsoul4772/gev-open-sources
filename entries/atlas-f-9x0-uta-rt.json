@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9x0-uta-rt",
+  "domain": "transit.vehicles",
+  "name": "Utah Transit Authority",
+  "provider": "Utah Transit Authority",
+  "coverage": {
+    "bbox": [
+      40.0139,
+      -112.2535,
+      41.5116,
+      -111.5907
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://apps.rideuta.com/tms/gtfs/Vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Utah Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.223Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9x0-uta~rt"
+  ]
+}

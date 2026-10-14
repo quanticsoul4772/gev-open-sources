@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dngy-transitauthorityofnorthernkentucky-rt",
+  "domain": "transit.vehicles",
+  "name": "Transit Authority of Northern Kentucky",
+  "provider": "Transit Authority of Northern Kentucky",
+  "coverage": {
+    "bbox": [
+      38.9509,
+      -84.678,
+      39.1215,
+      -84.425
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://tank.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.tankbus.org/service-alerts/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Transit Authority of Northern Kentucky"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no ANTHROPIC_API_KEY"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.226Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dngy-transitauthorityofnorthernkentucky~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-laxflyaway-rt",
+  "domain": "transit.vehicles",
+  "name": "LAX Flyaway",
+  "provider": "LAX Flyaway",
+  "coverage": {
+    "bbox": [
+      34.0317,
+      -118.4066,
+      34.268,
+      -118.2115
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://laxflyaway.transloc.com/subscriptions/gtfsrt/vehicles.ashx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "LAX Flyaway"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.230Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-laxflyaway~rt"
+  ]
+}

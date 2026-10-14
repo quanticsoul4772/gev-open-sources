@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "pdf terms"
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:57.990Z"
+    "at": "2026-10-14T17:12:54.211Z"
   },
   "provenance": [
     "gbfs-systems:nantes"

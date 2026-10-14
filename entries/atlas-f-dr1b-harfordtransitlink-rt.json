@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dr1b-harfordtransitlink-rt",
+  "domain": "transit.vehicles",
+  "name": "Harford Transit LINK",
+  "provider": "Harford Transit LINK",
+  "coverage": {
+    "bbox": [
+      39.4096,
+      -76.375,
+      39.5497,
+      -76.1201
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/harford/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Harford Transit LINK"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.228Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dr1b-harfordtransitlink~rt"
+  ]
+}

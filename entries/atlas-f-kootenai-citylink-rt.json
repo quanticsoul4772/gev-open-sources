@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-kootenai-citylink-rt",
+  "domain": "transit.vehicles",
+  "name": "Kootenai Citylink",
+  "provider": "Kootenai Citylink",
+  "coverage": {
+    "bbox": [
+      47.6712,
+      -116.9178,
+      47.7424,
+      -116.7663
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/kootenai/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Kootenai Citylink"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.230Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-kootenai~citylink~rt"
+  ]
+}

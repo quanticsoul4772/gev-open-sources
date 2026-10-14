@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-transport-gzm-pl-rt",
+  "domain": "transit.vehicles",
+  "name": "ZTM Transport GZM GTFS-RT",
+  "provider": "ZTM Transport GZM",
+  "coverage": {
+    "bbox": [
+      50.0018,
+      18.4262,
+      50.5939,
+      19.4388
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.transportgzm.pl:5443/gtfsrt/gzm/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "ZTM Transport GZM"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.235Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-transport~gzm~pl~rt"
+  ]
+}

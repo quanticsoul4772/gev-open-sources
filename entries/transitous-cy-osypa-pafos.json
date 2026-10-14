@@ -1,0 +1,46 @@
+{
+  "id": "transitous-cy-osypa-pafos",
+  "domain": "transit.vehicles",
+  "name": "Osypa-Pafos",
+  "provider": "Osypa-Pafos",
+  "coverage": {
+    "bbox": [
+      34.6865,
+      32.3442,
+      35.0535,
+      32.589
+    ],
+    "countries": [
+      "CY"
+    ]
+  },
+  "access": {
+    "url": "http://20.19.98.194:8328/Api/api/gtfs-realtime/2",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Osypa-Pafos"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.258Z"
+  },
+  "provenance": [
+    "transitous:cy/Osypa-Pafos"
+  ]
+}

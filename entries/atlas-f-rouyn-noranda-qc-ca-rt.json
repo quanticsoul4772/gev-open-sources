@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-rouyn-noranda-qc-ca-rt",
+  "domain": "transit.vehicles",
+  "name": "L'autobus de ville",
+  "provider": "L'autobus de ville",
+  "coverage": {
+    "bbox": [
+      48.224,
+      -79.059,
+      48.2714,
+      -78.9959
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=rouynnoranda",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "L'autobus de ville"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.233Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-rouyn~noranda~qc~ca~rt"
+  ]
+}

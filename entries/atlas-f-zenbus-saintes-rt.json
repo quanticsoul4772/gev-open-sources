@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-zenbus-saintes-rt",
+  "domain": "transit.vehicles",
+  "name": "Buss",
+  "provider": "Buss",
+  "coverage": {
+    "bbox": [
+      45.7122,
+      -0.6958,
+      45.7746,
+      -0.598
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=buss-cdasaintes",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Buss"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.239Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-zenbus~saintes~rt"
+  ]
+}

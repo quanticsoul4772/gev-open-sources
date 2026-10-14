@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-morongo-basin-rt",
+  "domain": "transit.vehicles",
+  "name": "Morongo Basin Transit Authority",
+  "provider": "Morongo Basin Transit Authority",
+  "coverage": {
+    "bbox": [
+      34.1004,
+      -116.4534,
+      34.1613,
+      -116.0344
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ridebasintransit.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Morongo Basin Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.232Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-morongo~basin~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-universityofsandiegotram-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "University of San Diego Tram Services",
+  "provider": "University of San Diego Tram Services",
+  "coverage": {
+    "bbox": [
+      32.7494,
+      -117.2169,
+      32.7971,
+      -117.1619
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/UofSanDTram/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "University of San Diego Tram Services"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.236Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-universityofsandiegotram~ca~us~rt"
+  ]
+}

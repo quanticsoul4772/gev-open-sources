@@ -1,0 +1,45 @@
+{
+  "id": "atlas-f-mission-viejo-shuttle-rt",
+  "domain": "transit.vehicles",
+  "name": "City of Mission Viejo",
+  "provider": "City of Mission Viejo",
+  "coverage": {
+    "bbox": [
+      33.5396,
+      -117.6869,
+      33.6146,
+      -117.6401
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://mvshuttle.transloc.com/subscriptions/gtfsrt/vehicles.ashx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "City of Mission Viejo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.231Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-mission~viejo~shuttle~rt",
+    "via:https://mvshuttle.ridesystems.net/subscriptions/gtfsrt/vehicles.ashx"
+  ]
+}

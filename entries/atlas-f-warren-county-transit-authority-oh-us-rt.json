@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-warren-county-transit-authority-oh-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Warren County Transit Authority",
+  "provider": "Warren County Transit Authority",
+  "coverage": {
+    "bbox": [
+      41.6822,
+      -79.3331,
+      41.8994,
+      -79.0147
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://tawc.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Warren County Transit Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.237Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-warren~county~transit~authority~oh~us~rt"
+  ]
+}

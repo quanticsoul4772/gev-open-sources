@@ -1,0 +1,46 @@
+{
+  "id": "transitous-cz-pid",
+  "domain": "transit.vehicles",
+  "name": "PID",
+  "provider": "PID",
+  "coverage": {
+    "bbox": [
+      49.2778,
+      12.841,
+      50.9329,
+      15.8021
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://api.golemio.cz/v2/vehiclepositions/gtfsrt/pid_feed.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "PID"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.258Z"
+  },
+  "provenance": [
+    "transitous:cz/PID"
+  ]
+}

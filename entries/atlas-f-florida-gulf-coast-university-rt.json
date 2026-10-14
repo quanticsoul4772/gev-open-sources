@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-florida-gulf-coast-university-rt",
+  "domain": "transit.vehicles",
+  "name": "Florida Gulf Coast University",
+  "provider": "Florida Gulf Coast University",
+  "coverage": {
+    "bbox": [
+      26.4405,
+      -81.8004,
+      26.491,
+      -81.7497
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/fgcu/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Florida Gulf Coast University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.229Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-florida~gulf~coast~university~rt"
+  ]
+}

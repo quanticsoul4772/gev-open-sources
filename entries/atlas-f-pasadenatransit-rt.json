@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-pasadenatransit-rt",
+  "domain": "transit.vehicles",
+  "name": "rt.pasadenatransit.net",
+  "provider": "rt.pasadenatransit.net",
+  "coverage": {
+    "bbox": [
+      34.0903,
+      -118.2134,
+      34.2029,
+      -118.0597
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "rt.pasadenatransit.net"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.232Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-pasadenatransit~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-portage-area-regional-transportation-authority-rt",
+  "domain": "transit.vehicles",
+  "name": "Portage Area Regional Transportation Authority",
+  "provider": "Portage Area Regional Transportation Authority",
+  "coverage": {
+    "bbox": [
+      41.1155,
+      -81.4095,
+      41.2004,
+      -81.2206
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/parta/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Portage Area Regional Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.233Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-portage~area~regional~transportation~authority~rt"
+  ]
+}

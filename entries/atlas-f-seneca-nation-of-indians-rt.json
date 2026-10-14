@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-seneca-nation-of-indians-rt",
+  "domain": "transit.vehicles",
+  "name": "Seneca Nation of Indians",
+  "provider": "Seneca Nation of Indians",
+  "coverage": {
+    "bbox": [
+      42.0369,
+      -79.12,
+      42.5885,
+      -78.7394
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/senecanation/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Seneca Nation of Indians"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.234Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-seneca~nation~of~indians~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9q4-smat-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Santa Maria Area Transit",
+  "provider": "Santa Maria Area Transit",
+  "coverage": {
+    "bbox": [
+      34.7203,
+      -120.587,
+      35.0786,
+      -120.2542
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://smrt.tripshot.com/v1/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Santa Maria Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.222Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9q4-smat~ca~us~rt"
+  ]
+}

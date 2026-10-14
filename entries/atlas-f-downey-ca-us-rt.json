@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-downey-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "DowneyLINK",
+  "provider": "DowneyLINK",
+  "coverage": {
+    "bbox": [
+      33.9201,
+      -118.1553,
+      33.9751,
+      -118.1147
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://downey.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "DowneyLINK"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.226Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-downey~ca~us~rt"
+  ]
+}

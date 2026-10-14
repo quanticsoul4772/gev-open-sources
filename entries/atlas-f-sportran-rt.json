@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-sportran-rt",
+  "domain": "transit.vehicles",
+  "name": "Shreveport Area Transit System",
+  "provider": "Shreveport Area Transit System",
+  "coverage": {
+    "bbox": [
+      32.3821,
+      -93.8848,
+      32.5587,
+      -93.6829
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://sportran.rideralerts.com/infopoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Shreveport Area Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.234Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-sportran~rt"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-vailtransit-rt",
+  "domain": "transit.vehicles",
+  "name": "syncromatics.com",
+  "provider": "syncromatics.com",
+  "coverage": {
+    "bbox": [
+      39.599,
+      -106.4484,
+      39.6673,
+      -106.284
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ride.vail.gov/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "syncromatics.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.236Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-vailtransit~rt"
+  ]
+}

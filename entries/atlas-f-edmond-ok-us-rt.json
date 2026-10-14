@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-edmond-ok-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Citylink Edmond",
+  "provider": "Citylink Edmond",
+  "coverage": {
+    "bbox": [
+      35.6182,
+      -97.5317,
+      35.6865,
+      -97.4064
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/edmond/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Citylink Edmond"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.228Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-edmond~ok~us~rt"
+  ]
+}

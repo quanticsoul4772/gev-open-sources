@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-zenbus-mobilite-charlevoix-rt",
+  "domain": "transit.vehicles",
+  "name": "Mobilité Charlevoix",
+  "provider": "Mobilité Charlevoix",
+  "coverage": {
+    "bbox": [
+      47.4291,
+      -70.5416,
+      47.4691,
+      -70.5016
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=charlevoix",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Mobilité Charlevoix"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.238Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-zenbus~mobilite~charlevoix~rt"
+  ]
+}

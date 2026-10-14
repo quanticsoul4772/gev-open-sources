@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-lafayette-la-rt",
+  "domain": "transit.vehicles",
+  "name": "Lafayette Transit System",
+  "provider": "Lafayette Transit System",
+  "coverage": {
+    "bbox": [
+      30.1398,
+      -92.0953,
+      30.2558,
+      -91.9898
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://lts.syncromatics.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lafayette Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.230Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-lafayette~la~rt"
+  ]
+}

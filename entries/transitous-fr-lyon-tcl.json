@@ -1,0 +1,46 @@
+{
+  "id": "transitous-fr-lyon-tcl",
+  "domain": "transit.vehicles",
+  "name": "lyon-tcl",
+  "provider": "lyon-tcl",
+  "coverage": {
+    "bbox": [
+      45.5478,
+      4.297,
+      46.1371,
+      5.083
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/tcl",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "lyon-tcl"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.259Z"
+  },
+  "provenance": [
+    "transitous:fr/lyon-tcl"
+  ]
+}

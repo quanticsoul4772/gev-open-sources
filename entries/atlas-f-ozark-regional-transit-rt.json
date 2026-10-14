@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ozark-regional-transit-rt",
+  "domain": "transit.vehicles",
+  "name": "Ozark Regional Transit",
+  "provider": "Ozark Regional Transit",
+  "coverage": {
+    "bbox": [
+      36.0141,
+      -94.219,
+      36.3865,
+      -94.0834
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/ozark/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Ozark Regional Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.232Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ozark~regional~transit~rt"
+  ]
+}

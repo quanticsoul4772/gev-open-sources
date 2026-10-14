@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-9myr-paloverdevalley-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Palo Verde Valley Transit Agency",
+  "provider": "Palo Verde Valley Transit Agency",
+  "coverage": {
+    "bbox": [
+      33.5962,
+      -116.406,
+      33.8175,
+      -114.5799
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://ridepvvta.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://gtfs-directory.syncromatics.com/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Palo Verde Valley Transit Agency"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page has no readable text"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.222Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9myr-paloverdevalley~ca~us~rt"
+  ]
+}

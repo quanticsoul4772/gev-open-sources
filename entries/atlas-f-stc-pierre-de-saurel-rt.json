@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-stc-pierre-de-saurel-rt",
+  "domain": "transit.vehicles",
+  "name": "Société de transport collectif de Pierre-De Saurel",
+  "provider": "Société de transport collectif de Pierre-De Saurel",
+  "coverage": {
+    "bbox": [
+      45.5046,
+      -73.5417,
+      46.0603,
+      -73.0795
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=pierre-de-saurel",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Société de transport collectif de Pierre-De Saurel"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.234Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-stc~pierre~de~saurel~rt"
+  ]
+}

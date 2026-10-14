@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ztp-krakow-bus-rt",
+  "domain": "transit.vehicles",
+  "name": "Kraków Bus GTFS-RT",
+  "provider": "Zarząd Transportu Publicznego w Krakowie",
+  "coverage": {
+    "bbox": [
+      49.8825,
+      19.5984,
+      50.2236,
+      20.2361
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zarząd Transportu Publicznego w Krakowie"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.240Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ztp~krakow~bus~rt"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-br-flixbus",
+  "domain": "transit.vehicles",
+  "name": "flixbus",
+  "provider": "flixbus",
+  "coverage": {
+    "bbox": [
+      -36.1243,
+      -122.9086,
+      66.5184,
+      152.6123
+    ],
+    "countries": [
+      "BR"
+    ]
+  },
+  "access": {
+    "url": "https://rt.flix.baguette.pirnet.si/rt.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "flixbus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T17:12:54.257Z"
+  },
+  "provenance": [
+    "transitous:br/flixbus"
+  ]
+}
