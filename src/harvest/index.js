@@ -1,12 +1,18 @@
 /**
  * Discovery: add catalogued keyless feeds as entries. Feeds already present
- * (by id or exact URL) and tombstoned dead feeds are skipped.
+ * (by id, exact URL or a permalink that led to it) and tombstoned dead feeds
+ * are skipped; cross-domain permalinks are pointed at their final URL; catalogue URLs
+ * that failed a check are remembered in harvest-rejects.json for a week.
  */
 import { pathToFileURL } from 'node:url';
-import { readEntries, readState, writeEntry } from '../store.js';
+import { readEntries, readState, writeEntry, writeState } from '../store.js';
 import { normalizeUrl } from '../util/ids.js';
+import { harvestAtlas } from './atlas.js';
 import { harvestGbfs } from './gbfs.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
+import { resolveRedirects } from './redirects.js';
+import { harvestTransitous } from './transitous.js';
+import { USGS_ENTRIES } from './usgs.js';
 
 export function mergeCandidates(existing, candidates, tombstones) {
   const urls = new Set([...existing.values()].map((e) => normalizeUrl(e.access.url)));
@@ -20,15 +26,58 @@ export function mergeCandidates(existing, candidates, tombstones) {
   return added;
 }
 
-export async function harvest() {
+/** Normalized access, GBFS discovery and permalink (`via:`) URLs of the directory's entries. */
+export function knownUrlsOf(entries) {
+  const urls = new Set();
+  for (const e of entries.values()) {
+    urls.add(normalizeUrl(e.access.url));
+    if (e.access.related?.gbfs) urls.add(normalizeUrl(e.access.related.gbfs));
+    for (const p of e.provenance) if (p.startsWith('via:')) urls.add(normalizeUrl(p.slice(4)));
+  }
+  return urls;
+}
+
+export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const existing = readEntries();
   const tombstones = readState('tombstones.json', {});
+  const rejects = readState('harvest-rejects.json', {});
+  const knownIds = new Set(existing.keys());
   const mdb = await harvestMobilityDatabase();
-  const gbfs = await harvestGbfs({ known: new Set(existing.keys()) });
-  const added = mergeCandidates(existing, [...mdb.entries, ...gbfs], tombstones);
+  // Atlas and Transitous see the Mobility Database's feeds as known, so they
+  // only check URLs that would be new.
+  const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]));
+  const atlas = await harvestAtlas({ knownUrls, rejects, now });
+  for (const e of atlas.entries) knownUrls.add(normalizeUrl(e.access.url));
+  const transitous = await harvestTransitous({ knownIds, knownUrls, rejects, now });
+  const gbfs = await harvestGbfs({ known: knownIds });
+  const merged = mergeCandidates(
+    existing,
+    [...USGS_ENTRIES, ...mdb.entries, ...gbfs, ...atlas.entries, ...transitous.entries],
+    tombstones,
+  );
+  // New entries, and existing ones whose last probe failed, may be permalinks
+  // that redirect to another domain: point them at the final URL. Two
+  // catalogues can reach one feed through different permalinks, so new
+  // entries are deduplicated again on their final URLs.
+  const health = readState('health.json', {});
+  const failing = new Set(['network', 'http']);
+  const toCheck = [
+    ...merged,
+    ...[...existing.values()].filter((e) => failing.has(health[e.id]?.history?.at(-1)?.result)),
+  ];
+  const redirected = new Map((await resolveRedirects(toCheck)).map((e) => [e.id, e]));
+  const added = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);
   for (const entry of added) writeEntry(entry);
+  for (const entry of redirected.values()) if (existing.has(entry.id)) writeEntry(entry);
+  // A checked catalogue feed that duplicates an earlier source: don't check it again.
+  const addedIds = new Set(added.map((e) => e.id));
+  for (const e of [...atlas.entries, ...transitous.entries])
+    if (!addedIds.has(e.id)) rejects[e.access.related?.gbfs || e.access.url] = { reason: 'duplicate', at: now };
+  writeState('harvest-rejects.json', rejects);
   console.log(
-    `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), gbfs ${gbfs.length} resolved; ${added.length} new entries`,
+    `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
+      `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
+      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}; ${added.length} new entries, ${redirected.size} redirected to their final URL, ${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

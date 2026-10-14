@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/372463bd-d7b4-4668-a9b5-bd71a28f389d",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.572Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-10231"
+    "mobilitydatabase:tdg-10231",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/372463bd-d7b4-4668-a9b5-bd71a28f389d"
   ]
 }

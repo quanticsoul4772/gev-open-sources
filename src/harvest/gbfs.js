@@ -53,6 +53,54 @@ export function keylessSystems(rows) {
 }
 
 /**
+ * Resolve one system's auto-discovery URL into a station-status entry, or null
+ * when it has no keyless station feeds or no located stations.
+ * @param {{id: string, name: string, provider: string, country: string|null,
+ *   discoveryUrl: string, systemId: string|null, catalogueLicence?: string|null,
+ *   provenance: string[]}} system
+ * @param {{fetchImpl?: typeof fetch, anyRedirect?: boolean}} [options]
+ */
+export async function resolveGbfsSystem(system, { fetchImpl, anyRedirect = false } = {}) {
+  const discovery = await fetchCapped(system.discoveryUrl, { fetchImpl, anyRedirect, timeoutMs: 15_000 });
+  if (discovery.status !== 200) return null;
+  const { version, feeds } = gbfsFeeds(json(discovery.body));
+  const status = feeds.station_status;
+  const info = feeds.station_information;
+  if (!status || !info || hasCredentialParam(status)) return null;
+  const stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
+  const bbox = stations.status === 200 ? stationBbox(json(stations.body)) : null;
+  if (!bbox) return null;
+  return {
+    id: system.id,
+    domain: 'bikeshare.stations',
+    name: system.name,
+    provider: system.provider,
+    coverage: { bbox, countries: system.country ? [system.country] : [] },
+    access: {
+      url: status,
+      related: {
+        station_information: info,
+        ...(feeds.system_information ? { system_information: feeds.system_information } : {}),
+        gbfs: system.discoveryUrl,
+      },
+      redirectHosts: [],
+      unzip: null,
+      headers: {},
+      min_interval_s: 60,
+    },
+    format: 'gbfs.station-status',
+    gbfs: {
+      system_id: system.systemId,
+      version,
+      ...(system.catalogueLicence ? { catalogue_licence: system.catalogueLicence } : {}),
+    },
+    licence: { id: null, url: null, display: false, commercial: null, attribution: system.provider },
+    licence_decision: { by: 'none', evidence: [], terms_sha256: null, at: null },
+    provenance: system.provenance,
+  };
+}
+
+/**
  * Resolve each keyless system not already known into a station-status entry.
  * @param {{known: Set<string>, fetchImpl?: typeof fetch}} options
  */
@@ -65,41 +113,19 @@ export async function harvestGbfs({ known, fetchImpl } = {}) {
   const results = await runPooled(
     systems,
     (r) => hostOfUrl(r['Auto-Discovery URL']),
-    async (r) => {
-      const discovery = await fetchCapped(r['Auto-Discovery URL'], { fetchImpl, timeoutMs: 15_000 });
-      if (discovery.status !== 200) return null;
-      const { version, feeds } = gbfsFeeds(json(discovery.body));
-      const status = feeds.station_status;
-      const info = feeds.station_information;
-      if (!status || !info || hasCredentialParam(status)) return null;
-      const stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
-      const bbox = stations.status === 200 ? stationBbox(json(stations.body)) : null;
-      if (!bbox) return null;
-      return {
-        id: slugId('gbfs', r['System ID']),
-        domain: 'bikeshare.stations',
-        name: `${r.Name}${r.Location ? ` — ${r.Location}` : ''}`,
-        provider: r.Name,
-        coverage: { bbox, countries: r['Country Code'] ? [r['Country Code']] : [] },
-        access: {
-          url: status,
-          related: {
-            station_information: info,
-            ...(feeds.system_information ? { system_information: feeds.system_information } : {}),
-            gbfs: r['Auto-Discovery URL'],
-          },
-          redirectHosts: [],
-          unzip: null,
-          headers: {},
-          min_interval_s: 60,
+    (r) =>
+      resolveGbfsSystem(
+        {
+          id: slugId('gbfs', r['System ID']),
+          name: `${r.Name}${r.Location ? ` — ${r.Location}` : ''}`,
+          provider: r.Name,
+          country: r['Country Code'] || null,
+          discoveryUrl: r['Auto-Discovery URL'],
+          systemId: r['System ID'],
+          provenance: [`gbfs-systems:${r['System ID']}`],
         },
-        format: 'gbfs.station-status',
-        gbfs: { system_id: r['System ID'], version },
-        licence: { id: null, url: null, display: false, commercial: null, attribution: r.Name },
-        licence_decision: { by: 'none', evidence: [], terms_sha256: null, at: null },
-        provenance: [`gbfs-systems:${r['System ID']}`],
-      };
-    },
+        { fetchImpl },
+      ),
     { global: 24, perHost: 3 },
   );
   return results.filter((e) => e && !e.error);

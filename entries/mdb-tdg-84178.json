@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/abf87e83-dde3-4ecb-83ba-3e434ec90251",
+    "url": "https://api.okina.fr/gateway/cvl/gtfsrt/vehicle-positions?useoriginalId=true",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.657Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84178"
+    "mobilitydatabase:tdg-84178",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/abf87e83-dde3-4ecb-83ba-3e434ec90251"
   ]
 }
