@@ -25,7 +25,10 @@ hours a GitHub Actions run:
    obligation is one an app meets on its own. Everything else is
    referral-only (`licence.display: false`).
 3. **Probes** every entry with the decoder an app would use, and moves it
-   through `candidate → verified ⇄ degraded → dead`. Dead for 30 days → removed.
+   through `candidate → verified ⇄ degraded → dead` (verified: 3 passes in a
+   row with records seen in 7 days). A passing candidate is probed up to three
+   times in one run, 5 minutes apart, so a working new feed is verified in the
+   run that finds it. Dead for 30 days → removed.
 4. **Publishes** `directory.json` to GitHub Pages:
    `https://quanticsoul4772.github.io/gev-open-sources/directory.json`.
 
