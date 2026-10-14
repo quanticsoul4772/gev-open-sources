@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://apps.santaclaritatransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+    "url": "https://apps.santaclaritatransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.677Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4328-vp"
+    "mobilitydatabase:tld-4328-vp",
+    "via:http://apps.santaclaritatransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition"
   ]
 }

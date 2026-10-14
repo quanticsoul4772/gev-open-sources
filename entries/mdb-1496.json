@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "url": "https://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:40:13.685Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1496"
+    "mobilitydatabase:mdb-1496",
+    "via:http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
   ]
 }

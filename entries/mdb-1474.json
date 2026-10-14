@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://sportranbus.com/gtfs-rt/vehiclepositions",
+    "url": "https://www.sportranbus.com/exploring-shreveport-bossier-with-sportran-reliable-public-transit-for-everyday-adventures/",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.317Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1474"
+    "mobilitydatabase:mdb-1474",
+    "via:https://sportranbus.com/gtfs-rt/vehiclepositions"
   ]
 }

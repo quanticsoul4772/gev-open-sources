@@ -4,7 +4,12 @@
   "name": "MRC du Haut-Saint-Laurent",
   "provider": "MRC du Haut-Saint-Laurent",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      45.1014,
+      -74.0851,
+      45.2048,
+      -73.9757
+    ],
     "countries": [
       "CA"
     ]

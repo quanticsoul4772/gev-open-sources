@@ -4,7 +4,12 @@
   "name": "Calgary Transit",
   "provider": "Calgary Transit",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      50.8396,
+      -114.2714,
+      51.2034,
+      -113.8881
+    ],
     "countries": [
       "CA"
     ]

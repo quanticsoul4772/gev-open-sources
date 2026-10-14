@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_vehicle_positions.pb",
+    "url": "https://s3.itbatera.euskadi.eus/02-pro-e3525cfb1b3d99109c5220a2b24bcb30-inet/transport/moveuskadi/dbus/gtfsrt_dbus_vehicle_positions.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:41:07.357Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-3066"
+    "mobilitydatabase:mdb-3066",
+    "via:https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_vehicle_positions.pb"
   ]
 }

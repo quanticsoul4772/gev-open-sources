@@ -8,6 +8,7 @@ import { pathToFileURL } from 'node:url';
 import { readEntries, readState, writeEntry, writeState } from '../store.js';
 import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas } from './atlas.js';
+import { fillTransitCoverage } from './catalogue.js';
 import { harvestGbfs } from './gbfs.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
@@ -66,18 +67,25 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     ...[...existing.values()].filter((e) => failing.has(health[e.id]?.history?.at(-1)?.result)),
   ];
   const redirected = new Map((await resolveRedirects(toCheck)).map((e) => [e.id, e]));
-  const added = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);
+  const deduped = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);
+  // Transit entries need a bbox: fill missing ones from their vehicles. A new
+  // entry still without one waits for a later run; an existing one keeps trying.
+  const updated = [...existing.values()].map((e) => redirected.get(e.id) || e);
+  const covered = await fillTransitCoverage([...deduped, ...updated]);
+  const added = deduped
+    .map((e) => covered.get(e.id) || e)
+    .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
   for (const entry of added) writeEntry(entry);
-  for (const entry of redirected.values()) if (existing.has(entry.id)) writeEntry(entry);
+  for (const entry of updated) if (redirected.has(entry.id) || covered.has(entry.id)) writeEntry(covered.get(entry.id) || entry);
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
-  const addedIds = new Set(added.map((e) => e.id));
+  const dedupedIds = new Set(deduped.map((e) => e.id));
   for (const e of [...atlas.entries, ...transitous.entries])
-    if (!addedIds.has(e.id)) rejects[e.access.related?.gbfs || e.access.url] = { reason: 'duplicate', at: now };
+    if (!dedupedIds.has(e.id)) rejects[e.access.related?.gbfs || e.access.url] = { reason: 'duplicate', at: now };
   writeState('harvest-rejects.json', rejects);
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}; ${added.length} new entries, ${redirected.size} redirected to their final URL, ${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}; ${added.length} new entries, ${redirected.size} redirected to their final URL, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

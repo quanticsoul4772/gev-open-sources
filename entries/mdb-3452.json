@@ -4,7 +4,12 @@
   "name": "TEP PARMA",
   "provider": "TEP PARMA",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      44.6157,
+      10.1447,
+      44.9133,
+      10.4676
+    ],
     "countries": []
   },
   "access": {
