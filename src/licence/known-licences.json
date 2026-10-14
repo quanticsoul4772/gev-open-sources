@@ -167,6 +167,12 @@
     "commercial": true,
     "attribution": true
   },
+  "usgs.gov/information-policies-and-instructions/copyrights-and-credits": {
+    "id": "USGS-public-domain",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
   "spdx:cc0-1.0": {
     "id": "CC0-1.0",
     "display": true,

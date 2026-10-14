@@ -9,7 +9,7 @@ import { pathToFileURL } from 'node:url';
 import { summary } from './health.js';
 import { DIST_DIR, ROOT, STATE_DIR, readEntries, readState } from './store.js';
 
-export const STATE_FILES = ['health.json', 'licence-cache.json', 'tombstones.json'];
+export const STATE_FILES = ['health.json', 'licence-cache.json', 'tombstones.json', 'harvest-rejects.json'];
 
 export function buildDirectory(entries, health, now) {
   const out = [];

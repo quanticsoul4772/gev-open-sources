@@ -1,7 +1,8 @@
 /**
  * Licence job — no humans. Per entry:
  *  tier 1  known licence (URL or SPDX id)          → decided
- *  GBFS    system_information licence; none on v3.x → CC0 per the GBFS spec
+ *  GBFS    system_information licence, else the catalogue's (if known);
+ *          none on v3.x → CC0 per the GBFS spec
  *  tier 2  operator terms page, Claude, mechanical acceptance (terms.js)
  *  else    referral-only (display false)
  * A borrowed licence URL (from the static feed) is accepted only via tier 1.
@@ -59,13 +60,21 @@ async function gbfsDecision(entry, fetchImpl) {
   } catch {
     info = null;
   }
-  if (!info) return { decided: undecided(entry, 'system_information unavailable') };
+  // The licence a catalogue (Transitous) declared for the system: used only
+  // when the system publishes none itself, and only if it is a known licence.
+  const catalogue = entry.gbfs?.catalogue_licence || null;
+  const catalogueKnown = knownLicence(catalogue);
+  if (!info)
+    return catalogueKnown
+      ? { decided: fromKnown(entry, catalogueKnown, catalogue, entry.provider) }
+      : { decided: undecided(entry, 'system_information unavailable') };
   const attribution = info.attribution_organization_name || info.operator || entry.provider;
   const id = info.license_id || null;
   const licenceUrl = isHttp(info.license_url) ? info.license_url : null;
   const known = knownLicence(id) || knownLicence(licenceUrl);
   if (known) return { decided: fromKnown(entry, known, licenceUrl || id, attribution) };
   if (licenceUrl) return { termsUrl: licenceUrl, attribution };
+  if (catalogueKnown) return { decided: fromKnown(entry, catalogueKnown, catalogue, attribution) };
   if (String(entry.gbfs?.version || '').startsWith('3'))
     return {
       decided: {
