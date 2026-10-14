@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Stadtmobil Rhein-Neckar AG",
-        "language": "de"
-      }
-    ]
+    "attribution": "Stadtmobil Rhein-Neckar AG"
   },
   "licence_decision": {
     "by": "known-licence",

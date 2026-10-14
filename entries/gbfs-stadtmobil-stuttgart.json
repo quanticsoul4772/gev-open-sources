@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "stadtmobil carsharing AG",
-        "language": "de"
-      }
-    ]
+    "attribution": "stadtmobil carsharing AG"
   },
   "licence_decision": {
     "by": "known-licence",

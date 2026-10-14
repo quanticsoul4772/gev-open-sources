@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Deutsche Bahn Connect GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "Deutsche Bahn Connect GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

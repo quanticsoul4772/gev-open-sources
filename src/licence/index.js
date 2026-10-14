@@ -48,6 +48,19 @@ function fromKnown(entry, known, source, attribution) {
   };
 }
 
+/**
+ * A GBFS text field as a plain string: v1/v2 send a string, v3 a list of
+ * {text, language} (English preferred, else the first non-empty one).
+ * @returns {string|null}
+ */
+export function gbfsText(value) {
+  if (typeof value === 'string') return value.trim() || null;
+  if (!Array.isArray(value)) return null;
+  const texts = value.filter((t) => typeof t?.text === 'string' && t.text.trim());
+  const pick = texts.find((t) => /^en(-|$)/i.test(t.language || '')) || texts[0];
+  return pick ? pick.text.trim() : null;
+}
+
 /** GBFS: licence fields from system_information. */
 async function gbfsDecision(entry, fetchImpl) {
   const url =
@@ -68,7 +81,7 @@ async function gbfsDecision(entry, fetchImpl) {
     return catalogueKnown
       ? { decided: fromKnown(entry, catalogueKnown, catalogue, entry.provider) }
       : { decided: undecided(entry, 'system_information unavailable') };
-  const attribution = info.attribution_organization_name || info.operator || entry.provider;
+  const attribution = gbfsText(info.attribution_organization_name) || gbfsText(info.operator) || entry.provider;
   const id = info.license_id || null;
   const licenceUrl = isHttp(info.license_url) ? info.license_url : null;
   const known = knownLicence(id) || knownLicence(licenceUrl);

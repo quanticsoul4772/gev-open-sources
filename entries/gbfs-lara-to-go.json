@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Energieagentur Rems-Murr gGmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "Energieagentur Rems-Murr gGmbH"
   },
   "licence_decision": {
     "by": "known-licence",

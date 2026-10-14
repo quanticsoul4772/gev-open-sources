@@ -13,7 +13,7 @@
     "countries": []
   },
   "access": {
-    "url": "https://GTFS-RT.suntran.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+    "url": "https://gtfs-rt.suntran.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},

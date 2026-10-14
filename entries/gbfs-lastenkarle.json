@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Lastenrad-Initiative für die Region Karlsruhe",
-        "language": "de"
-      }
-    ]
+    "attribution": "Lastenrad-Initiative für die Region Karlsruhe"
   },
   "licence_decision": {
     "by": "gbfs-v3-default",

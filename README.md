@@ -52,4 +52,6 @@ An entry is usable when `health.status === 'verified'` and
 npm ci
 npm test
 npm run cycle        # harvest → licence → probe → build (ANTHROPIC_API_KEY for tier 2)
+node src/scan-secrets.js entries dist   # gate: no credentials in any output
+node src/validate-dist.js entries dist  # gate: every entry valid against the schema
 ```

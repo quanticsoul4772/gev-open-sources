@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "language": "en",
-        "text": "EPFL"
-      }
-    ]
+    "attribution": "EPFL"
   },
   "licence_decision": {
     "by": "known-licence",

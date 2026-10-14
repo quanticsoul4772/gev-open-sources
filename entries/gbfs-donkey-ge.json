@@ -36,16 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "language": "fr",
-        "text": "Donkey Republic"
-      },
-      {
-        "language": "de",
-        "text": "Donkey Republic"
-      }
-    ]
+    "attribution": "Donkey Republic"
   },
   "licence_decision": {
     "by": "known-licence",

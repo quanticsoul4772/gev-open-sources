@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "SCIC AUPA ",
-        "language": "fr"
-      }
-    ]
+    "attribution": "SCIC AUPA"
   },
   "licence_decision": {
     "by": "known-licence",

@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "ALF - das Affstätter Lastenfahrrad",
-        "language": "de"
-      }
-    ]
+    "attribution": "ALF - das Affstätter Lastenfahrrad"
   },
   "licence_decision": {
     "by": "known-licence",

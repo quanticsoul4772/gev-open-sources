@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Mobilib",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Mobilib"
   },
   "licence_decision": {
     "by": "known-licence",

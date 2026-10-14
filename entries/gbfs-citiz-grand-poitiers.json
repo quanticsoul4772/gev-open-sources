@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Régie des Transports Poitevins (RTP)",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Régie des Transports Poitevins (RTP)"
   },
   "licence_decision": {
     "by": "known-licence",

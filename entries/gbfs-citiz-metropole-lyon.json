@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "SPL Mobilités",
-        "language": "fr"
-      }
-    ]
+    "attribution": "SPL Mobilités"
   },
   "licence_decision": {
     "by": "known-licence",
