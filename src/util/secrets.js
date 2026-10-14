@@ -80,6 +80,15 @@ export const entryHasCredential = (entry) =>
 
 const URL_IN_TEXT = /https?:\/\/[^\s"'<>]+/g;
 
+/** A URL found in free text: one that parses (text like a regex `^https://[!-~]+$` is not a URL). */
+const parses = (text) => {
+  try {
+    return Boolean(new URL(text.replace(/&amp;/gi, '&')).hostname);
+  } catch {
+    return false;
+  }
+};
+
 /**
  * Credential findings in any JSON value: every string and object key that is
  * or contains a URL, and every string in a known token format. Findings name
@@ -90,7 +99,7 @@ export function scanJson(value, path = '$') {
   const findings = [];
   const check = (text, where) => {
     if (SECRET_VALUE.test(text)) findings.push({ path: where, reason: 'token-format value' });
-    else if ((text.match(URL_IN_TEXT) || []).some(hasCredential)) findings.push({ path: where, reason: 'URL carries a credential' });
+    else if ((text.match(URL_IN_TEXT) || []).filter(parses).some(hasCredential)) findings.push({ path: where, reason: 'URL carries a credential' });
   };
   const walk = (v, p) => {
     if (typeof v === 'string') check(v, p);
