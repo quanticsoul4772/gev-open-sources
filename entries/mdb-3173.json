@@ -4,7 +4,12 @@
   "name": "BAS.MY Melaka",
   "provider": "BAS.MY Melaka",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      2.201,
+      102.2313,
+      2.241,
+      102.2713
+    ],
     "countries": []
   },
   "access": {

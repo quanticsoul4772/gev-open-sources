@@ -4,7 +4,12 @@
   "name": "BAS.MY Kota Bharu",
   "provider": "BAS.MY Kota Bharu",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      5.7115,
+      102.492,
+      5.7515,
+      102.532
+    ],
     "countries": []
   },
   "access": {

@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://rtu.york.ca/gtfsrealtime/VehiclePositions",
+    "url": "https://rtu.york.ca/gtfsrealtime/VehiclePositions",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -42,6 +42,7 @@
   },
   "provenance": [
     "mobilitydatabase:mdb-1750",
-    "licence-borrowed:mdb-728"
+    "licence-borrowed:mdb-728",
+    "via:http://rtu.york.ca/gtfsrealtime/VehiclePositions"
   ]
 }

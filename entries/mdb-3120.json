@@ -4,7 +4,12 @@
   "name": "Tükebusz",
   "provider": "Tükebusz",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      46.0158,
+      18.1285,
+      46.1362,
+      18.3645
+    ],
     "countries": []
   },
   "access": {

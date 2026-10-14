@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://api.transitime.org/api/v1/key/REDACTED/agency/dcta/command/gtfs-rt/vehiclePositions?format=bin",
+    "url": "https://api.transitime.org/api/v1/key/REDACTED/agency/dcta/command/gtfs-rt/vehiclePositions?format=bin",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:40:13.684Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1456"
+    "mobilitydatabase:mdb-1456",
+    "via:http://api.transitime.org/api/v1/key/REDACTED/agency/dcta/command/gtfs-rt/vehiclePositions?format=bin"
   ]
 }

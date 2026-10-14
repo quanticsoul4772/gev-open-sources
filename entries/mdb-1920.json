@@ -4,7 +4,12 @@
   "name": "motionbuscard",
   "provider": "motionbuscard",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      34.626,
+      32.3205,
+      35.2108,
+      34.091
+    ],
     "countries": []
   },
   "access": {

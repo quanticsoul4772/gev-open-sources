@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.rtd-denver.com/files/bustang/gtfs-rt/Bustang_VehiclePosition.pb",
+    "url": "https://open-data.rtd-denver.com/files/gtfs-rt/cdot/Bustang_VehiclePosition.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.725Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4923-vp"
+    "mobilitydatabase:tld-4923-vp",
+    "via:https://www.rtd-denver.com/files/bustang/gtfs-rt/Bustang_VehiclePosition.pb"
   ]
 }
