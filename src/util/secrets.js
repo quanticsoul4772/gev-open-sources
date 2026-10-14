@@ -7,7 +7,12 @@
 
 /** Parameter names that carry a credential. */
 const CREDENTIAL_NAME =
-  /key|token|secret|passw|pwd|signature|credential|session|jwt|bearer|^(sig|auth|code|appid|app_id|app_code|client_id)$/i;
+  /key|token|secret|passw|pwd|signature|credential|session|jwt|bearer|^(sig|auth|code|appid|app_id|app_code|client_id|sid|pass|user|username|login|access|k|p)$/i;
+/**
+ * Request headers an entry may carry: ones that identify the client, never
+ * ones that authenticate it (Entur requires ET-Client-Name).
+ */
+export const ALLOWED_HEADERS = Object.freeze(['et-client-name', 'user-agent', 'accept']);
 /** Path segments whose next segment is a credential (`/api/v1/key/<key>/…`). */
 const KEY_SEGMENT = /^(key|keys|token|apikey|api_key|api-key|accesskey|access_key|auth|secret)$/i;
 /** Values in a known token format, anywhere in a string. */
@@ -53,7 +58,15 @@ export function entryUrls(entry) {
   ].filter(Boolean);
 }
 
-export const entryHasCredential = (entry) => entryUrls(entry).some(hasCredential);
+/** Whether an entry's request headers could carry a credential. */
+export function headersHaveCredential(headers = {}) {
+  return Object.entries(headers).some(
+    ([name, value]) => !ALLOWED_HEADERS.includes(name.toLowerCase()) || SECRET_VALUE.test(String(value)),
+  );
+}
+
+export const entryHasCredential = (entry) =>
+  entryUrls(entry).some(hasCredential) || headersHaveCredential(entry.access?.headers);
 
 const URL_IN_TEXT = /https?:\/\/[^\s"'<>]+/g;
 
@@ -72,13 +85,16 @@ export function scanJson(value, path = '$') {
   const walk = (v, p) => {
     if (typeof v === 'string') check(v, p);
     else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${p}[${i}]`));
-    else if (v && typeof v === 'object')
+    else if (v && typeof v === 'object') {
+      if (typeof v.access?.url === 'string' && headersHaveCredential(v.access.headers))
+        findings.push({ path: `${p}.access.headers`, reason: 'request header may carry a credential' });
       Object.entries(v).forEach(([k, x], i) => {
         // A key may itself be a URL (state files): name it by position, never by text.
         const name = /[/:?#@]/.test(k) ? `[key #${i}]` : `.${k}`;
         check(k, `${p}${name}`);
         walk(x, `${p}${name}`);
       });
+    }
   };
   walk(value, path);
   return findings;

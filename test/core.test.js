@@ -31,7 +31,7 @@ test('credentials: parameter names, path keys, userinfo, fragments, token format
     'https://a.example/api/key',
   ])
     assert.equal(hasCredential(u), false, u);
-  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key', 'accesskey', 'AccessKey', 'x-api-key', 'sessionToken', 'client_secret', 'sig', 'appid', 'client_id', 'acl:consumerKey'])
+  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key', 'accesskey', 'AccessKey', 'x-api-key', 'sessionToken', 'client_secret', 'sig', 'appid', 'client_id', 'acl:consumerKey', 'sid', 'user', 'login', 'access', 'k', 'p'])
     assert.equal(hasCredential(`https://a.example/vp?${p}=abc`), true, p);
   for (const u of [
     'https://api.transitime.org/api/v1/key/dca0/agency/x/command/gtfs-rt/vehiclePositions',
@@ -54,9 +54,14 @@ test('credentials: every published URL of an entry; JSON scan names paths, never
   };
   assert.equal(entryHasCredential(entry), true, 'via: provenance');
   assert.equal(entryHasCredential({ ...entry, provenance: ['x'] }), false);
+  const withHeaders = (headers) => ({ ...entry, provenance: ['x'], access: { ...entry.access, headers } });
+  assert.equal(entryHasCredential(withHeaders({ 'ET-Client-Name': 'gods-eye-view-transit' })), false, 'identification header');
+  assert.equal(entryHasCredential(withHeaders({ Authorization: 'Basic abc' })), true, 'auth header');
+  assert.equal(entryHasCredential(withHeaders({ 'User-Agent': 'sk-0123456789abcdefghijkl' })), true, 'token value');
   const findings = scanJson({ entries: [entry], state: { 'https://a.example/vp?token=SECRET123': { at: 1 } } });
   assert.deepEqual(findings.map((f) => f.path), ['$.entries[0].provenance[1]', '$.state[key #0]']);
   assert.ok(!JSON.stringify(findings).includes('SECRET123'));
+  assert.deepEqual(scanJson([{ access: { url: 'https://a.example/vp', headers: { 'X-Api': 'v' } } }]).map((f) => f.path), ['$[0].access.headers']);
 });
 
 test('ids are schema-valid, prefixes not doubled, long ids hashed', () => {
