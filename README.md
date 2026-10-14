@@ -18,8 +18,8 @@ hours a GitHub Actions run:
      each. Vehicles entries count only vehicles without a `station_id`
      (docked ones belong to the stations entry) and list
      `gbfs.form_factors` from `vehicle_types` (empty means unknown).
-     Getaround car-sharing systems publish no licence and are displayed
-     under the GBFS 3.x CC0 default.
+     Peer-to-peer car sharing (Getaround and similar: private owners' cars,
+     often parked at home) is left out; fleet car sharing stays.
    - USGS [earthquake summary feeds](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
      (`hazards.earthquakes`, GeoJSON, public domain).
    - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
