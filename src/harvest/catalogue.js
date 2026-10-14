@@ -5,7 +5,8 @@
  */
 import { decodeVehiclePositions } from '../adapters/gtfsRealtime.js';
 import { knownLicence } from '../licence/known.js';
-import { fetchCapped, hasCredentialParam } from '../util/http.js';
+import { fetchCapped } from '../util/http.js';
+import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 
@@ -85,7 +86,7 @@ export async function resolveTransitCandidates(candidates, { knownUrls, rejects,
   const seen = new Set();
   const todo = candidates.filter((c) => {
     const key = normalizeUrl(c.url);
-    if (seen.has(key) || knownUrls.has(key) || hasCredentialParam(c.url)) return false;
+    if (seen.has(key) || knownUrls.has(key) || hasCredential(c.url)) return false;
     seen.add(key);
     return !recentlyRejected(rejects, c.url, now);
   });
