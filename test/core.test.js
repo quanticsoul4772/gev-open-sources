@@ -420,6 +420,7 @@ test('pool: tasks waiting on a busy host all run, with perHost 1', async () => {
   }, { perHost: 1 });
   assert.deepEqual(results, [10, 20, 30, 40], 'none dropped when the last running task finishes');
   assert.deepEqual(order, [1, 2, 3, 4]);
+});
 
 test('credentials: same rule as the app — key-like segment variants, path parameters, AIza and Bearer', () => {
   for (const u of [
