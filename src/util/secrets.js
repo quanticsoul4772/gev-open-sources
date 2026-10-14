@@ -16,8 +16,10 @@ export const ALLOWED_HEADERS = Object.freeze(['et-client-name', 'user-agent', 'a
 /** Path segments whose next segment is a credential (`/api/v1/key/<key>/…`). */
 const KEY_SEGMENT = /^(key|keys|token|apikey|api_key|api-key|accesskey|access_key|auth|secret)$/i;
 /** Values in a known token format, anywhere in a string. */
+// Each prefix must start a token: not after a letter, digit, `_` or `-`, so a
+// slug like `transitous-sk-zsr-…` (Slovakia) is not an `sk-` key.
 const SECRET_VALUE =
-  /eyJ[\w-]{10,}\.[\w-]{10,}|AKIA[0-9A-Z]{16}|\bsk-[\w-]{20,}|\bghp_[A-Za-z0-9]{30,}|\bxox[abposr]-[\w-]{10,}/;
+  /(?<![\w-])(?:eyJ[\w-]{10,}\.[\w-]{10,}|AKIA[0-9A-Z]{16}|sk-[\w-]{20,}|ghp_[A-Za-z0-9]{30,}|xox[abposr]-[\w-]{10,})/;
 
 const decode = (s) => {
   try {
