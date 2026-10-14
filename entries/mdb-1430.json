@@ -23,10 +23,10 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": "terms:www.cota.com",
+    "id": null,
     "url": "https://www.cota.com/data/",
-    "display": true,
-    "commercial": true,
+    "display": false,
+    "commercial": null,
     "attribution": "Central Ohio Transit Authority",
     "obligations": [
       "governing_law",
@@ -40,31 +40,15 @@
     ]
   },
   "licence_decision": {
-    "by": "llm-terms",
+    "by": "none",
     "evidence": [
       {
-        "field": "applies_to_this_data",
-        "quote": "The Central Ohio Transit Authority (“COTA”) hereby grants you (Licensee) non-exclusive, limited and revocable rights to use, reproduce and redistribute COTA Data (Data) subject to the following Terms."
-      },
-      {
-        "field": "applies_to_this_data",
-        "quote": "Real-Time Feeds \n Alerts \n Trip Updates \n Vehicle Positions"
-      },
-      {
-        "field": "display",
-        "quote": "non-exclusive, limited and revocable rights to use, reproduce and redistribute COTA Data (Data) subject to the following Terms."
-      },
-      {
-        "field": "commercial",
-        "quote": "non-exclusive, limited and revocable rights to use, reproduce and redistribute COTA Data (Data) subject to the following Terms."
-      },
-      {
-        "field": "requires_acceptance",
-        "quote": "By using COTA Data, you agree to be bound by all of the Terms and Conditions set forth in this agreement."
+        "field": "reason",
+        "quote": "no ANTHROPIC_API_KEY"
       }
     ],
-    "terms_sha256": "3b9179ecca51ae4e94b72872076dfc6adb519cfbb786b32909923681edfbd5a4",
-    "at": "2026-10-14T15:28:35.285Z"
+    "terms_sha256": null,
+    "at": "2026-10-14T15:40:13.683Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1430"

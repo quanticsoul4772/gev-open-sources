@@ -40,11 +40,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "runs disagree on blocking obligations"
+        "quote": "no ANTHROPIC_API_KEY"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:28:52.568Z"
+    "at": "2026-10-14T15:40:13.681Z"
   },
   "provenance": [
     "seed:gods-eye-view"

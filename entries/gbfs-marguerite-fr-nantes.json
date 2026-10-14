@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-marguerite-fr-nantes",
+  "domain": "bikeshare.stations",
+  "name": "Marguerite - Véhicule en libre-service à Nantes — Nantes",
+  "provider": "Marguerite - Véhicule en libre-service à Nantes",
+  "coverage": {
+    "bbox": [
+      45.9413,
+      -1.7097,
+      48.0878,
+      0.3757
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.imarguerite.com/opendata/gbfs/station_status.json",
+    "related": {
+      "station_information": "https://www.imarguerite.com/opendata/gbfs/station_information.json",
+      "system_information": "https://www.imarguerite.com/opendata/gbfs/system_information.json",
+      "gbfs": "https://www.imarguerite.com/opendata/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "Marguerite_FR_Nantes",
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Marguerite - Véhicule en libre-service à Nantes"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:40:13.667Z"
+  },
+  "provenance": [
+    "gbfs-systems:Marguerite_FR_Nantes"
+  ]
+}
