@@ -15,6 +15,16 @@ import { resolveRedirects } from './redirects.js';
 import { harvestTransitous } from './transitous.js';
 import { USGS_ENTRIES } from './usgs.js';
 
+/**
+ * New entries per run, as a share of the directory: four runs a day stay
+ * well inside the app's daily refresh limit (at most twice the entries), and
+ * the build's size guard is the backstop. The rest wait for later runs.
+ */
+export const MAX_ADDED_RATIO = 0.1;
+
+/** How many new entries a directory of `size` may take in one run. */
+export const addLimit = (size) => (size > 0 ? Math.max(1, Math.floor(size * MAX_ADDED_RATIO)) : Infinity);
+
 export function mergeCandidates(existing, candidates, tombstones) {
   const urls = new Set([...existing.values()].map((e) => normalizeUrl(e.access.url)));
   const added = [];
@@ -72,9 +82,10 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   // entry still without one waits for a later run; an existing one keeps trying.
   const updated = [...existing.values()].map((e) => redirected.get(e.id) || e);
   const covered = await fillTransitCoverage([...deduped, ...updated]);
-  const added = deduped
+  const ready = deduped
     .map((e) => covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
+  const added = ready.slice(0, addLimit(existing.size));
   for (const entry of added) writeEntry(entry);
   for (const entry of updated) if (redirected.has(entry.id) || covered.has(entry.id)) writeEntry(covered.get(entry.id) || entry);
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
@@ -85,7 +96,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}; ${added.length} new entries, ${redirected.size} redirected to their final URL, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved, usgs ${USGS_ENTRIES.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 
