@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/74235bed-95fc-4fa8-ab25-bab7e3c6a6f1",
+    "url": "https://api.maas-fr.cityway.fr/dataflow/vehicule-tc-tr/download?provider=ORIZO&dataFormat=gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.650Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84058"
+    "mobilitydatabase:tdg-84058",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/74235bed-95fc-4fa8-ab25-bab7e3c6a6f1"
   ]
 }

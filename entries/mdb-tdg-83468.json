@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/252fd29f-4a13-4e38-9e9e-6d3c09e9bb5a",
+    "url": "https://app.pysae.com/api/v2/groups/pays-des-ecrins/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.635Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83468"
+    "mobilitydatabase:tdg-83468",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/252fd29f-4a13-4e38-9e9e-6d3c09e9bb5a"
   ]
 }

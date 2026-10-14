@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/6974ab10-1b0f-4c59-aec0-9924bccb8dbc",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=auch-alliance",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.660Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84229"
+    "mobilitydatabase:tdg-84229",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/6974ab10-1b0f-4c59-aec0-9924bccb8dbc"
   ]
 }

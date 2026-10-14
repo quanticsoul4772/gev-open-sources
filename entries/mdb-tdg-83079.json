@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/8e45727d-487f-4a14-823b-d906d6ebaa43",
+    "url": "https://accm.plateforme-2cloud.com/api/gtfsrt/2.0/vehiclepositions/ACCM-RSUD-4552-8552-5459/bin",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.625Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83079"
+    "mobilitydatabase:tdg-83079",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/8e45727d-487f-4a14-823b-d906d6ebaa43"
   ]
 }

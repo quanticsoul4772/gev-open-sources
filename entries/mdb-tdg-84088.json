@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/eb530fc3-b08f-42a2-a669-0eeeeecee32d",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=lavaur",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.653Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84088"
+    "mobilitydatabase:tdg-84088",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/eb530fc3-b08f-42a2-a669-0eeeeecee32d"
   ]
 }

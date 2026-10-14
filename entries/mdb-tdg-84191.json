@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/4e0b1b0b-538f-463a-947a-aef63da8eeca",
+    "url": "https://api.pysae.com/api/v4/groups/lr-coeurduvar/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.658Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84191"
+    "mobilitydatabase:tdg-84191",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/4e0b1b0b-538f-463a-947a-aef63da8eeca"
   ]
 }

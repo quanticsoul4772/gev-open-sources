@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/7e4b9d82-0863-4eaa-8051-a1dcf5e086f5",
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/chartres/",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.641Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83851"
+    "mobilitydatabase:tdg-83851",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/7e4b9d82-0863-4eaa-8051-a1dcf5e086f5"
   ]
 }

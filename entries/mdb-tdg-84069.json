@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/c854a422-f68a-469b-af72-b35c2d4dc84c",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=speluncaliamone",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.651Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84069"
+    "mobilitydatabase:tdg-84069",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/c854a422-f68a-469b-af72-b35c2d4dc84c"
   ]
 }

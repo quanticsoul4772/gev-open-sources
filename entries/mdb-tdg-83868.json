@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/cf98048e-7419-46ec-a1e3-36a34e1e11a9",
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/dreux/",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.644Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83868"
+    "mobilitydatabase:tdg-83868",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/cf98048e-7419-46ec-a1e3-36a34e1e11a9"
   ]
 }

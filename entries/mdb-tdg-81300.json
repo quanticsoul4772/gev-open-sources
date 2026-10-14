@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/64511de6-ed7b-4494-b049-49bf83772f1f",
+    "url": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=LEBUS&dataFormat=gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.601Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81300"
+    "mobilitydatabase:tdg-81300",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/64511de6-ed7b-4494-b049-49bf83772f1f"
   ]
 }
