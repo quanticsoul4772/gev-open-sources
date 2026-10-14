@@ -35,6 +35,33 @@ hours a GitHub Actions run:
 An entry is usable when `health.status === 'verified'` and
 `licence.display === true`. Schema: `schema/entry.schema.json`.
 
+### Contract and versions
+
+Published files, contract version 1:
+
+| Path | Contents |
+|---|---|
+| `v1/directory.json` | every entry, with its health summary |
+| `v1/<domain>.json` | one domain's entries, e.g. `v1/transit.vehicles.json` |
+| `v1/index.json` | `generated_at`, and each file's path, domain, entry counts and bytes |
+| `v1/entry.schema.json` | the entry schema; its `$id` names the version |
+| `directory.json`, `entry.schema.json` | aliases of the v1 files |
+| `state/*.json` | job state for the next run; not part of the contract |
+
+Pages serves every file gzipped with an ETag, so a daily conditional GET of
+the domain files a consumer reads costs little.
+
+Version policy:
+
+- **Additive changes keep the version**: a new optional field, a new
+  `domain` or `format` value, a new per-domain file.
+- **Breaking changes bump it**: removing or renaming a field, changing a
+  field's type or meaning, or weakening a documented guarantee. The new
+  version is published as `v2/` beside `v1/`, and `v1/` keeps being
+  generated from the same data for at least 30 days before it is retired.
+- Every document carries `version`. Pin `v1/` paths; the unversioned aliases
+  follow the newest version.
+
 ### For consumers
 
 - The directory is harvested from third-party catalogues: treat it as
@@ -44,8 +71,10 @@ An entry is usable when `health.status === 'verified'` and
 - Its size changes gradually. A harvest adds at most 10 % of the current
   entries per run (the rest wait for later runs), and a directory under 85 %
   or over 180 % of any copy published in the last 30 hours is not published
-  (`published.json` in the state). A consumer that refreshes daily can
-  therefore reject copies under 80 % or over twice its own.
+  (`published.json` in the state). Both rules also hold per domain (for a
+  domain that had at least 3 entries). A consumer that refreshes daily can
+  therefore reject copies under 80 % or over twice its own, in total or per
+  domain file.
 - Redirects are followed only to the same origin or a host in
   `access.redirectHosts`; transit and bike-share entries carry
   `coverage.bbox`; URLs never carry credentials. New `domain` and `format`
