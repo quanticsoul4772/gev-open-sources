@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/a792a365-b5bc-48b8-81eb-512e8e83af08",
+    "url": "https://pysae.com/api/v2/groups/porto-vecchio/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.610Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81808"
+    "mobilitydatabase:tdg-81808",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/a792a365-b5bc-48b8-81eb-512e8e83af08"
   ]
 }

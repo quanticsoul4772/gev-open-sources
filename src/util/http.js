@@ -34,9 +34,10 @@ export function registrableDomain(host) {
 /**
  * GET with an identifying User-Agent, a timeout, a byte cap, and redirects
  * followed by hand: at most 3 hops, each to the same registrable domain or a
- * host the entry lists in `redirectHosts`.
+ * host the entry lists in `redirectHosts` (any host with `anyRedirect`, for
+ * one-off discovery checks).
  * @param {string} url
- * @param {{headers?: Record<string,string>, redirectHosts?: string[],
+ * @param {{headers?: Record<string,string>, redirectHosts?: string[], anyRedirect?: boolean,
  *   timeoutMs?: number, maxBytes?: number, fetchImpl?: typeof fetch}} [options]
  * @returns {Promise<{status: number, url: string, headers: Headers, body: Uint8Array}>}
  */
@@ -45,6 +46,7 @@ export async function fetchCapped(
   {
     headers = {},
     redirectHosts = [],
+    anyRedirect = false,
     timeoutMs = 20_000,
     maxBytes = 8 * 2 ** 20,
     fetchImpl = fetch,
@@ -67,6 +69,7 @@ export async function fetchCapped(
       if (!location) throw new Error(`redirect without location (${response.status})`);
       const next = new URL(location, current);
       const allowed =
+        anyRedirect ||
         registrableDomain(next.hostname) === origin ||
         redirectHosts.includes(next.hostname);
       if (!allowed) throw new Error(`redirect to unlisted host ${next.hostname}`);

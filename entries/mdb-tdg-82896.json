@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/b12cc05c-940d-4f43-b607-163f4632814e",
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/lia/vehicle-positions",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.623Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-82896"
+    "mobilitydatabase:tdg-82896",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/b12cc05c-940d-4f43-b607-163f4632814e"
   ]
 }

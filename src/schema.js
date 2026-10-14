@@ -4,10 +4,11 @@
  * `schema/entry.schema.json` is the published form of the same rules.
  */
 
-export const DOMAINS = Object.freeze(['transit.vehicles', 'bikeshare.stations']);
+export const DOMAINS = Object.freeze(['transit.vehicles', 'bikeshare.stations', 'hazards.earthquakes']);
 export const FORMATS = Object.freeze([
   'gtfs-rt.vehicle-positions',
   'gbfs.station-status',
+  'geojson.earthquakes',
 ]);
 export const LICENCE_DECIDERS = Object.freeze([
   'known-licence',
