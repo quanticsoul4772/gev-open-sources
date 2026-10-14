@@ -15,7 +15,7 @@
  * copy that has under 80 % or over twice the entries of the one it holds, in
  * total and per domain. A directory outside 85 %–180 % of any copy published
  * in the last 30 hours, in total or in a domain that had at least
- * DOMAIN_FLOOR entries, is not published (the run fails and the previous copy
+ * DOMAIN_FLOOR (50) entries, is not published (the run fails and the previous copy
  * stays live).
  */
 import fs from 'node:fs';
@@ -30,8 +30,13 @@ export const STATE_FILES = ['health.json', 'licence-cache.json', 'tombstones.jso
 /** Major contract version: the published path is v<CONTRACT_VERSION>/. */
 export const CONTRACT_VERSION = 1;
 export const SIZE_WINDOW_S = 30 * 3600;
-/** Domains smaller than this in an earlier copy are not size-guarded. */
-export const DOMAIN_FLOOR = 3;
+/**
+ * Domains smaller than this in an earlier copy are not size-guarded: one
+ * dead feed in a 5-entry domain is a 20 % drop, and failing the whole build
+ * for it would stop every domain from publishing for up to 30 hours. Matches
+ * the app, which guards a domain from 50 entries.
+ */
+export const DOMAIN_FLOOR = 50;
 export const MIN_SIZE_RATIO = 0.85;
 export const MAX_SIZE_RATIO = 1.8;
 
