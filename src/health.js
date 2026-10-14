@@ -38,10 +38,12 @@ export function emptyHealth(now) {
  * Apply one probe result.
  * @param {object} health previous state (or emptyHealth)
  * @param {{at: number, result: string, records?: number, ageS?: number|null, code?: number, inCoverage?: number|null}} probe
+ * @param {{record?: boolean}} [options] record: false applies the result to
+ *   the state machine without adding it to history (extra rounds in a run)
  * @returns {object} next state
  */
-export function applyProbe(health, probe) {
-  const h = { ...health, history: [...health.history, probe].slice(-HISTORY_CAP) };
+export function applyProbe(health, probe, { record = true } = {}) {
+  const h = { ...health, history: record ? [...health.history, probe].slice(-HISTORY_CAP) : [...health.history] };
   h.lastProbe = probe.at;
   if (PASS.has(probe.result)) {
     h.passes += 1;
