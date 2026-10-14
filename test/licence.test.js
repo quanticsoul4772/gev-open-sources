@@ -89,3 +89,8 @@ test('reclassification: noise never re-bills; material change after a week; mont
   assert.equal(needsReclassification({ ...cached, at: at(-25) }, sig, now), true);
   assert.equal(needsReclassification({ ...cached, version: PROMPT_VERSION - 1 }, sig, now), true);
 });
+
+test('indemnity blocks display', () => {
+  const d = decision({ obligations: [{ type: 'indemnify', quote: 'You must credit the Agency as the source of the data.' }] });
+  assert.equal(judge(d, d, TEXT).reason, 'obligation indemnify');
+});
