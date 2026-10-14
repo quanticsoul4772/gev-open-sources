@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-stations-velostanlib",
+  "domain": "bikeshare.stations",
+  "name": "stations-velostanlib",
+  "provider": "stations-velostanlib",
+  "coverage": {
+    "bbox": [
+      48.6624,
+      6.1549,
+      48.7072,
+      6.2047
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/nancy/gbfs/v2/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/nancy/gbfs/v2/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/nancy/gbfs/v2/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/67a10089-1ffe-4de7-9b12-d5b8a3526d5c"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "stations-velostanlib"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/stations-velostanlib"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-avant2go-si",
+  "domain": "bikeshare.stations",
+  "name": "avant2go-si",
+  "provider": "avant2go-si",
+  "coverage": {
+    "bbox": [
+      45.7418,
+      14.2232,
+      46.6693,
+      16.178
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/avant2go_si/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/avant2go_si/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/avant2go_si/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/avant2go_si/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "avant2go-si"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/avant2go-si"
+  ]
+}

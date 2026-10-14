@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-flux-temps-reel-velivert",
+  "domain": "bikeshare.stations",
+  "name": "flux-temps-reel-velivert",
+  "provider": "flux-temps-reel-velivert",
+  "coverage": {
+    "bbox": [
+      45.3845,
+      4.2509,
+      45.5423,
+      4.6273
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.sigma.fifteen.eu/gbfs/2.2/saint-etienne/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.sigma.fifteen.eu/gbfs/2.2/saint-etienne/en/station_information.json",
+      "system_information": "https://gbfs.sigma.fifteen.eu/gbfs/2.2/saint-etienne/en/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/68b1883a-5e22-4824-8211-dd7f4f027514"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "Fifteen"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/flux-temps-reel-velivert"
+  ]
+}

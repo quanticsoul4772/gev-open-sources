@@ -1,0 +1,46 @@
+{
+  "id": "transitous-us-ca-marin-airporter",
+  "domain": "transit.vehicles",
+  "name": "Marin-Airporter",
+  "provider": "Marin-Airporter",
+  "coverage": {
+    "bbox": [
+      37.7202,
+      -122.5369,
+      37.9742,
+      -122.4556
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.modeshift.app/api/v1/650b2f0d-9530-491a-a270-7581cec1d45f/transport/gtfsrt/tripupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Marin-Airporter"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.530Z"
+  },
+  "provenance": [
+    "transitous:us-ca/Marin-Airporter"
+  ]
+}

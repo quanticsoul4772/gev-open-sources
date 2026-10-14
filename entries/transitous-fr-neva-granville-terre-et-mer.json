@@ -1,0 +1,46 @@
+{
+  "id": "transitous-fr-neva-granville-terre-et-mer",
+  "domain": "transit.vehicles",
+  "name": "neva-granville-terre-et-mer",
+  "provider": "neva-granville-terre-et-mer",
+  "coverage": {
+    "bbox": [
+      48.7937,
+      -1.5753,
+      48.8577,
+      -1.526
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/neva-granville-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "neva-granville-terre-et-mer"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.528Z"
+  },
+  "provenance": [
+    "transitous:fr/neva-granville-terre-et-mer"
+  ]
+}

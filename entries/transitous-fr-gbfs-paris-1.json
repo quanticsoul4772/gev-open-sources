@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-gbfs-paris-1",
+  "domain": "bikeshare.stations",
+  "name": "gbfs-paris-1",
+  "provider": "gbfs-paris-1",
+  "coverage": {
+    "bbox": [
+      48.8583,
+      2.3339,
+      48.8583,
+      2.3339
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/parisproper/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/parisproper/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/parisproper/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/28acca68-b931-4677-9c7e-9fcc1afa1926"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "gbfs-paris-1"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/gbfs-paris-1"
+  ]
+}

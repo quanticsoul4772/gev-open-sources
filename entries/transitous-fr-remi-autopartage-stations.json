@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-remi-autopartage-stations",
+  "domain": "bikeshare.stations",
+  "name": "remi-autopartage-stations",
+  "provider": "remi-autopartage-stations",
+  "coverage": {
+    "bbox": [
+      46.5467,
+      0.3201,
+      48.2753,
+      3.0561
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.clem.mobi/remi/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.clem.mobi/remi/station_information.json",
+      "system_information": "https://gbfs.clem.mobi/remi/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/73cc556e-bea0-496d-ad83-1d0e04de4a03"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "3.0",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Clem'"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/remi-autopartage-stations"
+  ]
+}

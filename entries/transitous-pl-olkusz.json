@@ -1,0 +1,46 @@
+{
+  "id": "transitous-pl-olkusz",
+  "domain": "transit.vehicles",
+  "name": "Olkusz",
+  "provider": "Olkusz",
+  "coverage": {
+    "bbox": [
+      50.1518,
+      19.4127,
+      50.3743,
+      19.6193
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://api.odt.org.pl/feed/rt/5/trip_update/",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://spdx.org/licenses/MIT",
+    "display": false,
+    "commercial": null,
+    "attribution": "Olkusz"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no ANTHROPIC_API_KEY"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.529Z"
+  },
+  "provenance": [
+    "transitous:pl/Olkusz"
+  ]
+}

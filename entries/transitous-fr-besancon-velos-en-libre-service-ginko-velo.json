@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-besancon-velos-en-libre-service-ginko-velo",
+  "domain": "bikeshare.stations",
+  "name": "besancon-velos-en-libre-service-ginko-velo",
+  "provider": "besancon-velos-en-libre-service-ginko-velo",
+  "coverage": {
+    "bbox": [
+      47.2312,
+      5.9869,
+      47.2489,
+      6.0364
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/besancon/gbfs/v2/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/besancon/gbfs/v2/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/besancon/gbfs/v2/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/94963d3a-e623-4c1e-9475-95cae3b1b720"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "besancon-velos-en-libre-service-ginko-velo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.513Z"
+  },
+  "provenance": [
+    "transitous:fr/besancon-velos-en-libre-service-ginko-velo"
+  ]
+}

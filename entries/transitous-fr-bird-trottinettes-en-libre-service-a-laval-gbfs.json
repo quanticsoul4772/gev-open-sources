@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-bird-trottinettes-en-libre-service-a-laval-gbfs",
+  "domain": "bikeshare.stations",
+  "name": "bird-trottinettes-en-libre-service-a-laval-gbfs",
+  "provider": "bird-trottinettes-en-libre-service-a-laval-gbfs",
+  "coverage": {
+    "bbox": [
+      48.0507,
+      -0.8061,
+      48.0889,
+      -0.7367
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/provider/bird/laval/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/provider/bird/laval/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/provider/bird/laval/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/49199c12-7d39-4b18-bae0-190cc5d7c8e7"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/bird-trottinettes-en-libre-service-a-laval-gbfs"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "bird-trottinettes-en-libre-service-a-laval-gbfs"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/bird-trottinettes-en-libre-service-a-laval-gbfs"
+  ]
+}

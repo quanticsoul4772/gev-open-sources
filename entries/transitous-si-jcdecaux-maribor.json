@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-jcdecaux-maribor",
+  "domain": "bikeshare.stations",
+  "name": "jcdecaux-maribor",
+  "provider": "jcdecaux-maribor",
+  "coverage": {
+    "bbox": [
+      46.5273,
+      15.6209,
+      46.5667,
+      15.6734
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/jcdecaux_maribor/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/jcdecaux_maribor/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/jcdecaux_maribor/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/jcdecaux_maribor/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "jcdecaux-maribor"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/jcdecaux-maribor"
+  ]
+}

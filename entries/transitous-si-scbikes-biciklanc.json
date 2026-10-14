@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-scbikes-biciklanc",
+  "domain": "bikeshare.stations",
+  "name": "scbikes-biciklanc",
+  "provider": "scbikes-biciklanc",
+  "coverage": {
+    "bbox": [
+      45.9599,
+      14.2936,
+      45.9777,
+      14.3086
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/scbikes_biciklanc/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/scbikes_biciklanc/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/scbikes_biciklanc/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/scbikes_biciklanc/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "scbikes-biciklanc"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/scbikes-biciklanc"
+  ]
+}

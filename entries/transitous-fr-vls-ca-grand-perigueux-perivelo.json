@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-vls-ca-grand-perigueux-perivelo",
+  "domain": "bikeshare.stations",
+  "name": "vls-ca-grand-perigueux-perivelo",
+  "provider": "vls-ca-grand-perigueux-perivelo",
+  "coverage": {
+    "bbox": [
+      45.1719,
+      0.7083,
+      45.1869,
+      0.7726
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/perivelo_ecovelo/station_status",
+    "related": {
+      "station_information": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/perivelo_ecovelo/station_information",
+      "system_information": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/perivelo_ecovelo/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/0e2fce22-9da3-4376-8b04-831eb47de8e2"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/ODbL-1.0"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "vls-ca-grand-perigueux-perivelo"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/vls-ca-grand-perigueux-perivelo"
+  ]
+}

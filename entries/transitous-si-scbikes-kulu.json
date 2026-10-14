@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-scbikes-kulu",
+  "domain": "bikeshare.stations",
+  "name": "scbikes-kulu",
+  "provider": "scbikes-kulu",
+  "coverage": {
+    "bbox": [
+      45.8814,
+      13.8613,
+      45.8991,
+      13.9063
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/scbikes_kulu/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/scbikes_kulu/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/scbikes_kulu/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/scbikes_kulu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "scbikes-kulu"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/scbikes-kulu"
+  ]
+}

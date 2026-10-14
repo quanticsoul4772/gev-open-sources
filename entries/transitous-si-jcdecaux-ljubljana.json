@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-jcdecaux-ljubljana",
+  "domain": "bikeshare.stations",
+  "name": "jcdecaux-ljubljana",
+  "provider": "jcdecaux-ljubljana",
+  "coverage": {
+    "bbox": [
+      46.02,
+      14.4611,
+      46.1024,
+      14.6138
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/jcdecaux_ljubljana/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/jcdecaux_ljubljana/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/jcdecaux_ljubljana/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/jcdecaux_ljubljana/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "jcdecaux-ljubljana"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/jcdecaux-ljubljana"
+  ]
+}

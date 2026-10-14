@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-scbikes-gonm",
+  "domain": "bikeshare.stations",
+  "name": "scbikes-gonm",
+  "provider": "scbikes-gonm",
+  "coverage": {
+    "bbox": [
+      45.5708,
+      14.9836,
+      45.9167,
+      15.2191
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/scbikes_gonm/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/scbikes_gonm/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/scbikes_gonm/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/scbikes_gonm/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "scbikes-gonm"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/scbikes-gonm"
+  ]
+}

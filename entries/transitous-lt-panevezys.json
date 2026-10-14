@@ -1,0 +1,46 @@
+{
+  "id": "transitous-lt-panevezys",
+  "domain": "transit.vehicles",
+  "name": "panevezys",
+  "provider": "panevezys",
+  "coverage": {
+    "bbox": [
+      55.6923,
+      24.3054,
+      55.7748,
+      24.4138
+    ],
+    "countries": [
+      "LT"
+    ]
+  },
+  "access": {
+    "url": "https://www.stops.lt/panevezys/gtfs_realtime.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "panevezys"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.529Z"
+  },
+  "provenance": [
+    "transitous:lt/panevezys"
+  ]
+}

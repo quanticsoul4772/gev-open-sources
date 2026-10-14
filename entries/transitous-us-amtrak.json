@@ -1,0 +1,46 @@
+{
+  "id": "transitous-us-amtrak",
+  "domain": "transit.vehicles",
+  "name": "Amtrak",
+  "provider": "Amtrak",
+  "coverage": {
+    "bbox": [
+      27.6051,
+      -122.9336,
+      48.9517,
+      -70.4765
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://birch.catenarymaps.org/gtfs_rt?feed_id=f-amtrak~rt&feed_type=trip",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Amtrak"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.530Z"
+  },
+  "provenance": [
+    "transitous:us/Amtrak"
+  ]
+}

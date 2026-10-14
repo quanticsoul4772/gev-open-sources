@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-vls-ca-bassin-de-brive-velibeo",
+  "domain": "bikeshare.stations",
+  "name": "vls-ca-bassin-de-brive-velibeo",
+  "provider": "vls-ca-bassin-de-brive-velibeo",
+  "coverage": {
+    "bbox": [
+      45.1367,
+      1.4455,
+      45.187,
+      1.5859
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/velibeo_ecovelo/station_status",
+    "related": {
+      "station_information": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/velibeo_ecovelo/station_information",
+      "system_information": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/velibeo_ecovelo/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/a6f25e43-e1f5-4c4f-ab7b-12999527c41f"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/ODbL-1.0"
+  },
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "vls-ca-bassin-de-brive-velibeo"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/vls-ca-bassin-de-brive-velibeo"
+  ]
+}

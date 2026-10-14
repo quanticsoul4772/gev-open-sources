@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-bird-trottinettes-en-libre-service-a-gap-gbfs",
+  "domain": "bikeshare.stations",
+  "name": "bird-trottinettes-en-libre-service-a-gap-gbfs",
+  "provider": "bird-trottinettes-en-libre-service-a-gap-gbfs",
+  "coverage": {
+    "bbox": [
+      44.5281,
+      6.0437,
+      44.5695,
+      6.1037
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/provider/bird/gap/station_status.json",
+    "related": {
+      "station_information": "https://mds.bird.co/gbfs/v2/public/provider/bird/gap/station_information.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/provider/bird/gap/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/dbb236e8-21a1-4e8d-adc6-025ae3758cbe"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/bird-trottinettes-en-libre-service-a-gap-gbfs"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "bird-trottinettes-en-libre-service-a-gap-gbfs"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.513Z"
+  },
+  "provenance": [
+    "transitous:fr/bird-trottinettes-en-libre-service-a-gap-gbfs"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-etat-des-stations-de-velos-en-libre-servi-105a08cb",
+  "domain": "bikeshare.stations",
+  "name": "etat-des-stations-de-velos-en-libre-service-c-velo-gbfs-du-syndicat-mixte-des-transports-en-commun-de-lagglomeration-clermontoise-smtc-ac-1",
+  "provider": "etat-des-stations-de-velos-en-libre-service-c-velo-gbfs-du-syndicat-mixte-des-transports-en-commun-de-lagglomeration-clermontoise-smtc-ac-1",
+  "coverage": {
+    "bbox": [
+      45.7196,
+      3.0668,
+      45.8117,
+      3.2171
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://clermontferrand.publicbikesystem.net/customer/gbfs/v2/en/station_status",
+    "related": {
+      "station_information": "https://clermontferrand.publicbikesystem.net/customer/gbfs/v2/en/station_information",
+      "system_information": "https://clermontferrand.publicbikesystem.net/customer/gbfs/v2/en/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/6f67638b-a628-4365-adac-6fe9be8dddc2"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "etat-des-stations-de-velos-en-libre-service-c-velo-gbfs-du-syndicat-mixte-des-transports-en-commun-de-lagglomeration-clermontoise-smtc-ac-1"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/etat-des-stations-de-velos-en-libre-service-c-velo-gbfs-du-syndicat-mixte-des-transports-en-commun-de-lagglomeration-clermontoise-smtc-ac-1"
+  ]
+}

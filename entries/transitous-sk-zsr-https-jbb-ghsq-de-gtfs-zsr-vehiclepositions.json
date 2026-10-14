@@ -1,0 +1,46 @@
+{
+  "id": "transitous-sk-zsr-https-jbb-ghsq-de-gtfs-zsr-vehiclepositions",
+  "domain": "transit.vehicles",
+  "name": "zsr",
+  "provider": "zsr",
+  "coverage": {
+    "bbox": [
+      47.7493,
+      16.9564,
+      49.5182,
+      22.2381
+    ],
+    "countries": [
+      "SK"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/zsr/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "zsr"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.530Z"
+  },
+  "provenance": [
+    "transitous:sk/zsr"
+  ]
+}

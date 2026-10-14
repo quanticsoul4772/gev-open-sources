@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-stations-velov-de-la-metropole-de-lyon-di-ee7cd323",
+  "domain": "bikeshare.stations",
+  "name": "stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel",
+  "provider": "stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel",
+  "coverage": {
+    "bbox": [
+      45.6933,
+      4.7785,
+      45.8875,
+      4.9696
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://download.data.grandlyon.com/files/rdata/jcd_jcdecaux.jcdvelov/station_status.json",
+    "related": {
+      "station_information": "https://download.data.grandlyon.com/files/rdata/jcd_jcdecaux.jcdvelov/station_information.json",
+      "system_information": "https://download.data.grandlyon.com/files/rdata/jcd_jcdecaux.jcdvelov/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/4cf2b946-9c2c-44a9-bbc7-4b5cb9e2c2fe"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel"
+  ]
+}

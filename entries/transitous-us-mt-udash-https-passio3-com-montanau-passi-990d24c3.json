@@ -1,0 +1,46 @@
+{
+  "id": "transitous-us-mt-udash-https-passio3-com-montanau-passi-990d24c3",
+  "domain": "transit.vehicles",
+  "name": "UDASH",
+  "provider": "UDASH",
+  "coverage": {
+    "bbox": [
+      46.8369,
+      -114.0092,
+      46.8893,
+      -113.9649
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/Montanau/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "UDASH"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.530Z"
+  },
+  "provenance": [
+    "transitous:us-mt/UDASH"
+  ]
+}

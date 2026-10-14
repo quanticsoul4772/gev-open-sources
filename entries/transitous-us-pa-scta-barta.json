@@ -1,0 +1,46 @@
+{
+  "id": "transitous-us-pa-scta-barta",
+  "domain": "transit.vehicles",
+  "name": "SCTA-BARTA",
+  "provider": "SCTA-BARTA",
+  "coverage": {
+    "bbox": [
+      40.2767,
+      -76.0981,
+      40.5636,
+      -75.8213
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.modeshift.app/api/v1/9b59e837-415a-4b08-b019-9fcd7d585322/transport/gtfsrt/tripupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "SCTA-BARTA"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.530Z"
+  },
+  "provenance": [
+    "transitous:us-pa/SCTA-BARTA"
+  ]
+}

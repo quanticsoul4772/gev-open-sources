@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-micikel",
+  "domain": "bikeshare.stations",
+  "name": "micikel",
+  "provider": "micikel",
+  "coverage": {
+    "bbox": [
+      45.6251,
+      14.0202,
+      46.5643,
+      16.4482
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/micikel/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/micikel/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/micikel/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/micikel/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "micikel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/micikel"
+  ]
+}

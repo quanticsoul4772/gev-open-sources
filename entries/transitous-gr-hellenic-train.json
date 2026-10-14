@@ -1,0 +1,46 @@
+{
+  "id": "transitous-gr-hellenic-train",
+  "domain": "transit.vehicles",
+  "name": "Hellenic-Train",
+  "provider": "Hellenic-Train",
+  "coverage": {
+    "bbox": [
+      37.914,
+      21.3951,
+      41.523,
+      26.5574
+    ],
+    "countries": [
+      "GR"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/railway-gov-gr/VehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Hellenic-Train"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.529Z"
+  },
+  "provenance": [
+    "transitous:gr/Hellenic-Train"
+  ]
+}

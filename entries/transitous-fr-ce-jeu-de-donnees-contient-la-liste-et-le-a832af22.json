@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-ce-jeu-de-donnees-contient-la-liste-et-le-a832af22",
+  "domain": "bikeshare.stations",
+  "name": "ce-jeu-de-donnees-contient-la-liste-et-lemplacement-des-velostations-en-libres-service-du-service-libelo-appartenant-a-valence-romans-mobilites",
+  "provider": "ce-jeu-de-donnees-contient-la-liste-et-lemplacement-des-velostations-en-libres-service-du-service-libelo-appartenant-a-valence-romans-mobilites",
+  "coverage": {
+    "bbox": [
+      44.8757,
+      4.8411,
+      45.0564,
+      5.0603
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://valence.publicbikesystem.net/customer/gbfs/v2/en/station_status",
+    "related": {
+      "station_information": "https://valence.publicbikesystem.net/customer/gbfs/v2/en/station_information",
+      "system_information": "https://valence.publicbikesystem.net/customer/gbfs/v2/en/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/6ffc56fd-93a0-48ef-af13-17a16c676ca7"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "ce-jeu-de-donnees-contient-la-liste-et-lemplacement-des-velostations-en-libres-service-du-service-libelo-appartenant-a-valence-romans-mobilites"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/ce-jeu-de-donnees-contient-la-liste-et-lemplacement-des-velostations-en-libres-service-du-service-libelo-appartenant-a-valence-romans-mobilites"
+  ]
+}

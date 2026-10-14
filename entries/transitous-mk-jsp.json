@@ -1,0 +1,46 @@
+{
+  "id": "transitous-mk-jsp",
+  "domain": "transit.vehicles",
+  "name": "jsp",
+  "provider": "jsp",
+  "coverage": {
+    "bbox": [
+      41.8483,
+      21.2618,
+      42.1231,
+      21.7198
+    ],
+    "countries": [
+      "MK"
+    ]
+  },
+  "access": {
+    "url": "https://www.modeshift.app/api/v1/9814b106-2afe-47c8-919b-bdec6a5e521e/transport/gtfsrt/tripupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "jsp"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.529Z"
+  },
+  "provenance": [
+    "transitous:mk/jsp"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-offre-et-temps-reel-du-service-velos-en-l-c4df96c6",
+  "domain": "bikeshare.stations",
+  "name": "offre-et-temps-reel-du-service-velos-en-libre-service-naolib-de-nantes-metropole-au-format-gbfs--83867",
+  "provider": "offre-et-temps-reel-du-service-velos-en-libre-service-naolib-de-nantes-metropole-au-format-gbfs--83867",
+  "coverage": {
+    "bbox": [
+      47.1845,
+      -1.5949,
+      47.2463,
+      -1.5205
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/nantes/gbfs/v2/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/nantes/gbfs/v2/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/nantes/gbfs/v2/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/a919a06f-633a-4947-8d5b-6e66c0bfc2c4"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": null,
+    "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "offre-et-temps-reel-du-service-velos-en-libre-service-naolib-de-nantes-metropole-au-format-gbfs--83867"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "pdf terms"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/offre-et-temps-reel-du-service-velos-en-libre-service-naolib-de-nantes-metropole-au-format-gbfs--83867"
+  ]
+}

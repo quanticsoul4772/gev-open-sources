@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-velo-en-libre-service-de-la-ville-damiens",
+  "domain": "bikeshare.stations",
+  "name": "velo-en-libre-service-de-la-ville-damiens",
+  "provider": "velo-en-libre-service-de-la-ville-damiens",
+  "coverage": {
+    "bbox": [
+      49.8709,
+      2.2554,
+      49.9102,
+      2.3212
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.cyclocity.fr/contracts/amiens/gbfs/v2/station_status.json",
+    "related": {
+      "station_information": "https://api.cyclocity.fr/contracts/amiens/gbfs/v2/station_information.json",
+      "system_information": "https://api.cyclocity.fr/contracts/amiens/gbfs/v2/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/54d6c34c-4981-4382-a653-254c7ff15778"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "velo-en-libre-service-de-la-ville-damiens"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/velo-en-libre-service-de-la-ville-damiens"
+  ]
+}

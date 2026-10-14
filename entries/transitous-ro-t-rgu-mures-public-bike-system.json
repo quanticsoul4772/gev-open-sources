@@ -1,0 +1,55 @@
+{
+  "id": "transitous-ro-t-rgu-mures-public-bike-system",
+  "domain": "bikeshare.stations",
+  "name": "Târgu-Mures-public-bike-system",
+  "provider": "Târgu-Mures-public-bike-system",
+  "coverage": {
+    "bbox": [
+      46.5543,
+      24.5731,
+      46.5576,
+      24.5816
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://targumures.publicbikesystem.net/customer/gbfs/v2/en/station_status",
+    "related": {
+      "station_information": "https://targumures.publicbikesystem.net/customer/gbfs/v2/en/station_information",
+      "system_information": "https://targumures.publicbikesystem.net/customer/gbfs/v2/en/system_information",
+      "gbfs": "https://targumures.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Târgu-Mures-public-bike-system"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:ro/Târgu-Mures-public-bike-system"
+  ]
+}

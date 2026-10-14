@@ -1,0 +1,55 @@
+{
+  "id": "transitous-si-scbikes-pokolo",
+  "domain": "bikeshare.stations",
+  "name": "scbikes-pokolo",
+  "provider": "scbikes-pokolo",
+  "coverage": {
+    "bbox": [
+      46.042,
+      14.64,
+      46.0887,
+      14.8447
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/scbikes_pokolo/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.derp.si/gbfs/scbikes_pokolo/station_information.json",
+      "system_information": "https://gbfs.derp.si/gbfs/scbikes_pokolo/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/scbikes_pokolo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "scbikes-pokolo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:si/scbikes-pokolo"
+  ]
+}

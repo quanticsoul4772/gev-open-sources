@@ -1,0 +1,46 @@
+{
+  "id": "transitous-ge-tbilisi-transport-company",
+  "domain": "transit.vehicles",
+  "name": "tbilisi-transport-company",
+  "provider": "tbilisi-transport-company",
+  "coverage": {
+    "bbox": [
+      41.555,
+      44.6343,
+      41.8488,
+      45.0317
+    ],
+    "countries": [
+      "GE"
+    ]
+  },
+  "access": {
+    "url": "http://vm-gtfs.spline.de/gtfs-rt.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "tbilisi-transport-company"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.529Z"
+  },
+  "provenance": [
+    "transitous:ge/tbilisi-transport-company"
+  ]
+}

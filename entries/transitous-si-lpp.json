@@ -1,0 +1,46 @@
+{
+  "id": "transitous-si-lpp",
+  "domain": "transit.vehicles",
+  "name": "lpp",
+  "provider": "lpp",
+  "coverage": {
+    "bbox": [
+      45.9508,
+      14.4147,
+      46.1466,
+      14.6243
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://rt.gtfs.derp.si/sources/lpp/all",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "lpp"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.530Z"
+  },
+  "provenance": [
+    "transitous:si/lpp"
+  ]
+}

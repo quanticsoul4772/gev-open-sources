@@ -1,0 +1,46 @@
+{
+  "id": "transitous-pl-siedlce-https-ftp-mpk-siedlce-pl-gtfs-rt-239b99c3",
+  "domain": "transit.vehicles",
+  "name": "Siedlce",
+  "provider": "Siedlce",
+  "coverage": {
+    "bbox": [
+      52.1275,
+      22.2085,
+      52.2789,
+      22.4184
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://ftp.mpk.siedlce.pl/GTFS-RT/vehicle_positions.bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://spdx.org/licenses/MIT",
+    "display": false,
+    "commercial": null,
+    "attribution": "Siedlce"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no ANTHROPIC_API_KEY"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.530Z"
+  },
+  "provenance": [
+    "transitous:pl/Siedlce"
+  ]
+}

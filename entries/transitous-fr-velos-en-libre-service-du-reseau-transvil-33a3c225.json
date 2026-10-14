@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-velos-en-libre-service-du-reseau-transvil-33a3c225",
+  "domain": "bikeshare.stations",
+  "name": "velos-en-libre-service-du-reseau-transvilles-au-format-gbfs",
+  "provider": "velos-en-libre-service-du-reseau-transvilles-au-format-gbfs",
+  "coverage": {
+    "bbox": [
+      50.3201,
+      3.5002,
+      50.3644,
+      3.5315
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_valenciennes/en/station_status.json",
+    "related": {
+      "station_information": "https://stables.donkey.bike/api/public/gbfs/2/donkey_valenciennes/en/station_information.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/2/donkey_valenciennes/en/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/2acb1849-0dde-4079-bea7-f51d64d7202c"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/velos-en-libre-service-du-reseau-transvilles-au-format-gbfs"
+  ]
+}

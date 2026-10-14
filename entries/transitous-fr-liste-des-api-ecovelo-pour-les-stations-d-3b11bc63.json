@@ -1,0 +1,56 @@
+{
+  "id": "transitous-fr-liste-des-api-ecovelo-pour-les-stations-d-3b11bc63",
+  "domain": "bikeshare.stations",
+  "name": "liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894",
+  "provider": "liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894",
+  "coverage": {
+    "bbox": [
+      47.2717,
+      -2.4236,
+      47.2946,
+      -2.3342
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v2.2.ecovelo.mobi/labaule/fr/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v2.2.ecovelo.mobi/labaule/fr/station_information.json",
+      "system_information": "https://api.gbfs.v2.2.ecovelo.mobi/labaule/fr/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/d917a6fe-e36e-4eca-80dd-a5edc9f5c1a4"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  },
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.514Z"
+  },
+  "provenance": [
+    "transitous:fr/liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894"
+  ]
+}

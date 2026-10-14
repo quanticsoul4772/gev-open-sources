@@ -1,0 +1,56 @@
+{
+  "id": "transitous-it-gbfs-merano",
+  "domain": "bikeshare.stations",
+  "name": "gbfs-merano",
+  "provider": "gbfs-merano",
+  "coverage": {
+    "bbox": [
+      46.6564,
+      11.1484,
+      46.6737,
+      11.1652
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.v2.otp.opendatahub.com/me/2.1/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.v2.otp.opendatahub.com/me/2.1/station_information.json",
+      "system_information": "https://gbfs.v2.otp.opendatahub.com/me/2.1/system_information.json",
+      "gbfs": "https://gbfs.v2.otp.opendatahub.com/me/2.1/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.1",
+    "catalogue_licence": "https://spdx.org/licenses/CC0-1.0"
+  },
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://spdx.org/licenses/CC0-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "gbfs-merano"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:it/gbfs-merano"
+  ]
+}

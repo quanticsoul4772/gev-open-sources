@@ -1,0 +1,55 @@
+{
+  "id": "transitous-ro-sibiu-bikecity",
+  "domain": "bikeshare.stations",
+  "name": "Sibiu-BikeCity",
+  "provider": "Sibiu-BikeCity",
+  "coverage": {
+    "bbox": [
+      45.7605,
+      24.0828,
+      45.8139,
+      24.2028
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://sibiu.publicbikesystem.net/customer/gbfs/v2/en/station_status",
+    "related": {
+      "station_information": "https://sibiu.publicbikesystem.net/customer/gbfs/v2/en/station_information",
+      "system_information": "https://sibiu.publicbikesystem.net/customer/gbfs/v2/en/system_information",
+      "gbfs": "https://sibiu.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Sibiu-BikeCity"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T18:34:54.515Z"
+  },
+  "provenance": [
+    "transitous:ro/Sibiu-BikeCity"
+  ]
+}
