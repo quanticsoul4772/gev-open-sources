@@ -10,7 +10,8 @@ import { DAY_S, applyProbe, classify, emptyHealth, summary } from '../src/health
 import { validateEntry } from '../src/schema.js';
 import { BODS_ENTRY } from '../src/seed.js';
 import { parseCsv } from '../src/util/csv.js';
-import { fetchCapped, hasCredentialParam } from '../src/util/http.js';
+import { fetchCapped } from '../src/util/http.js';
+import { entryHasCredential, hasCredential, scanJson } from '../src/util/secrets.js';
 import { normalizeUrl, slugId } from '../src/util/ids.js';
 import { readZipEntry } from '../src/util/zip.js';
 
@@ -22,11 +23,45 @@ test('csv: quoted fields, doubled quotes, CRLF', () => {
   ]);
 });
 
-test('credential parameters make a URL keyed', () => {
-  assert.equal(hasCredentialParam('https://a.example/vp.pb'), false);
-  assert.equal(hasCredentialParam('https://a.example/vp.pb?agency=x'), false);
-  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key', 'accesskey', 'AccessKey', 'x-api-key', 'sessionToken', 'client_secret', 'sig'])
-    assert.equal(hasCredentialParam(`https://a.example/vp?${p}=abc`), true, p);
+test('credentials: parameter names, path keys, userinfo, fragments, token formats', () => {
+  for (const u of [
+    'https://a.example/vp.pb',
+    'https://a.example/vp.pb?agency=x&dataFormat=gtfs-rt',
+    'https://a.example/authority/keyboard/vp',
+    'https://a.example/api/key',
+  ])
+    assert.equal(hasCredential(u), false, u);
+  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key', 'accesskey', 'AccessKey', 'x-api-key', 'sessionToken', 'client_secret', 'sig', 'appid', 'client_id', 'acl:consumerKey', 'sid', 'user', 'login', 'access', 'k', 'p'])
+    assert.equal(hasCredential(`https://a.example/vp?${p}=abc`), true, p);
+  for (const u of [
+    'https://api.transitime.org/api/v1/key/dca0/agency/x/command/gtfs-rt/vehiclePositions',
+    'https://a.example/v1/token/abc/vp',
+    'https://user:pass@a.example/vp',
+    'https://a.example/vp#apikey=abc',
+    'https://a.example/vp?x=1&amp;apikey=abc',
+    'https://a.example/vp/eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0In0',
+    'not a url',
+  ])
+    assert.equal(hasCredential(u), true, u);
+});
+
+test('credentials: every published URL of an entry; JSON scan names paths, never values', () => {
+  const entry = {
+    access: { url: 'https://a.example/vp', related: { gbfs: 'https://a.example/gbfs.json' } },
+    licence: { url: 'https://a.example/terms' },
+    gbfs: { catalogue_licence: 'https://spdx.org/licenses/CC0-1.0' },
+    provenance: ['x', 'via:https://a.example/api/key/SECRET123/vp'],
+  };
+  assert.equal(entryHasCredential(entry), true, 'via: provenance');
+  assert.equal(entryHasCredential({ ...entry, provenance: ['x'] }), false);
+  const withHeaders = (headers) => ({ ...entry, provenance: ['x'], access: { ...entry.access, headers } });
+  assert.equal(entryHasCredential(withHeaders({ 'ET-Client-Name': 'gods-eye-view-transit' })), false, 'identification header');
+  assert.equal(entryHasCredential(withHeaders({ Authorization: 'Basic abc' })), true, 'auth header');
+  assert.equal(entryHasCredential(withHeaders({ 'User-Agent': 'sk-0123456789abcdefghijkl' })), true, 'token value');
+  const findings = scanJson({ entries: [entry], state: { 'https://a.example/vp?token=SECRET123': { at: 1 } } });
+  assert.deepEqual(findings.map((f) => f.path), ['$.entries[0].provenance[1]', '$.state[key #0]']);
+  assert.ok(!JSON.stringify(findings).includes('SECRET123'));
+  assert.deepEqual(scanJson([{ access: { url: 'https://a.example/vp', headers: { 'X-Api': 'v' } } }]).map((f) => f.path), ['$[0].access.headers']);
 });
 
 test('ids are schema-valid, prefixes not doubled, long ids hashed', () => {
