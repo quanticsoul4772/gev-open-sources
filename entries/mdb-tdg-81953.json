@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/37b144db-2013-49ff-9a24-b8396f19655d",
+    "url": "https://api.pysae.com/api/v4/groups/agen/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.610Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81953"
+    "mobilitydatabase:tdg-81953",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/37b144db-2013-49ff-9a24-b8396f19655d"
   ]
 }

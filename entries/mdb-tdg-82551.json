@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/9030bf31-561f-4ed2-b8c4-74e6189e46bf",
+    "url": "https://flers-agglo.plateforme-2cloud.com/api/gtfsrt/2.0/vehiclepositions/FLERS-5197-3181-6523/bin?network=FA",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.618Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-82551"
+    "mobilitydatabase:tdg-82551",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/9030bf31-561f-4ed2-b8c4-74e6189e46bf"
   ]
 }

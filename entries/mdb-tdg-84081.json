@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/6cfa1c1c-43ef-4b55-9cae-b106180eefdb",
+    "url": "https://ext.saemartinique.ovh:4435/ProfilGtfsRt2_0RSProducer-Centre/VehiclePosition.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.652Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84081"
+    "mobilitydatabase:tdg-84081",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/6cfa1c1c-43ef-4b55-9cae-b106180eefdb"
   ]
 }

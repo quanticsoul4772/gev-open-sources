@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/98230d13-cccb-4c27-b0bc-d1b9341ca77b",
+    "url": "http://94.143.218.42:13486/ProfilGtfsRt2_0RSProducer-TCAT/VehiclePosition.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.604Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81543"
+    "mobilitydatabase:tdg-81543",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/98230d13-cccb-4c27-b0bc-d1b9341ca77b"
   ]
 }

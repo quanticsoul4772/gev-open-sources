@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/bbc60d61-bf8f-40ec-9e3b-9c040cc2b06e",
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?src=true&dataset=agglopaysdissoire",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.608Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-81698"
+    "mobilitydatabase:tdg-81698",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/bbc60d61-bf8f-40ec-9e3b-9c040cc2b06e"
   ]
 }

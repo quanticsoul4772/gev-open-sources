@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/8d37ead3-7887-438b-9b0b-e2675d0e3f2c",
+    "url": "https://cvlmobilite.plateforme-2cloud.com/api/gtfsrt/2.0/vehiclepositions/CVLMOBILITE-4423-7657-4931/bin",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.626Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83192"
+    "mobilitydatabase:tdg-83192",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/8d37ead3-7887-438b-9b0b-e2675d0e3f2c"
   ]
 }

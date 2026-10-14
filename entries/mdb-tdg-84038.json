@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/d499d5a2-8bba-4862-847a-0423f7d8cf23",
+    "url": "https://opendata.transports-lia.fr/gtfs-rt/VehiclePosition.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.648Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84038"
+    "mobilitydatabase:tdg-84038",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/d499d5a2-8bba-4862-847a-0423f7d8cf23"
   ]
 }

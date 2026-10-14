@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/24e2ecf9-82a3-4bfc-bf86-db6ec81c480f",
+    "url": "https://api.pysae.com/api/v4/groups/agglobus-cavem/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.647Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84017"
+    "mobilitydatabase:tdg-84017",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/24e2ecf9-82a3-4bfc-bf86-db6ec81c480f"
   ]
 }
