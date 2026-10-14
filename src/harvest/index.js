@@ -5,7 +5,8 @@
  * that failed a check are remembered in harvest-rejects.json for a week.
  */
 import { pathToFileURL } from 'node:url';
-import { readEntries, readState, writeEntry, writeState } from '../store.js';
+import { readEntries, readState, removeEntry, writeEntry, writeState } from '../store.js';
+import { hasCredentialParam } from '../util/http.js';
 import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas } from './atlas.js';
 import { fillTransitCoverage } from './catalogue.js';
@@ -50,6 +51,14 @@ export function knownUrlsOf(entries) {
 
 export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const existing = readEntries();
+  // An entry whose URL carries a credential is not keyless: drop it (it may
+  // predate a stricter credential check).
+  for (const [id, e] of existing)
+    if ([e.access.url, ...Object.values(e.access.related || {})].some(hasCredentialParam)) {
+      removeEntry(id);
+      existing.delete(id);
+      console.log(`harvest: removed ${id}: URL carries a credential`);
+    }
   const tombstones = readState('tombstones.json', {});
   const rejects = readState('harvest-rejects.json', {});
   const knownIds = new Set(existing.keys());
