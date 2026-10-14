@@ -214,3 +214,18 @@ test('redirects: a cross-domain permalink resolves to its final URL', async () =
   assert.equal(await crossDomainTarget('https://a.example.org/old', fetchImpl), null, 'same-domain redirect left to the prober');
   assert.equal(await crossDomainTarget('https://b.example/feed', fetchImpl), null);
 });
+
+test('redirects: a final URL carrying a key is never stored; the host is allowed instead', async () => {
+  const { resolveRedirects } = await import('../src/harvest/redirects.js');
+  const hops = { 'https://www.data.gouv.fr/r/k': 'https://app.mecatran.com/vehicles/x?apiKey=abc123' };
+  const fetchImpl = async (url) =>
+    hops[url]
+      ? new Response(null, { status: 302, headers: { location: hops[url] } })
+      : new Response('ok', { status: 200 });
+  const entry = { id: 'k', access: { url: 'https://www.data.gouv.fr/r/k', redirectHosts: [] }, provenance: ['test'] };
+  const [changed] = await resolveRedirects([entry], fetchImpl);
+  assert.equal(changed.access.url, 'https://www.data.gouv.fr/r/k');
+  assert.deepEqual(changed.access.redirectHosts, ['app.mecatran.com']);
+  assert.deepEqual(changed.provenance, ['test']);
+  assert.deepEqual(await resolveRedirects([changed], fetchImpl), [], 'already allowed: no change');
+});

@@ -1,4 +1,4 @@
-import { USER_AGENT, registrableDomain } from '../util/http.js';
+import { USER_AGENT, hasCredentialParam, registrableDomain } from '../util/http.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 
 /**
@@ -35,7 +35,10 @@ export async function crossDomainTarget(url, fetchImpl = fetch) {
 
 /**
  * Point entries that redirect to another domain at their final URL; the
- * original stays in provenance.
+ * original stays in provenance. A final URL that carries a credential (an
+ * operator key the permalink hands out) is never stored: the entry keeps the
+ * permalink and lists the target host in `redirectHosts`, so the prober
+ * follows the redirect instead.
  * @param {object[]} entries entries to check (new ones, and ones whose last probe failed)
  * @returns {Promise<object[]>} the entries that changed
  */
@@ -50,6 +53,12 @@ export async function resolveRedirects(entries, fetchImpl = fetch) {
   entries.forEach((entry, i) => {
     const target = typeof targets[i] === 'string' ? targets[i] : null;
     if (!target) return;
+    if (hasCredentialParam(target)) {
+      const host = new URL(target).hostname;
+      if (!entry.access.redirectHosts.includes(host))
+        changed.push({ ...entry, access: { ...entry.access, redirectHosts: [...entry.access.redirectHosts, host] } });
+      return;
+    }
     changed.push({
       ...entry,
       access: { ...entry.access, url: target },
