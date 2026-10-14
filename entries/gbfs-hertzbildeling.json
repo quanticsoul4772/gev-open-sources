@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-hertzbildeling",
+  "domain": "bikeshare.stations",
+  "name": "Hertz Bildeling — Bildeling",
+  "provider": "Hertz Bildeling",
+  "coverage": {
+    "bbox": [
+      58.1879,
+      5.3302,
+      63.4292,
+      11.0577
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/hertzbildeling/station_status",
+    "related": {
+      "station_information": "https://api.entur.io/mobility/v2/gbfs/v3/hertzbildeling/station_information",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/hertzbildeling/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/hertzbildeling/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "hertzbildeling",
+    "version": "3.0"
+  },
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Hertz Bildeling"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unavailable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-14T15:40:13.665Z"
+  },
+  "provenance": [
+    "gbfs-systems:hertzbildeling"
+  ]
+}

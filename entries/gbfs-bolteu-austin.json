@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "obligation no_redistribution"
+        "quote": "no ANTHROPIC_API_KEY"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:28:52.451Z"
+    "at": "2026-10-14T15:40:13.657Z"
   },
   "provenance": [
     "gbfs-systems:BoltEU_Austin"

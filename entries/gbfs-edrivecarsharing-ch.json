@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "terms do not apply to this data"
+        "quote": "no ANTHROPIC_API_KEY"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:26:14.556Z"
+    "at": "2026-10-14T15:40:13.663Z"
   },
   "provenance": [
     "gbfs-systems:edrivecarsharing_ch"
