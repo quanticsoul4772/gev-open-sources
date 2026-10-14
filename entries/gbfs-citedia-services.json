@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Citédia Services",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Citédia Services"
   },
   "licence_decision": {
     "by": "known-licence",

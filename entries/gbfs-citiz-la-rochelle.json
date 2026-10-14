@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Citiz La Rochelle",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Citiz La Rochelle"
   },
   "licence_decision": {
     "by": "known-licence",

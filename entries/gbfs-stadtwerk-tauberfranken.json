@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Stadtwerk Tauberfranken GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "Stadtwerk Tauberfranken GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

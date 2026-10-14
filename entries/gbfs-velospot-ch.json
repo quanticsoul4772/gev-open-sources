@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Velospot",
-        "language": "en"
-      }
-    ]
+    "attribution": "Velospot"
   },
   "licence_decision": {
     "by": "gbfs-v3-default",

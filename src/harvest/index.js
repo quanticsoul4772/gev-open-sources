@@ -47,6 +47,21 @@ export function withinAddLimits(ready, existing) {
   return out;
 }
 
+/** An entry with its access URLs in plain ASCII form (`new URL().href`, e.g. ø → %C3%B8). */
+export function withAsciiUrls(entry) {
+  const ascii = (u) => new URL(u).href;
+  return {
+    ...entry,
+    access: {
+      ...entry.access,
+      url: ascii(entry.access.url),
+      ...(entry.access.related
+        ? { related: Object.fromEntries(Object.entries(entry.access.related).map(([k, u]) => [k, ascii(u)])) }
+        : {}),
+    },
+  };
+}
+
 export function mergeCandidates(existing, candidates, tombstones) {
   const urls = new Set([...existing.values()].map((e) => normalizeUrl(e.access.url)));
   const added = [];
@@ -116,7 +131,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     .map((e) => covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
   const added = withinAddLimits(ready, existing);
-  for (const entry of added) if (!entryHasCredential(entry)) writeEntry(entry);
+  for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withAsciiUrls(entry));
   for (const entry of updated) if (redirected.has(entry.id) || covered.has(entry.id)) writeEntry(covered.get(entry.id) || entry);
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
   const dedupedIds = new Set(deduped.map((e) => e.id));

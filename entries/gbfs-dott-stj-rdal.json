@@ -19,7 +19,7 @@
     "related": {
       "station_information": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/station_information.json",
       "system_information": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/system_information.json",
-      "gbfs": "https://gbfs.api.ridedott.com/public/v2/stjørdal/gbfs.json"
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/gbfs.json"
     },
     "redirectHosts": [],
     "unzip": null,

@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Autohaus Baur GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "Autohaus Baur GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

@@ -36,16 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "language": "de",
-        "text": ""
-      },
-      {
-        "language": "en",
-        "text": ""
-      }
-    ]
+    "attribution": "Donkey Republic Augsburg"
   },
   "licence_decision": {
     "by": "known-licence",

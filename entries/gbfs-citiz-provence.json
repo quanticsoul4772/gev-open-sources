@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Autopartage Provence",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Autopartage Provence"
   },
   "licence_decision": {
     "by": "known-licence",

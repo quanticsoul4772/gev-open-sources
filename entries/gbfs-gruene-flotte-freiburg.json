@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Die Grüne Flotte",
-        "language": "de"
-      }
-    ]
+    "attribution": "Die Grüne Flotte"
   },
   "licence_decision": {
     "by": "known-licence",

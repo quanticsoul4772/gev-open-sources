@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "VOI",
-        "language": "en"
-      }
-    ]
+    "attribution": "VOI"
   },
   "licence_decision": {
     "by": "gbfs-v3-default",

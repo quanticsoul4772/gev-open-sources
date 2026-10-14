@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Autohaus Bölz GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "Autohaus Bölz GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

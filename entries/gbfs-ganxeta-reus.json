@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "language": "en",
-        "text": "REUS MOBILITAT I SERVEIS SA"
-      }
-    ]
+    "attribution": "REUS MOBILITAT I SERVEIS SA"
   },
   "licence_decision": {
     "by": "gbfs-v3-default",

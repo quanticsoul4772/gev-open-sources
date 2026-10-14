@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "mikar GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "mikar GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

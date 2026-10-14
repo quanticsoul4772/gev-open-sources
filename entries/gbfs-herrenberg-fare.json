@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "FaRe - das Bananologen Lastenrad",
-        "language": "de"
-      }
-    ]
+    "attribution": "FaRe - das Bananologen Lastenrad"
   },
   "licence_decision": {
     "by": "known-licence",
