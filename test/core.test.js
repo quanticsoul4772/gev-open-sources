@@ -400,3 +400,9 @@ test('credentials: token prefixes inside a slug are not tokens', () => {
   for (const text of ['sk-ant-api03-abcdefghijklmnopqrst', 'Bearer sk-abcdefghijklmnopqrstuv', 'k=ghp_abcdefghijklmnopqrstuvwxyz0123456', 'AKIAABCDEFGHIJKLMNOP'])
     assert.equal(scanJson({ v: text }).length, 1, text);
 });
+
+test('credentials: text that only starts like a URL (a schema pattern) is not a URL', () => {
+  assert.deepEqual(scanJson({ pattern: '^https://[!-~]+$', doc: 'see https://a.example/terms' }), []);
+  assert.equal(scanJson({ note: 'feed at https://a.example/vp?apikey=abc' }).length, 1, 'a real URL in text is still checked');
+  assert.equal(hasCredential('not a url'), true, 'entry URLs stay strict');
+});
