@@ -116,3 +116,22 @@ export async function resolveTransitCandidates(candidates, { knownUrls, rejects,
   });
   return entries;
 }
+
+/**
+ * Fill a missing coverage.bbox on transit entries from one fetch of their
+ * vehicles (the app places a feed by its bbox and skips entries without one).
+ * @param {object[]} entries
+ * @returns {Promise<Map<string, object>>} id → entry with a bbox, for those filled
+ */
+export async function fillTransitCoverage(entries, { fetchImpl } = {}) {
+  const todo = entries.filter((e) => e.domain === 'transit.vehicles' && !e.coverage.bbox);
+  const checks = await runPooled(todo, (e) => hostOfUrl(e.access.url), (e) => checkVehicleFeed(e.access.url, { fetchImpl }), {
+    global: 24,
+    perHost: 2,
+  });
+  const filled = new Map();
+  todo.forEach((e, i) => {
+    if (checks[i]?.ok) filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: checks[i].bbox } });
+  });
+  return filled;
+}

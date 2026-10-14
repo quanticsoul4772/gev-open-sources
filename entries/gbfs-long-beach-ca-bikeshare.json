@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://www.longbeachbikeshare.com/opendata/station_status.json",
+    "url": "https://www.longbeachbikeshare.com/opendata/station_status.json",
     "related": {
       "station_information": "http://www.longbeachbikeshare.com/opendata/station_information.json",
       "system_information": "http://www.longbeachbikeshare.com/opendata/system_information.json",
@@ -50,6 +50,7 @@
     "at": "2026-10-14T15:21:57.950Z"
   },
   "provenance": [
-    "gbfs-systems:long_beach_ca_bikeshare"
+    "gbfs-systems:long_beach_ca_bikeshare",
+    "via:http://www.longbeachbikeshare.com/opendata/station_status.json"
   ]
 }

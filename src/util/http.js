@@ -17,25 +17,11 @@ export function hasCredentialParam(url) {
 }
 
 /**
- * Registrable domain, approximated as the last two labels (three when the
- * second-level label is a common public suffix like co.uk / gov.uk / com.au).
- * @param {string} host
- */
-export function registrableDomain(host) {
-  const labels = host.toLowerCase().split('.');
-  const take =
-    labels.length > 2 &&
-    /^(co|com|gov|org|net|ac|edu|govt|nsw|vic|qld)$/.test(labels.at(-2))
-      ? 3
-      : 2;
-  return labels.slice(-take).join('.');
-}
-
-/**
  * GET with an identifying User-Agent, a timeout, a byte cap, and redirects
- * followed by hand: at most 3 hops, each to the same registrable domain or a
- * host the entry lists in `redirectHosts` (any host with `anyRedirect`, for
- * one-off discovery checks).
+ * followed by hand: at most 3 hops, each to the URL's own origin or a host the
+ * entry lists in `redirectHosts` (any host with `anyRedirect`, for one-off
+ * discovery checks). The same rule as the app's transit proxy, so a feed the
+ * prober verifies is one the app can fetch.
  * @param {string} url
  * @param {{headers?: Record<string,string>, redirectHosts?: string[], anyRedirect?: boolean,
  *   timeoutMs?: number, maxBytes?: number, fetchImpl?: typeof fetch}} [options]
@@ -52,7 +38,7 @@ export async function fetchCapped(
     fetchImpl = fetch,
   } = {},
 ) {
-  const origin = registrableDomain(new URL(url).hostname);
+  const origin = new URL(url).origin;
   let current = url;
   for (let hop = 0; hop <= 3; hop += 1) {
     const response = await fetchImpl(current, {
@@ -70,7 +56,7 @@ export async function fetchCapped(
       const next = new URL(location, current);
       const allowed =
         anyRedirect ||
-        registrableDomain(next.hostname) === origin ||
+        next.origin === origin ||
         redirectHosts.includes(next.hostname);
       if (!allowed) throw new Error(`redirect to unlisted host ${next.hostname}`);
       current = next.href;

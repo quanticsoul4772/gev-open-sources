@@ -4,7 +4,12 @@
   "name": "BAS.MY Alor Setar",
   "provider": "BAS.MY Alor Setar",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      5.6044,
+      100.3163,
+      6.1615,
+      100.5256
+    ],
     "countries": []
   },
   "access": {
