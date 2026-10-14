@@ -25,7 +25,7 @@ test('csv: quoted fields, doubled quotes, CRLF', () => {
 test('credential parameters make a URL keyed', () => {
   assert.equal(hasCredentialParam('https://a.example/vp.pb'), false);
   assert.equal(hasCredentialParam('https://a.example/vp.pb?agency=x'), false);
-  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key'])
+  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key', 'accesskey', 'AccessKey', 'x-api-key', 'sessionToken', 'client_secret', 'sig'])
     assert.equal(hasCredentialParam(`https://a.example/vp?${p}=abc`), true, p);
 });
 
