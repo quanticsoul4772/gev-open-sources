@@ -420,4 +420,20 @@ test('pool: tasks waiting on a busy host all run, with perHost 1', async () => {
   }, { perHost: 1 });
   assert.deepEqual(results, [10, 20, 30, 40], 'none dropped when the last running task finishes');
   assert.deepEqual(order, [1, 2, 3, 4]);
+
+test('credentials: same rule as the app — key-like segment variants, path parameters, AIza and Bearer', () => {
+  for (const u of [
+    'https://a.example/v1/api-key/abc/vp',
+    'https://a.example/v1/access_token/abc/vp',
+    'https://a.example/v1/auth-token/abc/vp',
+    'https://a.example/feed;apikey=abc/vp',
+    'https://a.example/feed;x=sk-abc/vp',
+    'https://a.example/key;v=1/abc',
+    'https://a.example/vp?k2=AIzaSyA',
+    'https://a.example/vp?h=Bearer%20abc',
+    'https://a.example/AIzaSyExample/vp',
+  ])
+    assert.equal(hasCredential(u), true, u);
+  for (const u of ['https://a.example/feed;version=2/vp', 'https://a.example/v1/keyboard/vp', 'https://a.example/vp?skin=sk'])
+    assert.equal(hasCredential(u), false, u);
 });

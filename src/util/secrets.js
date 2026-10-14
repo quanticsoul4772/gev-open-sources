@@ -13,13 +13,18 @@ const CREDENTIAL_NAME =
  * ones that authenticate it (Entur requires ET-Client-Name).
  */
 export const ALLOWED_HEADERS = Object.freeze(['et-client-name', 'user-agent', 'accept']);
-/** Path segments whose next segment is a credential (`/api/v1/key/<key>/…`). */
-const KEY_SEGMENT = /^(key|keys|token|apikey|api_key|api-key|accesskey|access_key|auth|secret)$/i;
+/** Path segments whose next segment is a credential (`/api/v1/key/<key>/…`). Same as the app's rule. */
+const KEY_SEGMENT = /^(key|keys|token|secret|auth|api[-_]?key|access[-_]?key|access[-_]?token|auth[-_]?token)$/i;
+/**
+ * A URL part (path segment, parameter value) that starts like a token. Same as
+ * the app's rule (gods-eye-view sourceDirectory.js hasCredential).
+ */
+const TOKEN_PREFIX = /^(eyJ|AKIA|AIza|sk-|ghp_|xox|[Bb]earer\s)/;
 /** Values in a known token format, anywhere in a string. */
 // Each prefix must start a token: not after a letter, digit, `_` or `-`, so a
 // slug like `transitous-sk-zsr-…` (Slovakia) is not an `sk-` key.
 const SECRET_VALUE =
-  /(?<![\w-])(?:eyJ[\w-]{10,}\.[\w-]{10,}|AKIA[0-9A-Z]{16}|sk-[\w-]{20,}|ghp_[A-Za-z0-9]{30,}|xox[abposr]-[\w-]{10,})/;
+  /(?<![\w-])(?:eyJ[\w-]{10,}\.[\w-]{10,}|AKIA[0-9A-Z]{16}|AIza[\w-]{30,}|sk-[\w-]{20,}|ghp_[A-Za-z0-9]{30,}|xox[abposr]-[\w-]{10,}|[Bb]earer\s+[\w.~+/=-]{8,})/;
 
 const decode = (s) => {
   try {
@@ -43,10 +48,19 @@ export function hasCredential(url) {
     return true;
   }
   if (u.username || u.password) return true;
-  const names = [...u.searchParams.keys(), ...new URLSearchParams(u.hash.replace(/^#!?\/?/, '')).keys()];
-  if (names.some((n) => CREDENTIAL_NAME.test(n))) return true;
-  const segments = u.pathname.split('/').map(decode);
-  return segments.some((s, i) => KEY_SEGMENT.test(s) && Boolean(segments[i + 1]));
+  // Parameters: query, fragment, and path parameters (`name;a=b;c=d`).
+  const params = [...u.searchParams, ...new URLSearchParams(u.hash.replace(/^#!?\/?/, ''))];
+  const segments = [];
+  for (const part of u.pathname.split('/').map(decode)) {
+    const [name, ...pairs] = part.split(';');
+    segments.push(name);
+    for (const pair of pairs) {
+      const at = pair.indexOf('=');
+      params.push(at < 0 ? [pair, ''] : [pair.slice(0, at), pair.slice(at + 1)]);
+    }
+  }
+  if (params.some(([n, v]) => CREDENTIAL_NAME.test(n) || TOKEN_PREFIX.test(v))) return true;
+  return segments.some((s, i) => TOKEN_PREFIX.test(s) || (KEY_SEGMENT.test(s) && Boolean(segments[i + 1])));
 }
 
 /** Every URL an entry publishes: access, related, licence, catalogue licence, `via:` provenance. */
