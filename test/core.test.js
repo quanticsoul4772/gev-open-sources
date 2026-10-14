@@ -406,3 +406,20 @@ test('credentials: text that only starts like a URL (a schema pattern) is not a 
   assert.equal(scanJson({ note: 'feed at https://a.example/vp?apikey=abc' }).length, 1, 'a real URL in text is still checked');
   assert.equal(hasCredential('not a url'), true, 'entry URLs stay strict');
 });
+
+test('credentials: same rule as the app — key-like segment variants, path parameters, AIza and Bearer', () => {
+  for (const u of [
+    'https://a.example/v1/api-key/abc/vp',
+    'https://a.example/v1/access_token/abc/vp',
+    'https://a.example/v1/auth-token/abc/vp',
+    'https://a.example/feed;apikey=abc/vp',
+    'https://a.example/feed;x=sk-abc/vp',
+    'https://a.example/key;v=1/abc',
+    'https://a.example/vp?k2=AIzaSyA',
+    'https://a.example/vp?h=Bearer%20abc',
+    'https://a.example/AIzaSyExample/vp',
+  ])
+    assert.equal(hasCredential(u), true, u);
+  for (const u of ['https://a.example/feed;version=2/vp', 'https://a.example/v1/keyboard/vp', 'https://a.example/vp?skin=sk'])
+    assert.equal(hasCredential(u), false, u);
+});
