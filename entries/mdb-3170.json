@@ -4,7 +4,12 @@
   "name": "BAS.MY Kuala Terengganu",
   "provider": "BAS.MY Kuala Terengganu",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      5.2551,
+      103.1442,
+      5.2953,
+      103.1843
+    ],
     "countries": []
   },
   "access": {

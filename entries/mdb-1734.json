@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://www.vre.org/gtfs-realtime/VehiclePositionFeed",
+    "url": "https://www.vre.org/gtfs-realtime/VehiclePositionFeed",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.356Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1734"
+    "mobilitydatabase:mdb-1734",
+    "via:http://www.vre.org/gtfs-realtime/VehiclePositionFeed"
   ]
 }

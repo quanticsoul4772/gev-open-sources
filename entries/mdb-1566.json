@@ -4,7 +4,12 @@
   "name": "Beach Cities Transit",
   "provider": "Beach Cities Transit",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      33.7992,
+      -118.4129,
+      33.9723,
+      -118.3368
+    ],
     "countries": [
       "US"
     ]

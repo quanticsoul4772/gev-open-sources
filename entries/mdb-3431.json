@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://drive.google.com/uc?export=download&id=12OWJm28dWakSVM3TnmajNWmUrmcytZPq",
+    "url": "https://drive.usercontent.google.com/download?id=12OWJm28dWakSVM3TnmajNWmUrmcytZPq&export=download",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.489Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-3431"
+    "mobilitydatabase:mdb-3431",
+    "via:https://drive.google.com/uc?export=download&id=12OWJm28dWakSVM3TnmajNWmUrmcytZPq"
   ]
 }

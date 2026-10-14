@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "http://peacehealthrides.com/opendata/station_status.json",
+    "url": "https://peacehealthrides.com/opendata/station_status.json",
     "related": {
       "station_information": "http://peacehealthrides.com/opendata/station_information.json",
       "system_information": "http://peacehealthrides.com/opendata/system_information.json",
@@ -50,6 +50,7 @@
     "at": "2026-10-14T15:21:58.192Z"
   },
   "provenance": [
-    "gbfs-systems:peacehealth_rides"
+    "gbfs-systems:peacehealth_rides",
+    "via:http://peacehealthrides.com/opendata/station_status.json"
   ]
 }

@@ -4,7 +4,12 @@
   "name": "Druskininkai",
   "provider": "Druskininkai",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      53.9762,
+      23.9386,
+      54.1343,
+      24.0634
+    ],
     "countries": []
   },
   "access": {

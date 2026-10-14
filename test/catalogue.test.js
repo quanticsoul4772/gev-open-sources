@@ -168,3 +168,15 @@ test('adapters: earthquake GeoJSON counts events, freshness from metadata.genera
   assert.deepEqual(ADAPTERS['geojson.earthquakes'](body, [30, -130, 45, -110]), { records: 2, newest: 1_700_000_123, inCoverage: 0.5 });
   assert.throws(() => ADAPTERS['geojson.earthquakes'](new TextEncoder().encode('{}'), null), /FeatureCollection/);
 });
+
+test('coverage: a missing transit bbox is filled from the vehicles; others untouched', async () => {
+  const { fillTransitCoverage } = await import('../src/harvest/catalogue.js');
+  const fetchImpl = fakeFetch({ 'https://a.example/vp': { body: feedBytes([[45.5, -73.6]]) } });
+  const entry = (id, url, bbox) => ({ id, domain: 'transit.vehicles', coverage: { bbox, countries: [] }, access: { url } });
+  const filled = await fillTransitCoverage(
+    [entry('none', 'https://a.example/vp', null), entry('down', 'https://a.example/404', null), entry('has', 'https://a.example/vp', [1, 1, 2, 2])],
+    { fetchImpl },
+  );
+  assert.deepEqual([...filled.keys()], ['none']);
+  assert.deepEqual(filled.get('none').coverage.bbox, pointsBbox([[45.5, -73.6]]));
+});
