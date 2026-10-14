@@ -58,6 +58,9 @@ test('credentials: every published URL of an entry; JSON scan names paths, never
   assert.equal(entryHasCredential(withHeaders({ 'ET-Client-Name': 'gods-eye-view-transit' })), false, 'identification header');
   assert.equal(entryHasCredential(withHeaders({ Authorization: 'Basic abc' })), true, 'auth header');
   assert.equal(entryHasCredential(withHeaders({ 'User-Agent': 'sk-0123456789abcdefghijkl' })), true, 'token value');
+  assert.equal(entryHasCredential(withHeaders({ Accept: '' })), true, 'empty value');
+  assert.equal(entryHasCredential(withHeaders({ Accept: 'x'.repeat(101) })), true, 'over 100 characters');
+  assert.equal(entryHasCredential(withHeaders({ Accept: 'café' })), true, 'non-ASCII');
   const findings = scanJson({ entries: [entry], state: { 'https://a.example/vp?token=SECRET123': { at: 1 } } });
   assert.deepEqual(findings.map((f) => f.path), ['$.entries[0].provenance[1]', '$.state[key #0]']);
   assert.ok(!JSON.stringify(findings).includes('SECRET123'));
@@ -279,23 +282,113 @@ test('redirects: a final URL carrying a key is never stored; the host is allowed
   assert.deepEqual(await resolveRedirects([changed], fetchImpl), [], 'already allowed: no change');
 });
 
-test('size guard: refuses a directory outside 85–180 % of any copy published in 30 h', async () => {
+test('size guard: refuses a directory outside 85–180 % of any copy published in 30 h, in total and per domain', async () => {
   const { sizeProblem } = await import('../src/build.js');
   const now = 100 * 3600;
+  const sizes = (entries, domains = {}) => ({ entries, domains });
   const published = [
     { at: now - 40 * 3600, entries: 100 }, // too old to count
     { at: now - 20 * 3600, entries: 1000 },
-    { at: now - 6 * 3600, entries: 1100 },
+    { at: now - 6 * 3600, entries: 1100, domains: { 'transit.vehicles': 600, 'bikeshare.stations': 495, 'hazards.earthquakes': 5, tiny: 2 } },
   ];
-  assert.equal(sizeProblem(published, 1200, now), null);
-  assert.match(sizeProblem(published, 900, now), /935|0\.85/, 'drop below 85 % of the newest');
-  assert.match(sizeProblem(published, 1900, now), /1000 published/, 'over 1.8× the day-old copy');
-  assert.equal(sizeProblem([], 5000, now), null, 'first publish');
+  const ok = { 'transit.vehicles': 650, 'bikeshare.stations': 540, 'hazards.earthquakes': 5, tiny: 9 };
+  assert.equal(sizeProblem(published, sizes(1200, ok), now), null, 'a domain under the floor of 3 is not guarded');
+  assert.match(sizeProblem(published, sizes(900, ok), now), /0\.85/, 'total drop below 85 % of the newest');
+  assert.match(sizeProblem(published, sizes(1900, ok), now), /1000 published/, 'over 1.8× the day-old copy');
+  assert.match(sizeProblem(published, sizes(1100, { ...ok, 'bikeshare.stations': 400 }), now), /^bikeshare\.stations: 400/, 'domain drop');
+  assert.match(sizeProblem(published, sizes(1100, { ...ok, 'hazards.earthquakes': 10 }), now), /^hazards\.earthquakes/, 'domain at the floor is guarded');
+  assert.equal(sizeProblem([], sizes(5000), now), null, 'first publish');
 });
 
-test('harvest: new entries capped at 10 % of the directory per run', async () => {
-  const { addLimit } = await import('../src/harvest/index.js');
+test('publish: v1 files per domain, and an index of counts and bytes', async () => {
+  const { buildDirectory, indexOf, publishedFiles } = await import('../src/build.js');
+  const entry = (id, domain) => ({ id, domain, licence: { display: true } });
+  const directory = buildDirectory(
+    new Map([['a', entry('a', 'transit.vehicles')], ['b', entry('b', 'bikeshare.stations')], ['c', entry('c', 'transit.vehicles')]]),
+    { a: { ...emptyHealth(0), status: 'verified', history: [] } },
+    100,
+  );
+  const files = publishedFiles(directory);
+  assert.deepEqual([...files.keys()], ['directory.json', 'bikeshare.stations.json', 'transit.vehicles.json']);
+  const transit = files.get('transit.vehicles.json');
+  assert.equal(transit.domain, 'transit.vehicles');
+  assert.equal(transit.version, 1);
+  assert.deepEqual(transit.entries.map((e) => e.id), ['a', 'c']);
+  assert.deepEqual(transit.counts, { entries: 2, verified: 1, display: 2, usable: 1 });
+  const texts = new Map([...files].map(([f, d]) => [f, JSON.stringify(d)]));
+  const index = indexOf(directory, texts);
+  assert.deepEqual(index.files.map((f) => [f.path, f.domain, f.entries]), [
+    ['directory.json', null, 3],
+    ['bikeshare.stations.json', 'bikeshare.stations', 1],
+    ['transit.vehicles.json', 'transit.vehicles', 2],
+  ]);
+  assert.equal(index.files[0].bytes, Buffer.byteLength(texts.get('directory.json')));
+  assert.ok(!('sha256' in index.files[0]));
+});
+
+test('harvest: new entries capped at 10 % of the directory and of each domain per run', async () => {
+  const { addLimit, withinAddLimits } = await import('../src/harvest/index.js');
   assert.equal(addLimit(1200), 120);
   assert.equal(addLimit(5), 1);
-  assert.equal(addLimit(0), Infinity, 'first harvest unlimited');
+  assert.equal(addLimit(0), Infinity, 'first harvest (or a new domain) unlimited');
+  const existing = new Map();
+  for (let i = 0; i < 100; i += 1) existing.set(`t${i}`, { domain: 'transit' });
+  for (let i = 0; i < 20; i += 1) existing.set(`b${i}`, { domain: 'bikes' });
+  const ready = [
+    ...Array.from({ length: 5 }, (_, i) => ({ id: `nb${i}`, domain: 'bikes' })),
+    ...Array.from({ length: 20 }, (_, i) => ({ id: `nt${i}`, domain: 'transit' })),
+    { id: 'q1', domain: 'quakes' },
+  ];
+  const added = withinAddLimits(ready, existing);
+  const by = (d) => added.filter((e) => e.domain === d).length;
+  assert.equal(added.length, 12, '10 % of 120');
+  assert.equal(by('bikes'), 2, '10 % of 20');
+  assert.equal(by('transit'), 10, 'the rest of the total');
+  assert.equal(by('quakes'), 0, 'the total limit was reached first');
+});
+
+test('probe rounds: a passing candidate is verified in one run; history keeps only the final result', async () => {
+  const { probeRounds, ROUND_SPACING_S } = await import('../src/probe.js');
+  let t = 1_000_000;
+  const clock = () => t;
+  const sleep = async (ms) => {
+    t += ms / 1000;
+  };
+  const entry = (id, minInterval = 15) => ({ id, access: { url: `https://${id}.example/vp`, min_interval_s: minInterval } });
+  const seen = [];
+  const results = { fresh: 'ok', slow: 'ok', down: 'http', blocked: 'blocked', old: 'ok' };
+  const probe = async (e, at) => {
+    seen.push([e.id, at]);
+    return { at, result: results[e.id], records: 5 };
+  };
+  const health = { old: { ...emptyHealth(0), status: 'verified', history: [] } };
+  const { counts, rounds } = await probeRounds(
+    [entry('fresh'), entry('slow', 600), entry('down'), entry('blocked'), entry('old')],
+    health,
+    { probe, clock, sleep },
+  );
+  assert.equal(rounds, 3);
+  assert.equal(health.fresh.status, 'verified');
+  assert.equal(health.fresh.history.length, 1, 'only the final result is recorded');
+  const times = (id) => seen.filter(([x]) => x === id).map(([, at]) => at);
+  assert.equal(times('fresh').length, 3);
+  assert.ok(times('slow')[1] - times('slow')[0] >= 600, 'spacing honours min_interval_s');
+  assert.ok(times('fresh')[1] - times('fresh')[0] >= ROUND_SPACING_S);
+  for (const id of ['down', 'blocked', 'old']) assert.equal(times(id).length, 1, `${id} probed once`);
+  assert.equal(counts.ok, 3);
+});
+
+test('probe rounds: no round starts past the budget', async () => {
+  const { probeRounds } = await import('../src/probe.js');
+  let t = 0;
+  const seen = [];
+  await probeRounds([{ id: 'a', access: { url: 'https://a.example/vp', min_interval_s: 15 } }], {}, {
+    probe: async (e, at) => (seen.push(at), { at, result: 'ok', records: 1 }),
+    clock: () => t,
+    sleep: async (ms) => {
+      t += ms / 1000;
+    },
+    budgetS: 400,
+  });
+  assert.equal(seen.length, 2, 'the third round would start at 600 s > 400 s');
 });

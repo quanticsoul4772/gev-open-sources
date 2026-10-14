@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://quanticsoul4772.github.io/gev-open-sources/entry.schema.json",
+  "$id": "https://quanticsoul4772.github.io/gev-open-sources/v1/entry.schema.json",
   "title": "Keyless data source entry",
   "type": "object",
   "required": ["id", "domain", "name", "provider", "coverage", "access", "format", "licence", "licence_decision", "provenance"],
@@ -69,6 +69,19 @@
         "at": { "type": ["string", "null"] }
       }
     },
-    "provenance": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+    "provenance": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "health": {
+      "description": "Present in published directories, not in entries/. Probe summary over the last 7 days.",
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["candidate", "verified", "degraded", "dead"] },
+        "success_7d": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "median_age_s": { "type": ["number", "null"] },
+        "records": { "type": ["number", "null"] },
+        "last_ok": { "type": ["number", "null"], "description": "epoch seconds of the last probe with records" },
+        "last_probe": { "type": ["number", "null"], "description": "epoch seconds" }
+      }
+    }
   }
 }

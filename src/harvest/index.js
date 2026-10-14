@@ -23,8 +23,29 @@ import { USGS_ENTRIES } from './usgs.js';
  */
 export const MAX_ADDED_RATIO = 0.1;
 
-/** How many new entries a directory of `size` may take in one run. */
+/** How many new entries a directory (or domain) of `size` may take in one run. */
 export const addLimit = (size) => (size > 0 ? Math.max(1, Math.floor(size * MAX_ADDED_RATIO)) : Infinity);
+
+/**
+ * New entries this run may add, in priority order: at most addLimit of the
+ * directory overall and of each domain (the app guards both).
+ * @param {object[]} ready candidates in priority order
+ * @param {Map<string, object>} existing
+ */
+export function withinAddLimits(ready, existing) {
+  const domainSize = {};
+  for (const e of existing.values()) domainSize[e.domain] = (domainSize[e.domain] || 0) + 1;
+  const taken = {};
+  const total = addLimit(existing.size);
+  const out = [];
+  for (const e of ready) {
+    if (out.length >= total) break;
+    if ((taken[e.domain] || 0) >= addLimit(domainSize[e.domain] || 0)) continue;
+    taken[e.domain] = (taken[e.domain] || 0) + 1;
+    out.push(e);
+  }
+  return out;
+}
 
 /** An entry with its access URLs in plain ASCII form (`new URL().href`, e.g. ø → %C3%B8). */
 export function withAsciiUrls(entry) {
@@ -109,7 +130,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const ready = deduped
     .map((e) => covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
-  const added = ready.slice(0, addLimit(existing.size));
+  const added = withinAddLimits(ready, existing);
   for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withAsciiUrls(entry));
   for (const entry of updated) if (redirected.has(entry.id) || covered.has(entry.id)) writeEntry(covered.get(entry.id) || entry);
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
