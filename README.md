@@ -71,8 +71,9 @@ Version policy:
 - Its size changes gradually. A harvest adds at most 10 % of the current
   entries per run (the rest wait for later runs), and a directory under 85 %
   or over 180 % of any copy published in the last 30 hours is not published
-  (`published.json` in the state). Both rules also hold per domain (for a
-  domain that had at least 3 entries). A consumer that refreshes daily can
+  (`published.json` in the state). Both rules also hold per domain, for a
+  domain that had at least 50 entries (smaller domains never block a
+  publish). A consumer that refreshes daily can
   therefore reject copies under 80 % or over twice its own, in total or per
   domain file.
 - Redirects are followed only to the same origin or a host in

@@ -289,14 +289,15 @@ test('size guard: refuses a directory outside 85–180 % of any copy published i
   const published = [
     { at: now - 40 * 3600, entries: 100 }, // too old to count
     { at: now - 20 * 3600, entries: 1000 },
-    { at: now - 6 * 3600, entries: 1100, domains: { 'transit.vehicles': 600, 'bikeshare.stations': 495, 'hazards.earthquakes': 5, tiny: 2 } },
+    { at: now - 6 * 3600, entries: 1100, domains: { 'transit.vehicles': 600, 'bikeshare.stations': 445, 'hazards.earthquakes': 5, cams: 50 } },
   ];
-  const ok = { 'transit.vehicles': 650, 'bikeshare.stations': 540, 'hazards.earthquakes': 5, tiny: 9 };
-  assert.equal(sizeProblem(published, sizes(1200, ok), now), null, 'a domain under the floor of 3 is not guarded');
+  const ok = { 'transit.vehicles': 650, 'bikeshare.stations': 490, 'hazards.earthquakes': 5, cams: 50 };
+  assert.equal(sizeProblem(published, sizes(1200, ok), now), null);
+  assert.equal(sizeProblem(published, sizes(1200, { ...ok, 'hazards.earthquakes': 4 }), now), null, 'one dead feed in a small domain never blocks publishing');
   assert.match(sizeProblem(published, sizes(900, ok), now), /0\.85/, 'total drop below 85 % of the newest');
   assert.match(sizeProblem(published, sizes(1900, ok), now), /1000 published/, 'over 1.8× the day-old copy');
-  assert.match(sizeProblem(published, sizes(1100, { ...ok, 'bikeshare.stations': 400 }), now), /^bikeshare\.stations: 400/, 'domain drop');
-  assert.match(sizeProblem(published, sizes(1100, { ...ok, 'hazards.earthquakes': 10 }), now), /^hazards\.earthquakes/, 'domain at the floor is guarded');
+  assert.match(sizeProblem(published, sizes(1100, { ...ok, 'bikeshare.stations': 300 }), now), /^bikeshare\.stations: 300/, 'domain drop');
+  assert.match(sizeProblem(published, sizes(1100, { ...ok, cams: 40 }), now), /^cams: 40/, 'a domain at the floor of 50 is guarded');
   assert.equal(sizeProblem([], sizes(5000), now), null, 'first publish');
 });
 
