@@ -222,3 +222,15 @@ test('peer-to-peer car sharing is left out; fleet car sharing stays', async () =
   assert.deepEqual(entries, []);
   assert.equal(fetched, 0, 'skipped before any fetch');
 });
+
+test('resolver: an oversized station_information means no stations bbox, not a network failure', async () => {
+  const base = 'https://big.example';
+  const fetchImpl = routes({
+    [`${base}/gbfs.json`]: discovery(base, ['station_status', 'station_information', 'vehicle_status']),
+    [`${base}/station_information.json`]: 'x'.repeat(9 * 2 ** 20),
+    [`${base}/vehicle_status.json`]: { data: { vehicles: [vehicle('v', 45.1, 7.6)] } },
+  });
+  const r = await resolveGbfsSystem(system(base), { want: { stations: true, vehicles: true }, fetchImpl });
+  assert.equal(r.reasons.stations, 'no located stations');
+  assert.equal(r.vehicles.id, 'gbfs-x-vehicles', 'the vehicles entry still resolves');
+});

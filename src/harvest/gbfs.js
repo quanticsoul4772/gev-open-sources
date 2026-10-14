@@ -129,8 +129,14 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
   const stationsKeyless = Boolean(status && info) && !hasCredential(status) && !hasCredential(info);
   let stationsBbox = null;
   if (stationsKeyless) {
-    const stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
-    if (stations.status === 200)
+    let stations = null;
+    try {
+      stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
+    } catch (error) {
+      // Too big is an answer (no bbox), not a network failure for the host breaker.
+      if (!OVER_CAP.test(error.message)) throw error;
+    }
+    if (stations?.status === 200)
       try {
         stationsBbox = stationBbox(json(stations.body));
       } catch {

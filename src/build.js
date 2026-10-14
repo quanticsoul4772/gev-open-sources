@@ -59,8 +59,8 @@ export function sizeProblem(published, sizes, now) {
 
 /**
  * Domains (of at least DOMAIN_FLOOR entries) whose size moved out of range: a
- * warning, not a refusal. One operator going dark (e.g. Getaround, 18 % of the
- * vehicles domain) must not stop every domain publishing; the app keeps its
+ * warning, not a refusal. One operator going dark (a large one such as Lime or
+ * Dott) must not stop every domain publishing; the app keeps its
  * own copy of a domain that moves too much.
  * @returns {string[]}
  */
