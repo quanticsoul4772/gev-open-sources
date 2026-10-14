@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "confitech Dienstleistungs GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "confitech Dienstleistungs GmbH"
   },
   "licence_decision": {
     "by": "known-licence",

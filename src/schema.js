@@ -18,10 +18,11 @@ export const LICENCE_DECIDERS = Object.freeze([
 ]);
 export const ID_PATTERN = /^[a-z0-9][a-z0-9-]{1,63}$/;
 
+/** An http(s) URL written as plain ASCII (non-ASCII percent-encoded, as `new URL().href`). */
 const isUrl = (value) => {
   try {
     const u = new URL(value);
-    return u.protocol === 'https:' || u.protocol === 'http:';
+    return (u.protocol === 'https:' || u.protocol === 'http:') && /^[\x21-\x7e]+$/.test(value);
   } catch {
     return false;
   }
@@ -72,6 +73,7 @@ export function validateEntry(entry) {
   need(l && typeof l.display === 'boolean', 'licence.display missing');
   need(l?.url === null || isUrl(l?.url), 'licence.url invalid');
   need(l?.commercial === null || typeof l?.commercial === 'boolean', 'licence.commercial invalid');
+  need(l?.attribution === null || typeof l?.attribution === 'string', 'licence.attribution invalid');
   const d = entry.licence_decision;
   need(d && LICENCE_DECIDERS.includes(d.by), 'licence_decision.by unknown');
   need(Array.isArray(d?.evidence), 'licence_decision.evidence missing');

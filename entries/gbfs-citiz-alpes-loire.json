@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Alpes Autopartage",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Alpes Autopartage"
   },
   "licence_decision": {
     "by": "known-licence",

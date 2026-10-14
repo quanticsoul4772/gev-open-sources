@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Autopartage Bourgogne Franche-Comté",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Autopartage Bourgogne Franche-Comté"
   },
   "licence_decision": {
     "by": "known-licence",

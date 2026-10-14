@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Lilas Autopartage",
-        "language": "fr"
-      }
-    ]
+    "attribution": "Lilas Autopartage"
   },
   "licence_decision": {
     "by": "known-licence",

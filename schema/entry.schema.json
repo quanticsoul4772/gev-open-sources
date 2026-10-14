@@ -4,6 +4,13 @@
   "title": "Keyless data source entry",
   "type": "object",
   "required": ["id", "domain", "name", "provider", "coverage", "access", "format", "licence", "licence_decision", "provenance"],
+  "if": { "type": "object", "properties": { "licence": { "type": "object", "properties": { "display": { "const": true } }, "required": ["display"] } }, "required": ["licence"] },
+  "then": { "type": "object", "properties": { "licence_decision": { "type": "object", "properties": { "by": { "not": { "const": "none" } } } } } },
+  "$defs": {
+    "httpUrl": { "type": "string", "format": "uri", "pattern": "^https?://" },
+    "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+    "lon": { "type": "number", "minimum": -180, "maximum": 180 }
+  },
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
     "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes"] },
@@ -15,7 +22,15 @@
       "properties": {
         "bbox": {
           "description": "[minLat, minLon, maxLat, maxLon]",
-          "oneOf": [{ "type": "null" }, { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4 }]
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "array",
+              "prefixItems": [{ "$ref": "#/$defs/lat" }, { "$ref": "#/$defs/lon" }, { "$ref": "#/$defs/lat" }, { "$ref": "#/$defs/lon" }],
+              "items": false,
+              "minItems": 4
+            }
+          ]
         },
         "countries": { "type": "array", "items": { "type": "string" } }
       }
@@ -24,8 +39,8 @@
       "type": "object",
       "required": ["url", "redirectHosts", "unzip", "headers", "min_interval_s"],
       "properties": {
-        "url": { "type": "string", "format": "uri" },
-        "related": { "type": "object", "additionalProperties": { "type": "string", "format": "uri" } },
+        "url": { "$ref": "#/$defs/httpUrl" },
+        "related": { "type": "object", "additionalProperties": { "$ref": "#/$defs/httpUrl" } },
         "redirectHosts": { "type": "array", "items": { "type": "string" } },
         "unzip": { "type": ["string", "null"] },
         "headers": { "type": "object", "additionalProperties": { "type": "string" } },
@@ -38,7 +53,7 @@
       "required": ["id", "url", "display", "commercial", "attribution"],
       "properties": {
         "id": { "type": ["string", "null"] },
-        "url": { "type": ["string", "null"] },
+        "url": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/httpUrl" }] },
         "display": { "type": "boolean" },
         "commercial": { "type": ["boolean", "null"] },
         "attribution": { "type": ["string", "null"] }

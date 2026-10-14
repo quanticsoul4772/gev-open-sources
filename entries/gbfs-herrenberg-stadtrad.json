@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "stadtRad - das stadtnavi Lastenrad",
-        "language": "de"
-      }
-    ]
+    "attribution": "stadtRad - das stadtnavi Lastenrad"
   },
   "licence_decision": {
     "by": "known-licence",

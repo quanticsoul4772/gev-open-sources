@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "language": "en",
-        "text": "pony"
-      }
-    ]
+    "attribution": "pony"
   },
   "licence_decision": {
     "by": "gbfs-v3-default",

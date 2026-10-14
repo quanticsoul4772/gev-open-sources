@@ -36,16 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "language": "de",
-        "text": "Feine Räder"
-      },
-      {
-        "language": "en",
-        "text": "Feine Räder"
-      }
-    ]
+    "attribution": "Feine Räder"
   },
   "licence_decision": {
     "by": "known-licence",

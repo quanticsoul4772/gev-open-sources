@@ -36,12 +36,7 @@
     "url": null,
     "display": true,
     "commercial": true,
-    "attribution": [
-      {
-        "text": "Autohaus Albert GmbH",
-        "language": "de"
-      }
-    ]
+    "attribution": "Autohaus Albert GmbH"
   },
   "licence_decision": {
     "by": "known-licence",
