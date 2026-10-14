@@ -58,6 +58,9 @@ test('credentials: every published URL of an entry; JSON scan names paths, never
   assert.equal(entryHasCredential(withHeaders({ 'ET-Client-Name': 'gods-eye-view-transit' })), false, 'identification header');
   assert.equal(entryHasCredential(withHeaders({ Authorization: 'Basic abc' })), true, 'auth header');
   assert.equal(entryHasCredential(withHeaders({ 'User-Agent': 'sk-0123456789abcdefghijkl' })), true, 'token value');
+  assert.equal(entryHasCredential(withHeaders({ Accept: '' })), true, 'empty value');
+  assert.equal(entryHasCredential(withHeaders({ Accept: 'x'.repeat(101) })), true, 'over 100 characters');
+  assert.equal(entryHasCredential(withHeaders({ Accept: 'café' })), true, 'non-ASCII');
   const findings = scanJson({ entries: [entry], state: { 'https://a.example/vp?token=SECRET123': { at: 1 } } });
   assert.deepEqual(findings.map((f) => f.path), ['$.entries[0].provenance[1]', '$.state[key #0]']);
   assert.ok(!JSON.stringify(findings).includes('SECRET123'));
@@ -298,4 +301,50 @@ test('harvest: new entries capped at 10 % of the directory per run', async () =>
   assert.equal(addLimit(1200), 120);
   assert.equal(addLimit(5), 1);
   assert.equal(addLimit(0), Infinity, 'first harvest unlimited');
+});
+
+test('probe rounds: a passing candidate is verified in one run; history keeps only the final result', async () => {
+  const { probeRounds, ROUND_SPACING_S } = await import('../src/probe.js');
+  let t = 1_000_000;
+  const clock = () => t;
+  const sleep = async (ms) => {
+    t += ms / 1000;
+  };
+  const entry = (id, minInterval = 15) => ({ id, access: { url: `https://${id}.example/vp`, min_interval_s: minInterval } });
+  const seen = [];
+  const results = { fresh: 'ok', slow: 'ok', down: 'http', blocked: 'blocked', old: 'ok' };
+  const probe = async (e, at) => {
+    seen.push([e.id, at]);
+    return { at, result: results[e.id], records: 5 };
+  };
+  const health = { old: { ...emptyHealth(0), status: 'verified', history: [] } };
+  const { counts, rounds } = await probeRounds(
+    [entry('fresh'), entry('slow', 600), entry('down'), entry('blocked'), entry('old')],
+    health,
+    { probe, clock, sleep },
+  );
+  assert.equal(rounds, 3);
+  assert.equal(health.fresh.status, 'verified');
+  assert.equal(health.fresh.history.length, 1, 'only the final result is recorded');
+  const times = (id) => seen.filter(([x]) => x === id).map(([, at]) => at);
+  assert.equal(times('fresh').length, 3);
+  assert.ok(times('slow')[1] - times('slow')[0] >= 600, 'spacing honours min_interval_s');
+  assert.ok(times('fresh')[1] - times('fresh')[0] >= ROUND_SPACING_S);
+  for (const id of ['down', 'blocked', 'old']) assert.equal(times(id).length, 1, `${id} probed once`);
+  assert.equal(counts.ok, 3);
+});
+
+test('probe rounds: no round starts past the budget', async () => {
+  const { probeRounds } = await import('../src/probe.js');
+  let t = 0;
+  const seen = [];
+  await probeRounds([{ id: 'a', access: { url: 'https://a.example/vp', min_interval_s: 15 } }], {}, {
+    probe: async (e, at) => (seen.push(at), { at, result: 'ok', records: 1 }),
+    clock: () => t,
+    sleep: async (ms) => {
+      t += ms / 1000;
+    },
+    budgetS: 400,
+  });
+  assert.equal(seen.length, 2, 'the third round would start at 600 s > 400 s');
 });

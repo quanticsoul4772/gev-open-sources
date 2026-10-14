@@ -58,10 +58,18 @@ export function entryUrls(entry) {
   ].filter(Boolean);
 }
 
-/** Whether an entry's request headers could carry a credential. */
+/**
+ * Whether an entry's request headers could carry a credential: a name not in
+ * ALLOWED_HEADERS, or a value that isn't 1–100 printable ASCII characters or
+ * looks like a token. The same rule as the app (gods-eye-view A0).
+ */
 export function headersHaveCredential(headers = {}) {
   return Object.entries(headers).some(
-    ([name, value]) => !ALLOWED_HEADERS.includes(name.toLowerCase()) || SECRET_VALUE.test(String(value)),
+    ([name, value]) =>
+      !ALLOWED_HEADERS.includes(name.toLowerCase()) ||
+      typeof value !== 'string' ||
+      !/^[ -~]{1,100}$/.test(value) ||
+      SECRET_VALUE.test(value),
   );
 }
 
