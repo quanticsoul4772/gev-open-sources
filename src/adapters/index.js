@@ -47,4 +47,19 @@ export const ADAPTERS = Object.freeze({
     if (!Array.isArray(stations)) throw new Error('no data.stations');
     return { records: stations.length, newest: gbfsTime(doc.last_updated), inCoverage: null };
   },
+  /** USGS summary GeoJSON: freshness is when the file was generated, not the newest event. */
+  'geojson.earthquakes'(body, bbox) {
+    const doc = JSON.parse(new TextDecoder().decode(body));
+    if (doc?.type !== 'FeatureCollection' || !Array.isArray(doc.features)) throw new Error('not a FeatureCollection');
+    const generated = Number(doc.metadata?.generated);
+    const points = doc.features
+      .map((f) => f?.geometry?.coordinates)
+      .filter((c) => Array.isArray(c) && Number.isFinite(c[0]) && Number.isFinite(c[1]))
+      .map(([lon, lat]) => [lat, lon]);
+    return {
+      records: doc.features.length,
+      newest: Number.isFinite(generated) ? Math.floor(generated / 1000) : null,
+      inCoverage: share(points, bbox),
+    };
+  },
 });
