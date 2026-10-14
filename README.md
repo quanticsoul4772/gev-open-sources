@@ -32,6 +32,22 @@ hours a GitHub Actions run:
 An entry is usable when `health.status === 'verified'` and
 `licence.display === true`. Schema: `schema/entry.schema.json`.
 
+### For consumers
+
+- The directory is harvested from third-party catalogues: treat it as
+  untrusted input and validate every entry yourself. It publishes facts
+  (access recipe, coverage, licence, health), never a per-app "compatible"
+  flag, so consumer rules can't drift from a copy kept here.
+- Its size changes gradually. A harvest adds at most 10 % of the current
+  entries per run (the rest wait for later runs), and a directory under 85 %
+  or over 180 % of any copy published in the last 30 hours is not published
+  (`published.json` in the state). A consumer that refreshes daily can
+  therefore reject copies under 80 % or over twice its own.
+- Redirects are followed only to the same origin or a host in
+  `access.redirectHosts`; transit and bike-share entries carry
+  `coverage.bbox`; URLs never carry credentials. New `domain` and `format`
+  values may appear: ignore the ones you don't decode.
+
 ```
 npm ci
 npm test
