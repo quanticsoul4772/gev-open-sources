@@ -392,3 +392,10 @@ test('probe rounds: no round starts past the budget', async () => {
   });
   assert.equal(seen.length, 2, 'the third round would start at 600 s > 400 s');
 });
+
+test('credentials: token prefixes inside a slug are not tokens', () => {
+  const slug = 'transitous-sk-zsr-https-jbb-ghsq-de-gtfs-zsr-vehiclepositions';
+  assert.deepEqual(scanJson({ id: slug, [slug]: { status: 'candidate' } }), []);
+  for (const text of ['sk-ant-api03-abcdefghijklmnopqrst', 'Bearer sk-abcdefghijklmnopqrstuv', 'k=ghp_abcdefghijklmnopqrstuvwxyz0123456', 'AKIAABCDEFGHIJKLMNOP'])
+    assert.equal(scanJson({ v: text }).length, 1, text);
+});
