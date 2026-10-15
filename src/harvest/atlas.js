@@ -60,36 +60,26 @@ const citable = (license) => Boolean(license?.spdx_identifier || license?.url);
 /**
  * Licences Atlas records for realtime vehicle-position URLs, whichever
  * catalogue the directory found the feed in. A realtime feed's own licence
- * comes first; else the licence of a feed run by the same operator (usually
- * its static GTFS), marked `borrowed`, which the licence job accepts only
- * when it is a known licence.
+ * comes first; else the licence of its own static twin (`f-x` for
+ * `f-x~rt`), marked `borrowed`, which the licence job accepts only when it
+ * is a known licence. Nothing is borrowed through shared operators: an
+ * aggregator that lists many agencies would lend one agency's licence to
+ * another.
  * @param {Array<{doc: object}>} docs parsed feeds/*.dmfr.json
  * @returns {Map<string, {licenceUrl: string, attribution: string|null, feedId: string, borrowed: boolean}>}
  *   keyed by normalized vehicle-positions URL
  */
 export function atlasLicences(docs) {
   const feeds = new Map();
-  const group = new Map(); // feed id → ids of feeds with the same operator
-  const join = (ids) => {
-    const all = new Set(ids.filter(Boolean));
-    for (const id of [...all]) for (const other of group.get(id) || []) all.add(other);
-    for (const id of all) group.set(id, all);
-  };
-  for (const { doc } of docs) {
-    for (const feed of doc.feeds || []) {
-      feeds.set(feed.id, feed);
-      join([feed.id, feed.id.replace(/~rt$/, '')]);
-      for (const op of feed.operators || []) join([feed.id, ...(op.associated_feeds || []).map((f) => f.feed_onestop_id)]);
-    }
-    for (const op of doc.operators || []) join((op.associated_feeds || []).map((f) => f.feed_onestop_id));
-  }
+  for (const { doc } of docs) for (const feed of doc.feeds || []) feeds.set(feed.id, feed);
   const out = new Map();
   for (const feed of feeds.values()) {
     const url = feed.urls?.realtime_vehicle_positions;
     if (feed.spec !== 'gtfs-rt' || !/^https?:\/\//.test(url || '')) continue;
     let source = citable(feed.license) ? feed : null;
     const borrowed = !source;
-    if (!source) source = [...(group.get(feed.id) || [])].map((id) => feeds.get(id)).find((f) => citable(f?.license)) || null;
+    const twin = feeds.get(feed.id.replace(/~rt$/, ''));
+    if (!source && twin !== feed && citable(twin?.license)) source = twin;
     if (!source) continue;
     const licenceUrl = catalogueLicenceUrl(source.license.spdx_identifier, source.license.url);
     if (!licenceUrl || hasCredential(licenceUrl)) continue;
@@ -98,12 +88,16 @@ export function atlasLicences(docs) {
   return out;
 }
 
+const isAtlasTag = (p) => p.startsWith('licence-atlas:') || p.startsWith('licence-borrowed:atlas:');
+
 /**
- * Transit entries given a licence from Atlas: those with none, and those
- * holding a borrowed one when Atlas has the realtime feed's own.
+ * Transit entries whose licence changes because of Atlas: those with none,
+ * those holding a borrowed one when Atlas has the realtime feed's own, and
+ * those holding an Atlas licence that Atlas now gives differently or no
+ * longer gives (taken back, so a stale borrowing doesn't stick).
  * @param {object[]} entries
  * @param {ReturnType<typeof atlasLicences>} licences
- * @returns {Map<string, object>} id → entry with the Atlas licence
+ * @returns {Map<string, object>} id → entry with its licence from Atlas updated
  */
 export function withAtlasLicences(entries, licences) {
   const out = new Map();
@@ -111,16 +105,20 @@ export function withAtlasLicences(entries, licences) {
     if (e.domain !== 'transit.vehicles') continue;
     const urls = [e.access.url, ...e.provenance.filter((p) => p.startsWith('via:')).map((p) => p.slice(4))];
     const hit = urls.map((u) => licences.get(normalizeUrl(u))).find(Boolean);
-    if (!hit || hit.licenceUrl === e.licence.url) continue;
-    const holdsBorrowed = e.provenance.some((p) => p.startsWith('licence-borrowed:'));
-    if (e.licence.url && !(holdsBorrowed && !hit.borrowed)) continue;
+    const fromAtlas = e.provenance.some(isAtlasTag);
+    const others = e.provenance.filter((p) => !isAtlasTag(p));
+    if (!hit) {
+      if (fromAtlas) out.set(e.id, { ...e, licence: { ...e.licence, url: null, attribution: e.provider }, provenance: others });
+      continue;
+    }
+    const tag = hit.borrowed ? `licence-borrowed:atlas:${hit.feedId}` : `licence-atlas:${hit.feedId}`;
+    if (hit.licenceUrl === e.licence.url && e.provenance.includes(tag)) continue;
+    const holdsBorrowed = others.some((p) => p.startsWith('licence-borrowed:'));
+    if (e.licence.url && !fromAtlas && !(holdsBorrowed && !hit.borrowed)) continue;
     out.set(e.id, {
       ...e,
-      licence: { ...e.licence, url: hit.licenceUrl, attribution: hit.attribution || e.licence.attribution },
-      provenance: [
-        ...e.provenance.filter((p) => !p.startsWith('licence-borrowed:') && !p.startsWith('licence-atlas:')),
-        hit.borrowed ? `licence-borrowed:atlas:${hit.feedId}` : `licence-atlas:${hit.feedId}`,
-      ],
+      licence: { ...e.licence, url: hit.licenceUrl, attribution: hit.attribution || e.provider },
+      provenance: [...others.filter((p) => !p.startsWith('licence-borrowed:')), tag],
     });
   }
   return out;

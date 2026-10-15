@@ -320,7 +320,14 @@ test('atlas licences: the realtime feed\'s own, else its operator\'s (borrowed);
           { id: 'f-own~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://own.example/vp' }, license: { spdx_identifier: 'CC-BY-4.0', attribution_text: 'Own Transit' } },
           { id: 'f-sib~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://sib.example/vp' } },
           { id: 'f-sib', spec: 'gtfs', urls: { static_current: 'https://sib.example/gtfs.zip' }, license: { url: 'https://sib.example/terms' } },
+          // Tied only through an aggregator's operator list: never borrows the aggregator's licence.
           { id: 'f-none~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://none.example/vp' } },
+          {
+            id: 'f-country~all',
+            spec: 'gtfs',
+            license: { spdx_identifier: 'CC-BY-4.0' },
+            operators: [{ associated_feeds: [{ feed_onestop_id: 'f-none~rt' }, { feed_onestop_id: 'f-own~rt' }] }],
+          },
           { id: 'f-key~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://key.example/vp' }, license: { url: 'https://key.example/terms?apikey=abc' } },
         ],
       },
@@ -333,7 +340,7 @@ test('atlas licences: the realtime feed\'s own, else its operator\'s (borrowed);
   assert.equal(licences.has('https://key.example/vp'), false, 'a licence URL with a credential is never used');
 
   const entry = (id, url, licenceUrl, provenance = ['mobilitydatabase:x']) => ({
-    id, domain: 'transit.vehicles', access: { url }, provenance,
+    id, domain: 'transit.vehicles', provider: 'Op', access: { url }, provenance,
     licence: { id: null, url: licenceUrl, display: false, commercial: null, attribution: 'Op' },
   });
   const out = withAtlasLicences(
@@ -352,6 +359,15 @@ test('atlas licences: the realtime feed\'s own, else its operator\'s (borrowed);
   assert.ok(out.get('missing').provenance.includes('licence-atlas:f-own~rt'));
   assert.ok(out.get('borrowed').provenance.includes('licence-borrowed:atlas:f-sib'), 'tier 1 only');
   assert.deepEqual(out.get('was-borrowed').provenance, ['mdb:x', 'licence-atlas:f-own~rt'], 'the feed\'s own licence replaces a borrowed one');
+  // An Atlas licence Atlas no longer gives (here: once borrowed from an aggregator) is taken back.
+  const stale = withAtlasLicences(
+    [entry('stale', 'https://none.example/vp', 'https://spdx.org/licenses/CC-BY-4.0', ['mdb:x', 'licence-borrowed:atlas:f-country~all'])],
+    licences,
+  );
+  assert.equal(stale.get('stale').licence.url, null);
+  assert.deepEqual(stale.get('stale').provenance, ['mdb:x']);
+  // Unchanged: nothing to write.
+  assert.equal(withAtlasLicences([out.get('missing')], licences).size, 0);
 });
 
 test('known licences: JCDecaux\'s Licence Ouverte (Etalab 1.0) allows display', () => {
