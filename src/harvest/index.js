@@ -8,7 +8,7 @@ import { pathToFileURL } from 'node:url';
 import { readEntries, readState, removeEntry, writeEntry, writeState } from '../store.js';
 import { entryHasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
-import { harvestAtlas } from './atlas.js';
+import { harvestAtlas, withAtlasLicences } from './atlas.js';
 import { harvestCameras } from './cameras.js';
 import { REJECT_RETRY_S, fillTransitCoverage } from './catalogue.js';
 import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, outputKey } from './gbfs.js';
@@ -176,14 +176,16 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const fresh = deduped.map((e) => upgraded.get(e.id) || e);
   const updated = [...existing.values()].map((e) => upgraded.get(e.id) || redirected.get(e.id) || e);
   const covered = new Map([...(await fillTransitCoverage([...fresh, ...updated])), ...(await fillGbfsCoverage(updated))]);
+  // Transit entries with no licence (or only a borrowed one) take Atlas's.
+  const licensed = withAtlasLicences([...fresh, ...updated].map((e) => covered.get(e.id) || e), atlas.licences);
   const ready = fresh
-    .map((e) => covered.get(e.id) || e)
+    .map((e) => licensed.get(e.id) || covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
   const added = withinAddLimits(ready, existing);
   for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withAsciiUrls(entry));
   for (const entry of updated)
-    if (redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id))
-      writeEntry(covered.get(entry.id) || entry);
+    if (redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id) || licensed.has(entry.id))
+      writeEntry(licensed.get(entry.id) || covered.get(entry.id) || entry);
   // A checked catalogue feed that duplicates an earlier source: don't check it again.
   const dedupedIds = new Set(deduped.map((e) => e.id));
   for (const e of [...atlas.entries, ...transitous.entries])
@@ -196,7 +198,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

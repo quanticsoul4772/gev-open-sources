@@ -310,3 +310,52 @@ test('adapters: GDACS events counted, no freshness time, coverage share', () => 
   assert.deepEqual(ADAPTERS['geojson.gdacs-events'](body, [-90, -180, 90, 180]), { records: 2, newest: null, inCoverage: 1 });
   assert.throws(() => ADAPTERS['geojson.gdacs-events'](new TextEncoder().encode('[]'), null), /FeatureCollection/);
 });
+
+test('atlas licences: the realtime feed\'s own, else its operator\'s (borrowed); filled only where missing', async () => {
+  const { atlasLicences, withAtlasLicences } = await import('../src/harvest/atlas.js');
+  const docs = [
+    {
+      doc: {
+        feeds: [
+          { id: 'f-own~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://own.example/vp' }, license: { spdx_identifier: 'CC-BY-4.0', attribution_text: 'Own Transit' } },
+          { id: 'f-sib~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://sib.example/vp' } },
+          { id: 'f-sib', spec: 'gtfs', urls: { static_current: 'https://sib.example/gtfs.zip' }, license: { url: 'https://sib.example/terms' } },
+          { id: 'f-none~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://none.example/vp' } },
+          { id: 'f-key~rt', spec: 'gtfs-rt', urls: { realtime_vehicle_positions: 'https://key.example/vp' }, license: { url: 'https://key.example/terms?apikey=abc' } },
+        ],
+      },
+    },
+  ];
+  const licences = atlasLicences(docs);
+  assert.deepEqual(licences.get('https://own.example/vp'), { licenceUrl: 'https://spdx.org/licenses/CC-BY-4.0', attribution: 'Own Transit', feedId: 'f-own~rt', borrowed: false });
+  assert.deepEqual(licences.get('https://sib.example/vp'), { licenceUrl: 'https://sib.example/terms', attribution: null, feedId: 'f-sib', borrowed: true });
+  assert.equal(licences.has('https://none.example/vp'), false);
+  assert.equal(licences.has('https://key.example/vp'), false, 'a licence URL with a credential is never used');
+
+  const entry = (id, url, licenceUrl, provenance = ['mobilitydatabase:x']) => ({
+    id, domain: 'transit.vehicles', access: { url }, provenance,
+    licence: { id: null, url: licenceUrl, display: false, commercial: null, attribution: 'Op' },
+  });
+  const out = withAtlasLicences(
+    [
+      entry('missing', 'https://own.example/vp', null),
+      entry('borrowed', 'https://sib.example/vp', null),
+      entry('has', 'https://own.example/vp', 'https://op.example/terms'),
+      entry('was-borrowed', 'https://own.example/vp', 'https://op.example/static-terms', ['mdb:x', 'licence-borrowed:mdb-1']),
+      entry('via', 'https://final.example/vp', null, ['mdb:x', 'via:https://own.example/vp']),
+    ],
+    licences,
+  );
+  assert.deepEqual([...out.keys()], ['missing', 'borrowed', 'was-borrowed', 'via']);
+  assert.equal(out.get('missing').licence.url, 'https://spdx.org/licenses/CC-BY-4.0');
+  assert.equal(out.get('missing').licence.attribution, 'Own Transit');
+  assert.ok(out.get('missing').provenance.includes('licence-atlas:f-own~rt'));
+  assert.ok(out.get('borrowed').provenance.includes('licence-borrowed:atlas:f-sib'), 'tier 1 only');
+  assert.deepEqual(out.get('was-borrowed').provenance, ['mdb:x', 'licence-atlas:f-own~rt'], 'the feed\'s own licence replaces a borrowed one');
+});
+
+test('known licences: JCDecaux\'s Licence Ouverte (Etalab 1.0) allows display', () => {
+  const k = knownLicence('https://developer.jcdecaux.com/files/Open-Licence-fr.pdf');
+  assert.equal(k.id, 'etalab-1.0');
+  assert.equal(k.display, true);
+});
