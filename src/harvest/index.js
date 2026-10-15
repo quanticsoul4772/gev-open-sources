@@ -11,7 +11,7 @@ import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas } from './atlas.js';
 import { harvestCameras } from './cameras.js';
 import { REJECT_RETRY_S, fillTransitCoverage } from './catalogue.js';
-import { GBFS_PHASE_MS, harvestGbfs, outputKey } from './gbfs.js';
+import { GBFS_PHASE_MS, harvestGbfs, isPeerToPeer, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
@@ -108,6 +108,14 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
       removeEntry(id);
       existing.delete(id);
       console.log(`harvest: removed ${id}: URL carries a credential`);
+    }
+  // Peer-to-peer car sharing is left out (user decision); an entry added before
+  // its operator was recognised as peer-to-peer goes too.
+  for (const [id, e] of existing)
+    if (e.access.related?.gbfs && isPeerToPeer({ provider: e.provider, name: e.name, discoveryUrl: e.access.related.gbfs })) {
+      removeEntry(id);
+      existing.delete(id);
+      console.log(`harvest: removed ${id}: peer-to-peer car sharing`);
     }
   const tombstones = readState('tombstones.json', {});
   const rejects = readState('harvest-rejects.json', {});

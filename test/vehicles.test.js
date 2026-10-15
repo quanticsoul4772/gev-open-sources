@@ -211,6 +211,7 @@ test('peer-to-peer car sharing is left out; fleet car sharing stays', async () =
   assert.equal(isPeerToPeer(sys('City cars', 'https://gbfs.getaround.com/x/gbfs.json')), true, 'by host');
   assert.equal(isPeerToPeer(sys('Drivy', 'https://a.example/gbfs.json')), true);
   assert.equal(isPeerToPeer(sys('Turo', 'https://a.example/gbfs.json')), true);
+  assert.equal(isPeerToPeer(sys('LocoMotion Montreal', 'https://locomotion.app/api/gbfs/3.0/montreal/gbfs')), true, 'neighbour-to-neighbour');
   assert.equal(isPeerToPeer(sys('Saturo Bikes', 'https://a.example/gbfs.json')), false, 'word boundary');
   for (const fleet of ['Flinkster', 'Stadtmobil Karlsruhe', 'Ford Carsharing', 'zeo Carsharing', 'Lime', 'Bird'])
     assert.equal(isPeerToPeer(sys(fleet, 'https://a.example/gbfs.json')), false, fleet);
