@@ -46,6 +46,10 @@ jobs:
         run: node src/scan-secrets.js entries dist
       - name: Validate entries against the schema (blocks commit and publish)
         run: node src/validate-dist.js entries dist
+      - name: Consumer check (report only)
+        # Boxes over their class limit, and wide entries without a class, in the run summary.
+        continue-on-error: true
+        run: node src/consumer-report.js
       - name: Commit entry changes
         # main requires a passing `test` check, which a direct push can't get
         # from a workflow run. This run has tested the commit, so it pushes it to

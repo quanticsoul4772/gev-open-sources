@@ -48,3 +48,22 @@ test('coverage class: a national box within its limit is not rebuilt', async () 
   await fillTransitCoverage([{ ...amtrak, coverage: { ...amtrak.coverage, class: undefined } }], { fetchImpl });
   assert.equal(fetched, 1, 'unclassed is regional: too wide, checked');
 });
+
+test('consumer report: boxes over their class limit, and wide entries without a class', async () => {
+  const { consumerReport, reportMarkdown } = await import('../src/consumer-report.js');
+  const e = (id, bbox, cls) => ({ id, domain: 'transit.vehicles', coverage: { bbox, countries: [], ...(cls ? { class: cls } : {}) } });
+  const published = [
+    e('city', [48.8, 2.2, 48.9, 2.5]),
+    e('amtrak', [27.6, -122.9, 48.9, -70.5], 'national'),
+    e('wide', [47.26, 4.51, 78.25, 31.11]),
+    e('too-wide-national', [-36.1, -122.9, 66.5, 152.6], 'national'),
+    e('none', null),
+  ];
+  const entries = new Map(published.map((p) => [p.id, p]));
+  const r = consumerReport(published, entries);
+  assert.deepEqual(r.overLimit.map((x) => x.id), ['wide', 'too-wide-national']);
+  assert.deepEqual(r.wideUnclassed.map((x) => x.id), ['wide']);
+  const md = reportMarkdown(r);
+  assert.match(md, /Boxes over their class limit:\*\* 2/);
+  assert.match(md, /\| wide \| transit\.vehicles \| 31\.0° × 26\.6° \|/);
+});
