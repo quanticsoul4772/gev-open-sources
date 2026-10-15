@@ -82,8 +82,9 @@ export function entryUrls(entry) {
 
 /**
  * Whether an entry's request headers could carry a credential: a name not in
- * ALLOWED_HEADERS, or a value that isn't 1–100 printable ASCII characters or
- * looks like a token. The same rule as the app (gods-eye-view A0).
+ * ALLOWED_HEADERS, or a value that isn't 1–100 printable ASCII characters,
+ * starts like a token (TOKEN_PREFIX) or contains one. The same rule as the
+ * app (gods-eye-view areSafeHeaders); conformance/cases.json holds the shared cases.
  */
 export function headersHaveCredential(headers = {}) {
   return Object.entries(headers).some(
@@ -91,6 +92,7 @@ export function headersHaveCredential(headers = {}) {
       !ALLOWED_HEADERS.includes(name.toLowerCase()) ||
       typeof value !== 'string' ||
       !/^[ -~]{1,100}$/.test(value) ||
+      TOKEN_PREFIX.test(value) ||
       SECRET_VALUE.test(value),
   );
 }

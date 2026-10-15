@@ -87,7 +87,12 @@ Version policy:
 - The directory is harvested from third-party catalogues: treat it as
   untrusted input and validate every entry yourself. It publishes facts
   (access recipe, coverage, licence, health), never a per-app "compatible"
-  flag, so consumer rules can't drift from a copy kept here.
+  flag.
+- Two rules are shared with gods-eye-view on purpose: which URLs and request
+  headers carry a credential, and how large a coverage box of each class
+  (`regional`, `national`, `global`) may be. Their cases live in
+  [`conformance/cases.json`](conformance/cases.json); this repo's tests run
+  every case, and the app vendors the file, so the two copies can't drift.
 - Its size changes gradually. A harvest adds at most 8 % of the current
   entries, and of each domain's, per run (the rest wait for later runs), and
   a directory whose total is under 85 % or over 180 % of any copy published

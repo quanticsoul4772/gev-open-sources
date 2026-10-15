@@ -154,8 +154,12 @@ export async function fillTransitCoverage(entries, { fetchImpl } = {}) {
   return filled;
 }
 
-/** Most one service area spans: wider boxes are a national or global feed, or a data error. The app's limit. */
-export const MAX_SPAN = { lat: 20, lon: 30 };
+/**
+ * Most a coverage box of each class may span, [lat°, lon°]; null is no limit.
+ * A regional box is one service area: wider is a national or global feed, or
+ * a data error. Shared with the app through conformance/cases.json.
+ */
+export const COVERAGE_LIMITS = Object.freeze({ regional: [20, 30], national: [60, 90], global: null });
 
 /** Whether a bbox is four in-range numbers with min ≤ max. */
 export const wellFormedBbox = (b) =>
@@ -165,9 +169,13 @@ export const wellFormedBbox = (b) =>
   b[0] >= -90 && b[2] <= 90 && b[1] >= -180 && b[3] <= 180 &&
   b[0] <= b[2] && b[1] <= b[3];
 
-/** Whether a bbox is well formed and no bigger than one service area. */
-export const plausibleBbox = (b) =>
-  wellFormedBbox(b) && b[2] - b[0] <= MAX_SPAN.lat && b[3] - b[1] <= MAX_SPAN.lon;
+/** Whether a bbox is well formed and within its class's limit (one service area by default). */
+export function plausibleBbox(b, cls = 'regional') {
+  if (!wellFormedBbox(b)) return false;
+  const limit = COVERAGE_LIMITS[cls];
+  if (limit === undefined) return false;
+  return limit === null || (b[2] - b[0] <= limit[0] && b[3] - b[1] <= limit[1]);
+}
 
 const median = (sorted) => sorted[Math.floor((sorted.length - 1) / 2)];
 
