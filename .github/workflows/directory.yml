@@ -25,6 +25,10 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # No write token in git config while npm install scripts and feed
+          # parsing run; only the commit step gets it.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -42,14 +46,24 @@ jobs:
       - name: Validate entries against the schema (blocks commit and publish)
         run: node src/validate-dist.js entries dist
       - name: Commit entry changes
+        # A PR merged while this run worked moves main: rebase onto it and retry,
+        # rather than losing the run to a non-fast-forward push.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           git add entries
           if ! git diff --cached --quiet; then
             git commit -m "directory: $(git diff --cached --name-only | wc -l) entries changed"
-            git push
+            for attempt in 1 2 3; do
+              if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+              echo "push attempt $attempt failed; retrying"
+              sleep 15
+            done
+            exit 1
           fi
+        env:
+          GH_TOKEN: ${{ github.token }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -57,6 +71,8 @@ jobs:
       - id: deploy
         uses: actions/deploy-pages@v4
       - name: Keep the schedule enabled
+        # Also after a failed run: a streak of failures must not let GitHub disable the schedule.
+        if: always()
         run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/directory.yml/enable"
         env:
           GH_TOKEN: ${{ github.token }}

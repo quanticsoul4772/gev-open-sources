@@ -438,3 +438,27 @@ test('credentials: same rule as the app — key-like segment variants, path para
   for (const u of ['https://a.example/feed;version=2/vp', 'https://a.example/v1/keyboard/vp', 'https://a.example/vp?skin=sk'])
     assert.equal(hasCredential(u), false, u);
 });
+
+test('restore: all or nothing — first deploy starts empty; a published site must return every state file', async () => {
+  const { restoreState } = await import('../src/restore-state.js');
+  const site = (files) => async (url) => {
+    const path = new URL(url).pathname.replace(/^\/[^/]*\//, '');
+    return path in files ? new Response(JSON.stringify(files[path])) : new Response('not found', { status: 404 });
+  };
+  await restoreState('https://x.example/site', site({}), '1'); // nothing published: no throw, nothing written
+  const index = { generated_at: '2026-10-14T00:00:00.000Z' };
+  await assert.rejects(restoreState('https://x.example/site', site({ 'v1/index.json': index }), '1'), /missing from a published site/);
+  const state = {
+    'state/health.json': {},
+    'state/licence-cache.json': {},
+    'state/tombstones.json': {},
+    'state/harvest-rejects.json': [],
+    'state/published.json': [],
+  };
+  await assert.rejects(restoreState('https://x.example/site', site({ 'v1/index.json': index, ...state }), '1'), /harvest-rejects.json: expected object, got array/);
+  const stale = { ...state, 'state/harvest-rejects.json': {}, 'state/published.json': [{ at: Date.parse('2026-10-13T00:00:00Z') / 1000 }] };
+  await assert.rejects(restoreState('https://x.example/site', site({ 'v1/index.json': index, ...stale }), '1'), /stale copy/);
+  let seen = '';
+  await restoreState('https://x.example/site', async (url) => ((seen = url), new Response('nf', { status: 404 })), 'abc');
+  assert.match(seen, /\?r=abc$/, 'cache-busting query');
+});
