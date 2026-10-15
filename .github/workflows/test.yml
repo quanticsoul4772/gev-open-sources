@@ -1,0 +1,30 @@
+# Checks every pull request before it can be merged: the same tests and
+# gates the directory run uses, read-only, with no secrets.
+name: test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: No credentials in entries
+        run: node src/scan-secrets.js entries
+      - name: Entries valid against the schema
+        run: node src/validate-dist.js entries
