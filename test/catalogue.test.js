@@ -285,3 +285,28 @@ test('coverage: an existing GBFS entry with a stray-stretched box is rebuilt fro
   const filled = await fillGbfsCoverage([entry], { fetchImpl });
   assert.deepEqual(filled.get('bogota').coverage.bbox, [4.6, -74.1, 4.71, -73.99]);
 });
+
+test('gdacs: entry valid; licence holds only while the feed still declares public domain', async () => {
+  const { GDACS_ENTRIES, GDACS_LICENCE_URL } = await import('../src/harvest/gdacs.js');
+  const { declarationPresent } = await import('../src/licence/index.js');
+  for (const e of GDACS_ENTRIES) assert.deepEqual(validateEntry(e), [], e.id);
+  const known = knownLicence(GDACS_LICENCE_URL);
+  assert.equal(known.display, true);
+  const rss = (copyright) => fakeFetch({ [GDACS_LICENCE_URL]: { body: `<rss><channel><copyright>${copyright}</copyright></channel></rss>` } });
+  assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, rss('public domain')), true);
+  assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, rss('© 2027 GDACS, all rights reserved')), false);
+  assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, fakeFetch({})), null, 'unreachable: unknown, not withdrawn');
+});
+
+test('adapters: GDACS events counted, no freshness time, coverage share', () => {
+  const doc = {
+    type: 'FeatureCollection',
+    features: [
+      { type: 'Feature', geometry: { type: 'Point', coordinates: [157.4, 11.0] }, properties: { eventtype: 'TC', alertlevel: 'Orange' } },
+      { type: 'Feature', geometry: { type: 'Point', coordinates: [-70.1, -33.5] }, properties: { eventtype: 'EQ', alertlevel: 'Red' } },
+    ],
+  };
+  const body = new TextEncoder().encode(JSON.stringify(doc));
+  assert.deepEqual(ADAPTERS['geojson.gdacs-events'](body, [-90, -180, 90, 180]), { records: 2, newest: null, inCoverage: 1 });
+  assert.throws(() => ADAPTERS['geojson.gdacs-events'](new TextEncoder().encode('[]'), null), /FeatureCollection/);
+});

@@ -10,6 +10,7 @@ export const DOMAINS = Object.freeze([
   'hazards.earthquakes',
   'cameras.stills',
   'sharedmobility.vehicles',
+  'hazards.disasters',
 ]);
 export const FORMATS = Object.freeze([
   'gtfs-rt.vehicle-positions',
@@ -17,6 +18,7 @@ export const FORMATS = Object.freeze([
   'geojson.earthquakes',
   'cameras.list',
   'gbfs.vehicle-status',
+  'geojson.gdacs-events',
 ]);
 /** GBFS v3 form factors (v2.x `scooter` is normalised to `scooter_standing`). */
 export const FORM_FACTORS = Object.freeze([

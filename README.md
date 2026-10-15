@@ -22,6 +22,12 @@ hours a GitHub Actions run:
      often parked at home) is left out; fleet car sharing stays.
    - USGS [earthquake summary feeds](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
      (`hazards.earthquakes`, GeoJSON, public domain).
+   - GDACS [latest Orange and Red disaster alerts](https://www.gdacs.org/)
+     (`hazards.disasters`, format `geojson.gdacs-events`): earthquakes,
+     tropical cyclones, floods, volcanoes, droughts and wildfires, one point
+     per event (`properties.iscurrent` marks active ones). Public domain by
+     GDACS's own declaration in its RSS feed; the licence job re-reads that
+     declaration every run and drops to referral-only if it is gone.
    - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
      Digitraffic weather cameras (CC BY 4.0), TfL JamCams and Caltrans CCTV
      (12 districts). Each entry carries a `mapping` that says where each

@@ -17,6 +17,7 @@ import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
 import { harvestTransitous } from './transitous.js';
 import { USGS_ENTRIES } from './usgs.js';
+import { GDACS_ENTRIES } from './gdacs.js';
 
 /**
  * New entries per run, as a share of the directory and of each domain: four
@@ -141,6 +142,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     // Vehicles last, so a large first batch doesn't take the transit additions' slots.
     [
       ...USGS_ENTRIES,
+      ...GDACS_ENTRIES,
       ...cameras,
       ...mdb.entries,
       ...gbfs.filter((e) => e.domain !== VEHICLES),
@@ -194,7 +196,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

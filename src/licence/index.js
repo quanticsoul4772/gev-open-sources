@@ -35,6 +35,23 @@ const undecided = (entry, reason) => ({
   licence_decision: { by: 'none', evidence: reason ? [{ field: 'reason', quote: reason }] : [], terms_sha256: null, at: null },
 });
 
+/**
+ * Whether a source's licence declaration is still on its page: true or
+ * false, or null when the page couldn't be read this run.
+ * @param {string} url
+ * @param {string} pattern regular expression the page must match (case-insensitive)
+ */
+export async function declarationPresent(url, pattern, fetchImpl) {
+  let res;
+  try {
+    res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000, maxBytes: 4 * 2 ** 20 });
+  } catch {
+    return null;
+  }
+  if (res.status !== 200) return null;
+  return new RegExp(pattern, 'i').test(new TextDecoder().decode(res.body));
+}
+
 function fromKnown(entry, known, source, attribution) {
   return {
     licence: {
@@ -145,10 +162,25 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
   const memo = new Map();
   const gbfsResults = await runPooled(gbfs, (e) => hostOfUrl(e.access.url), (e) => gbfsDecision(e, fetchImpl, memo), { global: 24, perHost: 3 });
   gbfs.forEach((e, i) => plan.set(e.id, gbfsResults[i]?.error ? { decided: undecided(e, 'system_information error') } : gbfsResults[i]));
+  // A known licence that is only the source's own declaration (`verify`, e.g.
+  // GDACS's feed saying "public domain") holds while the declaration is still
+  // there, so it is re-read every run.
+  const declared = new Map();
+  for (const e of entries.values()) {
+    const known = isGbfs(e) ? null : knownLicence(e.licence.url);
+    if (known?.verify) declared.set(e.licence.url, known.verify);
+  }
+  const stillDeclared = new Map(
+    await Promise.all([...declared].map(async ([url, pattern]) => [url, await declarationPresent(url, pattern, fetchImpl)])),
+  );
   for (const e of entries.values()) {
     if (isGbfs(e)) continue;
     const known = knownLicence(e.licence.url);
-    if (known) plan.set(e.id, { decided: fromKnown(e, known, e.licence.url, e.licence.attribution) });
+    const present = known?.verify ? stillDeclared.get(e.licence.url) : true;
+    // Unreachable this run (null): keep the current decision rather than flip it.
+    const holds = present ?? (e.licence_decision.by === 'known-licence' && e.licence.display);
+    if (known && !holds) plan.set(e.id, { decided: undecided(e, `licence declaration not found at ${e.licence.url}`) });
+    else if (known) plan.set(e.id, { decided: fromKnown(e, known, e.licence.url, e.licence.attribution) });
     else if (e.licence.url && !e.provenance.some((p) => p.startsWith('licence-borrowed:')))
       plan.set(e.id, { termsUrl: e.licence.url, attribution: e.licence.attribution });
     else plan.set(e.id, { decided: undecided(e, e.licence.url ? 'borrowed licence is not a known licence' : 'no licence published') });
