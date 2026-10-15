@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-kotka-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Kotka — Kotka",
+  "provider": "Donkey Republic Kotka",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T21:25:48.997Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_kotka"
+  ],
+  "coverage": {
+    "bbox": [
+      60.4371,
+      26.8563,
+      60.5176,
+      26.9698
+    ],
+    "countries": [
+      "FI"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kotka/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kotka/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kotka/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kotka/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_kotka",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

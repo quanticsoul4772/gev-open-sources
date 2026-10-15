@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-raasepori-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Raasepori — Raasepori",
+  "provider": "Donkey Republic Raasepori",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T21:25:48.998Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_raasepori"
+  ],
+  "coverage": {
+    "bbox": [
+      59.9747,
+      23.4301,
+      60.7473,
+      24.764
+    ],
+    "countries": [
+      "FI"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_raasepori",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-iisalmi-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Iisalmi — Iisalmi",
+  "provider": "Donkey Republic Iisalmi",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T21:25:48.997Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_iisalmi"
+  ],
+  "coverage": {
+    "bbox": [
+      63.5249,
+      27.1735,
+      63.5845,
+      27.2674
+    ],
+    "countries": [
+      "FI"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_iisalmi/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_iisalmi/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_iisalmi/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_iisalmi/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_iisalmi",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

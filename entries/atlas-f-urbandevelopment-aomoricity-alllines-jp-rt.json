@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-urbandevelopment-aomoricity-alllines-jp-rt",
+  "domain": "transit.vehicles",
+  "name": "青森市",
+  "provider": "青森市",
+  "coverage": {
+    "bbox": [
+      40.8034,
+      140.6408,
+      40.8434,
+      140.6808
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://toshisei.aomoricitybus.com/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "青森市"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T21:25:49.025Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-urbandevelopment~aomoricity~alllines~jp~rt",
+    "via:https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_UrbanDevelopment_AomoriCity_AllLines_vehicle",
+    "licence-borrowed:atlas:f-urbandevelopment~aomoricity~alllines~jp"
+  ]
+}

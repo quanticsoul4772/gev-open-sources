@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-barcelona-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Barcelona — Barcelona",
+  "provider": "Donkey Republic Barcelona",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T21:25:48.996Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_barcelona"
+  ],
+  "coverage": {
+    "bbox": [
+      41.3477,
+      2.1113,
+      41.4458,
+      2.2252
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_barcelona/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_barcelona/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_barcelona/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_barcelona/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_barcelona",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

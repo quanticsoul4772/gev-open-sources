@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-en-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "TORRENTBICI — Torrent",
+  "provider": "TORRENTBICI",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "C/Manyà 24, Parque Empresarial Táctica – 46980 Paterna, Valencia (España)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T21:25:49.011Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_en"
+  ],
+  "coverage": {
+    "bbox": [
+      39.4115,
+      -0.4992,
+      39.4573,
+      -0.4458
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_en/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_en/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_en/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_en/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_en",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}
