@@ -32,22 +32,22 @@
     "version": "3.0"
   },
   "licence": {
-    "id": null,
+    "id": "CC0-1.0",
     "url": null,
-    "display": false,
-    "commercial": null,
-    "attribution": "Farte Bysykkel"
+    "display": true,
+    "commercial": true,
+    "attribution": "Farte"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "gbfs-v3-default",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "system_information unavailable"
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T17:12:54.206Z"
+    "at": "2026-10-15T02:25:33.352Z"
   },
   "provenance": [
     "gbfs-systems:fartebysykkel"

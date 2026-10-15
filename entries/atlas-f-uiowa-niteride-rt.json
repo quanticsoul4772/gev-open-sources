@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-uiowa-niteride-rt",
+  "domain": "transit.vehicles",
+  "name": "University of Iowa Nite Ride",
+  "provider": "University of Iowa Nite Ride",
+  "coverage": {
+    "bbox": [
+      41.6511,
+      -91.5609,
+      41.6984,
+      -91.5127
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://uiowaniteride.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "University of Iowa Nite Ride"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T02:25:33.371Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-uiowa~niteride~rt"
+  ]
+}

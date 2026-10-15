@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-esel-ac-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "esel.ac — Aachen",
+  "provider": "esel.ac",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "esel.ac"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T02:25:33.352Z"
+  },
+  "provenance": [
+    "gbfs-systems:esel_ac"
+  ],
+  "coverage": {
+    "bbox": [
+      50.7431,
+      6.0006,
+      50.8362,
+      6.1498
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://di.esel.ac/gbfs/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://di.esel.ac/gbfs/vehicle_types.json",
+      "system_information": "https://di.esel.ac/gbfs/system_information.json",
+      "gbfs": "https://di.esel.ac/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "esel_ac",
+    "version": "2.1",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

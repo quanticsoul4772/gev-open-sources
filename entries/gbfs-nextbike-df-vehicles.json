@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-nextbike-df-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Frelo — Freiburg",
+  "provider": "Frelo",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T02:25:33.359Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_df"
+  ],
+  "coverage": {
+    "bbox": [
+      47.8723,
+      7.6231,
+      48.1939,
+      8.0901
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_df",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

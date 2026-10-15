@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-altern-o-reunion-rt",
+  "domain": "transit.vehicles",
+  "name": "ALTERNEO",
+  "provider": "ALTERNEO",
+  "coverage": {
+    "bbox": [
+      -21.3708,
+      55.3125,
+      -21.155,
+      55.5968
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/alterneo-civis-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "ALTERNEO"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T02:25:33.368Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-alternéo~reunion~rt"
+  ]
+}

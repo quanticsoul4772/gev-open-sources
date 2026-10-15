@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-nextbike-hb-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "HelBi (Kreis Soest) — DE",
+  "provider": "HelBi (Kreis Soest)",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T02:25:33.361Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_hb"
+  ],
+  "coverage": {
+    "bbox": [
+      51.4839,
+      7.9569,
+      51.7134,
+      8.4106
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hb/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hb/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hb/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hb/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_hb",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

@@ -32,22 +32,22 @@
     "version": "3.0"
   },
   "licence": {
-    "id": "CC0-1.0",
+    "id": null,
     "url": null,
-    "display": true,
-    "commercial": true,
+    "display": false,
+    "commercial": null,
     "attribution": "Bora"
   },
   "licence_decision": {
-    "by": "gbfs-v3-default",
+    "by": "none",
     "evidence": [
       {
-        "field": "version",
-        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+        "field": "reason",
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:57.697Z"
+    "at": "2026-10-15T02:25:33.347Z"
   },
   "provenance": [
     "gbfs-systems:bora_viseu"

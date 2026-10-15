@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-freibe-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "franke — Freiburg im Breisgau",
+  "provider": "franke",
+  "licence": {
+    "id": null,
+    "url": "https://suewag2go.de/datenschutz-sharing",
+    "display": false,
+    "commercial": null,
+    "attribution": "franke"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T02:25:33.353Z"
+  },
+  "provenance": [
+    "gbfs-systems:freibe"
+  ],
+  "coverage": {
+    "bbox": [
+      47.9601,
+      7.7765,
+      48.0429,
+      7.9171
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/freibe/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/freibe/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/freibe/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/freibe/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "freibe",
+    "version": "3.0",
+    "form_factors": [
+      "car",
+      "moped",
+      "scooter_standing"
+    ]
+  }
+}

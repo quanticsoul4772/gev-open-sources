@@ -32,22 +32,22 @@
     "version": "3.0"
   },
   "licence": {
-    "id": null,
+    "id": "CC0-1.0",
     "url": null,
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "Hertz Bildeling"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "gbfs-v3-default",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "system_information unavailable"
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:40:13.665Z"
+    "at": "2026-10-15T02:25:33.354Z"
   },
   "provenance": [
     "gbfs-systems:hertzbildeling"
