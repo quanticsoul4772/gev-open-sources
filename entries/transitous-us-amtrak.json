@@ -12,7 +12,8 @@
     ],
     "countries": [
       "US"
-    ]
+    ],
+    "class": "national"
   },
   "access": {
     "url": "https://birch.catenarymaps.org/gtfs_rt?feed_id=f-amtrak~rt&feed_type=trip",

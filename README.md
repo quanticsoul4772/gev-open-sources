@@ -95,6 +95,9 @@ Version policy:
   (`regional`, `national`, `global`) may be. Their cases live in
   [`conformance/cases.json`](conformance/cases.json); this repo's tests run
   every case, and the app vendors the file, so the two copies can't drift.
+- `coverage.class` is optional; absent means `regional`. Deliberately wide
+  entries carry a hand-set class (Amtrak is `national`), and hazard feeds
+  are published as `global`.
 - Its size changes gradually. A harvest adds at most 8 % of the current
   entries, and of each domain's, per run (the rest wait for later runs), and
   a directory whose total is under 85 % or over 180 % of any copy published

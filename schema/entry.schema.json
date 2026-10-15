@@ -44,7 +44,11 @@
             }
           ]
         },
-        "countries": { "type": "array", "items": { "type": "string" } }
+        "countries": { "type": "array", "items": { "type": "string" } },
+        "class": {
+          "description": "Size class of the box; absent means regional. Limits: conformance/cases.json coverage.limits.",
+          "enum": ["regional", "national", "global"]
+        }
       }
     },
     "access": {

@@ -259,7 +259,7 @@ export const outputKey = (discoveryUrl, kind) => `${discoveryUrl}#${kind}`;
  * @returns {Promise<Map<string, object>>} id → entry with the repaired bbox
  */
 export async function fillGbfsCoverage(entries, { fetchImpl } = {}) {
-  const todo = entries.filter((e) => e.access.related?.gbfs && !plausibleBbox(e.coverage.bbox));
+  const todo = entries.filter((e) => e.access.related?.gbfs && !plausibleBbox(e.coverage.bbox, e.coverage.class));
   const doc = async (url) => {
     if (!url) return null;
     const res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000 });
@@ -282,7 +282,7 @@ export async function fillGbfsCoverage(entries, { fetchImpl } = {}) {
   const filled = new Map();
   todo.forEach((e, i) => {
     const r = rebuilt[i];
-    if (r?.bbox && replacesBbox(e.coverage.bbox, r.bbox, r.strays))
+    if (r?.bbox && replacesBbox(e.coverage.bbox, r.bbox, r.strays, e.coverage.class))
       filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: r.bbox } });
   });
   return filled;

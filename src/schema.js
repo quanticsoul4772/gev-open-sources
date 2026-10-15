@@ -20,6 +20,12 @@ export const FORMATS = Object.freeze([
   'gbfs.vehicle-status',
   'geojson.gdacs-events',
 ]);
+/**
+ * Coverage classes (optional `coverage.class`; absent means regional). Each
+ * has a size limit in COVERAGE_LIMITS (src/harvest/catalogue.js), shared with
+ * the app through conformance/cases.json.
+ */
+export const COVERAGE_CLASSES = Object.freeze(['regional', 'national', 'global']);
 /** GBFS v3 form factors (v2.x `scooter` is normalised to `scooter_standing`). */
 export const FORM_FACTORS = Object.freeze([
   'bicycle',
@@ -74,6 +80,7 @@ export function validateEntry(entry) {
   const c = entry.coverage;
   need(c && (c.bbox === null || isBbox(c.bbox)), 'coverage.bbox invalid');
   need(Array.isArray(c?.countries), 'coverage.countries missing');
+  need(c?.class === undefined || COVERAGE_CLASSES.includes(c.class), `coverage.class "${c?.class}" unknown`);
   const a = entry.access;
   need(a && isUrl(a.url), 'access.url invalid');
   need(Array.isArray(a?.redirectHosts), 'access.redirectHosts missing');
