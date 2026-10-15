@@ -78,10 +78,18 @@ test('judge: accepts agreeing, verbatim, meetable; rejects the rest', () => {
 });
 
 test('recheck: a cached acceptance below the current bar is dropped without an API call', () => {
-  assert.equal(recheckReason(decision()), null);
-  assert.equal(recheckReason(decision({ confidence: 0.85 })), 'confidence below 0.9');
-  assert.equal(recheckReason(decision({ obligations: [{ type: 'registration', quote: 'x' }] })), 'obligation registration');
-  assert.equal(recheckReason(decision({ evidence: [] })), 'no quote for the display decision');
+  assert.equal(recheckReason(decision(), 0.9), null);
+  assert.equal(recheckReason(decision({ confidence: 0.85 }), 0.85), 'confidence below 0.9');
+  // Run a cleared the bar, run b didn't.
+  assert.equal(recheckReason(decision(), 0.85), 'confidence below 0.9');
+  assert.equal(recheckReason(decision()), 'second run confidence not recorded');
+  assert.equal(recheckReason(decision({ obligations: [{ type: 'registration', quote: 'x' }] }), 0.9), 'obligation registration');
+  assert.equal(recheckReason(decision({ evidence: [] }), 0.9), 'no quote for the display decision');
+  // An acceptance cached without both runs' confidence is classified again.
+  const sig = sentenceSignature(TEXT);
+  const fresh = { at: new Date().toISOString(), signature: sig, version: PROMPT_VERSION, accepted: true };
+  assert.equal(needsReclassification(fresh, sig, Date.now()), true);
+  assert.equal(needsReclassification({ ...fresh, min_confidence: 0.9 }, sig, Date.now()), false);
 });
 
 test('reclassification: noise never re-bills; material change after a week; monthly', () => {

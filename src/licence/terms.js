@@ -181,6 +181,8 @@ export function signatureSimilarity(a = [], b = []) {
  */
 export function needsReclassification(cached, signature, nowMs) {
   if (!cached?.at || !cached.signature || cached.version !== PROMPT_VERSION) return true;
+  // An acceptance cached before both runs' confidence was kept can't be re-checked.
+  if (cached.accepted && cached.min_confidence === undefined) return true;
   const ageDays = (nowMs - Date.parse(cached.at)) / 86_400_000;
   if (ageDays >= 30) return true;
   return ageDays >= 7 && signatureSimilarity(cached.signature, signature) < 0.9;
@@ -208,8 +210,10 @@ const DECISION_FIELDS = ['applies_to_this_data', 'display', 'commercial', 'requi
  * passes. Rules that need only the stored decision (no API call), so a
  * stricter rule applies on the next run, not at the next reclassification.
  */
-export function recheckReason(decision) {
-  if (decision.confidence < MIN_CONFIDENCE) return `confidence below ${MIN_CONFIDENCE}`;
+export function recheckReason(decision, minConfidence) {
+  // Both runs must clear the bar; an older cache entry recorded only run a's.
+  if (minConfidence === undefined) return 'second run confidence not recorded';
+  if (Math.min(minConfidence, decision.confidence) < MIN_CONFIDENCE) return `confidence below ${MIN_CONFIDENCE}`;
   const unmet = decision.obligations.find((o) => !MEETABLE.has(o.type));
   if (unmet) return `obligation ${unmet.type}`;
   if (!hasDisplayEvidence(decision)) return 'no quote for the display decision';
