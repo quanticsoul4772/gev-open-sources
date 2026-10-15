@@ -12,7 +12,8 @@
     ],
     "countries": [
       "BR"
-    ]
+    ],
+    "class": "global"
   },
   "access": {
     "url": "https://rt.flix.baguette.pirnet.si/rt.pb",
