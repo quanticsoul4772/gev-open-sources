@@ -197,6 +197,10 @@ test('classify: fresh, idle, stale, blocked, failures', () => {
   assert.equal(classify({ status: 200, decoded: { records: 0, newest: now - 30 }, now }).result, 'idle');
   assert.equal(classify({ status: 200, decoded: { records: 5, newest: null }, now }).result, 'ok');
   assert.equal(classify({ status: 200, decoded: { records: 5, newest: now - 3600 }, now }).result, 'stale');
+  // Overnight: no vehicles, the server stopped updating hours ago.
+  assert.equal(classify({ status: 200, decoded: { records: 0, newest: now - 4 * 3600 }, now }).result, 'idle');
+  assert.equal(classify({ status: 200, decoded: { records: 0, newest: now - 13 * 3600 }, now }).result, 'stale', 'frozen server');
+  assert.equal(classify({ status: 200, decoded: { records: 1, newest: now - 4 * 3600 }, now }).result, 'stale', 'old positions still fail');
   assert.equal(classify({ status: 429 }).result, 'blocked');
   assert.equal(classify({ status: 500 }).result, 'http');
   assert.equal(classify({ error: 'network' }).result, 'network');
