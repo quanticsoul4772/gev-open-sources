@@ -135,8 +135,9 @@ export function scrubState() {
   let removed = 0;
   for (const name of ['harvest-rejects.json', 'licence-cache.json']) {
     const state = readState(name, {});
+    // Keys that aren't URLs (an https-upgrade reject keyed by entry id) carry no URL.
     for (const url of Object.keys(state))
-      if (hasCredential(url)) {
+      if (/^https?:\/\//i.test(url) && hasCredential(url)) {
         delete state[url];
         removed += 1;
       }

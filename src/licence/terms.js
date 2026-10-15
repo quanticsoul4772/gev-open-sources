@@ -5,7 +5,8 @@
  *  - the terms apply to this data, need no click-through acceptance, and
  *    impose only obligations the app meets automatically;
  *  - two independent runs agree on every decision field;
- *  - confidence ≥ 0.9.
+ *  - the display decision is backed by a verbatim quote;
+ *  - confidence ≥ MIN_CONFIDENCE (0.8).
  * Anything else → not accepted (the entry stays referral-only).
  */
 import Anthropic from '@anthropic-ai/sdk';
@@ -122,9 +123,18 @@ export const TERMS_SCHEMA = {
 };
 
 /** Visible text of an HTML page. */
+/** An element hidden from readers (hidden, aria-hidden, display:none, visibility:hidden), with its content. */
+const HIDDEN_ELEMENT =
+  /<(\w+)\b[^>]*?(?:\shidden(?:\s|=|>)|aria-hidden\s*=\s*["']?true|style\s*=\s*["'][^"']*(?:display\s*:\s*none|visibility\s*:\s*hidden))[^>]*>[\s\S]*?<\/\1>/gi;
+
+/**
+ * Visible text of an HTML page. Hidden elements are dropped too: a terms page
+ * could otherwise carry instructions or permissions no reader sees.
+ */
 export function htmlToText(html) {
   return html
     .replace(/<(script|style|noscript|template)[\s\S]*?<\/\1>/gi, ' ')
+    .replace(HIDDEN_ELEMENT, ' ')
     .replace(/<br\s*\/?>|<\/(p|div|li|h[1-6]|tr)>/gi, '\n')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
@@ -214,9 +224,21 @@ export function judge(a, b, text) {
   if (!a.applies_to_this_data) return { accepted: false, reason: 'terms do not apply to this data' };
   if (a.requires_acceptance) return { accepted: false, reason: 'requires acceptance' };
   if (!a.display) return { accepted: false, reason: 'display not allowed' };
+  if (![a, b].every(hasDisplayEvidence))
+    return { accepted: false, reason: 'no quote for the display decision' };
   const unmet = a.obligations.filter((o) => !MEETABLE.has(o.type));
   if (unmet.length) return { accepted: false, reason: `obligation ${unmet[0].type}` };
-  return { accepted: true, reason: 'accepted' };
+  return { accepted: true, reason: 'accepted', attribution_verbatim: attributionVerbatim(a, text) };
+}
+
+/** Whether a decision quotes the terms for its display decision. */
+export const hasDisplayEvidence = (decision) =>
+  decision.evidence.some((e) => e.field === 'display' && e.quote);
+
+/** Whether a decision's attribution text appears in the terms text (whitespace-insensitive). */
+export function attributionVerbatim(decision, text) {
+  const t = squash(decision.attribution_text || '');
+  return Boolean(t) && squash(text).includes(t);
 }
 
 const PROMPT = (entry, text) => `You classify the licence terms that govern a public live data feed, for an open-source map application that would fetch the feed on its server and display the positions on a map with attribution.
