@@ -23,10 +23,10 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": "terms:www.metrostlouis.org",
+    "id": null,
     "url": "https://www.metrostlouis.org/developer-resources/",
-    "display": true,
-    "commercial": true,
+    "display": false,
+    "commercial": null,
     "attribution": "Metro St. Louis",
     "obligations": [
       "governing_law",
@@ -38,39 +38,15 @@
     ]
   },
   "licence_decision": {
-    "by": "llm-terms",
+    "by": "none",
     "evidence": [
       {
-        "field": "applies_to_this_data",
-        "quote": "Metro Transit &#8211; St. Louis GTFS Real-time Vehicles Data Feed"
-      },
-      {
-        "field": "applies_to_this_data",
-        "quote": "Bi-State Development Agency dba Metro hereby grants you (Licensee) non-exclusive, limited and revocable rights to use, reproduce, and redistribute Transit District Data (Data) subject to the following Terms:"
-      },
-      {
-        "field": "display",
-        "quote": "hereby grants you (Licensee) non-exclusive, limited and revocable rights to use, reproduce, and redistribute Transit District Data (Data)"
-      },
-      {
-        "field": "display",
-        "quote": "Metro Transit &#8211; Saint Louis seeks to promote the development of transit related applications as way to further serve the riders of our public transportation system."
-      },
-      {
-        "field": "commercial",
-        "quote": "non-exclusive, limited and revocable rights to use, reproduce, and redistribute Transit District Data (Data)"
-      },
-      {
-        "field": "requires_acceptance",
-        "quote": "By using Agency Data, you agree to be bound by all of the Terms and Conditions set forth in this agreement."
-      },
-      {
-        "field": "requires_acceptance",
-        "quote": "By downloading our GTFS data file, you agree to the terms set within our Terms of Use set forth below."
+        "field": "reason",
+        "quote": "confidence below 0.9"
       }
     ],
-    "terms_sha256": "a9cdfb65bf3246580d2290479b4fe0baa6ee1ce6ed832bf37393df484717ea57",
-    "at": "2026-10-14T18:51:06.272Z"
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.266Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1414"

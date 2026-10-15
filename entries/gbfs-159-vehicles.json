@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-159-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Yoio Erfurt — Erfurt",
+  "provider": "Yoio Erfurt",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Yoio Erfurt"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.234Z"
+  },
+  "provenance": [
+    "gbfs-systems:159"
+  ],
+  "coverage": {
+    "bbox": [
+      50.9305,
+      10.9729,
+      51.0443,
+      11.1059
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://yoio.rideatom.com/gbfs/159/v3.0/vehicle_status",
+    "related": {
+      "vehicle_types": "https://yoio.rideatom.com/gbfs/159/v3.0/vehicle_types",
+      "system_information": "https://yoio.rideatom.com/gbfs/159/v3.0/system_information",
+      "gbfs": "https://yoio.rideatom.com/gbfs/159/v3.0/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "159",
+    "version": "3.0",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

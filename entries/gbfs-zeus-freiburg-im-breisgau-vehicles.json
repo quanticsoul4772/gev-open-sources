@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-freiburg-im-breisgau-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Freiburg — Freiburg im Breisgau",
+  "provider": "Zeus Freiburg",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Freiburg"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.259Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_freiburg im breisgau"
+  ],
+  "coverage": {
+    "bbox": [
+      47.953,
+      7.7761,
+      48.0486,
+      7.9239
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/freiburg%20im%20breisgau/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/freiburg%20im%20breisgau/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/freiburg%20im%20breisgau/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/freiburg%20im%20breisgau/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_freiburg im breisgau",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

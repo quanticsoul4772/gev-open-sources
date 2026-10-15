@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-castrop-rauxel-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Castrop Rauxel — Castrop Rauxel",
+  "provider": "Zeus Castrop Rauxel",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Castrop Rauxel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.259Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_castrop-rauxel"
+  ],
+  "coverage": {
+    "bbox": [
+      51.4881,
+      7.1499,
+      51.6174,
+      7.3803
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/castrop-rauxel/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/castrop-rauxel/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/castrop-rauxel/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/castrop-rauxel/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_castrop-rauxel",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-voi-de-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Voi — Germany",
+  "provider": "Voi",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "VOI"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.258Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_de"
+  ],
+  "coverage": {
+    "bbox": [
+      48.4667,
+      8.3384,
+      49.5542,
+      9.2734
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "voi_de",
+    "version": "3.0",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

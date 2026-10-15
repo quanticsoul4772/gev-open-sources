@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-71-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Yoio Freiburg — Freiburg im Breisgau",
+  "provider": "Yoio Freiburg",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Yoio Freiburg"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.234Z"
+  },
+  "provenance": [
+    "gbfs-systems:71"
+  ],
+  "coverage": {
+    "bbox": [
+      47.9565,
+      7.7564,
+      48.0682,
+      7.9163
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://yoio.rideatom.com/gbfs/71/v3.0/vehicle_status",
+    "related": {
+      "vehicle_types": "https://yoio.rideatom.com/gbfs/71/v3.0/vehicle_types",
+      "system_information": "https://yoio.rideatom.com/gbfs/71/v3.0/system_information",
+      "gbfs": "https://yoio.rideatom.com/gbfs/71/v3.0/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "71",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

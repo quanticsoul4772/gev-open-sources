@@ -23,41 +23,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": "terms:mvgo.org",
+    "id": null,
     "url": "https://mvgo.org/developers/",
-    "display": true,
-    "commercial": true,
+    "display": false,
+    "commercial": null,
     "attribution": "MVgo",
     "obligations": [
       "attribution"
     ]
   },
   "licence_decision": {
-    "by": "llm-terms",
+    "by": "none",
     "evidence": [
       {
-        "field": "applies_to_this_data",
-        "quote": "GTFS-Realtime Vehicle Positions: https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=VehiclePosition"
-      },
-      {
-        "field": "applies_to_this_data",
-        "quote": "MVgo&#8217;s GTFS and GTFS Realtime data is available under the ODC-BY license ."
-      },
-      {
-        "field": "display",
-        "quote": "MVgo&#8217;s GTFS and GTFS Realtime data is available under the ODC-BY license ."
-      },
-      {
-        "field": "commercial",
-        "quote": "MVgo&#8217;s GTFS and GTFS Realtime data is available under the ODC-BY license ."
-      },
-      {
-        "field": "requires_acceptance",
-        "quote": "MVgo&#8217;s schedule data is available as static GTFS and GTFS-Realtime."
+        "field": "reason",
+        "quote": "confidence below 0.9"
       }
     ],
-    "terms_sha256": "a7cddf2294b705a37d710eff5f1121e6c9dbea4c79842290e771cd8165e30bfe",
-    "at": "2026-10-14T21:38:28.707Z"
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.268Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2110"

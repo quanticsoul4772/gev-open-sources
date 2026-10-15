@@ -23,41 +23,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": "terms:data.renfe.com",
+    "id": null,
     "url": "https://data.renfe.com/dataset/ubicacion-vehiculos",
-    "display": true,
-    "commercial": true,
+    "display": false,
+    "commercial": null,
     "attribution": "Renfe",
     "obligations": [
       "attribution"
     ]
   },
   "licence_decision": {
-    "by": "llm-terms",
+    "by": "none",
     "evidence": [
       {
-        "field": "applies_to_this_data",
-        "quote": "Proporciona la ubicación en tiempo real de los vehículos del servicio de cercanías, incluyendo posición GPS y estado (parado, en movimiento, etc.)."
-      },
-      {
-        "field": "applies_to_this_data",
-        "quote": "vehicle_positions.pb - GTFS Realtime GTFS-RT"
-      },
-      {
-        "field": "display",
-        "quote": "Licencia: Creative Commons Attribution 4.0"
-      },
-      {
-        "field": "commercial",
-        "quote": "Licencia: Creative Commons Attribution 4.0"
-      },
-      {
-        "field": "requires_acceptance",
-        "quote": "Licencia: Creative Commons Attribution 4.0"
+        "field": "reason",
+        "quote": "confidence below 0.9"
       }
     ],
-    "terms_sha256": "882f29e0cb638e013a20e8284dd1a8d8b285f857e34784c5907ab04df5356cc4",
-    "at": "2026-10-14T23:35:30.649Z"
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.270Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2835"

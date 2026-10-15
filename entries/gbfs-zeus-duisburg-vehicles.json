@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-duisburg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Duisburg — Druisburg",
+  "provider": "Zeus Duisburg",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Duisburg"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.259Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_duisburg"
+  ],
+  "coverage": {
+    "bbox": [
+      51.3906,
+      6.6636,
+      51.4871,
+      6.8672
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/duisburg/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/duisburg/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/duisburg/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/duisburg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_duisburg",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

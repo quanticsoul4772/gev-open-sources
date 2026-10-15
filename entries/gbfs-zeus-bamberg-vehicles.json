@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-bamberg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Bamberg — Bamberg",
+  "provider": "Zeus Bamberg",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Bamberg"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T13:39:44.259Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_bamberg"
+  ],
+  "coverage": {
+    "bbox": [
+      49.8344,
+      10.8086,
+      49.9452,
+      10.9502
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/bamberg/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/bamberg/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/bamberg/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/bamberg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_bamberg",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

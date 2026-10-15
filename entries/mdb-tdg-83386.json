@@ -5,10 +5,10 @@
   "provider": "Communauté d’Agglomération du Centre Littoral de Guyane",
   "coverage": {
     "bbox": [
-      4.822652,
-      -52.365129,
-      4.9354710874831,
-      52.296379
+      4.812,
+      -52.5295,
+      4.9647,
+      -52.2562
     ],
     "countries": [
       "FR"
