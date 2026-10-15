@@ -62,8 +62,8 @@ export async function checkVehicleFeed(url, { fetchImpl } = {}) {
   } catch {
     return { ok: false, reason: 'not GTFS-RT' };
   }
-  if (feed.vehicles.length)
-    return { ok: true, bbox: pointsBbox(feed.vehicles.map((v) => [v.lat, v.lon])) };
+  const bbox = robustBbox(feed.vehicles.map((v) => [v.lat, v.lon]));
+  if (bbox) return { ok: true, bbox };
   if (feed.entityCount === 0) return { ok: false, reason: 'empty feed', retry: true };
   return { ok: false, reason: 'no vehicle positions' };
 }
@@ -119,35 +119,81 @@ export async function resolveTransitCandidates(candidates, { knownUrls, rejects,
 }
 
 /**
- * Fill a missing coverage.bbox on transit entries from one fetch of their
- * vehicles (the app places a feed by its bbox and skips entries without one).
+ * Whether a bbox rebuilt for an entry replaces its current one: always when
+ * the current one is missing or malformed; when it is merely wider than one
+ * service area, only if the rebuilt one isn't (a national feed keeps its box).
+ */
+export const replacesBbox = (current, rebuilt) =>
+  wellFormedBbox(rebuilt) && (!wellFormedBbox(current) || plausibleBbox(rebuilt));
+
+/**
+ * Fill or repair coverage.bbox on transit entries from one fetch of their
+ * vehicles (the app places a feed by its bbox and skips entries without one):
+ * entries with no bbox, a malformed one, or one wider than one service area.
  * @param {object[]} entries
  * @returns {Promise<Map<string, object>>} id → entry with a bbox, for those filled
  */
 export async function fillTransitCoverage(entries, { fetchImpl } = {}) {
-  const todo = entries.filter((e) => e.domain === 'transit.vehicles' && !e.coverage.bbox);
+  const todo = entries.filter((e) => e.domain === 'transit.vehicles' && !plausibleBbox(e.coverage.bbox));
   const checks = await runPooled(todo, (e) => hostOfUrl(e.access.url), (e) => checkVehicleFeed(e.access.url, { fetchImpl }), {
     global: 24,
     perHost: 2,
   });
   const filled = new Map();
   todo.forEach((e, i) => {
-    if (checks[i]?.ok) filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: checks[i].bbox } });
+    if (checks[i]?.ok && replacesBbox(e.coverage.bbox, checks[i].bbox))
+      filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: checks[i].bbox } });
   });
   return filled;
 }
 
+/** Most one service area spans: wider boxes are a national or global feed, or a data error. The app's limit. */
+export const MAX_SPAN = { lat: 20, lon: 30 };
+
+/** Whether a bbox is four in-range numbers with min ≤ max. */
+export const wellFormedBbox = (b) =>
+  Array.isArray(b) &&
+  b.length === 4 &&
+  b.every(Number.isFinite) &&
+  b[0] >= -90 && b[2] <= 90 && b[1] >= -180 && b[3] <= 180 &&
+  b[0] <= b[2] && b[1] <= b[3];
+
+/** Whether a bbox is well formed and no bigger than one service area. */
+export const plausibleBbox = (b) =>
+  wellFormedBbox(b) && b[2] - b[0] <= MAX_SPAN.lat && b[3] - b[1] <= MAX_SPAN.lon;
+
+const median = (sorted) => sorted[Math.floor((sorted.length - 1) / 2)];
+
 /**
- * bbox of points, robust to strays: out-of-range points and (0,0) are
- * dropped, and with 20 or more points the 1st–99th percentile is kept on each
- * axis, so one vehicle parked in a far depot doesn't stretch the box.
+ * The points of a feed's main area: in range, not (0,0), and within
+ * max(1°, 6 × the median distance) of the median point. Drops a test station
+ * on another continent, or a point with latitude and longitude swapped, while
+ * a national feed (whose median distance is large) keeps its spread.
  * @param {Array<[number, number]>} points [lat, lon]
  */
-export function robustBbox(points, pad = 0.02) {
+export function withoutStrays(points) {
   const ok = points.filter(
     ([lat, lon]) =>
       Number.isFinite(lat) && Number.isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180 && !(lat === 0 && lon === 0),
   );
+  if (ok.length < 3) return ok;
+  const mLat = median(ok.map((p) => p[0]).sort((a, b) => a - b));
+  const mLon = median(ok.map((p) => p[1]).sort((a, b) => a - b));
+  const cos = Math.cos((mLat * Math.PI) / 180);
+  const dist = ok.map(([lat, lon]) => Math.hypot(lat - mLat, (lon - mLon) * cos));
+  const limit = Math.max(1, 6 * median([...dist].sort((a, b) => a - b)));
+  return ok.filter((_, i) => dist[i] <= limit);
+}
+
+/**
+ * bbox of points, robust to strays: points outside the main area are
+ * dropped (withoutStrays), and with 20 or more points the 1st–99th percentile
+ * is kept on each axis, so one vehicle parked in a far depot doesn't stretch
+ * the box.
+ * @param {Array<[number, number]>} points [lat, lon]
+ */
+export function robustBbox(points, pad = 0.02) {
+  const ok = withoutStrays(points);
   if (!ok.length) return null;
   if (ok.length < 20) return pointsBbox(ok, pad);
   const lats = ok.map((p) => p[0]).sort((a, b) => a - b);

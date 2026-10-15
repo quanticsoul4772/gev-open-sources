@@ -5,7 +5,7 @@ import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl, slugId } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 import { coordinate } from '../adapters/cameras.js';
-import { recentlyRejected, robustBbox } from './catalogue.js';
+import { plausibleBbox, recentlyRejected, replacesBbox, robustBbox, withoutStrays } from './catalogue.js';
 
 export const GBFS_SYSTEMS_URL =
   'https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv';
@@ -29,14 +29,14 @@ export function gbfsFeeds(doc) {
   return { version: doc?.version ? String(doc.version) : null, feeds };
 }
 
-/** bbox [minLat, minLon, maxLat, maxLon] of a station_information document. */
+/**
+ * bbox [minLat, minLon, maxLat, maxLon] of a station_information document,
+ * without stray stations (a test station abroad, swapped lat/lon).
+ */
 export function stationBbox(doc) {
-  const stations = doc?.data?.stations || [];
+  const stations = Array.isArray(doc?.data?.stations) ? doc.data.stations : [];
   let b = null;
-  for (const s of stations) {
-    const lat = coordinate(s.lat);
-    const lon = coordinate(s.lon);
-    if (!Number.isFinite(lat) || !Number.isFinite(lon) || (lat === 0 && lon === 0)) continue;
+  for (const [lat, lon] of withoutStrays(stations.map((s) => [coordinate(s?.lat), coordinate(s?.lon)]))) {
     b = b
       ? [Math.min(b[0], lat), Math.min(b[1], lon), Math.max(b[2], lat), Math.max(b[3], lon)]
       : [lat, lon, lat, lon];
@@ -246,6 +246,39 @@ export const isPeerToPeer = (system) =>
 
 /** Reject-cache key for one output (`stations` | `vehicles`) of a system. */
 export const outputKey = (discoveryUrl, kind) => `${discoveryUrl}#${kind}`;
+
+/**
+ * Repair coverage.bbox on existing GBFS entries whose box is malformed or
+ * wider than one service area (built before stray stations were dropped):
+ * rebuilt from station_information and, for vehicles entries, the
+ * free-floating vehicles too. A national system keeps its box (replacesBbox).
+ * @param {object[]} entries
+ * @returns {Promise<Map<string, object>>} id → entry with the repaired bbox
+ */
+export async function fillGbfsCoverage(entries, { fetchImpl } = {}) {
+  const todo = entries.filter((e) => e.access.related?.gbfs && !plausibleBbox(e.coverage.bbox));
+  const doc = async (url) => {
+    if (!url) return null;
+    const res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000 });
+    return res.status === 200 ? json(res.body) : null;
+  };
+  const rebuild = async (e) => {
+    const info = e.access.related.station_information ?? gbfsFeeds(await doc(e.access.related.gbfs)).feeds.station_information;
+    const stations = stationBbox(await doc(info));
+    if (e.domain !== 'sharedmobility.vehicles') return stations;
+    const data = (await doc(e.access.url))?.data;
+    const list = data?.vehicles ?? data?.bikes;
+    const free = Array.isArray(list) ? list.filter((v) => v && !v.station_id) : [];
+    return bboxUnion(robustBbox(free.map((v) => [coordinate(v.lat), coordinate(v.lon)])), stations);
+  };
+  const boxes = await runPooled(todo, (e) => hostOfUrl(e.access.url), rebuild, { global: 16, perHost: 2 });
+  const filled = new Map();
+  todo.forEach((e, i) => {
+    if (!boxes[i]?.error && replacesBbox(e.coverage.bbox, boxes[i]))
+      filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: boxes[i] } });
+  });
+  return filled;
+}
 
 /** Stops starting new GBFS systems this long into a run (the job has 60 min). */
 export const GBFS_PHASE_MS = 15 * 60_000;

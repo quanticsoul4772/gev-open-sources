@@ -2,6 +2,7 @@ import { parseCsv } from '../util/csv.js';
 import { fetchCapped } from '../util/http.js';
 import { hasCredential } from '../util/secrets.js';
 import { slugId } from '../util/ids.js';
+import { plausibleBbox } from './catalogue.js';
 
 export const MDB_CSV_URL = 'https://files.mobilitydatabase.org/feeds_v2.csv';
 
@@ -12,7 +13,9 @@ const bboxOf = (row) => {
     'location.bounding_box.maximum_latitude',
     'location.bounding_box.maximum_longitude',
   ].map((k) => Number.parseFloat(row[k]));
-  return v.every(Number.isFinite) && v[0] <= v[2] && v[1] <= v[3] ? v : null;
+  // A catalogue box wider than one service area is usually an error (a flipped
+  // sign, a stray stop); leave it out and fill coverage from the vehicles.
+  return plausibleBbox(v) ? v : null;
 };
 
 /**

@@ -215,3 +215,57 @@ test('https upgrade: switch only on 200, same content type and decodable data; h
   const again = await upgradeToHttps([entry('plain', 'http://plain.example/vp')], { rejects, now: 2000, fetchImpl });
   assert.equal(again.size, 0, 'a recent failure is not retried');
 });
+
+test('coverage: stray points (a station abroad, swapped lat/lon) are dropped; a national spread is kept', async () => {
+  const { plausibleBbox, withoutStrays } = await import('../src/harvest/catalogue.js');
+  const { stationBbox } = await import('../src/harvest/gbfs.js');
+  const santiago = Array.from({ length: 30 }, (_, i) => [-33.4 - (i % 6) / 100, -70.6 - Math.floor(i / 6) / 100]);
+  const madrid = [40.4168, -3.7038];
+  const swapped = [-70.62, -33.43];
+  assert.equal(withoutStrays([...santiago, madrid, swapped]).length, 30);
+  const box = stationBbox({ data: { stations: [...santiago, madrid].map(([lat, lon]) => ({ lat, lon })) } });
+  assert.ok(plausibleBbox(box) && box[2] < -33, `Santiago only: ${box}`);
+  // Amtrak-like: points spread across a continent stay.
+  const national = [[47.6, -122.3], [34.0, -118.2], [41.9, -87.6], [40.7, -74.0], [29.9, -90.1], [42.4, -71.1]];
+  assert.equal(withoutStrays(national).length, national.length);
+});
+
+test('coverage: a bbox must be well formed and one service area', async () => {
+  const { plausibleBbox } = await import('../src/harvest/catalogue.js');
+  assert.equal(plausibleBbox([48.8, 2.2, 48.9, 2.5]), true);
+  assert.equal(plausibleBbox([4.8227, -52.3651, 4.9355, 52.2964]), false, 'flipped sign: 105° wide');
+  assert.equal(plausibleBbox([47.26, 4.51, 78.25, 31.11]), false, 'a country out to Svalbard');
+  assert.equal(plausibleBbox([2, 2, 1, 1]), false, 'min above max');
+  assert.equal(plausibleBbox(null), false);
+});
+
+test('coverage: an oversized transit bbox is rebuilt from the vehicles; a national feed keeps its own', async () => {
+  const { fillTransitCoverage } = await import('../src/harvest/catalogue.js');
+  const fetchImpl = fakeFetch({
+    'https://a.example/city': { body: feedBytes([[4.93, -52.33], [4.92, -52.31]]) },
+    'https://a.example/national': { body: feedBytes([[47.6, -122.3], [40.7, -74.0], [29.9, -90.1]]) },
+  });
+  const entry = (id, url, bbox) => ({ id, domain: 'transit.vehicles', coverage: { bbox, countries: [] }, access: { url } });
+  const filled = await fillTransitCoverage(
+    [entry('city', 'https://a.example/city', [4.82, -52.37, 4.94, 52.3]), entry('national', 'https://a.example/national', [27, -123, 49, -70])],
+    { fetchImpl },
+  );
+  assert.deepEqual([...filled.keys()], ['city']);
+  assert.ok(filled.get('city').coverage.bbox[3] < -52);
+});
+
+test('coverage: an existing GBFS entry with a stray-stretched box is rebuilt from its stations', async () => {
+  const { fillGbfsCoverage } = await import('../src/harvest/gbfs.js');
+  const city = Array.from({ length: 12 }, (_, i) => ({ lat: 4.6 + i / 100, lon: -74.1 + i / 100 }));
+  const fetchImpl = fakeFetch({
+    'https://b.example/info': { body: JSON.stringify({ data: { stations: [...city, { lat: -23.4, lon: -46.4 }] } }) },
+  });
+  const entry = {
+    id: 'bogota',
+    domain: 'bikeshare.stations',
+    coverage: { bbox: [-23.4, -74.1, 4.71, -46.4], countries: [] },
+    access: { url: 'https://b.example/status', related: { station_information: 'https://b.example/info', gbfs: 'https://b.example/gbfs.json' } },
+  };
+  const filled = await fillGbfsCoverage([entry], { fetchImpl });
+  assert.deepEqual(filled.get('bogota').coverage.bbox, [4.6, -74.1, 4.71, -73.99]);
+});
