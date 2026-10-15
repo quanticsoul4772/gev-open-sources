@@ -95,9 +95,12 @@ Version policy:
   2.0+ asks operators to rotate ids after each trip, but not all do (car
   sharing in particular): don't keep per-vehicle history or trails.
 - Redirects are followed only to the same origin or a host in
-  `access.redirectHosts`; transit and bike-share entries carry
-  `coverage.bbox`; URLs never carry credentials. New `domain` and `format`
-  values may appear: ignore the ones you don't decode.
+  `access.redirectHosts`. New entries carry `coverage.bbox`; a few older
+  transit candidates still have `null` (unknown) until their vehicles are
+  seen. URLs carry no credential the gate recognises (`src/util/secrets.js`),
+  but treat that as a filter, not a proof. Feed URLs may be plain http, an
+  IP address or a non-default port: apply your own URL policy. New `domain`
+  and `format` values may appear: ignore the ones you don't decode.
 
 ```
 npm ci

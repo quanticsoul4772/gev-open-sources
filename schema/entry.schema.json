@@ -68,7 +68,12 @@
         "url": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/httpUrl" }] },
         "display": { "type": "boolean" },
         "commercial": { "type": ["boolean", "null"] },
-        "attribution": { "type": ["string", "null"] }
+        "attribution": { "type": ["string", "null"] },
+        "obligations": {
+          "description": "Set by a tier-2 (llm-terms) decision: the kinds of conditions the terms impose, all ones an app meets on its own.",
+          "type": "array",
+          "items": { "type": "string" }
+        }
       }
     },
     "licence_decision": {

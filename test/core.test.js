@@ -462,3 +462,21 @@ test('restore: all or nothing — first deploy starts empty; a published site mu
   await restoreState('https://x.example/site', async (url) => ((seen = url), new Response('nf', { status: 404 })), 'abc');
   assert.match(seen, /\?r=abc$/, 'cache-busting query');
 });
+
+test('internal addresses are refused on every hop; public IP literals are allowed', async () => {
+  const { isInternalUrl } = await import('../src/util/http.js');
+  for (const u of ['http://169.254.169.254/latest/meta-data', 'http://127.0.0.1:8080/x', 'http://10.0.0.5/x', 'http://192.168.1.1/x', 'http://172.20.0.1/x', 'http://[::1]/x', 'http://localhost/x', 'http://db.internal/x', 'http://[fd00::1]/x', 'not a url'])
+    assert.equal(isInternalUrl(u), true, u);
+  for (const u of ['http://20.19.98.194:8328/api/gtfs-realtime/6', 'https://a.example/vp', 'http://172.32.0.1/x'])
+    assert.equal(isInternalUrl(u), false, u);
+  const fetchImpl = async () => new Response(null, { status: 302, headers: { location: 'http://169.254.169.254/latest' } });
+  await assert.rejects(fetchCapped('https://a.example/vp', { fetchImpl, anyRedirect: true }), /refusing internal address 169\.254\.169\.254/);
+  const { crossOriginTarget } = await import('../src/harvest/redirects.js');
+  assert.equal(await crossOriginTarget('https://a.example/vp', fetchImpl), null, 'never published as a final URL');
+});
+
+test('credentials: authorization/clientid/pw names and bare 32+ hex path segments', () => {
+  for (const u of ['https://a.example/vp?Authorization=x', 'https://a.example/vp?clientid=x', 'https://a.example/vp?pw=x', `https://a.example/gtfs/realtime/${'c21a'.repeat(8)}`])
+    assert.equal(hasCredential(u), true, u);
+  assert.equal(hasCredential('https://a.example/r/372463bd-d7b4-4668-a9b5-bd71a28f389d'), false, 'a UUID is not a key');
+});

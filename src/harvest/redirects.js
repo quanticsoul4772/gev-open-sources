@@ -1,4 +1,4 @@
-import { USER_AGENT } from '../util/http.js';
+import { USER_AGENT, isInternalUrl } from '../util/http.js';
 import { hasCredential } from '../util/secrets.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 
@@ -12,6 +12,8 @@ import { hostOfUrl, runPooled } from '../util/pool.js';
 export async function crossOriginTarget(url, fetchImpl = fetch) {
   let current = url;
   for (let hop = 0; hop < 3; hop += 1) {
+    // Never follow (or publish) a redirect into the runner's own network.
+    if (isInternalUrl(current)) return null;
     let response;
     try {
       response = await fetchImpl(current, {
@@ -27,7 +29,7 @@ export async function crossOriginTarget(url, fetchImpl = fetch) {
     if (response.status < 300 || response.status >= 400 || !location) break;
     current = new URL(location, current).href;
   }
-  if (current === url) return null;
+  if (current === url || isInternalUrl(current)) return null;
   return new URL(current).origin === new URL(url).origin ? null : current;
 }
 

@@ -12,6 +12,35 @@ export const USER_AGENT =
  *   timeoutMs?: number, maxBytes?: number, fetchImpl?: typeof fetch}} [options]
  * @returns {Promise<{status: number, url: string, headers: Headers, body: Uint8Array}>}
  */
+/**
+ * Whether a URL's host is loopback, private, link-local or otherwise
+ * internal (by name or IP literal). The harvest fetches URLs from third-party
+ * catalogues and follows their redirects; it must never be steered at the CI
+ * runner's own network (e.g. a cloud metadata address). Public IP literals
+ * are allowed: some real feeds use them. No DNS lookup: a public name that
+ * resolves to a private address is not caught here.
+ * @param {string} url
+ */
+export function isInternalUrl(url) {
+  let host;
+  try {
+    host = new URL(url).hostname.toLowerCase().replace(/^\[|\]$/g, '');
+  } catch {
+    return true;
+  }
+  if (host === 'localhost' || /\.(localhost|local|internal|home\.arpa)$/.test(host)) return true;
+  const v4 = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+  if (v4) {
+    const [a, b] = [Number(v4[1]), Number(v4[2])];
+    return (
+      a === 0 || a === 10 || a === 127 || (a === 100 && b >= 64 && b <= 127) || (a === 169 && b === 254) ||
+      (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168) || a >= 224
+    );
+  }
+  if (host.includes(':')) return host === '::1' || host === '::' || /^(fc|fd|fe[89ab])/.test(host) || host.startsWith('::ffff:');
+  return false;
+}
+
 export async function fetchCapped(
   url,
   {
@@ -26,6 +55,7 @@ export async function fetchCapped(
   const origin = new URL(url).origin;
   let current = url;
   for (let hop = 0; hop <= 3; hop += 1) {
+    if (isInternalUrl(current)) throw new Error(`refusing internal address ${new URL(current).hostname}`);
     const response = await fetchImpl(current, {
       redirect: 'manual',
       signal: AbortSignal.timeout(timeoutMs),

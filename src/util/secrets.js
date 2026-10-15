@@ -7,7 +7,7 @@
 
 /** Parameter names that carry a credential. */
 const CREDENTIAL_NAME =
-  /key|token|secret|passw|pwd|signature|credential|session|jwt|bearer|^(sig|auth|code|appid|app_id|app_code|client_id|sid|pass|user|username|login|access|k|p)$/i;
+  /key|token|secret|passw|pwd|signature|credential|session|jwt|bearer|authoriz|^(sig|auth|code|appid|app_id|app_code|client_id|clientid|sid|pass|pw|user|username|login|access|k|p)$/i;
 /**
  * Request headers an entry may carry: ones that identify the client, never
  * ones that authenticate it (Entur requires ET-Client-Name).
@@ -20,6 +20,8 @@ const KEY_SEGMENT = /^(key|keys|token|secret|auth|api[-_]?key|access[-_]?key|acc
  * the app's rule (gods-eye-view sourceDirectory.js hasCredential).
  */
 const TOKEN_PREFIX = /^(eyJ|AKIA|AIza|sk-|ghp_|xox|[Bb]earer\s)/;
+/** A path segment that is only a long hex run: an embedded key. */
+const HEX_KEY = /^[0-9a-f]{32,}$/i;
 /** Values in a known token format, anywhere in a string. */
 // Each prefix must start a token: not after a letter, digit, `_` or `-`, so a
 // slug like `transitous-sk-zsr-…` (Slovakia) is not an `sk-` key.
@@ -60,7 +62,11 @@ export function hasCredential(url) {
     }
   }
   if (params.some(([n, v]) => CREDENTIAL_NAME.test(n) || TOKEN_PREFIX.test(v))) return true;
-  return segments.some((s, i) => TOKEN_PREFIX.test(s) || (KEY_SEGMENT.test(s) && Boolean(segments[i + 1])));
+  // A bare run of 32+ hex characters as a path segment is how many APIs embed
+  // a key (e.g. /gtfs/realtime/<32 hex>); ids with dashes (UUIDs) don't match.
+  return segments.some(
+    (s, i) => TOKEN_PREFIX.test(s) || HEX_KEY.test(s) || (KEY_SEGMENT.test(s) && Boolean(segments[i + 1])),
+  );
 }
 
 /** Every URL an entry publishes: access, related, licence, catalogue licence, `via:` provenance. */
