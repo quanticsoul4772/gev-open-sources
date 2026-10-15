@@ -238,7 +238,7 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
  * 2026-10-14); fleet car sharing (company cars) stays. GBFS has no
  * peer-to-peer flag, so known operators are matched by name and host.
  */
-const PEER_TO_PEER = /getaround|drivy|snappcar|\bturo\b|gomore|hiyacar|ouicar/i;
+const PEER_TO_PEER = /getaround|drivy|snappcar|\bturo\b|gomore|hiyacar|ouicar|locomotion/i;
 
 /** Whether a system is peer-to-peer car sharing (by provider, name or discovery host). */
 export const isPeerToPeer = (system) =>
