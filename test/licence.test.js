@@ -126,3 +126,38 @@ test('html to text drops hidden elements', () => {
   assert.ok(text.includes('Visible terms.') && text.includes('More visible.'));
   for (const gone of ['third parties may display', 'hidden span', 'aria hidden', 'vis\n']) assert.ok(!text.includes(gone), gone);
 });
+
+test('licence keep: transient failures keep the last decision for at most 7 days; answers never do', async () => {
+  const { KEEP_ON_TRANSIENT_S, isTransient, keepOnTransient, termsText, gbfsDecision, declarationPresent } = await import('../src/licence/index.js');
+  // What counts as transient.
+  assert.equal(isTransient({ status: 503 }), true);
+  assert.equal(isTransient({ status: 429 }), true);
+  assert.equal(isTransient({ status: 404 }), false);
+  assert.equal(isTransient({ status: 410 }), false);
+  assert.equal(isTransient({ status: 403 }), false);
+  assert.equal(isTransient({ error: new Error('fetch failed') }), true);
+  assert.equal(isTransient({ error: new Error('refusing internal address 10.0.0.1') }), false);
+  // The keep window.
+  const now = 1_000_000;
+  assert.deepEqual(keepOnTransient({ licenceConfirmedAt: now - 3600 }, true, now), { keep: true, confirmedAt: now - 3600 });
+  assert.deepEqual(keepOnTransient({ licenceConfirmedAt: now - KEEP_ON_TRANSIENT_S }, true, now), { keep: false, confirmedAt: now - KEEP_ON_TRANSIENT_S });
+  assert.deepEqual(keepOnTransient({}, true, now), { keep: true, confirmedAt: now }, 'no confirmation yet: the clock starts now');
+  assert.deepEqual(keepOnTransient({ licenceConfirmedAt: 5 }, false, now), { keep: false, confirmedAt: now }, 'a good read confirms');
+  assert.deepEqual(keepOnTransient(undefined, true, now), { keep: false, confirmedAt: null }, 'no health record: none created');
+  // Readers report transient failures.
+  const status = (code) => async () => new Response('x', { status: code });
+  assert.equal((await termsText('https://a.example/terms', status(502))).transient, true);
+  assert.equal((await termsText('https://a.example/terms', status(404))).transient, false);
+  assert.equal((await termsText('https://a.example/terms', async () => { throw new TypeError('fetch failed'); })).transient, true);
+  const v3 = {
+    provider: 'X', format: 'gbfs.station-status', gbfs: { version: '3.0' },
+    licence: { id: null, url: null, display: false, commercial: null, attribution: 'X' },
+    access: { url: 'https://a.example/station_status.json', related: { system_information: 'https://a.example/system_information.json' } },
+  };
+  assert.equal((await gbfsDecision(v3, status(500))).transient, true);
+  const gone = await gbfsDecision(v3, status(404));
+  assert.equal(gone.transient, undefined, 'a 404 is an answer');
+  assert.equal((await gbfsDecision(v3, async () => new Response('not json'))).transient, undefined, 'bad JSON is an answer');
+  assert.equal(await declarationPresent('https://a.example/rss', 'x', status(503)), null);
+  assert.equal(await declarationPresent('https://a.example/rss', 'x', status(404)), false);
+});
