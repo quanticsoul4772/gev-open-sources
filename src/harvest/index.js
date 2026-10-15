@@ -11,7 +11,7 @@ import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas } from './atlas.js';
 import { harvestCameras } from './cameras.js';
 import { REJECT_RETRY_S, fillTransitCoverage } from './catalogue.js';
-import { GBFS_PHASE_MS, harvestGbfs, isPeerToPeer, outputKey } from './gbfs.js';
+import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
@@ -165,6 +165,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const deduped = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);
   // Transit entries need a bbox: fill missing ones from their vehicles. A new
   // entry still without one waits for a later run; an existing one keeps trying.
+  // Existing GBFS entries with a broken box are rebuilt from their stations.
   // Plain-http feeds move to https when it serves the same data.
   const upgraded = await upgradeToHttps(
     [...deduped, ...[...existing.values()].map((e) => redirected.get(e.id) || e)],
@@ -172,7 +173,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   );
   const fresh = deduped.map((e) => upgraded.get(e.id) || e);
   const updated = [...existing.values()].map((e) => upgraded.get(e.id) || redirected.get(e.id) || e);
-  const covered = await fillTransitCoverage([...fresh, ...updated]);
+  const covered = new Map([...(await fillTransitCoverage([...fresh, ...updated])), ...(await fillGbfsCoverage(updated))]);
   const ready = fresh
     .map((e) => covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
