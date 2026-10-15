@@ -31,11 +31,12 @@ test('credentials: parameter names, path keys, userinfo, fragments, token format
     'https://a.example/api/key',
   ])
     assert.equal(hasCredential(u), false, u);
-  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key', 'accesskey', 'AccessKey', 'x-api-key', 'sessionToken', 'client_secret', 'sig', 'appid', 'client_id', 'acl:consumerKey', 'sid', 'user', 'login', 'access', 'k', 'p'])
+  for (const p of ['apiKey', 'key', 'token', 'api_key', 'access_token', 'subscription-key', 'accesskey', 'AccessKey', 'x-api-key', 'sessionToken', 'client_secret', 'sig', 'appid', 'client_id', 'acl:consumerKey', 'sid', 'user', 'login', 'access', 'k', 'p', 'myappid', 'client_id_type', 'openweather_appid'])
     assert.equal(hasCredential(`https://a.example/vp?${p}=abc`), true, p);
   for (const u of [
     'https://api.transitime.org/api/v1/key/dca0/agency/x/command/gtfs-rt/vehiclePositions',
     'https://a.example/v1/token/abc/vp',
+    'https://a.example/key//abc',
     'https://user:pass@a.example/vp',
     'https://a.example/vp#apikey=abc',
     'https://a.example/vp?x=1&amp;apikey=abc',

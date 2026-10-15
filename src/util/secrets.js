@@ -7,7 +7,7 @@
 
 /** Parameter names that carry a credential. */
 const CREDENTIAL_NAME =
-  /key|token|secret|passw|pwd|signature|credential|session|jwt|bearer|authoriz|^(sig|auth|code|appid|app_id|app_code|client_id|clientid|sid|pass|pw|user|username|login|access|k|p)$/i;
+  /key|token|secret|passw|pwd|signature|credential|session|jwt|bearer|authoriz|appid|app_id|app_code|client_id|clientid|^(sig|auth|code|sid|pass|pw|user|username|login|access|k|p)$/i;
 /**
  * Request headers an entry may carry: ones that identify the client, never
  * ones that authenticate it (Entur requires ET-Client-Name).
@@ -65,7 +65,7 @@ export function hasCredential(url) {
   // A bare run of 32+ hex characters as a path segment is how many APIs embed
   // a key (e.g. /gtfs/realtime/<32 hex>); ids with dashes (UUIDs) don't match.
   return segments.some(
-    (s, i) => TOKEN_PREFIX.test(s) || HEX_KEY.test(s) || (KEY_SEGMENT.test(s) && Boolean(segments[i + 1])),
+    (s, i) => TOKEN_PREFIX.test(s) || HEX_KEY.test(s) || (KEY_SEGMENT.test(s) && segments.slice(i + 1).some(Boolean)),
   );
 }
 
