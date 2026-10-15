@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-madison",
+  "domain": "bikeshare.stations",
+  "name": "Madison B-cycle — Madison, WI",
+  "provider": "Madison B-cycle",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Madison B-cycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T04:42:02.812Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_madison"
+  ],
+  "coverage": {
+    "bbox": [
+      42.9969,
+      -89.4834,
+      43.1299,
+      -89.3078
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/1/bcycle_madison/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/1/bcycle_madison/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/1/bcycle_madison/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_madison/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_madison",
+    "version": "1.1"
+  }
+}

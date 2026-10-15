@@ -1,0 +1,46 @@
+{
+  "id": "transitous-cy-pame-express",
+  "domain": "transit.vehicles",
+  "name": "Pame-Express",
+  "provider": "Pame-Express",
+  "coverage": {
+    "bbox": [
+      35.0961,
+      33.3377,
+      35.1904,
+      33.3945
+    ],
+    "countries": [
+      "CY"
+    ]
+  },
+  "access": {
+    "url": "http://20.19.98.194:8328/Api/api/gtfs-realtime/11",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Pame-Express"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T04:42:02.863Z"
+  },
+  "provenance": [
+    "transitous:cy/Pame-Express"
+  ]
+}

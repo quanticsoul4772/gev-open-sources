@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-memphis",
+  "domain": "bikeshare.stations",
+  "name": "Explore Bike Share — Memphis, TN",
+  "provider": "Explore Bike Share",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Explore Bike Share"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T04:42:02.812Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_memphis"
+  ],
+  "coverage": {
+    "bbox": [
+      35.126,
+      -90.0855,
+      35.1808,
+      -89.8326
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/1/bcycle_memphis/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/1/bcycle_memphis/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/1/bcycle_memphis/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_memphis/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_memphis",
+    "version": "1.1"
+  }
+}

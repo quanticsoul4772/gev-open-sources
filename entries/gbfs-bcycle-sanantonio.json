@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-sanantonio",
+  "domain": "bikeshare.stations",
+  "name": "San Antonio B-cycle — San Antonio, TX",
+  "provider": "San Antonio B-cycle",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "San Antonio B-cycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T04:42:02.812Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_sanantonio"
+  ],
+  "coverage": {
+    "bbox": [
+      29.3193,
+      -98.4975,
+      29.4265,
+      -98.4511
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/1/bcycle_sanantonio/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/1/bcycle_sanantonio/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/1/bcycle_sanantonio/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_sanantonio",
+    "version": "1.1"
+  }
+}

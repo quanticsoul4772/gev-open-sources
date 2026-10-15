@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-wuppertal-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Wuppertal — Wuppertal",
+  "provider": "Lime Wuppertal",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Wuppertal"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T04:42:02.827Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_wuppertal"
+  ],
+  "coverage": {
+    "bbox": [
+      51.2065,
+      7.0404,
+      51.3124,
+      7.2731
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/wuppertal/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_wuppertal",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

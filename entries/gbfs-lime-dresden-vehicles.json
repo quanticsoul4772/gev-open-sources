@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-dresden-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Dresden — Dresden",
+  "provider": "Lime Dresden",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Dresden"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T04:42:02.826Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_dresden"
+  ],
+  "coverage": {
+    "bbox": [
+      50.9787,
+      13.6498,
+      51.1147,
+      13.8582
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/dresden/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/dresden/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/dresden/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/dresden/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_dresden",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-bcycle-heartland",
+  "domain": "bikeshare.stations",
+  "name": "Heartland B-cycle — Omaha, NE",
+  "provider": "Heartland B-cycle",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Heartland B-cycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T04:42:02.811Z"
+  },
+  "provenance": [
+    "gbfs-systems:bcycle_heartland"
+  ],
+  "coverage": {
+    "bbox": [
+      41.0304,
+      -96.3118,
+      41.3162,
+      -95.8174
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.bcycle.com/1/bcycle_heartland/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.bcycle.com/1/bcycle_heartland/station_information.json",
+      "system_information": "https://gbfs.bcycle.com/1/bcycle_heartland/system_information.json",
+      "gbfs": "https://gbfs.bcycle.com/bcycle_heartland/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "bcycle_heartland",
+    "version": "1.1"
+  }
+}
