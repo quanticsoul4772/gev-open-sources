@@ -130,8 +130,8 @@ export async function resolveTransitCandidates(candidates, { knownUrls, rejects,
  * @param {number[]|null} rebuilt
  * @param {number} strays points the rebuild dropped as strays
  */
-export const replacesBbox = (current, rebuilt, strays) =>
-  wellFormedBbox(rebuilt) && (!wellFormedBbox(current) || (strays > 0 && plausibleBbox(rebuilt)));
+export const replacesBbox = (current, rebuilt, strays, cls) =>
+  wellFormedBbox(rebuilt) && (!wellFormedBbox(current) || (strays > 0 && plausibleBbox(rebuilt, cls)));
 
 /**
  * Fill or repair coverage.bbox on transit entries from one fetch of their
@@ -141,14 +141,14 @@ export const replacesBbox = (current, rebuilt, strays) =>
  * @returns {Promise<Map<string, object>>} id → entry with a bbox, for those filled
  */
 export async function fillTransitCoverage(entries, { fetchImpl } = {}) {
-  const todo = entries.filter((e) => e.domain === 'transit.vehicles' && !plausibleBbox(e.coverage.bbox));
+  const todo = entries.filter((e) => e.domain === 'transit.vehicles' && !plausibleBbox(e.coverage.bbox, e.coverage.class));
   const checks = await runPooled(todo, (e) => hostOfUrl(e.access.url), (e) => checkVehicleFeed(e.access.url, { fetchImpl }), {
     global: 24,
     perHost: 2,
   });
   const filled = new Map();
   todo.forEach((e, i) => {
-    if (checks[i]?.ok && replacesBbox(e.coverage.bbox, checks[i].bbox, checks[i].strays))
+    if (checks[i]?.ok && replacesBbox(e.coverage.bbox, checks[i].bbox, checks[i].strays, e.coverage.class))
       filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: checks[i].bbox } });
   });
   return filled;
