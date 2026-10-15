@@ -24,23 +24,24 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://data.calgary.ca/stories/s/Open-Calgary-Terms-of-Use/u45n-7awa",
     "display": false,
     "commercial": null,
-    "attribution": "Calgary Transit"
+    "attribution": "Contains information licensed under the Open Government Licence – City of Calgary."
   },
   "licence_decision": {
     "by": "none",
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "terms page has no readable text"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.667Z"
+    "at": "2026-10-15T19:05:30.473Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-1080-vp"
+    "mobilitydatabase:tld-1080-vp",
+    "licence-atlas:f-calgarytransit~rt"
   ]
 }

@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://www.rtd-denver.com/business-center/open-spatial-data/gtfs-realtime-license-agreement",
     "display": false,
     "commercial": null,
     "attribution": "Bustang"
@@ -34,14 +34,15 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "requires acceptance"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.725Z"
+    "at": "2026-10-15T19:05:30.477Z"
   },
   "provenance": [
     "mobilitydatabase:tld-4923-vp",
-    "via:https://www.rtd-denver.com/files/bustang/gtfs-rt/Bustang_VehiclePosition.pb"
+    "via:https://www.rtd-denver.com/files/bustang/gtfs-rt/Bustang_VehiclePosition.pb",
+    "licence-atlas:f-denver~rtd~bustang~rt"
   ]
 }

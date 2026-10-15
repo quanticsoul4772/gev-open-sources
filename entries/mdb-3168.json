@@ -21,24 +21,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
-    "url": null,
-    "display": false,
-    "commercial": null,
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
     "attribution": "BAS.MY Alor Setar"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "no licence published"
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.468Z"
+    "at": "2026-10-15T19:05:30.464Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-3168"
+    "mobilitydatabase:mdb-3168",
+    "licence-atlas:f-mybas~alor~setar~rt"
   ]
 }

@@ -22,7 +22,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://tarta.com/gtfs/",
     "display": false,
     "commercial": null,
     "attribution": "Toledo Area Regional Transit Authority"
@@ -32,13 +32,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.572Z"
+    "at": "2026-10-15T19:05:30.452Z"
   },
   "provenance": [
-    "transitland-atlas:f-toledo~area~regional~transit~authority~rt"
+    "transitland-atlas:f-toledo~area~regional~transit~authority~rt",
+    "licence-borrowed:atlas:f-toledo~area~regional~transit~authority"
   ]
 }

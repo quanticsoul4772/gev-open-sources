@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://www.spokanetransit.com/developers-terms-of-use/",
     "display": false,
     "commercial": null,
     "attribution": "Spokane Transit Authority"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "HTTP 403"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.684Z"
+    "at": "2026-10-15T19:05:30.475Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4363-vp"
+    "mobilitydatabase:tld-4363-vp",
+    "licence-atlas:f-spokanetransitauthority~rt"
   ]
 }

@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://transitdata.ridewta.com/gtfs/",
     "display": false,
     "commercial": null,
     "attribution": "Whatcom Transportation Authority"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "runs disagree on commercial"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.682Z"
+    "at": "2026-10-15T19:05:30.475Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4358-vp"
+    "mobilitydatabase:tld-4358-vp",
+    "licence-atlas:f-whatcomtransportationauthority~rt"
   ]
 }

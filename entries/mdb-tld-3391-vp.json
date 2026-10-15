@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "http://www.sacrt.com/schedules/gtfs.aspx",
     "display": false,
     "commercial": null,
     "attribution": "Sacramento Regional Transit"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "terms page unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.674Z"
+    "at": "2026-10-15T19:05:30.474Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-3391-vp"
+    "mobilitydatabase:tld-3391-vp",
+    "licence-atlas:f-9qce-sacramentoregionaltransit~rt"
   ]
 }

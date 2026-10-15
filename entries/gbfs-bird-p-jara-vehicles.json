@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-p-jara-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Pájara — Pájara",
+  "provider": "Bird Pájara",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Pájara"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.405Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-pájara"
+  ],
+  "coverage": {
+    "bbox": [
+      28.0288,
+      -14.3603,
+      28.1939,
+      -14.1898
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/pajara/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/pajara/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/pajara/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/pajara/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-pájara",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

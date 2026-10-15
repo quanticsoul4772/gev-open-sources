@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-copenhagen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Copenhagen — Copenhagen",
+  "provider": "Donkey Republic Copenhagen",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.409Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_copenhagen"
+  ],
+  "coverage": {
+    "bbox": [
+      55.6164,
+      12.3106,
+      55.9338,
+      12.655
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_copenhagen/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_copenhagen/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_copenhagen/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_copenhagen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_copenhagen",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

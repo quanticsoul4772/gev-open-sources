@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://godurhamtransit.org/developer-terms-and-conditions",
     "display": false,
     "commercial": null,
     "attribution": "GoDurham"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "HTTP 404"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.675Z"
+    "at": "2026-10-15T19:05:30.474Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4062-vp"
+    "mobilitydatabase:tld-4062-vp",
+    "licence-atlas:f-dnru-durham~area~transit~authority~nc~us~rt"
   ]
 }

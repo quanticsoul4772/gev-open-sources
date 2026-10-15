@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://lynx.maps.arcgis.com/home/item.html?id=0cb5c72749ec402ea920b5a341fc4e3c",
     "display": false,
     "commercial": null,
     "attribution": "Central Florida Regional Transit Authority (LYNX)"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "terms page has no readable text"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.358Z"
+    "at": "2026-10-15T19:05:30.459Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1766"
+    "mobilitydatabase:mdb-1766",
+    "licence-atlas:f-djn-centralfloridaregionaltransitauthority~rt"
   ]
 }

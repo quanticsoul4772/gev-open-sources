@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-antigua-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Antigua — Antigua",
+  "provider": "Bird Antigua",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Antigua"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.403Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-antigua"
+  ],
+  "coverage": {
+    "bbox": [
+      28.36,
+      -13.8989,
+      28.4339,
+      -13.8327
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/antigua/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/antigua/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/antigua/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/antigua/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-antigua",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

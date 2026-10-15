@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://ftis.org/FTDEDisclaimer.aspx",
     "display": false,
     "commercial": null,
     "attribution": "Broward County Transit"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.496Z"
+    "at": "2026-10-15T19:05:30.467Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-3475"
+    "mobilitydatabase:mdb-3475",
+    "licence-borrowed:atlas:f-dhw-browardcountytransit"
   ]
 }

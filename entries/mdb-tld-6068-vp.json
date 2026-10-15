@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://api.um.warszawa.pl/index.php?wcag=true&opc=5,1,0,0,",
     "display": false,
     "commercial": null,
     "attribution": "Zarząd Transportu Miejskiego w Warszawie"
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.752Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-6068-vp"
+    "mobilitydatabase:tld-6068-vp",
+    "licence-atlas:f-u3q-warszawski~transport~publiczny~rt~positions"
   ]
 }

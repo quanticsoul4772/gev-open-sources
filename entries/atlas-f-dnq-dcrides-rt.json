@@ -22,7 +22,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://gtfs-directory.syncromatics.com/",
     "display": false,
     "commercial": null,
     "attribution": "Davidson County Transportation System"
@@ -32,13 +32,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.566Z"
+    "at": "2026-10-15T19:05:30.445Z"
   },
   "provenance": [
-    "transitland-atlas:f-dnq-dcrides~rt"
+    "transitland-atlas:f-dnq-dcrides~rt",
+    "licence-borrowed:atlas:f-dnq-dcrides"
   ]
 }

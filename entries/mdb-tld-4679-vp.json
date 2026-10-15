@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://pvta.com/usageAgreement.php",
     "display": false,
     "commercial": null,
     "attribution": "Pioneer Valley Transit Authority"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "HTTP 404"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.710Z"
+    "at": "2026-10-15T19:05:30.476Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4679-vp"
+    "mobilitydatabase:tld-4679-vp",
+    "licence-atlas:f-drk-pvta~rt"
   ]
 }

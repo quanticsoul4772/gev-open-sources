@@ -22,7 +22,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://ftis.org/FTDEDisclaimer.aspx",
     "display": false,
     "commercial": null,
     "attribution": "Jacksonville Transportation Authority"
@@ -32,13 +32,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T17:12:54.225Z"
+    "at": "2026-10-15T19:05:30.445Z"
   },
   "provenance": [
-    "transitland-atlas:f-djmu-jacksonvilletransportationauthority~rt"
+    "transitland-atlas:f-djmu-jacksonvilletransportationauthority~rt",
+    "licence-borrowed:atlas:f-djmu-jacksonvilletransportationauthority"
   ]
 }

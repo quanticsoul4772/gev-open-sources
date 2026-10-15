@@ -23,24 +23,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
-    "url": null,
-    "display": false,
-    "commercial": null,
+    "id": "CC0-1.0",
+    "url": "https://spdx.org/licenses/CC0-1.0",
+    "display": true,
+    "commercial": true,
     "attribution": "Miejski Zakład Komunikacji Sp. z o.o. (Ełk)"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "no licence published"
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC0-1.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.753Z"
+    "at": "2026-10-15T19:05:30.479Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-6075-tu_vp"
+    "mobilitydatabase:tld-6075-tu_vp",
+    "licence-atlas:f-u3xf-elk~rt"
   ]
 }

@@ -32,22 +32,22 @@
     "version": "3.0"
   },
   "licence": {
-    "id": null,
+    "id": "etalab-1.0",
     "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "Bysykkel"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "pdf terms"
+        "field": "licence",
+        "quote": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:41:07.266Z"
+    "at": "2026-10-15T19:05:30.418Z"
   },
   "provenance": [
     "gbfs-systems:lillestrom"

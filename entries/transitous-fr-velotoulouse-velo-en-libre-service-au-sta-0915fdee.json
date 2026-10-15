@@ -4,22 +4,22 @@
   "name": "velotoulouse-velo-en-libre-service-au-standard-gbfs",
   "provider": "velotoulouse-velo-en-libre-service-au-standard-gbfs",
   "licence": {
-    "id": null,
+    "id": "etalab-1.0",
     "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "velotoulouse-velo-en-libre-service-au-standard-gbfs"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "pdf terms"
+        "field": "licence",
+        "quote": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T23:36:06.217Z"
+    "at": "2026-10-15T19:05:30.441Z"
   },
   "provenance": [
     "transitous:fr/velotoulouse-velo-en-libre-service-au-standard-gbfs"

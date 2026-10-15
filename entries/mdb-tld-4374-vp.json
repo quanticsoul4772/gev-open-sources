@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://gtfs.tulsatransit.org/",
     "display": false,
     "commercial": null,
     "attribution": "Metropolitan Tulsa Transit Authority"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.686Z"
+    "at": "2026-10-15T19:05:30.475Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-4374-vp"
+    "mobilitydatabase:tld-4374-vp",
+    "licence-atlas:f-metropolitantulsatransitauthority~rt"
   ]
 }

@@ -22,7 +22,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://www.cherriots.org/datalicense/",
     "display": false,
     "commercial": null,
     "attribution": "Cherriots"
@@ -32,13 +32,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.563Z"
+    "at": "2026-10-15T19:05:30.442Z"
   },
   "provenance": [
-    "transitland-atlas:f-9rb-cherriots~rt"
+    "transitland-atlas:f-9rb-cherriots~rt",
+    "licence-borrowed:atlas:f-9rb-cherriots"
   ]
 }

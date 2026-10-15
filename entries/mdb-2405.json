@@ -23,25 +23,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
-    "url": "https://transport.data.gouv.fr/datasets/horaires-rlv-mobilites",
-    "display": false,
-    "commercial": null,
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
     "attribution": "RLV Mobilités"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "borrowed licence is not a known licence"
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.398Z"
+    "at": "2026-10-15T19:05:30.462Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2405",
-    "licence-borrowed:mdb-2404"
+    "licence-atlas:f-rlv~riom~fr~rt"
   ]
 }

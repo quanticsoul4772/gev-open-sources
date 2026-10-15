@@ -23,24 +23,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
-    "url": null,
-    "display": false,
-    "commercial": null,
-    "attribution": "Adelaide Metro"
+    "id": "CC-BY-4.0",
+    "url": "http://creativecommons.org/licenses/by/4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Department of Planning, Transport and Infrastructure, Government of South Australia"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "no licence published"
+        "field": "licence",
+        "quote": "http://creativecommons.org/licenses/by/4.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.360Z"
+    "at": "2026-10-15T19:05:30.460Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1772"
+    "mobilitydatabase:mdb-1772",
+    "licence-atlas:f-r1f-adelaidemetrocomau~rt"
   ]
 }

@@ -22,7 +22,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://matbus.com/contact-us/general-transit-feed-specification-gtfs-data",
     "display": false,
     "commercial": null,
     "attribution": "Fargo Moorhead Metro Area Transit"
@@ -32,13 +32,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.565Z"
+    "at": "2026-10-15T19:05:30.444Z"
   },
   "provenance": [
-    "transitland-atlas:f-cb74-matbus~rt"
+    "transitland-atlas:f-cb74-matbus~rt",
+    "licence-borrowed:atlas:f-cb74-matbus"
   ]
 }

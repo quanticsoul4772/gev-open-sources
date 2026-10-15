@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-frederikssund-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Frederikssund — Frederikssund",
+  "provider": "Dott Frederikssund",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Frederikssund"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.413Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-frederikssund"
+  ],
+  "coverage": {
+    "bbox": [
+      55.7904,
+      11.9676,
+      55.8807,
+      12.1359
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/frederikssund/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/frederikssund/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/frederikssund/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/frederikssund/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-frederikssund",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

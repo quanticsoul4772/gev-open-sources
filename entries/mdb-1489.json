@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://www.go-metro.com/about-metro/developer-data",
     "display": false,
     "commercial": null,
     "attribution": "Cincinnati Metro"
@@ -34,13 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.318Z"
+    "at": "2026-10-15T19:05:30.457Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1489"
+    "mobilitydatabase:mdb-1489",
+    "licence-atlas:f-cincinnatimetro~rt"
   ]
 }

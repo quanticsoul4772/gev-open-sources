@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://gtfs-directory.syncromatics.com/",
     "display": false,
     "commercial": null,
     "attribution": "Chapel Hill Transit"
@@ -34,14 +34,15 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "terms page has no readable text"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.754Z"
+    "at": "2026-10-15T19:05:30.479Z"
   },
   "provenance": [
     "mobilitydatabase:tld-6626-vp",
-    "via:http://mychtransit.org/gtfs-rt/vehiclepositions"
+    "via:http://mychtransit.org/gtfs-rt/vehiclepositions",
+    "licence-atlas:f-dnru-chapel~hill~transit~nc~us~rt"
   ]
 }

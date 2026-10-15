@@ -23,25 +23,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
-    "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-transavold-saint-avold-gtfs-gtfs-rt",
-    "display": false,
-    "commercial": null,
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
     "attribution": "Transavold"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "borrowed licence is not a known licence"
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.743Z"
+    "at": "2026-10-15T19:05:30.478Z"
   },
   "provenance": [
     "mobilitydatabase:tld-5645-vp",
-    "licence-borrowed:mdb-1896"
+    "licence-atlas:f-zenbus~transavold~rt"
   ]
 }

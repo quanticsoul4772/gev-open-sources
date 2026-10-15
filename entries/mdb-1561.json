@@ -34,14 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "borrowed licence is not a known licence"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.328Z"
+    "at": "2026-10-15T19:05:30.458Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1561",
-    "licence-borrowed:mdb-2"
+    "licence-atlas:f-dpwh-londontransit~rt"
   ]
 }

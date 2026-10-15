@@ -24,23 +24,24 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://goraleigh.org/developer-terms-and-conditions",
     "display": false,
     "commercial": null,
-    "attribution": "GoRaleigh"
+    "attribution": "Except as otherwise noted, the content of this section is licensed under the Creative Commons Attribution 3.0 License"
   },
   "licence_decision": {
     "by": "none",
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.756Z"
+    "at": "2026-10-15T19:05:30.480Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-6672-vp"
+    "mobilitydatabase:tld-6672-vp",
+    "licence-borrowed:atlas:f-dq25-capital~area~transit~nc~us"
   ]
 }

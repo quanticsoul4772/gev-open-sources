@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-region-h-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Region Hovedstaden — Region Hovedstaden",
+  "provider": "Dott Region Hovedstaden",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Region Hovedstaden"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.414Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-region-h"
+  ],
+  "coverage": {
+    "bbox": [
+      55.5928,
+      12.2541,
+      55.9236,
+      12.607
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/region-h/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/region-h/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/region-h/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/region-h/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-region-h",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -21,24 +21,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
-    "url": null,
-    "display": false,
-    "commercial": null,
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
     "attribution": "熊谷市"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "no licence published"
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T21:38:53.161Z"
+    "at": "2026-10-15T19:05:30.449Z"
   },
   "provenance": [
-    "transitland-atlas:f-kumagayacity~yuuyuubus~rt"
+    "transitland-atlas:f-kumagayacity~yuuyuubus~rt",
+    "licence-borrowed:atlas:f-kumagayacity~yuuyuubus"
   ]
 }

@@ -33,22 +33,22 @@
     "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
   },
   "licence": {
-    "id": null,
+    "id": "etalab-1.0",
     "url": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf",
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "pdf terms"
+        "field": "licence",
+        "quote": "https://developer.jcdecaux.com/files/Open-Licence-fr.pdf"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T18:34:54.514Z"
+    "at": "2026-10-15T19:05:30.441Z"
   },
   "provenance": [
     "transitous:fr/stations-velov-de-la-metropole-de-lyon-disponibilites-temps-reel"

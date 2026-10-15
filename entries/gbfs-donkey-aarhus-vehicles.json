@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-aarhus-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Aarhus — Aarhus",
+  "provider": "Donkey Republic Aarhus",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.409Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_aarhus"
+  ],
+  "coverage": {
+    "bbox": [
+      56.0973,
+      10.0948,
+      56.2271,
+      10.2815
+    ],
+    "countries": [
+      "DK"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_aarhus/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_aarhus/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_aarhus/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_aarhus/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_aarhus",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

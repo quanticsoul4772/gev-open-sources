@@ -22,23 +22,24 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://www.massdot.state.ma.us/Portals/0/docs/developers/develop_license_agree.pdf",
     "display": false,
     "commercial": null,
-    "attribution": "Montachusett Regional Transit Authority"
+    "attribution": "Clearly acknowledge MassDOT as the provider of the Data."
   },
   "licence_decision": {
     "by": "none",
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T17:12:54.228Z"
+    "at": "2026-10-15T19:05:30.447Z"
   },
   "provenance": [
-    "transitland-atlas:f-drsf-montachusett~ma~us~rt"
+    "transitland-atlas:f-drsf-montachusett~ma~us~rt",
+    "licence-borrowed:atlas:f-drsf-montachusett~ma~us"
   ]
 }

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-gij-n-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Gijón — Gijón",
+  "provider": "Bird Gijón",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Gijón"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.404Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-gijón"
+  ],
+  "coverage": {
+    "bbox": [
+      43.4902,
+      -5.7247,
+      43.5682,
+      -5.5959
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/gijon/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/gijon/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/gijon/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/gijon/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-gijón",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

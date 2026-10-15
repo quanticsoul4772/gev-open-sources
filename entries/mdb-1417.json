@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": "https://opendata.burlington.ca/opendata-terms-of-use/City%20of%20Burlington%20-%20Open%20Data%20Terms%20of%20Use.pdf",
+    "url": "https://www.burlington.ca/en/services-for-you/resources/initiative%20projects/open_data/termsofuse.pdf",
     "display": false,
     "commercial": null,
     "attribution": "Burlington Transit"
@@ -34,15 +34,15 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "borrowed licence is not a known licence"
+        "quote": "HTTP 404"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.304Z"
+    "at": "2026-10-15T19:05:30.457Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1417",
-    "licence-borrowed:mdb-724",
-    "via:http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb"
+    "via:http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb",
+    "licence-atlas:f-burt~rt"
   ]
 }

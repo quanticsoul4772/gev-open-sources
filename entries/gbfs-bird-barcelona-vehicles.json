@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-barcelona-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Barcelona — Barcelona",
+  "provider": "Bird Barcelona",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Barcelona"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T19:05:30.403Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-barcelona"
+  ],
+  "coverage": {
+    "bbox": [
+      41.3504,
+      2.0912,
+      41.4658,
+      2.2359
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/barcelona/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/barcelona/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/barcelona/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/barcelona/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-barcelona",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

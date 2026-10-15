@@ -22,7 +22,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": null,
+    "url": "https://www.kitsaptransit.com/terms-and-conditions#developer",
     "display": false,
     "commercial": null,
     "attribution": "Kitsap Transit"
@@ -32,13 +32,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "borrowed licence is not a known licence"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T16:46:39.564Z"
+    "at": "2026-10-15T19:05:30.443Z"
   },
   "provenance": [
-    "transitland-atlas:f-c22y-kitsaptransit~rt"
+    "transitland-atlas:f-c22y-kitsaptransit~rt",
+    "licence-borrowed:atlas:f-c22y-kitsaptransit"
   ]
 }
