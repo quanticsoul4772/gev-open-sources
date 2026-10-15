@@ -84,6 +84,20 @@ export const ADAPTERS = Object.freeze({
       sample: cameras[0]?.image ?? null,
     };
   },
+  /**
+   * GDACS event list: one Point feature per event. No freshness time: events
+   * are edited at irregular intervals (hours apart), so the newest edit says
+   * nothing about whether the feed is live.
+   */
+  'geojson.gdacs-events'(body, bbox) {
+    const doc = JSON.parse(new TextDecoder().decode(body));
+    if (doc?.type !== 'FeatureCollection' || !Array.isArray(doc.features)) throw new Error('not a FeatureCollection');
+    const points = doc.features
+      .map((f) => f?.geometry?.coordinates)
+      .filter((c) => Array.isArray(c) && Number.isFinite(c[0]) && Number.isFinite(c[1]))
+      .map(([lon, lat]) => [lat, lon]);
+    return { records: doc.features.length, newest: null, inCoverage: share(points, bbox) };
+  },
   /** USGS summary GeoJSON: freshness is when the file was generated, not the newest event. */
   'geojson.earthquakes'(body, bbox) {
     const doc = JSON.parse(new TextDecoder().decode(body));

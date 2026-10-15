@@ -173,6 +173,13 @@
     "commercial": true,
     "attribution": true
   },
+  "gdacs.org/xml/rss.xml": {
+    "id": "GDACS-public-domain",
+    "display": true,
+    "commercial": true,
+    "attribution": true,
+    "verify": "<copyright>\\s*public domain\\s*</copyright>"
+  },
   "spdx:cc0-1.0": {
     "id": "CC0-1.0",
     "display": true,
