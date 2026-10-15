@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-stella-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Stella — Stuttgart",
+  "provider": "Stella",
+  "licence": {
+    "id": null,
+    "url": "https://www.stella-sharing.de/agb/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Stella"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms do not apply to this data"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T12:42:53.913Z"
+  },
+  "provenance": [
+    "gbfs-systems:stella"
+  ],
+  "coverage": {
+    "bbox": [
+      48.7224,
+      9.0827,
+      48.8554,
+      9.2733
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://api.mobidata-bw.de/sharing/gbfs/v3/stella/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.mobidata-bw.de/sharing/gbfs/v3/stella/vehicle_types",
+      "system_information": "https://api.mobidata-bw.de/sharing/gbfs/v3/stella/system_information",
+      "gbfs": "https://api.mobidata-bw.de/sharing/gbfs/v3/stella/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "stella",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ]
+  }
+}

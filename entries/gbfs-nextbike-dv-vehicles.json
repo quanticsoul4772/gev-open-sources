@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-nextbike-dv-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "VAG_Rad — Nuremberg",
+  "provider": "VAG_Rad",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "VAG Verkehrs-Aktiengesellschaft, Südliche Fürther Straße 5, 90429 Nürnberg"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T12:42:53.901Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_dv"
+  ],
+  "coverage": {
+    "bbox": [
+      49.3096,
+      10.9493,
+      49.6281,
+      11.163
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dv/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dv/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dv/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dv/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_dv",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

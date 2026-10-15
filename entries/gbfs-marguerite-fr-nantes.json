@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T11:31:35.263Z"
+    "at": "2026-10-15T12:42:53.896Z"
   },
   "provenance": [
     "gbfs-systems:Marguerite_FR_Nantes"
