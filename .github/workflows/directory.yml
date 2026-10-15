@@ -11,6 +11,7 @@ permissions:
   pages: write
   id-token: write
   actions: write
+  statuses: write
 
 concurrency:
   group: directory
@@ -46,22 +47,34 @@ jobs:
       - name: Validate entries against the schema (blocks commit and publish)
         run: node src/validate-dist.js entries dist
       - name: Commit entry changes
-        # A PR merged while this run worked moves main: rebase onto it and retry,
-        # rather than losing the run to a non-fast-forward push.
+        # main requires a passing `test` check, which a direct push can't get
+        # from a workflow run. This run has tested the commit, so it pushes it to
+        # a staging branch, marks it `test: success`, then moves main to it.
+        # A PR merged while this run worked moves main: rebase onto it, re-run
+        # the tests on the combined tree (without the token in its environment),
+        # and retry, rather than vouching for code it hasn't tested.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           git add entries
-          if ! git diff --cached --quiet; then
-            git commit -m "directory: $(git diff --cached --name-only | wc -l) entries changed"
-            for attempt in 1 2 3; do
-              if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
-              echo "push attempt $attempt failed; retrying"
-              sleep 15
-            done
-            exit 1
-          fi
+          git diff --cached --quiet && exit 0
+          git commit -m "directory: $(git diff --cached --name-only | wc -l) entries changed"
+          for attempt in 1 2 3; do
+            [ "$attempt" -gt 1 ] && sleep 15
+            git pull --rebase origin main || { git rebase --abort 2>/dev/null || true; continue; }
+            if [ "$(git rev-parse HEAD~1)" != "$GITHUB_SHA" ]; then
+              git diff --quiet "$GITHUB_SHA" HEAD -- package-lock.json || env -u GH_TOKEN npm ci || exit 1
+              env -u GH_TOKEN npm test && node src/scan-secrets.js entries && node src/validate-dist.js entries || exit 1
+            fi
+            sha=$(git rev-parse HEAD)
+            git push --force "$remote" HEAD:refs/heads/directory-staging || continue
+            gh api "repos/${{ github.repository }}/statuses/$sha" -f state=success -f context=test \
+              -f description="tested by the directory run" -f target_url="$GITHUB_SERVER_URL/${{ github.repository }}/actions/runs/$GITHUB_RUN_ID" >/dev/null || continue
+            git push "$remote" HEAD:main && exit 0
+            echo "push attempt $attempt failed; retrying"
+          done
+          exit 1
         env:
           GH_TOKEN: ${{ github.token }}
       - uses: actions/configure-pages@v6
