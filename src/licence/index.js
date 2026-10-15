@@ -21,9 +21,8 @@ import {
   htmlToText,
   judge,
   needsReclassification,
-  hasDisplayEvidence,
-  obligationsMeetable,
   PROMPT_VERSION,
+  recheckReason,
   sentenceSignature,
 } from './terms.js';
 
@@ -195,7 +194,8 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
     if (!decided) {
       const r = termsResults.get(p.termsUrl);
       // Re-check cached decisions against the current rules (no API call).
-      decided = r?.accepted && obligationsMeetable(r.decision) && hasDisplayEvidence(r.decision)
+      const failed = r?.accepted ? recheckReason(r.decision) : r?.reason;
+      decided = r?.accepted && !failed
         ? {
             licence: {
               id: `terms:${hostOfUrl(p.termsUrl)}`,
@@ -208,7 +208,7 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
             },
             licence_decision: { by: 'llm-terms', evidence: r.decision.evidence, terms_sha256: r.hash, at: r.at },
           }
-        : { ...undecided(entry, r?.reason), licence: { ...entry.licence, url: p.termsUrl, id: null, display: false, commercial: null } };
+        : { ...undecided(entry, failed), licence: { ...entry.licence, url: p.termsUrl, id: null, display: false, commercial: null } };
     }
     const next = { ...entry, ...decided };
     // Keep the original decision time when nothing about the decision changed.
