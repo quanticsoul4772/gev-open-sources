@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-kempten-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Kempten — Kempten",
+  "provider": "Zeus Kempten",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Kempten"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T16:23:24.142Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_kempten"
+  ],
+  "coverage": {
+    "bbox": [
+      47.6869,
+      10.2736,
+      47.7638,
+      10.3562
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/kempten/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/kempten/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/kempten/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/kempten/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_kempten",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

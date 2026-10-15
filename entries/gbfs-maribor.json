@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "pdf terms"
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T21:38:53.143Z"
+    "at": "2026-10-15T16:23:24.124Z"
   },
   "provenance": [
     "gbfs-systems:maribor"

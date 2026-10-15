@@ -1,0 +1,44 @@
+{
+  "id": "gdacs-latest-alerts",
+  "domain": "hazards.disasters",
+  "name": "GDACS latest Orange and Red disaster alerts",
+  "provider": "GDACS (United Nations and European Commission)",
+  "coverage": {
+    "bbox": [
+      -90,
+      -180,
+      90,
+      180
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://www.gdacs.org/gdacsapi/api/events/geteventlist/LATEST",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 300
+  },
+  "format": "geojson.gdacs-events",
+  "licence": {
+    "id": "GDACS-public-domain",
+    "url": "https://www.gdacs.org/xml/rss.xml",
+    "display": true,
+    "commercial": true,
+    "attribution": "GDACS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.gdacs.org/xml/rss.xml"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T16:23:24.152Z"
+  },
+  "provenance": [
+    "gdacs:geteventlist-latest"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-goppingen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Goppingen — Goppingen",
+  "provider": "Zeus Goppingen",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Goppingen"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T16:23:24.141Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_goppingen"
+  ],
+  "coverage": {
+    "bbox": [
+      48.6766,
+      9.6122,
+      48.7504,
+      9.701
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/goppingen/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/goppingen/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/goppingen/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/goppingen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_goppingen",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

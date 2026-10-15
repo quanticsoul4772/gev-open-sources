@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-gera-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Gera — Gera",
+  "provider": "Zeus Gera",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Gera"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T16:23:24.141Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_gera"
+  ],
+  "coverage": {
+    "bbox": [
+      50.8374,
+      12.0251,
+      50.9318,
+      12.1019
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/gera/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/gera/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/gera/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/gera/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_gera",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

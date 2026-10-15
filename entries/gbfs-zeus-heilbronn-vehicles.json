@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-heilbronn-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Heilbronn — Heilbronn",
+  "provider": "Zeus Heilbronn",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Heilbronn"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T16:23:24.142Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_heilbronn"
+  ],
+  "coverage": {
+    "bbox": [
+      49.1008,
+      9.1778,
+      49.2249,
+      9.2559
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/heilbronn/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/heilbronn/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/heilbronn/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/heilbronn/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_heilbronn",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

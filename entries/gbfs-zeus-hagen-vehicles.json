@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-hagen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Hagen — Hagen",
+  "provider": "Zeus Hagen",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Hagen"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T16:23:24.141Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_hagen"
+  ],
+  "coverage": {
+    "bbox": [
+      51.3245,
+      7.3806,
+      51.3955,
+      7.5207
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/hagen/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/hagen/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/hagen/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/hagen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_hagen",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}
