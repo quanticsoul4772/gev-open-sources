@@ -1,0 +1,99 @@
+{
+  "about": "Cases both gev-open-sources and gods-eye-view must agree on: credential-bearing URLs and headers, and coverage box limits. The directory tests run every case; the app vendors this file (npm run sources:cases). Tokens here are short fakes on purpose; full-length token formats stay in each repo's own tests.",
+  "credentials": {
+    "flag": [
+      "https://a.example/vp?apiKey=abc",
+      "https://a.example/vp?key=abc",
+      "https://a.example/vp?token=abc",
+      "https://a.example/vp?api_key=abc",
+      "https://a.example/vp?access_token=abc",
+      "https://a.example/vp?subscription-key=abc",
+      "https://a.example/vp?accesskey=abc",
+      "https://a.example/vp?AccessKey=abc",
+      "https://a.example/vp?x-api-key=abc",
+      "https://a.example/vp?sessionToken=abc",
+      "https://a.example/vp?client_secret=abc",
+      "https://a.example/vp?sig=abc",
+      "https://a.example/vp?appid=abc",
+      "https://a.example/vp?client_id=abc",
+      "https://a.example/vp?acl:consumerKey=abc",
+      "https://a.example/vp?sid=abc",
+      "https://a.example/vp?user=abc",
+      "https://a.example/vp?login=abc",
+      "https://a.example/vp?access=abc",
+      "https://a.example/vp?k=abc",
+      "https://a.example/vp?p=abc",
+      "https://a.example/vp?myappid=abc",
+      "https://a.example/vp?client_id_type=abc",
+      "https://a.example/vp?openweather_appid=abc",
+      "https://a.example/vp?Authorization=x",
+      "https://a.example/vp?clientid=x",
+      "https://a.example/vp?pw=x",
+      "https://api.transitime.org/api/v1/key/dca0/agency/x/command/gtfs-rt/vehiclePositions",
+      "https://a.example/v1/token/abc/vp",
+      "https://a.example/key//abc",
+      "https://a.example/v1/api-key/abc/vp",
+      "https://a.example/v1/access_token/abc/vp",
+      "https://a.example/v1/auth-token/abc/vp",
+      "https://a.example/feed;apikey=abc/vp",
+      "https://a.example/feed;x=sk-abc/vp",
+      "https://a.example/key;v=1/abc",
+      "https://a.example/vp?k2=AIzaSyA",
+      "https://a.example/vp?h=Bearer%20abc",
+      "https://a.example/AIzaSyExample/vp",
+      "https://a.example/vp/eyJabc",
+      "https://a.example/gtfs/realtime/c21ac21ac21ac21ac21ac21ac21ac21a",
+      "https://user:pass@a.example/vp",
+      "https://a.example/vp#apikey=abc",
+      "https://a.example/vp?x=1&amp;apikey=abc",
+      "not a url"
+    ],
+    "pass": [
+      "https://a.example/vp.pb",
+      "https://a.example/vp.pb?agency=x&dataFormat=gtfs-rt",
+      "https://a.example/authority/keyboard/vp",
+      "https://a.example/api/key",
+      "https://a.example/feed;version=2/vp",
+      "https://a.example/v1/keyboard/vp",
+      "https://a.example/vp?skin=sk",
+      "https://a.example/r/372463bd-d7b4-4668-a9b5-bd71a28f389d"
+    ]
+  },
+  "headers": {
+    "flag": [
+      { "Authorization": "x" },
+      { "X-Api-Key": "abc" },
+      { "Ocp-Apim-Subscription-Key": "abc" },
+      { "ET-Client-Name": "Bearer abc" },
+      { "ET-Client-Name": "eyJabc" },
+      { "ET-Client-Name": "AIzaSyA" },
+      { "Accept": "sk-abc" },
+      { "ET-Client-Name": "" },
+      { "ET-Client-Name": "tab\there" }
+    ],
+    "pass": [
+      {},
+      { "ET-Client-Name": "gods-eye-view-transit" },
+      { "et-client-name": "gods-eye-view-transit" },
+      { "Accept": "application/json" },
+      { "User-Agent": "gods-eye-view" }
+    ]
+  },
+  "coverage": {
+    "limits": { "regional": [20, 30], "national": [60, 90], "global": null },
+    "pass": [
+      { "bbox": [48.8, 2.2, 48.9, 2.5], "class": "regional" },
+      { "bbox": [45.8261, 5.9926, 47.7382, 10.3697], "class": "regional" },
+      { "bbox": [27.6051, -122.9336, 48.9517, -70.4765], "class": "national" },
+      { "bbox": [-90, -180, 90, 180], "class": "global" }
+    ],
+    "fail": [
+      { "bbox": [4.8227, -52.3651, 4.9355, 52.2964], "class": "regional" },
+      { "bbox": [47.26, 4.51, 78.25, 31.11], "class": "regional" },
+      { "bbox": [2, 2, 1, 1], "class": "regional" },
+      { "bbox": [0, 10, 1, 5], "class": "regional" },
+      { "bbox": [27.6051, -122.9336, 48.9517, -70.4765], "class": "regional" },
+      { "bbox": [-36.1243, -122.9086, 66.5184, 152.6123], "class": "national" }
+    ]
+  }
+}
