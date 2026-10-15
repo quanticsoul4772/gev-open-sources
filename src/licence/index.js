@@ -21,6 +21,7 @@ import {
   htmlToText,
   judge,
   needsReclassification,
+  hasDisplayEvidence,
   obligationsMeetable,
   PROMPT_VERSION,
   sentenceSignature,
@@ -75,7 +76,10 @@ async function systemInformation(entry, fetchImpl, memo) {
   const url =
     entry.access.related?.system_information ||
     (entry.format === 'gbfs.station-status' ? entry.access.url.replace(/station_status(\.json)?$/, 'system_information$1') : null);
-  if (!url) return null;
+  // The sibling guess changed nothing (e.g. `station_status?lang=en`): reading the
+  // entry's own feed as system_information would find no licence and, on v3,
+  // grant the CC0 default by mistake.
+  if (!url || url === entry.access.url) return null;
   if (!memo.has(url))
     memo.set(
       url,
@@ -173,7 +177,8 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
       const [a, b] = await Promise.all([classifyTerms(client, sample, page.text), classifyTerms(client, sample, page.text)]);
       cache[url] = { hash, signature, version: PROMPT_VERSION, ...judge(a, b, page.text), decision: a, at: nowIso() };
     } catch (error) {
-      cache[url] = { hash: null, signature, version: PROMPT_VERSION, accepted: false, reason: `classifier error: ${error.message}`.slice(0, 200), at: nowIso() };
+      // No `at`: a classifier error (overload, rate limit) is retried next run, not cached for weeks.
+      cache[url] = { hash: null, signature, version: PROMPT_VERSION, accepted: false, reason: `classifier error: ${error.message}`.slice(0, 200), at: null };
     }
     return cache[url];
   };
@@ -188,14 +193,15 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
     if (!decided) {
       const r = termsResults.get(p.termsUrl);
       // Re-check cached decisions against the current rules (no API call).
-      decided = r?.accepted && obligationsMeetable(r.decision)
+      decided = r?.accepted && obligationsMeetable(r.decision) && hasDisplayEvidence(r.decision)
         ? {
             licence: {
               id: `terms:${hostOfUrl(p.termsUrl)}`,
               url: p.termsUrl,
               display: true,
               commercial: r.decision.commercial,
-              attribution: r.decision.attribution_text || p.attribution || entry.provider,
+              // The model's attribution text only if it is on the page; otherwise the provider.
+              attribution: (r.attribution_verbatim && r.decision.attribution_text) || p.attribution || entry.provider,
               obligations: [...new Set(r.decision.obligations.map((o) => o.type))].sort(),
             },
             licence_decision: { by: 'llm-terms', evidence: r.decision.evidence, terms_sha256: r.hash, at: r.at },

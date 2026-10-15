@@ -234,3 +234,40 @@ test('resolver: an oversized station_information means no stations bbox, not a n
   assert.equal(r.reasons.stations, 'no located stations');
   assert.equal(r.vehicles.id, 'gbfs-x-vehicles', 'the vehicles entry still resolves');
 });
+
+test('review fixes: own feed is never system_information; blank coordinates are missing; cross-host redirect is an answer', async () => {
+  const calls = [];
+  const v3 = {
+    format: 'gbfs.station-status',
+    provider: 'X',
+    gbfs: { version: '3.0' },
+    licence: { id: null, url: null, display: false, commercial: null, attribution: 'X' },
+    access: { url: 'https://a.example/gbfs/station_status?lang=en', related: {} },
+  };
+  const d = await gbfsDecision(v3, async (url) => (calls.push(url), new Response('{"data":{"stations":[]}}')));
+  assert.equal(calls.length, 0, 'no guess when the sibling URL equals the entry URL');
+  assert.equal(d.decided.licence.display, false);
+
+  const { coordinate } = await import('../src/adapters/cameras.js');
+  assert.ok(Number.isNaN(coordinate('')) && Number.isNaN(coordinate(null)) && Number.isNaN(coordinate(' ')));
+  assert.equal(coordinate('0'), 0);
+  assert.equal(coordinate('48.85'), 48.85);
+
+  const base = 'https://hop.example';
+  const fetchImpl = async (url) =>
+    url.endsWith('/gbfs.json')
+      ? new Response(JSON.stringify(discovery(base, ['vehicle_status'])))
+      : new Response(null, { status: 302, headers: { location: 'https://elsewhere.example/v.json' } });
+  const r = await resolveGbfsSystem(system(base), { want: { stations: false, vehicles: true }, fetchImpl });
+  assert.equal(r.reasons.vehicles, 'cross-host redirect');
+});
+
+test('review fixes: a second redirect keeps the earlier via: provenance', async () => {
+  const { resolveRedirects } = await import('../src/harvest/redirects.js');
+  const hops = { 'https://b.example/feed': 'https://c.example/feed' };
+  const fetchImpl = async (url) =>
+    hops[url] ? new Response(null, { status: 302, headers: { location: hops[url] } }) : new Response('ok');
+  const entry = { id: 'e', access: { url: 'https://b.example/feed', redirectHosts: [] }, provenance: ['cat', 'via:https://a.example/permalink'] };
+  const [moved] = await resolveRedirects([entry], fetchImpl);
+  assert.deepEqual(moved.provenance, ['cat', 'via:https://a.example/permalink', 'via:https://b.example/feed']);
+});

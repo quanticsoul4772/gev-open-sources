@@ -4,6 +4,7 @@ import { FORM_FACTORS } from '../schema.js';
 import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl, slugId } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
+import { coordinate } from '../adapters/cameras.js';
 import { recentlyRejected, robustBbox } from './catalogue.js';
 
 export const GBFS_SYSTEMS_URL =
@@ -33,8 +34,8 @@ export function stationBbox(doc) {
   const stations = doc?.data?.stations || [];
   let b = null;
   for (const s of stations) {
-    const lat = Number(s.lat);
-    const lon = Number(s.lon);
+    const lat = coordinate(s.lat);
+    const lon = coordinate(s.lon);
     if (!Number.isFinite(lat) || !Number.isFinite(lon) || (lat === 0 && lon === 0)) continue;
     b = b
       ? [Math.min(b[0], lat), Math.min(b[1], lon), Math.max(b[2], lat), Math.max(b[3], lon)]
@@ -74,7 +75,13 @@ export function formFactors(doc) {
 const bboxUnion = (a, b) =>
   a && b ? [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])] : a || b;
 
-const OVER_CAP = /^response over \d+ bytes$/;
+/**
+ * Fetch errors that are answers about the feed (too big, or redirected to
+ * another host), not network failures: remembered as a reason, and not
+ * counted by the host breaker.
+ */
+const ANSWER = /^(response over \d+ bytes|redirect to unlisted host .*)$/;
+const answerReason = (message) => (message.startsWith('redirect') ? 'cross-host redirect' : 'over the size cap');
 
 /**
  * Resolve one system's auto-discovery URL into the entries it wants: a
@@ -96,7 +103,13 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
     for (const kind of ['stations', 'vehicles']) if (want[kind]) out.reasons[kind] = reason;
     return out;
   };
-  const discovery = await fetchCapped(system.discoveryUrl, { fetchImpl, anyRedirect, timeoutMs: 15_000 });
+  let discovery;
+  try {
+    discovery = await fetchCapped(system.discoveryUrl, { fetchImpl, anyRedirect, timeoutMs: 15_000 });
+  } catch (error) {
+    if (!ANSWER.test(error.message)) throw error;
+    return fail(answerReason(error.message));
+  }
   if (discovery.status !== 200) return fail(`discovery HTTP ${discovery.status}`);
   let parsed;
   try {
@@ -133,8 +146,8 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
     try {
       stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
     } catch (error) {
-      // Too big is an answer (no bbox), not a network failure for the host breaker.
-      if (!OVER_CAP.test(error.message)) throw error;
+      // Too big or redirected away is an answer (no bbox), not a network failure for the host breaker.
+      if (!ANSWER.test(error.message)) throw error;
     }
     if (stations?.status === 200)
       try {
@@ -172,8 +185,8 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
       try {
         res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000 });
       } catch (error) {
-        if (!OVER_CAP.test(error.message)) throw error;
-        out.reasons.vehicles = 'over the size cap';
+        if (!ANSWER.test(error.message)) throw error;
+        out.reasons.vehicles = answerReason(error.message);
       }
       if (res && res.status !== 200) out.reasons.vehicles = `vehicle feed HTTP ${res.status}`;
       else if (res) {
@@ -185,7 +198,7 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
         }
         const list = doc?.data?.vehicles ?? doc?.data?.bikes;
         const free = Array.isArray(list) ? list.filter((v) => v && !v.station_id) : [];
-        const bbox = bboxUnion(robustBbox(free.map((v) => [Number(v.lat), Number(v.lon)])), stationsBbox);
+        const bbox = bboxUnion(robustBbox(free.map((v) => [coordinate(v.lat), coordinate(v.lon)])), stationsBbox);
         if (!Array.isArray(list)) out.reasons.vehicles = 'no vehicle list';
         else if (!list.length) out.reasons.vehicles = 'empty feed';
         else if (!free.length) out.reasons.vehicles = 'no free-floating vehicles';

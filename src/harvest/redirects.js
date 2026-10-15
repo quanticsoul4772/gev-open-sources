@@ -60,7 +60,8 @@ export async function resolveRedirects(entries, fetchImpl = fetch) {
     changed.push({
       ...entry,
       access: { ...entry.access, url: target },
-      provenance: [...entry.provenance.filter((p) => !p.startsWith('via:')), `via:${entry.access.url}`],
+      // Earlier permalinks stay: catalogues may still list them.
+      provenance: [...new Set([...entry.provenance, `via:${entry.access.url}`])],
     });
   });
   return changed;

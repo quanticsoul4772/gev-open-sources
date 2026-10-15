@@ -23,6 +23,10 @@ export function readPath(value, path) {
   return v;
 }
 
+/** A coordinate; blank or null is missing (`Number('')` would be 0, a real place). */
+export const coordinate = (v) =>
+  v === null || v === undefined || (typeof v === 'string' && !v.trim()) ? NaN : Number(v);
+
 const isOn = (v) => v === undefined || v === true || String(v).toLowerCase() === 'true';
 
 /**
@@ -38,8 +42,8 @@ export function cameraRecords(doc, mapping) {
   const cameras = [];
   for (const item of items) {
     if (mapping.active && !isOn(readPath(item, mapping.active))) continue;
-    const lat = Number(readPath(item, mapping.lat));
-    const lon = Number(readPath(item, mapping.lon));
+    const lat = coordinate(readPath(item, mapping.lat));
+    const lon = coordinate(readPath(item, mapping.lon));
     const raw = readPath(item, mapping.image);
     const id = readPath(item, mapping.id);
     if (!Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) continue;
