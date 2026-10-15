@@ -7,6 +7,7 @@ import {
   judge,
   needsReclassification,
   quotesVerbatim,
+  recheckReason,
   sentenceSignature,
   signatureSimilarity,
 } from '../src/licence/terms.js';
@@ -74,6 +75,13 @@ test('judge: accepts agreeing, verbatim, meetable; rejects the rest', () => {
   // Runs may label harmless clauses differently; only blocking ones must match.
   const relabelled = decision({ obligations: [{ type: 'licence_link', quote: 'You must credit the Agency as the source of the data.' }] });
   assert.equal(judge(decision(), relabelled, TEXT).accepted, true);
+});
+
+test('recheck: a cached acceptance below the current bar is dropped without an API call', () => {
+  assert.equal(recheckReason(decision()), null);
+  assert.equal(recheckReason(decision({ confidence: 0.85 })), 'confidence below 0.9');
+  assert.equal(recheckReason(decision({ obligations: [{ type: 'registration', quote: 'x' }] })), 'obligation registration');
+  assert.equal(recheckReason(decision({ evidence: [] })), 'no quote for the display decision');
 });
 
 test('reclassification: noise never re-bills; material change after a week; monthly', () => {

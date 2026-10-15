@@ -6,7 +6,7 @@
  *    impose only obligations the app meets automatically;
  *  - two independent runs agree on every decision field;
  *  - the display decision is backed by a verbatim quote;
- *  - confidence ≥ MIN_CONFIDENCE (0.8).
+ *  - confidence ≥ MIN_CONFIDENCE (0.9).
  * Anything else → not accepted (the entry stays referral-only).
  */
 import Anthropic from '@anthropic-ai/sdk';
@@ -46,7 +46,8 @@ export const MEETABLE = new Set([
   'keep_current',
   'no_service_disruption',
 ]);
-export const MIN_CONFIDENCE = 0.8;
+/** A wrongly shown feed costs more than one left referral-only. */
+export const MIN_CONFIDENCE = 0.9;
 
 export const TERMS_SCHEMA = {
   type: 'object',
@@ -203,14 +204,22 @@ export function quotesVerbatim(decision, text) {
 const DECISION_FIELDS = ['applies_to_this_data', 'display', 'commercial', 'requires_acceptance'];
 
 /**
+ * Why a cached accepted decision fails the current rules, or null if it
+ * passes. Rules that need only the stored decision (no API call), so a
+ * stricter rule applies on the next run, not at the next reclassification.
+ */
+export function recheckReason(decision) {
+  if (decision.confidence < MIN_CONFIDENCE) return `confidence below ${MIN_CONFIDENCE}`;
+  const unmet = decision.obligations.find((o) => !MEETABLE.has(o.type));
+  if (unmet) return `obligation ${unmet.type}`;
+  if (!hasDisplayEvidence(decision)) return 'no quote for the display decision';
+  return null;
+}
+
+/**
  * Accept or reject two runs' decisions against the text.
  * @returns {{accepted: boolean, reason: string}}
  */
-/** Whether every obligation in a decision is one the app meets on its own. */
-export function obligationsMeetable(decision) {
-  return decision.obligations.every((o) => MEETABLE.has(o.type));
-}
-
 export function judge(a, b, text) {
   for (const f of DECISION_FIELDS) if (a[f] !== b[f]) return { accepted: false, reason: `runs disagree on ${f}` };
   // Runs may label harmless clauses differently; they must agree on the blocking ones.
