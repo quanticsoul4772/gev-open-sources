@@ -62,8 +62,9 @@ export async function checkVehicleFeed(url, { fetchImpl } = {}) {
   } catch {
     return { ok: false, reason: 'not GTFS-RT' };
   }
-  const bbox = robustBbox(feed.vehicles.map((v) => [v.lat, v.lon]));
-  if (bbox) return { ok: true, bbox };
+  const points = feed.vehicles.map((v) => [v.lat, v.lon]);
+  const bbox = robustBbox(points);
+  if (bbox) return { ok: true, bbox, strays: splitStrays(points).strays };
   if (feed.entityCount === 0) return { ok: false, reason: 'empty feed', retry: true };
   return { ok: false, reason: 'no vehicle positions' };
 }
@@ -120,11 +121,17 @@ export async function resolveTransitCandidates(candidates, { knownUrls, rejects,
 
 /**
  * Whether a bbox rebuilt for an entry replaces its current one: always when
- * the current one is missing or malformed; when it is merely wider than one
- * service area, only if the rebuilt one isn't (a national feed keeps its box).
+ * the current one is missing or malformed. A merely wide one is replaced only
+ * when the rebuild found strays and came out as one service area. A wide box
+ * from real data (a national operator) stays, even when one snapshot covers
+ * only part of it (Amtrak at night): replacing it would freeze the smaller
+ * box, since plausible boxes are not checked again.
+ * @param {number[]|null} current
+ * @param {number[]|null} rebuilt
+ * @param {number} strays points the rebuild dropped as strays
  */
-export const replacesBbox = (current, rebuilt) =>
-  wellFormedBbox(rebuilt) && (!wellFormedBbox(current) || plausibleBbox(rebuilt));
+export const replacesBbox = (current, rebuilt, strays) =>
+  wellFormedBbox(rebuilt) && (!wellFormedBbox(current) || (strays > 0 && plausibleBbox(rebuilt)));
 
 /**
  * Fill or repair coverage.bbox on transit entries from one fetch of their
@@ -141,7 +148,7 @@ export async function fillTransitCoverage(entries, { fetchImpl } = {}) {
   });
   const filled = new Map();
   todo.forEach((e, i) => {
-    if (checks[i]?.ok && replacesBbox(e.coverage.bbox, checks[i].bbox))
+    if (checks[i]?.ok && replacesBbox(e.coverage.bbox, checks[i].bbox, checks[i].strays))
       filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: checks[i].bbox } });
   });
   return filled;
@@ -164,26 +171,40 @@ export const plausibleBbox = (b) =>
 
 const median = (sorted) => sorted[Math.floor((sorted.length - 1) / 2)];
 
+/** Most points that may be dropped as strays: a larger far group is a real second area, not an error. */
+const MAX_STRAY_SHARE = 0.05;
+
 /**
- * The points of a feed's main area: in range, not (0,0), and within
- * max(1°, 6 × the median distance) of the median point. Drops a test station
- * on another continent, or a point with latitude and longitude swapped, while
- * a national feed (whose median distance is large) keeps its spread.
+ * Split points into a feed's main area and its strays. Strays are points out
+ * of range, at (0,0), or beyond max(1°, 6 × the median distance) from the
+ * median point: a test station on another continent, a point with latitude
+ * and longitude swapped. Far points are only strays while they are few; a
+ * larger far group is real service (a
+ * national operator's other coast) and is kept. "Few" is at most 2, or 5 %
+ * of the points.
  * @param {Array<[number, number]>} points [lat, lon]
+ * @returns {{kept: Array<[number, number]>, strays: number}}
  */
-export function withoutStrays(points) {
+export function splitStrays(points) {
   const ok = points.filter(
     ([lat, lon]) =>
       Number.isFinite(lat) && Number.isFinite(lon) && Math.abs(lat) <= 90 && Math.abs(lon) <= 180 && !(lat === 0 && lon === 0),
   );
-  if (ok.length < 3) return ok;
+  const invalid = points.length - ok.length;
+  if (ok.length < 3) return { kept: ok, strays: invalid };
   const mLat = median(ok.map((p) => p[0]).sort((a, b) => a - b));
   const mLon = median(ok.map((p) => p[1]).sort((a, b) => a - b));
   const cos = Math.cos((mLat * Math.PI) / 180);
   const dist = ok.map(([lat, lon]) => Math.hypot(lat - mLat, (lon - mLon) * cos));
   const limit = Math.max(1, 6 * median([...dist].sort((a, b) => a - b)));
-  return ok.filter((_, i) => dist[i] <= limit);
+  const kept = ok.filter((_, i) => dist[i] <= limit);
+  const far = ok.length - kept.length;
+  if (far > Math.max(2, Math.floor(MAX_STRAY_SHARE * ok.length))) return { kept: ok, strays: invalid };
+  return { kept, strays: invalid + far };
 }
+
+/** The points of a feed's main area (splitStrays). */
+export const withoutStrays = (points) => splitStrays(points).kept;
 
 /**
  * bbox of points, robust to strays: points outside the main area are

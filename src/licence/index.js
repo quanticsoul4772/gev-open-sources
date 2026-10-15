@@ -174,7 +174,16 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
     const sample = [...entries.values()].find((e) => e.licence.url === url) || { name: url, provider: hostOfUrl(url), access: { url }, licence: { url } };
     try {
       const [a, b] = await Promise.all([classifyTerms(client, sample, page.text), classifyTerms(client, sample, page.text)]);
-      cache[url] = { hash, signature, version: PROMPT_VERSION, ...judge(a, b, page.text), decision: a, at: nowIso() };
+      cache[url] = {
+        hash,
+        signature,
+        version: PROMPT_VERSION,
+        ...judge(a, b, page.text),
+        decision: a,
+        // Only run a is kept; the lower confidence lets a later, stricter bar re-check both runs.
+        min_confidence: Math.min(a.confidence, b.confidence),
+        at: nowIso(),
+      };
     } catch (error) {
       // No `at`: a classifier error (overload, rate limit) is retried next run, not cached for weeks.
       cache[url] = { hash: null, signature, version: PROMPT_VERSION, accepted: false, reason: `classifier error: ${error.message}`.slice(0, 200), at: null };
@@ -194,7 +203,7 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
     if (!decided) {
       const r = termsResults.get(p.termsUrl);
       // Re-check cached decisions against the current rules (no API call).
-      const failed = r?.accepted ? recheckReason(r.decision) : r?.reason;
+      const failed = r?.accepted ? recheckReason(r.decision, r.min_confidence) : r?.reason;
       decided = r?.accepted && !failed
         ? {
             licence: {

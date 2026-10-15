@@ -228,6 +228,20 @@ test('coverage: stray points (a station abroad, swapped lat/lon) are dropped; a 
   // Amtrak-like: points spread across a continent stay.
   const national = [[47.6, -122.3], [34.0, -118.2], [41.9, -87.6], [40.7, -74.0], [29.9, -90.1], [42.4, -71.1]];
   assert.equal(withoutStrays(national).length, national.length);
+  // Mostly one corridor plus a real west-coast group (> 5 %): the far group is service, not strays.
+  const corridor = Array.from({ length: 40 }, (_, i) => [39 + i / 10, -77 + i / 10]);
+  const west = [[34.05, -118.24], [37.8, -122.27], [47.6, -122.33], [45.52, -122.68]];
+  assert.equal(withoutStrays([...corridor, ...west]).length, 44);
+});
+
+test('coverage: a wide box from real data is kept when a snapshot covers only part of it', async () => {
+  const { replacesBbox } = await import('../src/harvest/catalogue.js');
+  const amtrak = [27.6, -122.9, 48.9, -70.5];
+  const northeast = [38.9, -77.1, 42.4, -71.0];
+  assert.equal(replacesBbox(amtrak, northeast, 0), false, 'no strays: the snapshot is partial, not the box wrong');
+  assert.equal(replacesBbox(amtrak, northeast, 1), true, 'a stray stretched the old box');
+  assert.equal(replacesBbox(null, northeast, 0), true);
+  assert.equal(replacesBbox([2, 2, 1, 1], northeast, 0), true, 'malformed is always replaced');
 });
 
 test('coverage: a bbox must be well formed and one service area', async () => {
@@ -242,8 +256,10 @@ test('coverage: a bbox must be well formed and one service area', async () => {
 test('coverage: an oversized transit bbox is rebuilt from the vehicles; a national feed keeps its own', async () => {
   const { fillTransitCoverage } = await import('../src/harvest/catalogue.js');
   const fetchImpl = fakeFetch({
-    'https://a.example/city': { body: feedBytes([[4.93, -52.33], [4.92, -52.31]]) },
-    'https://a.example/national': { body: feedBytes([[47.6, -122.3], [40.7, -74.0], [29.9, -90.1]]) },
+    // A bus reporting its longitude with the sign flipped stretched the old box.
+    'https://a.example/city': { body: feedBytes([[4.93, -52.33], [4.92, -52.31], [4.94, -52.32], [4.9, 52.3]]) },
+    // At night only the Northeast runs: a partial snapshot, not a wrong box.
+    'https://a.example/national': { body: feedBytes([[40.7, -74.0], [42.4, -71.1], [38.9, -77.0]]) },
   });
   const entry = (id, url, bbox) => ({ id, domain: 'transit.vehicles', coverage: { bbox, countries: [] }, access: { url } });
   const filled = await fillTransitCoverage(

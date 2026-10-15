@@ -5,7 +5,7 @@ import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl, slugId } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 import { coordinate } from '../adapters/cameras.js';
-import { plausibleBbox, recentlyRejected, replacesBbox, robustBbox, withoutStrays } from './catalogue.js';
+import { plausibleBbox, recentlyRejected, replacesBbox, robustBbox, splitStrays, withoutStrays } from './catalogue.js';
 
 export const GBFS_SYSTEMS_URL =
   'https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv';
@@ -29,14 +29,17 @@ export function gbfsFeeds(doc) {
   return { version: doc?.version ? String(doc.version) : null, feeds };
 }
 
+/** [lat, lon] of every station in a station_information document. */
+const stationPoints = (doc) =>
+  (Array.isArray(doc?.data?.stations) ? doc.data.stations : []).map((s) => [coordinate(s?.lat), coordinate(s?.lon)]);
+
 /**
  * bbox [minLat, minLon, maxLat, maxLon] of a station_information document,
  * without stray stations (a test station abroad, swapped lat/lon).
  */
 export function stationBbox(doc) {
-  const stations = Array.isArray(doc?.data?.stations) ? doc.data.stations : [];
   let b = null;
-  for (const [lat, lon] of withoutStrays(stations.map((s) => [coordinate(s?.lat), coordinate(s?.lon)]))) {
+  for (const [lat, lon] of withoutStrays(stationPoints(doc))) {
     b = b
       ? [Math.min(b[0], lat), Math.min(b[1], lon), Math.max(b[2], lat), Math.max(b[3], lon)]
       : [lat, lon, lat, lon];
@@ -264,18 +267,23 @@ export async function fillGbfsCoverage(entries, { fetchImpl } = {}) {
   };
   const rebuild = async (e) => {
     const info = e.access.related.station_information ?? gbfsFeeds(await doc(e.access.related.gbfs)).feeds.station_information;
-    const stations = stationBbox(await doc(info));
-    if (e.domain !== 'sharedmobility.vehicles') return stations;
+    const infoDoc = await doc(info);
+    const stations = stationBbox(infoDoc);
+    let strays = splitStrays(stationPoints(infoDoc)).strays;
+    if (e.domain !== 'sharedmobility.vehicles') return { bbox: stations, strays };
     const data = (await doc(e.access.url))?.data;
     const list = data?.vehicles ?? data?.bikes;
     const free = Array.isArray(list) ? list.filter((v) => v && !v.station_id) : [];
-    return bboxUnion(robustBbox(free.map((v) => [coordinate(v.lat), coordinate(v.lon)])), stations);
+    const points = free.map((v) => [coordinate(v.lat), coordinate(v.lon)]);
+    strays += splitStrays(points).strays;
+    return { bbox: bboxUnion(robustBbox(points), stations), strays };
   };
-  const boxes = await runPooled(todo, (e) => hostOfUrl(e.access.url), rebuild, { global: 16, perHost: 2 });
+  const rebuilt = await runPooled(todo, (e) => hostOfUrl(e.access.url), rebuild, { global: 16, perHost: 2 });
   const filled = new Map();
   todo.forEach((e, i) => {
-    if (!boxes[i]?.error && replacesBbox(e.coverage.bbox, boxes[i]))
-      filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: boxes[i] } });
+    const r = rebuilt[i];
+    if (r?.bbox && replacesBbox(e.coverage.bbox, r.bbox, r.strays))
+      filled.set(e.id, { ...e, coverage: { ...e.coverage, bbox: r.bbox } });
   });
   return filled;
 }
