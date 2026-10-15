@@ -295,7 +295,8 @@ test('gdacs: entry valid; licence holds only while the feed still declares publi
   const rss = (copyright) => fakeFetch({ [GDACS_LICENCE_URL]: { body: `<rss><channel><copyright>${copyright}</copyright></channel></rss>` } });
   assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, rss('public domain')), true);
   assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, rss('© 2027 GDACS, all rights reserved')), false);
-  assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, fakeFetch({})), null, 'unreachable: unknown, not withdrawn');
+  assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, fakeFetch({ [GDACS_LICENCE_URL]: { body: 'busy', status: 503 } })), null, 'unreachable: unknown, not withdrawn');
+  assert.equal(await declarationPresent(GDACS_LICENCE_URL, known.verify, fakeFetch({})), false, 'gone (404): withdrawn');
 });
 
 test('adapters: GDACS events counted, no freshness time, coverage share', () => {

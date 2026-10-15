@@ -37,7 +37,7 @@ const undecided = (entry, reason) => ({
 
 /**
  * Whether a source's licence declaration is still on its page: true or
- * false, or null when the page couldn't be read this run.
+ * false, or null when the page failed transiently this run (isTransient).
  * @param {string} url
  * @param {string} pattern regular expression the page must match (case-insensitive)
  */
@@ -45,11 +45,45 @@ export async function declarationPresent(url, pattern, fetchImpl) {
   let res;
   try {
     res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000, maxBytes: 4 * 2 ** 20 });
-  } catch {
-    return null;
+  } catch (error) {
+    return isTransient({ error }) ? null : false;
   }
-  if (res.status !== 200) return null;
+  if (res.status !== 200) return isTransient({ status: res.status }) ? null : false;
   return new RegExp(pattern, 'i').test(new TextDecoder().decode(res.body));
+}
+
+/** Longest a licence decision is kept while its source fails only transiently. */
+export const KEEP_ON_TRANSIENT_S = 7 * 86_400;
+
+/** Fetch errors that are answers about the source, not passing trouble. */
+const DEFINITIVE_ERROR = /^(refusing internal address|redirect to unlisted host|redirect without location|response over|too many redirects)/;
+
+/**
+ * Whether a failed read says nothing about the licence: a network error or
+ * timeout, a 5xx, or a 429. A 404/410, a missing URL or a 200 with bad
+ * content is an answer.
+ * @param {{status?: number, error?: Error}} failure
+ */
+export const isTransient = ({ status, error }) =>
+  error ? !DEFINITIVE_ERROR.test(error.message || '') : status === 429 || status >= 500;
+
+/**
+ * Whether an entry keeps its current licence decision this run, and the
+ * health record's confirmation time after it. A source read successfully
+ * confirms the decision now; one that fails transiently keeps it while the
+ * last confirmation is under KEEP_ON_TRANSIENT_S old (an entry with no
+ * confirmation yet starts its clock now). Without a health record (an entry
+ * not yet probed) nothing is kept: the record is never created here.
+ * @param {object|undefined} record the entry's health.json record
+ * @param {boolean} transient
+ * @param {number} now epoch seconds
+ * @returns {{keep: boolean, confirmedAt: number|null}}
+ */
+export function keepOnTransient(record, transient, now) {
+  if (!record) return { keep: false, confirmedAt: null };
+  if (!transient) return { keep: false, confirmedAt: now };
+  const confirmedAt = record.licenceConfirmedAt ?? now;
+  return { keep: now - confirmedAt < KEEP_ON_TRANSIENT_S, confirmedAt };
 }
 
 function fromKnown(entry, known, source, attribution) {
@@ -82,10 +116,14 @@ export function gbfsText(value) {
 /** Whether an entry is a GBFS feed (stations or vehicles), decided from system_information. */
 const isGbfs = (e) => e.format.startsWith('gbfs.');
 
+/** A read that failed transiently (isTransient): no answer this run. */
+const TRANSIENT = Object.freeze({ transient: true });
+
 /**
- * system_information `data`, or null. A stations entry without the related URL
- * falls back to its sibling file; a vehicles entry must name it (guessing would
- * read the vehicle feed, and a v3 system would then default to CC0).
+ * system_information `{data}`, TRANSIENT, or null when there is none (no
+ * URL, 404, bad JSON). A stations entry without the related URL falls back
+ * to its sibling file; a vehicles entry must name it (guessing would read the
+ * vehicle feed, and a v3 system would then default to CC0).
  * `memo` shares one fetch per URL between a system's entries in a run.
  */
 async function systemInformation(entry, fetchImpl, memo) {
@@ -100,15 +138,30 @@ async function systemInformation(entry, fetchImpl, memo) {
     memo.set(
       url,
       fetchCapped(url, { fetchImpl, timeoutMs: 15_000, maxBytes: 2 ** 20 }).then(
-        (res) => (res.status === 200 ? JSON.parse(new TextDecoder().decode(res.body))?.data || null : null),
-        () => null,
-      ).catch(() => null),
+        (res) => {
+          if (res.status !== 200) return isTransient({ status: res.status }) ? TRANSIENT : null;
+          try {
+            const data = JSON.parse(new TextDecoder().decode(res.body))?.data;
+            return data ? { data } : null;
+          } catch {
+            return null;
+          }
+        },
+        (error) => (isTransient({ error }) ? TRANSIENT : null),
+      ),
     );
   return memo.get(url);
 }
 
+/**
+ * The licence plan for a GBFS entry: `{decided}` or `{termsUrl, attribution}`;
+ * `transient: true` (with a fallback `decided`) when system_information
+ * failed transiently, so the last decision may be kept.
+ */
 export async function gbfsDecision(entry, fetchImpl, memo = new Map()) {
-  const info = await systemInformation(entry, fetchImpl, memo);
+  const read = await systemInformation(entry, fetchImpl, memo);
+  if (read?.transient) return { transient: true, decided: undecided(entry, 'system_information unreachable') };
+  const info = read?.data ?? null;
   // The licence a catalogue (Transitous) declared for the system: used only
   // when the system publishes none itself, and only if it is a known licence.
   const catalogue = entry.gbfs?.catalogue_licence || null;
@@ -139,22 +192,23 @@ export async function gbfsDecision(entry, fetchImpl, memo = new Map()) {
   return { decided: undecided(entry, 'no licence published') };
 }
 
-/** Fetch a terms page as text, or a reason it can't be read. */
-async function termsText(url, fetchImpl) {
+/** Fetch a terms page as text, or a reason it can't be read (`transient` when isTransient). */
+export async function termsText(url, fetchImpl) {
+  let res;
   try {
-    const res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000, maxBytes: 4 * 2 ** 20 });
-    if (res.status !== 200) return { reason: `HTTP ${res.status}` };
-    const type = res.headers.get('content-type') || '';
-    if (/pdf/i.test(type) || /\.pdf$/i.test(url)) return { reason: 'pdf terms' };
-    const text = htmlToText(new TextDecoder().decode(res.body));
-    if (text.length < MIN_TEXT_CHARS) return { reason: 'terms page has no readable text' };
-    return { text };
-  } catch {
-    return { reason: 'terms page unreachable' };
+    res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000, maxBytes: 4 * 2 ** 20 });
+  } catch (error) {
+    return { reason: 'terms page unreachable', transient: isTransient({ error }) };
   }
+  if (res.status !== 200) return { reason: `HTTP ${res.status}`, transient: isTransient({ status: res.status }) };
+  const type = res.headers.get('content-type') || '';
+  if (/pdf/i.test(type) || /\.pdf$/i.test(url)) return { reason: 'pdf terms' };
+  const text = htmlToText(new TextDecoder().decode(res.body));
+  if (text.length < MIN_TEXT_CHARS) return { reason: 'terms page has no readable text' };
+  return { text };
 }
 
-export async function decideLicences({ fetchImpl, client = createClient() } = {}) {
+export async function decideLicences({ fetchImpl, client = createClient(), now = Math.floor(Date.now() / 1000) } = {}) {
   const entries = readEntries();
   const cache = readState('licence-cache.json', {});
   const plan = new Map(); // id → {decided} | {termsUrl, attribution}
@@ -177,9 +231,9 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
     if (isGbfs(e)) continue;
     const known = knownLicence(e.licence.url);
     const present = known?.verify ? stillDeclared.get(e.licence.url) : true;
-    // Unreachable this run (null): keep the current decision rather than flip it.
-    const holds = present ?? (e.licence_decision.by === 'known-licence' && e.licence.display);
-    if (known && !holds) plan.set(e.id, { decided: undecided(e, `licence declaration not found at ${e.licence.url}`) });
+    if (known && present === null)
+      plan.set(e.id, { transient: true, decided: undecided(e, `licence declaration unreachable at ${e.licence.url}`) });
+    else if (known && !present) plan.set(e.id, { decided: undecided(e, `licence declaration not found at ${e.licence.url}`) });
     else if (known) plan.set(e.id, { decided: fromKnown(e, known, e.licence.url, e.licence.attribution) });
     else if (e.licence.url && !e.provenance.some((p) => p.startsWith('licence-borrowed:')))
       plan.set(e.id, { termsUrl: e.licence.url, attribution: e.licence.attribution });
@@ -193,7 +247,7 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
   let deferred = 0;
   const decideTerms = async (url) => {
     const page = await termsText(url, fetchImpl);
-    if (!page.text) return { accepted: false, reason: page.reason, hash: null };
+    if (!page.text) return { accepted: false, reason: page.reason, hash: null, transient: page.transient };
     const hash = sha256(page.text);
     const signature = sentenceSignature(page.text);
     if (cache[url] && !needsReclassification(cache[url], signature, Date.now())) return cache[url];
@@ -229,8 +283,20 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
   writeState('licence-cache.json', cache);
 
   const tally = {};
+  const health = readState('health.json', {});
+  let kept = 0;
   for (const [id, p] of plan) {
     const entry = entries.get(id);
+    // A source that fails only transiently keeps the last decision, for at most KEEP_ON_TRANSIENT_S.
+    const transient = Boolean(p.transient || (p.termsUrl && termsResults.get(p.termsUrl)?.transient));
+    const { keep, confirmedAt } = keepOnTransient(health[id], transient, now);
+    if (health[id]) health[id].licenceConfirmedAt = confirmedAt;
+    if (keep) {
+      kept += 1;
+      const k = `${entry.licence_decision.by}:${entry.licence.display ? 'display' : 'referral'}`;
+      tally[k] = (tally[k] || 0) + 1;
+      continue;
+    }
     let decided = p.decided;
     if (!decided) {
       const r = termsResults.get(p.termsUrl);
@@ -260,7 +326,8 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
     const k = `${next.licence_decision.by}:${next.licence.display ? 'display' : 'referral'}`;
     tally[k] = (tally[k] || 0) + 1;
   }
-  console.log(`licence: ${termsUrls.length} terms pages, ${classified} classified this run (${deferred} deferred, cap ${MAX_CLASSIFICATIONS_PER_RUN}); ${JSON.stringify(tally)}`);
+  writeState('health.json', health);
+  console.log(`licence: ${termsUrls.length} terms pages, ${classified} classified this run (${deferred} deferred, cap ${MAX_CLASSIFICATIONS_PER_RUN}), ${kept} kept through a transient failure; ${JSON.stringify(tally)}`);
   return tally;
 }
 
