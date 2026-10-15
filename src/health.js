@@ -1,7 +1,8 @@
 /**
  * Health state machine, pure. A probe result is one of:
  *   ok      — answered, decoded, fresh, records > 0
- *   idle    — answered, decoded, fresh, zero records (out of service hours)
+ *   idle    — answered, decoded, zero records, and fresh or (out of service
+ *             hours, server stopped updating) under IDLE_MAX_AGE_S old
  *   stale   — decoded but the newest timestamp is too old
  *   http / decode / network — failed
  *   blocked — 403/429: the prober is refused; says nothing about the feed
@@ -13,6 +14,8 @@
 
 export const DAY_S = 86_400;
 export const STALE_AFTER_S = 15 * 60;
+/** Oldest timestamp an empty feed may carry and still count as idle (out of service hours). */
+export const IDLE_MAX_AGE_S = 12 * 3600;
 export const HISTORY_CAP = 28;
 
 const PASS = new Set(['ok', 'idle']);
@@ -78,7 +81,11 @@ export function classify({ status, decoded, error, now }) {
   if (status !== 200) return { result: 'http', code: status };
   const ageS = decoded.newest === null ? null : Math.max(0, now - decoded.newest);
   // No timestamp at all: freshness can't be judged, so the records decide.
-  if (ageS !== null && ageS > STALE_AFTER_S)
+  // An empty feed whose server stopped updating overnight (no vehicles out)
+  // is idle while its timestamp is under IDLE_MAX_AGE_S old; older, it is
+  // stale, so a frozen server still fails.
+  const quietNight = decoded.records === 0 && ageS !== null && ageS <= IDLE_MAX_AGE_S;
+  if (ageS !== null && ageS > STALE_AFTER_S && !quietNight)
     return { result: 'stale', ageS, records: decoded.records };
   return {
     result: decoded.records > 0 ? 'ok' : 'idle',
