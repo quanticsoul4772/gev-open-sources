@@ -184,6 +184,8 @@ export async function decideLicences({ fetchImpl, client = createClient() } = {}
   };
   const decisions = await runPooled(termsUrls, hostOfUrl, decideTerms, { global: 6, perHost: 1 });
   termsUrls.forEach((url, i) => termsResults.set(url, decisions[i]?.error ? { accepted: false, reason: 'terms error' } : decisions[i]));
+  // Terms pages no entry refers to any more: drop them (each holds a signature of up to 4,000 numbers).
+  for (const url of Object.keys(cache)) if (!termsUrls.includes(url)) delete cache[url];
   writeState('licence-cache.json', cache);
 
   const tally = {};
