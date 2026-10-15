@@ -173,6 +173,12 @@
     "commercial": true,
     "attribution": true
   },
+  "developer.jcdecaux.com/files/open-licence-fr.pdf": {
+    "id": "etalab-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
   "gdacs.org/xml/rss.xml": {
     "id": "GDACS-public-domain",
     "display": true,

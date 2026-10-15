@@ -39,7 +39,9 @@ hours a GitHub Actions run:
    needing a key, are skipped. Cross-domain permalinks are pointed at their
    final URL, and plain-http feeds move to https when it serves the same data.
 2. **Decides licences** with no human step: a known open licence
-   (`src/licence/known-licences.json`); GBFS 3.x systems with no licence are
+   (`src/licence/known-licences.json`). A transit feed with no licence of its
+   own takes the one Transitland Atlas records for it, or (borrowed, known
+   licences only) for its operator's static feed. GBFS 3.x systems with no licence are
    CC0 per the spec; operator terms pages are read by Claude and accepted only
    when every quote is verbatim in the page, two runs agree, and every
    obligation is one an app meets on its own. Everything else is
