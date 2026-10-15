@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-tubingen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Tubingen — Tubingen",
+  "provider": "Zeus Tubingen",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Tubingen"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T17:03:30.906Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_tubingen"
+  ],
+  "coverage": {
+    "bbox": [
+      48.48,
+      9.0262,
+      48.5617,
+      9.1044
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/tubingen/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/tubingen/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/tubingen/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/tubingen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_tubingen",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

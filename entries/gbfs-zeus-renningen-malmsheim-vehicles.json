@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-renningen-malmsheim-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Renningen-Malmsheim — Renningen-Malmsheim",
+  "provider": "Zeus Renningen-Malmsheim",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Renningen-Malmsheim"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T17:03:30.905Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_renningen-malmsheim"
+  ],
+  "coverage": {
+    "bbox": [
+      48.73,
+      8.829,
+      48.8077,
+      9.0035
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/renningen-malmsheim/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/renningen-malmsheim/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/renningen-malmsheim/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/renningen-malmsheim/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_renningen-malmsheim",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

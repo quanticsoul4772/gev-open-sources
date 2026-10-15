@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-straubing-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Straubing — Straubing",
+  "provider": "Zeus Straubing",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Straubing"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T17:03:30.906Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_straubing"
+  ],
+  "coverage": {
+    "bbox": [
+      48.8373,
+      12.5255,
+      48.9765,
+      12.6568
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/straubing/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/straubing/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/straubing/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/straubing/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_straubing",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

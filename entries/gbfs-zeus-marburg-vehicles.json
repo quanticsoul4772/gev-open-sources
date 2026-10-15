@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-marburg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Marburg — Marburg",
+  "provider": "Zeus Marburg",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Marburg"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T17:03:30.904Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_marburg"
+  ],
+  "coverage": {
+    "bbox": [
+      50.768,
+      8.7333,
+      50.8532,
+      8.8051
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/marburg/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/marburg/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/marburg/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/marburg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_marburg",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

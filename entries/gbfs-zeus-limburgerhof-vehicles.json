@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-limburgerhof-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Limburgerhof — Limburgerhof",
+  "provider": "Zeus Limburgerhof",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Limburgerhof"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-15T17:03:30.904Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_limburgerhof"
+  ],
+  "coverage": {
+    "bbox": [
+      49.365,
+      8.3543,
+      49.5088,
+      8.4941
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/limburgerhof/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/limburgerhof/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/limburgerhof/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/limburgerhof/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_limburgerhof",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.8"
+        "quote": "terms page unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T21:38:53.167Z"
+    "at": "2026-10-15T17:03:30.916Z"
   },
   "provenance": [
     "cameras:caltrans-d09"
