@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-beryl-belfast-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Beryl Belfast — Belfast",
+  "provider": "Beryl Belfast",
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "4.14, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.795Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_belfast"
+  ],
+  "coverage": {
+    "bbox": [
+      54.5585,
+      -5.9779,
+      54.6257,
+      -5.8686
+    ],
+    "countries": [
+      "IE"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Belfast/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://beryl-gbfs-production.web.app/v2_2/Belfast/vehicle_types.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Belfast/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Belfast/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "beryl_belfast",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle",
+      "scooter_standing"
+    ]
+  }
+}

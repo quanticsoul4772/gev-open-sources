@@ -1,0 +1,55 @@
+{
+  "id": "bc-wildfire-perimeters-current",
+  "domain": "hazards.perimeters",
+  "name": "British Columbia wildfire perimeters, current season",
+  "provider": "BC Wildfire Service",
+  "coverage": {
+    "bbox": [
+      47.7,
+      -139.6,
+      60.5,
+      -113.5
+    ],
+    "countries": [
+      "CA"
+    ],
+    "class": "regional"
+  },
+  "access": {
+    "url": "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/query?where=1%3D1&outFields=FIRE_NUMBER,FIRE_SIZE_HECTARES,FIRE_STATUS,TRACK_DATE,FIRE_URL&outSR=4326&maxAllowableOffset=0.0002&geometryPrecision=5&f=geojson",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 300
+  },
+  "format": "geojson.fire-perimeters",
+  "mapping": {
+    "id": "FIRE_NUMBER",
+    "size_ha": "FIRE_SIZE_HECTARES",
+    "updated": "TRACK_DATE",
+    "status": "FIRE_STATUS",
+    "url": "FIRE_URL",
+    "region": "CA-BC"
+  },
+  "licence": {
+    "id": "OGL-BC-2.0",
+    "url": "https://www2.gov.bc.ca/gov/content/data/policy-standards/data-policies/open-data/open-government-licence-bc",
+    "display": true,
+    "commercial": true,
+    "attribution": "BC Wildfire Service. Contains information licensed under the Open Government Licence – British Columbia."
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www2.gov.bc.ca/gov/content/data/policy-standards/data-policies/open-data/open-government-licence-bc"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.835Z"
+  },
+  "provenance": [
+    "perimeters:bc-current"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-check-amstelveen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Check Technologies — Amstelveen",
+  "provider": "Check Technologies",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Check Technologies"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.804Z"
+  },
+  "provenance": [
+    "gbfs-systems:check_amstelveen"
+  ],
+  "coverage": {
+    "bbox": [
+      52.2668,
+      4.8263,
+      52.3509,
+      4.9002
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://api.ridecheck.app/gbfs/v3/amstelveen/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.ridecheck.app/gbfs/v3/amstelveen/vehicle_types.json",
+      "system_information": "https://api.ridecheck.app/gbfs/v3/amstelveen/system_information.json",
+      "gbfs": "https://api.ridecheck.app/gbfs/v3/amstelveen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "check_amstelveen",
+    "version": "3.0",
+    "form_factors": [
+      "moped"
+    ]
+  }
+}

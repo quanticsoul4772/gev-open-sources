@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-augusta-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Augusta — Augusta",
+  "provider": "Zeus Augusta",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Augusta"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.824Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_augusta"
+  ],
+  "coverage": {
+    "bbox": [
+      37.2021,
+      15.2006,
+      37.2523,
+      15.2427
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/augusta/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/augusta/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/augusta/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/augusta/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_augusta",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

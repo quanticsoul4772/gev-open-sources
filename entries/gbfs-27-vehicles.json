@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-27-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Riga — Riga",
+  "provider": "Riga",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Riga"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.793Z"
+  },
+  "provenance": [
+    "gbfs-systems:27"
+  ],
+  "coverage": {
+    "bbox": [
+      56.858,
+      23.8783,
+      57.0297,
+      24.3312
+    ],
+    "countries": [
+      "LV"
+    ]
+  },
+  "access": {
+    "url": "https://rideride.rideatom.com/gbfs/27/v3.0/vehicle_status",
+    "related": {
+      "vehicle_types": "https://rideride.rideatom.com/gbfs/27/v3.0/vehicle_types",
+      "system_information": "https://rideride.rideatom.com/gbfs/27/v3.0/system_information",
+      "gbfs": "https://rideride.rideatom.com/gbfs/27/v3.0/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "27",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-gloucester-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Gloucester — Gloucester",
+  "provider": "Zeus Gloucester",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Gloucester"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.824Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_gloucester"
+  ],
+  "coverage": {
+    "bbox": [
+      51.8176,
+      -2.2819,
+      51.9219,
+      -2.0979
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/gloucester/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/gloucester/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/gloucester/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/gloucester/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_gloucester",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

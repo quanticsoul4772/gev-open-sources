@@ -1,0 +1,53 @@
+{
+  "id": "ontario-fire-perimeters-in-year",
+  "domain": "hazards.perimeters",
+  "name": "Ontario forest fire perimeters, this year",
+  "provider": "Ontario Ministry of Natural Resources",
+  "coverage": {
+    "bbox": [
+      41.1,
+      -95.7,
+      57.4,
+      -73.8
+    ],
+    "countries": [
+      "CA"
+    ],
+    "class": "regional"
+  },
+  "access": {
+    "url": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open09/MapServer/51/query?where=1%3D1&outFields=FIRENUMB,CUR_SIZE,STATUS,DATE_MAPPED&outSR=4326&maxAllowableOffset=0.0002&geometryPrecision=5&f=geojson",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 300
+  },
+  "format": "geojson.fire-perimeters",
+  "mapping": {
+    "id": "FIRENUMB",
+    "size_ha": "CUR_SIZE",
+    "updated": "DATE_MAPPED",
+    "region": "CA-ON"
+  },
+  "licence": {
+    "id": "OGL-ON-1.0",
+    "url": "https://www.ontario.ca/page/open-government-licence-ontario",
+    "display": true,
+    "commercial": true,
+    "attribution": "Ontario Ministry of Natural Resources. Contains information licensed under the Open Government Licence – Ontario."
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.ontario.ca/page/open-government-licence-ontario"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.845Z"
+  },
+  "provenance": [
+    "perimeters:on-in-year"
+  ]
+}

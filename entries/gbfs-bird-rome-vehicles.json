@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-rome-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Rome — Rome",
+  "provider": "Bird Rome",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Rome"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.802Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-rome"
+  ],
+  "coverage": {
+    "bbox": [
+      41.7048,
+      12.2487,
+      41.9832,
+      12.6893
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/rome/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/rome/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/rome/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/rome/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-rome",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-yeovil-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Yeovil — Yeovil",
+  "provider": "Zeus Yeovil",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Yeovil"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.826Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_yeovil"
+  ],
+  "coverage": {
+    "bbox": [
+      50.9151,
+      -2.6919,
+      50.974,
+      -2.5968
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/yeovil/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/yeovil/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/yeovil/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/yeovil/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_yeovil",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

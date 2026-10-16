@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-inurba-budapest-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bubi 3.0 — Budapest",
+  "provider": "Bubi 3.0",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bubi 3.0"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.811Z"
+  },
+  "provenance": [
+    "gbfs-systems:inurba-budapest"
+  ],
+  "coverage": {
+    "bbox": [
+      47.4405,
+      18.9932,
+      47.5703,
+      19.2666
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.urbansharing.com/molbubi.hu/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.urbansharing.com/molbubi.hu/vehicle_types.json",
+      "system_information": "https://gbfs.urbansharing.com/molbubi.hu/system_information.json",
+      "gbfs": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "inurba-budapest",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-check-almere-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Check Technologies — Almere",
+  "provider": "Check Technologies",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Check Technologies"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.804Z"
+  },
+  "provenance": [
+    "gbfs-systems:check_almere"
+  ],
+  "coverage": {
+    "bbox": [
+      52.3156,
+      5.1172,
+      52.4266,
+      5.3414
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://api.ridecheck.app/gbfs/v3/almere/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.ridecheck.app/gbfs/v3/almere/vehicle_types.json",
+      "system_information": "https://api.ridecheck.app/gbfs/v3/almere/system_information.json",
+      "gbfs": "https://api.ridecheck.app/gbfs/v3/almere/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "check_almere",
+    "version": "3.0",
+    "form_factors": [
+      "moped"
+    ]
+  }
+}

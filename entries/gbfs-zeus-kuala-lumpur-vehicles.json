@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-kuala-lumpur-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Kuala Lumpur — Kuala Lumpur",
+  "provider": "Zeus Kuala Lumpur",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Kuala Lumpur"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.825Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_kuala lumpur"
+  ],
+  "coverage": {
+    "bbox": [
+      3.1037,
+      101.588,
+      3.1863,
+      101.7488
+    ],
+    "countries": [
+      "MY"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/kuala%20lumpur/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/kuala%20lumpur/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/kuala%20lumpur/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/kuala%20lumpur/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_kuala lumpur",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-mobymoby-dublin-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Moby Dublin — Dublin",
+  "provider": "Moby Dublin",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Moby Dublin"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unavailable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.813Z"
+  },
+  "provenance": [
+    "gbfs-systems:mobymoby_dublin"
+  ],
+  "coverage": {
+    "bbox": [
+      53.301,
+      -6.2758,
+      53.341,
+      -6.2358
+    ],
+    "countries": [
+      "IE"
+    ]
+  },
+  "access": {
+    "url": "https://api.sharebike.com/public-api-service/gbfs/v2/moby_dublin/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://api.sharebike.com/public-api-service/gbfs/v2/moby_dublin/vehicle_types.json",
+      "system_information": "https://api.sharebike.com/public-api-service/gbfs/v2/moby_dublin/en/system_information.json",
+      "gbfs": "https://api.sharebike.com/public-api-service/gbfs/v2/moby_dublin/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "mobymoby_dublin",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

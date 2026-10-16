@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-turin-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Cooltra Turin — Turin",
+  "provider": "Cooltra Turin",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Cooltra"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.822Z"
+  },
+  "provenance": [
+    "gbfs-systems:turin"
+  ],
+  "coverage": {
+    "bbox": [
+      44.9974,
+      7.5947,
+      45.137,
+      7.7403
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://maas.zeus.cooltra.com/gbfs/turin/3.0/en/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://maas.zeus.cooltra.com/gbfs/turin/3.0/en/vehicle_types.json",
+      "system_information": "https://maas.zeus.cooltra.com/gbfs/turin/3.0/en/system_information.json",
+      "gbfs": "https://maas.zeus.cooltra.com/gbfs/turin/3.0/en/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "turin",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "moped"
+    ]
+  }
+}

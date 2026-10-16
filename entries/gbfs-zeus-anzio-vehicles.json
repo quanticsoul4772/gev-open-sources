@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-anzio-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Anzio — Anzio",
+  "provider": "Zeus Anzio",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Anzio"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.824Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_anzio"
+  ],
+  "coverage": {
+    "bbox": [
+      41.4232,
+      12.569,
+      41.5255,
+      12.6946
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/anzio/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/anzio/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/anzio/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/anzio/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_anzio",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

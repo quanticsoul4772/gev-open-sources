@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-sunderland-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Sunderland — Sunderland",
+  "provider": "Zeus Sunderland",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Sunderland"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.825Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_sunderland"
+  ],
+  "coverage": {
+    "bbox": [
+      54.8746,
+      -1.4723,
+      54.9492,
+      -1.3471
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/sunderland/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/sunderland/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/sunderland/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/sunderland/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_sunderland",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-israel-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Israel — Israel",
+  "provider": "Bird Israel",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Israel"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.802Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-israel"
+  ],
+  "coverage": {
+    "bbox": [
+      31.7542,
+      34.6121,
+      32.5046,
+      34.9679
+    ],
+    "countries": [
+      "IL"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/israel/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/israel/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/israel/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/israel/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-israel",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

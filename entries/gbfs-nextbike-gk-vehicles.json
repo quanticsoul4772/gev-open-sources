@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-gk-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Grad Križevci (Croatia) — Križevci",
+  "provider": "Grad Križevci (Croatia)",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.816Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_gk"
+  ],
+  "coverage": {
+    "bbox": [
+      46,
+      16.5207,
+      46.0418,
+      16.5627
+    ],
+    "countries": [
+      "HR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gk/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gk/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gk/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gk/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_gk",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

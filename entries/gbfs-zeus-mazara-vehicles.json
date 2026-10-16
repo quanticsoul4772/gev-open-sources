@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-mazara-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Mazara — Mazara",
+  "provider": "Zeus Mazara",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Mazara"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T16:55:37.825Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_mazara"
+  ],
+  "coverage": {
+    "bbox": [
+      37.6146,
+      12.5667,
+      37.6795,
+      12.6344
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/mazara/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/mazara/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/mazara/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/mazara/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_mazara",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}
