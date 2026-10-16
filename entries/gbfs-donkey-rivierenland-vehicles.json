@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-donkey-rivierenland-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Rivierenland — Rivierenland",
+  "provider": "Donkey Republic Rivierenland",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.881Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_rivierenland"
+  ],
+  "coverage": {
+    "bbox": [
+      51.7887,
+      5.2436,
+      51.9099,
+      5.4436
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rivierenland/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rivierenland/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rivierenland/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rivierenland/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_rivierenland",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

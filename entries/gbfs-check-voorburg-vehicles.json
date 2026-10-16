@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-check-voorburg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Check Voorburg — Voorburg",
+  "provider": "Check Voorburg",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Check Voorburg"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.875Z"
+  },
+  "provenance": [
+    "gbfs-systems:check_voorburg"
+  ],
+  "coverage": {
+    "bbox": [
+      52.0416,
+      4.3238,
+      52.124,
+      4.4109
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://api.ridecheck.app/gbfs/v3/voorburg/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.ridecheck.app/gbfs/v3/voorburg/vehicle_types.json",
+      "system_information": "https://api.ridecheck.app/gbfs/v3/voorburg/system_information.json",
+      "gbfs": "https://api.ridecheck.app/gbfs/v3/voorburg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "check_voorburg",
+    "version": "3.0",
+    "form_factors": [
+      "moped"
+    ]
+  }
+}

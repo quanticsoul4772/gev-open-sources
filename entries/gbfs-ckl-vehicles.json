@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-ckl-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Cykl — Wageningen",
+  "provider": "Cykl",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cykl"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.876Z"
+  },
+  "provenance": [
+    "gbfs-systems:CKL"
+  ],
+  "coverage": {
+    "bbox": [
+      51.9465,
+      5.629,
+      52.0271,
+      5.6919
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://www.cykl.nl/gbfs/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://www.cykl.nl/gbfs/en/vehicle_types.json",
+      "system_information": "https://www.cykl.nl/gbfs/en/system_information.json",
+      "gbfs": "https://www.cykl.nl/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "CKL",
+    "version": "2.1",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-dott-melhus-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Melhus — Melhus",
+  "provider": "Dott Melhus",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Melhus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.883Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-melhus"
+  ],
+  "coverage": {
+    "bbox": [
+      63.2433,
+      10.2219,
+      63.3142,
+      10.3275
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/melhus/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/melhus/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/melhus/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/melhus/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-melhus",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-check-denhaag-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Check Technologies — Den Haag",
+  "provider": "Check Technologies",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Check Technologies"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.873Z"
+  },
+  "provenance": [
+    "gbfs-systems:check_denhaag"
+  ],
+  "coverage": {
+    "bbox": [
+      52.024,
+      4.1918,
+      52.1387,
+      4.4278
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://api.ridecheck.app/gbfs/v3/denhaag/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.ridecheck.app/gbfs/v3/denhaag/vehicle_types.json",
+      "system_information": "https://api.ridecheck.app/gbfs/v3/denhaag/system_information.json",
+      "gbfs": "https://api.ridecheck.app/gbfs/v3/denhaag/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "check_denhaag",
+    "version": "3.0",
+    "form_factors": [
+      "moped"
+    ]
+  }
+}

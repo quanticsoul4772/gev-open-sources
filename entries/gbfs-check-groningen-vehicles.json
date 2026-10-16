@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-check-groningen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Check Technologies — Groningen",
+  "provider": "Check Technologies",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Check Technologies"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.874Z"
+  },
+  "provenance": [
+    "gbfs-systems:check_groningen"
+  ],
+  "coverage": {
+    "bbox": [
+      53.1496,
+      6.481,
+      53.2704,
+      6.6662
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://api.ridecheck.app/gbfs/v3/groningen/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.ridecheck.app/gbfs/v3/groningen/vehicle_types.json",
+      "system_information": "https://api.ridecheck.app/gbfs/v3/groningen/system_information.json",
+      "gbfs": "https://api.ridecheck.app/gbfs/v3/groningen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "check_groningen",
+    "version": "3.0",
+    "form_factors": [
+      "moped"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-check-zaandam-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Check Technologies — Zaandam",
+  "provider": "Check Technologies",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Check Technologies"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.876Z"
+  },
+  "provenance": [
+    "gbfs-systems:check_zaandam"
+  ],
+  "coverage": {
+    "bbox": [
+      52.4138,
+      4.802,
+      52.4618,
+      4.8594
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://api.ridecheck.app/gbfs/v3/zaandam/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.ridecheck.app/gbfs/v3/zaandam/vehicle_types.json",
+      "system_information": "https://api.ridecheck.app/gbfs/v3/zaandam/system_information.json",
+      "gbfs": "https://api.ridecheck.app/gbfs/v3/zaandam/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "check_zaandam",
+    "version": "3.0",
+    "form_factors": [
+      "moped"
+    ]
+  }
+}

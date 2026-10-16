@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-s-lineeregionali-rt",
+  "domain": "transit.vehicles",
+  "name": "Autolinee Toscane",
+  "provider": "Autolinee Toscane",
+  "coverage": {
+    "bbox": [
+      42.6279,
+      10.0613,
+      44.2029,
+      11.976
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://regionetoscana.smartregion.toscana.it/mobility/artifacts/gtfs-rt/vehicle-positions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://dati.toscana.it/dataset/rt-oraritr",
+    "display": false,
+    "commercial": null,
+    "attribution": "https://dati.toscana.it/"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T18:33:58.902Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-s-lineeregionali~rt"
+  ]
+}

@@ -23,24 +23,25 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": null,
-    "url": null,
-    "display": false,
-    "commercial": null,
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
     "attribution": "Gruppo Torinese Trasporti"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "no licence published"
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.445Z"
+    "at": "2026-10-16T18:33:58.907Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-2696"
+    "mobilitydatabase:mdb-2696",
+    "licence-atlas:f-u0j-torino~rt"
   ]
 }
