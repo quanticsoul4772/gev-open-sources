@@ -312,6 +312,51 @@ test('adapters: GDACS events counted, no freshness time, coverage share', () => 
   assert.throws(() => ADAPTERS['geojson.gdacs-events'](new TextEncoder().encode('[]'), null), /FeatureCollection/);
 });
 
+test('firms: entries valid and referral-only until the licence job; no Suomi NPP; the FAQ licence is known', async () => {
+  const { FIRMS_ENTRIES, FIRMS_LICENCE_URL } = await import('../src/harvest/firms.js');
+  assert.equal(FIRMS_ENTRIES.length, 3);
+  for (const e of FIRMS_ENTRIES) {
+    assert.deepEqual(validateEntry(e), [], e.id);
+    assert.equal(e.licence.display, false, 'the known licence is applied by the licence job');
+    assert.equal(e.access.min_interval_s, 300, 'longer spacing would stop every candidate after one probe round');
+  }
+  assert.ok(!FIRMS_ENTRIES.some((e) => /suomi|snpp/i.test(e.access.url)), 'Suomi NPP ends 2 Nov 2026');
+  const known = knownLicence(FIRMS_LICENCE_URL);
+  assert.equal(known.id, 'NASA-FIRMS-open');
+  assert.equal(known.display, true);
+});
+
+test('firms: licence holds while the FAQ still promotes full and open sharing (as the raw HTML has it)', async () => {
+  const { FIRMS_LICENCE_URL } = await import('../src/harvest/firms.js');
+  const { declarationPresent } = await import('../src/licence/index.js');
+  const { verify } = knownLicence(FIRMS_LICENCE_URL);
+  const page = (html) => fakeFetch({ [FIRMS_LICENCE_URL]: { body: `<html><body><p>${html}</p></body></html>` } });
+  // The live page has a link inside the sentence.
+  const live =
+    'NASA promotes <a href="https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-information-guidance">full and open sharing of data</a> and and we encourage publication of imagery from FIRMS';
+  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, page(live)), true);
+  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, page('NASA promotes full and open\n sharing of data')), true, 'split across lines');
+  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, page('Data may be used for research only.')), false);
+  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, fakeFetch({ [FIRMS_LICENCE_URL]: { body: 'busy', status: 503 } })), null);
+});
+
+test('adapters: FIRMS CSV, MODIS and VIIRS columns; newest detection; broken files throw', () => {
+  const csv = (text) => new TextEncoder().encode(text);
+  const decode = (text) => ADAPTERS['csv.firms-active-fire'](csv(text), [-90, -180, 90, 180]);
+  const viirs = 'latitude,longitude,bright_ti4,scan,track,acq_date,acq_time,satellite,confidence,version,bright_ti5,frp,daynight\n';
+  const modis = 'latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,confidence,version,bright_t31,frp,daynight\n';
+  const at = (iso) => Date.parse(iso) / 1000;
+  const v = decode(`${viirs}17.9,34.0,311.1,0.61,0.54,2026-10-15,0001,N20,nominal,2.0NRT,298.9,1.78,N\n45.8,-120.1,330.2,0.4,0.4,2026-10-16,0945,N20,high,2.0NRT,290.1,5.2,D\n`);
+  assert.deepEqual(v, { records: 2, newest: at('2026-10-16T09:45:00Z'), inCoverage: 1, staleAfterS: 6 * 3600 });
+  const m = decode(`${modis}37.39,138.58,308.31,2,1.38,2026-10-15,45,T,51,6.1NRT,290.3,20.46,D\n`);
+  assert.equal(m.newest, at('2026-10-15T00:45:00Z'), 'unpadded acq_time "45" is 00:45');
+  const bom = decode(`﻿${viirs.replace('\n', '\r\n')}1,2,3,4,5,2026-10-16,1200,N21,low,2.0NRT,6,7,D\r\n`);
+  assert.equal(bom.records, 1, 'BOM and CRLF');
+  assert.equal(decode(`${viirs}x,2,3\n,,\n95,10,1,1,1,2026-10-16,1200,N20,low,v,1,1,D\n1,2,3,4,5,2026-10-16,1200,N20,low,v,6,7,D\n`).records, 1, 'bad rows skipped');
+  assert.throws(() => decode('<!doctype html><title>Earthdata Login</title>'), /not a FIRMS CSV/);
+  assert.throws(() => decode(viirs), /no fire rows/, 'an empty worldwide file is broken, not idle');
+});
+
 test('atlas licences: the realtime feed\'s own, else its operator\'s (borrowed); filled only where missing', async () => {
   const { atlasLicences, withAtlasLicences } = await import('../src/harvest/atlas.js');
   const docs = [

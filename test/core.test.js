@@ -387,6 +387,62 @@ test('probe rounds: a passing candidate is verified in one run; history keeps on
   assert.equal(counts.ok, 3);
 });
 
+test('freshness: a decoder may set its own stale limit (FIRMS 6 h); others keep 15 min', () => {
+  const now = 1_000_000;
+  const firms = (ageH) => classify({ status: 200, decoded: { records: 5, newest: now - ageH * 3600, staleAfterS: 6 * 3600 }, now }).result;
+  assert.equal(firms(3), 'ok');
+  assert.equal(firms(7), 'stale');
+  assert.equal(classify({ status: 200, decoded: { records: 5, newest: now - 3 * 3600 }, now }).result, 'stale');
+});
+
+test('probe limits: FIRMS files may exceed 8 MiB; other formats may not', async () => {
+  const { probeEntry } = await import('../src/probe.js');
+  const { FIRMS_ENTRIES } = await import('../src/harvest/firms.js');
+  const row = '45.8,-120.1,330.2,0.4,0.4,2026-10-16,0945,N20,high,2.0NRT,290.1,5.2,D\n';
+  const big = 'latitude,longitude,bright_ti4,scan,track,acq_date,acq_time,satellite,confidence,version,bright_ti5,frp,daynight\n' + row.repeat(Math.ceil((9 * 2 ** 20) / row.length));
+  const now = Date.parse('2026-10-16T11:00:00Z') / 1000;
+  const fetchImpl = async () => new Response(big);
+  assert.equal((await probeEntry(FIRMS_ENTRIES[1], { now, fetchImpl })).result, 'ok');
+  const gtfs = { id: 'g', format: 'gtfs-rt.vehicle-positions', coverage: { bbox: null }, access: { url: 'https://g.example/vp', headers: {}, redirectHosts: [], unzip: null } };
+  assert.equal((await probeEntry(gtfs, { now, fetchImpl })).result, 'network', 'over the 8 MiB cap');
+});
+
+test('probe rounds: FIRMS entries get all three rounds inside the budget', async () => {
+  const { probeRounds } = await import('../src/probe.js');
+  const { FIRMS_ENTRIES } = await import('../src/harvest/firms.js');
+  let t = 0;
+  const health = {};
+  const { rounds } = await probeRounds(FIRMS_ENTRIES, health, {
+    probe: async (e, at) => ({ at, result: 'ok', records: 100 }),
+    clock: () => t,
+    sleep: async (ms) => {
+      t += ms / 1000;
+    },
+  });
+  assert.equal(rounds, 3);
+  for (const e of FIRMS_ENTRIES) assert.equal(health[e.id].status, 'verified', e.id);
+});
+
+test('redirect re-check: failing entries are re-checked, FIRMS entries never', async () => {
+  const { redirectChecks } = await import('../src/harvest/index.js');
+  const { FIRMS_ENTRIES } = await import('../src/harvest/firms.js');
+  const other = { id: 'x', provenance: ['mdb:1'], access: { url: 'https://x.example/vp' } };
+  const existing = new Map([[other.id, other], ...FIRMS_ENTRIES.map((e) => [e.id, e])]);
+  const failed = { history: [{ result: 'network' }] };
+  const health = Object.fromEntries([...existing.keys()].map((id) => [id, failed]));
+  assert.deepEqual(redirectChecks([], existing, health).map((e) => e.id), ['x']);
+  assert.deepEqual(redirectChecks(FIRMS_ENTRIES, new Map(), {}), [], 'new FIRMS candidates too');
+});
+
+test('every format has a decoder, and the domain and format lists match the published schema', async () => {
+  const fs = await import('node:fs');
+  const { DOMAINS, FORMATS } = await import('../src/schema.js');
+  const schema = JSON.parse(fs.readFileSync(new URL('../schema/entry.schema.json', import.meta.url), 'utf8'));
+  for (const f of FORMATS) assert.equal(typeof ADAPTERS[f], 'function', f);
+  assert.deepEqual([...schema.properties.domain.enum].sort(), [...DOMAINS].sort());
+  assert.deepEqual([...schema.properties.format.enum].sort(), [...FORMATS].sort());
+});
+
 test('probe rounds: no round starts past the budget', async () => {
   const { probeRounds } = await import('../src/probe.js');
   let t = 0;

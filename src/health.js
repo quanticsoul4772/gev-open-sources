@@ -85,7 +85,8 @@ export function classify({ status, decoded, error, now }) {
   // is idle while its timestamp is under IDLE_MAX_AGE_S old; older, it is
   // stale, so a frozen server still fails.
   const quietNight = decoded.records === 0 && ageS !== null && ageS <= IDLE_MAX_AGE_S;
-  if (ageS !== null && ageS > STALE_AFTER_S && !quietNight)
+  // A decoder may set its own limit (FIRMS data arrive hours after the pass).
+  if (ageS !== null && ageS > (decoded.staleAfterS ?? STALE_AFTER_S) && !quietNight)
     return { result: 'stale', ageS, records: decoded.records };
   return {
     result: decoded.records > 0 ? 'ok' : 'idle',
