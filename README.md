@@ -66,18 +66,13 @@ hours a GitHub Actions run:
      old data stays verified. A cut-off response, non-lon/lat coordinates or
      a renamed id field fail the probe.
      Licences: Open Government Licence – British Columbia 2.0 (with BC's API
-     terms: identify yourself, limits may change without notice) and –
-     Ontario 1.0. Alberta's entry is referral-only (no licence URL) until
-     Alberta confirms its licence: the Open Government Licence – Alberta 2.2
-     reaches the layer only through the open.alberta.ca dataset
-     `alberta-wildfire-status-map` (licence OGLA), whose only resource is the
-     status map that uses this layer, while the layer's own item names no
-     licence and alberta.ca's site terms default to non-commercial. Once
-     confirmed, its licence URL becomes `https://open.alberta.ca/licence`, a
-     known licence (`OGL-AB-2.2`) pinned rather than re-read, since licence
-     pages may be blocked from the Actions runner; the change goes in
-     `src/harvest/perimeters.js` and in its `entries/` file. Credit each feed
-     with its `licence.attribution`, use no
+     terms: identify yourself, limits may change without notice), – Alberta
+     2.2 and – Ontario 1.0. Alberta's reaches the layer through the
+     open.alberta.ca dataset `alberta-wildfire-status-map` (licence OGLA),
+     whose only resource is the status map that uses this layer; the layer's
+     own item names no licence. The version is pinned in the known licence
+     (`OGL-AB-2.2`), not re-read: licence pages may be blocked from the
+     Actions runner. Credit each feed with its `licence.attribution`, use no
      provincial logos, and present the perimeters as reference only (each
      province publishes them "as is"; Alberta's updates "can take several
      hours or more").

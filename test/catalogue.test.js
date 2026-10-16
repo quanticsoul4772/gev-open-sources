@@ -350,8 +350,8 @@ test('adapters: FIRMS CSV, MODIS and VIIRS columns; newest detection; broken fil
   assert.throws(() => decode(viirs), /no fire rows/, 'an empty worldwide file is broken, not idle');
 });
 
-test('perimeters: BC, Ontario and Alberta entries valid and regional; BC and Ontario licences known; Alberta referral-only until confirmed', async () => {
-  const { PERIMETER_ENTRIES, AB_LICENCE } = await import('../src/harvest/perimeters.js');
+test('perimeters: BC, Ontario and Alberta entries valid, regional, referral-only until the licence job; all licences known', async () => {
+  const { PERIMETER_ENTRIES } = await import('../src/harvest/perimeters.js');
   const { plausibleBbox } = await import('../src/harvest/catalogue.js');
   assert.deepEqual(PERIMETER_ENTRIES.map((e) => e.id), ['bc-wildfire-perimeters-current', 'ontario-fire-perimeters-in-year', 'alberta-wildfire-perimeters-active']);
   for (const e of PERIMETER_ENTRIES) {
@@ -359,7 +359,6 @@ test('perimeters: BC, Ontario and Alberta entries valid and regional; BC and Ont
     assert.equal(e.coverage.class, 'regional');
     assert.equal(plausibleBbox(e.coverage.bbox, 'regional'), true, `${e.id} box within the regional limit`);
     assert.equal(e.licence.display, false);
-    if (e.id.startsWith('alberta-')) continue;
     const known = knownLicence(e.licence.url);
     assert.ok(known, `${e.id} licence ${e.licence.url} is known`);
     assert.equal(known.display, true);
@@ -368,11 +367,7 @@ test('perimeters: BC, Ontario and Alberta entries valid and regional; BC and Ont
   assert.equal(knownLicence('https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc').id, 'OGL-BC-2.0', 'the older BC URL too');
   assert.equal(knownLicence('https://www2.gov.bc.ca/gov/content?id=A519A56BC2BF44E4A008B33FCF527F61'), null, 'never every gov.bc.ca page');
   assert.equal(PERIMETER_ENTRIES[1].mapping.status, undefined, "Ontario's STATUS is the perimeter's, not the fire's");
-  // Alberta's licence reaches the layer only indirectly: no licence URL (so the
-  // licence job never sends it to the terms classifier) until Alberta confirms;
-  // the known licence is ready for then.
-  assert.equal(PERIMETER_ENTRIES[2].licence.url, null);
-  assert.equal(knownLicence(AB_LICENCE).id, 'OGL-AB-2.2');
+  assert.equal(knownLicence(PERIMETER_ENTRIES[2].licence.url).id, 'OGL-AB-2.2');
   assert.equal(PERIMETER_ENTRIES[2].mapping.url, undefined, 'Alberta has no incident page');
 });
 
