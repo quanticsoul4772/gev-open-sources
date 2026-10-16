@@ -22,6 +22,7 @@ import { readZipEntry } from './util/zip.js';
 export const PROBE_LIMITS_BY_FORMAT = Object.freeze({
   'csv.firms-active-fire': { maxBytes: 48 * 2 ** 20, timeoutMs: 60_000 },
   'geojson.fire-perimeters': { maxBytes: 32 * 2 ** 20, timeoutMs: 60_000 },
+  'json.sensor-community': { maxBytes: 24 * 2 ** 20, timeoutMs: 60_000 },
 });
 
 /** Probe one entry; never throws. */

@@ -82,6 +82,22 @@ hours a GitHub Actions run:
      or renamed service needs the entry fixed by hand. With three entries, one
      dropping out is a 33 % fall, and an app that refuses large drops (as
      God's Eye View does) keeps its previous copy of the domain.
+   - [Sensor.Community](https://sensor.community/) particulate sensors
+     (`airquality.sensors`, format `json.sensor-community`, class `global`):
+     the keyless `data.1h.json` file, each volunteer sensor's mean over the
+     last hour, mostly in Europe (about 9,300 outdoor PM sensors). PM sensors
+     report `P1` (PM10) and `P2` (PM2.5) in µg/m³; other sensor types share
+     the file. `timestamp` is the sensor's last sample, in UTC without a
+     zone. The probe counts outdoor sensors with a PM value from 0 to under
+     999 (the SDS011's ceiling); the entry is stale after 3 h. The file is
+     8.7 MB and served uncompressed. These are uncalibrated low-cost
+     sensors: indicative, not regulatory, and they read high in humid air.
+     Licence: the site footer's "DB Contents License" is the Open Data
+     Commons DbCL 1.0 (known licence `DbCL-1.0`), which requires complying
+     with the ODbL for the database: credit Sensor.Community and keep a
+     published derived database under the ODbL. Sensor.Community doesn't
+     name the ODbL itself; that follows from the DbCL. The API asks clients
+     to send a User-Agent that identifies them.
    - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
      Digitraffic weather cameras (CC BY 4.0), TfL JamCams and Caltrans CCTV
      (12 districts). Each entry carries a `mapping` that says where each
@@ -152,8 +168,10 @@ Version policy:
 - `coverage.class` is optional; absent means `regional`. Deliberately wide
   entries carry a hand-set class (Amtrak is `national`), and hazard feeds
   default to `global` unless the entry sets a class (fire perimeters are
-  `regional`).
-- Hand-written entries (USGS, GDACS, FIRMS, fire perimeters) are never
+  `regional`). Other worldwide feeds set `global` themselves
+  (Sensor.Community).
+- Hand-written entries (USGS, GDACS, FIRMS, fire perimeters,
+  Sensor.Community) are never
   redirect-rewritten and never tombstoned: after a long outage they stay
   dead (unpublished) and come back when the source answers again. A change
   to one of them in the code doesn't reach its existing `entries/` file;

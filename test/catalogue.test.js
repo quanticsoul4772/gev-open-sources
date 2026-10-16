@@ -467,3 +467,54 @@ test('known licences: JCDecaux\'s Licence Ouverte (Etalab 1.0) allows display', 
   assert.equal(k.id, 'etalab-1.0');
   assert.equal(k.display, true);
 });
+
+test('sensor community: entry valid, global, referral-only until the licence job; DbCL is a plain known licence', async () => {
+  const { AIRQUALITY_ENTRIES, SENSOR_COMMUNITY_LICENCE_URL } = await import('../src/harvest/airquality.js');
+  const { plausibleBbox } = await import('../src/harvest/catalogue.js');
+  assert.equal(AIRQUALITY_ENTRIES.length, 1);
+  const [e] = AIRQUALITY_ENTRIES;
+  assert.deepEqual(validateEntry(e), []);
+  assert.equal(e.domain, 'airquality.sensors');
+  assert.equal(e.coverage.class, 'global', 'only hazard domains default to global');
+  assert.equal(plausibleBbox(e.coverage.bbox, 'global'), true);
+  assert.equal(e.licence.display, false, 'the known licence is applied by the licence job');
+  assert.equal(e.access.min_interval_s, 300);
+  assert.deepEqual(e.access.headers, {}, "the prober's User-Agent names this project; the app sends its own");
+  const known = knownLicence(SENSOR_COMMUNITY_LICENCE_URL);
+  assert.deepEqual({ ...known, key: undefined }, { key: undefined, id: 'DbCL-1.0', display: true, commercial: true, attribution: true });
+  assert.equal(known.verify, undefined, 'the URL is the licence text, not a page to re-read');
+  assert.equal(knownLicence('https://opendatacommons.org/licenses/dbcl/1.0/').id, 'DbCL-1.0');
+});
+
+test('adapters: Sensor.Community 1-hour file; outdoor PM sensors only; UTC timestamps; broken files throw', () => {
+  const sensor = ({ indoor = 0, lat = '52.52', lon = '13.40', ts = '2026-10-16 22:59:16', values }) => ({
+    timestamp: ts,
+    location: { latitude: lat, longitude: lon, indoor, country: 'DE' },
+    sensor: { sensor_type: { name: 'SDS011' } },
+    sensordatavalues: values,
+  });
+  const pm = (p1, p2) => [
+    { value_type: 'P1', value: String(p1) },
+    { value_type: 'P2', value: String(p2) },
+  ];
+  const decode = (doc) => ADAPTERS['json.sensor-community'](new TextEncoder().encode(JSON.stringify(doc)), [-90, -180, 90, 180]);
+  const result = decode([
+    sensor({ values: pm(12.3, 7.1) }),
+    sensor({ values: pm(4, 2), ts: '2026-10-16 23:00:41' }),
+    sensor({ indoor: 1, values: pm(9, 5) }),
+    sensor({ indoor: '1', values: pm(9, 5) }),
+    sensor({ values: pm(-1, 'x') }),
+    sensor({ values: pm(999.9, 999.9) }),
+    sensor({ values: [{ value_type: 'temperature', value: '11.2' }] }),
+    sensor({ lat: '', lon: 'x', values: pm(5, 3) }),
+  ]);
+  assert.deepEqual(result, {
+    records: 2,
+    newest: Date.UTC(2026, 9, 16, 23, 0, 41) / 1000,
+    inCoverage: 1,
+    staleAfterS: 3 * 3600,
+  });
+  assert.equal(decode([sensor({ values: pm(5, 'n/a') })]).records, 1, 'PM10 alone is a reading');
+  assert.throws(() => decode({ error: 'x' }), /not a Sensor.Community array/);
+  assert.throws(() => decode([sensor({ indoor: 1, values: pm(5, 3) })]), /no PM readings/);
+});

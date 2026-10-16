@@ -89,6 +89,18 @@
     "commercial": true,
     "attribution": true
   },
+  "opendatacommons.org/licenses/dbcl/1-0": {
+    "id": "DbCL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "opendatacommons.org/licenses/dbcl/1.0": {
+    "id": "DbCL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
   "opendatacommons.org/licenses/odbl": {
     "id": "ODbL-1.0",
     "display": true,

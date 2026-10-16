@@ -13,6 +13,7 @@ export const DOMAINS = Object.freeze([
   'hazards.disasters',
   'hazards.fires',
   'hazards.perimeters',
+  'airquality.sensors',
 ]);
 export const FORMATS = Object.freeze([
   'gtfs-rt.vehicle-positions',
@@ -23,6 +24,7 @@ export const FORMATS = Object.freeze([
   'geojson.gdacs-events',
   'csv.firms-active-fire',
   'geojson.fire-perimeters',
+  'json.sensor-community',
 ]);
 /**
  * Coverage classes (optional `coverage.class`; absent means regional). Each
