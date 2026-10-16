@@ -33,8 +33,9 @@ export const SIZE_WINDOW_S = 30 * 3600;
 /**
  * Domains smaller than this in an earlier copy are not size-guarded: one
  * dead feed in a 5-entry domain is a 20 % drop, and failing the whole build
- * for it would stop every domain from publishing for up to 30 hours. Matches
- * the app, which guards a domain from 50 entries.
+ * for it would stop every domain from publishing for up to 30 hours. The app
+ * guards growth only from 50 entries, but refuses a large drop at any size
+ * (it keeps its previous copy of that domain).
  */
 export const DOMAIN_FLOOR = 50;
 export const MIN_SIZE_RATIO = 0.85;

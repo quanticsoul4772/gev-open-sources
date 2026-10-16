@@ -198,6 +198,12 @@
     "commercial": true,
     "attribution": true
   },
+  "open.alberta.ca/licence": {
+    "id": "OGL-AB-2.2",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
   "ontario.ca/page/open-government-licence-ontario": {
     "id": "OGL-ON-1.0",
     "display": true,

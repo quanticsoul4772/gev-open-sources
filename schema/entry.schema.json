@@ -49,7 +49,7 @@
         "id": { "type": "string", "minLength": 1, "description": "property with the fire number" },
         "size_ha": { "type": "string", "minLength": 1, "description": "property with the size in hectares" },
         "updated": { "type": "string", "minLength": 1, "description": "property with the date the perimeter was mapped: epoch milliseconds or YYYY-MM-DD[Z]" },
-        "status": { "type": "string", "minLength": 1, "description": "property with the fire's stage of control, when the source has one" },
+        "status": { "type": "string", "minLength": 1, "description": "property with the fire's status as the source reports it, when it has one" },
         "url": { "type": "string", "minLength": 1, "description": "property with the fire's incident page, when the source has one" },
         "region": { "type": "string", "pattern": "^[A-Z]{2}-[A-Z0-9]{1,3}$", "description": "ISO 3166-2 code of the area the feed covers" }
       }
