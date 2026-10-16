@@ -87,9 +87,3 @@ jobs:
           path: dist
       - id: deploy
         uses: actions/deploy-pages@v5
-      - name: Keep the schedule enabled
-        # Also after a failed run: a streak of failures must not let GitHub disable the schedule.
-        if: always()
-        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/directory.yml/enable"
-        env:
-          GH_TOKEN: ${{ github.token }}
