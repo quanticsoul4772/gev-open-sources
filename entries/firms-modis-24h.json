@@ -1,0 +1,44 @@
+{
+  "id": "firms-modis-24h",
+  "domain": "hazards.fires",
+  "name": "NASA FIRMS active fires, MODIS (Terra/Aqua), worldwide",
+  "provider": "NASA FIRMS",
+  "coverage": {
+    "bbox": [
+      -90,
+      -180,
+      90,
+      180
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/csv/MODIS_C6_1_Global_24h.csv",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 300
+  },
+  "format": "csv.firms-active-fire",
+  "licence": {
+    "id": null,
+    "url": "https://www.earthdata.nasa.gov/data/tools/firms/faq",
+    "display": false,
+    "commercial": null,
+    "attribution": "NASA FIRMS"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "licence declaration not found at https://www.earthdata.nasa.gov/data/tools/firms/faq"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:12:31.218Z"
+  },
+  "provenance": [
+    "firms:active-fire-24h"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-calais-velos-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Vel’in — Calais",
+  "provider": "Vel’in",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Vel’in"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:12:31.183Z"
+  },
+  "provenance": [
+    "gbfs-systems:calais-velos"
+  ],
+  "coverage": {
+    "bbox": [
+      50.8453,
+      1.7468,
+      50.9934,
+      1.9852
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://stce.transdev-hdf.fr/gbfs/free_bike_status.php",
+    "related": {
+      "system_information": "https://stce.transdev-hdf.fr/gbfs/system_information.php",
+      "gbfs": "https://stce.transdev-hdf.fr/gbfs/"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "calais-velos",
+    "version": null,
+    "form_factors": []
+  }
+}
