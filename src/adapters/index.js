@@ -105,7 +105,7 @@ export const ADAPTERS = Object.freeze({
    * A worldwide file with no rows (or HTML, e.g. a login page) is broken.
    */
   'csv.firms-active-fire'(body, bbox) {
-    const lines = new TextDecoder().decode(body).replace(/^﻿/, '').split(/\r?\n/);
+    const lines = new TextDecoder().decode(body).split(/\r?\n/);
     const header = lines[0].split(',').map((h) => h.trim().toLowerCase());
     const col = Object.fromEntries(['latitude', 'longitude', 'acq_date', 'acq_time'].map((h) => [h, header.indexOf(h)]));
     if (Object.values(col).includes(-1)) throw new Error('not a FIRMS CSV');
