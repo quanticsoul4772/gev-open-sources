@@ -1,3 +1,5 @@
+import { lookup as dnsLookup } from 'node:dns/promises';
+
 export const USER_AGENT =
   'gev-open-sources/0.1 (+https://github.com/quanticsoul4772/gev-open-sources)';
 
@@ -17,8 +19,8 @@ export const USER_AGENT =
  * internal (by name or IP literal). The harvest fetches URLs from third-party
  * catalogues and follows their redirects; it must never be steered at the CI
  * runner's own network (e.g. a cloud metadata address). Public IP literals
- * are allowed: some real feeds use them. No DNS lookup: a public name that
- * resolves to a private address is not caught here.
+ * are allowed: some real feeds use them. No DNS lookup here: a public name
+ * that resolves to a private address is caught by `resolvesInternal`.
  * @param {string} url
  */
 export function isInternalUrl(url) {
@@ -29,6 +31,14 @@ export function isInternalUrl(url) {
     return true;
   }
   if (host === 'localhost' || /\.(localhost|local|internal|home\.arpa)$/.test(host)) return true;
+  return isInternalAddress(host);
+}
+
+/**
+ * Whether a host string is an internal IP literal (false for names).
+ * @param {string} host
+ */
+function isInternalAddress(host) {
   const v4 = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
   if (v4) {
     const [a, b] = [Number(v4[1]), Number(v4[2])];
@@ -41,6 +51,28 @@ export function isInternalUrl(url) {
   return false;
 }
 
+/**
+ * Whether a URL's host name resolves to an internal address: a public name
+ * pointed at a private one must not steer the harvest into the runner's own
+ * network. A name that doesn't resolve is left to the fetch, which then fails
+ * with its own error. The check runs before the fetch connects, so a name that
+ * changes its answer in between (DNS rebinding) is not caught.
+ * @param {string} url
+ * @param {(host: string, options: {all: true}) => Promise<{address: string}[]>} lookup
+ */
+export async function resolvesInternal(url, lookup = dnsLookup) {
+  const host = new URL(url).hostname.replace(/^\[|\]$/g, '');
+  // IP literals need no lookup: isInternalUrl has judged them.
+  if (/^[\d.]+$/.test(host) || host.includes(':')) return false;
+  let addresses;
+  try {
+    addresses = await lookup(host, { all: true });
+  } catch {
+    return false;
+  }
+  return addresses.some(({ address }) => isInternalAddress(address.toLowerCase()));
+}
+
 export async function fetchCapped(
   url,
   {
@@ -50,12 +82,15 @@ export async function fetchCapped(
     timeoutMs = 20_000,
     maxBytes = 8 * 2 ** 20,
     fetchImpl = fetch,
+    // Only the real network needs the DNS check; an injected fetch never connects.
+    lookup = fetchImpl === fetch ? dnsLookup : null,
   } = {},
 ) {
   const origin = new URL(url).origin;
   let current = url;
   for (let hop = 0; hop <= 3; hop += 1) {
-    if (isInternalUrl(current)) throw new Error(`refusing internal address ${new URL(current).hostname}`);
+    if (isInternalUrl(current) || (lookup && (await resolvesInternal(current, lookup))))
+      throw new Error(`refusing internal address ${new URL(current).hostname}`);
     const response = await fetchImpl(current, {
       redirect: 'manual',
       signal: AbortSignal.timeout(timeoutMs),

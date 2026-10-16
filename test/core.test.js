@@ -468,6 +468,31 @@ test('restore: all or nothing — first deploy starts empty; a published site mu
   assert.match(seen, /\?r=abc$/, 'cache-busting query');
 });
 
+test('a public name that resolves to an internal address is refused', async () => {
+  const { resolvesInternal } = await import('../src/util/http.js');
+  const answers = { 'evil.example': ['93.184.216.34', '169.254.169.254'], 'ok.example': ['93.184.216.34', '2606:2800::1'], 'v6.example': ['fd00::1'] };
+  const lookup = async (host) => {
+    if (!answers[host]) throw Object.assign(new Error('not found'), { code: 'ENOTFOUND' });
+    return answers[host].map((address) => ({ address }));
+  };
+  assert.equal(await resolvesInternal('https://evil.example/vp', lookup), true, 'any internal answer counts');
+  assert.equal(await resolvesInternal('https://v6.example/vp', lookup), true);
+  assert.equal(await resolvesInternal('https://ok.example/vp', lookup), false);
+  assert.equal(await resolvesInternal('https://gone.example/vp', lookup), false, 'unresolvable names are left to the fetch');
+  let looked = false;
+  await resolvesInternal('http://20.19.98.194:8328/x', async () => ((looked = true), []));
+  assert.equal(looked, false, 'IP literals need no lookup');
+
+  const fetchImpl = async () => new Response('{}');
+  await assert.rejects(fetchCapped('https://evil.example/vp', { fetchImpl, lookup }), /refusing internal address evil\.example/);
+  assert.equal((await fetchCapped('https://ok.example/vp', { fetchImpl, lookup })).status, 200);
+  const hop = async (u) =>
+    u.includes('ok.example') ? new Response(null, { status: 302, headers: { location: 'https://evil.example/x' } }) : new Response('{}');
+  await assert.rejects(fetchCapped('https://ok.example/vp', { fetchImpl: hop, lookup, anyRedirect: true }), /evil\.example/, 'checked on every hop');
+  const { crossOriginTarget } = await import('../src/harvest/redirects.js');
+  assert.equal(await crossOriginTarget('https://ok.example/vp', hop, lookup), null, 'never published as a final URL');
+});
+
 test('internal addresses are refused on every hop; public IP literals are allowed', async () => {
   const { isInternalUrl } = await import('../src/util/http.js');
   for (const u of ['http://169.254.169.254/latest/meta-data', 'http://127.0.0.1:8080/x', 'http://10.0.0.5/x', 'http://192.168.1.1/x', 'http://172.20.0.1/x', 'http://[::1]/x', 'http://localhost/x', 'http://db.internal/x', 'http://[fd00::1]/x', 'not a url'])
