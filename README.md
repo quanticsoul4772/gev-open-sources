@@ -44,24 +44,49 @@ hours a GitHub Actions run:
      probes fail rather than following the redirect.
    - Canadian fire perimeters (`hazards.perimeters`, format
      `geojson.fire-perimeters`, class `regional`): British Columbia's current
-     season (BC Wildfire Service) and Ontario's in-year fires (Ontario Ministry
-     of Natural Resources), as ArcGIS queries simplified at the source (about
-     20 m). Each entry's `mapping` names the properties holding the fire
-     number, size in hectares, mapping date (epoch ms or `YYYY-MM-DD[Z]`) and,
-     for BC, the stage of control (`Out of Control`, `Being Held`,
-     `Under Control`, `Out`; may be null) and incident page; `region` gives
-     the ISO 3166-2 code. Ontario's own `STATUS` is the perimeter's (F final,
-     I interim), not the fire's, so it is not mapped. No freshness check:
-     perimeters are mapped irregularly, so an empty feed out of season is idle
-     (and turns degraded after 7 days), and a server frozen on old data stays
-     verified. A cut-off response, non-lon/lat coordinates or a renamed id
-     field fail the probe. Licences: Open Government Licence – British
-     Columbia 2.0 (with BC's API terms: identify yourself, limits may change
-     without notice) and – Ontario 1.0; credit them with each entry's
-     `licence.attribution`, use no provincial logos, and present the
-     perimeters as reference only. BC rolls its layer over on 1 April (a few
-     late-winter fires may remain); Ontario's URL pins ArcGIS layer 51, so a
-     republished service needs the entry fixed by hand.
+     season (BC Wildfire Service), Alberta's active fires (Alberta Wildfire)
+     and Ontario's in-year fires (Ontario Ministry of Natural Resources), as
+     ArcGIS queries simplified at the source (about 20 m). Each entry's
+     `mapping` names the properties holding the fire number, size in hectares,
+     mapping date (epoch ms or `YYYY-MM-DD[Z]`) and, for BC and Alberta, the
+     fire's status as the province reports it; BC alone has an incident page;
+     `region` gives the ISO 3166-2 code. BC reports `Out of Control`,
+     `Being Held`, `Under Control` or `Out` (may be null); Alberta reports the
+     first three plus `Assistance Started` (mutual aid) and `Turned Over`,
+     which apps may not colour. Ontario's own `STATUS` is the perimeter's
+     (F final, I interim), not the fire's, so it is not mapped. Sizes are each
+     province's official estimate, which can differ from the drawn polygon;
+     Alberta's date is when the perimeter was captured, often weeks before
+     its latest status, and only mapped (mostly larger) fires have a
+     perimeter.
+     No freshness check: perimeters are mapped irregularly. An empty feed out
+     of season is idle: a verified entry turns degraded after 7 days, and a
+     new entry that has never had records (Alberta out of season) stays a
+     candidate, not usable by apps, until its first fire. A server frozen on
+     old data stays verified. A cut-off response, non-lon/lat coordinates or
+     a renamed id field fail the probe.
+     Licences: Open Government Licence – British Columbia 2.0 (with BC's API
+     terms: identify yourself, limits may change without notice) and –
+     Ontario 1.0. Alberta's entry is referral-only (no licence URL) until
+     Alberta confirms its licence: the Open Government Licence – Alberta 2.2
+     reaches the layer only through the open.alberta.ca dataset
+     `alberta-wildfire-status-map` (licence OGLA), whose only resource is the
+     status map that uses this layer, while the layer's own item names no
+     licence and alberta.ca's site terms default to non-commercial. Once
+     confirmed, its licence URL becomes `https://open.alberta.ca/licence`, a
+     known licence (`OGL-AB-2.2`) pinned rather than re-read, since licence
+     pages may be blocked from the Actions runner; the change goes in
+     `src/harvest/perimeters.js` and in its `entries/` file. Credit each feed
+     with its `licence.attribution`, use no
+     provincial logos, and present the perimeters as reference only (each
+     province publishes them "as is"; Alberta's updates "can take several
+     hours or more").
+     BC rolls its layer over on 1 April (a few late-winter fires may remain);
+     Alberta's view is filtered by status, not year; Ontario's URL pins ArcGIS
+     layer 51 and Alberta's service name contains `(PROD)`, so a republished
+     or renamed service needs the entry fixed by hand. With three entries, one
+     dropping out is a 33 % fall, and an app that refuses large drops (as
+     God's Eye View does) keeps its previous copy of the domain.
    - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
      Digitraffic weather cameras (CC BY 4.0), TfL JamCams and Caltrans CCTV
      (12 districts). Each entry carries a `mapping` that says where each

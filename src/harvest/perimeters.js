@@ -1,20 +1,33 @@
 /**
  * Canadian fire perimeters, as mapped by the provinces' wildfire agencies:
- * British Columbia's current season (BC Wildfire Service) and Ontario's
- * in-year fires (Ontario Ministry of Natural Resources). Both are ArcGIS
- * queries simplified at the source (`maxAllowableOffset=0.0002`, about 20 m).
+ * British Columbia's current season (BC Wildfire Service), Alberta's active
+ * fires (Alberta Wildfire) and Ontario's in-year fires (Ontario Ministry of
+ * Natural Resources). All are ArcGIS queries simplified at the source
+ * (`maxAllowableOffset=0.0002`, about 20 m).
  *
- * One format for both: each entry's `mapping` names the properties that hold
- * the fire number, size in hectares, date and (BC only) status and incident
- * page, and gives the region code. Ontario's own STATUS field says whether the
- * perimeter is final or interim, not whether the fire is active, so it is
- * left unmapped.
+ * One format for all: each entry's `mapping` names the properties that hold
+ * the fire number, size in hectares, date and (BC, Alberta) status and (BC
+ * only) incident page, and gives the region code. Ontario's own STATUS field
+ * says whether the perimeter is final or interim, not whether the fire is
+ * active, so it is left unmapped. Alberta's view drops only Extinguished and
+ * Assistance Ended fires: its Out of Control / Being Held / Under Control
+ * match BC's; Assistance Started (mutual aid) and Turned Over are statuses the
+ * app doesn't colour. Alberta's size is its official estimate and its date is
+ * when the perimeter was captured.
  *
  * Licences: Open Government Licence – British Columbia 2.0 (plus BC's API
- * terms: identify yourself; limits may change without notice) and Open
- * Government Licence – Ontario 1.0. Both data sets are for reference only.
+ * terms: identify yourself; limits may change without notice) and – Ontario
+ * 1.0. Alberta's stays referral-only for now (no licence URL): its Open
+ * Government Licence – Alberta 2.2 reaches this layer only through the
+ * open.alberta.ca "Alberta wildfire status" dataset, whose map uses it, while
+ * the layer names no licence and alberta.ca's site terms default to
+ * non-commercial. Once Alberta confirms, set its licence URL to AB_LICENCE
+ * (a known licence, OGL-AB-2.2) here and in its entries/ file. All are for
+ * reference only.
  */
 const BC_LICENCE = 'https://www2.gov.bc.ca/gov/content/data/policy-standards/data-policies/open-data/open-government-licence-bc';
+/** Alberta's licence, for when it is confirmed (see the header). */
+export const AB_LICENCE = 'https://open.alberta.ca/licence';
 const ON_LICENCE = 'https://www.ontario.ca/page/open-government-licence-ontario';
 
 const entry = ({ id, name, provider, bbox, url, mapping, licenceUrl, attribution, provenance }) => ({
@@ -57,5 +70,19 @@ export const PERIMETER_ENTRIES = [
     licenceUrl: ON_LICENCE,
     attribution: 'Ontario Ministry of Natural Resources. Contains information licensed under the Open Government Licence – Ontario.',
     provenance: 'perimeters:on-in-year',
+  }),
+  entry({
+    id: 'alberta-wildfire-perimeters-active',
+    name: 'Alberta wildfire perimeters, active',
+    provider: 'Alberta Wildfire',
+    bbox: [48.5, -120.5, 60.5, -109.5],
+    url:
+      'https://services.arcgis.com/Eb8P5h4CJk8utIBz/arcgis/rest/services/Wildfire_Perimeter_Active_(PROD)/FeatureServer/3/query' +
+      '?where=1%3D1&outFields=FireNumber,AREA_ESTIMATE,FIRE_STATUS,CaptreDate&outSR=4326&maxAllowableOffset=0.0002&geometryPrecision=5&f=geojson',
+    mapping: { id: 'FireNumber', size_ha: 'AREA_ESTIMATE', updated: 'CaptreDate', status: 'FIRE_STATUS', region: 'CA-AB' },
+    // Pending Alberta's confirmation (see above): no URL keeps it referral-only.
+    licenceUrl: null,
+    attribution: 'Government of Alberta (Alberta Wildfire). Contains information licensed under the Open Government Licence – Alberta.',
+    provenance: 'perimeters:ab-active',
   }),
 ];

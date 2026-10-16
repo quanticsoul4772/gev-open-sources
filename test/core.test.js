@@ -453,6 +453,15 @@ test('static entries: never tombstoned, never redirect-rewritten; catalogue entr
   assert.deepEqual(redirectChecks(STATIC_ENTRIES, new Map([[bc.id, bc], [feed.id, feed]]), { [bc.id]: dead(), [feed.id]: dead() }).map((e) => e.id), ['feed']);
 });
 
+test('a new perimeter entry idle from its first probe stays a candidate, never failing, until its first fire', () => {
+  let h = emptyHealth(0);
+  for (let day = 1; day <= 5; day += 1) h = applyProbe(h, { at: day * DAY_S, result: 'idle', records: 0 });
+  assert.equal(h.status, 'candidate');
+  assert.equal(h.failingSince, null);
+  h = applyProbe(h, { at: 6 * DAY_S, result: 'ok', records: 4 });
+  assert.equal(h.status, 'verified');
+});
+
 test('perimeters out of season: idle for months is degraded, never dead; the first fire makes it verified again', () => {
   let h = { ...emptyHealth(0), status: 'verified', passes: 3, lastWithRecords: 0 };
   for (let day = 1; day <= 60; day += 1) h = applyProbe(h, { at: day * DAY_S, result: 'idle', records: 0 });
