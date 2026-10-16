@@ -16,17 +16,12 @@
  * when the perimeter was captured.
  *
  * Licences: Open Government Licence – British Columbia 2.0 (plus BC's API
- * terms: identify yourself; limits may change without notice) and – Ontario
- * 1.0. Alberta's stays referral-only for now (no licence URL): its Open
- * Government Licence – Alberta 2.2 reaches this layer only through the
- * open.alberta.ca "Alberta wildfire status" dataset, whose map uses it, while
- * the layer names no licence and alberta.ca's site terms default to
- * non-commercial. Once Alberta confirms, set its licence URL to AB_LICENCE
- * (a known licence, OGL-AB-2.2) here and in its entries/ file. All are for
- * reference only.
+ * terms: identify yourself; limits may change without notice), – Alberta 2.2
+ * (through the open.alberta.ca "Alberta wildfire status" dataset, whose map
+ * uses this layer; the layer itself names no licence) and – Ontario 1.0.
+ * All are for reference only.
  */
 const BC_LICENCE = 'https://www2.gov.bc.ca/gov/content/data/policy-standards/data-policies/open-data/open-government-licence-bc';
-/** Alberta's licence, for when it is confirmed (see the header). */
 export const AB_LICENCE = 'https://open.alberta.ca/licence';
 const ON_LICENCE = 'https://www.ontario.ca/page/open-government-licence-ontario';
 
@@ -80,8 +75,7 @@ export const PERIMETER_ENTRIES = [
       'https://services.arcgis.com/Eb8P5h4CJk8utIBz/arcgis/rest/services/Wildfire_Perimeter_Active_(PROD)/FeatureServer/3/query' +
       '?where=1%3D1&outFields=FireNumber,AREA_ESTIMATE,FIRE_STATUS,CaptreDate&outSR=4326&maxAllowableOffset=0.0002&geometryPrecision=5&f=geojson',
     mapping: { id: 'FireNumber', size_ha: 'AREA_ESTIMATE', updated: 'CaptreDate', status: 'FIRE_STATUS', region: 'CA-AB' },
-    // Pending Alberta's confirmation (see above): no URL keeps it referral-only.
-    licenceUrl: null,
+    licenceUrl: AB_LICENCE,
     attribution: 'Government of Alberta (Alberta Wildfire). Contains information licensed under the Open Government Licence – Alberta.',
     provenance: 'perimeters:ab-active',
   }),
