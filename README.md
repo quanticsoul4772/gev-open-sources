@@ -35,8 +35,10 @@ hours a GitHub Actions run:
      so trim to the window you want. Detections arrive up to 3 h after the
      satellite pass, so these entries are stale only after 6 h (other
      formats: 15 min). Suomi NPP is left out (it ends 2 Nov 2026); MODIS is
-     due to end in 2026–27. Licence: the FIRMS FAQ's "NASA promotes full and
-     open sharing of data", re-read every run; cite "NASA FIRMS", data are
+     due to end in 2026–27. Licence: NASA's open-data policy (the FIRMS FAQ's
+     "NASA promotes full and open sharing of data"), a known licence that is
+     not re-read: earthdata.nasa.gov answers 403 to the Actions runner. Cite
+     "NASA FIRMS"; data are
      provided as is, and may not be used to imply NASA's endorsement. The
      file names are fixed: if NASA moves them behind Earthdata Login, the
      probes fail rather than following the redirect.

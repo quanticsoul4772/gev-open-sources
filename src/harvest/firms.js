@@ -10,7 +10,9 @@
  * Licence: the FIRMS FAQ says "NASA promotes full and open sharing of data"
  * and asks for the citation "NASA FIRMS"; NASA's data-use guidance licenses
  * mission data as CC0. Data are provided as is, and may not be used to imply
- * NASA's endorsement.
+ * NASA's endorsement. A published agency policy, so it is a plain known
+ * licence, not re-read each run (earthdata.nasa.gov answers 403 to the
+ * Actions runner).
  */
 export const FIRMS_LICENCE_URL = 'https://www.earthdata.nasa.gov/data/tools/firms/faq';
 
