@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-pony-basque-country-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Pony Basque Country — Basque Country",
+  "provider": "Pony Basque Country",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "pony"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.755Z"
+  },
+  "provenance": [
+    "gbfs-systems:pony_Basque_Country"
+  ],
+  "coverage": {
+    "bbox": [
+      43.3337,
+      -1.7838,
+      43.5585,
+      -1.3975
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-pays-basque-gbfs/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://proxy.transport.data.gouv.fr/resource/pony-pays-basque-gbfs/vehicle_types.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-pays-basque-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-pays-basque-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "pony_Basque_Country",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

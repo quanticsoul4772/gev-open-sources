@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-paris-saclay-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Paris Saclay — Paris-Saclay",
+  "provider": "Lime Paris Saclay",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Paris Saclay"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.745Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_paris_saclay"
+  ],
+  "coverage": {
+    "bbox": [
+      48.6255,
+      2.0872,
+      48.7655,
+      2.353
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/paris_saclay/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/paris_saclay/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/paris_saclay/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/paris_saclay/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_paris_saclay",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

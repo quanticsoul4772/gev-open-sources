@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "terms page unreachable"
+        "quote": "runs disagree on commercial"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.324Z"
+    "at": "2026-10-16T12:40:41.769Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1530"

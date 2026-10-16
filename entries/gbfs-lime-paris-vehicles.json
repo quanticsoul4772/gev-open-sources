@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-paris-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Paris — Paris",
+  "provider": "Lime Paris",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Paris"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.746Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_paris"
+  ],
+  "coverage": {
+    "bbox": [
+      48.7999,
+      2.2327,
+      48.9187,
+      2.5025
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/paris/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/paris/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/paris/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/paris/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_paris",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

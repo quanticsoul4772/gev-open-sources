@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-pony-bourges-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Pony Bourges — Bourges",
+  "provider": "Pony Bourges",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "pony"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.756Z"
+  },
+  "provenance": [
+    "gbfs-systems:pony_Bourges"
+  ],
+  "coverage": {
+    "bbox": [
+      47.0372,
+      2.3411,
+      47.1245,
+      2.4409
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-bourges-gbfs/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://proxy.transport.data.gouv.fr/resource/pony-bourges-gbfs/vehicle_types.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-bourges-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-bourges-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "pony_Bourges",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

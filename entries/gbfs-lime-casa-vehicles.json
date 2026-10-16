@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-casa-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Sophia Antipolis — Sophia Antipolis",
+  "provider": "Lime Sophia Antipolis",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Sophia Antipolis"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.744Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_casa"
+  ],
+  "coverage": {
+    "bbox": [
+      43.5346,
+      6.9369,
+      43.6858,
+      7.1619
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/casa/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/casa/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/casa/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/casa/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_casa",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

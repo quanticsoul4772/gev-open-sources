@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-pony-lorient-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Pony Lorient — Lorient",
+  "provider": "Pony Lorient",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "pony"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.757Z"
+  },
+  "provenance": [
+    "gbfs-systems:pony_Lorient"
+  ],
+  "coverage": {
+    "bbox": [
+      47.7112,
+      -3.4174,
+      47.7883,
+      -3.3375
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-lorient-gbfs/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://proxy.transport.data.gouv.fr/resource/pony-lorient-gbfs/vehicle_types.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-lorient-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-lorient-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "pony_Lorient",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

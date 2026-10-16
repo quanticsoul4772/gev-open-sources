@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-rlvlib-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "RLV'Lib — Riom",
+  "provider": "RLV'Lib",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "RLV'Lib"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.758Z"
+  },
+  "provenance": [
+    "gbfs-systems:rlvlib"
+  ],
+  "coverage": {
+    "bbox": [
+      45.867,
+      3.0711,
+      45.923,
+      3.1403
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/rlvlib/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.gbfs.v3.0.ecovelo.mobi/vehicle_types.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/rlvlib/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/rlvlib/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "rlvlib",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

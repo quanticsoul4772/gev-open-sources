@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-lille-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Lille — Lille",
+  "provider": "Lime Lille",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Lille"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T12:40:41.744Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_lille"
+  ],
+  "coverage": {
+    "bbox": [
+      50.5364,
+      2.855,
+      50.7898,
+      3.2555
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/lille/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/lille/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/lille/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/lille/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_lille",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
