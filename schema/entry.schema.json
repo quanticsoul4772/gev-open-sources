@@ -15,17 +15,49 @@
     },
     {
       "if": { "type": "object", "properties": { "format": { "const": "cameras.list" } }, "required": ["format"] },
-      "then": { "type": "object", "properties": { "mapping": { "type": "object" } }, "required": ["mapping"] }
+      "then": { "type": "object", "properties": { "mapping": { "$ref": "#/$defs/cameraMapping" } }, "required": ["mapping"] }
+    },
+    {
+      "if": { "type": "object", "properties": { "format": { "const": "geojson.fire-perimeters" } }, "required": ["format"] },
+      "then": { "type": "object", "properties": { "mapping": { "$ref": "#/$defs/perimeterMapping" } }, "required": ["mapping"] }
     }
   ],
   "$defs": {
     "httpUrl": { "type": "string", "format": "uri", "pattern": "^https?://" },
     "lat": { "type": "number", "minimum": -90, "maximum": 90 },
-    "lon": { "type": "number", "minimum": -180, "maximum": 180 }
+    "lon": { "type": "number", "minimum": -180, "maximum": 180 },
+    "cameraMapping": {
+      "description": "cameras.list: where each camera's fields sit in the list document. Paths are dot segments relative to each item; a number indexes an array; [key=value] picks the array item whose key equals value.",
+      "type": "object",
+      "required": ["items", "id", "lat", "lon", "image"],
+      "properties": {
+        "items": { "type": "string", "description": "path from the document to the camera array; empty when the document is the array" },
+        "id": { "type": "string" },
+        "lat": { "type": "string" },
+        "lon": { "type": "string" },
+        "image": { "type": "string", "description": "path to the image URL, or to the value put into image_template" },
+        "name": { "type": "string" },
+        "active": { "type": "string", "description": "path to a flag; items where it is not true are skipped" },
+        "image_template": { "type": "string", "pattern": "^https://[!-~]+$", "description": "image URL with {value} replaced by the URL-encoded image value" }
+      }
+    },
+    "perimeterMapping": {
+      "description": "geojson.fire-perimeters: which feature property holds each field, and the region the feed covers.",
+      "type": "object",
+      "required": ["id", "size_ha", "updated", "region"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "description": "property with the fire number" },
+        "size_ha": { "type": "string", "minLength": 1, "description": "property with the size in hectares" },
+        "updated": { "type": "string", "minLength": 1, "description": "property with the date the perimeter was mapped: epoch milliseconds or YYYY-MM-DD[Z]" },
+        "status": { "type": "string", "minLength": 1, "description": "property with the fire's stage of control, when the source has one" },
+        "url": { "type": "string", "minLength": 1, "description": "property with the fire's incident page, when the source has one" },
+        "region": { "type": "string", "pattern": "^[A-Z]{2}-[A-Z0-9]{1,3}$", "description": "ISO 3166-2 code of the area the feed covers" }
+      }
+    }
   },
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
-    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes", "cameras.stills", "sharedmobility.vehicles", "hazards.disasters", "hazards.fires"] },
+    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes", "cameras.stills", "sharedmobility.vehicles", "hazards.disasters", "hazards.fires", "hazards.perimeters"] },
     "name": { "type": "string", "minLength": 1 },
     "provider": { "type": "string", "minLength": 1 },
     "coverage": {
@@ -63,7 +95,7 @@
         "min_interval_s": { "type": "number", "minimum": 0 }
       }
     },
-    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes", "cameras.list", "gbfs.vehicle-status", "geojson.gdacs-events", "csv.firms-active-fire"] },
+    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes", "cameras.list", "gbfs.vehicle-status", "geojson.gdacs-events", "csv.firms-active-fire", "geojson.fire-perimeters"] },
     "licence": {
       "type": "object",
       "required": ["id", "url", "display", "commercial", "attribution"],
@@ -106,19 +138,8 @@
       }
     },
     "mapping": {
-      "description": "cameras.list: where each camera's fields sit in the list document. Paths are dot segments relative to each item; a number indexes an array; [key=value] picks the array item whose key equals value.",
-      "type": "object",
-      "required": ["items", "id", "lat", "lon", "image"],
-      "properties": {
-        "items": { "type": "string", "description": "path from the document to the camera array; empty when the document is the array" },
-        "id": { "type": "string" },
-        "lat": { "type": "string" },
-        "lon": { "type": "string" },
-        "image": { "type": "string", "description": "path to the image URL, or to the value put into image_template" },
-        "name": { "type": "string" },
-        "active": { "type": "string", "description": "path to a flag; items where it is not true are skipped" },
-        "image_template": { "type": "string", "pattern": "^https://[!-~]+$", "description": "image URL with {value} replaced by the URL-encoded image value" }
-      }
+      "description": "Where a list's fields sit, for formats that read one: cameras.list ($defs/cameraMapping) and geojson.fire-perimeters ($defs/perimeterMapping).",
+      "type": "object"
     },
     "health": {
       "description": "Present in published directories, not in entries/. Probe summary over the last 7 days.",

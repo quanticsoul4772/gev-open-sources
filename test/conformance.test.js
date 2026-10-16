@@ -23,7 +23,7 @@ test('conformance: coverage limits and boxes', () => {
   for (const c of cases.coverage.fail) assert.equal(plausibleBbox(c.bbox, c.class), false, JSON.stringify(c));
 });
 
-test('coverage class: optional, one of the shared classes; hazards publish as global', async () => {
+test('coverage class: optional, one of the shared classes; hazards default to global', async () => {
   const { COVERAGE_CLASSES, validateEntry } = await import('../src/schema.js');
   const { buildDirectory } = await import('../src/build.js');
   const { USGS_ENTRIES } = await import('../src/harvest/usgs.js');

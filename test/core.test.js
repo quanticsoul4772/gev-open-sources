@@ -434,6 +434,43 @@ test('redirect re-check: failing entries are re-checked, FIRMS entries never', a
   assert.deepEqual(redirectChecks(FIRMS_ENTRIES, new Map(), {}), [], 'new FIRMS candidates too');
 });
 
+test('static entries: never tombstoned, never redirect-rewritten; catalogue entries still are', async () => {
+  const { retireDead } = await import('../src/probe.js');
+  const { redirectChecks } = await import('../src/harvest/index.js');
+  const { STATIC_ENTRIES } = await import('../src/harvest/static.js');
+  const { PERIMETER_ENTRIES } = await import('../src/harvest/perimeters.js');
+  const bc = PERIMETER_ENTRIES[0];
+  const feed = { id: 'feed', provenance: ['mdb:1'], access: { url: 'https://f.example/vp' } };
+  const entries = new Map([[bc.id, bc], [feed.id, feed]]);
+  const now = 100 * DAY_S;
+  const dead = () => ({ status: 'dead', deadSince: now - 31 * DAY_S, history: [{ result: 'http' }] });
+  const health = { [bc.id]: dead(), [feed.id]: dead(), gone: dead() };
+  const tombstones = {};
+  assert.deepEqual(retireDead(health, entries, tombstones, now), ['feed']);
+  assert.deepEqual(Object.keys(tombstones), ['feed']);
+  assert.equal(health[bc.id].status, 'dead', 'stays, dead and unpublished, and can recover');
+  assert.equal(health.gone, undefined, 'health of a removed entry is dropped');
+  assert.deepEqual(redirectChecks(STATIC_ENTRIES, new Map([[bc.id, bc], [feed.id, feed]]), { [bc.id]: dead(), [feed.id]: dead() }).map((e) => e.id), ['feed']);
+});
+
+test('perimeters out of season: idle for months is degraded, never dead; the first fire makes it verified again', () => {
+  let h = { ...emptyHealth(0), status: 'verified', passes: 3, lastWithRecords: 0 };
+  for (let day = 1; day <= 60; day += 1) h = applyProbe(h, { at: day * DAY_S, result: 'idle', records: 0 });
+  assert.equal(h.status, 'degraded');
+  assert.equal(h.failingSince, null);
+  h = applyProbe(h, { at: 61 * DAY_S, result: 'ok', records: 3 });
+  assert.equal(h.status, 'verified');
+});
+
+test('build: a hazard entry keeps its own class; one without a class is global', async () => {
+  const { PERIMETER_ENTRIES } = await import('../src/harvest/perimeters.js');
+  const { USGS_ENTRIES } = await import('../src/harvest/usgs.js');
+  const d = buildDirectory(new Map([PERIMETER_ENTRIES[0], USGS_ENTRIES[0]].map((e) => [e.id, e])), {}, 100);
+  const cls = Object.fromEntries(d.entries.map((e) => [e.id, e.coverage.class]));
+  assert.equal(cls[PERIMETER_ENTRIES[0].id], 'regional');
+  assert.equal(cls[USGS_ENTRIES[0].id], 'global');
+});
+
 test('every format has a decoder, and the domain and format lists match the published schema', async () => {
   const fs = await import('node:fs');
   const { DOMAINS, FORMATS } = await import('../src/schema.js');

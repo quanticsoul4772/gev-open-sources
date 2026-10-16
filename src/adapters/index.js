@@ -132,6 +132,31 @@ export const ADAPTERS = Object.freeze({
       staleAfterS: 6 * 3600,
     };
   },
+  /**
+   * Fire perimeters (GeoJSON from an ArcGIS query), read through the entry's
+   * `mapping`. No freshness time: perimeters are mapped irregularly and can be
+   * months old out of season, so an empty feed is idle, not stale. A cut-off
+   * response, coordinates that aren't lon/lat, or a renamed id field all throw.
+   */
+  'geojson.fire-perimeters'(body, bbox, entry) {
+    const doc = JSON.parse(new TextDecoder().decode(body));
+    if (doc?.error) throw new Error('service error');
+    if (doc?.type !== 'FeatureCollection' || !Array.isArray(doc.features)) throw new Error('not a FeatureCollection');
+    if (doc.exceededTransferLimit === true || doc.properties?.exceededTransferLimit === true) throw new Error('response cut off');
+    if (Number.isFinite(doc.numberMatched) && Number.isFinite(doc.numberReturned) && doc.numberReturned < doc.numberMatched)
+      throw new Error('response cut off');
+    const lonLat = ([lon, lat]) => Number.isFinite(lon) && Number.isFinite(lat) && Math.abs(lon) <= 180 && Math.abs(lat) <= 90;
+    const firstRing = (g) => (g?.type === 'Polygon' ? g.coordinates?.[0] : g?.type === 'MultiPolygon' ? g.coordinates?.[0]?.[0] : null);
+    const points = [];
+    for (const f of doc.features) {
+      const ring = firstRing(f?.geometry);
+      if (Array.isArray(ring) && ring.length >= 4 && ring.every(lonLat)) points.push([ring[0][1], ring[0][0]]);
+    }
+    if (doc.features.length && !points.length) throw new Error('no lon/lat polygons');
+    const idField = entry.mapping.id;
+    if (doc.features.length && !doc.features.some((f) => f?.properties?.[idField] != null)) throw new Error(`no ${idField} values`);
+    return { records: points.length, newest: null, inCoverage: share(points, bbox) };
+  },
   /** USGS summary GeoJSON: freshness is when the file was generated, not the newest event. */
   'geojson.earthquakes'(body, bbox) {
     const doc = JSON.parse(new TextDecoder().decode(body));

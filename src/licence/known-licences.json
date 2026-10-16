@@ -186,6 +186,24 @@
     "attribution": true,
     "verify": "<copyright>\\s*public domain\\s*</copyright>"
   },
+  "www2.gov.bc.ca/gov/content/data/policy-standards/data-policies/open-data/open-government-licence-bc": {
+    "id": "OGL-BC-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc": {
+    "id": "OGL-BC-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
+  "ontario.ca/page/open-government-licence-ontario": {
+    "id": "OGL-ON-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": true
+  },
   "earthdata.nasa.gov/data/tools/firms/faq": {
     "id": "NASA-FIRMS-open",
     "display": true,

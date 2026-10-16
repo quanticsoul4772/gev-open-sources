@@ -3,10 +3,11 @@
  * advance its health state. A passing candidate is probed up to three times
  * in one run (probeRounds), so a working new feed is verified the run it is
  * found. Dead entries are probed once a day; dead for 30 days → entry removed
- * and tombstoned so discovery doesn't re-add it.
+ * and tombstoned so discovery doesn't re-add it (hand-written entries stay).
  */
 import { pathToFileURL } from 'node:url';
 import { ADAPTERS } from './adapters/index.js';
+import { isStaticEntry } from './harvest/static.js';
 import { DAY_S, HISTORY_CAP, applyProbe, classify, emptyHealth } from './health.js';
 import { readEntries, readState, removeEntry, writeState } from './store.js';
 import { fetchCapped } from './util/http.js';
@@ -14,12 +15,13 @@ import { hostOfUrl, runPooled } from './util/pool.js';
 import { readZipEntry } from './util/zip.js';
 
 /**
- * Larger limits for formats whose files are big by nature (FIRMS VIIRS files
- * reach about 26 MB in peak fire season); every other format keeps
- * fetchCapped's 8 MiB and 20 s.
+ * Larger limits for formats whose files can be big (FIRMS VIIRS files reach
+ * about 26 MB in peak fire season; a record BC fire season was 8 MB at full
+ * detail); every other format keeps fetchCapped's 8 MiB and 20 s.
  */
 export const PROBE_LIMITS_BY_FORMAT = Object.freeze({
   'csv.firms-active-fire': { maxBytes: 48 * 2 ** 20, timeoutMs: 60_000 },
+  'geojson.fire-perimeters': { maxBytes: 32 * 2 ** 20, timeoutMs: 60_000 },
 });
 
 /** Probe one entry; never throws. */
@@ -116,6 +118,29 @@ export async function probeRounds(entries, health, { probe, clock = nowS, sleep 
   return { counts, rounds };
 }
 
+/**
+ * Drop health for entries that are gone, and retire entries dead for 30 days:
+ * tombstoned so discovery doesn't re-add them. Hand-written entries are never
+ * retired; they stay dead (unpublished) and recover by themselves.
+ * Updates `health` and `tombstones` in place.
+ * @returns {string[]} ids of the entries to remove
+ */
+export function retireDead(health, entries, tombstones, now) {
+  const retired = [];
+  for (const [id, h] of Object.entries(health)) {
+    if (!entries.has(id)) {
+      delete health[id];
+      continue;
+    }
+    if (h.status === 'dead' && now - h.deadSince >= 30 * DAY_S && !isStaticEntry(entries.get(id))) {
+      tombstones[id] = { url: entries.get(id).access.url, at: now };
+      delete health[id];
+      retired.push(id);
+    }
+  }
+  return retired;
+}
+
 export async function probeAll({ fetchImpl, now = nowS() } = {}) {
   const entries = readEntries();
   const health = readState('health.json', {});
@@ -127,17 +152,7 @@ export async function probeAll({ fetchImpl, now = nowS() } = {}) {
   const { counts, rounds } = await probeRounds(due, health, {
     probe: (e, at) => probeEntry(e, { now: at, fetchImpl }),
   });
-  for (const [id, h] of Object.entries(health)) {
-    if (!entries.has(id)) {
-      delete health[id];
-      continue;
-    }
-    if (h.status === 'dead' && now - h.deadSince >= 30 * DAY_S) {
-      tombstones[id] = { url: entries.get(id).access.url, at: now };
-      removeEntry(id);
-      delete health[id];
-    }
-  }
+  for (const id of retireDead(health, entries, tombstones, now)) removeEntry(id);
   writeState('health.json', health);
   writeState('tombstones.json', tombstones);
   const statuses = {};

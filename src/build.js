@@ -114,8 +114,8 @@ export function buildDirectory(entries, health, now) {
   for (const entry of entries.values()) {
     const h = health[entry.id];
     if (h?.status === 'dead') continue;
-    // Hazard feeds cover the world on purpose.
-    const coverage = entry.domain?.startsWith('hazards.') ? { ...entry.coverage, class: 'global' } : entry.coverage;
+    // Hazard feeds cover the world unless the entry says otherwise (fire perimeters are regional).
+    const coverage = entry.domain?.startsWith('hazards.') ? { ...entry.coverage, class: entry.coverage.class ?? 'global' } : entry.coverage;
     out.push({ ...entry, coverage, health: h ? summary(h, now) : { status: 'candidate' } });
   }
   out.sort((a, b) => a.id.localeCompare(b.id));
