@@ -326,18 +326,11 @@ test('firms: entries valid and referral-only until the licence job; no Suomi NPP
   assert.equal(known.display, true);
 });
 
-test('firms: licence holds while the FAQ still promotes full and open sharing (as the raw HTML has it)', async () => {
+test('firms: NASA open-data policy is a plain known licence, applied without fetching the FAQ', async () => {
   const { FIRMS_LICENCE_URL } = await import('../src/harvest/firms.js');
-  const { declarationPresent } = await import('../src/licence/index.js');
-  const { verify } = knownLicence(FIRMS_LICENCE_URL);
-  const page = (html) => fakeFetch({ [FIRMS_LICENCE_URL]: { body: `<html><body><p>${html}</p></body></html>` } });
-  // The live page has a link inside the sentence.
-  const live =
-    'NASA promotes <a href="https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-information-guidance">full and open sharing of data</a> and and we encourage publication of imagery from FIRMS';
-  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, page(live)), true);
-  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, page('NASA promotes full and open\n sharing of data')), true, 'split across lines');
-  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, page('Data may be used for research only.')), false);
-  assert.equal(await declarationPresent(FIRMS_LICENCE_URL, verify, fakeFetch({ [FIRMS_LICENCE_URL]: { body: 'busy', status: 503 } })), null);
+  // earthdata.nasa.gov answers 403 to the Actions runner, so a verify fetch
+  // would leave the entries referral-only on every run.
+  assert.equal(knownLicence(FIRMS_LICENCE_URL).verify, undefined);
 });
 
 test('adapters: FIRMS CSV, MODIS and VIIRS columns; newest detection; broken files throw', () => {

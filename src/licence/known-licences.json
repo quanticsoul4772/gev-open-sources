@@ -190,8 +190,7 @@
     "id": "NASA-FIRMS-open",
     "display": true,
     "commercial": true,
-    "attribution": true,
-    "verify": "full\\s+and\\s+open\\s+sharing\\s+of\\s+data"
+    "attribution": true
   },
   "spdx:cc0-1.0": {
     "id": "CC0-1.0",
