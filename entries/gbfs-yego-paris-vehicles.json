@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-yego-paris-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "YEGO Paris — Paris",
+  "provider": "YEGO Paris",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "YEGO Paris"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.236Z"
+  },
+  "provenance": [
+    "gbfs-systems:yego paris"
+  ],
+  "coverage": {
+    "bbox": [
+      48.7949,
+      2.1687,
+      48.92,
+      2.4283
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://services.rideyego.com/gbfs/2-3/paris/en/free_bike_status",
+    "related": {
+      "vehicle_types": "https://services.rideyego.com/gbfs/2-3/paris/en/vehicle_types",
+      "system_information": "https://services.rideyego.com/gbfs/2-3/paris/en/system_information",
+      "gbfs": "https://services.rideyego.com/gbfs/2-3/paris/fr/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "yego paris",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ]
+  }
+}

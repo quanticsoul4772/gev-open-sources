@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-vilvolt-epinal-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Vilvolt — Épinal",
+  "provider": "Vilvolt",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté d’Agglomération d’Épinal"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.234Z"
+  },
+  "provenance": [
+    "gbfs-systems:vilvolt_epinal"
+  ],
+  "coverage": {
+    "bbox": [
+      47.9812,
+      6.248,
+      48.3784,
+      6.5683
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/epinal/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.partners.fifteen.eu/gbfs/2.2/epinal/en/vehicle_types.json",
+      "system_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/epinal/en/system_information.json",
+      "gbfs": "https://gbfs.partners.fifteen.eu/gbfs/epinal/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "vilvolt_epinal",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-beryl-hereford-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Beryl - Hereford — Hereford",
+  "provider": "Beryl - Hereford",
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.208Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_hereford"
+  ],
+  "coverage": {
+    "bbox": [
+      52.0176,
+      -2.7934,
+      52.0933,
+      -2.6792
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Hereford/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://beryl-gbfs-production.web.app/v2_2/Hereford/vehicle_types.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Hereford/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Hereford/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "beryl_hereford",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle",
+      "scooter_standing"
+    ]
+  }
+}

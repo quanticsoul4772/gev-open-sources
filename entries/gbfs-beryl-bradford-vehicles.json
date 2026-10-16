@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-beryl-bradford-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Beryl - Bradford — Bradford",
+  "provider": "Beryl - Bradford",
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.206Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_bradford"
+  ],
+  "coverage": {
+    "bbox": [
+      53.7661,
+      -1.7961,
+      53.8399,
+      -1.7275
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Bradford/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://beryl-gbfs-production.web.app/v2_2/Bradford/vehicle_types.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Bradford/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Bradford/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "beryl_bradford",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle",
+      "scooter_standing"
+    ]
+  }
+}

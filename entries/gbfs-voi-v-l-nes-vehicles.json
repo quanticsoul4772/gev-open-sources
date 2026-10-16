@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-voi-v-l-nes-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Voi V'Lônes — Saint-Genis-Laval",
+  "provider": "Voi V'Lônes",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Voi V'Lônes"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.236Z"
+  },
+  "provenance": [
+    "gbfs-systems:voi_V'Lônes"
+  ],
+  "coverage": {
+    "bbox": [
+      45.6249,
+      4.7592,
+      45.7216,
+      4.8433
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/406/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/406/vehicle_types.json",
+      "system_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/406/system_information.json",
+      "gbfs": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/406/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "voi_V'Lônes",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-viavelo-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Viavélo — Villefranche-sur-Saone",
+  "provider": "Viavélo",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Viavélo"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.233Z"
+  },
+  "provenance": [
+    "gbfs-systems:viavelo"
+  ],
+  "coverage": {
+    "bbox": [
+      45.9623,
+      4.6766,
+      46.0274,
+      4.7773
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/viavelo/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.gbfs.v3.0.ecovelo.mobi/vehicle_types.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/viavelo/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/viavelo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "viavelo",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

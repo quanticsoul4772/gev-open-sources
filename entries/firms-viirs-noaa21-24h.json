@@ -32,11 +32,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "licence declaration not found at https://www.earthdata.nasa.gov/data/tools/firms/faq"
+        "quote": "licence declaration not found at https://www.earthdata.nasa.gov/data/tools/firms/faq (HTTP 403)"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-16T14:12:31.219Z"
+    "at": "2026-10-16T14:34:14.244Z"
   },
   "provenance": [
     "firms:active-fire-24h"

@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-beryl-guildford-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Beryl - Guildford — Guildford",
+  "provider": "Beryl - Guildford",
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "205, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.208Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_guildford"
+  ],
+  "coverage": {
+    "bbox": [
+      51.1981,
+      -0.6474,
+      51.6126,
+      -0.5097
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Guildford/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://beryl-gbfs-production.web.app/v2_2/Guildford/vehicle_types.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Guildford/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Guildford/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "beryl_guildford",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle",
+      "scooter_standing"
+    ]
+  }
+}

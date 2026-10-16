@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-yego-nice-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "YEGO Nice — Nice",
+  "provider": "YEGO Nice",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "YEGO Nice"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.236Z"
+  },
+  "provenance": [
+    "gbfs-systems:yego nice"
+  ],
+  "coverage": {
+    "bbox": [
+      43.6267,
+      7.1275,
+      43.7532,
+      7.3209
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://services.rideyego.com/gbfs/2-3/nice/en/free_bike_status",
+    "related": {
+      "vehicle_types": "https://services.rideyego.com/gbfs/2-3/nice/en/vehicle_types",
+      "system_information": "https://services.rideyego.com/gbfs/2-3/nice/en/system_information",
+      "gbfs": "https://services.rideyego.com/gbfs/2-3/nice/fr/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "yego nice",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ]
+  }
+}

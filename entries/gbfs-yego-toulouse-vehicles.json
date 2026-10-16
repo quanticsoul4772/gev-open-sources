@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-yego-toulouse-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "YEGO Toulouse — Toulouse",
+  "provider": "YEGO Toulouse",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "YEGO Toulouse"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.237Z"
+  },
+  "provenance": [
+    "gbfs-systems:yego toulouse"
+  ],
+  "coverage": {
+    "bbox": [
+      43.5357,
+      1.3854,
+      43.6649,
+      1.5126
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://services.rideyego.com/gbfs/2-3/toulouse/en/free_bike_status",
+    "related": {
+      "vehicle_types": "https://services.rideyego.com/gbfs/2-3/toulouse/en/vehicle_types",
+      "system_information": "https://services.rideyego.com/gbfs/2-3/toulouse/en/system_information",
+      "gbfs": "https://services.rideyego.com/gbfs/2-3/toulouse/fr/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "yego toulouse",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ]
+  }
+}

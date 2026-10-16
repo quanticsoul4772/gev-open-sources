@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-yego-bordeaux-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "YEGO Bordeaux — Bordeaux",
+  "provider": "YEGO Bordeaux",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "YEGO Bordeaux"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T14:34:14.236Z"
+  },
+  "provenance": [
+    "gbfs-systems:yego bordeaux"
+  ],
+  "coverage": {
+    "bbox": [
+      44.7478,
+      -0.7279,
+      44.9235,
+      -0.4832
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://services.rideyego.com/gbfs/2-3/bordeaux/en/free_bike_status",
+    "related": {
+      "vehicle_types": "https://services.rideyego.com/gbfs/2-3/bordeaux/en/vehicle_types",
+      "system_information": "https://services.rideyego.com/gbfs/2-3/bordeaux/en/system_information",
+      "gbfs": "https://services.rideyego.com/gbfs/2-3/bordeaux/fr/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "yego bordeaux",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ]
+  }
+}
