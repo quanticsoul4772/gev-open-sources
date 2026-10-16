@@ -42,14 +42,24 @@ const undecided = (entry, reason) => ({
  * @param {string} pattern regular expression the page must match (case-insensitive)
  */
 export async function declarationPresent(url, pattern, fetchImpl) {
+  return (await declarationCheck(url, pattern, fetchImpl)).present;
+}
+
+/**
+ * `declarationPresent` with the reason it isn't true: the HTTP status, the
+ * fetch error, or the wording missing from a page that was read.
+ * @returns {Promise<{present: boolean|null, why: string|null}>}
+ */
+export async function declarationCheck(url, pattern, fetchImpl) {
   let res;
   try {
     res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000, maxBytes: 4 * 2 ** 20 });
   } catch (error) {
-    return isTransient({ error }) ? null : false;
+    return { present: isTransient({ error }) ? null : false, why: error.message || 'fetch failed' };
   }
-  if (res.status !== 200) return isTransient({ status: res.status }) ? null : false;
-  return new RegExp(pattern, 'i').test(new TextDecoder().decode(res.body));
+  if (res.status !== 200) return { present: isTransient({ status: res.status }) ? null : false, why: `HTTP ${res.status}` };
+  const present = new RegExp(pattern, 'i').test(new TextDecoder().decode(res.body));
+  return { present, why: present ? null : 'wording not on the page' };
 }
 
 /** Longest a licence decision is kept while its source fails only transiently. */
@@ -225,15 +235,15 @@ export async function decideLicences({ fetchImpl, client = createClient(), now =
     if (known?.verify) declared.set(e.licence.url, known.verify);
   }
   const stillDeclared = new Map(
-    await Promise.all([...declared].map(async ([url, pattern]) => [url, await declarationPresent(url, pattern, fetchImpl)])),
+    await Promise.all([...declared].map(async ([url, pattern]) => [url, await declarationCheck(url, pattern, fetchImpl)])),
   );
   for (const e of entries.values()) {
     if (isGbfs(e)) continue;
     const known = knownLicence(e.licence.url);
-    const present = known?.verify ? stillDeclared.get(e.licence.url) : true;
+    const { present, why } = known?.verify ? stillDeclared.get(e.licence.url) : { present: true, why: null };
     if (known && present === null)
-      plan.set(e.id, { transient: true, decided: undecided(e, `licence declaration unreachable at ${e.licence.url}`) });
-    else if (known && !present) plan.set(e.id, { decided: undecided(e, `licence declaration not found at ${e.licence.url}`) });
+      plan.set(e.id, { transient: true, decided: undecided(e, `licence declaration unreachable at ${e.licence.url} (${why})`) });
+    else if (known && !present) plan.set(e.id, { decided: undecided(e, `licence declaration not found at ${e.licence.url} (${why})`) });
     else if (known) plan.set(e.id, { decided: fromKnown(e, known, e.licence.url, e.licence.attribution) });
     else if (e.licence.url && !e.provenance.some((p) => p.startsWith('licence-borrowed:')))
       plan.set(e.id, { termsUrl: e.licence.url, attribution: e.licence.attribution });
