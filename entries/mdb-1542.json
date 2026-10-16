@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 404"
+        "quote": "obligation indemnify"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-16T04:34:58.520Z"
+    "at": "2026-10-16T06:46:35.043Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1542"

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-dott-bordeaux-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Bordeaux — Bordeaux",
+  "provider": "Dott Bordeaux",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Bordeaux"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T06:46:35.005Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-bordeaux"
+  ],
+  "coverage": {
+    "bbox": [
+      44.7526,
+      -0.772,
+      44.9612,
+      -0.4198
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/bordeaux/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/bordeaux/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/bordeaux/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/bordeaux/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-bordeaux",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

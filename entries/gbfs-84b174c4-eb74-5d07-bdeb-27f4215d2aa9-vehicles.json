@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-84b174c4-eb74-5d07-bdeb-27f4215d2aa9-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Leo and Go — Lyon",
+  "provider": "Leo and Go",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Leo and Go"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T06:46:34.992Z"
+  },
+  "provenance": [
+    "gbfs-systems:84b174c4-eb74-5d07-bdeb-27f4215d2aa9"
+  ],
+  "coverage": {
+    "bbox": [
+      45.7015,
+      4.7438,
+      45.8265,
+      5.0943
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://download.data.grandlyon.com/files/rdata/lag_leoandgo.disponibilite/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://download.data.grandlyon.com/files/rdata/lag_leoandgo.disponibilite/vehicle_types.json",
+      "system_information": "https://download.data.grandlyon.com/files/rdata/lag_leoandgo.disponibilite/system_information.json",
+      "gbfs": "https://download.data.grandlyon.com/files/rdata/lag_leoandgo.disponibilite/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "84b174c4-eb74-5d07-bdeb-27f4215d2aa9",
+    "version": "2.3",
+    "form_factors": [
+      "car"
+    ]
+  }
+}

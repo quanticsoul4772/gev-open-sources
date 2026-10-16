@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-nogent-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Nogent-sur-Marne — Nogent-sur-Marne",
+  "provider": "Lime Nogent-sur-Marne",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Nogent-sur-Marne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T06:46:35.015Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_nogent"
+  ],
+  "coverage": {
+    "bbox": [
+      48.8098,
+      2.4457,
+      48.8653,
+      2.5138
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/nogent/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/nogent/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/nogent/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/nogent/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_nogent",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

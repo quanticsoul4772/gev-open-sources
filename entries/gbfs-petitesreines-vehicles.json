@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-petitesreines-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Les Petites Reines — Les Sables-d'Olonne",
+  "provider": "Les Petites Reines",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Les Petites Reines"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T06:46:35.028Z"
+  },
+  "provenance": [
+    "gbfs-systems:petitesreines"
+  ],
+  "coverage": {
+    "bbox": [
+      46.4603,
+      -1.8165,
+      46.5541,
+      -1.7185
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/petitesreines/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.gbfs.v3.0.ecovelo.mobi/vehicle_types.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/petitesreines/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/petitesreines/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "petitesreines",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

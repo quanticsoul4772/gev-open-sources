@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-montenvelo-mont-blanc-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "MontenVélo — Mont Blanc",
+  "provider": "MontenVélo",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "Fifteen"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T06:46:35.017Z"
+  },
+  "provenance": [
+    "gbfs-systems:montenvelo_mont_blanc"
+  ],
+  "coverage": {
+    "bbox": [
+      45.812,
+      6.5718,
+      45.9434,
+      6.7485
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/vehicle_types.json",
+      "system_information": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/system_information.json",
+      "gbfs": "https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "montenvelo_mont_blanc",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

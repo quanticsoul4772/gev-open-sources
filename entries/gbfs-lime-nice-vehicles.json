@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-nice-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Nice — Nice",
+  "provider": "Lime Nice",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Nice"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T06:46:35.014Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_nice"
+  ],
+  "coverage": {
+    "bbox": [
+      43.6345,
+      7.0968,
+      43.7903,
+      7.3529
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/nice/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/nice/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/nice/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/nice/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_nice",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
