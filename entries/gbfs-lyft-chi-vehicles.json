@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lyft-chi-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Divvy — Chicago, IL",
+  "provider": "Divvy",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Divvy"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T04:34:58.492Z"
+  },
+  "provenance": [
+    "gbfs-systems:lyft_chi"
+  ],
+  "coverage": {
+    "bbox": [
+      41.6485,
+      -87.844,
+      42.0649,
+      -87.5282
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/chi/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.lyft.com/gbfs/2.3/chi/en/vehicle_types.json",
+      "system_information": "https://gbfs.lyft.com/gbfs/2.3/chi/en/system_information.json",
+      "gbfs": "https://gbfs.divvybikes.com/gbfs/2.3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lyft_chi",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

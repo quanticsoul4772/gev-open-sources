@@ -1,0 +1,59 @@
+{
+  "id": "transitous-fr-disponibilite-en-temps-reel-des-velos-en-e2bf528d",
+  "domain": "sharedmobility.vehicles",
+  "name": "disponibilite-en-temps-reel-des-velos-en-libre-service-velomagg-de-montpellier",
+  "provider": "disponibilite-en-temps-reel-des-velos-en-libre-service-velomagg-de-montpellier",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0.html",
+    "display": true,
+    "commercial": true,
+    "attribution": "TaM"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0.html"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T04:34:58.511Z"
+  },
+  "provenance": [
+    "transitous:fr/disponibilite-en-temps-reel-des-velos-en-libre-service-velomagg-de-montpellier"
+  ],
+  "coverage": {
+    "bbox": [
+      43.5377,
+      3.8282,
+      43.6391,
+      3.9839
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.theta.fifteen.eu/gbfs/2.2/montpellier/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.theta.fifteen.eu/gbfs/2.2/montpellier/en/vehicle_types.json",
+      "system_information": "https://gbfs.theta.fifteen.eu/gbfs/2.2/montpellier/en/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/732c582d-8815-4892-98fd-4446b7ba13d5"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "form_factors": [
+      "bicycle"
+    ],
+    "catalogue_licence": "https://spdx.org/licenses/ODbL-1.0"
+  }
+}

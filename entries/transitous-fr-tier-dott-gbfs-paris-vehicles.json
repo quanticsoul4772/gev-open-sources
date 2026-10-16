@@ -1,0 +1,59 @@
+{
+  "id": "transitous-fr-tier-dott-gbfs-paris-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "tier-dott-gbfs-paris",
+  "provider": "tier-dott-gbfs-paris",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "tier-dott-gbfs-paris"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T04:34:58.512Z"
+  },
+  "provenance": [
+    "transitous:fr/tier-dott-gbfs-paris"
+  ],
+  "coverage": {
+    "bbox": [
+      48.8001,
+      2.2288,
+      48.9377,
+      2.4614
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/paris/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/paris/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/paris/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/7e3a67a0-8226-46e2-9a25-7b4238511ebe"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/tier-dott-gbfs-paris"
+  }
+}

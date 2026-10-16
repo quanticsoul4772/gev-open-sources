@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-lyft-bay-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lyft Bike — San Francisco, CA",
+  "provider": "Lyft Bike",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lyft Bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T04:34:58.492Z"
+  },
+  "provenance": [
+    "gbfs-systems:lyft_bay"
+  ],
+  "coverage": {
+    "bbox": [
+      37.309,
+      -122.5264,
+      37.8853,
+      -121.8636
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/bay/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.lyft.com/gbfs/2.3/bay/en/vehicle_types.json",
+      "system_information": "https://gbfs.lyft.com/gbfs/2.3/bay/en/system_information.json",
+      "gbfs": "https://gbfs.lyftbikes.com/gbfs/2.3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lyft_bay",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}
