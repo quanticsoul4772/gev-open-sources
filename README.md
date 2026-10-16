@@ -28,6 +28,18 @@ hours a GitHub Actions run:
      per event (`properties.iscurrent` marks active ones). Public domain by
      GDACS's own declaration in its RSS feed; the licence job re-reads that
      declaration every run and drops to referral-only if it is gone.
+   - NASA [FIRMS active fires](https://firms.modaps.eosdis.nasa.gov/active_fire/)
+     (`hazards.fires`, format `csv.firms-active-fire`): the keyless worldwide
+     CSV files for MODIS and VIIRS on NOAA-20 and NOAA-21, regenerated
+     hourly. Each holds the previous UTC day plus the current one (24–48 h),
+     so trim to the window you want. Detections arrive up to 3 h after the
+     satellite pass, so these entries are stale only after 6 h (other
+     formats: 15 min). Suomi NPP is left out (it ends 2 Nov 2026); MODIS is
+     due to end in 2026–27. Licence: the FIRMS FAQ's "NASA promotes full and
+     open sharing of data", re-read every run; cite "NASA FIRMS", data are
+     provided as is, and may not be used to imply NASA's endorsement. The
+     file names are fixed: if NASA moves them behind Earthdata Login, the
+     probes fail rather than following the redirect.
    - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
      Digitraffic weather cameras (CC BY 4.0), TfL JamCams and Caltrans CCTV
      (12 districts). Each entry carries a `mapping` that says where each

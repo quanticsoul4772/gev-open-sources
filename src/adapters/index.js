@@ -98,6 +98,40 @@ export const ADAPTERS = Object.freeze({
       .map(([lon, lat]) => [lat, lon]);
     return { records: doc.features.length, newest: null, inCoverage: share(points, bbox) };
   },
+  /**
+   * NASA FIRMS active-fire CSV (MODIS or VIIRS columns, found by header name).
+   * Freshness is the newest detection; data arrive up to 3 h after the
+   * satellite pass and passes are hours apart, so it is stale only after 6 h.
+   * A worldwide file with no rows (or HTML, e.g. a login page) is broken.
+   */
+  'csv.firms-active-fire'(body, bbox) {
+    const lines = new TextDecoder().decode(body).replace(/^﻿/, '').split(/\r?\n/);
+    const header = lines[0].split(',').map((h) => h.trim().toLowerCase());
+    const col = Object.fromEntries(['latitude', 'longitude', 'acq_date', 'acq_time'].map((h) => [h, header.indexOf(h)]));
+    if (Object.values(col).includes(-1)) throw new Error('not a FIRMS CSV');
+    const points = [];
+    let newestMs = null;
+    for (let i = 1; i < lines.length; i += 1) {
+      if (!lines[i]) continue;
+      const cells = lines[i].split(',');
+      const lat = Number(cells[col.latitude]);
+      const lon = Number(cells[col.longitude]);
+      if (!cells[col.latitude] || !cells[col.longitude] || !(Math.abs(lat) <= 90 && Math.abs(lon) <= 180)) continue;
+      points.push([lat, lon]);
+      const date = /^(\d{4})-(\d{2})-(\d{2})$/.exec(cells[col.acq_date]);
+      const time = /^\d{1,4}$/.test(cells[col.acq_time]) ? cells[col.acq_time].padStart(4, '0') : null;
+      if (!date || !time) continue;
+      const ms = Date.UTC(+date[1], +date[2] - 1, +date[3], +time.slice(0, 2), +time.slice(2));
+      if (newestMs === null || ms > newestMs) newestMs = ms;
+    }
+    if (!points.length) throw new Error('no fire rows');
+    return {
+      records: points.length,
+      newest: newestMs === null ? null : Math.floor(newestMs / 1000),
+      inCoverage: share(points, bbox),
+      staleAfterS: 6 * 3600,
+    };
+  },
   /** USGS summary GeoJSON: freshness is when the file was generated, not the newest event. */
   'geojson.earthquakes'(body, bbox) {
     const doc = JSON.parse(new TextDecoder().decode(body));

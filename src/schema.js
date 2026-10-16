@@ -11,6 +11,7 @@ export const DOMAINS = Object.freeze([
   'cameras.stills',
   'sharedmobility.vehicles',
   'hazards.disasters',
+  'hazards.fires',
 ]);
 export const FORMATS = Object.freeze([
   'gtfs-rt.vehicle-positions',
@@ -19,6 +20,7 @@ export const FORMATS = Object.freeze([
   'cameras.list',
   'gbfs.vehicle-status',
   'geojson.gdacs-events',
+  'csv.firms-active-fire',
 ]);
 /**
  * Coverage classes (optional `coverage.class`; absent means regional). Each

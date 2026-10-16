@@ -25,7 +25,7 @@
   },
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,63}$" },
-    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes", "cameras.stills", "sharedmobility.vehicles", "hazards.disasters"] },
+    "domain": { "enum": ["transit.vehicles", "bikeshare.stations", "hazards.earthquakes", "cameras.stills", "sharedmobility.vehicles", "hazards.disasters", "hazards.fires"] },
     "name": { "type": "string", "minLength": 1 },
     "provider": { "type": "string", "minLength": 1 },
     "coverage": {
@@ -63,7 +63,7 @@
         "min_interval_s": { "type": "number", "minimum": 0 }
       }
     },
-    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes", "cameras.list", "gbfs.vehicle-status", "geojson.gdacs-events"] },
+    "format": { "enum": ["gtfs-rt.vehicle-positions", "gbfs.station-status", "geojson.earthquakes", "cameras.list", "gbfs.vehicle-status", "geojson.gdacs-events", "csv.firms-active-fire"] },
     "licence": {
       "type": "object",
       "required": ["id", "url", "display", "commercial", "attribution"],

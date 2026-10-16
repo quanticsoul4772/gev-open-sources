@@ -13,6 +13,15 @@ import { fetchCapped } from './util/http.js';
 import { hostOfUrl, runPooled } from './util/pool.js';
 import { readZipEntry } from './util/zip.js';
 
+/**
+ * Larger limits for formats whose files are big by nature (FIRMS VIIRS files
+ * reach about 26 MB in peak fire season); every other format keeps
+ * fetchCapped's 8 MiB and 20 s.
+ */
+export const PROBE_LIMITS_BY_FORMAT = Object.freeze({
+  'csv.firms-active-fire': { maxBytes: 48 * 2 ** 20, timeoutMs: 60_000 },
+});
+
 /** Probe one entry; never throws. */
 export async function probeEntry(entry, { now, fetchImpl } = {}) {
   let res;
@@ -21,6 +30,7 @@ export async function probeEntry(entry, { now, fetchImpl } = {}) {
       headers: entry.access.headers,
       redirectHosts: entry.access.redirectHosts,
       fetchImpl,
+      ...PROBE_LIMITS_BY_FORMAT[entry.format],
     });
   } catch {
     return { at: now, ...classify({ error: 'network' }) };

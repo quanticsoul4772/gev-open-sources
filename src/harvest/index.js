@@ -17,6 +17,7 @@ import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
 import { harvestTransitous } from './transitous.js';
 import { USGS_ENTRIES } from './usgs.js';
+import { FIRMS_ENTRIES, FIRMS_PROVENANCE } from './firms.js';
 import { GDACS_ENTRIES } from './gdacs.js';
 
 /**
@@ -75,6 +76,23 @@ export function withAsciiUrls(entry) {
         : {}),
     },
   };
+}
+
+/**
+ * Entries whose URL may now redirect elsewhere: new candidates, and existing
+ * entries whose last probe failed. FIRMS files have fixed names: a redirect
+ * away means they went behind a login, which must fail the probe, not be
+ * written into the entry.
+ * @param {object[]} merged new candidates
+ * @param {Map<string, object>} existing
+ * @param {Record<string, object>} health
+ */
+export function redirectChecks(merged, existing, health) {
+  const failing = new Set(['network', 'http']);
+  return [
+    ...merged,
+    ...[...existing.values()].filter((e) => failing.has(health[e.id]?.history?.at(-1)?.result)),
+  ].filter((e) => !e.provenance.includes(FIRMS_PROVENANCE));
 }
 
 export function mergeCandidates(existing, candidates, tombstones) {
@@ -143,6 +161,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     [
       ...USGS_ENTRIES,
       ...GDACS_ENTRIES,
+      ...FIRMS_ENTRIES,
       ...cameras,
       ...mdb.entries,
       ...gbfs.filter((e) => e.domain !== VEHICLES),
@@ -158,11 +177,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   // catalogues can reach one feed through different permalinks, so new
   // entries are deduplicated again on their final URLs.
   const health = readState('health.json', {});
-  const failing = new Set(['network', 'http']);
-  const toCheck = [
-    ...merged,
-    ...[...existing.values()].filter((e) => failing.has(health[e.id]?.history?.at(-1)?.result)),
-  ];
+  const toCheck = redirectChecks(merged, existing, health);
   const redirected = new Map((await resolveRedirects(toCheck)).map((e) => [e.id, e]));
   const deduped = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);
   // Transit entries need a bbox: fill missing ones from their vehicles. A new
@@ -198,7 +213,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, firms ${FIRMS_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 
