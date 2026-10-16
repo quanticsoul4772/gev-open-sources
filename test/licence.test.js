@@ -128,7 +128,7 @@ test('html to text drops hidden elements', () => {
 });
 
 test('licence keep: transient failures keep the last decision for at most 7 days; answers never do', async () => {
-  const { KEEP_ON_TRANSIENT_S, isTransient, keepOnTransient, termsText, gbfsDecision, declarationPresent } = await import('../src/licence/index.js');
+  const { KEEP_ON_TRANSIENT_S, isTransient, keepOnTransient, termsText, gbfsDecision, declarationPresent, declarationCheck } = await import('../src/licence/index.js');
   // What counts as transient.
   assert.equal(isTransient({ status: 503 }), true);
   assert.equal(isTransient({ status: 429 }), true);
@@ -160,4 +160,11 @@ test('licence keep: transient failures keep the last decision for at most 7 days
   assert.equal((await gbfsDecision(v3, async () => new Response('not json'))).transient, undefined, 'bad JSON is an answer');
   assert.equal(await declarationPresent('https://a.example/rss', 'x', status(503)), null);
   assert.equal(await declarationPresent('https://a.example/rss', 'x', status(404)), false);
+  // The reason says why: a blocked page is not a withdrawn licence.
+  assert.deepEqual(await declarationCheck('https://a.example/rss', 'x', status(403)), { present: false, why: 'HTTP 403' });
+  assert.deepEqual(await declarationCheck('https://a.example/rss', 'x', status(503)), { present: null, why: 'HTTP 503' });
+  assert.deepEqual(await declarationCheck('https://a.example/rss', 'x', async () => new Response('y')), { present: false, why: 'wording not on the page' });
+  assert.deepEqual(await declarationCheck('https://a.example/rss', 'x', async () => new Response('x')), { present: true, why: null });
+  const moved = async () => new Response(null, { status: 302, headers: { location: 'https://login.example/' } });
+  assert.deepEqual(await declarationCheck('https://a.example/rss', 'x', moved), { present: false, why: 'redirect to unlisted host login.example' });
 });
