@@ -42,6 +42,26 @@ hours a GitHub Actions run:
      provided as is, and may not be used to imply NASA's endorsement. The
      file names are fixed: if NASA moves them behind Earthdata Login, the
      probes fail rather than following the redirect.
+   - Canadian fire perimeters (`hazards.perimeters`, format
+     `geojson.fire-perimeters`, class `regional`): British Columbia's current
+     season (BC Wildfire Service) and Ontario's in-year fires (Ontario Ministry
+     of Natural Resources), as ArcGIS queries simplified at the source (about
+     20 m). Each entry's `mapping` names the properties holding the fire
+     number, size in hectares, mapping date (epoch ms or `YYYY-MM-DD[Z]`) and,
+     for BC, the stage of control (`Out of Control`, `Being Held`,
+     `Under Control`, `Out`; may be null) and incident page; `region` gives
+     the ISO 3166-2 code. Ontario's own `STATUS` is the perimeter's (F final,
+     I interim), not the fire's, so it is not mapped. No freshness check:
+     perimeters are mapped irregularly, so an empty feed out of season is idle
+     (and turns degraded after 7 days), and a server frozen on old data stays
+     verified. A cut-off response, non-lon/lat coordinates or a renamed id
+     field fail the probe. Licences: Open Government Licence – British
+     Columbia 2.0 (with BC's API terms: identify yourself, limits may change
+     without notice) and – Ontario 1.0; credit them with each entry's
+     `licence.attribution`, use no provincial logos, and present the
+     perimeters as reference only. BC rolls its layer over on 1 April (a few
+     late-winter fires may remain); Ontario's URL pins ArcGIS layer 51, so a
+     republished service needs the entry fixed by hand.
    - Still traffic cameras (`cameras.stills`, format `cameras.list`): Finland's
      Digitraffic weather cameras (CC BY 4.0), TfL JamCams and Caltrans CCTV
      (12 districts). Each entry carries a `mapping` that says where each
@@ -111,7 +131,13 @@ Version policy:
   every case, and the app vendors the file, so the two copies can't drift.
 - `coverage.class` is optional; absent means `regional`. Deliberately wide
   entries carry a hand-set class (Amtrak is `national`), and hazard feeds
-  are published as `global`.
+  default to `global` unless the entry sets a class (fire perimeters are
+  `regional`).
+- Hand-written entries (USGS, GDACS, FIRMS, fire perimeters) are never
+  redirect-rewritten and never tombstoned: after a long outage they stay
+  dead (unpublished) and come back when the source answers again. A change
+  to one of them in the code doesn't reach its existing `entries/` file;
+  edit that file by hand.
 - Its size changes gradually. A harvest adds at most 8 % of the current
   entries, and of each domain's, per run (the rest wait for later runs), and
   a directory whose total is under 85 % or over 180 % of any copy published

@@ -350,6 +350,50 @@ test('adapters: FIRMS CSV, MODIS and VIIRS columns; newest detection; broken fil
   assert.throws(() => decode(viirs), /no fire rows/, 'an empty worldwide file is broken, not idle');
 });
 
+test('perimeters: BC and Ontario entries valid, regional, referral-only until the licence job; both licences known', async () => {
+  const { PERIMETER_ENTRIES } = await import('../src/harvest/perimeters.js');
+  const { plausibleBbox } = await import('../src/harvest/catalogue.js');
+  assert.deepEqual(PERIMETER_ENTRIES.map((e) => e.id), ['bc-wildfire-perimeters-current', 'ontario-fire-perimeters-in-year']);
+  for (const e of PERIMETER_ENTRIES) {
+    assert.deepEqual(validateEntry(e), [], e.id);
+    assert.equal(e.coverage.class, 'regional');
+    assert.equal(plausibleBbox(e.coverage.bbox, 'regional'), true, `${e.id} box within the regional limit`);
+    assert.equal(e.licence.display, false);
+    const known = knownLicence(e.licence.url);
+    assert.ok(known, `${e.id} licence ${e.licence.url} is known`);
+    assert.equal(known.display, true);
+    assert.equal(known.verify, undefined, 'no page fetch');
+  }
+  assert.equal(knownLicence('https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc').id, 'OGL-BC-2.0', 'the older BC URL too');
+  assert.equal(knownLicence('https://www2.gov.bc.ca/gov/content?id=A519A56BC2BF44E4A008B33FCF527F61'), null, 'never every gov.bc.ca page');
+  assert.equal(PERIMETER_ENTRIES[1].mapping.status, undefined, "Ontario's STATUS is the perimeter's, not the fire's");
+});
+
+test('adapters: fire perimeters through the mapping; empty is idle; cut-off, projected or renamed data throws', async () => {
+  const { PERIMETER_ENTRIES } = await import('../src/harvest/perimeters.js');
+  const [bc, on] = PERIMETER_ENTRIES;
+  const decode = (doc, entry = bc) => ADAPTERS['geojson.fire-perimeters'](new TextEncoder().encode(JSON.stringify(doc)), entry.coverage.bbox, entry);
+  const ring = (lon, lat) => [[lon, lat], [lon + 0.01, lat], [lon + 0.01, lat + 0.01], [lon, lat]];
+  const fc = (features, extra = {}) => ({ type: 'FeatureCollection', features, ...extra });
+  const bcFire = (n, status = 'Out') => ({
+    type: 'Feature',
+    geometry: { type: 'Polygon', coordinates: [ring(-120.5, 50.1)] },
+    properties: { FIRE_NUMBER: n, FIRE_SIZE_HECTARES: 4.6, FIRE_STATUS: status, TRACK_DATE: 1777014000000, FIRE_URL: null },
+  });
+  const onFire = { type: 'Feature', geometry: { type: 'MultiPolygon', coordinates: [[ring(-87.8, 55.8)], [ring(-87.7, 55.9)]] }, properties: { FIRENUMB: 'NIP009', CUR_SIZE: 8.45, STATUS: 'F', DATE_MAPPED: 1790812800000 } };
+  assert.deepEqual(decode(fc([bcFire('C40127'), bcFire('C22352', null)])), { records: 2, newest: null, inCoverage: 1 });
+  assert.deepEqual(decode(fc([onFire]), on), { records: 1, newest: null, inCoverage: 1 });
+  assert.deepEqual(decode(fc([])), { records: 0, newest: null, inCoverage: null }, 'out of season: idle, not stale');
+  assert.throws(() => decode(fc([bcFire('a')], { exceededTransferLimit: true })), /cut off/);
+  assert.throws(() => decode(fc([bcFire('a')], { properties: { exceededTransferLimit: true } })), /cut off/);
+  assert.throws(() => decode(fc([bcFire('a')], { numberMatched: 313, numberReturned: 5 })), /cut off/);
+  const projected = { ...bcFire('a'), geometry: { type: 'Polygon', coordinates: [ring(1200000, 500000)] } };
+  assert.throws(() => decode(fc([projected])), /lon\/lat/, 'BC Albers metres, not degrees');
+  assert.throws(() => decode(fc([onFire])), /no FIRE_NUMBER/, 'a renamed id field');
+  assert.throws(() => decode({ error: { code: 400, message: 'Invalid query' } }), /service error/);
+  assert.throws(() => decode([]), /FeatureCollection/);
+});
+
 test('atlas licences: the realtime feed\'s own, else its operator\'s (borrowed); filled only where missing', async () => {
   const { atlasLicences, withAtlasLicences } = await import('../src/harvest/atlas.js');
   const docs = [

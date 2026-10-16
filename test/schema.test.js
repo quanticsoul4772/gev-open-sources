@@ -90,3 +90,25 @@ test('GBFS localized text: English first, else the first non-empty', () => {
   assert.equal(gbfsText([{ language: 'en', text: '' }]), null);
   assert.equal(gbfsText(undefined), null);
 });
+
+test('fire perimeter mapping: both validators agree, and camera mappings still pass', async () => {
+  const { PERIMETER_ENTRIES } = await import('../src/harvest/perimeters.js');
+  const { CAMERA_SOURCES } = await import('../src/harvest/cameras.js');
+  for (const e of [...PERIMETER_ENTRIES, ...CAMERA_SOURCES]) {
+    assert.equal(schemaOk(e), true, `${e.id} ${JSON.stringify(validate.errors)}`);
+    assert.equal(handOk(e), true, `${e.id} ${validateEntry(e)}`);
+  }
+  const bc = PERIMETER_ENTRIES[0];
+  const bad = [
+    set(bc, 'mapping', undefined),
+    set(bc, 'mapping.id', undefined),
+    set(bc, 'mapping.updated', ''),
+    set(bc, 'mapping.status', 7),
+    set(bc, 'mapping.region', 'British Columbia'),
+    set(bc, 'mapping.region', undefined),
+  ];
+  for (const e of bad) {
+    assert.equal(schemaOk(e), false, JSON.stringify(e.mapping));
+    assert.equal(handOk(e), false, JSON.stringify(e.mapping));
+  }
+});

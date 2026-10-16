@@ -12,6 +12,7 @@ export const DOMAINS = Object.freeze([
   'sharedmobility.vehicles',
   'hazards.disasters',
   'hazards.fires',
+  'hazards.perimeters',
 ]);
 export const FORMATS = Object.freeze([
   'gtfs-rt.vehicle-positions',
@@ -21,6 +22,7 @@ export const FORMATS = Object.freeze([
   'gbfs.vehicle-status',
   'geojson.gdacs-events',
   'csv.firms-active-fire',
+  'geojson.fire-perimeters',
 ]);
 /**
  * Coverage classes (optional `coverage.class`; absent means regional). Each
@@ -114,6 +116,13 @@ export function validateEntry(entry) {
       m?.image_template === undefined || (/^https:\/\/[\x21-\x7e]+$/.test(m.image_template) && m.image_template.includes('{value}')),
       'mapping.image_template invalid',
     );
+  }
+  if (entry.format === 'geojson.fire-perimeters') {
+    const m = entry.mapping;
+    need(m && typeof m === 'object', 'mapping missing');
+    for (const k of ['id', 'size_ha', 'updated']) need(typeof m?.[k] === 'string' && m[k] !== '', `mapping.${k} missing`);
+    for (const k of ['status', 'url']) need(m?.[k] === undefined || (typeof m[k] === 'string' && m[k] !== ''), `mapping.${k} invalid`);
+    need(typeof m?.region === 'string' && /^[A-Z]{2}-[A-Z0-9]{1,3}$/.test(m.region), 'mapping.region invalid');
   }
   const l = entry.licence;
   need(l && typeof l.display === 'boolean', 'licence.display missing');
