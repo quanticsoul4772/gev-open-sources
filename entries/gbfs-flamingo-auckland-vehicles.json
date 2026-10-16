@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-flamingo-auckland-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Flamingo Auckland — Auckland",
+  "provider": "Flamingo Auckland",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Auckland"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.306Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_auckland"
+  ],
+  "coverage": {
+    "bbox": [
+      -36.9403,
+      174.6809,
+      -36.7026,
+      174.888
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/auckland/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://data.rideflamingo.com/gbfs/3/auckland/vehicle_types.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/auckland/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/auckland/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "flamingo_auckland",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

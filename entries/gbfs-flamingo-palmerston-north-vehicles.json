@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-flamingo-palmerston-north-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Flamingo Palmerston North — Palmerston North",
+  "provider": "Flamingo Palmerston North",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Palmerston North"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.307Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_palmerston_north"
+  ],
+  "coverage": {
+    "bbox": [
+      -40.4076,
+      175.5563,
+      -40.3089,
+      175.673
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/palmerston-north/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://data.rideflamingo.com/gbfs/3/palmerston-north/vehicle_types.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/palmerston-north/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/palmerston-north/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "flamingo_palmerston_north",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-oswiecim-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Oświęcim — Oświęcim",
+  "provider": "Dott Oświęcim",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Oświęcim"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.303Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-oswiecim"
+  ],
+  "coverage": {
+    "bbox": [
+      50.0045,
+      19.1785,
+      50.0762,
+      19.2986
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/oswiecim/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/oswiecim/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/oswiecim/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/oswiecim/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-oswiecim",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

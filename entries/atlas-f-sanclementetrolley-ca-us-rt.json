@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-sanclementetrolley-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "San Clemente Trolley",
+  "provider": "San Clemente Trolley",
+  "coverage": {
+    "bbox": [
+      33.4042,
+      -117.6489,
+      33.4556,
+      -117.5972
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/sctrolley/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "San Clemente Trolley"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.343Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-sanclementetrolley~ca~us~rt"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-jolt-new-plymouth-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "JOLT New Plymouth — New Plymouth",
+  "provider": "JOLT New Plymouth",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "JOLT New Plymouth"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.310Z"
+  },
+  "provenance": [
+    "gbfs-systems:jolt_new_plymouth"
+  ],
+  "coverage": {
+    "bbox": [
+      -39.1056,
+      174.0082,
+      -39.01,
+      174.1637
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://prod-api.joltscooters.co.nz/api/gbfs/new_plymouth/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://prod-api.joltscooters.co.nz/api/gbfs/new_plymouth/vehicle_types.json",
+      "system_information": "https://prod-api.joltscooters.co.nz/api/gbfs/new_plymouth/system_information.json",
+      "gbfs": "https://prod-api.joltscooters.co.nz/api/gbfs/new_plymouth/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "jolt_new_plymouth",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

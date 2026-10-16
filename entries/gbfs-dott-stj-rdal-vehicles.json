@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-dott-stj-rdal-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Stjørdal — Stjørdal",
+  "provider": "Dott Stjørdal",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Stjørdal"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.304Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-stjørdal"
+  ],
+  "coverage": {
+    "bbox": [
+      63.4159,
+      10.8428,
+      63.5118,
+      11.0084
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/stj%C3%B8rdal/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-stjørdal",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-flamingo-christchurch-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Flamingo Christchurch — Christchurch",
+  "provider": "Flamingo Christchurch",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Christchurch"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.306Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_christchurch"
+  ],
+  "coverage": {
+    "bbox": [
+      -43.582,
+      172.5228,
+      -43.4708,
+      172.759
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/christchurch/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://data.rideflamingo.com/gbfs/3/christchurch/vehicle_types.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/christchurch/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/christchurch/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "flamingo_christchurch",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

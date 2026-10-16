@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-jolt-hutt-valley-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "JOLT Hutt Valley — Hutt Valley",
+  "provider": "JOLT Hutt Valley",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "JOLT Hutt Valley"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.310Z"
+  },
+  "provenance": [
+    "gbfs-systems:jolt_hutt_valley"
+  ],
+  "coverage": {
+    "bbox": [
+      -41.3241,
+      174.8705,
+      -41.0955,
+      175.1117
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://prod-api.joltscooters.co.nz/api/gbfs/hutt_valley/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://prod-api.joltscooters.co.nz/api/gbfs/hutt_valley/vehicle_types.json",
+      "system_information": "https://prod-api.joltscooters.co.nz/api/gbfs/hutt_valley/system_information.json",
+      "gbfs": "https://prod-api.joltscooters.co.nz/api/gbfs/hutt_valley/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "jolt_hutt_valley",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

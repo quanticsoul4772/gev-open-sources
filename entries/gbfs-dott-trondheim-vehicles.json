@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-trondheim-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Trondheim — Trondheim",
+  "provider": "Dott Trondheim",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Trondheim"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.305Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-trondheim"
+  ],
+  "coverage": {
+    "bbox": [
+      63.3706,
+      10.3266,
+      63.4698,
+      10.5574
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/trondheim/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/trondheim/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/trondheim/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/trondheim/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-trondheim",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

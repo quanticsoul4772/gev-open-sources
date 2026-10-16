@@ -1,0 +1,54 @@
+{
+  "id": "alberta-wildfire-perimeters-active",
+  "domain": "hazards.perimeters",
+  "name": "Alberta wildfire perimeters, active",
+  "provider": "Alberta Wildfire",
+  "coverage": {
+    "bbox": [
+      48.5,
+      -120.5,
+      60.5,
+      -109.5
+    ],
+    "countries": [
+      "CA"
+    ],
+    "class": "regional"
+  },
+  "access": {
+    "url": "https://services.arcgis.com/Eb8P5h4CJk8utIBz/arcgis/rest/services/Wildfire_Perimeter_Active_(PROD)/FeatureServer/3/query?where=1%3D1&outFields=FireNumber,AREA_ESTIMATE,FIRE_STATUS,CaptreDate&outSR=4326&maxAllowableOffset=0.0002&geometryPrecision=5&f=geojson",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 300
+  },
+  "format": "geojson.fire-perimeters",
+  "mapping": {
+    "id": "FireNumber",
+    "size_ha": "AREA_ESTIMATE",
+    "updated": "CaptreDate",
+    "status": "FIRE_STATUS",
+    "region": "CA-AB"
+  },
+  "licence": {
+    "id": "OGL-AB-2.2",
+    "url": "https://open.alberta.ca/licence",
+    "display": true,
+    "commercial": true,
+    "attribution": "Government of Alberta (Alberta Wildfire). Contains information licensed under the Open Government Licence – Alberta."
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://open.alberta.ca/licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.337Z"
+  },
+  "provenance": [
+    "perimeters:ab-active"
+  ]
+}

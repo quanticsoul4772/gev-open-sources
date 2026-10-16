@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-oslo-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Oslo — Oslo",
+  "provider": "Zeus Oslo",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Oslo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.335Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_oslo"
+  ],
+  "coverage": {
+    "bbox": [
+      59.8882,
+      10.7102,
+      59.951,
+      10.8431
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/oslo/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/oslo/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/oslo/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/oslo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_oslo",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

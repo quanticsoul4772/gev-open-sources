@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-flamingo-waimakariri-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Flamingo Waimakariri — Waimakariri District",
+  "provider": "Flamingo Waimakariri",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Waimakariri"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.307Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_waimakariri"
+  ],
+  "coverage": {
+    "bbox": [
+      -43.412,
+      172.5496,
+      -43.276,
+      172.7199
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/waimakariri/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://data.rideflamingo.com/gbfs/3/waimakariri/vehicle_types.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/waimakariri/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/waimakariri/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "flamingo_waimakariri",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-inurba-gdansk-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "MEVO — Gdansk",
+  "provider": "MEVO",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "MEVO"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.309Z"
+  },
+  "provenance": [
+    "gbfs-systems:inurba-gdansk"
+  ],
+  "coverage": {
+    "bbox": [
+      54.049,
+      17.794,
+      54.8335,
+      18.9339
+    ],
+    "countries": [
+      "PL"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.urbansharing.com/rowermevo.pl/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.urbansharing.com/rowermevo.pl/vehicle_types.json",
+      "system_information": "https://gbfs.urbansharing.com/rowermevo.pl/system_information.json",
+      "gbfs": "https://gbfs.urbansharing.com/rowermevo.pl/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "inurba-gdansk",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-cascais-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Cascais — Cascais",
+  "provider": "Bird Cascais",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Cascais"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.287Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-cascais"
+  ],
+  "coverage": {
+    "bbox": [
+      38.6577,
+      -9.4946,
+      38.7655,
+      -9.3021
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/cascais/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/cascais/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/cascais/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/cascais/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-cascais",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

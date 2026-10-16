@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-flamingo-porirua-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Flamingo Porirua — Porirua",
+  "provider": "Flamingo Porirua",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Flamingo Porirua"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T19:43:36.307Z"
+  },
+  "provenance": [
+    "gbfs-systems:flamingo_porirua"
+  ],
+  "coverage": {
+    "bbox": [
+      -41.1935,
+      174.7997,
+      -41.0176,
+      174.9119
+    ],
+    "countries": [
+      "NZ"
+    ]
+  },
+  "access": {
+    "url": "https://data.rideflamingo.com/gbfs/3/porirua/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://data.rideflamingo.com/gbfs/3/porirua/vehicle_types.json",
+      "system_information": "https://data.rideflamingo.com/gbfs/3/porirua/system_information.json",
+      "gbfs": "https://data.rideflamingo.com/gbfs/3/porirua/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "flamingo_porirua",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
