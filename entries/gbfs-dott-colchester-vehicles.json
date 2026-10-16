@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-colchester-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Colchester — Colchester",
+  "provider": "Dott Colchester",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Colchester"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T15:03:21.866Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-colchester"
+  ],
+  "coverage": {
+    "bbox": [
+      51.8364,
+      0.7571,
+      51.9436,
+      0.9828
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/colchester/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/colchester/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/colchester/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/colchester/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-colchester",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

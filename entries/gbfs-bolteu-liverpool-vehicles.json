@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bolteu-liverpool-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bolt Liverpool — Liverpool",
+  "provider": "Bolt Liverpool",
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Liverpool"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T15:03:21.856Z"
+  },
+  "provenance": [
+    "gbfs-systems:BoltEU_Liverpool"
+  ],
+  "coverage": {
+    "bbox": [
+      53.3339,
+      -3.0195,
+      53.4822,
+      -2.8211
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bolt.eu/gbfs/3/412/vehicle_status",
+    "related": {
+      "vehicle_types": "https://mds.bolt.eu/gbfs/3/412/vehicle_types",
+      "system_information": "https://mds.bolt.eu/gbfs/3/412/system_information",
+      "gbfs": "https://mds.bolt.eu/gbfs/3/412/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "BoltEU_Liverpool",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

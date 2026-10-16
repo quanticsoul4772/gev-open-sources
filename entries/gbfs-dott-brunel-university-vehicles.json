@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-brunel-university-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott brunel-university — Uxbridge",
+  "provider": "Dott brunel-university",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott brunel-university"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T15:03:21.865Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-brunel-university"
+  ],
+  "coverage": {
+    "bbox": [
+      51.4884,
+      -0.5001,
+      51.573,
+      -0.4152
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/brunel-university/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/brunel-university/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/brunel-university/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/brunel-university/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-brunel-university",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

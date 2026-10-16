@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-dott-bath-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Bath — Bath",
+  "provider": "Dott Bath",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Bath"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T15:03:21.865Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-bath"
+  ],
+  "coverage": {
+    "bbox": [
+      51.3384,
+      -2.4221,
+      51.4253,
+      -2.2807
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/bath/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/bath/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/bath/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/bath/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-bath",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

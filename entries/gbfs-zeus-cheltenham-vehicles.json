@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-cheltenham-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Cheltenham — Cheltenham",
+  "provider": "Zeus Cheltenham",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Cheltenham"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-16T15:03:21.890Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_cheltenham"
+  ],
+  "coverage": {
+    "bbox": [
+      51.8819,
+      -2.1379,
+      51.9219,
+      -2.0979
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/cheltenham/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/cheltenham/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/cheltenham/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/cheltenham/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_cheltenham",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}
