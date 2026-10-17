@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-xeb-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Oakland/Emeryville/Berkeley/Albany — Emeryville, CA",
+  "provider": "Veo Oakland/Emeryville/Berkeley/Albany",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Oakland/Emeryville/Berkeley/Albany"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.771Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-xeb"
+  ],
+  "coverage": {
+    "bbox": [
+      37.8126,
+      -122.3242,
+      37.9194,
+      -122.226
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/xeb/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/xeb/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/xeb/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/xeb/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-xeb",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

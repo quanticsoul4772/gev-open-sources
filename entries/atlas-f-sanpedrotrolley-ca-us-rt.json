@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-sanpedrotrolley-ca-us-rt",
+  "domain": "transit.vehicles",
+  "name": "San Pedro Trolley",
+  "provider": "San Pedro Trolley",
+  "coverage": {
+    "bbox": [
+      33.702,
+      -118.2957,
+      33.742,
+      -118.2556
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://sanpedrotrolleys.tripshot.com/v1/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "San Pedro Trolley"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.780Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-sanpedrotrolley~ca~us~rt"
+  ]
+}

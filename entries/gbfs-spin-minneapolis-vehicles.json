@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-minneapolis-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Minneapolis — Minneapolis, MN",
+  "provider": "Spin Minneapolis",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Minneapolis"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.763Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin minneapolis"
+  ],
+  "coverage": {
+    "bbox": [
+      44.8975,
+      -93.3352,
+      45.0567,
+      -93.1945
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/minneapolis/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/minneapolis/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/minneapolis/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/minneapolis/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin minneapolis",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

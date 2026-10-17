@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-provider-null-tampa-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Tampa — Tampa, FL",
+  "provider": "Spin Tampa",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Tampa"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.762Z"
+  },
+  "provenance": [
+    "gbfs-systems:provider-null-tampa"
+  ],
+  "coverage": {
+    "bbox": [
+      27.9173,
+      -82.5373,
+      28.0162,
+      -82.4117
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/tampa/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/tampa/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/tampa/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/tampa/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "provider-null-tampa",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

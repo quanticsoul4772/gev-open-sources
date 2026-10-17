@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-cle-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Cleveland — Cleveland, OH",
+  "provider": "Veo Cleveland",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Cleveland"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.767Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-cle"
+  ],
+  "coverage": {
+    "bbox": [
+      41.4324,
+      -81.7824,
+      41.5737,
+      -81.4992
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/cle/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/cle/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/cle/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/cle/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-cle",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

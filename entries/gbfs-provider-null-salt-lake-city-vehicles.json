@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-provider-null-salt-lake-city-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Salt Lake City — Salt Lake City, UT",
+  "provider": "Spin Salt Lake City",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Salt Lake City"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.760Z"
+  },
+  "provenance": [
+    "gbfs-systems:provider-null-salt_lake_city"
+  ],
+  "coverage": {
+    "bbox": [
+      40.7401,
+      -111.897,
+      40.7832,
+      -111.8321
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/salt_lake_city/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/salt_lake_city/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/salt_lake_city/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/salt_lake_city/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "provider-null-salt_lake_city",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

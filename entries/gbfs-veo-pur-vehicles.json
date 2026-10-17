@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-pur-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Purdue University — West Lafayette, IN",
+  "provider": "Veo Purdue University",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Purdue University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.770Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-pur"
+  ],
+  "coverage": {
+    "bbox": [
+      40.396,
+      -86.9683,
+      40.4869,
+      -86.8302
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/pur/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/pur/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/pur/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/pur/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-pur",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

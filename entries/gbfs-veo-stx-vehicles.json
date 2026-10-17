@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-stx-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo San Antonio — San Antonio, TX",
+  "provider": "Veo San Antonio",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo San Antonio"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.771Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-stx"
+  ],
+  "coverage": {
+    "bbox": [
+      29.3784,
+      -98.541,
+      29.4781,
+      -98.4416
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/stx/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/stx/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/stx/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/stx/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-stx",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

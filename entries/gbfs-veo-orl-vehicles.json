@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-orl-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Orlando — Orlando, FL",
+  "provider": "Veo Orlando",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Orlando"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.769Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-orl"
+  ],
+  "coverage": {
+    "bbox": [
+      28.5065,
+      -81.4175,
+      28.5918,
+      -81.3066
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/orl/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/orl/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/orl/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/orl/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-orl",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

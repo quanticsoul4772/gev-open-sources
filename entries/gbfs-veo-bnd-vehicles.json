@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-bnd-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Bend — Bend, OR",
+  "provider": "Veo Bend",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Bend"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.766Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-bnd"
+  ],
+  "coverage": {
+    "bbox": [
+      43.9978,
+      -121.3731,
+      44.1135,
+      -121.2597
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/bnd/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/bnd/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/bnd/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/bnd/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-bnd",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

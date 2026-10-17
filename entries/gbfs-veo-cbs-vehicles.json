@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-cbs-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Columbus — Columbus, OH",
+  "provider": "Veo Columbus",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Columbus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.767Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-cbs"
+  ],
+  "coverage": {
+    "bbox": [
+      39.9026,
+      -83.1286,
+      40.1074,
+      -82.8917
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/cbs/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/cbs/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/cbs/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/cbs/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-cbs",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

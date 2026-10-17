@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-rut-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Rutgers University — New Brunswick, NJ",
+  "provider": "Veo Rutgers University",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Rutgers University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.770Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-rut"
+  ],
+  "coverage": {
+    "bbox": [
+      40.455,
+      -74.4977,
+      40.5463,
+      -74.4004
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/rut/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/rut/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/rut/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/rut/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-rut",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

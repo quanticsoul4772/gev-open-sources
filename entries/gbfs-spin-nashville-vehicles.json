@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-nashville-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Nashville — Nashville, TN",
+  "provider": "Spin Nashville",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Nashville"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.763Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin nashville"
+  ],
+  "coverage": {
+    "bbox": [
+      36.1061,
+      -86.8412,
+      36.2059,
+      -86.7439
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/nashville/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/nashville/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/nashville/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/nashville/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin nashville",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

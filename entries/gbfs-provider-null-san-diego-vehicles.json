@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-provider-null-san-diego-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin San Diego — San Diego, CA",
+  "provider": "Spin San Diego",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin San Diego"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.760Z"
+  },
+  "provenance": [
+    "gbfs-systems:provider-null-san_diego"
+  ],
+  "coverage": {
+    "bbox": [
+      32.8494,
+      -117.2726,
+      32.909,
+      -117.2
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/san_diego/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/san_diego/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/san_diego/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/san_diego/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "provider-null-san_diego",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

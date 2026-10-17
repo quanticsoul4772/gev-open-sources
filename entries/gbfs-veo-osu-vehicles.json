@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-osu-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Oregon State Univeristy — Corvallis, OR",
+  "provider": "Veo Oregon State Univeristy",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Oregon State Univeristy"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.770Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-osu"
+  ],
+  "coverage": {
+    "bbox": [
+      44.5369,
+      -123.3208,
+      44.6023,
+      -123.2458
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/osu/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/osu/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/osu/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/osu/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-osu",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

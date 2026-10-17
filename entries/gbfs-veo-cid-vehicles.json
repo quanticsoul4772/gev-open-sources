@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-cid-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Cedar Rapids — Cedar Rapids, IA",
+  "provider": "Veo Cedar Rapids",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Cedar Rapids"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.767Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-cid"
+  ],
+  "coverage": {
+    "bbox": [
+      41.905,
+      -91.7178,
+      42.0342,
+      -91.6043
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/cid/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/cid/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/cid/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/cid/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-cid",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

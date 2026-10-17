@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-sar-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Sarasota — Sarasota, FL",
+  "provider": "Veo Sarasota",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Sarasota"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.770Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-sar"
+  ],
+  "coverage": {
+    "bbox": [
+      27.283,
+      -82.6006,
+      27.4267,
+      -82.4878
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/sar/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/sar/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/sar/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/sar/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-sar",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

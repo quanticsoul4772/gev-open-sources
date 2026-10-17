@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-nwk-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Newark — Newark, NJ",
+  "provider": "Veo Newark",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Newark"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.769Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-nwk"
+  ],
+  "coverage": {
+    "bbox": [
+      40.6845,
+      -74.2514,
+      40.8027,
+      -74.1159
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/nwk/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/nwk/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/nwk/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/nwk/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-nwk",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

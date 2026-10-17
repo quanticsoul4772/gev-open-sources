@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-syr-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Syracuse — Syracuse, NY",
+  "provider": "Veo Syracuse",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Syracuse"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.771Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-syr"
+  ],
+  "coverage": {
+    "bbox": [
+      42.9773,
+      -76.213,
+      43.1017,
+      -76.0572
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/syr/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/syr/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/syr/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/syr/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-syr",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-fay-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Fayetteville — Fayetteville, AK",
+  "provider": "Veo Fayetteville",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Fayetteville"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.768Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-fay"
+  ],
+  "coverage": {
+    "bbox": [
+      36.0151,
+      -94.2349,
+      36.1435,
+      -94.1112
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/fay/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/fay/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/fay/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/fay/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-fay",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

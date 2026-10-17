@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-provider-null-tallahassee-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Tallahassee — Tallahassee, FL",
+  "provider": "Spin Tallahassee",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Tallahassee"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.762Z"
+  },
+  "provenance": [
+    "gbfs-systems:provider-null-tallahassee"
+  ],
+  "coverage": {
+    "bbox": [
+      30.3927,
+      -84.3514,
+      30.4839,
+      -84.211
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/tallahassee/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/tallahassee/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/tallahassee/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/tallahassee/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "provider-null-tallahassee",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

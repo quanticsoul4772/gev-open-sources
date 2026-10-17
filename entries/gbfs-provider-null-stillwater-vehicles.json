@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-provider-null-stillwater-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Stillwater — Stillwater, OK",
+  "provider": "Spin Stillwater",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Stillwater"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.761Z"
+  },
+  "provenance": [
+    "gbfs-systems:provider-null-stillwater"
+  ],
+  "coverage": {
+    "bbox": [
+      36.0944,
+      -97.1041,
+      36.1546,
+      -97.0303
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/stillwater/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/stillwater/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/stillwater/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/stillwater/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "provider-null-stillwater",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

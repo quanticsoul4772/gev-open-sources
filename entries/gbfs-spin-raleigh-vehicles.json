@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-raleigh-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Raleigh — Raleigh, NC",
+  "provider": "Spin Raleigh",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Raleigh"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.764Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin raleigh"
+  ],
+  "coverage": {
+    "bbox": [
+      35.7416,
+      -78.7182,
+      35.8136,
+      -78.6023
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/raleigh/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/raleigh/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/raleigh/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/raleigh/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin raleigh",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

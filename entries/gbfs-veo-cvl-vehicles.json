@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-cvl-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Charlottesville — Charlottesville, VA",
+  "provider": "Veo Charlottesville",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Charlottesville"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.767Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-cvl"
+  ],
+  "coverage": {
+    "bbox": [
+      37.9925,
+      -78.5461,
+      38.0802,
+      -78.4454
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/cvl/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/cvl/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/cvl/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/cvl/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-cvl",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

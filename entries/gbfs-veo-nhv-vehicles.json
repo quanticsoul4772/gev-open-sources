@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-nhv-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo New Haven — New Haven, CT",
+  "provider": "Veo New Haven",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo New Haven"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T12:34:58.768Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-nhv"
+  ],
+  "coverage": {
+    "bbox": [
+      41.2768,
+      -72.9661,
+      41.3524,
+      -72.8687
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/nhv/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/nhv/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/nhv/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/nhv/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-nhv",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
