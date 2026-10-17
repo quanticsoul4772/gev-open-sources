@@ -1,0 +1,58 @@
+{
+  "id": "transitous-si-kvik-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "kvik",
+  "provider": "kvik",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "kvik"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.766Z"
+  },
+  "provenance": [
+    "transitous:si/kvik"
+  ],
+  "coverage": {
+    "bbox": [
+      45.4817,
+      13.5434,
+      46.1094,
+      14.5691
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/kvik/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.derp.si/gbfs/kvik/vehicle_types.json",
+      "system_information": "https://gbfs.derp.si/gbfs/kvik/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/kvik/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

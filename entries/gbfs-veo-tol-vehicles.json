@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-tol-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Toledo — Toledo, OH",
+  "provider": "Veo Toledo",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Toledo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.760Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-tol"
+  ],
+  "coverage": {
+    "bbox": [
+      41.5956,
+      -83.68,
+      41.7469,
+      -83.4677
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/tol/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/tol/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/tol/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/tol/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-tol",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

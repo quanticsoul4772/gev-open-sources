@@ -1,0 +1,60 @@
+{
+  "id": "transitous-fr-vls-ca-du-libournais-calivelo-82695-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "vls-ca-du-libournais-calivelo--82695",
+  "provider": "vls-ca-du-libournais-calivelo--82695",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "vls-ca-du-libournais-calivelo--82695"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.765Z"
+  },
+  "provenance": [
+    "transitous:fr/vls-ca-du-libournais-calivelo--82695"
+  ],
+  "coverage": {
+    "bbox": [
+      44.8179,
+      -0.3955,
+      45.0716,
+      0.0182
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/calivelo_ecovelo/free_bike_status",
+    "related": {
+      "vehicle_types": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/calivelo_ecovelo/vehicle_types",
+      "system_information": "https://api.okina.fr/gateway/nam/gbfs/gbfs/v2/calivelo_ecovelo/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/345d5add-5ab1-431f-931b-bca18d3e80a0"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://spdx.org/licenses/ODbL-1.0"
+  }
+}

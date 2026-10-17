@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-tam-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Texas A&M University — College Station, TX",
+  "provider": "Veo Texas A&M University",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Texas A&M University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.760Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-tam"
+  ],
+  "coverage": {
+    "bbox": [
+      30.5778,
+      -96.4311,
+      30.645,
+      -96.3133
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/tam/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/tam/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/tam/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/tam/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-tam",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

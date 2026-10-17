@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-iuc-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo University of Illinois, Urbana-Champaign — Urbana, IL",
+  "provider": "Veo University of Illinois, Urbana-Champaign",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo University of Illinois, Urbana-Champaign"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.759Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-iuc"
+  ],
+  "coverage": {
+    "bbox": [
+      40.0383,
+      -88.3164,
+      40.1672,
+      -88.1587
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/iuc/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/iuc/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/iuc/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/iuc/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-iuc",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

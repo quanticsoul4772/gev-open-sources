@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-ala-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo University of Alabama — Tuscaloosa, AL",
+  "provider": "Veo University of Alabama",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo University of Alabama"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.758Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-ala"
+  ],
+  "coverage": {
+    "bbox": [
+      33.1836,
+      -87.5713,
+      33.2402,
+      -87.5064
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/ala/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/ala/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/ala/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/ala/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-ala",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

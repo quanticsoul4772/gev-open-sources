@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-xdc-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo Washington DC — Washington, DC",
+  "provider": "Veo Washington DC",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo Washington DC"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.761Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-xdc"
+  ],
+  "coverage": {
+    "bbox": [
+      38.8,
+      -77.1171,
+      38.9945,
+      -76.8996
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/xdc/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/xdc/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/xdc/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/xdc/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-xdc",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "transitous-si-bolt-359-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "bolt-359",
+  "provider": "bolt-359",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "bolt-359"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.766Z"
+  },
+  "provenance": [
+    "transitous:si/bolt-359"
+  ],
+  "coverage": {
+    "bbox": [
+      46.0073,
+      14.4454,
+      46.1175,
+      14.5767
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/bolt_proxy/2/359/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.derp.si/bolt_proxy/2/359/vehicle_types",
+      "system_information": "https://gbfs.derp.si/bolt_proxy/2/359/system_information",
+      "gbfs": "https://gbfs.derp.si/bolt_proxy/2/359/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

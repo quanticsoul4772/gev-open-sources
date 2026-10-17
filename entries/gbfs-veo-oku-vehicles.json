@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-veo-oku-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Veo University of Oklahoma — Norman, OK",
+  "provider": "Veo University of Oklahoma",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Veo University of Oklahoma"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.759Z"
+  },
+  "provenance": [
+    "gbfs-systems:veo-oku"
+  ],
+  "coverage": {
+    "bbox": [
+      35.1608,
+      -97.4995,
+      35.2588,
+      -97.378
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cluster-prod.veoride.com/api/shares/name/oku/gbfs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://cluster-prod.veoride.com/api/shares/name/oku/gbfs/vehicle_types",
+      "system_information": "https://cluster-prod.veoride.com/api/shares/name/oku/gbfs/system_information",
+      "gbfs": "https://cluster-prod.veoride.com/api/shares/name/oku/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "veo-oku",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

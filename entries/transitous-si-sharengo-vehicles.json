@@ -1,0 +1,58 @@
+{
+  "id": "transitous-si-sharengo-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "sharengo",
+  "provider": "sharengo",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "sharengo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T18:32:11.767Z"
+  },
+  "provenance": [
+    "transitous:si/sharengo"
+  ],
+  "coverage": {
+    "bbox": [
+      46.0433,
+      14.4834,
+      46.125,
+      14.5676
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.derp.si/gbfs/sharengo/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.derp.si/gbfs/sharengo/vehicle_types.json",
+      "system_information": "https://gbfs.derp.si/gbfs/sharengo/system_information.json",
+      "gbfs": "https://gbfs.derp.si/gbfs/sharengo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "car"
+    ]
+  }
+}
