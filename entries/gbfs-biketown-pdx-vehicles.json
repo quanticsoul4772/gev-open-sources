@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-biketown-pdx-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "BIKETOWN — Portland, OR",
+  "provider": "BIKETOWN",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BIKETOWN"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.866Z"
+  },
+  "provenance": [
+    "gbfs-systems:biketown_pdx"
+  ],
+  "coverage": {
+    "bbox": [
+      45.4406,
+      -122.7591,
+      45.6039,
+      -122.4899
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/pdx/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.lyft.com/gbfs/2.3/pdx/en/vehicle_types.json",
+      "system_information": "https://gbfs.lyft.com/gbfs/2.3/pdx/en/system_information.json",
+      "gbfs": "https://gbfs.biketownpdx.com/gbfs/2.3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "biketown_pdx",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

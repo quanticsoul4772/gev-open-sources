@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-bora-viseu-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bora — Viseu Dão Lafões",
+  "provider": "Bora",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Bora"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.894Z"
+  },
+  "provenance": [
+    "gbfs-systems:bora_viseu"
+  ],
+  "coverage": {
+    "bbox": [
+      40.3965,
+      -8.7132,
+      41.2365,
+      -7.5348
+    ],
+    "countries": [
+      "PT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.primelayer.pt/gbfs-smartmobility/gbfs/v3/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.primelayer.pt/gbfs-smartmobility/gbfs/v3/vehicle_types.json",
+      "system_information": "https://gbfs.primelayer.pt/gbfs-smartmobility/gbfs/v3/system_information.json",
+      "gbfs": "https://gbfs.primelayer.pt/gbfs-smartmobility/gbfs/v3/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bora_viseu",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

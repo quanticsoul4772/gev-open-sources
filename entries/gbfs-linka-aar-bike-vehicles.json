@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-linka-aar-bike-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "AAR Bike — Konya",
+  "provider": "AAR Bike",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "AAR Bike"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.910Z"
+  },
+  "provenance": [
+    "gbfs-systems:linka_aar_bike"
+  ],
+  "coverage": {
+    "bbox": [
+      37.8287,
+      32.4129,
+      38.0225,
+      32.5935
+    ],
+    "countries": [
+      "TR"
+    ]
+  },
+  "access": {
+    "url": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/vehicle_types.json",
+      "system_information": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/system_information.json",
+      "gbfs": "https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "linka_aar_bike",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-durham-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Durham — Durham, NC",
+  "provider": "Bird Durham",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Durham"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.869Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-durham"
+  ],
+  "coverage": {
+    "bbox": [
+      35.9554,
+      -78.9693,
+      35.9954,
+      -78.9293
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/durham/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/durham/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/durham/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/durham/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-durham",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-indianapolis-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Indianapolis — Indianapolis, IN",
+  "provider": "Bird Indianapolis",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Indianapolis"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.871Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-indianapolis"
+  ],
+  "coverage": {
+    "bbox": [
+      39.7306,
+      -86.207,
+      39.8665,
+      -86.1099
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/indianapolis/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/indianapolis/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/indianapolis/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/indianapolis/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-indianapolis",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

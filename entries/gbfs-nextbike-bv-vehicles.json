@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-bv-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Buzau VeloCity — Buzau",
+  "provider": "Buzau VeloCity",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "SC NEXT BIKE SRL, Aleea Poarta Alba nr. 1-3, Bucharest, ROMANIA"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.913Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_bv"
+  ],
+  "coverage": {
+    "bbox": [
+      45.1018,
+      26.786,
+      45.1685,
+      26.8546
+    ],
+    "countries": [
+      "RO"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bv/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bv/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bv/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bv/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_bv",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

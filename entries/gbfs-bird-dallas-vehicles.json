@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-dallas-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Dallas — Dallas, TX",
+  "provider": "Bird Dallas",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Dallas"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.869Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-dallas"
+  ],
+  "coverage": {
+    "bbox": [
+      32.7233,
+      -96.8522,
+      32.8298,
+      -96.7465
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/dallas/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/dallas/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/dallas/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/dallas/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-dallas",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

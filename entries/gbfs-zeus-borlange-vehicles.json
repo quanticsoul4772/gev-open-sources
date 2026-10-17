@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-borlange-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Borlänge — Borlänge",
+  "provider": "Zeus Borlänge",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Borlänge"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.926Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_borlange"
+  ],
+  "coverage": {
+    "bbox": [
+      60.4453,
+      15.3468,
+      60.5437,
+      15.5025
+    ],
+    "countries": [
+      "SE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/borlange/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/borlange/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/borlange/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/borlange/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_borlange",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

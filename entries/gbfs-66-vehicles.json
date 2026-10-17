@@ -1,0 +1,61 @@
+{
+  "id": "gbfs-66-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "3electra — Kyiv",
+  "provider": "3electra",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "3electra"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.862Z"
+  },
+  "provenance": [
+    "gbfs-systems:66"
+  ],
+  "coverage": {
+    "bbox": [
+      50.3856,
+      30.4463,
+      50.4901,
+      30.5838
+    ],
+    "countries": [
+      "UA"
+    ]
+  },
+  "access": {
+    "url": "https://zelectra.rideatom.com/gbfs/66/v3.0/vehicle_status",
+    "related": {
+      "vehicle_types": "https://zelectra.rideatom.com/gbfs/66/v3.0/vehicle_types",
+      "system_information": "https://zelectra.rideatom.com/gbfs/66/v3.0/system_information",
+      "gbfs": "https://zelectra.rideatom.com/gbfs/66/v3.0/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "66",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "car",
+      "moped",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-falun-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Falun — Falun",
+  "provider": "Zeus Falun",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Falun"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.927Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_falun"
+  ],
+  "coverage": {
+    "bbox": [
+      60.5661,
+      15.5769,
+      60.6406,
+      15.7017
+    ],
+    "countries": [
+      "SE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/falun/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/falun/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/falun/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/falun/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_falun",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

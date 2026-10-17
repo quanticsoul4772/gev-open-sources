@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-karlstad-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Karlstad — Karlstad",
+  "provider": "Zeus Karlstad",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Karlstad"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.928Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_karlstad"
+  ],
+  "coverage": {
+    "bbox": [
+      59.361,
+      13.4845,
+      59.401,
+      13.5245
+    ],
+    "countries": [
+      "SE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/karlstad/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/karlstad/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/karlstad/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/karlstad/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_karlstad",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

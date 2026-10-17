@@ -1,0 +1,45 @@
+{
+  "id": "sensor-community-pm-1h",
+  "domain": "airquality.sensors",
+  "name": "Sensor.Community particulate sensors (PM2.5, PM10), 1-hour means",
+  "provider": "Sensor.Community",
+  "coverage": {
+    "class": "global",
+    "bbox": [
+      -90,
+      -180,
+      90,
+      180
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://data.sensor.community/static/v2/data.1h.json",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 300
+  },
+  "format": "json.sensor-community",
+  "licence": {
+    "id": "DbCL-1.0",
+    "url": "https://opendatacommons.org/licenses/dbcl/1-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Sensor.Community (contents DbCL 1.0, database per ODbL 1.0)"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/dbcl/1-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.947Z"
+  },
+  "provenance": [
+    "sensor-community:pm-1h"
+  ]
+}

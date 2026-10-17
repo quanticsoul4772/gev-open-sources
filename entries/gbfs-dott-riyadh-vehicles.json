@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-dott-riyadh-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Riyadh — Riyadh",
+  "provider": "Dott Riyadh",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Riyadh"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.903Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-riyadh"
+  ],
+  "coverage": {
+    "bbox": [
+      24.7465,
+      46.5823,
+      24.7908,
+      46.6265
+    ],
+    "countries": [
+      "SA"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/riyadh/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/riyadh/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/riyadh/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/riyadh/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-riyadh",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

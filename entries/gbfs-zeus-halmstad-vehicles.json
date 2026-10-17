@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-zeus-halmstad-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Zeus Halmstad — Halmstad",
+  "provider": "Zeus Halmstad",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Zeus Halmstad"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.927Z"
+  },
+  "provenance": [
+    "gbfs-systems:zeus_halmstad"
+  ],
+  "coverage": {
+    "bbox": [
+      56.6352,
+      12.7287,
+      56.7002,
+      12.9139
+    ],
+    "countries": [
+      "SE"
+    ]
+  },
+  "access": {
+    "url": "https://zeus.city/api/v1/mds/gbfs/halmstad/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://zeus.city/api/v1/mds/gbfs/halmstad/vehicle_types.json",
+      "system_information": "https://zeus.city/api/v1/mds/gbfs/halmstad/system_information.json",
+      "gbfs": "https://zeus.city/api/v1/mds/gbfs/halmstad/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "zeus_halmstad",
+    "version": "2.2",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

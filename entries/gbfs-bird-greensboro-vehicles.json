@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-greensboro-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Greensboro — Greensboro, NC",
+  "provider": "Bird Greensboro",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Greensboro"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T00:58:45.870Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-greensboro"
+  ],
+  "coverage": {
+    "bbox": [
+      36.0298,
+      -79.855,
+      36.1062,
+      -79.7517
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/greensboro/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/greensboro/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/greensboro/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/greensboro/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-greensboro",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
