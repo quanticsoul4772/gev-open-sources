@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-detroit-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Detroit — Detroit, MI",
+  "provider": "Lime Detroit",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Detroit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.940Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_detroit"
+  ],
+  "coverage": {
+    "bbox": [
+      42.2894,
+      -83.2764,
+      42.4639,
+      -82.9136
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/detroit/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/detroit/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/detroit/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/detroit/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_detroit",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

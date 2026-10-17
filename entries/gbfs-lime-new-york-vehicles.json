@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-new-york-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime New York — New York, NY",
+  "provider": "Lime New York",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime New York"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.942Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_new_york"
+  ],
+  "coverage": {
+    "bbox": [
+      40.6478,
+      -74.0899,
+      40.9209,
+      -73.7323
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/new_york/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/new_york/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/new_york/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/new_york/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_new_york",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

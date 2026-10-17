@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-arlington-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Arlington — Arlington, VA",
+  "provider": "Lime Arlington",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Arlington"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.938Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_arlington"
+  ],
+  "coverage": {
+    "bbox": [
+      38.8179,
+      -77.1642,
+      38.937,
+      -77.0254
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/arlington/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/arlington/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/arlington/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/arlington/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_arlington",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

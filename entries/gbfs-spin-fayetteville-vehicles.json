@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-fayetteville-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Fayetteville — Fayetteville, AR",
+  "provider": "Spin Fayetteville",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Fayetteville"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.963Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin fayetteville"
+  ],
+  "coverage": {
+    "bbox": [
+      36.0273,
+      -94.2197,
+      36.1212,
+      -94.129
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/fayetteville/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/fayetteville/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/fayetteville/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/fayetteville/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin fayetteville",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

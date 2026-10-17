@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lyft-den-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lyft Scooters Denver — Denver, CO",
+  "provider": "Lyft Scooters Denver",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lyft Scooters Denver"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.944Z"
+  },
+  "provenance": [
+    "gbfs-systems:lyft_den"
+  ],
+  "coverage": {
+    "bbox": [
+      39.6634,
+      -105.072,
+      39.7974,
+      -104.8838
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.lyft.com/gbfs/2.3/den/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.lyft.com/gbfs/2.3/den/en/vehicle_types.json",
+      "system_information": "https://gbfs.lyft.com/gbfs/2.3/den/en/system_information.json",
+      "gbfs": "https://gbfs.lyft.com/gbfs/2.3/den/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lyft_den",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

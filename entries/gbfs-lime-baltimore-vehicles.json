@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-baltimore-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Baltimore — Baltimore, MD",
+  "provider": "Lime Baltimore",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Baltimore"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.939Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_baltimore"
+  ],
+  "coverage": {
+    "bbox": [
+      39.2131,
+      -76.7306,
+      39.3888,
+      -76.5108
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/baltimore/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_baltimore",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

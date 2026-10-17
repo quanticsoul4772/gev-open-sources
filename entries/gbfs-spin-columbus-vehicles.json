@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-columbus-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Columbus — Columbus, OH",
+  "provider": "Spin Columbus",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Columbus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.962Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin columbus"
+  ],
+  "coverage": {
+    "bbox": [
+      39.9155,
+      -83.0719,
+      40.0499,
+      -82.9397
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/columbus/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/columbus/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/columbus/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/columbus/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin columbus",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

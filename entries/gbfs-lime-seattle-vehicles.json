@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-seattle-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Seattle — Seattle, WA",
+  "provider": "Lime Seattle",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Seattle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.943Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_seattle"
+  ],
+  "coverage": {
+    "bbox": [
+      47.4984,
+      -122.4212,
+      47.7531,
+      -122.2464
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/seattle/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/seattle/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/seattle/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_seattle",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

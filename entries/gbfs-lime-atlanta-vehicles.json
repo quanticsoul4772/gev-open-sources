@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-atlanta-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Atlanta — Atlanta, GA",
+  "provider": "Lime Atlanta",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Atlanta"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.939Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_atlanta"
+  ],
+  "coverage": {
+    "bbox": [
+      33.6644,
+      -84.527,
+      33.8702,
+      -84.3
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/atlanta/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_atlanta",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

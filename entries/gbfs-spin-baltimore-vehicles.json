@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-baltimore-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Baltimore — Baltimore, MD",
+  "provider": "Spin Baltimore",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Baltimore"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.962Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin baltimore"
+  ],
+  "coverage": {
+    "bbox": [
+      39.2445,
+      -76.7252,
+      39.3843,
+      -76.52
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/baltimore/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/baltimore/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/baltimore/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/baltimore/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin baltimore",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

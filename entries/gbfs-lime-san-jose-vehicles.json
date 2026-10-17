@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-san-jose-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime San Jose — San Jose, CA",
+  "provider": "Lime San Jose",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime San Jose"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.943Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_san_jose"
+  ],
+  "coverage": {
+    "bbox": [
+      37.2213,
+      -121.9824,
+      37.4231,
+      -121.7677
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/san_jose/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_san_jose",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

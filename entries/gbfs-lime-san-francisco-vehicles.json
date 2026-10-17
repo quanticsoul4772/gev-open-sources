@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-san-francisco-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime San Francisco — San Francisco, CA",
+  "provider": "Lime San Francisco",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime San Francisco"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.943Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_san_francisco"
+  ],
+  "coverage": {
+    "bbox": [
+      37.6886,
+      -122.5246,
+      37.8269,
+      -122.3578
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_san_francisco",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

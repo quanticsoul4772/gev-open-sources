@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-newark-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Newark — Newark, NJ",
+  "provider": "Bird Newark",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Newark"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.920Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-newark"
+  ],
+  "coverage": {
+    "bbox": [
+      40.685,
+      -74.2398,
+      40.7985,
+      -74.1259
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/newark/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/newark/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/newark/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/newark/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-newark",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

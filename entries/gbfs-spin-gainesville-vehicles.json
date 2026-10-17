@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-gainesville-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Gainesville — Gainesville, FL",
+  "provider": "Spin Gainesville",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Gainesville"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.963Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin gainesville"
+  ],
+  "coverage": {
+    "bbox": [
+      29.605,
+      -82.3992,
+      29.7014,
+      -82.2823
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/gainesville/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/gainesville/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/gainesville/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/gainesville/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin gainesville",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

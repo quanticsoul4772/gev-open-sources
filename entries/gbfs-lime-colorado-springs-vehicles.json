@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-colorado-springs-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Colorado Springs — Colorado Springs, CO",
+  "provider": "Lime Colorado Springs",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Colorado Springs"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.940Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_colorado_springs"
+  ],
+  "coverage": {
+    "bbox": [
+      38.766,
+      -104.89,
+      38.9345,
+      -104.6911
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/colorado_springs/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/colorado_springs/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/colorado_springs/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/colorado_springs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_colorado_springs",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

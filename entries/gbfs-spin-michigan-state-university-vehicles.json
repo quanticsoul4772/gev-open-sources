@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-michigan-state-university-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Michigan State University — East Lansing, MI",
+  "provider": "Spin Michigan State University",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Michigan State University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.964Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin michigan_state_university"
+  ],
+  "coverage": {
+    "bbox": [
+      42.6922,
+      -84.5177,
+      42.7516,
+      -84.4443
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/michigan_state_university/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/michigan_state_university/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/michigan_state_university/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/michigan_state_university/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin michigan_state_university",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

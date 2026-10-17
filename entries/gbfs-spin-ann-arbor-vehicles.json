@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-ann-arbor-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Ann Arbor — Ann Arbor, MI",
+  "provider": "Spin Ann Arbor",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Ann Arbor"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.962Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin ann_arbor"
+  ],
+  "coverage": {
+    "bbox": [
+      42.2154,
+      -83.8028,
+      42.3308,
+      -83.6724
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/ann_arbor/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/ann_arbor/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/ann_arbor/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/ann_arbor/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin ann_arbor",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

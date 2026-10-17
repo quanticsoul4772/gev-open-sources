@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-orlando-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Orlando — Orlando, FL",
+  "provider": "Bird Orlando",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Orlando"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.921Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-orlando"
+  ],
+  "coverage": {
+    "bbox": [
+      28.3514,
+      -81.492,
+      28.5876,
+      -81.2413
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/orlando/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/orlando/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/orlando/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/orlando/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-orlando",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

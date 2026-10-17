@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bolteu-washington-dc-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bolt Technology OÜ — Washington, DC",
+  "provider": "Bolt Technology OÜ",
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Technology OÜ"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.924Z"
+  },
+  "provenance": [
+    "gbfs-systems:BoltEU_Washington DC"
+  ],
+  "coverage": {
+    "bbox": [
+      38.8081,
+      -77.1104,
+      38.9937,
+      -76.9039
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bolt.eu/gbfs/3/23/vehicle_status",
+    "related": {
+      "vehicle_types": "https://mds.bolt.eu/gbfs/3/23/vehicle_types",
+      "system_information": "https://mds.bolt.eu/gbfs/3/23/system_information",
+      "gbfs": "https://mds.bolt.eu/gbfs/3/23/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "BoltEU_Washington DC",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

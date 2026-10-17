@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-provider-null-lansing-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin East Lansing — East Lansing, MI",
+  "provider": "Spin East Lansing",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin East Lansing"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.960Z"
+  },
+  "provenance": [
+    "gbfs-systems:provider-null-lansing"
+  ],
+  "coverage": {
+    "bbox": [
+      42.6998,
+      -84.5156,
+      42.7553,
+      -84.4519
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/east_lansing/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/east_lansing/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/east_lansing/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/east_lansing/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "provider-null-lansing",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

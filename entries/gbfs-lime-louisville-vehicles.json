@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-louisville-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Louisville — Louisville, KY",
+  "provider": "Lime Louisville",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Louisville"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.941Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_louisville"
+  ],
+  "coverage": {
+    "bbox": [
+      38.1687,
+      -85.8458,
+      38.2927,
+      -85.6712
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/louisville/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/louisville/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/louisville/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/louisville/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_louisville",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

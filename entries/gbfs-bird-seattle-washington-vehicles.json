@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-bird-seattle-washington-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bird Seattle Washington — Seattle, WA",
+  "provider": "Bird Seattle Washington",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bird Seattle Washington"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-17T06:40:05.922Z"
+  },
+  "provenance": [
+    "gbfs-systems:bird-seattle-washington"
+  ],
+  "coverage": {
+    "bbox": [
+      47.5955,
+      -122.3782,
+      47.6456,
+      -122.2818
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/seattle-washington/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/seattle-washington/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/seattle-washington/system_information.json",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/seattle-washington/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "bird-seattle-washington",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
