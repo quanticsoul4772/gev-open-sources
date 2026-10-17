@@ -20,6 +20,7 @@ import { USGS_ENTRIES } from './usgs.js';
 import { FIRMS_ENTRIES } from './firms.js';
 import { GDACS_ENTRIES } from './gdacs.js';
 import { PERIMETER_ENTRIES } from './perimeters.js';
+import { AIRQUALITY_ENTRIES } from './airquality.js';
 import { isStaticEntry } from './static.js';
 
 /**
@@ -83,7 +84,7 @@ export function withAsciiUrls(entry) {
 /**
  * Entries whose URL may now redirect elsewhere: new candidates, and existing
  * entries whose last probe failed. Hand-written entries (FIRMS, perimeters,
- * USGS, GDACS) have fixed URLs: a redirect away (a login, a maintenance page)
+ * USGS, GDACS, Sensor.Community) have fixed URLs: a redirect away (a login, a maintenance page)
  * must fail the probe, not be written into the entry.
  * @param {object[]} merged new candidates
  * @param {Map<string, object>} existing
@@ -165,6 +166,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
       ...GDACS_ENTRIES,
       ...FIRMS_ENTRIES,
       ...PERIMETER_ENTRIES,
+      ...AIRQUALITY_ENTRIES,
       ...cameras,
       ...mdb.entries,
       ...gbfs.filter((e) => e.domain !== VEHICLES),
@@ -216,7 +218,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
-      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, firms ${FIRMS_ENTRIES.length}, perimeters ${PERIMETER_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, firms ${FIRMS_ENTRIES.length}, perimeters ${PERIMETER_ENTRIES.length}, air quality ${AIRQUALITY_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

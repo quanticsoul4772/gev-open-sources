@@ -393,6 +393,9 @@ test('freshness: a decoder may set its own stale limit (FIRMS 6 h); others keep 
   assert.equal(firms(3), 'ok');
   assert.equal(firms(7), 'stale');
   assert.equal(classify({ status: 200, decoded: { records: 5, newest: now - 3 * 3600 }, now }).result, 'stale');
+  const hourly = (ageH) => classify({ status: 200, decoded: { records: 5, newest: now - ageH * 3600, staleAfterS: 3 * 3600 }, now }).result;
+  assert.equal(hourly(1.5), 'ok', 'an hourly file can be an hour behind');
+  assert.equal(hourly(4), 'stale');
 });
 
 test('probe limits: FIRMS files may exceed 8 MiB; other formats may not', async () => {
@@ -407,12 +410,26 @@ test('probe limits: FIRMS files may exceed 8 MiB; other formats may not', async 
   assert.equal((await probeEntry(gtfs, { now, fetchImpl })).result, 'network', 'over the 8 MiB cap');
 });
 
+test('probe limits: the Sensor.Community 1-hour file (8.7 MB) fits its own cap', async () => {
+  const { probeEntry } = await import('../src/probe.js');
+  const { AIRQUALITY_ENTRIES } = await import('../src/harvest/airquality.js');
+  const record = JSON.stringify({
+    timestamp: '2026-10-16 10:59:00',
+    location: { latitude: '52.5', longitude: '13.4', indoor: 0 },
+    sensordatavalues: [{ value_type: 'P1', value: '12.0' }, { value_type: 'P2', value: '7.0' }],
+  });
+  const big = `[${Array(Math.ceil((9 * 2 ** 20) / record.length)).fill(record).join(',')}]`;
+  const now = Date.parse('2026-10-16T11:00:00Z') / 1000;
+  assert.equal((await probeEntry(AIRQUALITY_ENTRIES[0], { now, fetchImpl: async () => new Response(big) })).result, 'ok');
+});
+
 test('probe rounds: FIRMS entries get all three rounds inside the budget', async () => {
   const { probeRounds } = await import('../src/probe.js');
   const { FIRMS_ENTRIES } = await import('../src/harvest/firms.js');
   let t = 0;
   const health = {};
-  const { rounds } = await probeRounds(FIRMS_ENTRIES, health, {
+  const { AIRQUALITY_ENTRIES } = await import('../src/harvest/airquality.js');
+  const { rounds } = await probeRounds([...FIRMS_ENTRIES, ...AIRQUALITY_ENTRIES], health, {
     probe: async (e, at) => ({ at, result: 'ok', records: 100 }),
     clock: () => t,
     sleep: async (ms) => {
@@ -420,7 +437,7 @@ test('probe rounds: FIRMS entries get all three rounds inside the budget', async
     },
   });
   assert.equal(rounds, 3);
-  for (const e of FIRMS_ENTRIES) assert.equal(health[e.id].status, 'verified', e.id);
+  for (const e of [...FIRMS_ENTRIES, ...AIRQUALITY_ENTRIES]) assert.equal(health[e.id].status, 'verified', e.id);
 });
 
 test('redirect re-check: failing entries are re-checked, FIRMS entries never', async () => {
@@ -451,6 +468,7 @@ test('static entries: never tombstoned, never redirect-rewritten; catalogue entr
   assert.equal(health[bc.id].status, 'dead', 'stays, dead and unpublished, and can recover');
   assert.equal(health.gone, undefined, 'health of a removed entry is dropped');
   assert.deepEqual(redirectChecks(STATIC_ENTRIES, new Map([[bc.id, bc], [feed.id, feed]]), { [bc.id]: dead(), [feed.id]: dead() }).map((e) => e.id), ['feed']);
+  assert.ok(STATIC_ENTRIES.some((e) => e.id === 'sensor-community-pm-1h'), 'Sensor.Community is hand-written too');
 });
 
 test('a new perimeter entry idle from its first probe stays a candidate, never failing, until its first fire', () => {
@@ -474,10 +492,12 @@ test('perimeters out of season: idle for months is degraded, never dead; the fir
 test('build: a hazard entry keeps its own class; one without a class is global', async () => {
   const { PERIMETER_ENTRIES } = await import('../src/harvest/perimeters.js');
   const { USGS_ENTRIES } = await import('../src/harvest/usgs.js');
-  const d = buildDirectory(new Map([PERIMETER_ENTRIES[0], USGS_ENTRIES[0]].map((e) => [e.id, e])), {}, 100);
+  const { AIRQUALITY_ENTRIES } = await import('../src/harvest/airquality.js');
+  const d = buildDirectory(new Map([PERIMETER_ENTRIES[0], USGS_ENTRIES[0], AIRQUALITY_ENTRIES[0]].map((e) => [e.id, e])), {}, 100);
   const cls = Object.fromEntries(d.entries.map((e) => [e.id, e.coverage.class]));
   assert.equal(cls[PERIMETER_ENTRIES[0].id], 'regional');
   assert.equal(cls[USGS_ENTRIES[0].id], 'global');
+  assert.equal(cls[AIRQUALITY_ENTRIES[0].id], 'global', 'a non-hazard entry states its class');
 });
 
 test('every format has a decoder, and the domain and format lists match the published schema', async () => {

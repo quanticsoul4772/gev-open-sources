@@ -133,6 +133,42 @@ export const ADAPTERS = Object.freeze({
     };
   },
   /**
+   * Sensor.Community `data.1h.json`: one record per sensor, its mean over the
+   * last hour. Counts outdoor sensors with a plausible PM2.5 (P2) or PM10 (P1)
+   * value; other sensor types share the file. `timestamp` is the sensor's
+   * last sample, "YYYY-MM-DD HH:MM:SS" in UTC with no zone, so it is parsed
+   * as UTC explicitly. An hourly file can be an hour behind: stale after 3 h.
+   */
+  'json.sensor-community'(body, bbox) {
+    const doc = JSON.parse(new TextDecoder().decode(body));
+    if (!Array.isArray(doc)) throw new Error('not a Sensor.Community array');
+    const pm = (values, type) => {
+      const v = Number(values.find((x) => x?.value_type === type)?.value);
+      return Number.isFinite(v) && v >= 0 && v < 999;
+    };
+    const points = [];
+    let newestMs = null;
+    for (const record of doc) {
+      if (Number(record?.location?.indoor) !== 0) continue;
+      const lat = Number(record.location.latitude);
+      const lon = Number(record.location.longitude);
+      if (!(Math.abs(lat) <= 90 && Math.abs(lon) <= 180)) continue;
+      const values = Array.isArray(record.sensordatavalues) ? record.sensordatavalues : [];
+      if (!pm(values, 'P1') && !pm(values, 'P2')) continue;
+      points.push([lat, lon]);
+      if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(record.timestamp)) continue;
+      const ms = Date.parse(`${record.timestamp.replace(' ', 'T')}Z`);
+      if (Number.isFinite(ms) && (newestMs === null || ms > newestMs)) newestMs = ms;
+    }
+    if (!points.length) throw new Error('no PM readings');
+    return {
+      records: points.length,
+      newest: newestMs === null ? null : Math.floor(newestMs / 1000),
+      inCoverage: share(points, bbox),
+      staleAfterS: 3 * 3600,
+    };
+  },
+  /**
    * Fire perimeters (GeoJSON from an ArcGIS query), read through the entry's
    * `mapping`. No freshness time: perimeters are mapped irregularly and can be
    * months old out of season, so an empty feed is idle, not stale. A cut-off

@@ -1,3 +1,4 @@
+import { AIRQUALITY_ENTRIES } from './airquality.js';
 import { FIRMS_ENTRIES } from './firms.js';
 import { GDACS_ENTRIES } from './gdacs.js';
 import { PERIMETER_ENTRIES } from './perimeters.js';
@@ -9,7 +10,7 @@ import { USGS_ENTRIES } from './usgs.js';
  * leaves them dead (unpublished) instead of removing them for good, so they
  * come back by themselves when the source answers again.
  */
-export const STATIC_ENTRIES = [...USGS_ENTRIES, ...GDACS_ENTRIES, ...FIRMS_ENTRIES, ...PERIMETER_ENTRIES];
+export const STATIC_ENTRIES = [...USGS_ENTRIES, ...GDACS_ENTRIES, ...FIRMS_ENTRIES, ...PERIMETER_ENTRIES, ...AIRQUALITY_ENTRIES];
 
 const STATIC_PROVENANCES = new Set(STATIC_ENTRIES.flatMap((e) => e.provenance));
 
