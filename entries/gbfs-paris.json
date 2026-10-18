@@ -32,22 +32,30 @@
     "version": null
   },
   "licence": {
-    "id": null,
-    "url": null,
-    "display": false,
-    "commercial": null,
-    "attribution": "Vélib' Metropole"
+    "id": "etalab-2.0",
+    "url": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+    "display": true,
+    "commercial": true,
+    "attribution": "Vélib’ Métropole"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "no licence published"
+        "field": "licence",
+        "quote": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf"
+      },
+      {
+        "field": "declared_at",
+        "quote": "https://www.velib-metropole.fr/donnees-open-data-gbfs-du-service-velib-metropole"
+      },
+      {
+        "field": "declaration",
+        "quote": "Vélib’ Métropole a choisi de mettre à disposition ses données sous « Licence Ouverte / Open License »."
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:58.190Z"
+    "at": "2026-10-18T15:32:39.834Z"
   },
   "provenance": [
     "gbfs-systems:Paris"
