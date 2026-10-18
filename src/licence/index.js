@@ -1,7 +1,8 @@
 /**
  * Licence job — no humans. Per entry:
  *  tier 1  known licence (URL or SPDX id)          → decided
- *  GBFS    system_information licence, else the catalogue's (if known);
+ *  GBFS    system_information licence, else the operator's declared one
+ *          (DECLARED_GBFS_LICENCES), else the catalogue's (if known);
  *          none on v3.x → CC0 per the GBFS spec
  *  tier 2  operator terms page, Claude, mechanical acceptance (terms.js)
  *  else    referral-only (display false)
@@ -11,6 +12,7 @@ import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { readEntries, readState, writeEntry, writeState } from '../store.js';
 import { fetchCapped } from '../util/http.js';
+import { normalizeUrl } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 import { knownLicence } from './known.js';
 import {
@@ -122,6 +124,36 @@ export function gbfsText(value) {
   return pick ? pick.text.trim() : null;
 }
 
+/**
+ * Licences GBFS operators declare on their own open-data page but not in
+ * system_information, by the system's discovery URL (normalizeUrl). Each
+ * page names the feed URLs it covers and its licence verbatim; the licence
+ * must be a known one. Pinned, not re-read: these pages may refuse scripts
+ * (velib-metropole.fr answers 403 to curl).
+ */
+export const DECLARED_GBFS_LICENCES = Object.freeze({
+  'https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/gbfs.json': {
+    licence: 'https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf',
+    page: 'https://www.velib-metropole.fr/donnees-open-data-gbfs-du-service-velib-metropole',
+    quote: 'Vélib’ Métropole a choisi de mettre à disposition ses données sous « Licence Ouverte / Open License ».',
+    attribution: 'Vélib’ Métropole',
+  },
+});
+
+/** The operator's declared licence for a GBFS entry, with its known licence, or null. */
+function declaredGbfsLicence(entry) {
+  const discovery = entry.access.related?.gbfs;
+  const declared = discovery ? DECLARED_GBFS_LICENCES[normalizeUrl(discovery)] : null;
+  const known = declared ? knownLicence(declared.licence) : null;
+  return known ? { ...declared, known } : null;
+}
+
+function fromDeclared(entry, declared, attribution) {
+  const decided = fromKnown(entry, declared.known, declared.licence, attribution || declared.attribution);
+  decided.licence_decision.evidence.push({ field: 'declared_at', quote: declared.page }, { field: 'declaration', quote: declared.quote });
+  return decided;
+}
+
 /** GBFS: licence fields from system_information. */
 /** Whether an entry is a GBFS feed (stations or vehicles), decided from system_information. */
 const isGbfs = (e) => e.format.startsWith('gbfs.');
@@ -176,16 +208,22 @@ export async function gbfsDecision(entry, fetchImpl, memo = new Map()) {
   // when the system publishes none itself, and only if it is a known licence.
   const catalogue = entry.gbfs?.catalogue_licence || null;
   const catalogueKnown = knownLicence(catalogue);
-  if (!info)
+  // The operator's own declaration outside the feed (DECLARED_GBFS_LICENCES) comes before a catalogue's.
+  const declared = declaredGbfsLicence(entry);
+  if (!info) {
+    if (declared) return { decided: fromDeclared(entry, declared, null) };
     return catalogueKnown
       ? { decided: fromKnown(entry, catalogueKnown, catalogue, entry.provider) }
       : { decided: undecided(entry, 'system_information unavailable') };
-  const attribution = gbfsText(info.attribution_organization_name) || gbfsText(info.operator) || entry.provider;
+  }
+  const named = gbfsText(info.attribution_organization_name) || gbfsText(info.operator);
+  const attribution = named || entry.provider;
   const id = info.license_id || null;
   const licenceUrl = isHttp(info.license_url) ? info.license_url : null;
   const known = knownLicence(id) || knownLicence(licenceUrl);
   if (known) return { decided: fromKnown(entry, known, licenceUrl || id, attribution) };
   if (licenceUrl) return { termsUrl: licenceUrl, attribution };
+  if (declared) return { decided: fromDeclared(entry, declared, named) };
   if (catalogueKnown) return { decided: fromKnown(entry, catalogueKnown, catalogue, attribution) };
   if (String(entry.gbfs?.version || '').startsWith('3'))
     return {
