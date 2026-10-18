@@ -168,3 +168,35 @@ test('licence keep: transient failures keep the last decision for at most 7 days
   const moved = async () => new Response(null, { status: 302, headers: { location: 'https://login.example/' } });
   assert.deepEqual(await declarationCheck('https://a.example/rss', 'x', moved), { present: false, why: 'redirect to unlisted host login.example' });
 });
+
+test('GBFS: an operator-declared licence decides a system that publishes none (Vélib’ Métropole, Licence Ouverte 2.0)', async () => {
+  const fs = await import('node:fs');
+  const { DECLARED_GBFS_LICENCES, gbfsDecision } = await import('../src/licence/index.js');
+  for (const [discovery, d] of Object.entries(DECLARED_GBFS_LICENCES)) {
+    assert.ok(knownLicence(d.licence)?.display, `${discovery}: declared licence is a known displayable one`);
+    assert.match(d.page, /^https:\/\//);
+    assert.ok(d.quote.length > 20 && d.attribution);
+  }
+  const paris = JSON.parse(fs.readFileSync(new URL('../entries/gbfs-paris.json', import.meta.url), 'utf8'));
+  // Vélib's live system_information: no licence, no operator.
+  const info = async () => new Response(JSON.stringify({ data: { system_id: 'Paris', name: 'Paris', url: '', timezone: 'Europe/Paris', language: 'en' } }));
+  const { decided } = await gbfsDecision(paris, info);
+  assert.deepEqual(decided.licence, {
+    id: 'etalab-2.0',
+    url: 'https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf',
+    display: true,
+    commercial: true,
+    attribution: 'Vélib’ Métropole',
+  });
+  assert.equal(decided.licence_decision.by, 'known-licence');
+  assert.deepEqual(decided.licence_decision.evidence.map((e) => e.field), ['licence', 'declared_at', 'declaration']);
+  assert.match(decided.licence_decision.evidence[2].quote, /Licence Ouverte \/ Open License/);
+  // Unreadable system_information: the declaration still holds.
+  assert.equal((await gbfsDecision(paris, async () => new Response('x', { status: 404 }))).decided.licence.id, 'etalab-2.0');
+  // The system's own licence wins over the declaration.
+  const own = async () => new Response(JSON.stringify({ data: { license_id: 'ODbL-1.0' } }));
+  assert.equal((await gbfsDecision(paris, own)).decided.licence.id, 'ODbL-1.0');
+  // Only the declared system: another feed on the same host stays undecided.
+  const other = { ...paris, access: { ...paris.access, related: { ...paris.access.related, gbfs: 'https://velib-metropole-opendata.smovengo.cloud/opendata/Other/gbfs.json' } } };
+  assert.equal((await gbfsDecision(other, info)).decided.licence.display, false);
+});

@@ -111,8 +111,12 @@ hours a GitHub Actions run:
 2. **Decides licences** with no human step: a known open licence
    (`src/licence/known-licences.json`). A transit feed with no licence of its
    own takes the one Transitland Atlas records for it, or (borrowed, known
-   licences only) for its own static feed. GBFS 3.x systems with no licence are
-   CC0 per the spec; operator terms pages are read by Claude and accepted only
+   licences only) for its own static feed. A GBFS system whose feed names no
+   licence takes the known licence its operator declares on its own open-data
+   page for those feed URLs (`DECLARED_GBFS_LICENCES` in
+   `src/licence/index.js`, with the page and its quote as evidence; pinned,
+   not re-read): Vélib' Métropole (`gbfs-paris`), Licence Ouverte 2.0.
+   GBFS 3.x systems with no licence are CC0 per the spec; operator terms pages are read by Claude and accepted only
    when every quote is verbatim in the page, two runs agree, and every
    obligation is one an app meets on its own. Everything else is
    referral-only (`licence.display: false`).
