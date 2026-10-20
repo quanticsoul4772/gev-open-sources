@@ -32,11 +32,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 403"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-20T06:47:18.165Z"
+    "at": "2026-10-20T18:35:02.947Z"
   },
   "provenance": [
     "transitland-atlas:f-s-lineeregionali~rt"

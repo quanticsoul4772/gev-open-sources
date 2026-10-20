@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-westchestercountybee-linesystem-rt",
+  "domain": "transit.vehicles",
+  "name": "westchestergov.com",
+  "provider": "westchestergov.com",
+  "coverage": {
+    "bbox": [
+      40.8428,
+      -73.9224,
+      41.3116,
+      -73.702
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://westchester.gmv.com/gtfsrtapi/api/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://planning.westchestercountyny.gov/transportation-planning/gfts-developers-transit-api/transit-api-service-terms-of-service",
+    "display": false,
+    "commercial": null,
+    "attribution": "westchestergov.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T18:35:02.948Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-westchestercountybee~linesystem~rt"
+  ]
+}

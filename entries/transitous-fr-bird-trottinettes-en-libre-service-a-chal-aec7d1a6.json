@@ -1,0 +1,60 @@
+{
+  "id": "transitous-fr-bird-trottinettes-en-libre-service-a-chal-aec7d1a6",
+  "domain": "sharedmobility.vehicles",
+  "name": "bird-trottinettes-en-libre-service-a-chalons-en-champagne-gbfs",
+  "provider": "bird-trottinettes-en-libre-service-a-chalons-en-champagne-gbfs",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "bird-trottinettes-en-libre-service-a-chalons-en-champagne-gbfs"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T18:35:02.938Z"
+  },
+  "provenance": [
+    "transitous:fr/bird-trottinettes-en-libre-service-a-chalons-en-champagne-gbfs"
+  ],
+  "coverage": {
+    "bbox": [
+      48.9207,
+      4.2956,
+      48.9982,
+      4.4108
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/provider/bird/chalonsenchampagne/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/provider/bird/chalonsenchampagne/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/provider/bird/chalonsenchampagne/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/d6702f05-1623-49ab-b9ce-0ae444b45c53"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/bird-trottinettes-en-libre-service-a-chalons-en-champagne-gbfs"
+  }
+}

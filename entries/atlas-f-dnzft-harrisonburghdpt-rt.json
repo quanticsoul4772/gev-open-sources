@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-dnzft-harrisonburghdpt-rt",
+  "domain": "transit.vehicles",
+  "name": "Harrisonburg HDPT",
+  "provider": "Harrisonburg HDPT",
+  "coverage": {
+    "bbox": [
+      38.4285,
+      -78.8827,
+      38.4685,
+      -78.8427
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/harrisonburg/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Harrisonburg HDPT"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T18:35:02.943Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dnzft-harrisonburghdpt~rt"
+  ]
+}

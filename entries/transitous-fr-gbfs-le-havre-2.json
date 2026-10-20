@@ -33,22 +33,22 @@
     "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
   },
   "licence": {
-    "id": null,
-    "url": "https://www.li.me/gbfs-terms",
-    "display": false,
-    "commercial": null,
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
     "attribution": "gbfs-le-havre-2"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "HTTP 403"
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T18:34:54.514Z"
+    "at": "2026-10-20T18:35:02.939Z"
   },
   "provenance": [
     "transitous:fr/gbfs-le-havre-2"
