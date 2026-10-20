@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3578",
+  "domain": "transit.vehicles",
+  "name": "START Romagna - BusOne",
+  "provider": "START Romagna - BusOne",
+  "coverage": {
+    "bbox": [
+      43.6693,
+      11.53163,
+      44.61468,
+      12.75989
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/start/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/start/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "START Romagna - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.176Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3578"
+  ]
+}

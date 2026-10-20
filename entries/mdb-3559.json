@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3559",
+  "domain": "transit.vehicles",
+  "name": "SETA Reggio Emilia - BusOne",
+  "provider": "SETA Reggio Emilia - BusOne",
+  "coverage": {
+    "bbox": [
+      44.247427,
+      10.174636,
+      44.992527,
+      10.915875
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/seta-re/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/seta-re/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "SETA Reggio Emilia - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.175Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3559"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3568",
+  "domain": "transit.vehicles",
+  "name": "TPL FVG - BusOne",
+  "provider": "TPL FVG - BusOne",
+  "coverage": {
+    "bbox": [
+      45.505375,
+      12.209625,
+      46.586703,
+      13.908667
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/TPLFVG/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/TPLFVG/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "TPL FVG - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.176Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3568"
+  ]
+}

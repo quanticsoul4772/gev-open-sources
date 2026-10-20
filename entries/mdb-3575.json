@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3575",
+  "domain": "transit.vehicles",
+  "name": "STA - BusOne",
+  "provider": "STA - BusOne",
+  "coverage": {
+    "bbox": [
+      39.35948761,
+      9.18599712,
+      48.29082489,
+      18.16581769
+    ],
+    "countries": [
+      "AT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/sta/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/sta/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "STA - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.176Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3575"
+  ]
+}

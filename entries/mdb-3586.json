@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3586",
+  "domain": "transit.vehicles",
+  "name": "Busitalia Veneto - BusOne",
+  "provider": "Busitalia Veneto - BusOne",
+  "coverage": {
+    "bbox": [
+      44.8236541748047,
+      11.1329374313354,
+      45.7781524658203,
+      12.671215057373
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/biv/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/biv/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "Busitalia Veneto - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.177Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3586"
+  ]
+}

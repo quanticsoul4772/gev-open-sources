@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "terms page unreachable"
+        "quote": "HTTP 403"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T19:05:30.474Z"
+    "at": "2026-10-20T06:47:18.181Z"
   },
   "provenance": [
     "mobilitydatabase:tld-3391-vp",

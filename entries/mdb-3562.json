@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3562",
+  "domain": "transit.vehicles",
+  "name": "SETA Piacenza - BusOne",
+  "provider": "SETA Piacenza - BusOne",
+  "coverage": {
+    "bbox": [
+      44.52584,
+      9.305587,
+      45.14256,
+      10.065493
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/seta-pc/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/seta-pc/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "SETA Piacenza - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.175Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3562"
+  ]
+}

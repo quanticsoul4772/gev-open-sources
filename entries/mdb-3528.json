@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3528",
+  "domain": "transit.vehicles",
+  "name": "University of Minnesota",
+  "provider": "University of Minnesota",
+  "coverage": {
+    "bbox": [
+      44.707082,
+      -93.73042,
+      45.32974,
+      -92.805903
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.peaktransit.com/gtfsrt/88/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "University of Minnesota"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.174Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3528"
+  ]
+}

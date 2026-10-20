@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3565",
+  "domain": "transit.vehicles",
+  "name": "Autolinee Toscane - BusOne",
+  "provider": "Autolinee Toscane - BusOne",
+  "coverage": {
+    "bbox": [
+      42.358735,
+      9.756877,
+      44.471482,
+      12.374717
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.busone.app/toscana/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://proxy.busone.app/toscana/readme",
+    "display": false,
+    "commercial": null,
+    "attribution": "Autolinee Toscane - BusOne"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "runs disagree on blocking obligations"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.176Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3565"
+  ]
+}

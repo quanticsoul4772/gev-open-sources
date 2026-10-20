@@ -1,0 +1,60 @@
+{
+  "id": "transitous-fr-bird-trottinettes-en-libre-service-a-ajac-c1399e3c",
+  "domain": "sharedmobility.vehicles",
+  "name": "bird-trottinettes-en-libre-service-a-ajaccio-gbfs",
+  "provider": "bird-trottinettes-en-libre-service-a-ajaccio-gbfs",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "bird-trottinettes-en-libre-service-a-ajaccio-gbfs"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-20T06:47:18.159Z"
+  },
+  "provenance": [
+    "transitous:fr/bird-trottinettes-en-libre-service-a-ajaccio-gbfs"
+  ],
+  "coverage": {
+    "bbox": [
+      41.8867,
+      8.6189,
+      41.9652,
+      8.7915
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/provider/bird/ajaccio/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/provider/bird/ajaccio/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/provider/bird/ajaccio/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/eb9956df-76f1-4011-81c0-221e41dfb9dc"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/bird-trottinettes-en-libre-service-a-ajaccio-gbfs"
+  }
+}
