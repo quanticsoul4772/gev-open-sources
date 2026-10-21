@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-kanawha-valley-regional-transportation-authority-rt",
+  "domain": "transit.vehicles",
+  "name": "Kanawha Valley Regional Transportation Authority",
+  "provider": "Kanawha Valley Regional Transportation Authority",
+  "coverage": {
+    "bbox": [
+      38.1755,
+      -81.8312,
+      38.5099,
+      -81.4733
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://gtfsrt.krt.cadavl.com/ProfilGtfsRt2_0RSProducer-KRT/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Kanawha Valley Regional Transportation Authority"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.296Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-kanawha~valley~regional~transportation~authority~rt"
+  ]
+}

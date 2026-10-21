@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-szekesfehervar-https-jbb-ghsq-de-gt-c070670a",
+  "domain": "transit.vehicles",
+  "name": "volan-szekesfehervar",
+  "provider": "volan-szekesfehervar",
+  "coverage": {
+    "bbox": [
+      47.1484,
+      18.352,
+      47.229,
+      18.4683
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-14827/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-szekesfehervar"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.321Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-szekesfehervar"
+  ]
+}

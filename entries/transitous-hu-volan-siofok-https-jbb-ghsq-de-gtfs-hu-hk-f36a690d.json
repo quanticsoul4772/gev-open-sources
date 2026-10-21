@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-siofok-https-jbb-ghsq-de-gtfs-hu-hk-f36a690d",
+  "domain": "transit.vehicles",
+  "name": "volan-siofok",
+  "provider": "volan-siofok",
+  "coverage": {
+    "bbox": [
+      46.8583,
+      18.0376,
+      46.9285,
+      18.0931
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-17631/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-siofok"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.320Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-siofok"
+  ]
+}

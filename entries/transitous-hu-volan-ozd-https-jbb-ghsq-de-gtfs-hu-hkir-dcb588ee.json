@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-ozd-https-jbb-ghsq-de-gtfs-hu-hkir-dcb588ee",
+  "domain": "transit.vehicles",
+  "name": "volan-ozd",
+  "provider": "volan-ozd",
+  "coverage": {
+    "bbox": [
+      48.199,
+      20.2695,
+      48.239,
+      20.3095
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-14492/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-ozd"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.320Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-ozd"
+  ]
+}

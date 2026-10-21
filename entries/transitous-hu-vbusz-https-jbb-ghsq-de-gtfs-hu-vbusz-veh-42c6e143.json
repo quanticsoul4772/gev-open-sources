@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-vbusz-https-jbb-ghsq-de-gtfs-hu-vbusz-veh-42c6e143",
+  "domain": "transit.vehicles",
+  "name": "vbusz",
+  "provider": "vbusz",
+  "coverage": {
+    "bbox": [
+      47.064,
+      17.8641,
+      47.1383,
+      17.9468
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/VBUSZ/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "vbusz"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.317Z"
+  },
+  "provenance": [
+    "transitous:hu/vbusz"
+  ]
+}

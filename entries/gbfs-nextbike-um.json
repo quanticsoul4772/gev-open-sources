@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-nextbike-um",
+  "domain": "bikeshare.stations",
+  "name": "MV-Rad — Mecklenburg-Vorpommern",
+  "provider": "MV-Rad",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "UsedomRad GmbH, Hauptstraße 8, 17459 Ückeritz"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.267Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_um"
+  ],
+  "coverage": {
+    "bbox": [
+      53.1844,
+      11.4386,
+      54.4583,
+      14.2704
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_um/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_um/en/station_information.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_um/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_um/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "nextbike_um",
+    "version": "2.3"
+  }
+}

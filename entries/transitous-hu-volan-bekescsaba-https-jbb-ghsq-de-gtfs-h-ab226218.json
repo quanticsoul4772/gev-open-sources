@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-bekescsaba-https-jbb-ghsq-de-gtfs-h-ab226218",
+  "domain": "transit.vehicles",
+  "name": "volan-bekescsaba",
+  "provider": "volan-bekescsaba",
+  "coverage": {
+    "bbox": [
+      46.6502,
+      21.0634,
+      46.7017,
+      21.1185
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-15200/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-bekescsaba"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.318Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-bekescsaba"
+  ]
+}

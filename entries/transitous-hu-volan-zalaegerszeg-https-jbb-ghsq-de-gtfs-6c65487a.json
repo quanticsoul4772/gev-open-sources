@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-zalaegerszeg-https-jbb-ghsq-de-gtfs-6c65487a",
+  "domain": "transit.vehicles",
+  "name": "volan-zalaegerszeg",
+  "provider": "volan-zalaegerszeg",
+  "coverage": {
+    "bbox": [
+      46.8225,
+      16.786,
+      46.8822,
+      16.874
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-32054/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-zalaegerszeg"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.321Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-zalaegerszeg"
+  ]
+}

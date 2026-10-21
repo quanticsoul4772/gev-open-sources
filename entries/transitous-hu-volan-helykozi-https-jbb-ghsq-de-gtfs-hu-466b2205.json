@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-helykozi-https-jbb-ghsq-de-gtfs-hu-466b2205",
+  "domain": "transit.vehicles",
+  "name": "volan-helykozi",
+  "provider": "volan-helykozi",
+  "coverage": {
+    "bbox": [
+      45.9923,
+      16.5596,
+      48.4007,
+      22.174
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-helykozi"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.319Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-helykozi"
+  ]
+}

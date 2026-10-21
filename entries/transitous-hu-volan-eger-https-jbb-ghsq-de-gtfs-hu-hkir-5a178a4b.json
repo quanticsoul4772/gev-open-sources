@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-eger-https-jbb-ghsq-de-gtfs-hu-hkir-5a178a4b",
+  "domain": "transit.vehicles",
+  "name": "volan-eger",
+  "provider": "volan-eger",
+  "coverage": {
+    "bbox": [
+      47.8602,
+      20.353,
+      47.93,
+      20.4018
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-20491/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-eger"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.318Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-eger"
+  ]
+}

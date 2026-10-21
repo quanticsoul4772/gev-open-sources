@@ -1,0 +1,46 @@
+{
+  "id": "transitous-lv-pieturas",
+  "domain": "transit.vehicles",
+  "name": "pieturas",
+  "provider": "pieturas",
+  "coverage": {
+    "bbox": [
+      54.5839,
+      21.0079,
+      59.4871,
+      27.3722
+    ],
+    "countries": [
+      "LV"
+    ]
+  },
+  "access": {
+    "url": "https://gsvalbe.id.lv/pieturas/dati/gtfs-rt.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": "https://spdx.org/licenses/CC0-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "pieturas"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.322Z"
+  },
+  "provenance": [
+    "transitous:lv/pieturas"
+  ]
+}

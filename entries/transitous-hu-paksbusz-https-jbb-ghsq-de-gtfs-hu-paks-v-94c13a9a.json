@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-paksbusz-https-jbb-ghsq-de-gtfs-hu-paks-v-94c13a9a",
+  "domain": "transit.vehicles",
+  "name": "paksbusz",
+  "provider": "paksbusz",
+  "coverage": {
+    "bbox": [
+      46.5985,
+      18.8179,
+      46.6513,
+      18.8938
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/paks/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "paksbusz"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.317Z"
+  },
+  "provenance": [
+    "transitous:hu/paksbusz"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-sopron-https-jbb-ghsq-de-gtfs-hu-hk-49e87afa",
+  "domain": "transit.vehicles",
+  "name": "volan-sopron",
+  "provider": "volan-sopron",
+  "coverage": {
+    "bbox": [
+      47.6465,
+      16.545,
+      47.7097,
+      16.6117
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-08518/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-sopron"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.320Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-sopron"
+  ]
+}

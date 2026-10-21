@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-gyor-https-jbb-ghsq-de-gtfs-hu-hkir-072352a3",
+  "domain": "transit.vehicles",
+  "name": "volan-gyor",
+  "provider": "volan-gyor",
+  "coverage": {
+    "bbox": [
+      47.6118,
+      17.5551,
+      47.7382,
+      17.743
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-25584/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-gyor"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.319Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-gyor"
+  ]
+}

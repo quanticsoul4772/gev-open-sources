@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-esztergom-https-jbb-ghsq-de-gtfs-hu-f4644225",
+  "domain": "transit.vehicles",
+  "name": "volan-esztergom",
+  "provider": "volan-esztergom",
+  "coverage": {
+    "bbox": [
+      47.759,
+      18.7236,
+      47.8005,
+      18.7687
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-25131/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-esztergom"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.318Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-esztergom"
+  ]
+}

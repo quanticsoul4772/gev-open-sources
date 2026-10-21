@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-mvk-https-jbb-ghsq-de-gtfs-hu-mvkzrt-vehi-3d082c5a",
+  "domain": "transit.vehicles",
+  "name": "mvk",
+  "provider": "mvk",
+  "coverage": {
+    "bbox": [
+      48.047,
+      20.6854,
+      48.1324,
+      20.8337
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/mvkzrt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "mvk"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.317Z"
+  },
+  "provenance": [
+    "transitous:hu/mvk"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-dunaujvaros-https-jbb-ghsq-de-gtfs-5a98cb14",
+  "domain": "transit.vehicles",
+  "name": "volan-dunaujvaros",
+  "provider": "volan-dunaujvaros",
+  "coverage": {
+    "bbox": [
+      46.9404,
+      18.8983,
+      46.9804,
+      18.9383
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-03115/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-dunaujvaros"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.318Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-dunaujvaros"
+  ]
+}

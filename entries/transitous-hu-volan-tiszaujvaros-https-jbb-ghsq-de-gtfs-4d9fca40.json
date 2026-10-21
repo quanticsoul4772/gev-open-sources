@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-tiszaujvaros-https-jbb-ghsq-de-gtfs-4d9fca40",
+  "domain": "transit.vehicles",
+  "name": "volan-tiszaujvaros",
+  "provider": "volan-tiszaujvaros",
+  "coverage": {
+    "bbox": [
+      47.9121,
+      21.0465,
+      47.9521,
+      21.0865
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-28352/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-tiszaujvaros"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.321Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-tiszaujvaros"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-gysev-https-jbb-ghsq-de-gtfs-hu-1-134-veh-af538e13",
+  "domain": "transit.vehicles",
+  "name": "gysev",
+  "provider": "gysev",
+  "coverage": {
+    "bbox": [
+      46.8318,
+      16.537,
+      47.6828,
+      18.8414
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/1_134/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "gysev"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.316Z"
+  },
+  "provenance": [
+    "transitous:hu/gysev"
+  ]
+}

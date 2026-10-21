@@ -1,0 +1,46 @@
+{
+  "id": "transitous-us-ca-smrt",
+  "domain": "transit.vehicles",
+  "name": "SMRT",
+  "provider": "SMRT",
+  "coverage": {
+    "bbox": [
+      34.9166,
+      -120.5938,
+      34.9833,
+      -120.4049
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://www.modeshift.app/api/v1/df7541b2-ba8b-483e-b767-9de5043a54f7/transport/gtfsrt/tripupdates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "SMRT"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.322Z"
+  },
+  "provenance": [
+    "transitous:us-ca/SMRT"
+  ]
+}

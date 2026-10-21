@@ -1,0 +1,60 @@
+{
+  "id": "transitous-fr-liste-des-api-ecovelo-pour-les-stations-d-4a62c7cd",
+  "domain": "sharedmobility.vehicles",
+  "name": "liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894",
+  "provider": "liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.282Z"
+  },
+  "provenance": [
+    "transitous:fr/liste-des-api-ecovelo-pour-les-stations-du-velo-baulois-velos-electriques-en-libre-service-sur-la-baule-escoublac-gbfs--83894"
+  ],
+  "coverage": {
+    "bbox": [
+      47.243,
+      -2.4445,
+      47.3508,
+      -2.3237
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v2.2.ecovelo.mobi/labaule/fr/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://api.gbfs.v2.2.ecovelo.mobi/fr/vehicle_types.json",
+      "system_information": "https://api.gbfs.v2.2.ecovelo.mobi/labaule/fr/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/d917a6fe-e36e-4eca-80dd-a5edc9f5c1a4"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  }
+}

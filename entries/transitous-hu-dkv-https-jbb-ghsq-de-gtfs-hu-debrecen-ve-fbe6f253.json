@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-dkv-https-jbb-ghsq-de-gtfs-hu-debrecen-ve-fbe6f253",
+  "domain": "transit.vehicles",
+  "name": "dkv",
+  "provider": "dkv",
+  "coverage": {
+    "bbox": [
+      47.4466,
+      21.5437,
+      47.6149,
+      21.7287
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/debrecen/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "dkv"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T18:35:47.316Z"
+  },
+  "provenance": [
+    "transitous:hu/dkv"
+  ]
+}
