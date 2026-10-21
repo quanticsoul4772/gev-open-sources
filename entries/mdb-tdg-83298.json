@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/e28a981d-7f5f-4bd8-a4c1-e74a822f13f8",
+    "url": "https://api.mrn.cityway.fr/dataflow/vehicule-tc-tr/download?provider=TNI&dataFormat=gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-14T15:21:58.629Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-83298"
+    "mobilitydatabase:tdg-83298",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/e28a981d-7f5f-4bd8-a4c1-e74a822f13f8"
   ]
 }

@@ -1,0 +1,60 @@
+{
+  "id": "transitous-fr-bird-trottinettes-en-libre-service-a-vich-44f4889e",
+  "domain": "sharedmobility.vehicles",
+  "name": "bird-trottinettes-en-libre-service-a-vichy-gbfs",
+  "provider": "bird-trottinettes-en-libre-service-a-vichy-gbfs",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "bird-trottinettes-en-libre-service-a-vichy-gbfs"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-21T00:59:45.682Z"
+  },
+  "provenance": [
+    "transitous:fr/bird-trottinettes-en-libre-service-a-vichy-gbfs"
+  ],
+  "coverage": {
+    "bbox": [
+      46.0945,
+      3.3949,
+      46.1632,
+      3.4632
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://mds.bird.co/gbfs/v2/public/provider/bird/vichy/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://mds.bird.co/gbfs/v2/public/provider/bird/vichy/vehicle_types.json",
+      "system_information": "https://mds.bird.co/gbfs/v2/public/provider/bird/vichy/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/9ecc6475-23b9-44f0-933f-434ce0374f26"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/bird-trottinettes-en-libre-service-a-vichy-gbfs"
+  }
+}
