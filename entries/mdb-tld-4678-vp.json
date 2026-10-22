@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.palmtran.org/TripPlanner/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "url": "https://pbc.gov/systemunavailablity/",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -42,6 +42,7 @@
   },
   "provenance": [
     "mobilitydatabase:tld-4678-vp",
-    "licence-borrowed:atlas:f-dhx-palmtran"
+    "licence-borrowed:atlas:f-dhx-palmtran",
+    "via:https://www.palmtran.org/TripPlanner/GTFS-Realtime.ashx?Type=VehiclePosition"
   ]
 }

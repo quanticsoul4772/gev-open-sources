@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-washington-dc-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Washington DC — Washington, DC",
+  "provider": "Lime Washington DC",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Washington DC"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.590Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_washington_dc"
+  ],
+  "coverage": {
+    "bbox": [
+      38.8119,
+      -77.1084,
+      38.9879,
+      -76.9035
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/washington_dc/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/washington_dc/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/washington_dc/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/washington_dc/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_washington_dc",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

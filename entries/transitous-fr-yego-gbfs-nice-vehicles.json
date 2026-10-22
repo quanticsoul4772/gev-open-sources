@@ -1,0 +1,61 @@
+{
+  "id": "transitous-fr-yego-gbfs-nice-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "yego-gbfs-nice",
+  "provider": "yego-gbfs-nice",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "yego-gbfs-nice"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.621Z"
+  },
+  "provenance": [
+    "transitous:fr/yego-gbfs-nice"
+  ],
+  "coverage": {
+    "bbox": [
+      43.6267,
+      7.1275,
+      43.7531,
+      7.3168
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://services.rideyego.com/gbfs/2-2/nice/en/free_bike_status",
+    "related": {
+      "vehicle_types": "https://services.rideyego.com/gbfs/2-2/nice/en/vehicle_types",
+      "system_information": "https://services.rideyego.com/gbfs/2-2/nice/en/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/b72911db-d8ac-4966-82a0-97ebd8e5eb3f"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/yego-gbfs-nice"
+  }
+}

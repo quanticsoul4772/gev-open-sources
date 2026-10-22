@@ -1,0 +1,61 @@
+{
+  "id": "transitous-fr-yego-gbfs-bordeaux-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "yego-gbfs-bordeaux",
+  "provider": "yego-gbfs-bordeaux",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "yego-gbfs-bordeaux"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.621Z"
+  },
+  "provenance": [
+    "transitous:fr/yego-gbfs-bordeaux"
+  ],
+  "coverage": {
+    "bbox": [
+      44.7478,
+      -0.7133,
+      44.9298,
+      -0.4832
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://services.rideyego.com/gbfs/2-2/bordeaux/en/free_bike_status",
+    "related": {
+      "vehicle_types": "https://services.rideyego.com/gbfs/2-2/bordeaux/en/vehicle_types",
+      "system_information": "https://services.rideyego.com/gbfs/2-2/bordeaux/en/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/3f0a2211-3e51-4fa3-bb01-04037b489be4"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/yego-gbfs-bordeaux"
+  }
+}

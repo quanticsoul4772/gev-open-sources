@@ -32,22 +32,22 @@
     "version": "3.1-RC3"
   },
   "licence": {
-    "id": null,
+    "id": "CC0-1.0",
     "url": null,
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "AB mit Lara"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "gbfs-v3-default",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "system_information unavailable"
+        "field": "version",
+        "quote": "GBFS 3.1-RC3: no license_id/license_url, default CC0-1.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-21T18:35:47.230Z"
+    "at": "2026-10-22T01:00:00.558Z"
   },
   "provenance": [
     "gbfs-systems:5534922f6997f4d861ce1b33f2efce21a470c22"

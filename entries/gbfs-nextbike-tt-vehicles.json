@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-tt-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "nextbike Uherské Hradiště — Uherské Hradiště",
+  "provider": "nextbike Uherské Hradiště",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike Czech Republic, Libusina 526/101, 779 00 Olomouc"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.607Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_tt"
+  ],
+  "coverage": {
+    "bbox": [
+      49.0225,
+      17.4438,
+      49.0889,
+      17.5045
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tt/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tt/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tt/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tt/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_tt",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

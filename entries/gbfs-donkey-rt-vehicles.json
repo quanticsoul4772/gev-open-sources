@@ -1,0 +1,56 @@
+{
+  "id": "gbfs-donkey-rt-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Rotterdam — Rotterdam",
+  "provider": "Donkey Republic Rotterdam",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.578Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_rt"
+  ],
+  "coverage": {
+    "bbox": [
+      51.8977,
+      4.4477,
+      51.9377,
+      4.4877
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rt/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rt/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rt/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rt/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_rt",
+    "version": "3.0",
+    "form_factors": []
+  }
+}

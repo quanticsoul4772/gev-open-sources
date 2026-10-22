@@ -1,0 +1,61 @@
+{
+  "id": "transitous-fr-yego-gbfs-toulouse-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "yego-gbfs-toulouse",
+  "provider": "yego-gbfs-toulouse",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "yego-gbfs-toulouse"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.621Z"
+  },
+  "provenance": [
+    "transitous:fr/yego-gbfs-toulouse"
+  ],
+  "coverage": {
+    "bbox": [
+      43.5357,
+      1.3857,
+      43.6609,
+      1.5341
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://services.rideyego.com/gbfs/2-2/toulouse/en/free_bike_status",
+    "related": {
+      "vehicle_types": "https://services.rideyego.com/gbfs/2-2/toulouse/en/vehicle_types",
+      "system_information": "https://services.rideyego.com/gbfs/2-2/toulouse/en/system_information",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/e29585a8-18c0-47c5-8b5c-facc00149165"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "moped",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/yego-gbfs-toulouse"
+  }
+}

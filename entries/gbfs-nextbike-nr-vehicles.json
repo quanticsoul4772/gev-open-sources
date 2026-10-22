@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-nr-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "nextbike Přerov — Přerov",
+  "provider": "nextbike Přerov",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike Czech Republic, Libusina 526/101, 779 00 Olomouc"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.605Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_nr"
+  ],
+  "coverage": {
+    "bbox": [
+      49.4266,
+      17.3737,
+      49.5144,
+      17.5132
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nr/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nr/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nr/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nr/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_nr",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

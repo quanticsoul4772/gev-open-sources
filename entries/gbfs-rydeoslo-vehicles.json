@@ -1,0 +1,56 @@
+{
+  "id": "gbfs-rydeoslo-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Ryde Oslo — Oslo",
+  "provider": "Ryde Oslo",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Ryde Oslo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "system_information unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.612Z"
+  },
+  "provenance": [
+    "gbfs-systems:rydeoslo"
+  ],
+  "coverage": {
+    "bbox": [
+      59.8463,
+      10.6159,
+      59.9869,
+      10.9504
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/rydeoslo/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v3/rydeoslo/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/rydeoslo/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/rydeoslo/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "rydeoslo",
+    "version": "3.0",
+    "form_factors": []
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "gbfs-donkey-rotterdam-den-haag-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Rotterdam/Den Haag — Rotterdam/Den Haag",
+  "provider": "Donkey Republic Rotterdam/Den Haag",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.577Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_rotterdam_den_haag"
+  ],
+  "coverage": {
+    "bbox": [
+      51.8977,
+      4.4477,
+      51.9377,
+      4.4877
+    ],
+    "countries": [
+      "NL"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rotterdam_den_haag/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rotterdam_den_haag/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rotterdam_den_haag/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_rotterdam_den_haag/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_rotterdam_den_haag",
+    "version": "3.0",
+    "form_factors": []
+  }
+}

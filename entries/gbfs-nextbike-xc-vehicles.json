@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-xc-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "nextbike Moravská Třebová — Moravská Třebová",
+  "provider": "nextbike Moravská Třebová",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike Czech Republic, Libusina 526/101, 779 00 Olomouc"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T01:00:00.609Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_xc"
+  ],
+  "coverage": {
+    "bbox": [
+      49.7387,
+      16.6272,
+      49.7787,
+      16.6839
+    ],
+    "countries": [
+      "CZ"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_xc/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_xc/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_xc/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_xc/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_xc",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

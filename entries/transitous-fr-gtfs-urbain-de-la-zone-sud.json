@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/092ad091-b0c1-4094-9897-198a3c78faa7",
+    "url": "https://api.pysae.com/api/v4/groups/sud_lib/gtfs-rt",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-21T18:35:47.316Z"
   },
   "provenance": [
-    "transitous:fr/gtfs-urbain-de-la-zone-sud"
+    "transitous:fr/gtfs-urbain-de-la-zone-sud",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/092ad091-b0c1-4094-9897-198a3c78faa7"
   ]
 }

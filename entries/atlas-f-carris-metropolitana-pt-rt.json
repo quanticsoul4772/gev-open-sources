@@ -32,11 +32,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.8"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T18:51:37.530Z"
+    "at": "2026-10-22T01:00:00.623Z"
   },
   "provenance": [
     "transitland-atlas:f-carris~metropolitana~pt~rt",

@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.8"
+        "quote": "runs disagree on blocking obligations"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T23:36:06.234Z"
+    "at": "2026-10-22T01:00:00.636Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-3428"
