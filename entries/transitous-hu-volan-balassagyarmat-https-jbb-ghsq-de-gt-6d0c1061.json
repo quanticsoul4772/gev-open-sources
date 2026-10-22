@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-balassagyarmat-https-jbb-ghsq-de-gt-6d0c1061",
+  "domain": "transit.vehicles",
+  "name": "volan-balassagyarmat",
+  "provider": "volan-balassagyarmat",
+  "coverage": {
+    "bbox": [
+      48.0594,
+      19.275,
+      48.0994,
+      19.315
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-13657/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-balassagyarmat"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T12:41:43.592Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-balassagyarmat"
+  ]
+}

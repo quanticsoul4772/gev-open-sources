@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-csurgo-https-jbb-ghsq-de-gtfs-hu-hk-dd00477e",
+  "domain": "transit.vehicles",
+  "name": "volan-csurgo",
+  "provider": "volan-csurgo",
+  "coverage": {
+    "bbox": [
+      46.2516,
+      17.0762,
+      46.2916,
+      17.1162
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-21315/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-csurgo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T12:41:43.593Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-csurgo"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-bonyhad-https-jbb-ghsq-de-gtfs-hu-h-f0141ce0",
+  "domain": "transit.vehicles",
+  "name": "volan-bonyhad",
+  "provider": "volan-bonyhad",
+  "coverage": {
+    "bbox": [
+      46.2829,
+      18.498,
+      46.3229,
+      18.538
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-06497/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-bonyhad"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T12:41:43.593Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-bonyhad"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-szentes-https-jbb-ghsq-de-gtfs-hu-h-daabb032",
+  "domain": "transit.vehicles",
+  "name": "volan-szentes",
+  "provider": "volan-szentes",
+  "coverage": {
+    "bbox": [
+      46.6317,
+      20.2444,
+      46.6717,
+      20.2844
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-14456/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-szentes"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T12:41:43.594Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-szentes"
+  ]
+}

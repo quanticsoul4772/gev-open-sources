@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-pony-bordeaux-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Pony Bordeaux — Bordeaux",
+  "provider": "Pony Bordeaux",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "pony"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T12:41:43.548Z"
+  },
+  "provenance": [
+    "gbfs-systems:pony_bordeaux"
+  ],
+  "coverage": {
+    "bbox": [
+      44.7463,
+      -0.772,
+      44.9614,
+      -0.4739
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-bordeaux-gbfs/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://proxy.transport.data.gouv.fr/resource/pony-bordeaux-gbfs/vehicle_types.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-bordeaux-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-bordeaux-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "pony_bordeaux",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

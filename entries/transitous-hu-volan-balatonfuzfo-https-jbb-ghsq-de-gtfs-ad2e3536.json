@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-balatonfuzfo-https-jbb-ghsq-de-gtfs-ad2e3536",
+  "domain": "transit.vehicles",
+  "name": "volan-balatonfuzfo",
+  "provider": "volan-balatonfuzfo",
+  "coverage": {
+    "bbox": [
+      47.0546,
+      18.0082,
+      47.0947,
+      18.0482
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-02219/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-balatonfuzfo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T12:41:43.593Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-balatonfuzfo"
+  ]
+}
