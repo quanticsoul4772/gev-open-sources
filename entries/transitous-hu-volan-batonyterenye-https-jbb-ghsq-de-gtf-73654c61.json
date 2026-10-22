@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-batonyterenye-https-jbb-ghsq-de-gtf-73654c61",
+  "domain": "transit.vehicles",
+  "name": "volan-batonyterenye",
+  "provider": "volan-batonyterenye",
+  "coverage": {
+    "bbox": [
+      47.9367,
+      19.7945,
+      47.9767,
+      19.8345
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-33534/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-batonyterenye"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.095Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-batonyterenye"
+  ]
+}

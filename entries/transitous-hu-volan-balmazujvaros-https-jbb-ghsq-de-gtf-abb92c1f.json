@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-balmazujvaros-https-jbb-ghsq-de-gtf-abb92c1f",
+  "domain": "transit.vehicles",
+  "name": "volan-balmazujvaros",
+  "provider": "volan-balmazujvaros",
+  "coverage": {
+    "bbox": [
+      47.5853,
+      21.3372,
+      47.6253,
+      21.3772
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-02918/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-balmazujvaros"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.095Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-balmazujvaros"
+  ]
+}

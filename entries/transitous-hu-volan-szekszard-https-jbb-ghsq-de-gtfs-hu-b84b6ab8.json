@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-szekszard-https-jbb-ghsq-de-gtfs-hu-b84b6ab8",
+  "domain": "transit.vehicles",
+  "name": "volan-szekszard",
+  "provider": "volan-szekszard",
+  "coverage": {
+    "bbox": [
+      46.3251,
+      18.6883,
+      46.3651,
+      18.7283
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-22761/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-szekszard"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.097Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-szekszard"
+  ]
+}

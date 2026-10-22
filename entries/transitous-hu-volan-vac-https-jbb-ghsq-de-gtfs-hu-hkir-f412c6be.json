@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-vac-https-jbb-ghsq-de-gtfs-hu-hkir-f412c6be",
+  "domain": "transit.vehicles",
+  "name": "volan-vac",
+  "provider": "volan-vac",
+  "coverage": {
+    "bbox": [
+      47.7635,
+      19.1023,
+      47.835,
+      19.1496
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-24934/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-vac"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.098Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-vac"
+  ]
+}

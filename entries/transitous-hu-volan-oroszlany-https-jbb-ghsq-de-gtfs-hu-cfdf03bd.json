@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-oroszlany-https-jbb-ghsq-de-gtfs-hu-cfdf03bd",
+  "domain": "transit.vehicles",
+  "name": "volan-oroszlany",
+  "provider": "volan-oroszlany",
+  "coverage": {
+    "bbox": [
+      47.471,
+      18.2817,
+      47.511,
+      18.3217
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-30766/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-oroszlany"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.097Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-oroszlany"
+  ]
+}

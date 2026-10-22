@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-godollo-https-jbb-ghsq-de-gtfs-hu-h-c101bb2e",
+  "domain": "transit.vehicles",
+  "name": "volan-godollo",
+  "provider": "volan-godollo",
+  "coverage": {
+    "bbox": [
+      47.5791,
+      19.3332,
+      47.6257,
+      19.3904
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-32559/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-godollo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.096Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-godollo"
+  ]
+}

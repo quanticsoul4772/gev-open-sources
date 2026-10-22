@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-tata-https-jbb-ghsq-de-gtfs-hu-hkir-e5d00f15",
+  "domain": "transit.vehicles",
+  "name": "volan-tata",
+  "provider": "volan-tata",
+  "coverage": {
+    "bbox": [
+      47.6237,
+      18.2908,
+      47.672,
+      18.3401
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-20127/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-tata"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.098Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-tata"
+  ]
+}

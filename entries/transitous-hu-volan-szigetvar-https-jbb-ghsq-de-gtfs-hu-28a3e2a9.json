@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-szigetvar-https-jbb-ghsq-de-gtfs-hu-28a3e2a9",
+  "domain": "transit.vehicles",
+  "name": "volan-szigetvar",
+  "provider": "volan-szigetvar",
+  "coverage": {
+    "bbox": [
+      46.025,
+      17.7832,
+      46.065,
+      17.8232
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-26578/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-szigetvar"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.097Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-szigetvar"
+  ]
+}

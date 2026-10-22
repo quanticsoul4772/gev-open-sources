@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-hajduszoboszlo-https-jbb-ghsq-de-gt-f47da19d",
+  "domain": "transit.vehicles",
+  "name": "volan-hajduszoboszlo",
+  "provider": "volan-hajduszoboszlo",
+  "coverage": {
+    "bbox": [
+      47.4119,
+      21.3723,
+      47.4653,
+      21.427
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-05175/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-hajduszoboszlo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.096Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-hajduszoboszlo"
+  ]
+}

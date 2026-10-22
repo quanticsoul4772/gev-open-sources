@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-balatonfured-https-jbb-ghsq-de-gtfs-e6828558",
+  "domain": "transit.vehicles",
+  "name": "volan-balatonfured",
+  "provider": "volan-balatonfured",
+  "coverage": {
+    "bbox": [
+      46.9274,
+      17.8556,
+      46.9723,
+      17.8989
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-21175/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-balatonfured"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.094Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-balatonfured"
+  ]
+}

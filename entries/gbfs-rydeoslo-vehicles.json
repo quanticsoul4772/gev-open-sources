@@ -4,22 +4,22 @@
   "name": "Ryde Oslo — Oslo",
   "provider": "Ryde Oslo",
   "licence": {
-    "id": null,
+    "id": "CC0-1.0",
     "url": null,
-    "display": false,
-    "commercial": null,
-    "attribution": "Ryde Oslo"
+    "display": true,
+    "commercial": true,
+    "attribution": "Ryde"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "gbfs-v3-default",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "system_information unreachable"
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-22T01:00:00.612Z"
+    "at": "2026-10-22T06:45:18.060Z"
   },
   "provenance": [
     "gbfs-systems:rydeoslo"

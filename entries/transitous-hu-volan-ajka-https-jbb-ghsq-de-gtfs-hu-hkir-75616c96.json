@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-ajka-https-jbb-ghsq-de-gtfs-hu-hkir-75616c96",
+  "domain": "transit.vehicles",
+  "name": "volan-ajka",
+  "provider": "volan-ajka",
+  "coverage": {
+    "bbox": [
+      47.0745,
+      17.5127,
+      47.126,
+      17.5922
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-06673/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-ajka"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.094Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-ajka"
+  ]
+}

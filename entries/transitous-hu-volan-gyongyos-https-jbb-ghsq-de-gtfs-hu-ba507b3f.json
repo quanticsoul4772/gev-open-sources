@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-gyongyos-https-jbb-ghsq-de-gtfs-hu-ba507b3f",
+  "domain": "transit.vehicles",
+  "name": "volan-gyongyos",
+  "provider": "volan-gyongyos",
+  "coverage": {
+    "bbox": [
+      47.7461,
+      19.8944,
+      47.7949,
+      19.951
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-05236/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-gyongyos"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.096Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-gyongyos"
+  ]
+}

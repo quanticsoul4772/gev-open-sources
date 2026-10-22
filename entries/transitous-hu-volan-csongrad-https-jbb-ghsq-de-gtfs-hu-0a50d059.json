@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-csongrad-https-jbb-ghsq-de-gtfs-hu-0a50d059",
+  "domain": "transit.vehicles",
+  "name": "volan-csongrad",
+  "provider": "volan-csongrad",
+  "coverage": {
+    "bbox": [
+      46.6913,
+      20.1204,
+      46.7313,
+      20.1604
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-05111/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-csongrad"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.095Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-csongrad"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-jaszbereny-https-jbb-ghsq-de-gtfs-h-23086fad",
+  "domain": "transit.vehicles",
+  "name": "volan-jaszbereny",
+  "provider": "volan-jaszbereny",
+  "coverage": {
+    "bbox": [
+      47.4932,
+      19.8899,
+      47.5332,
+      19.9299
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-18209/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-jaszbereny"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.096Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-jaszbereny"
+  ]
+}

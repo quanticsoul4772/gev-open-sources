@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-ercsi-https-jbb-ghsq-de-gtfs-hu-hki-1bfdbac8",
+  "domain": "transit.vehicles",
+  "name": "volan-ercsi",
+  "provider": "volan-ercsi",
+  "coverage": {
+    "bbox": [
+      47.2301,
+      18.858,
+      47.2701,
+      18.898
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-23603/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-ercsi"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-22T06:45:18.095Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-ercsi"
+  ]
+}
