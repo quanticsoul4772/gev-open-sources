@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-cm-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Grad Vinkovci (Croatia) — Metković",
+  "provider": "Grad Vinkovci (Croatia)",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Prisavlje 2, 10000 Zagreb"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T18:35:43.212Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_cm"
+  ],
+  "coverage": {
+    "bbox": [
+      45.2804,
+      18.6608,
+      45.5746,
+      18.8101
+    ],
+    "countries": [
+      "HR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cm/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cm/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cm/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cm/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_cm",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

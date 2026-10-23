@@ -1,0 +1,60 @@
+{
+  "id": "gbfs-beryl-stevenage-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Beryl - Stevenage — Stevenage",
+  "provider": "Beryl - Stevenage",
+  "licence": {
+    "id": "CDLA-Permissive-2.0",
+    "url": "https://cdla.dev/permissive-2-0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "4.14, The Frames, 1 Phipp St, London EC2A 4PS"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://cdla.dev/permissive-2-0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T18:35:43.182Z"
+  },
+  "provenance": [
+    "gbfs-systems:beryl_stevenage"
+  ],
+  "coverage": {
+    "bbox": [
+      51.8551,
+      -0.2214,
+      51.9244,
+      -0.1462
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://beryl-gbfs-production.web.app/v2_2/Stevenage/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://beryl-gbfs-production.web.app/v2_2/Stevenage/vehicle_types.json",
+      "system_information": "https://beryl-gbfs-production.web.app/v2_2/Stevenage/system_information.json",
+      "gbfs": "https://beryl-gbfs-production.web.app/v2_2/Stevenage/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "beryl_stevenage",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle",
+      "scooter_standing"
+    ]
+  }
+}
