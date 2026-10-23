@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-route130connection-nj-rt",
+  "domain": "transit.vehicles",
+  "name": "Route 130 Connection",
+  "provider": "Route 130 Connection",
+  "coverage": {
+    "bbox": [
+      40.2311,
+      -74.7751,
+      40.3526,
+      -74.4712
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://route130connection.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Route 130 Connection"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T06:45:20.867Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-route130connection~nj~rt"
+  ]
+}

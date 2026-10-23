@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-salgotarjan-https-jbb-ghsq-de-gtfs-dcf1c8bd",
+  "domain": "transit.vehicles",
+  "name": "volan-salgotarjan",
+  "provider": "volan-salgotarjan",
+  "coverage": {
+    "bbox": [
+      48.0515,
+      19.7613,
+      48.0915,
+      19.8013
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-25788/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-salgotarjan"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T06:45:20.885Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-salgotarjan"
+  ]
+}
