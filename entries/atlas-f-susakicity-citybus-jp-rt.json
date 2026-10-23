@@ -1,0 +1,45 @@
+{
+  "id": "atlas-f-susakicity-citybus-jp-rt",
+  "domain": "transit.vehicles",
+  "name": "須崎市企画情報課",
+  "provider": "須崎市企画情報課",
+  "coverage": {
+    "bbox": [
+      33.3826,
+      133.2644,
+      33.4506,
+      133.4013
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SusakiCity_Citybus_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "須崎市企画情報課"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T01:02:02.939Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-susakicity~citybus~jp~rt",
+    "licence-borrowed:atlas:f-susakicity~citybus~jp"
+  ]
+}

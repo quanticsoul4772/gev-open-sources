@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-montclairstate-nj-rt",
+  "domain": "transit.vehicles",
+  "name": "Montclair State University",
+  "provider": "Montclair State University",
+  "coverage": {
+    "bbox": [
+      40.8498,
+      -74.2198,
+      40.8925,
+      -74.1792
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://montclair.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Montclair State University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T01:02:02.937Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-montclairstate~nj~rt"
+  ]
+}

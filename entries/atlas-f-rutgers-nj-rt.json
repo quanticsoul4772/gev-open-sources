@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-rutgers-nj-rt",
+  "domain": "transit.vehicles",
+  "name": "Rutgers University",
+  "provider": "Rutgers University",
+  "coverage": {
+    "bbox": [
+      39.9315,
+      -75.1461,
+      40.7599,
+      -74.1541
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://rutgers.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Rutgers University"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T01:02:02.938Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-rutgers~nj~rt"
+  ]
+}

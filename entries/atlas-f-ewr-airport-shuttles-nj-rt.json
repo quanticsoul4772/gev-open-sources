@@ -1,0 +1,44 @@
+{
+  "id": "atlas-f-ewr-airport-shuttles-nj-rt",
+  "domain": "transit.vehicles",
+  "name": "Port Authority of New York and New Jersey",
+  "provider": "Port Authority of New York and New Jersey",
+  "coverage": {
+    "bbox": [
+      40.6636,
+      -74.2108,
+      40.7878,
+      -74.049
+    ],
+    "countries": []
+  },
+  "access": {
+    "url": "https://passio3.com/ewrpanynj/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Port Authority of New York and New Jersey"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-23T01:02:02.936Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-ewr~airport~shuttles~nj~rt"
+  ]
+}

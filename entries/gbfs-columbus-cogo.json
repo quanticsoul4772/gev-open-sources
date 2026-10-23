@@ -35,11 +35,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unavailable"
+        "quote": "system_information unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T15:21:57.740Z"
+    "at": "2026-10-23T01:02:02.910Z"
   },
   "provenance": [
     "seed:gods-eye-view"
