@@ -66,6 +66,22 @@ export function withinAddLimits(ready, existing) {
   return out;
 }
 
+/**
+ * A GTFS-Realtime entry without a `debug` query switch. Catalogues list some
+ * feeds with one (`?debug`, `&Debug=True`), which returns a readable dump
+ * instead of protobuf, so the feed never decodes. The old URL is kept as
+ * provenance (`via:`), so catalogues listing it don't re-add the feed. The
+ * rest of the URL is left byte for byte.
+ */
+export function withoutDebugSwitch(entry) {
+  if (!entry.format?.startsWith('gtfs-rt.')) return entry;
+  const url = entry.access.url
+    .replace(/([?&])debug(?:=[^&#]*)?(&|(?=#)|$)/gi, (_, before, after) => (after === '&' ? before : ''))
+    .replace(/\?(?=#|$)/, '');
+  if (url === entry.access.url) return entry;
+  return { ...entry, access: { ...entry.access, url }, provenance: [...entry.provenance, `via:${entry.access.url}`] };
+}
+
 /** An entry with its access URLs in plain ASCII form (`new URL().href`, e.g. ø → %C3%B8). */
 export function withAsciiUrls(entry) {
   const ascii = (u) => new URL(u).href;
@@ -139,6 +155,14 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
       existing.delete(id);
       console.log(`harvest: removed ${id}: peer-to-peer car sharing`);
     }
+  // Debug switches came in with catalogue URLs: drop them from existing entries.
+  for (const [id, e] of existing) {
+    const clean = withoutDebugSwitch(e);
+    if (clean === e) continue;
+    existing.set(id, clean);
+    writeEntry(clean);
+    console.log(`harvest: ${id}: debug switch dropped from its URL`);
+  }
   const tombstones = readState('tombstones.json', {});
   const rejects = readState('harvest-rejects.json', {});
   // Expired rejects are retried anyway; drop them so the file doesn't grow forever.
@@ -174,7 +198,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
       ...transitous.entries.filter((e) => e.domain !== VEHICLES),
       ...gbfs.filter((e) => e.domain === VEHICLES),
       ...transitous.entries.filter((e) => e.domain === VEHICLES),
-    ],
+    ].map(withoutDebugSwitch),
     tombstones,
   );
   // New entries, and existing ones whose last probe failed, may be permalinks

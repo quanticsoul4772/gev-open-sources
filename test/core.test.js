@@ -4,7 +4,7 @@ import test from 'node:test';
 import { ADAPTERS, gbfsTime } from '../src/adapters/index.js';
 import { buildDirectory } from '../src/build.js';
 import { gbfsFeeds, keylessSystems, stationBbox } from '../src/harvest/gbfs.js';
-import { mergeCandidates } from '../src/harvest/index.js';
+import { mergeCandidates, withoutDebugSwitch } from '../src/harvest/index.js';
 import { mobilityDatabaseEntries } from '../src/harvest/mobilitydatabase.js';
 import { DAY_S, applyProbe, classify, emptyHealth, summary } from '../src/health.js';
 import { validateEntry } from '../src/schema.js';
@@ -189,6 +189,25 @@ test('merge: existing ids, duplicate URLs and tombstones are skipped', () => {
     { d: { at: 1 } },
   );
   assert.deepEqual(added.map((e) => e.id), ['c']);
+});
+
+test('debug switch: dropped from GTFS-Realtime URLs, the rest kept byte for byte', () => {
+  const rt = (url) => ({ id: 'x', format: 'gtfs-rt.vehicle-positions', access: { url }, provenance: ['mobilitydatabase:1'] });
+  const url = (u) => withoutDebugSwitch(rt(u)).access.url;
+  assert.equal(url('https://kttracker.com/gtfsrt/vehicles?debug'), 'https://kttracker.com/gtfsrt/vehicles');
+  assert.equal(
+    url('https://cobb.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition&Debug=True'),
+    'https://cobb.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition',
+  );
+  assert.equal(url('https://a.example/vp?debug=1&key=a%20b&x=1'), 'https://a.example/vp?key=a%20b&x=1');
+  assert.equal(url('https://a.example/vp?a=1&DEBUG=true&b=2'), 'https://a.example/vp?a=1&b=2');
+  assert.equal(url('https://a.example/vp?debugMode=1'), 'https://a.example/vp?debugMode=1', 'only a parameter named debug');
+  const moved = withoutDebugSwitch(rt('https://kttracker.com/gtfsrt/vehicles?debug'));
+  assert.deepEqual(moved.provenance, ['mobilitydatabase:1', 'via:https://kttracker.com/gtfsrt/vehicles?debug']);
+  const clean = rt('https://a.example/vp');
+  assert.equal(withoutDebugSwitch(clean), clean, 'unchanged entries are returned as is');
+  const gbfs = { format: 'gbfs.station-status', access: { url: 'https://a.example/s?debug' }, provenance: [] };
+  assert.equal(withoutDebugSwitch(gbfs), gbfs, 'other formats are left alone');
 });
 
 test('classify: fresh, idle, stale, blocked, failures', () => {
