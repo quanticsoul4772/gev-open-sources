@@ -1,0 +1,47 @@
+{
+  "id": "transitous-fr-reseau-transport-urbain-de-bernay",
+  "domain": "transit.vehicles",
+  "name": "reseau-transport-urbain-de-bernay",
+  "provider": "reseau-transport-urbain-de-bernay",
+  "coverage": {
+    "bbox": [
+      49.0624,
+      0.5729,
+      49.1024,
+      0.6129
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?src=true&dataset=bernay",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "reseau-transport-urbain-de-bernay"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-24T06:41:02.021Z"
+  },
+  "provenance": [
+    "transitous:fr/reseau-transport-urbain-de-bernay",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/622b4abe-e029-4a6b-bd59-ef849e9b005f"
+  ]
+}

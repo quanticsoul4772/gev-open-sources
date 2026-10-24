@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-zu-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bajk Trnavskej župy — Piešťany",
+  "provider": "Bajk Trnavskej župy",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike Czech Republic, Libusina 526/101, 779 00 Olomouc"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-24T06:41:01.991Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_zu"
+  ],
+  "coverage": {
+    "bbox": [
+      48.5612,
+      17.6924,
+      48.6529,
+      17.8507
+    ],
+    "countries": [
+      "SK"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zu/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zu/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zu/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_zu",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}
