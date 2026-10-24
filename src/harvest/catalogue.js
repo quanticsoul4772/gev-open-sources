@@ -189,7 +189,10 @@ const MAX_STRAY_SHARE = 0.05;
  * and longitude swapped. Far points are only strays while they are few; a
  * larger far group is real service (a
  * national operator's other coast) and is kept. "Few" is at most 2, or 5 %
- * of the points.
+ * of the points. A far group of any size is strays when all its points carry
+ * the same exact latitude or longitude while spreading over 1° on the other
+ * axis: one fixed value standing in for a broken coordinate (Impulsyon
+ * vehicles at lon 0.894805 from 2° to 9° N).
  * @param {Array<[number, number]>} points [lat, lon]
  * @returns {{kept: Array<[number, number]>, strays: number}}
  */
@@ -207,8 +210,16 @@ export function splitStrays(points) {
   const limit = Math.max(1, 6 * median([...dist].sort((a, b) => a - b)));
   const kept = ok.filter((_, i) => dist[i] <= limit);
   const far = ok.length - kept.length;
-  if (far > Math.max(2, Math.floor(MAX_STRAY_SHARE * ok.length))) return { kept: ok, strays: invalid };
+  if (far > Math.max(2, Math.floor(MAX_STRAY_SHARE * ok.length)) && !degenerate(ok.filter((_, i) => dist[i] > limit)))
+    return { kept: ok, strays: invalid };
   return { kept, strays: invalid + far };
+}
+
+/** Whether points share one exact latitude or longitude while spreading over 1° on the other axis. */
+function degenerate(points) {
+  const spread = (axis) => Math.max(...points.map((p) => p[axis])) - Math.min(...points.map((p) => p[axis]));
+  const fixed = (axis) => points.every((p) => p[axis] === points[0][axis]);
+  return (fixed(0) && spread(1) > 1) || (fixed(1) && spread(0) > 1);
 }
 
 /** The points of a feed's main area (splitStrays). */

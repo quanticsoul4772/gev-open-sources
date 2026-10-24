@@ -234,6 +234,20 @@ test('coverage: stray points (a station abroad, swapped lat/lon) are dropped; a 
   assert.equal(withoutStrays([...corridor, ...west]).length, 44);
 });
 
+test('coverage: a far group on one fixed longitude or latitude is strays at any size; a depot is not', async () => {
+  const { robustBbox, withoutStrays } = await import('../src/harvest/catalogue.js');
+  const city = Array.from({ length: 32 }, (_, i) => [46.66 + (i % 8) / 200, -1.44 + Math.floor(i / 8) / 100]);
+  // Impulsyon, 2026-10-24: three vehicles at lon 0.894805, 2° to 9° N (> 5 % of 35).
+  const fixedLon = [[2.0978, 0.894805], [3.714466, 0.894805], [8.747816, 0.894805]];
+  assert.equal(withoutStrays([...city, ...fixedLon]).length, 32);
+  assert.ok(robustBbox([...city, ...fixedLon])[0] > 46, 'the box stays in La Roche-sur-Yon');
+  const fixedLat = [[0.5, 10], [0.5, 14], [0.5, 20]];
+  assert.equal(withoutStrays([...city, ...fixedLat]).length, 32);
+  // Three vehicles parked at one far depot share both coordinates: a place, kept.
+  const depot = [[48.85, 2.35], [48.85, 2.35], [48.85, 2.35]];
+  assert.equal(withoutStrays([...city, ...depot]).length, 35);
+});
+
 test('coverage: a wide box from real data is kept when a snapshot covers only part of it', async () => {
   const { replacesBbox } = await import('../src/harvest/catalogue.js');
   const amtrak = [27.6, -122.9, 48.9, -70.5];
@@ -284,6 +298,24 @@ test('coverage: an existing GBFS entry with a stray-stretched box is rebuilt fro
   };
   const filled = await fillGbfsCoverage([entry], { fetchImpl });
   assert.deepEqual(filled.get('bogota').coverage.bbox, [4.6, -74.1, 4.71, -73.99]);
+});
+
+test('coverage: a GBFS vehicles box stretched by vehicles on one fixed longitude is rebuilt', async () => {
+  const { fillGbfsCoverage } = await import('../src/harvest/gbfs.js');
+  const city = Array.from({ length: 32 }, (_, i) => ({ lat: 46.66 + (i % 8) / 200, lon: -1.44 + Math.floor(i / 8) / 100 }));
+  const junk = [2.0978, 3.714466, 8.747816].map((lat) => ({ lat, lon: 0.894805 }));
+  const fetchImpl = fakeFetch({
+    'https://c.example/info': { body: JSON.stringify({ data: { stations: city.slice(0, 10) } }) },
+    'https://c.example/vehicles': { body: JSON.stringify({ data: { vehicles: [...city, ...junk] } }) },
+  });
+  const entry = {
+    id: 'impulsyon-vehicles',
+    domain: 'sharedmobility.vehicles',
+    coverage: { bbox: [3.6945, -1.4556, 46.723, 0.9148], countries: ['FR'] },
+    access: { url: 'https://c.example/vehicles', related: { station_information: 'https://c.example/info', gbfs: 'https://c.example/gbfs.json' } },
+  };
+  const box = (await fillGbfsCoverage([entry], { fetchImpl })).get('impulsyon-vehicles')?.coverage.bbox;
+  assert.ok(box && box[0] > 46 && box[3] < 0, `rebuilt in the city: ${box}`);
 });
 
 test('gdacs: entry valid; licence holds only while the feed still declares public domain', async () => {
