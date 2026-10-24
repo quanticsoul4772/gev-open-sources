@@ -32,11 +32,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 202"
+        "quote": "confidence below 0.8"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-24T12:36:55.120Z"
+    "at": "2026-10-24T18:32:01.738Z"
   },
   "provenance": [
     "transitland-atlas:f-mst~rt"
