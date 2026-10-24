@@ -2,7 +2,8 @@
  * Health state machine, pure. A probe result is one of:
  *   ok      — answered, decoded, fresh, records > 0
  *   idle    — answered, decoded, zero records, and fresh or (out of service
- *             hours, server stopped updating) under IDLE_MAX_AGE_S old
+ *             hours, server stopped updating) under IDLE_MAX_AGE_S old; a
+ *             feed answering 204 No Content is idle too
  *   stale   — decoded but the newest timestamp is too old
  *   http / decode / network — failed
  *   blocked — 403/429: the prober is refused; says nothing about the feed

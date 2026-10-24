@@ -410,6 +410,17 @@ test('probe limits: FIRMS files may exceed 8 MiB; other formats may not', async 
   assert.equal((await probeEntry(gtfs, { now, fetchImpl })).result, 'network', 'over the 8 MiB cap');
 });
 
+test('probe: 204 No Content is an empty feed (idle), other non-200 answers fail', async () => {
+  const { probeEntry } = await import('../src/probe.js');
+  const now = Date.parse('2026-10-24T01:00:00Z') / 1000;
+  const gtfs = { id: 'g', format: 'gtfs-rt.vehicle-positions', coverage: { bbox: null }, access: { url: 'https://g.example/vp', headers: {}, redirectHosts: [], unzip: null } };
+  const answer = (status) => async () => new Response(null, { status });
+  const empty = await probeEntry(gtfs, { now, fetchImpl: answer(204) });
+  assert.equal(empty.result, 'idle');
+  assert.equal(empty.records, 0);
+  assert.deepEqual(await probeEntry(gtfs, { now, fetchImpl: answer(404) }), { at: now, result: 'http', code: 404 });
+});
+
 test('probe limits: the Sensor.Community 1-hour file (8.7 MB) fits its own cap', async () => {
   const { probeEntry } = await import('../src/probe.js');
   const { AIRQUALITY_ENTRIES } = await import('../src/harvest/airquality.js');

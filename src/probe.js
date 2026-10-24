@@ -38,6 +38,9 @@ export async function probeEntry(entry, { now, fetchImpl } = {}) {
   } catch {
     return { at: now, ...classify({ error: 'network' }) };
   }
+  // 204 No Content: the feed has nothing to send (Oise buses at night and on
+  // weekends), an empty feed rather than a failure.
+  if (res.status === 204) return { at: now, ...classify({ status: 200, decoded: { records: 0, newest: null }, now }) };
   if (res.status !== 200) return { at: now, ...classify({ status: res.status }) };
   try {
     const body = entry.access.unzip ? readZipEntry(res.body, entry.access.unzip) : res.body;
