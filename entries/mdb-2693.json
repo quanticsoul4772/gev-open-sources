@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://kttracker.com/gtfsrt/vehicles?debug",
+    "url": "https://kttracker.com/gtfsrt/vehicles",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -42,6 +42,7 @@
   },
   "provenance": [
     "mobilitydatabase:mdb-2693",
-    "licence-borrowed:mdb-1304"
+    "licence-borrowed:mdb-1304",
+    "via:https://kttracker.com/gtfsrt/vehicles?debug"
   ]
 }
