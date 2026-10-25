@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://quickrent.ch/sbb/api/v1/gbfs/station-status",
+    "url": "https://www.quickrent.ch/sbb/api/v1/gbfs/station-status",
     "related": {
       "station_information": "https://quickrent.ch/sbb/api/v1/gbfs/station-information",
       "system_information": "https://quickrent.ch/sbb/api/v1/gbfs/system-information",
@@ -50,6 +50,7 @@
     "at": "2026-10-24T18:32:01.721Z"
   },
   "provenance": [
-    "gbfs-systems:quickrent.ch"
+    "gbfs-systems:quickrent.ch",
+    "via:https://quickrent.ch/sbb/api/v1/gbfs/station-status"
   ]
 }

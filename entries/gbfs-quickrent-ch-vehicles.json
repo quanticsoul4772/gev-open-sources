@@ -22,7 +22,8 @@
     "at": "2026-10-24T18:32:01.720Z"
   },
   "provenance": [
-    "gbfs-systems:quickrent.ch"
+    "gbfs-systems:quickrent.ch",
+    "via:https://quickrent.ch/sbb/api/v1/gbfs/vehicle-status"
   ],
   "coverage": {
     "bbox": [
@@ -36,7 +37,7 @@
     ]
   },
   "access": {
-    "url": "https://quickrent.ch/sbb/api/v1/gbfs/vehicle-status",
+    "url": "https://www.quickrent.ch/sbb/api/v1/gbfs/vehicle-status",
     "related": {
       "vehicle_types": "https://quickrent.ch/sbb/api/v1/gbfs/vehicle-types",
       "system_information": "https://quickrent.ch/sbb/api/v1/gbfs/system-information",
