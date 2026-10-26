@@ -12,6 +12,7 @@ import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas, withAtlasLicences } from './atlas.js';
 import { harvestCameras } from './cameras.js';
 import { CHECK_PHASE_MS, fillTransitCoverage, recentlyRejected } from './catalogue.js';
+import { withCoveredCountries } from './countries.js';
 import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, knownSystemKeysOf, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
@@ -257,7 +258,8 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     .map((e) => licensed.get(e.id) || covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
   const added = withinAddLimits(ready, existing);
-  for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withAsciiUrls(entry));
+  // A catalogue country that the feed's own coverage misses is dropped.
+  for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withCoveredCountries(withAsciiUrls(entry)));
   for (const entry of updated)
     if (redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id) || licensed.has(entry.id))
       writeEntry(licensed.get(entry.id) || covered.get(entry.id) || entry);
