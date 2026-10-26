@@ -293,3 +293,16 @@ test('duplicates: an entry retired as dead this run is not also taken for a dupl
   assert.equal(tombstones.dying.reason, undefined, 'retired as dead, not as a duplicate');
   assert.ok(health.live, 'the live copy stays');
 });
+
+test('duplicates: a copy that is not dead is kept over an older dead one', async () => {
+  const entries = new Map([['live', entry('live')], ['dying', entry('dying')]]);
+  const deadSince = 100 * DAY_S;
+  const t1 = deadSince + 20 * DAY_S;
+  // Dead 20 days, answering again but not yet verified, probed once a day; older than the live copy.
+  const health = { dying: { ...emptyHealth(1), status: 'dead', deadSince, lastProbe: t1 - DAY_S } };
+  const tombstones = {};
+  const same = { live: fleet(40), dying: fleet(40) };
+  assert.deepEqual(await run(entries, health, tombstones, same, t1), []);
+  assert.deepEqual(await run(entries, health, tombstones, same, t1 + DAY_S), ['dying']);
+  assert.equal(tombstones.dying.of, 'live');
+});
