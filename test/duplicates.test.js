@@ -129,6 +129,19 @@ test('duplicates: a feed carrying most of another\'s fleet plus more vehicles is
   assert.equal(tombstones.copy.of, 'city');
 });
 
+test('duplicates: in a chain, only members that match the kept entry itself are retired', async () => {
+  const entries = new Map([['a', entry('a')], ['b', entry('b')], ['c', entry('c')]]);
+  const health = {};
+  const tombstones = {};
+  // a ⊂ b ⊂ c with 100, 106 and 112 vehicles: a~b and b~c match, a and c differ by 12 %.
+  const runOf = (from) => ({ a: fleet(100, from), b: [...fleet(100, from), ...fleet(6, 1000 + from)], c: [...fleet(100, from), ...fleet(12, 1000 + from)] });
+  await run(entries, health, tombstones, runOf(3), 1000);
+  health.a.firstSeen = 1;
+  assert.deepEqual(await run(entries, health, tombstones, runOf(13), 2000), ['b']);
+  assert.equal(tombstones.b.of, 'a');
+  assert.ok(health.c, 'c matched only b');
+});
+
 test('duplicates: feeds writing some of the same ids differently (Jaccard 0.75) are not copies', async () => {
   const entries = new Map([['lia', entry('lia')], ['lia-padded', entry('lia-padded')]]);
   const health = {};

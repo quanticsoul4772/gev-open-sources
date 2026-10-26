@@ -198,9 +198,10 @@ export function matchingPairs(fingerprints, entries) {
  * Retire entries serving the same feed as another under a different URL: the
  * same pair matches (matchingPairs) on this run's fingerprints and on the
  * last run's (`previous`, from takeFingerprints). Matching pairs are joined
- * into groups; one of each group is kept (keeperOf) and the others are
- * tombstoned with `reason: 'duplicate'` and the kept id, so discovery doesn't
- * re-add them. Hand-written entries are never retired.
+ * into groups; one of each group is kept (keeperOf), and the members that
+ * match the kept entry itself are tombstoned with `reason: 'duplicate'` and the
+ * kept id, so discovery doesn't re-add them. A member matching only another
+ * member (a chain) stays. Hand-written entries are never retired.
  * Updates `health` and `tombstones` in place.
  * @returns {string[]} ids of the entries to remove
  */
@@ -210,10 +211,12 @@ export function retireDuplicates(health, previous, entries, tombstones, now) {
   const before = matchingPairs(previous, entries);
   const root = new Map();
   const find = (id) => (root.get(id) === id ? id : find(root.get(id)));
+  const matched = new Set();
   for (const pair of matchingPairs(current, entries)) {
     const [a, b] = pair.split(' ');
     const [few, many] = [health[a].records, health[b].records].sort((x, y) => x - y);
     if (!before.has(pair) || few < DUPLICATE_COUNT_RATIO * many) continue;
+    matched.add(pair);
     for (const id of [a, b]) if (!root.has(id)) root.set(id, id);
     root.set(find(a), find(b));
   }
@@ -223,7 +226,7 @@ export function retireDuplicates(health, previous, entries, tombstones, now) {
   for (const ids of groups.values()) {
     const kept = keeperOf(ids, entries, health);
     for (const id of ids) {
-      if (id === kept || isStaticEntry(entries.get(id))) continue;
+      if (id === kept || isStaticEntry(entries.get(id)) || !matched.has([kept, id].sort().join(' '))) continue;
       tombstones[id] = { url: entries.get(id).access.url, at: now, reason: 'duplicate', of: kept };
       delete health[id];
       retired.push(id);
