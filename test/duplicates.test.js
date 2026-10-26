@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { PbfWriter } from 'pbf';
 import * as adapters from '../src/adapters/index.js';
-import { knownUrlsOf, mergeCandidates } from '../src/harvest/index.js';
+import { duplicateUrlsOf, knownUrlsOf, mergeCandidates } from '../src/harvest/index.js';
 import { PERIMETER_ENTRIES } from '../src/harvest/perimeters.js';
 import { DAY_S, emptyHealth } from '../src/health.js';
 import { probeEntry, probeRun } from '../src/probe.js';
@@ -305,4 +305,12 @@ test('duplicates: a copy that is not dead is kept over an older dead one', async
   assert.deepEqual(await run(entries, health, tombstones, same, t1), []);
   assert.deepEqual(await run(entries, health, tombstones, same, t1 + DAY_S), ['dying']);
   assert.equal(tombstones.dying.of, 'live');
+});
+
+test('duplicates: the URL block ends where the chain of kept entries reaches a dead tombstone', () => {
+  const tombstones = {
+    copy: { url: 'https://copy.example/vp', at: 2000, reason: 'duplicate', of: 'kept' },
+    kept: { url: 'https://kept.example/vp', at: 3000 },
+  };
+  assert.deepEqual([...duplicateUrlsOf(new Map(), tombstones)], []);
 });
