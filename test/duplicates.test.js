@@ -126,3 +126,13 @@ test('duplicates: a retired copy is not re-added by discovery', async () => {
   entries.delete('copy');
   assert.deepEqual(mergeCandidates(entries, [entry('copy'), entry('fresh')], tombstones).map((e) => e.id), ['fresh']);
 });
+
+test('duplicates: a retired copy\'s URL is not re-added under another catalogue\'s id', () => {
+  const entries = new Map([['kept', entry('kept')]]);
+  const tombstones = { copy: { url: entry('copy').access.url, at: 2000, reason: 'duplicate', of: 'kept' } };
+  const relisted = { ...entry('copy'), id: 'transitous-copy' };
+  assert.deepEqual(mergeCandidates(entries, [relisted, entry('fresh')], tombstones).map((e) => e.id), ['fresh']);
+  // A dead feed's tombstone blocks only its id: the URL may come back working under another.
+  const dead = { copy: { url: entry('copy').access.url, at: 2000 } };
+  assert.deepEqual(mergeCandidates(entries, [relisted], dead).map((e) => e.id), ['transitous-copy']);
+});

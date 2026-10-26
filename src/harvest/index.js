@@ -118,6 +118,8 @@ export function redirectChecks(merged, existing, health) {
 
 export function mergeCandidates(existing, candidates, tombstones) {
   const urls = new Set([...existing.values()].map((e) => normalizeUrl(e.access.url)));
+  // A copy retired as a duplicate stays out under any id another catalogue gives its URL.
+  for (const t of Object.values(tombstones)) if (t.reason === 'duplicate' && t.url) urls.add(normalizeUrl(t.url));
   const added = [];
   for (const entry of candidates) {
     const url = normalizeUrl(entry.access.url);
