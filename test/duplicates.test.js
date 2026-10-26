@@ -260,3 +260,15 @@ test('duplicates: catalogue harvesters see a blocked copy\'s URL as known', () =
   assert.ok(known.has('https://kept.example/vp'));
   assert.equal(knownUrlsOf(new Map(), tombstones).size, 0, 'the kept entry is gone');
 });
+
+test('duplicates: the URL block follows a kept entry that was itself retired as a duplicate', () => {
+  const relisted = { ...entry('copy'), id: 'transitous-copy' };
+  const tombstones = {
+    copy: { url: entry('copy').access.url, at: 2000, reason: 'duplicate', of: 'middle' },
+    middle: { url: entry('middle').access.url, at: 3000, reason: 'duplicate', of: 'last' },
+  };
+  assert.deepEqual(mergeCandidates(new Map([['last', entry('last')]]), [relisted], tombstones), []);
+  assert.deepEqual(mergeCandidates(new Map(), [relisted], tombstones).map((e) => e.id), ['transitous-copy'], 'no kept entry left');
+  const cycle = { ...tombstones, last: { url: entry('last').access.url, at: 4000, reason: 'duplicate', of: 'copy' } };
+  assert.deepEqual(mergeCandidates(new Map(), [relisted], cycle).map((e) => e.id), ['transitous-copy'], 'a cycle ends');
+});

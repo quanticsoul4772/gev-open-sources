@@ -120,12 +120,23 @@ export function redirectChecks(merged, existing, health) {
  * Normalized URLs of entries retired as duplicates of an entry still in the
  * directory: a copy stays out under any id another catalogue gives its URL,
  * over http or https (a plain-http feed moves to https only after merging).
- * Once the kept entry is gone, the URL may come back.
+ * A kept entry later retired as a duplicate of a third passes the block on to
+ * that one. Once no kept entry is left, the URL may come back.
  */
 export function duplicateUrlsOf(existing, tombstones) {
+  // The entry a duplicate tombstone leads to through retired kept entries, or null.
+  const keptOf = (t) => {
+    const seen = new Set();
+    let id = t.of;
+    while (!existing.has(id) && tombstones[id]?.reason === 'duplicate' && !seen.has(id)) {
+      seen.add(id);
+      id = tombstones[id].of;
+    }
+    return existing.has(id) ? id : null;
+  };
   const urls = new Set();
   for (const t of Object.values(tombstones))
-    if (t.reason === 'duplicate' && t.url && existing.has(t.of))
+    if (t.reason === 'duplicate' && t.url && keptOf(t))
       for (const scheme of ['http:', 'https:']) urls.add(normalizeUrl(t.url.replace(/^https?:/i, scheme)));
   return urls;
 }
