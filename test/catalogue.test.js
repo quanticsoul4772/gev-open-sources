@@ -909,9 +909,14 @@ test('phases: vehicle checks spend their own budget, not the GBFS one; GBFS time
   // 50 ms left, made 100 ms before resolving: a wall-clock deadline would have passed.
   const fresh = { leftMs: 50 };
   await new Promise((resolve) => setTimeout(resolve, 100));
-  await resolveGbfsSystems([system('g.example')], { ...options, gbfsPhase: fresh });
+  // Each request takes 30 ms, which the budget pays for.
+  const slow = async (url, init) => {
+    await new Promise((resolve) => setTimeout(resolve, 30));
+    return fetchImpl(url, init);
+  };
+  await resolveGbfsSystems([system('g.example')], { ...options, fetchImpl: slow, gbfsPhase: fresh });
   assert.ok(options.rejects[outputKey('https://g.example/gbfs.json', 'stations')]);
-  assert.ok(fresh.leftMs <= 50);
+  assert.ok(fresh.leftMs <= 20);
   await resolveGbfsSystems([system('h.example')], { ...options, gbfsPhase: { leftMs: -1 } });
   assert.equal(options.rejects[outputKey('https://h.example/gbfs.json', 'stations')], undefined);
 });
