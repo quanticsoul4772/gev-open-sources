@@ -124,7 +124,10 @@ export function withAtlasLicences(entries, licences) {
   return out;
 }
 
-/** @param {{knownUrls: Set<string>, rejects: object, now: number, fetchImpl?: typeof fetch}} options */
+/**
+ * @param {{knownUrls: Set<string>, rejects: object, now: number, fetchImpl?: typeof fetch,
+ *   checkPhase?: {leftMs: number}}} options
+ */
 export async function harvestAtlas(options) {
   const res = await fetchCapped(ATLAS_ZIP_URL, { maxBytes: 64 * 2 ** 20, timeoutMs: 120_000, fetchImpl: options.fetchImpl });
   if (res.status !== 200) throw new Error(`Transitland Atlas: HTTP ${res.status}`);

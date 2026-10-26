@@ -3,7 +3,7 @@ import { fetchCapped, hostLimiter, notNow } from '../util/http.js';
 import { FORM_FACTORS } from '../schema.js';
 import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl, slugId } from '../util/ids.js';
-import { hostOfUrl, runPooled } from '../util/pool.js';
+import { hostOfUrl, runPooled, withinPhase } from '../util/pool.js';
 import { coordinate } from '../adapters/cameras.js';
 import { plausibleBbox, recentlyRejected, replacesBbox, robustBbox, splitStrays, withoutStrays } from './catalogue.js';
 
@@ -423,7 +423,10 @@ export async function fillGbfsCoverage(entries, { fetchImpl } = {}) {
   return filled;
 }
 
-/** Stops starting new GBFS systems this long into a run (the job has 60 min). */
+/**
+ * Time GBFS resolving may take per run, summed over its sources (Transitous,
+ * systems.csv); the job has 60 min.
+ */
 export const GBFS_PHASE_MS = 15 * 60_000;
 
 /**
@@ -439,22 +442,22 @@ export const GBFS_REQUEST_GAP_MS = 250;
  * known, a directory entry already serves it (`knownOutputs` holds
  * `<normalized discovery URL>#<kind>`), or it was rejected recently. Systems
  * wanting only vehicles are capped at `vehicleBudget`; no system starts after
- * `deadlineMs`; each host gets one request at a time, `requestGapMs` apart; a
- * host is skipped after 3 consecutive network failures or rate limits.
- * Peer-to-peer car sharing is skipped entirely (isPeerToPeer). A resolved
- * output whose systemKeys match a directory entry (`knownSystems`) or an
- * output resolved earlier in the list is a copy: rejected as a duplicate.
+ * the run's `gbfsPhase` budget is spent; each host gets one request at a time,
+ * `requestGapMs` apart; a host is skipped after 3 consecutive network failures
+ * or rate limits. Peer-to-peer car sharing is skipped entirely (isPeerToPeer).
+ * A resolved output whose systemKeys match a directory entry (`knownSystems`)
+ * or an output resolved earlier in the list is a copy: rejected as a duplicate.
  * @param {object[]} systems as for resolveGbfsSystem
  * @param {{knownIds: Set<string>, knownOutputs: Set<string>, knownSystems?: Set<string>, rejects: object,
- *   now: number, fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number, deadlineMs?: number,
- *   requestGapMs?: number}} options
+ *   now: number, fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number,
+ *   gbfsPhase?: {leftMs: number}, requestGapMs?: number}} options
  * @returns {Promise<object[]>} new entries; `rejects` is updated in place
  */
 export async function resolveGbfsSystems(systems, options) {
   const { knownIds, knownOutputs, rejects, now, fetchImpl, anyRedirect = false } = options;
   const {
     vehicleBudget = Infinity,
-    deadlineMs = Infinity,
+    gbfsPhase = { leftMs: Infinity },
     requestGapMs = GBFS_REQUEST_GAP_MS,
     knownSystems = new Set(),
   } = options;
@@ -475,11 +478,13 @@ export async function resolveGbfsSystems(systems, options) {
     }
     todo.push({ s, want });
   }
-  const results = await runPooled(
-    todo,
-    ({ s }) => hostOfUrl(s.discoveryUrl),
-    ({ s, want }) => resolveGbfsSystem(s, { want, fetchImpl, anyRedirect, limiter }),
-    { global: 24, perHost: 3, deadlineMs, breakAfter: 3 },
+  const results = await withinPhase(gbfsPhase, (deadlineMs) =>
+    runPooled(
+      todo,
+      ({ s }) => hostOfUrl(s.discoveryUrl),
+      ({ s, want }) => resolveGbfsSystem(s, { want, fetchImpl, anyRedirect, limiter }),
+      { global: 24, perHost: 3, deadlineMs, breakAfter: 3 },
+    ),
   );
   const entries = [];
   const seen = new Set(knownSystems);

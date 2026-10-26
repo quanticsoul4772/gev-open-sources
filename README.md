@@ -9,7 +9,8 @@ hours a GitHub Actions run:
      catalog, [Transitland Atlas](https://github.com/transitland/transitland-atlas)
      and [Transitous](https://github.com/public-transport/transitous). Catalogue
      feeds are fetched once and added only if they carry vehicle positions;
-     failures are retried after a week (`harvest-rejects.json`).
+     failures are retried after a week (`harvest-rejects.json`). Mobility
+     Database feeds not tagged as vehicle positions are checked the same way.
    - Bike-share systems from MobilityData's [GBFS systems list](https://github.com/MobilityData/gbfs)
      and Transitous: docked stations (`bikeshare.stations`, `gbfs.station-status`)
      and free-floating vehicles (`sharedmobility.vehicles`, `gbfs.vehicle-status`:

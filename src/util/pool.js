@@ -67,6 +67,23 @@ export async function runPooled(items, hostOf, run, { global = 16, perHost = 2, 
   return results;
 }
 
+/**
+ * Run pooled work within a time budget shared by several runs (`{leftMs}`),
+ * spent only while they run, so work between them doesn't use it up.
+ * @template R
+ * @param {{leftMs: number}} phase updated in place
+ * @param {(deadlineMs: number) => Promise<R>} run
+ * @returns {Promise<R>}
+ */
+export async function withinPhase(phase, run) {
+  const start = Date.now();
+  try {
+    return await run(start + phase.leftMs);
+  } finally {
+    phase.leftMs -= Date.now() - start;
+  }
+}
+
 /** Host of an entry's access URL (or any URL string). */
 export const hostOfUrl = (url) => {
   try {
