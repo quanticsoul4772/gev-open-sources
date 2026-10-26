@@ -32,7 +32,7 @@ export const FINGERPRINT_SLOTS = 64;
 
 /**
  * A MinHash fingerprint of a feed's set of vehicle ids (FINGERPRINT_SLOTS
- * minima of sha256 over the ids, the low byte kept of each, base64url), or null
+ * minima of sha256 over the ids, the low byte kept of each, hex), or null
  * under MIN_FINGERPRINT_VEHICLES ids: a handful of buses at night can match
  * by chance. Two URLs for one feed give nearly the same set even when probed
  * seconds apart (vehicles join and leave a large fleet all the time), so
@@ -53,12 +53,13 @@ export function vehicleFingerprint(ids) {
   // The low bits of a minimum are as random as any (its high bits are near zero);
   // two different minima share a low byte 1 time in 256, a negligible bias.
   mins.forEach((m, i) => (out[i] = m & 0xff));
-  return out.toString('base64url');
+  // Hex, not base64: base64 can start like a token (`sk-…`) that the secret scan refuses.
+  return out.toString('hex');
 }
 
 /** Estimated Jaccard similarity of the id sets behind two fingerprints: the share of equal slots. */
 export function fingerprintSimilarity(a, b) {
-  const [x, y] = [Buffer.from(a, 'base64url'), Buffer.from(b, 'base64url')];
+  const [x, y] = [Buffer.from(a, 'hex'), Buffer.from(b, 'hex')];
   let equal = 0;
   for (let i = 0; i < FINGERPRINT_SLOTS; i += 1) if (x[i] === y[i]) equal += 1;
   return equal / FINGERPRINT_SLOTS;

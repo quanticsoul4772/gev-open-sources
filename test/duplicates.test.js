@@ -5,6 +5,7 @@ import * as adapters from '../src/adapters/index.js';
 import { knownUrlsOf, mergeCandidates } from '../src/harvest/index.js';
 import { PERIMETER_ENTRIES } from '../src/harvest/perimeters.js';
 import { probeEntry, probeRounds, retireDuplicates, takeFingerprints } from '../src/probe.js';
+import { scanJson } from '../src/util/secrets.js';
 
 const { ADAPTERS, vehicleFingerprint } = adapters;
 
@@ -62,6 +63,14 @@ test('fingerprint: the same vehicle ids in any order match; another set does not
   assert.equal(decode([...ids].reverse()).fingerprint, a);
   assert.equal(adapters.fingerprintSimilarity(a, a), 1);
   assert.ok(adapters.fingerprintSimilarity(a, decode(fleet(40, 100)).fingerprint) < 0.2, 'no ids in common');
+});
+
+test('fingerprint: stored as hex, which the secret scan never takes for a token', () => {
+  assert.match(decode(fleet(40)).fingerprint, /^[0-9a-f]{128}$/);
+  // Bytes whose base64url form starts `sk-` followed by 20+ token characters.
+  const bytes = Buffer.from(`sk-${'A'.repeat(83)}`, 'base64url');
+  assert.equal(scanJson({ fingerprint: bytes.toString('base64url') }).length, 1, 'base64url would be refused');
+  assert.deepEqual(scanJson({ fingerprint: bytes.toString('hex') }), []);
 });
 
 test('fingerprint: none under 5 distinct vehicles; the probe passes one on from 5', async () => {
