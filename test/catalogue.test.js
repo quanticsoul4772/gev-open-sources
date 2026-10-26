@@ -1141,3 +1141,28 @@ test("gbfs: the vehicles-only cap counts across the run's lists", async () => {
   await resolveGbfsSystems([system('c')], options);
   assert.deepEqual(fetched.map((u) => new URL(u).hostname).sort(), ['a.example', 'b.example']);
 });
+
+test('gbfs: a discovery URL listed twice in one list is fetched once and not rejected as its own duplicate', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const fake = fakeFetch({
+    'https://op.example/gbfs.json': {
+      body: JSON.stringify({ version: '2.3', data: { en: { feeds: [
+        { name: 'station_information', url: 'https://op.example/info' },
+        { name: 'station_status', url: 'https://op.example/status' },
+      ] } } }),
+    },
+    'https://op.example/info': { body: JSON.stringify({ data: { stations: [{ lat: 47.2, lon: -1.5 }, { lat: 47.3, lon: -1.6 }] } }) },
+  });
+  const fetched = [];
+  const fetchImpl = (url, init) => {
+    fetched.push(url);
+    return fake(url, init);
+  };
+  const system = (id) => ({ id, vehicleId: `${id}-vehicles`, name: 'V', provider: 'V', country: null, discoveryUrl: 'https://op.example/gbfs.json', systemId: null, provenance: ['test'] });
+  const rejects = {};
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownSystems: new Set(), rejects, now: 1000, fetchImpl, requestGapMs: 0 };
+  const added = await resolveGbfsSystems([system('transportgouv-1'), system('transportgouv-2')], options);
+  assert.deepEqual(added.map((e) => e.id), ['transportgouv-1']);
+  assert.equal(fetched.filter((u) => u === 'https://op.example/gbfs.json').length, 1);
+  assert.equal(rejects[outputKey('https://op.example/gbfs.json', 'stations')], undefined);
+});

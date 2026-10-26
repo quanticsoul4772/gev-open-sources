@@ -478,14 +478,18 @@ export async function resolveGbfsSystems(systems, options) {
     !knownOutputs.has(outputKey(normalizeUrl(s.discoveryUrl), kind)) &&
     !recentlyRejected(rejects, outputKey(s.discoveryUrl, kind), now);
   const todo = [];
+  // Outputs queued in this call, so a URL listed twice is fetched once.
+  const queued = new Set();
   for (const s of systems) {
     if (isPeerToPeer(s)) continue;
-    const want = { stations: wanted(s, 'stations'), vehicles: wanted(s, 'vehicles') };
+    const want = {};
+    for (const kind of ['stations', 'vehicles']) want[kind] = wanted(s, kind) && !queued.has(resolvedKey(s, kind));
     if (!want.stations && !want.vehicles) continue;
     if (!want.stations) {
       if (vehiclesOnly.count >= vehicleBudget) continue;
       vehiclesOnly.count += 1;
     }
+    for (const kind of ['stations', 'vehicles']) if (want[kind]) queued.add(resolvedKey(s, kind));
     todo.push({ s, want });
   }
   const results = await withinPhase(gbfsPhase, (deadlineMs) =>
