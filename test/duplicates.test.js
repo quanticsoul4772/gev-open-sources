@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { PbfWriter } from 'pbf';
 import * as adapters from '../src/adapters/index.js';
-import { mergeCandidates } from '../src/harvest/index.js';
+import { knownUrlsOf, mergeCandidates } from '../src/harvest/index.js';
 import { PERIMETER_ENTRIES } from '../src/harvest/perimeters.js';
 import { probeEntry, probeRounds, retireDuplicates, takeFingerprints } from '../src/probe.js';
 
@@ -216,4 +216,13 @@ test('duplicates: a retired copy\'s URL is blocked over http and https alike', (
   const listed = (url) => ({ ...entry('copy'), id: 'transitous-copy', access: { url } });
   assert.deepEqual(mergeCandidates(existing, [listed('http://copy.example/vp')], tombstone('https://copy.example/vp')), []);
   assert.deepEqual(mergeCandidates(existing, [listed('https://copy.example/vp')], tombstone('http://copy.example/vp')), []);
+});
+
+test('duplicates: catalogue harvesters see a blocked copy\'s URL as known', () => {
+  const existing = new Map([['kept', entry('kept')]]);
+  const tombstones = { copy: { url: 'https://copy.example/vp', at: 2000, reason: 'duplicate', of: 'kept' } };
+  const known = knownUrlsOf(existing, tombstones);
+  assert.ok(known.has('https://copy.example/vp') && known.has('http://copy.example/vp'));
+  assert.ok(known.has('https://kept.example/vp'));
+  assert.equal(knownUrlsOf(new Map(), tombstones).size, 0, 'the kept entry is gone');
 });
