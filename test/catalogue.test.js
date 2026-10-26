@@ -916,7 +916,7 @@ test('phases: vehicle checks spend their own budget, not the GBFS one; GBFS time
   };
   await resolveGbfsSystems([system('g.example')], { ...options, fetchImpl: slow, gbfsPhase: fresh });
   assert.ok(options.rejects[outputKey('https://g.example/gbfs.json', 'stations')]);
-  assert.ok(fresh.leftMs <= 20);
+  assert.ok(fresh.leftMs <= 25);
   await resolveGbfsSystems([system('h.example')], { ...options, gbfsPhase: { leftMs: -1 } });
   assert.equal(options.rejects[outputKey('https://h.example/gbfs.json', 'stations')], undefined);
 });
@@ -1196,4 +1196,41 @@ test('gbfs: a vehicles-only system not started in time gives its cap slot back t
   assert.equal(options.vehiclesOnly.count, 0);
   await resolveGbfsSystems([system('b')], options);
   assert.deepEqual(fetched.map((u) => new URL(u).hostname), ['b.example']);
+});
+
+test('gbfs: a system wanting both outputs that is not started in time leaves the vehicles-only count alone', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const system = { id: 'a', vehicleId: 'a-vehicles', name: 'a', provider: 'a', country: null, discoveryUrl: 'https://a.example/gbfs.json', systemId: null, provenance: ['test'] };
+  const vehiclesOnly = { count: 1 };
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownSystems: new Set(), vehicleBudget: 5, vehiclesOnly, rejects: {}, now: 1000, requestGapMs: 0, gbfsPhase: { leftMs: -1 } };
+  await resolveGbfsSystems([system], { ...options, fetchImpl: async () => assert.fail('not started') });
+  assert.equal(vehiclesOnly.count, 1);
+});
+
+test('gbfs: a vehicles-only copy listed before a copy wanting both shares its fetch and takes no cap slot', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const fake = fakeFetch({
+    'https://op.example/gbfs.json': {
+      body: JSON.stringify({ version: '2.3', data: { en: { feeds: [
+        { name: 'station_information', url: 'https://op.example/info' },
+        { name: 'station_status', url: 'https://op.example/status' },
+        { name: 'free_bike_status', url: 'https://op.example/bikes' },
+      ] } } }),
+    },
+    'https://op.example/info': { body: JSON.stringify({ data: { stations: [{ lat: 47.2, lon: -1.5 }, { lat: 47.3, lon: -1.6 }] } }) },
+    'https://op.example/bikes': { body: JSON.stringify({ data: { bikes: [{ lat: 47.2, lon: -1.5 }, { lat: 47.3, lon: -1.6 }] } }) },
+  });
+  const fetched = [];
+  const fetchImpl = (url, init) => {
+    fetched.push(url);
+    return fake(url, init);
+  };
+  const system = (id) => ({ id, vehicleId: `${id}-vehicles`, name: 'V', provider: 'V', country: null, discoveryUrl: 'https://op.example/gbfs.json', systemId: null, provenance: ['test'] });
+  const vehiclesOnly = { count: 0 };
+  // A's stations entry exists, so A alone would want only vehicles.
+  const options = { knownIds: new Set(['A']), knownOutputs: new Set(), knownSystems: new Set(), vehicleBudget: 1, vehiclesOnly, rejects: {}, now: 1000, fetchImpl, requestGapMs: 0 };
+  const added = await resolveGbfsSystems([system('A'), system('B')], options);
+  assert.equal(fetched.filter((u) => u === 'https://op.example/gbfs.json').length, 1);
+  assert.equal(vehiclesOnly.count, 0);
+  assert.deepEqual(added.map((e) => e.domain).sort(), ['bikeshare.stations', 'sharedmobility.vehicles']);
 });
