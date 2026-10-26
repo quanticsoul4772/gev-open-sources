@@ -39,8 +39,16 @@ export const rejectRetryS = (key, reject) =>
  */
 export const CHECK_PHASE_MS = 10 * 60_000;
 
-/** A GTFS-RT URL naming alerts or trip updates (`-service-alert`, `/Alert.pb`, `/tripupdates/`, `TripUpdates`). */
-export const NOT_VEHICLES = /alert|trip[-_]?updates?/i;
+/**
+ * A GTFS-RT URL whose path or query names alerts or trip updates
+ * (`-service-alert`, `/Alert.pb`, `/tripupdates/`, `TripUpdates`) and not
+ * vehicle positions. The host is not read: `*.rideralerts.com` serves vehicles.
+ */
+export const namesNotVehicles = (url) => {
+  if (!URL.canParse(url)) return false;
+  const { pathname, search } = new URL(url);
+  return /alert|trip[-_]?updates?/i.test(pathname + search) && !/vehicle/i.test(pathname + search);
+};
 
 /**
  * Licence URL for an entry from a catalogue's SPDX id and/or licence URL. A

@@ -2,7 +2,7 @@ import { parseCsv } from '../util/csv.js';
 import { fetchCapped } from '../util/http.js';
 import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl, slugId } from '../util/ids.js';
-import { NOT_VEHICLES, plausibleBbox, resolveTransitCandidates } from './catalogue.js';
+import { namesNotVehicles, plausibleBbox, resolveTransitCandidates } from './catalogue.js';
 
 export const MDB_CSV_URL = 'https://files.mobilitydatabase.org/feeds_v2.csv';
 
@@ -56,7 +56,7 @@ export function mobilityDatabaseEntries(rows) {
     }
     const countries = row['location.country_code'] ? [row['location.country_code']] : [];
     if (!tagged) {
-      if (NOT_VEHICLES.test(url)) continue;
+      if (namesNotVehicles(url)) continue;
       untagged.push({
         taggedOther: row.entity_type.split('|').some(Boolean),
         id: slugId('mdb', row.id),
