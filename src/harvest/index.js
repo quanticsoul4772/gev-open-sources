@@ -137,7 +137,8 @@ export function duplicateUrlsOf(existing, tombstones) {
   const urls = new Set();
   for (const t of Object.values(tombstones))
     if (t.reason === 'duplicate' && t.url && keptOf(t))
-      for (const scheme of ['http:', 'https:']) urls.add(normalizeUrl(t.url.replace(/^https?:/i, scheme)));
+      // Normalized first, so a default port (`:80`, `:443`) goes before the scheme changes.
+      for (const scheme of ['http:', 'https:']) urls.add(normalizeUrl(normalizeUrl(t.url).replace(/^https?:/i, scheme)));
   return urls;
 }
 

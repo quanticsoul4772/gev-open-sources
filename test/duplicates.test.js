@@ -272,3 +272,11 @@ test('duplicates: the URL block follows a kept entry that was itself retired as 
   const cycle = { ...tombstones, last: { url: entry('last').access.url, at: 4000, reason: 'duplicate', of: 'copy' } };
   assert.deepEqual(mergeCandidates(new Map(), [relisted], cycle).map((e) => e.id), ['transitous-copy'], 'a cycle ends');
 });
+
+test('duplicates: a blocked URL with a default port blocks the other scheme too', () => {
+  const existing = new Map([['kept', entry('kept')]]);
+  const tombstone = (url) => ({ copy: { url, at: 2000, reason: 'duplicate', of: 'kept' } });
+  const listed = (url) => ({ ...entry('copy'), id: 'transitous-copy', access: { url } });
+  assert.deepEqual(mergeCandidates(existing, [listed('https://h.example/vp')], tombstone('http://h.example:80/vp')), []);
+  assert.deepEqual(mergeCandidates(existing, [listed('http://h.example/vp')], tombstone('https://h.example:443/vp')), []);
+});
