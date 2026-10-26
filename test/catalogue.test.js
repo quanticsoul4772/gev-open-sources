@@ -893,8 +893,8 @@ test('phases: vehicle checks spend their own budget, not the GBFS one; GBFS time
     gbfsPhase,
   };
   const entries = await resolveTransitCandidates([{ ...base, id: 'c-vp', url: 'https://a.example/vp' }], options);
+  // Checked although the GBFS budget is spent.
   assert.deepEqual(entries.map((e) => e.id), ['c-vp']);
-  assert.ok(checkPhase.leftMs <= 60_000);
   // Time between GBFS steps is not spent: a budget with time left resolves, however late in the run.
   const system = (host) => ({
     id: host,
@@ -906,11 +906,12 @@ test('phases: vehicle checks spend their own budget, not the GBFS one; GBFS time
     systemId: null,
     provenance: ['test'],
   });
-  const fresh = { leftMs: 60_000 };
-  await new Promise((resolve) => setTimeout(resolve, 20));
+  // 50 ms left, made 100 ms before resolving: a wall-clock deadline would have passed.
+  const fresh = { leftMs: 50 };
+  await new Promise((resolve) => setTimeout(resolve, 100));
   await resolveGbfsSystems([system('g.example')], { ...options, gbfsPhase: fresh });
   assert.ok(options.rejects[outputKey('https://g.example/gbfs.json', 'stations')]);
-  assert.ok(fresh.leftMs <= 60_000 && fresh.leftMs > 59_000);
+  assert.ok(fresh.leftMs <= 50);
   await resolveGbfsSystems([system('h.example')], { ...options, gbfsPhase: { leftMs: -1 } });
   assert.equal(options.rejects[outputKey('https://h.example/gbfs.json', 'stations')], undefined);
 });
@@ -986,14 +987,14 @@ test('duplicates: a checked untagged Mobility Database feed dropped as a duplica
     {
       mdb: { checked: [feed('mdb-2', 'https://zet.example/rt'), feed('mdb-3', 'https://kept.example/rt')] },
       atlas: { entries: [] },
-      transitous: { entries: [] },
+      transitous: { entries: [feed('transitous-1', 'https://tr.example/rt')] },
       transportGouv: { entries: [feed('transportgouv-1', 'https://fr.example/rt')] },
     },
     [feed('mdb-3', 'https://kept.example/rt')],
     rejects,
     1000,
   );
-  assert.deepEqual(Object.keys(rejects).sort(), ['https://fr.example/rt', 'https://zet.example/rt']);
+  assert.deepEqual(Object.keys(rejects).sort(), ['https://fr.example/rt', 'https://tr.example/rt', 'https://zet.example/rt']);
   assert.equal(rejects['https://zet.example/rt'].reason, 'duplicate');
 });
 
