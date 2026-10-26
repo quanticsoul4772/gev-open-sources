@@ -24,19 +24,44 @@ function share(points, bbox) {
 
 /** Fewest distinct vehicle ids a feed needs before its fingerprint means anything. */
 export const MIN_FINGERPRINT_VEHICLES = 5;
+/**
+ * MinHash slots in a fingerprint: the share of equal slots estimates the
+ * Jaccard similarity of two id sets with a standard error of about 0.06.
+ */
+export const FINGERPRINT_SLOTS = 64;
 
 /**
- * A hash of a feed's set of vehicle ids, the same whatever their order, or
- * null under MIN_FINGERPRINT_VEHICLES ids: a handful of buses at night can
- * match by chance. Two URLs for one feed give the same set; positions and
- * timestamps move between two probes, the ids don't.
+ * A MinHash fingerprint of a feed's set of vehicle ids (FINGERPRINT_SLOTS
+ * minima of sha256 over the ids, the low byte kept of each, base64url), or null
+ * under MIN_FINGERPRINT_VEHICLES ids: a handful of buses at night can match
+ * by chance. Two URLs for one feed give nearly the same set even when probed
+ * seconds apart (vehicles join and leave a large fleet all the time), so
+ * fingerprints are compared by similarity (fingerprintSimilarity), not equality.
  * @param {string[]} ids
  * @returns {string|null}
  */
 export function vehicleFingerprint(ids) {
-  const set = [...new Set(ids)].sort();
-  if (set.length < MIN_FINGERPRINT_VEHICLES) return null;
-  return createHash('sha256').update(set.join('\n')).digest('hex').slice(0, 16);
+  const set = new Set(ids);
+  if (set.size < MIN_FINGERPRINT_VEHICLES) return null;
+  const mins = new Array(FINGERPRINT_SLOTS).fill(Infinity);
+  for (const id of set)
+    for (let round = 0; round < FINGERPRINT_SLOTS / 8; round += 1) {
+      const hash = createHash('sha256').update(`${round}\n${id}`).digest();
+      for (let k = 0; k < 8; k += 1) mins[round * 8 + k] = Math.min(mins[round * 8 + k], hash.readUInt32BE(4 * k));
+    }
+  const out = Buffer.alloc(FINGERPRINT_SLOTS);
+  // The low bits of a minimum are as random as any (its high bits are near zero);
+  // two different minima share a low byte 1 time in 256, a negligible bias.
+  mins.forEach((m, i) => (out[i] = m & 0xff));
+  return out.toString('base64url');
+}
+
+/** Estimated Jaccard similarity of the id sets behind two fingerprints: the share of equal slots. */
+export function fingerprintSimilarity(a, b) {
+  const [x, y] = [Buffer.from(a, 'base64url'), Buffer.from(b, 'base64url')];
+  let equal = 0;
+  for (let i = 0; i < FINGERPRINT_SLOTS; i += 1) if (x[i] === y[i]) equal += 1;
+  return equal / FINGERPRINT_SLOTS;
 }
 
 /**

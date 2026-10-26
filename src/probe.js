@@ -4,12 +4,13 @@
  * in one run (probeRounds), so a working new feed is verified the run it is
  * found. Dead entries are probed once a day; dead for 30 days → entry removed
  * and tombstoned so discovery doesn't re-add it (hand-written entries stay).
- * A vehicle-position entry with the same vehicle ids as another two runs in a
- * row serves the same feed under another URL: all but one are retired the
- * same way (retireDuplicates), so the app doesn't draw every vehicle twice.
+ * A vehicle-position entry with nearly the same vehicle ids as another, in an
+ * overlapping area, two runs in a row serves the same feed under another URL:
+ * all but one are retired the same way (retireDuplicates), so the app doesn't
+ * draw every vehicle twice.
  */
 import { pathToFileURL } from 'node:url';
-import { ADAPTERS } from './adapters/index.js';
+import { ADAPTERS, fingerprintSimilarity } from './adapters/index.js';
 import { isStaticEntry } from './harvest/static.js';
 import { DAY_S, HISTORY_CAP, applyProbe, classify, emptyHealth } from './health.js';
 import { readEntries, readState, removeEntry, writeState } from './store.js';
@@ -155,25 +156,69 @@ function keeperOf(ids, entries, health) {
 }
 
 /**
+ * Least estimated Jaccard similarity of two entries' vehicle ids for them to
+ * count as one feed. Copies of one feed fetched seconds apart measured 0.96–1;
+ * the closest feeds that are not copies (one carries part of the other's
+ * fleet) 0.70–0.75. With the estimate's error (about 0.06) a copy stays above
+ * 0.8 and a partial overlap seldom reaches it; the count check stops one that does.
+ */
+export const DUPLICATE_SIMILARITY = 0.8;
+/**
+ * Least ratio of two copies' vehicle counts this run. Counts are exact where
+ * the similarity is an estimate: a feed carrying 70 % of another's fleet
+ * (Autolinee Toscane, 648 of 924) is never taken for a copy of it.
+ */
+export const DUPLICATE_COUNT_RATIO = 0.9;
+
+const overlaps = (a, b) => Boolean(a && b) && a[0] <= b[2] && b[0] <= a[2] && a[1] <= b[3] && b[1] <= a[3];
+
+/**
+ * Pairs of entries (`"<id> <id>"`, ids in order) whose fingerprints match:
+ * similar vehicle ids and overlapping coverage. The coverage check keeps apart
+ * unrelated feeds whose ids are both plain 1..N numbers.
+ * @param {Record<string, string>} fingerprints id → fingerprint
+ * @param {Map<string, object>} entries
+ * @returns {Set<string>}
+ */
+export function matchingPairs(fingerprints, entries) {
+  const ids = Object.keys(fingerprints).filter((id) => entries.has(id)).sort();
+  const pairs = new Set();
+  for (let i = 0; i < ids.length; i += 1)
+    for (let j = i + 1; j < ids.length; j += 1) {
+      const [a, b] = [ids[i], ids[j]];
+      if (!overlaps(entries.get(a).coverage?.bbox, entries.get(b).coverage?.bbox)) continue;
+      if (fingerprintSimilarity(fingerprints[a], fingerprints[b]) >= DUPLICATE_SIMILARITY) pairs.add(`${a} ${b}`);
+    }
+  return pairs;
+}
+
+/**
  * Retire entries serving the same feed as another under a different URL: the
- * same vehicle-id fingerprint this run and the last (`previous`, from
- * takeFingerprints). One of each group is kept (keeperOf); the others are
+ * same pair matches (matchingPairs) on this run's fingerprints and on the
+ * last run's (`previous`, from takeFingerprints). Matching pairs are joined
+ * into groups; one of each group is kept (keeperOf) and the others are
  * tombstoned with `reason: 'duplicate'` and the kept id, so discovery doesn't
  * re-add them. Hand-written entries are never retired.
  * Updates `health` and `tombstones` in place.
  * @returns {string[]} ids of the entries to remove
  */
 export function retireDuplicates(health, previous, entries, tombstones, now) {
-  const groups = new Map();
-  for (const [id, h] of Object.entries(health)) {
-    if (!h.fingerprint || !previous[id] || !entries.has(id)) continue;
-    // Grouped by both runs' fingerprints: the same entries matched twice in a row.
-    const key = `${previous[id]} ${h.fingerprint}`;
-    groups.set(key, [...(groups.get(key) || []), id]);
+  const current = {};
+  for (const [id, h] of Object.entries(health)) if (h.fingerprint) current[id] = h.fingerprint;
+  const before = matchingPairs(previous, entries);
+  const root = new Map();
+  const find = (id) => (root.get(id) === id ? id : find(root.get(id)));
+  for (const pair of matchingPairs(current, entries)) {
+    const [a, b] = pair.split(' ');
+    const [few, many] = [health[a].records, health[b].records].sort((x, y) => x - y);
+    if (!before.has(pair) || few < DUPLICATE_COUNT_RATIO * many) continue;
+    for (const id of [a, b]) if (!root.has(id)) root.set(id, id);
+    root.set(find(a), find(b));
   }
+  const groups = new Map();
+  for (const id of root.keys()) groups.set(find(id), [...(groups.get(find(id)) || []), id]);
   const retired = [];
   for (const ids of groups.values()) {
-    if (ids.length < 2) continue;
     const kept = keeperOf(ids, entries, health);
     for (const id of ids) {
       if (id === kept || isStaticEntry(entries.get(id))) continue;

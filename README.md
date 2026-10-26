@@ -127,8 +127,9 @@ hours a GitHub Actions run:
    row with records seen in 7 days). A passing candidate is probed up to three
    times in one run, 5 minutes apart, so a working new feed is verified in the
    run that finds it. Dead for 30 days → removed. A vehicle-position entry
-   with the same set of vehicle ids (5 or more) as another, two runs in a
-   row, serves the same feed under another URL: one is kept (hand-written,
+   whose vehicle ids (5 or more) are nearly the same as another's (MinHash
+   similarity ≥ 0.8, vehicle counts within 10 %, overlapping areas), two runs
+   in a row, serves the same feed under another URL: one is kept (hand-written,
    else cleared for display, else the one probed first) and the others are
    removed and tombstoned (`reason: 'duplicate'`, `of`: the kept id).
 4. **Publishes** `directory.json` to GitHub Pages:
