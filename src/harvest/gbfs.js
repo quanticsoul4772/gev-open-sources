@@ -480,8 +480,11 @@ export async function resolveGbfsSystems(systems, options) {
   const todo = [];
   // Outputs queued in this call, so a URL listed twice is fetched once.
   const queued = new Set();
-  for (const s of systems) {
-    if (isPeerToPeer(s)) continue;
+  const listed = systems.filter((s) => !isPeerToPeer(s));
+  // Systems wanting stations first: a vehicles-only copy of the same URL then
+  // finds its vehicles queued and takes no cap slot.
+  const ordered = [...listed.filter((s) => wanted(s, 'stations')), ...listed.filter((s) => !wanted(s, 'stations'))];
+  for (const s of ordered) {
     const want = {};
     for (const kind of ['stations', 'vehicles']) want[kind] = wanted(s, kind) && !queued.has(resolvedKey(s, kind));
     if (!want.stations && !want.vehicles) continue;
