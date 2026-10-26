@@ -19,7 +19,7 @@ test('countries: an overseas territory counts for its country (Martinique, FR)',
   assert.equal(withCoveredCountries(e), e);
 });
 
-test('countries: land past the antimeridian counts (Fiji east of 180°, the Aleutians)', () => {
+test('countries: a country split at the antimeridian counts by its parts (Fiji east of 180°, the Aleutians)', () => {
   const fiji = entry([-16.9, -179.99, -16.75, -179.85], ['FJ']);
   assert.equal(withCoveredCountries(fiji), fiji);
   const adak = entry([51.8, -176.7, 51.9, -176.6], ['US']);
@@ -34,4 +34,13 @@ test('countries: a code missing from the table is kept', () => {
 test('countries: an entry without a bbox is left alone', () => {
   const e = entry(null, ['BY']);
   assert.equal(withCoveredCountries(e), e);
+});
+
+test('countries: territory Natural Earth draws for another unit still counts for its recognised country (Crimea, Northern Cyprus)', () => {
+  const sevastopol = entry([44.5, 33.4, 44.7, 33.7], ['UA']);
+  assert.equal(withCoveredCountries(sevastopol), sevastopol);
+  const kyrenia = entry([35.3, 33.2, 35.4, 33.4], ['CY']);
+  assert.equal(withCoveredCountries(kyrenia), kyrenia);
+  const gibraltar = entry([36.1, -5.37, 36.16, -5.33], ['GI']);
+  assert.equal(withCoveredCountries(gibraltar), gibraltar);
 });
