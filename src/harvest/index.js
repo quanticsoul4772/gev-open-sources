@@ -198,7 +198,8 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const checkPhase = { leftMs: CHECK_PHASE_MS };
   const gbfsPhase = { leftMs: GBFS_PHASE_MS };
   const knownSystems = knownSystemKeysOf(existing);
-  const gbfsOptions = { knownIds, knownOutputs, knownSystems, rejects, now, vehicleBudget, gbfsPhase, checkPhase };
+  const vehiclesOnly = { count: 0 };
+  const gbfsOptions = { knownIds, knownOutputs, knownSystems, tombstones, rejects, now, vehicleBudget, vehiclesOnly, gbfsPhase, checkPhase };
   const mdb = await harvestMobilityDatabase({ knownUrls: knownUrlsOf(existing), rejects, now, checkPhase });
   // Atlas, Transitous and transport.data.gouv.fr see the Mobility Database's
   // feeds as known, so they only check URLs that would be new.
