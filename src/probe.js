@@ -258,28 +258,44 @@ export function retireDead(health, entries, tombstones, now) {
   return retired;
 }
 
-export async function probeAll({ fetchImpl, now = nowS() } = {}) {
-  const entries = readEntries();
-  const health = readState('health.json', {});
-  const tombstones = readState('tombstones.json', {});
+/**
+ * One run over loaded state, in order: take the last run's fingerprints, probe
+ * the due entries (dead ones once a day), retire entries dead for 30 days, then
+ * retire duplicates among the rest. Updates `health` and `tombstones` in place.
+ * @param {{now: number, probe: (entry: object, at: number) => Promise<object>,
+ *   clock?: () => number, sleep?: (ms: number) => Promise<void>}} options
+ * @returns {Promise<{due: number, counts: Record<string, number>, rounds: number, retired: string[]}>}
+ *   retired: ids of the entries to remove
+ */
+export async function probeRun(entries, health, tombstones, { now, probe, clock, sleep }) {
   const due = [...entries.values()].filter((e) => {
     const h = health[e.id];
     return !h || h.status !== 'dead' || now - (h.lastProbe ?? 0) >= DAY_S;
   });
   const previous = takeFingerprints(health);
-  const { counts, rounds } = await probeRounds(due, health, {
-    probe: (e, at) => probeEntry(e, { now: at, fetchImpl }),
-  });
-  for (const id of retireDead(health, entries, tombstones, now)) removeEntry(id);
+  const { counts, rounds } = await probeRounds(due, health, { probe, clock, sleep });
+  const retired = retireDead(health, entries, tombstones, now);
   for (const id of retireDuplicates(health, previous, entries, tombstones, now)) {
-    removeEntry(id);
+    retired.push(id);
     console.log(`probe: retired ${id}: same vehicles as ${tombstones[id].of}, two runs in a row`);
   }
+  return { due: due.length, counts, rounds, retired };
+}
+
+export async function probeAll({ fetchImpl, now = nowS() } = {}) {
+  const entries = readEntries();
+  const health = readState('health.json', {});
+  const tombstones = readState('tombstones.json', {});
+  const { due, counts, rounds, retired } = await probeRun(entries, health, tombstones, {
+    now,
+    probe: (e, at) => probeEntry(e, { now: at, fetchImpl }),
+  });
+  for (const id of retired) removeEntry(id);
   writeState('health.json', health);
   writeState('tombstones.json', tombstones);
   const statuses = {};
   for (const h of Object.values(health)) statuses[h.status] = (statuses[h.status] || 0) + 1;
-  console.log(`probe: ${due.length} probed in ${rounds} round(s) ${JSON.stringify(counts)}; status ${JSON.stringify(statuses)}`);
+  console.log(`probe: ${due} probed in ${rounds} round(s) ${JSON.stringify(counts)}; status ${JSON.stringify(statuses)}`);
   return { counts, statuses };
 }
 

@@ -4,7 +4,8 @@ import { PbfWriter } from 'pbf';
 import * as adapters from '../src/adapters/index.js';
 import { knownUrlsOf, mergeCandidates } from '../src/harvest/index.js';
 import { PERIMETER_ENTRIES } from '../src/harvest/perimeters.js';
-import { probeEntry, probeRounds, retireDuplicates, takeFingerprints } from '../src/probe.js';
+import { DAY_S, emptyHealth } from '../src/health.js';
+import { probeEntry, probeRun } from '../src/probe.js';
 import { scanJson } from '../src/util/secrets.js';
 
 const { ADAPTERS, vehicleFingerprint } = adapters;
@@ -43,18 +44,14 @@ const entry = (id, { display = true, bbox = COTENTIN } = {}) => ({
 const fleet = (n, from = 0) => Array.from({ length: n }, (_, i) => `bus-${from + i}`);
 
 /**
- * One probe run, as probeAll runs it: an entry listed in `vehicles` passes
- * with the fingerprint of those ids; any other entry's probe fails.
+ * One probe run through probeRun, as probeAll runs it: an entry listed in
+ * `vehicles` passes with the fingerprint of those ids; any other entry's probe fails.
+ * @returns {Promise<string[]>} ids retired
  */
 async function run(entries, health, tombstones, vehicles, now) {
-  const previous = takeFingerprints(health);
-  await probeRounds([...entries.values()], health, {
-    probe: async (e, at) =>
-      vehicles[e.id] ? { at, result: 'ok', records: vehicles[e.id].length, fingerprint: vehicleFingerprint(vehicles[e.id]) } : { at, result: 'http', code: 500 },
-    clock: () => now,
-    sleep: async () => {},
-  });
-  return retireDuplicates(health, previous, entries, tombstones, now);
+  const probe = async (e, at) =>
+    vehicles[e.id] ? { at, result: 'ok', records: vehicles[e.id].length, fingerprint: vehicleFingerprint(vehicles[e.id]) } : { at, result: 'http', code: 500 };
+  return (await probeRun(entries, health, tombstones, { now, probe, clock: () => now, sleep: async () => {} })).retired;
 }
 
 test('fingerprint: the same vehicle ids in any order match; another set does not', () => {
@@ -279,4 +276,20 @@ test('duplicates: a blocked URL with a default port blocks the other scheme too'
   const listed = (url) => ({ ...entry('copy'), id: 'transitous-copy', access: { url } });
   assert.deepEqual(mergeCandidates(existing, [listed('https://h.example/vp')], tombstone('http://h.example:80/vp')), []);
   assert.deepEqual(mergeCandidates(existing, [listed('http://h.example/vp')], tombstone('https://h.example:443/vp')), []);
+});
+
+test('duplicates: an entry retired as dead this run is not also taken for a duplicate', async () => {
+  const live = entry('live');
+  const dying = entry('dying');
+  const entries = new Map([['live', live], ['dying', dying]]);
+  const deadSince = 100 * DAY_S;
+  const t1 = deadSince + 30 * DAY_S - DAY_S / 2;
+  // Dead 29.5 days, then answering again: still dead (no 3 passes yet), probed once a day.
+  const health = { dying: { ...emptyHealth(1), status: 'dead', deadSince, lastProbe: t1 - DAY_S } };
+  const tombstones = {};
+  const same = { live: fleet(40), dying: fleet(40) };
+  assert.deepEqual(await run(entries, health, tombstones, same, t1), []);
+  assert.deepEqual(await run(entries, health, tombstones, same, t1 + DAY_S), ['dying'], 'dead 30.5 days');
+  assert.equal(tombstones.dying.reason, undefined, 'retired as dead, not as a duplicate');
+  assert.ok(health.live, 'the live copy stays');
 });
