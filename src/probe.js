@@ -158,11 +158,13 @@ function keeperOf(ids, entries, health) {
 /**
  * Least estimated Jaccard similarity of two entries' vehicle ids for them to
  * count as one feed. Copies of one feed fetched seconds apart measured 0.96–1;
- * the closest feeds that are not copies (one carries part of the other's
- * fleet) 0.70–0.75. With the estimate's error (about 0.06) a copy stays above
- * 0.8 and a partial overlap seldom reaches it; the count check stops one that does.
+ * at 0.96 the estimate falls under 0.9 about one run in 70 (the match waits a
+ * run). The closest feeds that are not copies measured 0.70–0.75: one carrying
+ * part of the other's fleet, and two that write some ids differently (`7` and
+ * `0007`). At 0.745 the estimate reaches 0.8 about one run in 7, 0.9 about
+ * one in 900.
  */
-export const DUPLICATE_SIMILARITY = 0.8;
+export const DUPLICATE_SIMILARITY = 0.9;
 /**
  * Least ratio of two copies' vehicle counts this run. Counts are exact where
  * the similarity is an estimate: a feed carrying 70 % of another's fleet

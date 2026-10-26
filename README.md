@@ -128,7 +128,7 @@ hours a GitHub Actions run:
    times in one run, 5 minutes apart, so a working new feed is verified in the
    run that finds it. Dead for 30 days → removed. A vehicle-position entry
    whose vehicle ids (5 or more) are nearly the same as another's (MinHash
-   similarity ≥ 0.8, vehicle counts within 10 %, overlapping areas), two runs
+   similarity ≥ 0.9, vehicle counts within 10 %, overlapping areas), two runs
    in a row, serves the same feed under another URL: one is kept (hand-written,
    else cleared for display, else the one probed first) and the others are
    removed and tombstoned (`reason: 'duplicate'`, `of`: the kept id).

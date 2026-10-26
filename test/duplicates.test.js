@@ -106,9 +106,9 @@ test('duplicates: copies probed seconds apart match although a few vehicles join
   const entries = new Map([['a', entry('a')], ['b', entry('b')]]);
   const health = {};
   const tombstones = {};
-  // 38 of 42 ids shared (Jaccard 0.90) in each run.
-  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40), b: fleet(40, 2) }, 1000), []);
-  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40, 10), b: [...fleet(38, 10), 'late-1', 'late-2'] }, 2000), ['b']);
+  // 49 of 51 ids shared (Jaccard 0.96) in each run.
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(50), b: [...fleet(49), 'late-1'] }, 1000), []);
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(50, 10), b: [...fleet(49, 10), 'late-1'] }, 2000), ['b']);
   assert.equal(tombstones.b.of, 'a');
 });
 
@@ -116,17 +116,29 @@ test('duplicates: a feed carrying most of another\'s fleet plus more vehicles is
   const entries = new Map([['region', entry('region')], ['city', entry('city')], ['copy', entry('copy')]]);
   const health = {};
   const tombstones = {};
-  // Region and city share 40 of 46 ids (Jaccard 0.87), but 40 vehicles against 46;
-  // city and its copy, probed a little later, 38 of 42.
+  // Region and city share 40 of 45 ids (Jaccard 0.89, these ids estimate 0.9 or more),
+  // but 40 vehicles against 45; city and its copy, probed a little later, 39 of 41.
   const runOf = (from) => ({
-    region: [...fleet(40, from), ...fleet(6, 1000 + from)],
+    region: [...fleet(40, from), ...fleet(5, 1000 + from)],
     city: fleet(40, from),
-    copy: [...fleet(38, from), 'late-1', 'late-2'],
+    copy: [...fleet(39, from), 'late-1'],
   });
   await run(entries, health, tombstones, runOf(0), 1000);
   health.copy.firstSeen = 1500;
   assert.deepEqual(await run(entries, health, tombstones, runOf(10), 2000), ['copy']);
   assert.equal(tombstones.copy.of, 'city');
+});
+
+test('duplicates: feeds writing some of the same ids differently (Jaccard 0.75) are not copies', async () => {
+  const entries = new Map([['lia', entry('lia')], ['lia-padded', entry('lia-padded')]]);
+  const health = {};
+  const tombstones = {};
+  // 6 of 42 ids zero-padded in the second feed; these ids estimate 0.83.
+  const ids = Array.from({ length: 42 }, (_, i) => String(113 + i));
+  const both = { lia: ids, 'lia-padded': ids.map((id, i) => (i < 6 ? id.padStart(4, '0') : id)) };
+  assert.ok(adapters.fingerprintSimilarity(vehicleFingerprint(both.lia), vehicleFingerprint(both['lia-padded'])) > 0.8);
+  await run(entries, health, tombstones, both, 1000);
+  assert.deepEqual(await run(entries, health, tombstones, both, 2000), []);
 });
 
 test('duplicates: identical ids 1..N in areas that don\'t overlap are different feeds', async () => {
