@@ -342,6 +342,190 @@ test('coverage: a GBFS vehicles box stretched by vehicles on one fixed longitude
   assert.ok(box && box[0] > 46 && box[3] < 0, `rebuilt in the city: ${box}`);
 });
 
+/**
+ * A fake fetch for harvestGbfs: the three lists as given (systems.csv: Bolt
+ * Oslo, plus `rows`), `routes` for system feeds, anything else 404; calls are recorded.
+ */
+function gbfsListsFetch({ entur, citybikes, rows = [], routes = {} }) {
+  const calls = [];
+  const csv =
+    'Country Code,Name,Location,System ID,URL,Auto-Discovery URL,Supported Versions,Authentication Info URL,Authentication Type,Authentication Parameter Name\n' +
+    ['NO,Bolt Oslo,Oslo,boltoslo,https://bolt.eu/,https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/gbfs,3.0,,,', ...rows].join('\n');
+  const lists = {
+    'https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv': { body: csv },
+    'https://api.entur.io/mobility/v2/gbfs': entur,
+    'https://api.citybik.es/v2/networks?fields=id,name,gbfs_href,location': citybikes,
+    ...routes,
+  };
+  const fetchImpl = async (url, init) => {
+    calls.push({ url, headers: init?.headers || {} });
+    return fakeFetch(lists)(url);
+  };
+  return { fetchImpl, calls };
+}
+
+const enturList = (...ids) => ({
+  body: JSON.stringify({ systems: ids.map((id) => ({ id, url: `https://api.entur.io/mobility/v2/gbfs/v2/${id}/gbfs` })) }),
+});
+const citybikesList = (...networks) => ({
+  body: JSON.stringify({
+    networks: networks.map(([id, gbfs_href]) => ({ id, name: id, ...(gbfs_href ? { gbfs_href } : {}), location: { city: 'X', country: 'DE' } })),
+  }),
+});
+
+test('gbfs lists: Entur and CityBikes systems reach resolution; duplicates, peer-to-peer and keyed hosts are skipped', async () => {
+  const { harvestGbfs } = await import('../src/harvest/gbfs.js');
+  const { fetchImpl, calls } = gbfsListsFetch({
+    // boltoslo: systems.csv has it (same id); hertzbildeling: already in the directory; getaroundoslo: peer-to-peer.
+    entur: enturList('boltoslo', 'voioslo', 'hertzbildeling', 'getaroundoslo'),
+    citybikes: citybikesList(
+      ['nextbike-x', 'https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_x/gbfs.json'],
+      ['bolt-oslo', 'https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/gbfs'],
+      ['known', 'https://known.example/gbfs.json'],
+      ['callabike', 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/CallABike/gbfs'],
+      ['keyed', 'https://k.example/gbfs.json?apikey=abc'],
+      ['no-gbfs', null],
+    ),
+  });
+  const rejects = {};
+  const entries = await harvestGbfs({
+    knownIds: new Set(['gbfs-hertzbildeling', 'gbfs-hertzbildeling-vehicles']),
+    knownOutputs: new Set(['https://known.example/gbfs.json#stations', 'https://known.example/gbfs.json#vehicles']),
+    rejects,
+    now: 1000,
+    fetchImpl,
+  });
+  assert.deepEqual(entries, []);
+  const discovery = calls.map((c) => c.url).filter((u) => /gbfs(\.json)?$/.test(u) && !u.endsWith('/mobility/v2/gbfs'));
+  assert.deepEqual(discovery.sort(), [
+    'https://api.entur.io/mobility/v2/gbfs/v2/voioslo/gbfs',
+    'https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/gbfs',
+    'https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_x/gbfs.json',
+  ]);
+  assert.equal(rejects['https://api.entur.io/mobility/v2/gbfs/v2/voioslo/gbfs#stations'].reason, 'discovery HTTP 404');
+});
+
+test('gbfs lists: CityBikes and Entur map to systems with their own ids and provenance', async () => {
+  const { citybikesSystems, enturSystems } = await import('../src/harvest/gbfs.js');
+  const [cb] = citybikesSystems(JSON.parse(citybikesList(['velo', 'https://v.example/gbfs.json']).body));
+  assert.equal(cb.id, 'citybikes-velo');
+  assert.equal(cb.country, 'DE');
+  assert.deepEqual(cb.provenance, ['citybikes:velo']);
+  const [en] = enturSystems(JSON.parse(enturList('voioslo').body));
+  assert.equal(en.id, 'gbfs-voioslo', 'same id as the systems.csv row for the system');
+  assert.equal(en.vehicleId, 'gbfs-voioslo-vehicles');
+  assert.deepEqual(en.provenance, ['entur:voioslo']);
+});
+
+test('gbfs lists: a failing list (HTTP error, bad JSON) leaves the other lists running', async () => {
+  const { harvestGbfs } = await import('../src/harvest/gbfs.js');
+  const options = { knownIds: new Set(), knownOutputs: new Set(), now: 1000 };
+  const nextbike = ['nextbike-x', 'https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_x/gbfs.json'];
+  const runs = [
+    [{ entur: { body: 'busy', status: 503 }, citybikes: citybikesList(nextbike) }, nextbike[1]],
+    [{ entur: enturList('voioslo'), citybikes: { body: '<html>not json' } }, 'https://api.entur.io/mobility/v2/gbfs/v2/voioslo/gbfs'],
+  ];
+  for (const [lists, expected] of runs) {
+    const { fetchImpl, calls } = gbfsListsFetch(lists);
+    await harvestGbfs({ ...options, rejects: {}, fetchImpl });
+    const urls = calls.map((c) => c.url);
+    assert.ok(urls.includes(expected), `${expected} resolved`);
+    assert.ok(urls.includes('https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/gbfs'), 'systems.csv still resolved');
+  }
+});
+
+test('gbfs lists: Entur requests name the client (ET-Client-Name)', async () => {
+  const { harvestGbfs } = await import('../src/harvest/gbfs.js');
+  const { fetchImpl, calls } = gbfsListsFetch({ entur: enturList(), citybikes: citybikesList() });
+  await harvestGbfs({ knownIds: new Set(), knownOutputs: new Set(), rejects: {}, now: 1000, fetchImpl });
+  const entur = calls.find((c) => c.url === 'https://api.entur.io/mobility/v2/gbfs');
+  assert.ok(entur, 'Entur list fetched');
+  assert.equal(entur.headers['ET-Client-Name'], 'quanticsoul4772-gev-open-sources');
+});
+
+/** Fake feeds of one station system: discovery at `discovery`, the rest under `base`. */
+const stationSystem = (discovery, base, { systemId, name, stations }) => ({
+  [discovery]: {
+    body: JSON.stringify({
+      version: '2.3',
+      data: { nb: { feeds: ['system_information', 'station_information', 'station_status'].map((f) => ({ name: f, url: `${base}/${f}` })) } },
+    }),
+  },
+  [`${base}/station_information`]: { body: JSON.stringify({ data: { stations } }) },
+  [`${base}/system_information`]: { body: JSON.stringify({ data: { system_id: systemId, name } }) },
+});
+const grid = (lat, lon) => Array.from({ length: 12 }, (_, i) => ({ lat: lat + i / 100, lon: lon + i / 100 }));
+
+test('gbfs lists: a v2 or language copy of a systems.csv or directory system is not resolved again', async () => {
+  const { harvestGbfs } = await import('../src/harvest/gbfs.js');
+  const { fetchImpl, calls } = gbfsListsFetch({
+    rows: ['FR,Velo\'v,Lyon,velov,https://velov.grandlyon.com/,https://api.cyclocity.fr/contracts/lyon/gbfs/v3/gbfs.json,3.0,,,'],
+    entur: enturList(),
+    citybikes: citybikesList(
+      ['velov', 'https://api.cyclocity.fr/contracts/lyon/gbfs/gbfs.json'],
+      ['healthy-ride', 'https://pittsburgh.publicbikesystem.net/customer/gbfs/v2/en/gbfs.json'],
+      ['nextbike-x', 'https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_x/gbfs.json'],
+    ),
+  });
+  await harvestGbfs({
+    knownIds: new Set(),
+    knownOutputs: new Set(['https://pittsburgh.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json#stations']),
+    rejects: {},
+    now: 1000,
+    fetchImpl,
+  });
+  const urls = calls.map((c) => c.url);
+  assert.ok(urls.includes('https://api.cyclocity.fr/contracts/lyon/gbfs/v3/gbfs.json'), 'systems.csv copy resolved');
+  assert.ok(urls.includes('https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_x/gbfs.json'), 'a new CityBikes system resolved');
+  assert.ok(!urls.includes('https://api.cyclocity.fr/contracts/lyon/gbfs/gbfs.json'), 'CityBikes copy of a systems.csv system');
+  assert.ok(!urls.some((u) => u.startsWith('https://pittsburgh.')), 'CityBikes copy of a directory system');
+});
+
+test('gbfs lists: one system listed by CityBikes and Entur on different hosts (Bergen) yields one entry', async () => {
+  const { harvestGbfs } = await import('../src/harvest/gbfs.js');
+  const stations = grid(60.36, 5.29);
+  const entur = 'https://api.entur.io/mobility/v2/gbfs/v2/bergenbysykkel';
+  const { fetchImpl } = gbfsListsFetch({
+    entur: enturList('bergenbysykkel'),
+    citybikes: citybikesList(['bergen', 'https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json']),
+    routes: {
+      ...stationSystem('https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json', 'https://gbfs.urbansharing.com/bergenbysykkel.no', {
+        systemId: 'bergen-city-bike',
+        name: 'Bergen Bysykkel',
+        stations,
+      }),
+      ...stationSystem(`${entur}/gbfs`, entur, { systemId: 'bergenbysykkel', name: 'Bergen Bysykkel', stations }),
+    },
+  });
+  const rejects = {};
+  const entries = await harvestGbfs({ knownIds: new Set(), knownOutputs: new Set(), rejects, now: 1000, fetchImpl });
+  assert.deepEqual(entries.map((e) => e.id), ['citybikes-bergen']);
+  assert.equal(rejects[`${entur}/gbfs#stations`].reason, 'duplicate');
+});
+
+test('gbfs lists: a resolved system whose system_id and name match a directory entry is dropped', async () => {
+  const { harvestGbfs, knownSystemKeysOf } = await import('../src/harvest/gbfs.js');
+  const existing = {
+    id: 'gbfs-velo-x',
+    domain: 'bikeshare.stations',
+    provider: 'Vélo X',
+    coverage: { bbox: [48.1, 11.5, 48.2, 11.6], countries: [] },
+    access: { url: 'https://old.example/gbfs/station_status', related: { gbfs: 'https://old.example/gbfs/gbfs.json' } },
+    gbfs: { system_id: 'velo-x' },
+  };
+  const base = 'https://new.example/feeds';
+  const { fetchImpl } = gbfsListsFetch({
+    entur: enturList(),
+    citybikes: citybikesList(['velo-x', `${base}/gbfs.json`]),
+    routes: stationSystem(`${base}/gbfs.json`, base, { systemId: 'VELO-X', name: 'Velo X', stations: grid(48.13, 11.55) }),
+  });
+  const rejects = {};
+  const options = { knownIds: new Set(), knownOutputs: new Set(), rejects, now: 1000, fetchImpl };
+  assert.equal((await harvestGbfs(options)).length, 1, 'resolves without the directory entry');
+  const entries = await harvestGbfs({ ...options, rejects: {}, knownSystems: knownSystemKeysOf(new Map([[existing.id, existing]])) });
+  assert.deepEqual(entries, []);
+});
+
 test('gdacs: entry valid; licence holds only while the feed still declares public domain', async () => {
   const { GDACS_ENTRIES, GDACS_LICENCE_URL } = await import('../src/harvest/gdacs.js');
   const { declarationPresent } = await import('../src/licence/index.js');

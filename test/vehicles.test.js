@@ -401,9 +401,11 @@ test('gbfs: every request of a resolution (discovery, stations, vehicles, types)
     const base = url.slice(0, url.lastIndexOf('/'));
     if (url.endsWith('/gbfs.json'))
       return new Response(JSON.stringify(discovery(base, ['station_status', 'station_information', 'vehicle_status', 'vehicle_types'])));
-    if (url.endsWith('/station_information.json')) return new Response(JSON.stringify({ data: { stations: [{ lat: 45, lon: 7 }] } }));
+    // Two different systems: their stations are in different places.
+    const n = Number(url.split('/')[3]) || 0;
+    if (url.endsWith('/station_information.json')) return new Response(JSON.stringify({ data: { stations: [{ lat: 45 + n, lon: 7 }] } }));
     if (url.endsWith('/vehicle_types.json')) return new Response(JSON.stringify({ data: { vehicle_types: [] } }));
-    return new Response(JSON.stringify({ data: { vehicles: [vehicle('v', 45.1, 7.1)] } }));
+    return new Response(JSON.stringify({ data: { vehicles: [vehicle('v', 45.1 + n, 7.1)] } }));
   };
   const entries = await resolveGbfsSystems([sys(1), sys(2)], {
     knownIds: new Set(),
