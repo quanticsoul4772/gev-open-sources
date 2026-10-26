@@ -5,8 +5,10 @@
  * A decoder may add `sample`: one URL the prober must also be able to fetch
  * (a camera image), checked for an image type and a minimum size.
  * Called as (body, bbox, entry); `entry` carries per-entry settings
- * (a camera list's `mapping`).
+ * (a camera list's `mapping`). A vehicle-position decoder adds `fingerprint`
+ * (see vehicleFingerprint), so the prober can find two entries serving one feed.
  */
+import { createHash } from 'node:crypto';
 import { cameraRecords } from './cameras.js';
 import { decodeVehiclePositions } from './gtfsRealtime.js';
 
@@ -18,6 +20,23 @@ function share(points, bbox) {
   let n = 0;
   for (const [lat, lon] of points) if (inside(bbox, lat, lon)) n += 1;
   return Math.round((n / points.length) * 1000) / 1000;
+}
+
+/** Fewest distinct vehicle ids a feed needs before its fingerprint means anything. */
+export const MIN_FINGERPRINT_VEHICLES = 5;
+
+/**
+ * A hash of a feed's set of vehicle ids, the same whatever their order, or
+ * null under MIN_FINGERPRINT_VEHICLES ids: a handful of buses at night can
+ * match by chance. Two URLs for one feed give the same set; positions and
+ * timestamps move between two probes, the ids don't.
+ * @param {string[]} ids
+ * @returns {string|null}
+ */
+export function vehicleFingerprint(ids) {
+  const set = [...new Set(ids)].sort();
+  if (set.length < MIN_FINGERPRINT_VEHICLES) return null;
+  return createHash('sha256').update(set.join('\n')).digest('hex').slice(0, 16);
 }
 
 /**
@@ -46,6 +65,7 @@ export const ADAPTERS = Object.freeze({
       records: vehicles.length,
       newest,
       inCoverage: share(vehicles.map((v) => [v.lat, v.lon]), bbox),
+      fingerprint: vehicleFingerprint(vehicles.map((v) => v.id)),
     };
   },
   'gbfs.station-status'(body) {

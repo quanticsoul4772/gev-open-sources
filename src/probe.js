@@ -4,6 +4,9 @@
  * in one run (probeRounds), so a working new feed is verified the run it is
  * found. Dead entries are probed once a day; dead for 30 days → entry removed
  * and tombstoned so discovery doesn't re-add it (hand-written entries stay).
+ * A vehicle-position entry with the same vehicle ids as another two runs in a
+ * row serves the same feed under another URL: all but one are retired the
+ * same way (retireDuplicates), so the app doesn't draw every vehicle twice.
  */
 import { pathToFileURL } from 'node:url';
 import { ADAPTERS } from './adapters/index.js';
@@ -49,7 +52,8 @@ export async function probeEntry(entry, { now, fetchImpl } = {}) {
       const sample = await checkSample(decoded.sample, fetchImpl);
       if (sample) return { at: now, ...sample };
     }
-    return { at: now, ...classify({ status: 200, decoded, now }) };
+    const result = classify({ status: 200, decoded, now });
+    return { at: now, ...result, ...(result.result === 'ok' && decoded.fingerprint ? { fingerprint: decoded.fingerprint } : {}) };
   } catch {
     return { at: now, ...classify({ error: 'decode' }) };
   }
@@ -116,10 +120,69 @@ export async function probeRounds(entries, health, { probe, clock = nowS, sleep 
   }
   const counts = {};
   for (const [id, p] of last) {
-    health[id] = { ...health[id], history: [...health[id].history, p].slice(-HISTORY_CAP) };
+    // The fingerprint is kept once per entry, not in every history record.
+    const { fingerprint, ...record } = p;
+    health[id] = { ...health[id], history: [...health[id].history, record].slice(-HISTORY_CAP) };
+    if (fingerprint) health[id].fingerprint = fingerprint;
     counts[p.result] = (counts[p.result] || 0) + 1;
   }
   return { counts, rounds };
+}
+
+/**
+ * Take the last run's vehicle fingerprints out of `health` (id → fingerprint),
+ * so after this run's probes only entries that passed this run carry one.
+ */
+export function takeFingerprints(health) {
+  const previous = {};
+  for (const [id, h] of Object.entries(health)) {
+    if (h.fingerprint) previous[id] = h.fingerprint;
+    delete h.fingerprint;
+  }
+  return previous;
+}
+
+/**
+ * The entry of a duplicate group to keep: a hand-written one, else one cleared
+ * for display, else the one probed first (health firstSeen: longest in the
+ * directory, so the URL consumers already know), else the lowest id.
+ */
+function keeperOf(ids, entries, health) {
+  const harvested = (id) => (isStaticEntry(entries.get(id)) ? 0 : 1);
+  const referral = (id) => (entries.get(id).licence?.display ? 0 : 1);
+  const seen = (id) => health[id].firstSeen ?? Infinity;
+  return [...ids].sort((a, b) => harvested(a) - harvested(b) || referral(a) - referral(b) || seen(a) - seen(b) || a.localeCompare(b))[0];
+}
+
+/**
+ * Retire entries serving the same feed as another under a different URL: the
+ * same vehicle-id fingerprint this run and the last (`previous`, from
+ * takeFingerprints). One of each group is kept (keeperOf); the others are
+ * tombstoned with `reason: 'duplicate'` and the kept id, so discovery doesn't
+ * re-add them. Hand-written entries are never retired.
+ * Updates `health` and `tombstones` in place.
+ * @returns {string[]} ids of the entries to remove
+ */
+export function retireDuplicates(health, previous, entries, tombstones, now) {
+  const groups = new Map();
+  for (const [id, h] of Object.entries(health)) {
+    if (!h.fingerprint || !previous[id] || !entries.has(id)) continue;
+    // Grouped by both runs' fingerprints: the same entries matched twice in a row.
+    const key = `${previous[id]} ${h.fingerprint}`;
+    groups.set(key, [...(groups.get(key) || []), id]);
+  }
+  const retired = [];
+  for (const ids of groups.values()) {
+    if (ids.length < 2) continue;
+    const kept = keeperOf(ids, entries, health);
+    for (const id of ids) {
+      if (id === kept || isStaticEntry(entries.get(id))) continue;
+      tombstones[id] = { url: entries.get(id).access.url, at: now, reason: 'duplicate', of: kept };
+      delete health[id];
+      retired.push(id);
+    }
+  }
+  return retired;
 }
 
 /**
@@ -153,10 +216,15 @@ export async function probeAll({ fetchImpl, now = nowS() } = {}) {
     const h = health[e.id];
     return !h || h.status !== 'dead' || now - (h.lastProbe ?? 0) >= DAY_S;
   });
+  const previous = takeFingerprints(health);
   const { counts, rounds } = await probeRounds(due, health, {
     probe: (e, at) => probeEntry(e, { now: at, fetchImpl }),
   });
   for (const id of retireDead(health, entries, tombstones, now)) removeEntry(id);
+  for (const id of retireDuplicates(health, previous, entries, tombstones, now)) {
+    removeEntry(id);
+    console.log(`probe: retired ${id}: same vehicles as ${tombstones[id].of}, two runs in a row`);
+  }
   writeState('health.json', health);
   writeState('tombstones.json', tombstones);
   const statuses = {};
