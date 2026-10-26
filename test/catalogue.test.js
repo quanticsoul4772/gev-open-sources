@@ -100,18 +100,24 @@ test('transitous: url sources by spec; skipped, keyed and catalogue-referencing 
   assert.equal(regionCountry('eu'), null);
 });
 
-test('vehicle check: positions give a bbox; trip updates rejected; empty feed retried', async () => {
+test('vehicle check: positions give a bbox; trip updates and empty feeds rejected; rate limits retried', async () => {
   const fetchImpl = fakeFetch({
     'https://a.example/vp': { body: feedBytes([[48.8, 2.3], [48.9, 2.4]]) },
     'https://a.example/tu': { body: feedBytes(['trip']) },
     'https://a.example/empty': { body: feedBytes([]) },
     'https://a.example/keyed': { body: 'no', status: 401 },
+    'https://a.example/limited': { body: 'no', status: 429 },
+    'https://a.example/busy': { body: 'no', status: 503, headers: { 'retry-after': '120' } },
+    'https://a.example/down': { body: 'no', status: 503 },
   });
   const vp = await checkVehicleFeed('https://a.example/vp', { fetchImpl });
   assert.equal(vp.ok, true);
   assert.deepEqual(vp.bbox, pointsBbox([[48.8, 2.3], [48.9, 2.4]]));
   assert.deepEqual(await checkVehicleFeed('https://a.example/tu', { fetchImpl }), { ok: false, reason: 'no vehicle positions' });
-  assert.equal((await checkVehicleFeed('https://a.example/empty', { fetchImpl })).retry, true);
+  assert.deepEqual(await checkVehicleFeed('https://a.example/empty', { fetchImpl }), { ok: false, reason: 'empty feed' });
+  assert.equal((await checkVehicleFeed('https://a.example/limited', { fetchImpl })).retry, true);
+  assert.equal((await checkVehicleFeed('https://a.example/busy', { fetchImpl })).retry, true);
+  assert.deepEqual(await checkVehicleFeed('https://a.example/down', { fetchImpl }), { ok: false, reason: 'HTTP 503' });
   assert.deepEqual(await checkVehicleFeed('https://a.example/keyed', { fetchImpl }), { ok: false, reason: 'HTTP 401' });
 });
 
@@ -138,6 +144,24 @@ test('candidates: known, credential and recently rejected URLs skipped; rejectio
   assert.deepEqual(entries.map((e) => e.id), ['c-vp']);
   assert.deepEqual(validateEntry(entries[0]), []);
   assert.equal(rejects['https://a.example/tu'].reason, 'no vehicle positions');
+});
+
+test('candidates: a rate-limited transit feed is not remembered; an empty one is, for 30 hours', async () => {
+  const { recentlyRejected } = await import('../src/harvest/catalogue.js');
+  const fetchImpl = fakeFetch({
+    'https://a.example/limited': { body: 'no', status: 429 },
+    'https://a.example/empty': { body: feedBytes([]) },
+  });
+  const base = { name: 'n', provider: 'p', licenceUrl: null, attribution: null, countries: [], provenance: ['test'] };
+  const rejects = {};
+  await resolveTransitCandidates(
+    [{ ...base, id: 'c-l', url: 'https://a.example/limited' }, { ...base, id: 'c-e', url: 'https://a.example/empty' }],
+    { knownUrls: new Set(), rejects, now: 1000, fetchImpl },
+  );
+  assert.equal(rejects['https://a.example/limited'], undefined);
+  assert.equal(rejects['https://a.example/empty'].reason, 'empty feed');
+  assert.equal(recentlyRejected(rejects, 'https://a.example/empty', 1000 + 29 * 3600), true);
+  assert.equal(recentlyRejected(rejects, 'https://a.example/empty', 1000 + 30 * 3600), false);
 });
 
 test('known URLs include GBFS discovery and via: permalinks', () => {

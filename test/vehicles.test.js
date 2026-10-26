@@ -272,3 +272,160 @@ test('review fixes: a second redirect keeps the earlier via: provenance', async 
   const [moved] = await resolveRedirects([entry], fetchImpl);
   assert.deepEqual(moved.provenance, ['cat', 'via:https://a.example/permalink', 'via:https://b.example/feed']);
 });
+
+test('rejects: an empty vehicle feed is remembered for 30 hours, then checked again; other reasons for a week', async () => {
+  const { recentlyRejected } = await import('../src/harvest/catalogue.js');
+  const sys = (host) => ({ ...system(`https://${host}`), id: `gbfs-${host}`, vehicleId: `gbfs-${host}-vehicles` });
+  const vehicles = { 'empty.example': [], 'docked.example': [vehicle('d', 45, 7, { station_id: 's' })] };
+  const fetchImpl = async (url) => {
+    const { host } = new URL(url);
+    if (url.endsWith('/gbfs.json')) return new Response(JSON.stringify(discovery(`https://${host}`, ['vehicle_status'])));
+    return new Response(JSON.stringify({ data: { vehicles: vehicles[host] } }));
+  };
+  const rejects = {};
+  const now = 1_000_000;
+  await resolveGbfsSystems([sys('empty.example'), sys('docked.example')], { knownIds: new Set(), knownOutputs: new Set(), rejects, now, fetchImpl });
+  const empty = outputKey('https://empty.example/gbfs.json', 'vehicles');
+  const docked = outputKey('https://docked.example/gbfs.json', 'vehicles');
+  assert.equal(rejects[empty].reason, 'empty feed');
+  assert.equal(rejects[docked].reason, 'no free-floating vehicles');
+  assert.equal(recentlyRejected(rejects, empty, now + 6 * 3600), true, 'not retried next run');
+  assert.equal(recentlyRejected(rejects, empty, now + 30 * 3600), false, 'checked again after 30 hours');
+  assert.equal(recentlyRejected(rejects, docked, now + 30 * 3600), true);
+  assert.equal(recentlyRejected(rejects, docked, now + 8 * 86_400), false);
+});
+
+test('rejects: a rate-limited system is not remembered, and a host answering only 429 trips the breaker', async () => {
+  const sys = (host, n = 0) => ({
+    ...system(`https://${host}`),
+    discoveryUrl: `https://${host}/${n}/gbfs.json`,
+    id: `gbfs-${host}-${n}`,
+    vehicleId: `gbfs-${host}-${n}-vehicles`,
+  });
+  const limitedFeed = { 'feed429.example': 'vehicle_status', 'info429.example': 'station_information', 'types429.example': 'vehicle_types' };
+  const calls = {};
+  const fetchImpl = async (url) => {
+    const { host } = new URL(url);
+    calls[host] = (calls[host] || 0) + 1;
+    const base = url.slice(0, url.lastIndexOf('/'));
+    if (host === 'limited.example') return new Response('slow down', { status: 429 });
+    if (host === 'busy.example') return new Response('busy', { status: 503, headers: { 'retry-after': '60' } });
+    if (host === 'down.example') return new Response('down', { status: 503 });
+    if (url.endsWith(`/${limitedFeed[host]}.json`)) return new Response('', { status: 429 });
+    if (url.endsWith('/gbfs.json'))
+      return new Response(JSON.stringify(discovery(base, ['station_status', 'station_information', 'vehicle_status', 'vehicle_types'])));
+    if (url.endsWith('/station_information.json')) return new Response(JSON.stringify({ data: { stations: [{ lat: 45, lon: 7 }] } }));
+    return new Response(JSON.stringify({ data: { vehicles: [vehicle('v', 45.1, 7.1)] } }));
+  };
+  const systems = [
+    ...Array.from({ length: 10 }, (_, n) => sys('limited.example', n)),
+    ...['busy.example', 'down.example', ...Object.keys(limitedFeed)].map((h) => sys(h)),
+  ];
+  const rejects = {};
+  const entries = await resolveGbfsSystems(systems, {
+    knownIds: new Set(),
+    knownOutputs: new Set(),
+    rejects,
+    now: 1000,
+    fetchImpl,
+    requestGapMs: 0,
+  });
+  assert.equal(calls['limited.example'], 5, 'skipped after 3 rate-limited systems (2 more had started: perHost 3)');
+  const down = (kind) => outputKey('https://down.example/0/gbfs.json', kind);
+  assert.deepEqual(Object.keys(rejects).sort(), [down('stations'), down('vehicles')], 'only the plain 503 is remembered');
+  assert.equal(rejects[down('vehicles')].reason, 'discovery HTTP 503');
+  assert.deepEqual(entries, [], 'a rate-limited sub-feed defers the whole system to the next run');
+});
+
+test('http: Entur requests name the client in ET-Client-Name, on no other host and not after a redirect away', async () => {
+  const { ENTUR_CLIENT_NAME, USER_AGENT, fetchCapped } = await import('../src/util/http.js');
+  const seen = {};
+  const fetchImpl = async (url, init) => {
+    seen[new URL(url).hostname] = init.headers;
+    if (url === 'https://api.entur.io/moved') return new Response(null, { status: 302, headers: { location: 'https://cdn.example/feed' } });
+    return new Response('{}');
+  };
+  for (const url of ['https://api.entur.io/mobility/v2/gbfs/v3/manifest.json', 'https://entur.io/x', 'https://a.example/x', 'https://notentur.io/x'])
+    await fetchCapped(url, { fetchImpl });
+  assert.match(ENTUR_CLIENT_NAME, /^[a-z0-9_]+-[a-z0-9_-]+$/, '<company>-<application>');
+  assert.equal(seen['api.entur.io']['ET-Client-Name'], ENTUR_CLIENT_NAME);
+  assert.equal(seen['api.entur.io']['User-Agent'], USER_AGENT);
+  assert.equal(seen['entur.io']['ET-Client-Name'], ENTUR_CLIENT_NAME);
+  assert.equal(seen['a.example']['ET-Client-Name'], undefined);
+  assert.equal(seen['notentur.io']['ET-Client-Name'], undefined);
+  await fetchCapped('https://api.entur.io/moved', { fetchImpl, anyRedirect: true });
+  assert.equal(seen['api.entur.io']['ET-Client-Name'], ENTUR_CLIENT_NAME);
+  assert.equal(seen['cdn.example']['ET-Client-Name'], undefined, 'dropped on the hop to another host');
+  assert.equal(seen['cdn.example']['User-Agent'], USER_AGENT);
+});
+
+test('http: the host limiter sends one request at a time per host, gapMs apart, and holds up no other host', async () => {
+  const { fetchCapped, hostLimiter } = await import('../src/util/http.js');
+  const t0 = Date.now();
+  const log = [];
+  const fetchImpl = async (url) => {
+    const entry = { host: new URL(url).hostname, start: Date.now() - t0 };
+    log.push(entry);
+    await new Promise((r) => setTimeout(r, 20));
+    entry.end = Date.now() - t0;
+    return new Response('{}');
+  };
+  const limiter = hostLimiter(60);
+  const urls = ['https://h.example/1', 'https://h.example/2', 'https://h.example/3', 'https://o.example/1'];
+  const results = await Promise.all(urls.map((u) => fetchCapped(u, { fetchImpl, limiter })));
+  assert.deepEqual(results.map((r) => r.status), [200, 200, 200, 200]);
+  const h = log.filter((e) => e.host === 'h.example');
+  for (let i = 1; i < h.length; i += 1) {
+    assert.ok(h[i].start >= h[i - 1].end, `one in flight: ${JSON.stringify(h)}`);
+    assert.ok(h[i].start - h[i - 1].start >= 55, `gap: ${JSON.stringify(h)}`);
+  }
+  assert.ok(log.find((e) => e.host === 'o.example').start < 15, 'another host starts at once');
+  const broken = async () => {
+    throw new Error('ECONNRESET');
+  };
+  await assert.rejects(fetchCapped('https://h.example/x', { fetchImpl: broken, limiter }), /ECONNRESET/);
+  assert.equal((await fetchCapped('https://h.example/4', { fetchImpl, limiter })).status, 200, 'a failed request releases the host');
+});
+
+test('gbfs: every request of a resolution (discovery, stations, vehicles, types) goes through the host limiter', async () => {
+  const sys = (n) => ({ ...system('https://one.example'), discoveryUrl: `https://one.example/${n}/gbfs.json`, id: `gbfs-${n}`, vehicleId: `gbfs-${n}-v` });
+  const starts = [];
+  let inFlight = 0;
+  let most = 0;
+  const fetchImpl = async (url) => {
+    starts.push(Date.now());
+    inFlight += 1;
+    most = Math.max(most, inFlight);
+    await new Promise((r) => setTimeout(r, 5));
+    inFlight -= 1;
+    const base = url.slice(0, url.lastIndexOf('/'));
+    if (url.endsWith('/gbfs.json'))
+      return new Response(JSON.stringify(discovery(base, ['station_status', 'station_information', 'vehicle_status', 'vehicle_types'])));
+    if (url.endsWith('/station_information.json')) return new Response(JSON.stringify({ data: { stations: [{ lat: 45, lon: 7 }] } }));
+    if (url.endsWith('/vehicle_types.json')) return new Response(JSON.stringify({ data: { vehicle_types: [] } }));
+    return new Response(JSON.stringify({ data: { vehicles: [vehicle('v', 45.1, 7.1)] } }));
+  };
+  const entries = await resolveGbfsSystems([sys(1), sys(2)], {
+    knownIds: new Set(),
+    knownOutputs: new Set(),
+    rejects: {},
+    now: 1000,
+    fetchImpl,
+    requestGapMs: 40,
+  });
+  assert.equal(entries.length, 4);
+  assert.equal(starts.length, 8);
+  assert.equal(most, 1, 'one request in flight');
+  starts.slice(1).forEach((t, i) => assert.ok(t - starts[i] >= 35, `gap ${t - starts[i]} ms`));
+});
+
+test('rejects: expiry is spread over a day per URL, the same for a URL every time', async () => {
+  const { REJECT_RETRY_S, recentlyRejected, rejectRetryS, spreadS } = await import('../src/harvest/catalogue.js');
+  const keys = Array.from({ length: 200 }, (_, i) => `https://f${i}.example/vp`);
+  const rejects = Object.fromEntries(keys.map((k) => [k, { reason: 'HTTP 404', at: 0 }]));
+  assert.ok(keys.every((k) => rejectRetryS(k, rejects[k]) >= REJECT_RETRY_S && rejectRetryS(k, rejects[k]) < REJECT_RETRY_S + 86_400));
+  assert.equal(spreadS(keys[0]), spreadS(keys[0]));
+  const due = (hours) => keys.filter((k) => !recentlyRejected(rejects, k, REJECT_RETRY_S + hours * 3600)).length;
+  assert.ok(due(6) > 0 && due(6) < 100, `about a quarter due after one run: ${due(6)}`);
+  assert.ok(due(12) > due(6) && due(18) > due(12) && due(24) === 200, `${due(6)} ${due(12)} ${due(18)} ${due(24)}`);
+});

@@ -1,5 +1,5 @@
 import { parseCsv } from '../util/csv.js';
-import { fetchCapped } from '../util/http.js';
+import { fetchCapped, hostLimiter, notNow } from '../util/http.js';
 import { FORM_FACTORS } from '../schema.js';
 import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl, slugId } from '../util/ids.js';
@@ -87,20 +87,34 @@ const ANSWER = /^(response over \d+ bytes|redirect to unlisted host .*)$/;
 const answerReason = (message) => (message.startsWith('redirect') ? 'cross-host redirect' : 'over the size cap');
 
 /**
+ * A rate-limited response (notNow) is thrown, like a network failure: the
+ * host breaker counts it and nothing is remembered, so the system is tried
+ * again next run.
+ */
+const RATE_LIMITED = /^rate limited/;
+const unlessLimited = (res) => {
+  if (notNow(res)) throw new Error(`rate limited: HTTP ${res.status} from ${hostOfUrl(res.url)}`);
+  return res;
+};
+
+/**
  * Resolve one system's auto-discovery URL into the entries it wants: a
  * bike-share stations entry (station_status) and/or a free-floating vehicles
  * entry (vehicle_status, or free_bike_status before v3). A vehicles entry
  * needs vehicles without a station_id (docked vehicles belong to the stations
  * entry). An output it can't produce gets a reason, which the caller
- * remembers; network errors throw, so the caller's host breaker counts them
- * and nothing is remembered.
+ * remembers; network errors and rate limits throw, so the caller's host
+ * breaker counts them and nothing is remembered. Requests go through
+ * `limiter` (hostLimiter) when given.
  * @param {{id: string, vehicleId: string, name: string, provider: string, country: string|null,
  *   discoveryUrl: string, systemId: string|null, catalogueLicence?: string|null,
  *   provenance: string[]}} system
- * @param {{want: {stations: boolean, vehicles: boolean}, fetchImpl?: typeof fetch, anyRedirect?: boolean}} options
+ * @param {{want: {stations: boolean, vehicles: boolean}, fetchImpl?: typeof fetch, anyRedirect?: boolean,
+ *   limiter?: ReturnType<typeof hostLimiter>}} options
  * @returns {Promise<{stations?: object, vehicles?: object, reasons: {stations?: string, vehicles?: string}}>}
  */
-export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect = false }) {
+export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect = false, limiter }) {
+  const get = async (url, options) => unlessLimited(await fetchCapped(url, { fetchImpl, limiter, ...options }));
   const out = { reasons: {} };
   const fail = (reason) => {
     for (const kind of ['stations', 'vehicles']) if (want[kind]) out.reasons[kind] = reason;
@@ -108,7 +122,7 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
   };
   let discovery;
   try {
-    discovery = await fetchCapped(system.discoveryUrl, { fetchImpl, anyRedirect, timeoutMs: 15_000 });
+    discovery = await get(system.discoveryUrl, { anyRedirect, timeoutMs: 15_000 });
   } catch (error) {
     if (!ANSWER.test(error.message)) throw error;
     return fail(answerReason(error.message));
@@ -147,7 +161,7 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
   if (stationsKeyless) {
     let stations = null;
     try {
-      stations = await fetchCapped(info, { fetchImpl, timeoutMs: 15_000 });
+      stations = await get(info, { timeoutMs: 15_000 });
     } catch (error) {
       // Too big or redirected away is an answer (no bbox), not a network failure for the host breaker.
       if (!ANSWER.test(error.message)) throw error;
@@ -186,7 +200,7 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
     else {
       let res = null;
       try {
-        res = await fetchCapped(url, { fetchImpl, timeoutMs: 20_000 });
+        res = await get(url, { timeoutMs: 20_000 });
       } catch (error) {
         if (!ANSWER.test(error.message)) throw error;
         out.reasons.vehicles = answerReason(error.message);
@@ -210,9 +224,10 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
           let factors = [];
           if (typesUrl)
             try {
-              const types = await fetchCapped(typesUrl, { fetchImpl, timeoutMs: 15_000, maxBytes: 2 * 2 ** 20 });
+              const types = await get(typesUrl, { timeoutMs: 15_000, maxBytes: 2 * 2 ** 20 });
               if (types.status === 200) factors = formFactors(json(types.body));
-            } catch {
+            } catch (error) {
+              if (RATE_LIMITED.test(error.message)) throw error;
               factors = [];
             }
           out.vehicles = {
@@ -292,20 +307,31 @@ export async function fillGbfsCoverage(entries, { fetchImpl } = {}) {
 export const GBFS_PHASE_MS = 15 * 60_000;
 
 /**
+ * Least time between two request starts to one host, with one request in
+ * flight per host (hostLimiter): at most 240 requests a minute to one host
+ * (Entur limits per minute; its number is not published). nextbike's ~208 systems × 2–4 requests at
+ * ~0.5 s each take about 3.5–7 min, inside GBFS_PHASE_MS.
+ */
+export const GBFS_REQUEST_GAP_MS = 250;
+
+/**
  * Resolve the outputs systems still lack. An output is wanted unless its id is
  * known, a directory entry already serves it (`knownOutputs` holds
  * `<normalized discovery URL>#<kind>`), or it was rejected recently. Systems
  * wanting only vehicles are capped at `vehicleBudget`; no system starts after
- * `deadlineMs`; a host is skipped after 3 consecutive network failures.
+ * `deadlineMs`; each host gets one request at a time, `requestGapMs` apart; a
+ * host is skipped after 3 consecutive network failures or rate limits.
  * Peer-to-peer car sharing is skipped entirely (isPeerToPeer).
  * @param {object[]} systems as for resolveGbfsSystem
  * @param {{knownIds: Set<string>, knownOutputs: Set<string>, rejects: object, now: number,
- *   fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number, deadlineMs?: number}} options
+ *   fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number, deadlineMs?: number,
+ *   requestGapMs?: number}} options
  * @returns {Promise<object[]>} new entries; `rejects` is updated in place
  */
 export async function resolveGbfsSystems(systems, options) {
   const { knownIds, knownOutputs, rejects, now, fetchImpl, anyRedirect = false } = options;
-  const { vehicleBudget = Infinity, deadlineMs = Infinity } = options;
+  const { vehicleBudget = Infinity, deadlineMs = Infinity, requestGapMs = GBFS_REQUEST_GAP_MS } = options;
+  const limiter = hostLimiter(requestGapMs);
   const wanted = (s, kind) =>
     !knownIds.has(kind === 'stations' ? s.id : s.vehicleId) &&
     !knownOutputs.has(outputKey(normalizeUrl(s.discoveryUrl), kind)) &&
@@ -325,7 +351,7 @@ export async function resolveGbfsSystems(systems, options) {
   const results = await runPooled(
     todo,
     ({ s }) => hostOfUrl(s.discoveryUrl),
-    ({ s, want }) => resolveGbfsSystem(s, { want, fetchImpl, anyRedirect }),
+    ({ s, want }) => resolveGbfsSystem(s, { want, fetchImpl, anyRedirect, limiter }),
     { global: 24, perHost: 3, deadlineMs, breakAfter: 3 },
   );
   const entries = [];
