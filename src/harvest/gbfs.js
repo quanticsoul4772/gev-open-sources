@@ -425,7 +425,7 @@ export async function fillGbfsCoverage(entries, { fetchImpl } = {}) {
 
 /**
  * Time GBFS resolving may take per run, summed over its sources (Transitous,
- * systems.csv); the job has 60 min.
+ * transport.data.gouv.fr, systems.csv); the job has 60 min.
  */
 export const GBFS_PHASE_MS = 15 * 60_000;
 
@@ -446,7 +446,8 @@ export const GBFS_REQUEST_GAP_MS = 250;
  * `requestGapMs` apart; a host is skipped after 3 consecutive network failures
  * or rate limits. Peer-to-peer car sharing is skipped entirely (isPeerToPeer).
  * A resolved output whose systemKeys match a directory entry (`knownSystems`)
- * or an output resolved earlier in the list is a copy: rejected as a duplicate.
+ * or an output resolved earlier in the run is a copy: rejected as a duplicate.
+ * Keys of resolved outputs are added to `knownSystems`.
  * @param {object[]} systems as for resolveGbfsSystem
  * @param {{knownIds: Set<string>, knownOutputs: Set<string>, knownSystems?: Set<string>, rejects: object,
  *   now: number, fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number,
@@ -487,7 +488,8 @@ export async function resolveGbfsSystems(systems, options) {
     ),
   );
   const entries = [];
-  const seen = new Set(knownSystems);
+  // Shared across the run's calls, so a system two lists name is added once.
+  const seen = knownSystems;
   todo.forEach(({ s }, i) => {
     const r = results[i];
     if (!r || r.error || r.skipped) return;

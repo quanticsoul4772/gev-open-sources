@@ -17,6 +17,7 @@ import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
 import { harvestTransitous } from './transitous.js';
+import { harvestTransportGouv } from './transportgouv.js';
 import { USGS_ENTRIES } from './usgs.js';
 import { FIRMS_ENTRIES } from './firms.js';
 import { GDACS_ENTRIES } from './gdacs.js';
@@ -141,15 +142,16 @@ export function knownUrlsOf(entries) {
 /**
  * Remember checked catalogue feeds that didn't survive deduplication (a
  * duplicate of an earlier source, or tombstoned) so later runs don't check
- * them again: the Mobility Database's untagged feeds and every Atlas and
- * Transitous entry.
- * @param {{mdb: {checked: object[]}, atlas: {entries: object[]}, transitous: {entries: object[]}}} sources
+ * them again: the Mobility Database's untagged feeds and every Atlas,
+ * Transitous and transport.data.gouv.fr entry.
+ * @param {{mdb: {checked: object[]}, atlas: {entries: object[]}, transitous: {entries: object[]},
+ *   transportGouv: {entries: object[]}}} sources
  * @param {object[]} deduped entries kept this run
  * @param {Record<string, {reason: string, at: number}>} rejects updated in place
  */
-export function rememberDuplicates({ mdb, atlas, transitous }, deduped, rejects, now) {
+export function rememberDuplicates({ mdb, atlas, transitous, transportGouv }, deduped, rejects, now) {
   const dedupedIds = new Set(deduped.map((e) => e.id));
-  for (const e of [...mdb.checked, ...atlas.entries, ...transitous.entries])
+  for (const e of [...mdb.checked, ...atlas.entries, ...transitous.entries, ...transportGouv.entries])
     if (!dedupedIds.has(e.id)) {
       const gbfsUrl = e.access.related?.gbfs;
       const key = gbfsUrl ? outputKey(gbfsUrl, e.domain === VEHICLES ? 'vehicles' : 'stations') : e.access.url;
@@ -198,12 +200,14 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const knownSystems = knownSystemKeysOf(existing);
   const gbfsOptions = { knownIds, knownOutputs, knownSystems, rejects, now, vehicleBudget, gbfsPhase, checkPhase };
   const mdb = await harvestMobilityDatabase({ knownUrls: knownUrlsOf(existing), rejects, now, checkPhase });
-  // Atlas and Transitous see the Mobility Database's feeds as known, so they
-  // only check URLs that would be new.
+  // Atlas, Transitous and transport.data.gouv.fr see the Mobility Database's
+  // feeds as known, so they only check URLs that would be new.
   const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]));
   const atlas = await harvestAtlas({ knownUrls, rejects, now, checkPhase });
   for (const e of atlas.entries) knownUrls.add(normalizeUrl(e.access.url));
   const transitous = await harvestTransitous({ ...gbfsOptions, knownUrls });
+  for (const e of transitous.entries) knownUrls.add(normalizeUrl(e.access.url));
+  const transportGouv = await harvestTransportGouv({ ...gbfsOptions, knownUrls });
   const gbfs = await harvestGbfs(gbfsOptions);
   const cameras = await harvestCameras({ knownIds });
   const merged = mergeCandidates(
@@ -220,8 +224,10 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
       ...gbfs.filter((e) => e.domain !== VEHICLES),
       ...atlas.entries,
       ...transitous.entries.filter((e) => e.domain !== VEHICLES),
+      ...transportGouv.entries.filter((e) => e.domain !== VEHICLES),
       ...gbfs.filter((e) => e.domain === VEHICLES),
       ...transitous.entries.filter((e) => e.domain === VEHICLES),
+      ...transportGouv.entries.filter((e) => e.domain === VEHICLES),
     ].map(withoutDebugSwitch),
     tombstones,
   );
@@ -254,11 +260,12 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   for (const entry of updated)
     if (redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id) || licensed.has(entry.id))
       writeEntry(licensed.get(entry.id) || covered.get(entry.id) || entry);
-  rememberDuplicates({ mdb, atlas, transitous }, deduped, rejects, now);
+  rememberDuplicates({ mdb, atlas, transitous, transportGouv }, deduped, rejects, now);
   writeState('harvest-rejects.json', rejects);
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive; ${mdb.untagged} untagged candidates), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
+      `transport.data.gouv.fr ${transportGouv.entries.length}/${transportGouv.candidates}, ` +
       `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, firms ${FIRMS_ENTRIES.length}, perimeters ${PERIMETER_ENTRIES.length}, air quality ${AIRQUALITY_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }

@@ -6,13 +6,14 @@ hours a GitHub Actions run:
 
 1. **Discovers** keyless feeds:
    - GTFS-Realtime vehicle positions from the [Mobility Database](https://mobilitydatabase.org)
-     catalog, [Transitland Atlas](https://github.com/transitland/transitland-atlas)
-     and [Transitous](https://github.com/public-transport/transitous). Catalogue
+     catalog, [Transitland Atlas](https://github.com/transitland/transitland-atlas),
+     [Transitous](https://github.com/public-transport/transitous) and
+     [transport.data.gouv.fr](https://transport.data.gouv.fr). Catalogue
      feeds are fetched once and added only if they carry vehicle positions;
      failures are retried after a week (`harvest-rejects.json`). Mobility
      Database feeds not tagged as vehicle positions are checked the same way.
-   - Bike-share systems from MobilityData's [GBFS systems list](https://github.com/MobilityData/gbfs)
-     and Transitous: docked stations (`bikeshare.stations`, `gbfs.station-status`)
+   - Bike-share systems from MobilityData's [GBFS systems list](https://github.com/MobilityData/gbfs),
+     Transitous and transport.data.gouv.fr: docked stations (`bikeshare.stations`, `gbfs.station-status`)
      and free-floating vehicles (`sharedmobility.vehicles`, `gbfs.vehicle-status`:
      scooters, bikes, mopeds and cars from `vehicle_status`, or
      `free_bike_status` before v3). A system with both gets one entry for

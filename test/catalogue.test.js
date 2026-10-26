@@ -760,6 +760,78 @@ test('adapters: Sensor.Community 1-hour file; outdoor PM sensors only; UTC times
   assert.throws(() => decode([sensor({ indoor: 1, values: pm(5, 3) })]), /no PM readings/);
 });
 
+test('transport.data.gouv.fr: vehicle and untagged GTFS-RT resources checked, GBFS resolved with the dataset licence', async () => {
+  const { harvestTransportGouv, TRANSPORT_GOUV_URL } = await import('../src/harvest/transportgouv.js');
+  const datasets = [
+    {
+      id: 'd1',
+      title: 'Réseau A',
+      licence: 'lov2',
+      publisher: { name: 'Métropole A' },
+      resources: [
+        { id: 1, format: 'gtfs-rt', features: ['trip_updates', 'vehicle_positions'], is_available: true, original_url: 'https://a.example/vp', url: 'https://www.data.gouv.fr/r/1' },
+        { id: 2, format: 'gtfs-rt', features: ['trip_updates'], is_available: true, original_url: 'https://a.example/tu' },
+        { id: 4, format: 'gtfs-rt', features: ['vehicle_positions'], is_available: false, original_url: 'https://a.example/down' },
+        { id: 5, format: 'GTFS', is_available: true, original_url: 'https://a.example/gtfs.zip' },
+      ],
+    },
+    {
+      id: 'd3',
+      title: 'Réseau C',
+      licence: 'notspecified',
+      publisher: { name: 'Ville C' },
+      resources: [{ id: 3, format: 'gtfs-rt', features: [], is_available: true, original_url: 'https://c.example/rt' }],
+    },
+    {
+      id: 'd2',
+      title: 'Vélos B',
+      licence: 'odc-odbl',
+      publisher: { name: 'Ville B' },
+      resources: [{ id: 6, format: 'gbfs', is_available: true, original_url: 'https://b.example/gbfs.json' }],
+    },
+  ];
+  const fetched = [];
+  const routes = fakeFetch({
+    [TRANSPORT_GOUV_URL]: { body: JSON.stringify(datasets) },
+    'https://a.example/vp': { body: feedBytes([[48.1, -1.7], [48.2, -1.6]]) },
+    'https://c.example/rt': { body: feedBytes(['trip']) },
+    'https://b.example/gbfs.json': {
+      body: JSON.stringify({ version: '2.3', data: { en: { feeds: [
+        { name: 'station_information', url: 'https://b.example/info' },
+        { name: 'station_status', url: 'https://b.example/status' },
+      ] } } }),
+    },
+    'https://b.example/info': { body: JSON.stringify({ data: { stations: [{ lat: 47.2, lon: -1.5 }, { lat: 47.3, lon: -1.6 }] } }) },
+  });
+  const fetchImpl = (url, init) => {
+    fetched.push(url);
+    return routes(url, init);
+  };
+  const rejects = {};
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownUrls: new Set(), rejects, now: 1000, fetchImpl };
+  const { candidates, entries } = await harvestTransportGouv(options);
+  assert.equal(candidates, 3);
+  assert.deepEqual(entries.map((e) => e.id), ['transportgouv-1', 'transportgouv-6']);
+  const [rt, stations] = entries;
+  assert.deepEqual(validateEntry(rt), []);
+  assert.equal(rt.access.url, 'https://a.example/vp');
+  assert.equal(rt.licence.url, 'https://spdx.org/licenses/etalab-2.0');
+  assert.equal(rt.provider, 'Métropole A');
+  assert.equal(stations.domain, 'bikeshare.stations');
+  assert.equal(stations.gbfs.catalogue_licence, 'https://spdx.org/licenses/ODbL-1.0');
+  assert.equal(rejects['https://c.example/rt'].reason, 'no vehicle positions');
+  assert.ok(!fetched.includes('https://a.example/tu') && !fetched.includes('https://a.example/down'));
+});
+
+test('transport.data.gouv.fr: a list that fails to load gives no entries and does not throw', async () => {
+  const { harvestTransportGouv } = await import('../src/harvest/transportgouv.js');
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownUrls: new Set(), rejects: {}, now: 1000 };
+  const down = await harvestTransportGouv({ ...options, fetchImpl: fakeFetch({}) });
+  assert.deepEqual([down.candidates, down.entries], [0, []]);
+  const unreachable = await harvestTransportGouv({ ...options, fetchImpl: async () => { throw new Error('ECONNRESET'); } });
+  assert.deepEqual(unreachable.entries, []);
+});
+
 test('mobility database: an untagged feed with vehicles becomes an entry; one without is rejected', async () => {
   const { harvestMobilityDatabase, MDB_CSV_URL } = await import('../src/harvest/mobilitydatabase.js');
   const cols = ['id', 'data_type', 'entity_type', 'provider', 'name', 'status', 'urls.direct_download', 'urls.authentication_type', 'urls.license', 'static_reference', 'location.country_code'];
@@ -843,6 +915,69 @@ test('phases: vehicle checks spend their own budget, not the GBFS one; GBFS time
   assert.equal(options.rejects[outputKey('https://h.example/gbfs.json', 'stations')], undefined);
 });
 
+test('transport.data.gouv.fr: resources with no features whose URL names alerts or trip updates are not fetched', async () => {
+  const { transportGouvSources } = await import('../src/harvest/transportgouv.js');
+  const urls = [
+    'https://proxy.transport.data.gouv.fr/resource/x-gtfs-rt-service-alert',
+    'http://1.2.3.4:8085/ProfilGtfsRt2_0RSProducer-X/Alert.pb',
+    'https://x.example/gtfs/alerts',
+    'https://x.2cloud.app/api/gtfsrt/2.0/tripupdates/X/bin',
+    'https://x.example/trip_updates.pb',
+    'https://x.example/TripUpdates',
+  ];
+  const datasets = urls.map((url, i) => ({
+    id: `d${i}`,
+    title: 't',
+    licence: 'lov2',
+    resources: [{ id: i, format: 'gtfs-rt', ...(i % 2 ? { features: [] } : {}), is_available: true, original_url: url }],
+  }));
+  datasets.push({
+    id: 'dv',
+    title: 'v',
+    licence: 'lov2',
+    resources: [{ id: 99, format: 'gtfs-rt', features: [], is_available: true, original_url: 'https://x.example/rt' }],
+  });
+  assert.deepEqual(transportGouvSources(datasets).rt.map((c) => c.url), ['https://x.example/rt']);
+});
+
+test('transport.data.gouv.fr: a dataset the directory already serves adds nothing; one GTFS-RT candidate per dataset', async () => {
+  const { transportGouvSources } = await import('../src/harvest/transportgouv.js');
+  const datasets = [
+    {
+      // The directory has the operator's feed (by its data.gouv.fr permalink); the proxy copy is the same vehicles.
+      id: 'served',
+      title: 'Ficibus',
+      licence: 'lov2',
+      resources: [
+        { id: 1, format: 'gtfs-rt', features: ['vehicle_positions'], is_available: true, original_url: 'https://op.example/vp', url: 'https://www.data.gouv.fr/api/1/datasets/r/abc' },
+        { id: 2, format: 'gtfs-rt', features: [], is_available: true, original_url: 'https://proxy.transport.data.gouv.fr/resource/ficibus-vp' },
+        { id: 3, format: 'gbfs', is_available: true, original_url: 'https://bikes.example/gbfs.json' },
+        { id: 7, format: 'gbfs', is_available: true, original_url: 'https://okina.example/bikes/gbfs' },
+      ],
+    },
+    {
+      // One network as a combined feed, an unlisted feed and a vehicle feed: listed vehicle feeds first, the next once the first is rejected.
+      id: 'twice',
+      title: 'Lila',
+      licence: 'lov2',
+      resources: [
+        { id: 5, format: 'gtfs-rt', features: [], is_available: true, original_url: 'https://proxy.example/lila' },
+        { id: 4, format: 'gtfs-rt', features: ['trip_updates', 'vehicle_positions'], is_available: true, original_url: 'https://proxy.example/lila-rt' },
+        { id: 6, format: 'gtfs-rt', features: ['vehicle_positions'], is_available: true, original_url: 'https://proxy.example/lila-vp' },
+      ],
+    },
+  ];
+  const knownUrls = new Set(['https://www.data.gouv.fr/api/1/datasets/r/abc']);
+  const first = transportGouvSources(datasets, { knownUrls });
+  assert.deepEqual(first.rt.map((c) => c.url), ['https://proxy.example/lila-rt']);
+  assert.deepEqual(first.gbfs.map((s) => s.discoveryUrl), ['https://bikes.example/gbfs.json', 'https://okina.example/bikes/gbfs']);
+  const rejects = { 'https://proxy.example/lila-rt': { reason: 'no vehicle positions', at: 900 } };
+  assert.deepEqual(transportGouvSources(datasets, { knownUrls, rejects, now: 1000 }).rt.map((c) => c.url), ['https://proxy.example/lila-vp']);
+  const servedBikes = transportGouvSources(datasets, { knownUrls: new Set([...knownUrls, 'https://bikes.example/gbfs.json']) });
+  // The served system itself still goes to the resolver (it may lack one output); its copy doesn't.
+  assert.deepEqual(servedBikes.gbfs.map((s) => s.discoveryUrl), ['https://bikes.example/gbfs.json']);
+});
+
 test('duplicates: a checked untagged Mobility Database feed dropped as a duplicate or tombstone is remembered', async () => {
   const { rememberDuplicates } = await import('../src/harvest/index.js');
   const feed = (id, url) => ({ id, domain: 'transit.vehicles', access: { url } });
@@ -851,7 +986,8 @@ test('duplicates: a checked untagged Mobility Database feed dropped as a duplica
     {
       mdb: { checked: [feed('mdb-2', 'https://zet.example/rt'), feed('mdb-3', 'https://kept.example/rt')] },
       atlas: { entries: [] },
-      transitous: { entries: [feed('transitous-1', 'https://fr.example/rt')] },
+      transitous: { entries: [] },
+      transportGouv: { entries: [feed('transportgouv-1', 'https://fr.example/rt')] },
     },
     [feed('mdb-3', 'https://kept.example/rt')],
     rejects,
@@ -889,4 +1025,54 @@ test('mobility database: an empty feed tagged only as trip updates is kept out f
   assert.ok(rejectRetryS('https://n.example/rt', night) >= REJECT_RETRY_S);
   assert.equal(rejects['https://e.example/rt'].reason, 'empty feed');
   assert.ok(!fetched.includes('https://a.example/Alert.pb'));
+});
+
+test('transport.data.gouv.fr: a vehicle resource carrying a key does not block the dataset\'s keyless one', async () => {
+  const { transportGouvSources } = await import('../src/harvest/transportgouv.js');
+  const datasets = [
+    {
+      id: 'd1',
+      title: 'Réseau K',
+      licence: 'lov2',
+      resources: [
+        { id: 1, format: 'gtfs-rt', features: ['vehicle_positions'], is_available: true, original_url: 'https://k.example/vp?apikey=abc123' },
+        { id: 2, format: 'gtfs-rt', features: ['vehicle_positions'], is_available: true, original_url: 'https://proxy.example/k/vp' },
+      ],
+    },
+  ];
+  const { rt } = transportGouvSources(datasets);
+  assert.deepEqual(rt.map((c) => c.url), ['https://proxy.example/k/vp']);
+});
+
+test('gbfs: a system resolved by one list in a run is a duplicate when a later list resolves it again', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const gbfs = (host) => ({
+    [`https://${host}/gbfs.json`]: {
+      body: JSON.stringify({ version: '2.3', data: { en: { feeds: [
+        { name: 'system_information', url: `https://${host}/system` },
+        { name: 'station_information', url: `https://${host}/info` },
+        { name: 'station_status', url: `https://${host}/status` },
+      ] } } }),
+    },
+    [`https://${host}/system`]: { body: JSON.stringify({ data: { system_id: 'velo-x', name: 'Vélo X' } }) },
+    [`https://${host}/info`]: { body: JSON.stringify({ data: { stations: [{ lat: 47.2, lon: -1.5 }, { lat: 47.3, lon: -1.6 }] } }) },
+  });
+  const fetchImpl = fakeFetch({ ...gbfs('op.example'), ...gbfs('mirror.example') });
+  const system = (host) => ({
+    id: host,
+    vehicleId: `${host}-vehicles`,
+    name: 'Vélo X',
+    provider: 'X',
+    country: 'FR',
+    discoveryUrl: `https://${host}/gbfs.json`,
+    systemId: null,
+    provenance: ['test'],
+  });
+  const rejects = {};
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownSystems: new Set(), rejects, now: 1000, fetchImpl, requestGapMs: 0 };
+  const first = await resolveGbfsSystems([system('op.example')], options);
+  const second = await resolveGbfsSystems([system('mirror.example')], options);
+  assert.deepEqual(first.map((e) => e.domain), ['bikeshare.stations']);
+  assert.deepEqual(second, []);
+  assert.equal(rejects[outputKey('https://mirror.example/gbfs.json', 'stations')].reason, 'duplicate');
 });
