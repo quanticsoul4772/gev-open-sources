@@ -1083,6 +1083,17 @@ test('gbfs: a system resolved by one list in a run is a duplicate when a later l
   assert.equal(rejects[outputKey('https://mirror.example/gbfs.json', 'stations')].reason, 'duplicate');
 });
 
+test('catalogue URLs: alerts or trip updates in the path or query exclude a feed; the host and vehicle URLs do not', async () => {
+  const { namesNotVehicles } = await import('../src/harvest/catalogue.js');
+  assert.ok(namesNotVehicles('https://x.example/gtfs/alerts'));
+  assert.ok(namesNotVehicles('https://x.2cloud.app/api/gtfsrt/2.0/tripupdates/X/bin'));
+  assert.ok(namesNotVehicles('https://x.example/feed?type=TripUpdates'));
+  assert.ok(!namesNotVehicles('https://bus.rideralerts.com/Feed.ashx?Type=VehiclePosition'));
+  assert.ok(!namesNotVehicles('https://storage.example/kcm-alerts-realtime-prod/vehiclepositions.pb'));
+  assert.ok(!namesNotVehicles('https://alerts.example/vp'));
+  assert.ok(!namesNotVehicles('not a url'));
+});
+
 test('gbfs: a discovery URL resolved by one list is left alone by later lists, so its entry can still be added next run', async () => {
   const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
   const routes = {

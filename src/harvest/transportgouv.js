@@ -12,7 +12,7 @@
 import { fetchCapped } from '../util/http.js';
 import { normalizeUrl, slugId } from '../util/ids.js';
 import { hasCredential } from '../util/secrets.js';
-import { NOT_VEHICLES, catalogueLicenceUrl, recentlyRejected, resolveTransitCandidates } from './catalogue.js';
+import { catalogueLicenceUrl, namesNotVehicles, recentlyRejected, resolveTransitCandidates } from './catalogue.js';
 import { resolveGbfsSystems } from './gbfs.js';
 
 export const TRANSPORT_GOUV_URL = 'https://transport.data.gouv.fr/api/datasets';
@@ -52,7 +52,7 @@ export function transportGouvSources(datasets, { knownUrls = new Set(), rejects 
       const listed = (r) => (r.features || []).includes('vehicle_positions');
       const pick = available
         .filter((r) => r.format === 'gtfs-rt' && /^https?:\/\//.test(urlOf(r)) && !hasCredential(urlOf(r)))
-        .filter((r) => (r.features?.length ? listed(r) : !NOT_VEHICLES.test(urlOf(r))))
+        .filter((r) => (r.features?.length ? listed(r) : !namesNotVehicles(urlOf(r))))
         .sort((a, b) => Number(listed(b)) - Number(listed(a)))
         .find((r) => !recentlyRejected(rejects, urlOf(r), now));
       if (pick)
