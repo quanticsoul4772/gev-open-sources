@@ -116,8 +116,35 @@ export function redirectChecks(merged, existing, health) {
   ].filter((e) => !isStaticEntry(e));
 }
 
+/**
+ * Normalized URLs of entries retired as duplicates of an entry still in the
+ * directory: a copy stays out under any id another catalogue gives its URL,
+ * over http or https (a plain-http feed moves to https only after merging).
+ * A kept entry later retired as a duplicate of a third passes the block on to
+ * that one. Once no kept entry is left, the URL may come back.
+ */
+export function duplicateUrlsOf(existing, tombstones) {
+  // The entry a duplicate tombstone leads to through retired kept entries, or null.
+  const keptOf = (t) => {
+    const seen = new Set();
+    let id = t.of;
+    while (!existing.has(id) && tombstones[id]?.reason === 'duplicate' && !seen.has(id)) {
+      seen.add(id);
+      id = tombstones[id].of;
+    }
+    return existing.has(id) ? id : null;
+  };
+  const urls = new Set();
+  for (const t of Object.values(tombstones))
+    if (t.reason === 'duplicate' && t.url && keptOf(t))
+      // Normalized first, so a default port (`:80`, `:443`) goes before the scheme changes.
+      for (const scheme of ['http:', 'https:']) urls.add(normalizeUrl(normalizeUrl(t.url).replace(/^https?:/i, scheme)));
+  return urls;
+}
+
 export function mergeCandidates(existing, candidates, tombstones) {
   const urls = new Set([...existing.values()].map((e) => normalizeUrl(e.access.url)));
+  for (const url of duplicateUrlsOf(existing, tombstones)) urls.add(url);
   const added = [];
   for (const entry of candidates) {
     const url = normalizeUrl(entry.access.url);
@@ -128,9 +155,13 @@ export function mergeCandidates(existing, candidates, tombstones) {
   return added;
 }
 
-/** Normalized access, GBFS discovery and permalink (`via:`) URLs of the directory's entries. */
-export function knownUrlsOf(entries) {
-  const urls = new Set();
+/**
+ * Normalized access, GBFS discovery and permalink (`via:`) URLs of the
+ * directory's entries, and the URLs blocked as duplicates (duplicateUrlsOf),
+ * so catalogue harvesters don't check those again every run.
+ */
+export function knownUrlsOf(entries, tombstones = {}) {
+  const urls = duplicateUrlsOf(entries, tombstones);
   for (const e of entries.values()) {
     urls.add(normalizeUrl(e.access.url));
     if (e.access.related?.gbfs) urls.add(normalizeUrl(e.access.related.gbfs));
@@ -200,10 +231,10 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const knownSystems = knownSystemKeysOf(existing);
   const vehiclesOnly = { count: 0 };
   const gbfsOptions = { knownIds, knownOutputs, knownSystems, tombstones, rejects, now, vehicleBudget, vehiclesOnly, gbfsPhase, checkPhase };
-  const mdb = await harvestMobilityDatabase({ knownUrls: knownUrlsOf(existing), rejects, now, checkPhase });
+  const mdb = await harvestMobilityDatabase({ knownUrls: knownUrlsOf(existing, tombstones), rejects, now, checkPhase });
   // Atlas, Transitous and transport.data.gouv.fr see the Mobility Database's
   // feeds as known, so they only check URLs that would be new.
-  const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]));
+  const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]), tombstones);
   const atlas = await harvestAtlas({ knownUrls, rejects, now, checkPhase });
   for (const e of atlas.entries) knownUrls.add(normalizeUrl(e.access.url));
   const transitous = await harvestTransitous({ ...gbfsOptions, knownUrls });

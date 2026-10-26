@@ -5,8 +5,10 @@
  * A decoder may add `sample`: one URL the prober must also be able to fetch
  * (a camera image), checked for an image type and a minimum size.
  * Called as (body, bbox, entry); `entry` carries per-entry settings
- * (a camera list's `mapping`).
+ * (a camera list's `mapping`). A vehicle-position decoder adds `fingerprint`
+ * (see vehicleFingerprint), so the prober can find two entries serving one feed.
  */
+import { createHash } from 'node:crypto';
 import { cameraRecords } from './cameras.js';
 import { decodeVehiclePositions } from './gtfsRealtime.js';
 
@@ -18,6 +20,49 @@ function share(points, bbox) {
   let n = 0;
   for (const [lat, lon] of points) if (inside(bbox, lat, lon)) n += 1;
   return Math.round((n / points.length) * 1000) / 1000;
+}
+
+/** Fewest distinct vehicle ids a feed needs before its fingerprint means anything. */
+export const MIN_FINGERPRINT_VEHICLES = 5;
+/**
+ * MinHash slots in a fingerprint: the share of equal slots estimates the
+ * Jaccard similarity of two id sets with a standard error of about 0.06.
+ */
+export const FINGERPRINT_SLOTS = 64;
+
+/**
+ * A MinHash fingerprint of a feed's set of vehicle ids (FINGERPRINT_SLOTS
+ * minima of sha256 over the ids, the low byte kept of each, hex), or null
+ * under MIN_FINGERPRINT_VEHICLES ids: a handful of buses at night can match
+ * by chance. Two URLs for one feed give nearly the same set even when probed
+ * seconds apart (vehicles join and leave a large fleet all the time), so
+ * fingerprints are compared by similarity (fingerprintSimilarity), not equality.
+ * @param {string[]} ids
+ * @returns {string|null}
+ */
+export function vehicleFingerprint(ids) {
+  const set = new Set(ids);
+  if (set.size < MIN_FINGERPRINT_VEHICLES) return null;
+  const mins = new Array(FINGERPRINT_SLOTS).fill(Infinity);
+  for (const id of set)
+    for (let round = 0; round < FINGERPRINT_SLOTS / 8; round += 1) {
+      const hash = createHash('sha256').update(`${round}\n${id}`).digest();
+      for (let k = 0; k < 8; k += 1) mins[round * 8 + k] = Math.min(mins[round * 8 + k], hash.readUInt32BE(4 * k));
+    }
+  const out = Buffer.alloc(FINGERPRINT_SLOTS);
+  // The low bits of a minimum are as random as any (its high bits are near zero);
+  // two different minima share a low byte 1 time in 256, a negligible bias.
+  mins.forEach((m, i) => (out[i] = m & 0xff));
+  // Hex, not base64: base64 can start like a token (`sk-…`) that the secret scan refuses.
+  return out.toString('hex');
+}
+
+/** Estimated Jaccard similarity of the id sets behind two fingerprints: the share of equal slots. */
+export function fingerprintSimilarity(a, b) {
+  const [x, y] = [Buffer.from(a, 'hex'), Buffer.from(b, 'hex')];
+  let equal = 0;
+  for (let i = 0; i < FINGERPRINT_SLOTS; i += 1) if (x[i] === y[i]) equal += 1;
+  return equal / FINGERPRINT_SLOTS;
 }
 
 /**
@@ -46,6 +91,7 @@ export const ADAPTERS = Object.freeze({
       records: vehicles.length,
       newest,
       inCoverage: share(vehicles.map((v) => [v.lat, v.lon]), bbox),
+      fingerprint: vehicleFingerprint(vehicles.map((v) => v.id)),
     };
   },
   'gbfs.station-status'(body) {

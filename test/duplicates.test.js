@@ -1,0 +1,316 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { PbfWriter } from 'pbf';
+import * as adapters from '../src/adapters/index.js';
+import { duplicateUrlsOf, knownUrlsOf, mergeCandidates } from '../src/harvest/index.js';
+import { PERIMETER_ENTRIES } from '../src/harvest/perimeters.js';
+import { DAY_S, emptyHealth } from '../src/health.js';
+import { probeEntry, probeRun } from '../src/probe.js';
+import { scanJson } from '../src/util/secrets.js';
+
+const { ADAPTERS, vehicleFingerprint } = adapters;
+
+/** GTFS-RT FeedMessage bytes with one vehicle position per id. */
+function feedBytes(ids) {
+  const pbf = new PbfWriter();
+  pbf.writeMessage(1, (_, w) => w.writeStringField(1, '2.0'));
+  ids.forEach((id, i) =>
+    pbf.writeMessage(2, (_, w) => {
+      w.writeStringField(1, `e${i}`);
+      w.writeMessage(4, (__, v) => {
+        v.writeMessage(2, (___, p) => {
+          p.writeFloatField(1, 49.6 + i / 100);
+          p.writeFloatField(2, -1.6 + i / 100);
+        });
+        v.writeMessage(8, (___, d) => d.writeStringField(1, id));
+      });
+    }),
+  );
+  return pbf.finish();
+}
+
+const decode = (ids) => ADAPTERS['gtfs-rt.vehicle-positions'](feedBytes(ids), null);
+const gtfs = { id: 'g', format: 'gtfs-rt.vehicle-positions', coverage: { bbox: null }, access: { url: 'https://g.example/vp', headers: {}, redirectHosts: [], unzip: null } };
+const COTENTIN = [49.4, -1.9, 49.7, -1.2];
+const VILNIUS = [54.6, 25.1, 54.8, 25.4];
+const entry = (id, { display = true, bbox = COTENTIN } = {}) => ({
+  id,
+  provenance: [`mobilitydatabase:${id}`],
+  coverage: { bbox },
+  access: { url: `https://${id}.example/vp`, min_interval_s: 15 },
+  licence: { display },
+});
+/** `n` vehicle ids from `from`: `bus-<from>` … */
+const fleet = (n, from = 0) => Array.from({ length: n }, (_, i) => `bus-${from + i}`);
+
+/**
+ * One probe run through probeRun, as probeAll runs it: an entry listed in
+ * `vehicles` passes with the fingerprint of those ids; any other entry's probe fails.
+ * @returns {Promise<string[]>} ids retired
+ */
+async function run(entries, health, tombstones, vehicles, now) {
+  const probe = async (e, at) =>
+    vehicles[e.id] ? { at, result: 'ok', records: vehicles[e.id].length, fingerprint: vehicleFingerprint(vehicles[e.id]) } : { at, result: 'http', code: 500 };
+  return (await probeRun(entries, health, tombstones, { now, probe, clock: () => now, sleep: async () => {} })).retired;
+}
+
+test('fingerprint: the same vehicle ids in any order match; another set does not', () => {
+  const ids = fleet(40);
+  const a = decode(ids).fingerprint;
+  assert.equal(decode([...ids].reverse()).fingerprint, a);
+  assert.equal(adapters.fingerprintSimilarity(a, a), 1);
+  assert.ok(adapters.fingerprintSimilarity(a, decode(fleet(40, 100)).fingerprint) < 0.2, 'no ids in common');
+});
+
+test('fingerprint: stored as hex, which the secret scan never takes for a token', () => {
+  assert.match(decode(fleet(40)).fingerprint, /^[0-9a-f]{128}$/);
+  // Bytes whose base64url form starts `sk-` followed by 20+ token characters.
+  const bytes = Buffer.from(`sk-${'A'.repeat(83)}`, 'base64url');
+  assert.equal(scanJson({ fingerprint: bytes.toString('base64url') }).length, 1, 'base64url would be refused');
+  assert.deepEqual(scanJson({ fingerprint: bytes.toString('hex') }), []);
+});
+
+test('fingerprint: none under 5 distinct vehicles; the probe passes one on from 5', async () => {
+  assert.equal(decode(['a', 'b', 'c', 'd', 'd']).fingerprint, null, 'a repeated id counts once');
+  const now = 1_700_000_000;
+  const answer = (ids) => async () => new Response(feedBytes(ids));
+  const four = await probeEntry(gtfs, { now, fetchImpl: answer(['a', 'b', 'c', 'd']) });
+  assert.equal(four.result, 'ok');
+  assert.equal('fingerprint' in four, false);
+  const five = await probeEntry(gtfs, { now, fetchImpl: answer(['a', 'b', 'c', 'd', 'e']) });
+  assert.equal(five.fingerprint, decode(['e', 'd', 'c', 'b', 'a']).fingerprint);
+});
+
+test('duplicates: a match in one run retires nothing; two runs in a row retire the newer copy', async () => {
+  const entries = new Map([['old', entry('old')], ['new', entry('new')], ['other', entry('other')]]);
+  const health = {};
+  const tombstones = {};
+  assert.deepEqual(await run(entries, health, tombstones, { old: fleet(40), new: fleet(40), other: fleet(40, 100) }, 1000), []);
+  assert.deepEqual(tombstones, {});
+  assert.equal(health.old.fingerprint, vehicleFingerprint(fleet(40)));
+  assert.ok(health.old.history.every((p) => !('fingerprint' in p)), 'not stored in history');
+  health.new.firstSeen = 500;
+  health.old.firstSeen = 100;
+  // Another set of vehicles out the next run: the ids still match each other.
+  const retired = await run(entries, health, tombstones, { old: fleet(40, 50), new: fleet(40, 50), other: fleet(40, 50) }, 2000);
+  assert.deepEqual(retired, ['new'], 'other matched only this run');
+  assert.deepEqual(tombstones, { new: { url: 'https://new.example/vp', at: 2000, reason: 'duplicate', of: 'old' } });
+  assert.equal(health.new, undefined);
+  assert.ok(health.old && health.other);
+});
+
+test('duplicates: copies probed seconds apart match although a few vehicles joined or left', async () => {
+  const entries = new Map([['a', entry('a')], ['b', entry('b')]]);
+  const health = {};
+  const tombstones = {};
+  // 49 of 51 ids shared (Jaccard 0.96) in each run.
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(50), b: [...fleet(49), 'late-1'] }, 1000), []);
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(50, 10), b: [...fleet(49, 10), 'late-1'] }, 2000), ['b']);
+  assert.equal(tombstones.b.of, 'a');
+});
+
+test('duplicates: a feed carrying most of another\'s fleet plus more vehicles is not a copy', async () => {
+  const entries = new Map([['region', entry('region')], ['city', entry('city')], ['copy', entry('copy')]]);
+  const health = {};
+  const tombstones = {};
+  // Region and city share 40 of 45 ids (Jaccard 0.89, these ids estimate 0.9 or more),
+  // but 40 vehicles against 45; city and its copy, probed a little later, 39 of 41.
+  const runOf = (from) => ({
+    region: [...fleet(40, from), ...fleet(5, 1000 + from)],
+    city: fleet(40, from),
+    copy: [...fleet(39, from), 'late-1'],
+  });
+  await run(entries, health, tombstones, runOf(0), 1000);
+  health.copy.firstSeen = 1500;
+  assert.deepEqual(await run(entries, health, tombstones, runOf(10), 2000), ['copy']);
+  assert.equal(tombstones.copy.of, 'city');
+});
+
+test('duplicates: in a chain, only members that match the kept entry itself are retired', async () => {
+  const entries = new Map([['a', entry('a')], ['b', entry('b')], ['c', entry('c')]]);
+  const health = {};
+  const tombstones = {};
+  // a ⊂ b ⊂ c with 100, 106 and 112 vehicles: a~b and b~c match, a and c differ by 12 %.
+  const runOf = (from) => ({ a: fleet(100, from), b: [...fleet(100, from), ...fleet(6, 1000 + from)], c: [...fleet(100, from), ...fleet(12, 1000 + from)] });
+  await run(entries, health, tombstones, runOf(3), 1000);
+  health.a.firstSeen = 1;
+  assert.deepEqual(await run(entries, health, tombstones, runOf(13), 2000), ['b']);
+  assert.equal(tombstones.b.of, 'a');
+  assert.ok(health.c, 'c matched only b');
+});
+
+test('duplicates: feeds writing some of the same ids differently (Jaccard 0.75) are not copies', async () => {
+  const entries = new Map([['lia', entry('lia')], ['lia-padded', entry('lia-padded')]]);
+  const health = {};
+  const tombstones = {};
+  // 6 of 42 ids zero-padded in the second feed; these ids estimate 0.83.
+  const ids = Array.from({ length: 42 }, (_, i) => String(113 + i));
+  const both = { lia: ids, 'lia-padded': ids.map((id, i) => (i < 6 ? id.padStart(4, '0') : id)) };
+  assert.ok(adapters.fingerprintSimilarity(vehicleFingerprint(both.lia), vehicleFingerprint(both['lia-padded'])) > 0.8);
+  await run(entries, health, tombstones, both, 1000);
+  assert.deepEqual(await run(entries, health, tombstones, both, 2000), []);
+});
+
+test('duplicates: identical ids 1..N in areas that don\'t overlap are different feeds', async () => {
+  const numbers = Array.from({ length: 30 }, (_, i) => String(i + 1));
+  const entries = new Map([['cotentin', entry('cotentin')], ['copy', entry('copy')], ['vilnius', entry('vilnius', { bbox: VILNIUS })]]);
+  const health = {};
+  const tombstones = {};
+  const all = { cotentin: numbers, copy: numbers, vilnius: numbers };
+  await run(entries, health, tombstones, all, 1000);
+  health.copy.firstSeen = 1500;
+  assert.deepEqual(await run(entries, health, tombstones, all, 2000), ['copy']);
+  assert.equal(tombstones.copy.of, 'cotentin');
+  assert.ok(health.vilnius);
+});
+
+test('duplicates: a gap run without a match starts the count again', async () => {
+  const entries = new Map([['a', entry('a')], ['b', entry('b')]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { a: fleet(40), b: fleet(40) }, 1000);
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40), b: fleet(4) }, 2000), [], 'b under 5 vehicles');
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40), b: fleet(40) }, 3000), []);
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40), b: fleet(40) }, 4000), ['b']);
+});
+
+test('duplicates: a failed probe drops the fingerprint, so the next run starts the count again', async () => {
+  const entries = new Map([['a', entry('a')], ['b', entry('b')]]);
+  const health = {};
+  const tombstones = {};
+  const similar = (from) => ({ a: fleet(40, from), b: fleet(40, from + 1) });
+  await run(entries, health, tombstones, similar(0), 1000);
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40, 10) }, 2000), [], 'b failed');
+  assert.equal(health.b.fingerprint, undefined);
+  assert.deepEqual(await run(entries, health, tombstones, similar(20), 3000), []);
+  assert.deepEqual(await run(entries, health, tombstones, similar(30), 4000), ['b']);
+});
+
+test('duplicates: different last run, similar this run → not yet; similar again → retired', async () => {
+  const entries = new Map([['a', entry('a')], ['b', entry('b')]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { a: fleet(40), b: fleet(40, 100) }, 1000);
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40, 10), b: fleet(40, 11) }, 2000), []);
+  assert.deepEqual(await run(entries, health, tombstones, { a: fleet(40, 20), b: fleet(40, 21) }, 3000), ['b']);
+});
+
+test('duplicates: the copy cleared for display is kept over an older referral-only one', async () => {
+  const entries = new Map([['referral', entry('referral', { display: false })], ['shown', entry('shown')]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { referral: fleet(40), shown: fleet(40) }, 1000);
+  health.referral.firstSeen = 10;
+  health.shown.firstSeen = 900;
+  assert.deepEqual(await run(entries, health, tombstones, { referral: fleet(40), shown: fleet(40) }, 2000), ['referral']);
+  assert.equal(tombstones.referral.of, 'shown');
+});
+
+test('duplicates: a hand-written entry is never retired; the harvested copy goes', async () => {
+  const hand = PERIMETER_ENTRIES[0];
+  const harvested = entry('harvested', { bbox: hand.coverage.bbox });
+  const entries = new Map([[hand.id, hand], [harvested.id, harvested]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { [hand.id]: fleet(40), harvested: fleet(40) }, 1000);
+  health.harvested.firstSeen = 1;
+  assert.deepEqual(await run(entries, health, tombstones, { [hand.id]: fleet(40), harvested: fleet(40) }, 2000), ['harvested']);
+  assert.equal(tombstones.harvested.of, hand.id);
+  assert.ok(health[hand.id]);
+});
+
+test('duplicates: a retired copy is not re-added by discovery, under its own id or another catalogue\'s', async () => {
+  const entries = new Map([['kept', entry('kept')], ['copy', entry('copy')]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { kept: fleet(40), copy: fleet(40) }, 1000);
+  health.copy.firstSeen = 1500;
+  assert.deepEqual(await run(entries, health, tombstones, { kept: fleet(40), copy: fleet(40) }, 2000), ['copy']);
+  entries.delete('copy');
+  const relisted = { ...entry('copy'), id: 'transitous-copy' };
+  assert.deepEqual(mergeCandidates(entries, [entry('copy'), relisted, entry('fresh')], tombstones).map((e) => e.id), ['fresh']);
+  // A dead feed's tombstone blocks only its id: the URL may come back working under another.
+  const dead = { copy: { url: entry('copy').access.url, at: 2000 } };
+  assert.deepEqual(mergeCandidates(entries, [relisted], dead).map((e) => e.id), ['transitous-copy']);
+});
+
+test('duplicates: a retired copy\'s URL is free again once the entry it duplicated is gone', () => {
+  const tombstones = { copy: { url: entry('copy').access.url, at: 2000, reason: 'duplicate', of: 'kept' } };
+  const relisted = { ...entry('copy'), id: 'transitous-copy' };
+  assert.deepEqual(mergeCandidates(new Map([['kept', entry('kept')]]), [relisted], tombstones), []);
+  assert.deepEqual(mergeCandidates(new Map(), [relisted], tombstones).map((e) => e.id), ['transitous-copy']);
+});
+
+test('duplicates: a retired copy\'s URL is blocked over http and https alike', () => {
+  const existing = new Map([['kept', entry('kept')]]);
+  const tombstone = (url) => ({ copy: { url, at: 2000, reason: 'duplicate', of: 'kept' } });
+  const listed = (url) => ({ ...entry('copy'), id: 'transitous-copy', access: { url } });
+  assert.deepEqual(mergeCandidates(existing, [listed('http://copy.example/vp')], tombstone('https://copy.example/vp')), []);
+  assert.deepEqual(mergeCandidates(existing, [listed('https://copy.example/vp')], tombstone('http://copy.example/vp')), []);
+});
+
+test('duplicates: catalogue harvesters see a blocked copy\'s URL as known', () => {
+  const existing = new Map([['kept', entry('kept')]]);
+  const tombstones = { copy: { url: 'https://copy.example/vp', at: 2000, reason: 'duplicate', of: 'kept' } };
+  const known = knownUrlsOf(existing, tombstones);
+  assert.ok(known.has('https://copy.example/vp') && known.has('http://copy.example/vp'));
+  assert.ok(known.has('https://kept.example/vp'));
+  assert.equal(knownUrlsOf(new Map(), tombstones).size, 0, 'the kept entry is gone');
+});
+
+test('duplicates: the URL block follows a kept entry that was itself retired as a duplicate', () => {
+  const relisted = { ...entry('copy'), id: 'transitous-copy' };
+  const tombstones = {
+    copy: { url: entry('copy').access.url, at: 2000, reason: 'duplicate', of: 'middle' },
+    middle: { url: entry('middle').access.url, at: 3000, reason: 'duplicate', of: 'last' },
+  };
+  assert.deepEqual(mergeCandidates(new Map([['last', entry('last')]]), [relisted], tombstones), []);
+  assert.deepEqual(mergeCandidates(new Map(), [relisted], tombstones).map((e) => e.id), ['transitous-copy'], 'no kept entry left');
+  const cycle = { ...tombstones, last: { url: entry('last').access.url, at: 4000, reason: 'duplicate', of: 'copy' } };
+  assert.deepEqual(mergeCandidates(new Map(), [relisted], cycle).map((e) => e.id), ['transitous-copy'], 'a cycle ends');
+});
+
+test('duplicates: a blocked URL with a default port blocks the other scheme too', () => {
+  const existing = new Map([['kept', entry('kept')]]);
+  const tombstone = (url) => ({ copy: { url, at: 2000, reason: 'duplicate', of: 'kept' } });
+  const listed = (url) => ({ ...entry('copy'), id: 'transitous-copy', access: { url } });
+  assert.deepEqual(mergeCandidates(existing, [listed('https://h.example/vp')], tombstone('http://h.example:80/vp')), []);
+  assert.deepEqual(mergeCandidates(existing, [listed('http://h.example/vp')], tombstone('https://h.example:443/vp')), []);
+});
+
+test('duplicates: an entry retired as dead this run is not also taken for a duplicate', async () => {
+  const live = entry('live');
+  const dying = entry('dying');
+  const entries = new Map([['live', live], ['dying', dying]]);
+  const deadSince = 100 * DAY_S;
+  const t1 = deadSince + 30 * DAY_S - DAY_S / 2;
+  // Dead 29.5 days, then answering again: still dead (no 3 passes yet), probed once a day.
+  const health = { dying: { ...emptyHealth(1), status: 'dead', deadSince, lastProbe: t1 - DAY_S } };
+  const tombstones = {};
+  const same = { live: fleet(40), dying: fleet(40) };
+  assert.deepEqual(await run(entries, health, tombstones, same, t1), []);
+  assert.deepEqual(await run(entries, health, tombstones, same, t1 + DAY_S), ['dying'], 'dead 30.5 days');
+  assert.equal(tombstones.dying.reason, undefined, 'retired as dead, not as a duplicate');
+  assert.ok(health.live, 'the live copy stays');
+});
+
+test('duplicates: a copy that is not dead is kept over an older dead one', async () => {
+  const entries = new Map([['live', entry('live')], ['dying', entry('dying')]]);
+  const deadSince = 100 * DAY_S;
+  const t1 = deadSince + 20 * DAY_S;
+  // Dead 20 days, answering again but not yet verified, probed once a day; older than the live copy.
+  const health = { dying: { ...emptyHealth(1), status: 'dead', deadSince, lastProbe: t1 - DAY_S } };
+  const tombstones = {};
+  const same = { live: fleet(40), dying: fleet(40) };
+  assert.deepEqual(await run(entries, health, tombstones, same, t1), []);
+  assert.deepEqual(await run(entries, health, tombstones, same, t1 + DAY_S), ['dying']);
+  assert.equal(tombstones.dying.of, 'live');
+});
+
+test('duplicates: the URL block ends where the chain of kept entries reaches a dead tombstone', () => {
+  const tombstones = {
+    copy: { url: 'https://copy.example/vp', at: 2000, reason: 'duplicate', of: 'kept' },
+    kept: { url: 'https://kept.example/vp', at: 3000 },
+  };
+  assert.deepEqual([...duplicateUrlsOf(new Map(), tombstones)], []);
+});

@@ -4,9 +4,13 @@
  * in one run (probeRounds), so a working new feed is verified the run it is
  * found. Dead entries are probed once a day; dead for 30 days → entry removed
  * and tombstoned so discovery doesn't re-add it (hand-written entries stay).
+ * A vehicle-position entry with nearly the same vehicle ids as another, in an
+ * overlapping area, two runs in a row serves the same feed under another URL:
+ * all but one are retired the same way (retireDuplicates), so the app doesn't
+ * draw every vehicle twice.
  */
 import { pathToFileURL } from 'node:url';
-import { ADAPTERS } from './adapters/index.js';
+import { ADAPTERS, fingerprintSimilarity } from './adapters/index.js';
 import { isStaticEntry } from './harvest/static.js';
 import { DAY_S, HISTORY_CAP, applyProbe, classify, emptyHealth } from './health.js';
 import { readEntries, readState, removeEntry, writeState } from './store.js';
@@ -49,7 +53,8 @@ export async function probeEntry(entry, { now, fetchImpl } = {}) {
       const sample = await checkSample(decoded.sample, fetchImpl);
       if (sample) return { at: now, ...sample };
     }
-    return { at: now, ...classify({ status: 200, decoded, now }) };
+    const result = classify({ status: 200, decoded, now });
+    return { at: now, ...result, ...(result.result === 'ok' && decoded.fingerprint ? { fingerprint: decoded.fingerprint } : {}) };
   } catch {
     return { at: now, ...classify({ error: 'decode' }) };
   }
@@ -116,10 +121,119 @@ export async function probeRounds(entries, health, { probe, clock = nowS, sleep 
   }
   const counts = {};
   for (const [id, p] of last) {
-    health[id] = { ...health[id], history: [...health[id].history, p].slice(-HISTORY_CAP) };
+    // The fingerprint is kept once per entry, not in every history record.
+    const { fingerprint, ...record } = p;
+    health[id] = { ...health[id], history: [...health[id].history, record].slice(-HISTORY_CAP) };
+    if (fingerprint) health[id].fingerprint = fingerprint;
     counts[p.result] = (counts[p.result] || 0) + 1;
   }
   return { counts, rounds };
+}
+
+/**
+ * Take the last run's vehicle fingerprints out of `health` (id → fingerprint),
+ * so after this run's probes only entries that passed this run carry one.
+ */
+export function takeFingerprints(health) {
+  const previous = {};
+  for (const [id, h] of Object.entries(health)) {
+    if (h.fingerprint) previous[id] = h.fingerprint;
+    delete h.fingerprint;
+  }
+  return previous;
+}
+
+/**
+ * The entry of a duplicate group to keep: a hand-written one, else one not
+ * dead (a dead one is retired after 30 days), else one cleared for display, else the one probed first (health firstSeen: longest in the
+ * directory, so the URL consumers already know), else the lowest id.
+ */
+function keeperOf(ids, entries, health) {
+  const harvested = (id) => (isStaticEntry(entries.get(id)) ? 0 : 1);
+  const dead = (id) => (health[id].status === 'dead' ? 1 : 0);
+  const referral = (id) => (entries.get(id).licence?.display ? 0 : 1);
+  const seen = (id) => health[id].firstSeen ?? Infinity;
+  return [...ids].sort((a, b) => harvested(a) - harvested(b) || dead(a) - dead(b) || referral(a) - referral(b) || seen(a) - seen(b) || a.localeCompare(b))[0];
+}
+
+/**
+ * Least estimated Jaccard similarity of two entries' vehicle ids for them to
+ * count as one feed. Copies of one feed fetched seconds apart measured 0.96–1;
+ * at 0.96 the estimate falls under 0.9 about one run in 70 (the match waits a
+ * run). The closest feeds that are not copies measured 0.70–0.75: one carrying
+ * part of the other's fleet, and two that write some ids differently (`7` and
+ * `0007`). At 0.745 the estimate reaches 0.8 about one run in 7, 0.9 about
+ * one in 900.
+ */
+export const DUPLICATE_SIMILARITY = 0.9;
+/**
+ * Least ratio of two copies' vehicle counts this run. Counts are exact where
+ * the similarity is an estimate: a feed carrying 70 % of another's fleet
+ * (Autolinee Toscane, 648 of 924) is never taken for a copy of it.
+ */
+export const DUPLICATE_COUNT_RATIO = 0.9;
+
+const overlaps = (a, b) => Boolean(a && b) && a[0] <= b[2] && b[0] <= a[2] && a[1] <= b[3] && b[1] <= a[3];
+
+/**
+ * Pairs of entries (`"<id> <id>"`, ids in order) whose fingerprints match:
+ * similar vehicle ids and overlapping coverage. The coverage check keeps apart
+ * unrelated feeds whose ids are both plain 1..N numbers.
+ * @param {Record<string, string>} fingerprints id → fingerprint
+ * @param {Map<string, object>} entries
+ * @returns {Set<string>}
+ */
+export function matchingPairs(fingerprints, entries) {
+  const ids = Object.keys(fingerprints).filter((id) => entries.has(id)).sort();
+  const pairs = new Set();
+  for (let i = 0; i < ids.length; i += 1)
+    for (let j = i + 1; j < ids.length; j += 1) {
+      const [a, b] = [ids[i], ids[j]];
+      if (!overlaps(entries.get(a).coverage?.bbox, entries.get(b).coverage?.bbox)) continue;
+      if (fingerprintSimilarity(fingerprints[a], fingerprints[b]) >= DUPLICATE_SIMILARITY) pairs.add(`${a} ${b}`);
+    }
+  return pairs;
+}
+
+/**
+ * Retire entries serving the same feed as another under a different URL: the
+ * same pair matches (matchingPairs) on this run's fingerprints and on the
+ * last run's (`previous`, from takeFingerprints). Matching pairs are joined
+ * into groups; one of each group is kept (keeperOf), and the members that
+ * match the kept entry itself are tombstoned with `reason: 'duplicate'` and the
+ * kept id, so discovery doesn't re-add them. A member matching only another
+ * member (a chain) stays. Hand-written entries are never retired.
+ * Updates `health` and `tombstones` in place.
+ * @returns {string[]} ids of the entries to remove
+ */
+export function retireDuplicates(health, previous, entries, tombstones, now) {
+  const current = {};
+  for (const [id, h] of Object.entries(health)) if (h.fingerprint) current[id] = h.fingerprint;
+  const before = matchingPairs(previous, entries);
+  const root = new Map();
+  const find = (id) => (root.get(id) === id ? id : find(root.get(id)));
+  const matched = new Set();
+  for (const pair of matchingPairs(current, entries)) {
+    const [a, b] = pair.split(' ');
+    const [few, many] = [health[a].records, health[b].records].sort((x, y) => x - y);
+    if (!before.has(pair) || few < DUPLICATE_COUNT_RATIO * many) continue;
+    matched.add(pair);
+    for (const id of [a, b]) if (!root.has(id)) root.set(id, id);
+    root.set(find(a), find(b));
+  }
+  const groups = new Map();
+  for (const id of root.keys()) groups.set(find(id), [...(groups.get(find(id)) || []), id]);
+  const retired = [];
+  for (const ids of groups.values()) {
+    const kept = keeperOf(ids, entries, health);
+    for (const id of ids) {
+      if (id === kept || isStaticEntry(entries.get(id)) || !matched.has([kept, id].sort().join(' '))) continue;
+      tombstones[id] = { url: entries.get(id).access.url, at: now, reason: 'duplicate', of: kept };
+      delete health[id];
+      retired.push(id);
+    }
+  }
+  return retired;
 }
 
 /**
@@ -145,23 +259,44 @@ export function retireDead(health, entries, tombstones, now) {
   return retired;
 }
 
-export async function probeAll({ fetchImpl, now = nowS() } = {}) {
-  const entries = readEntries();
-  const health = readState('health.json', {});
-  const tombstones = readState('tombstones.json', {});
+/**
+ * One run over loaded state, in order: take the last run's fingerprints, probe
+ * the due entries (dead ones once a day), retire entries dead for 30 days, then
+ * retire duplicates among the rest. Updates `health` and `tombstones` in place.
+ * @param {{now: number, probe: (entry: object, at: number) => Promise<object>,
+ *   clock?: () => number, sleep?: (ms: number) => Promise<void>}} options
+ * @returns {Promise<{due: number, counts: Record<string, number>, rounds: number, retired: string[]}>}
+ *   retired: ids of the entries to remove
+ */
+export async function probeRun(entries, health, tombstones, { now, probe, clock, sleep }) {
   const due = [...entries.values()].filter((e) => {
     const h = health[e.id];
     return !h || h.status !== 'dead' || now - (h.lastProbe ?? 0) >= DAY_S;
   });
-  const { counts, rounds } = await probeRounds(due, health, {
+  const previous = takeFingerprints(health);
+  const { counts, rounds } = await probeRounds(due, health, { probe, clock, sleep });
+  const retired = retireDead(health, entries, tombstones, now);
+  for (const id of retireDuplicates(health, previous, entries, tombstones, now)) {
+    retired.push(id);
+    console.log(`probe: retired ${id}: same vehicles as ${tombstones[id].of}, two runs in a row`);
+  }
+  return { due: due.length, counts, rounds, retired };
+}
+
+export async function probeAll({ fetchImpl, now = nowS() } = {}) {
+  const entries = readEntries();
+  const health = readState('health.json', {});
+  const tombstones = readState('tombstones.json', {});
+  const { due, counts, rounds, retired } = await probeRun(entries, health, tombstones, {
+    now,
     probe: (e, at) => probeEntry(e, { now: at, fetchImpl }),
   });
-  for (const id of retireDead(health, entries, tombstones, now)) removeEntry(id);
+  for (const id of retired) removeEntry(id);
   writeState('health.json', health);
   writeState('tombstones.json', tombstones);
   const statuses = {};
   for (const h of Object.values(health)) statuses[h.status] = (statuses[h.status] || 0) + 1;
-  console.log(`probe: ${due.length} probed in ${rounds} round(s) ${JSON.stringify(counts)}; status ${JSON.stringify(statuses)}`);
+  console.log(`probe: ${due} probed in ${rounds} round(s) ${JSON.stringify(counts)}; status ${JSON.stringify(statuses)}`);
   return { counts, statuses };
 }
 
