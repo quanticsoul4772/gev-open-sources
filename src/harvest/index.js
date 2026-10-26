@@ -11,7 +11,7 @@ import { entryHasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas, withAtlasLicences } from './atlas.js';
 import { harvestCameras } from './cameras.js';
-import { fillTransitCoverage, recentlyRejected } from './catalogue.js';
+import { CHECK_PHASE_MS, fillTransitCoverage, recentlyRejected } from './catalogue.js';
 import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, knownSystemKeysOf, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
@@ -138,6 +138,25 @@ export function knownUrlsOf(entries) {
   return urls;
 }
 
+/**
+ * Remember checked catalogue feeds that didn't survive deduplication (a
+ * duplicate of an earlier source, or tombstoned) so later runs don't check
+ * them again: the Mobility Database's untagged feeds and every Atlas and
+ * Transitous entry.
+ * @param {{mdb: {checked: object[]}, atlas: {entries: object[]}, transitous: {entries: object[]}}} sources
+ * @param {object[]} deduped entries kept this run
+ * @param {Record<string, {reason: string, at: number}>} rejects updated in place
+ */
+export function rememberDuplicates({ mdb, atlas, transitous }, deduped, rejects, now) {
+  const dedupedIds = new Set(deduped.map((e) => e.id));
+  for (const e of [...mdb.checked, ...atlas.entries, ...transitous.entries])
+    if (!dedupedIds.has(e.id)) {
+      const gbfsUrl = e.access.related?.gbfs;
+      const key = gbfsUrl ? outputKey(gbfsUrl, e.domain === VEHICLES ? 'vehicles' : 'stations') : e.access.url;
+      rejects[key] = { reason: 'duplicate', at: now };
+    }
+}
+
 export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const existing = readEntries();
   // An entry with a URL that carries a credential is not keyless: drop it (it
@@ -173,13 +192,16 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   // Vehicle systems resolved beyond what the add limit can take are thrown away, so cap them.
   const vehicleSize = [...existing.values()].filter((e) => e.domain === VEHICLES).length;
   const vehicleBudget = 2 * addLimit(vehicleSize || existing.size);
+  // Vehicle checks and GBFS resolving each have their own budget, spent only while they run.
+  const checkPhase = { leftMs: CHECK_PHASE_MS };
+  const gbfsPhase = { leftMs: GBFS_PHASE_MS };
   const knownSystems = knownSystemKeysOf(existing);
-  const gbfsOptions = { knownIds, knownOutputs, knownSystems, rejects, now, vehicleBudget, deadlineMs: Date.now() + GBFS_PHASE_MS };
-  const mdb = await harvestMobilityDatabase();
+  const gbfsOptions = { knownIds, knownOutputs, knownSystems, rejects, now, vehicleBudget, gbfsPhase, checkPhase };
+  const mdb = await harvestMobilityDatabase({ knownUrls: knownUrlsOf(existing), rejects, now, checkPhase });
   // Atlas and Transitous see the Mobility Database's feeds as known, so they
   // only check URLs that would be new.
   const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]));
-  const atlas = await harvestAtlas({ knownUrls, rejects, now });
+  const atlas = await harvestAtlas({ knownUrls, rejects, now, checkPhase });
   for (const e of atlas.entries) knownUrls.add(normalizeUrl(e.access.url));
   const transitous = await harvestTransitous({ ...gbfsOptions, knownUrls });
   const gbfs = await harvestGbfs(gbfsOptions);
@@ -232,17 +254,10 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   for (const entry of updated)
     if (redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id) || licensed.has(entry.id))
       writeEntry(licensed.get(entry.id) || covered.get(entry.id) || entry);
-  // A checked catalogue feed that duplicates an earlier source: don't check it again.
-  const dedupedIds = new Set(deduped.map((e) => e.id));
-  for (const e of [...atlas.entries, ...transitous.entries])
-    if (!dedupedIds.has(e.id)) {
-      const gbfsUrl = e.access.related?.gbfs;
-      const key = gbfsUrl ? outputKey(gbfsUrl, e.domain === VEHICLES ? 'vehicles' : 'stations') : e.access.url;
-      rejects[key] = { reason: 'duplicate', at: now };
-    }
+  rememberDuplicates({ mdb, atlas, transitous }, deduped, rejects, now);
   writeState('harvest-rejects.json', rejects);
   console.log(
-    `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive), ` +
+    `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive; ${mdb.untagged} untagged candidates), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
       `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, firms ${FIRMS_ENTRIES.length}, perimeters ${PERIMETER_ENTRIES.length}, air quality ${AIRQUALITY_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
   );

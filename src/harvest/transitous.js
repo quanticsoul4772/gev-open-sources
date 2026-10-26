@@ -69,7 +69,8 @@ export function transitousSources(docs) {
 
 /**
  * @param {{knownIds: Set<string>, knownUrls: Set<string>, knownOutputs: Set<string>, rejects: object,
- *   now: number, fetchImpl?: typeof fetch, vehicleBudget?: number, deadlineMs?: number}} options
+ *   now: number, fetchImpl?: typeof fetch, vehicleBudget?: number, gbfsPhase?: {leftMs: number},
+ *   checkPhase?: {leftMs: number}}} options
  */
 export async function harvestTransitous(options) {
   const { fetchImpl } = options;

@@ -1,5 +1,6 @@
 /**
- * Shared by the catalogue harvesters (Transitland Atlas, Transitous): the
+ * Shared by the catalogue harvesters (Transitland Atlas, Transitous, the
+ * Mobility Database's untagged feeds): the
  * licence a catalogue declares, and a one-off check that a GTFS-RT URL really
  * serves vehicle positions, which also gives the entry its coverage.
  */
@@ -9,7 +10,7 @@ import { knownLicence } from '../licence/known.js';
 import { fetchCapped, notNow } from '../util/http.js';
 import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
-import { hostOfUrl, runPooled } from '../util/pool.js';
+import { hostOfUrl, runPooled, withinPhase } from '../util/pool.js';
 
 /** A rejected catalogue URL is checked again after this long, plus spreadS. */
 export const REJECT_RETRY_S = 7 * 86_400;
@@ -30,6 +31,16 @@ export const spreadS = (key) => createHash('sha256').update(key).digest().readUI
 /** How long a reject (`{reason, at}`) under `key` is kept. */
 export const rejectRetryS = (key, reject) =>
   reject.reason === 'empty feed' ? EMPTY_RETRY_S : REJECT_RETRY_S + spreadS(key);
+
+/**
+ * Time the catalogue vehicle checks of one run may take together (Mobility
+ * Database untagged feeds, Atlas, Transitous);
+ * candidates not started by then wait for a later run.
+ */
+export const CHECK_PHASE_MS = 10 * 60_000;
+
+/** A GTFS-RT URL naming alerts or trip updates (`-service-alert`, `/Alert.pb`, `/tripupdates/`, `TripUpdates`). */
+export const NOT_VEHICLES = /alert|trip[-_]?updates?/i;
 
 /**
  * Licence URL for an entry from a catalogue's SPDX id and/or licence URL. A
@@ -99,10 +110,15 @@ export const recentlyRejected = (rejects, url, now) =>
  *   licenceUrl: string|null, attribution: string|null, countries: string[],
  *   provenance: string[]}>} candidates
  * @param {{knownUrls: Set<string>, rejects: Record<string, {reason: string, at: number}>,
- *   now: number, fetchImpl?: typeof fetch}} options `rejects` is updated in place
+ *   now: number, fetchImpl?: typeof fetch, checkPhase?: {leftMs: number}}} options `rejects`
+ *   is updated in place; `checkPhase` is the run's shared CHECK_PHASE_MS budget, and candidates
+ *   not started within it are neither added nor rejected, so a later run checks them
  * @returns {Promise<object[]>} entries (licence undecided)
  */
-export async function resolveTransitCandidates(candidates, { knownUrls, rejects, now, fetchImpl }) {
+export async function resolveTransitCandidates(
+  candidates,
+  { knownUrls, rejects, now, fetchImpl, checkPhase = { leftMs: CHECK_PHASE_MS } },
+) {
   const seen = new Set();
   const todo = candidates.filter((c) => {
     const key = normalizeUrl(c.url);
@@ -110,15 +126,21 @@ export async function resolveTransitCandidates(candidates, { knownUrls, rejects,
     seen.add(key);
     return !recentlyRejected(rejects, c.url, now);
   });
-  const checks = await runPooled(todo, (c) => hostOfUrl(c.url), (c) => checkVehicleFeed(c.url, { fetchImpl }), {
-    global: 24,
-    perHost: 2,
-  });
+  const checks = await withinPhase(checkPhase, (deadlineMs) =>
+    runPooled(todo, (c) => hostOfUrl(c.url), (c) => checkVehicleFeed(c.url, { fetchImpl }), {
+      global: 24,
+      perHost: 2,
+      deadlineMs,
+    }),
+  );
   const entries = [];
   todo.forEach((c, i) => {
+    if (checks[i]?.skipped) return;
     const check = checks[i]?.error ? { ok: false, reason: 'check error' } : checks[i];
     if (!check.ok) {
-      if (!check.retry) rejects[c.url] = { reason: check.reason, at: now };
+      // An alerts or trip-updates feed is empty whenever nothing is running: not worth the 30 h retry.
+      const reason = check.reason === 'empty feed' && c.taggedOther ? 'empty feed, tagged without vehicles' : check.reason;
+      if (!check.retry) rejects[c.url] = { reason, at: now };
       return;
     }
     delete rejects[c.url];

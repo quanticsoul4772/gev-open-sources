@@ -9,6 +9,7 @@ import {
   pointsBbox,
   resolveTransitCandidates,
 } from '../src/harvest/catalogue.js';
+import { outputKey } from '../src/harvest/gbfs.js';
 import { knownUrlsOf } from '../src/harvest/index.js';
 import { regionCountry, transitousSources } from '../src/harvest/transitous.js';
 import { USGS_ENTRIES } from '../src/harvest/usgs.js';
@@ -757,4 +758,135 @@ test('adapters: Sensor.Community 1-hour file; outdoor PM sensors only; UTC times
   assert.equal(decode([sensor({ values: pm(5, 'n/a') })]).records, 1, 'PM10 alone is a reading');
   assert.throws(() => decode({ error: 'x' }), /not a Sensor.Community array/);
   assert.throws(() => decode([sensor({ indoor: 1, values: pm(5, 3) })]), /no PM readings/);
+});
+
+test('mobility database: an untagged feed with vehicles becomes an entry; one without is rejected', async () => {
+  const { harvestMobilityDatabase, MDB_CSV_URL } = await import('../src/harvest/mobilitydatabase.js');
+  const cols = ['id', 'data_type', 'entity_type', 'provider', 'name', 'status', 'urls.direct_download', 'urls.authentication_type', 'urls.license', 'static_reference', 'location.country_code'];
+  const row = (r) => cols.map((c) => r[c] ?? '').join(',');
+  const csv = [
+    cols.join(','),
+    row({ id: 'mdb-1', data_type: 'gtfs_rt', entity_type: 'vp', provider: 'Tagged', status: 'active', 'urls.direct_download': 'https://t.example/vp', 'urls.authentication_type': '0' }),
+    row({ id: 'mdb-2', data_type: 'gtfs_rt', entity_type: '', provider: 'ZET', status: 'active', 'urls.direct_download': 'https://zet.example/gtfs-rt-protobuf', 'urls.authentication_type': '0', 'location.country_code': 'HR' }),
+    row({ id: 'mdb-3', data_type: 'gtfs_rt', entity_type: 'tu', provider: 'Trips', status: 'active', 'urls.direct_download': 'https://u.example/tu', 'urls.authentication_type': '0' }),
+    row({ id: 'mdb-4', data_type: 'gtfs_rt', entity_type: 'tu', provider: 'Keyed', status: 'active', 'urls.direct_download': 'https://k.example/tu', 'urls.authentication_type': '1' }),
+  ].join('\n');
+  const fetchImpl = fakeFetch({
+    [MDB_CSV_URL]: { body: csv },
+    'https://zet.example/gtfs-rt-protobuf': { body: feedBytes([[45.8, 15.9], [45.81, 16.0]]) },
+    'https://u.example/tu': { body: feedBytes(['trip']) },
+  });
+  const rejects = {};
+  const mdb = await harvestMobilityDatabase({ knownUrls: new Set(), rejects, now: 1000, fetchImpl });
+  assert.deepEqual(mdb.entries.map((e) => e.id), ['mdb-1', 'mdb-2']);
+  const zet = mdb.entries[1];
+  assert.deepEqual(validateEntry(zet), []);
+  assert.deepEqual(zet.coverage.countries, ['HR']);
+  assert.ok(zet.coverage.bbox);
+  assert.equal(rejects['https://u.example/tu'].reason, 'no vehicle positions');
+  assert.equal(rejects['https://k.example/tu'], undefined);
+  assert.deepEqual(mdb.rejected, { keyed: 0, inactive: 0 });
+});
+
+test('candidates: checks not started within the check budget are neither added nor rejected', async () => {
+  const fetchImpl = fakeFetch({ 'https://a.example/vp': { body: feedBytes([[59.9, 10.7]]) } });
+  const base = { name: 'n', provider: 'p', licenceUrl: null, attribution: null, countries: [], provenance: ['test'] };
+  const rejects = {};
+  const entries = await resolveTransitCandidates([{ ...base, id: 'c-vp', url: 'https://a.example/vp' }], {
+    knownUrls: new Set(),
+    rejects,
+    now: 1000,
+    fetchImpl,
+    checkPhase: { leftMs: -1 },
+  });
+  assert.deepEqual(entries, []);
+  assert.deepEqual(rejects, {});
+});
+
+test('phases: vehicle checks spend their own budget, not the GBFS one; GBFS time is counted only while it resolves', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const fetchImpl = fakeFetch({ 'https://a.example/vp': { body: feedBytes([[59.9, 10.7]]) } });
+  const base = { name: 'n', provider: 'p', licenceUrl: null, attribution: null, countries: [], provenance: ['test'] };
+  // The options every catalogue gets after a long untagged step: the GBFS budget is gone.
+  const checkPhase = { leftMs: 60_000 };
+  const gbfsPhase = { leftMs: -1 };
+  const options = {
+    knownIds: new Set(),
+    knownOutputs: new Set(),
+    knownUrls: new Set(),
+    rejects: {},
+    now: 1000,
+    fetchImpl,
+    checkPhase,
+    gbfsPhase,
+  };
+  const entries = await resolveTransitCandidates([{ ...base, id: 'c-vp', url: 'https://a.example/vp' }], options);
+  assert.deepEqual(entries.map((e) => e.id), ['c-vp']);
+  assert.ok(checkPhase.leftMs <= 60_000);
+  // Time between GBFS steps is not spent: a budget with time left resolves, however late in the run.
+  const system = (host) => ({
+    id: host,
+    vehicleId: `${host}-vehicles`,
+    name: host,
+    provider: host,
+    country: null,
+    discoveryUrl: `https://${host}/gbfs.json`,
+    systemId: null,
+    provenance: ['test'],
+  });
+  const fresh = { leftMs: 60_000 };
+  await new Promise((resolve) => setTimeout(resolve, 20));
+  await resolveGbfsSystems([system('g.example')], { ...options, gbfsPhase: fresh });
+  assert.ok(options.rejects[outputKey('https://g.example/gbfs.json', 'stations')]);
+  assert.ok(fresh.leftMs <= 60_000 && fresh.leftMs > 59_000);
+  await resolveGbfsSystems([system('h.example')], { ...options, gbfsPhase: { leftMs: -1 } });
+  assert.equal(options.rejects[outputKey('https://h.example/gbfs.json', 'stations')], undefined);
+});
+
+test('duplicates: a checked untagged Mobility Database feed dropped as a duplicate or tombstone is remembered', async () => {
+  const { rememberDuplicates } = await import('../src/harvest/index.js');
+  const feed = (id, url) => ({ id, domain: 'transit.vehicles', access: { url } });
+  const rejects = {};
+  rememberDuplicates(
+    {
+      mdb: { checked: [feed('mdb-2', 'https://zet.example/rt'), feed('mdb-3', 'https://kept.example/rt')] },
+      atlas: { entries: [] },
+      transitous: { entries: [feed('transitous-1', 'https://fr.example/rt')] },
+    },
+    [feed('mdb-3', 'https://kept.example/rt')],
+    rejects,
+    1000,
+  );
+  assert.deepEqual(Object.keys(rejects).sort(), ['https://fr.example/rt', 'https://zet.example/rt']);
+  assert.equal(rejects['https://zet.example/rt'].reason, 'duplicate');
+});
+
+test('mobility database: an empty feed tagged only as trip updates is kept out for the full reject time; alert URLs are not fetched', async () => {
+  const { harvestMobilityDatabase, MDB_CSV_URL } = await import('../src/harvest/mobilitydatabase.js');
+  const { rejectRetryS, REJECT_RETRY_S } = await import('../src/harvest/catalogue.js');
+  const cols = ['id', 'data_type', 'entity_type', 'provider', 'name', 'status', 'urls.direct_download', 'urls.authentication_type'];
+  const row = (r) => cols.map((c) => r[c] ?? '').join(',');
+  const csv = [
+    cols.join(','),
+    row({ id: 'mdb-5', data_type: 'gtfs_rt', entity_type: 'tu', provider: 'Night', status: 'active', 'urls.direct_download': 'https://n.example/rt', 'urls.authentication_type': '0' }),
+    row({ id: 'mdb-6', data_type: 'gtfs_rt', entity_type: '', provider: 'Untagged', status: 'active', 'urls.direct_download': 'https://e.example/rt', 'urls.authentication_type': '0' }),
+    row({ id: 'mdb-7', data_type: 'gtfs_rt', entity_type: '', provider: 'Alerts', status: 'active', 'urls.direct_download': 'https://a.example/Alert.pb', 'urls.authentication_type': '0' }),
+  ].join('\n');
+  const fetched = [];
+  const routes = fakeFetch({
+    [MDB_CSV_URL]: { body: csv },
+    'https://n.example/rt': { body: feedBytes([]) },
+    'https://e.example/rt': { body: feedBytes([]) },
+  });
+  const fetchImpl = (url, init) => {
+    fetched.push(url);
+    return routes(url, init);
+  };
+  const rejects = {};
+  await harvestMobilityDatabase({ knownUrls: new Set(), rejects, now: 1000, fetchImpl });
+  const night = rejects['https://n.example/rt'];
+  assert.equal(night.reason, 'empty feed, tagged without vehicles');
+  assert.ok(rejectRetryS('https://n.example/rt', night) >= REJECT_RETRY_S);
+  assert.equal(rejects['https://e.example/rt'].reason, 'empty feed');
+  assert.ok(!fetched.includes('https://a.example/Alert.pb'));
 });
