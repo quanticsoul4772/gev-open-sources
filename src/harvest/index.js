@@ -116,10 +116,21 @@ export function redirectChecks(merged, existing, health) {
   ].filter((e) => !isStaticEntry(e));
 }
 
+/**
+ * Normalized URLs of entries retired as duplicates of an entry still in the
+ * directory: a copy stays out under any id another catalogue gives its URL.
+ * Once the kept entry is gone, the URL may come back.
+ */
+export function duplicateUrlsOf(existing, tombstones) {
+  const urls = new Set();
+  for (const t of Object.values(tombstones))
+    if (t.reason === 'duplicate' && t.url && existing.has(t.of)) urls.add(normalizeUrl(t.url));
+  return urls;
+}
+
 export function mergeCandidates(existing, candidates, tombstones) {
   const urls = new Set([...existing.values()].map((e) => normalizeUrl(e.access.url)));
-  // A copy retired as a duplicate stays out under any id another catalogue gives its URL.
-  for (const t of Object.values(tombstones)) if (t.reason === 'duplicate' && t.url) urls.add(normalizeUrl(t.url));
+  for (const url of duplicateUrlsOf(existing, tombstones)) urls.add(url);
   const added = [];
   for (const entry of candidates) {
     const url = normalizeUrl(entry.access.url);
