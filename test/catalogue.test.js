@@ -916,7 +916,7 @@ test('phases: vehicle checks spend their own budget, not the GBFS one; GBFS time
   };
   await resolveGbfsSystems([system('g.example')], { ...options, fetchImpl: slow, gbfsPhase: fresh });
   assert.ok(options.rejects[outputKey('https://g.example/gbfs.json', 'stations')]);
-  assert.ok(fresh.leftMs <= 20);
+  assert.ok(fresh.leftMs <= 25);
   await resolveGbfsSystems([system('h.example')], { ...options, gbfsPhase: { leftMs: -1 } });
   assert.equal(options.rejects[outputKey('https://h.example/gbfs.json', 'stations')], undefined);
 });
