@@ -12,7 +12,7 @@ import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas, withAtlasLicences } from './atlas.js';
 import { harvestCameras } from './cameras.js';
 import { fillTransitCoverage, recentlyRejected } from './catalogue.js';
-import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, outputKey } from './gbfs.js';
+import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, knownSystemKeysOf, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
 import { resolveRedirects } from './redirects.js';
@@ -173,7 +173,8 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   // Vehicle systems resolved beyond what the add limit can take are thrown away, so cap them.
   const vehicleSize = [...existing.values()].filter((e) => e.domain === VEHICLES).length;
   const vehicleBudget = 2 * addLimit(vehicleSize || existing.size);
-  const gbfsOptions = { knownIds, knownOutputs, rejects, now, vehicleBudget, deadlineMs: Date.now() + GBFS_PHASE_MS };
+  const knownSystems = knownSystemKeysOf(existing);
+  const gbfsOptions = { knownIds, knownOutputs, knownSystems, rejects, now, vehicleBudget, deadlineMs: Date.now() + GBFS_PHASE_MS };
   const mdb = await harvestMobilityDatabase();
   // Atlas and Transitous see the Mobility Database's feeds as known, so they
   // only check URLs that would be new.

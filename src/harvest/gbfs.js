@@ -10,7 +10,43 @@ import { plausibleBbox, recentlyRejected, replacesBbox, robustBbox, splitStrays,
 export const GBFS_SYSTEMS_URL =
   'https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv';
 
+/** CityBikes' network list; only each network's own GBFS feed (gbfs_href) is used. */
+export const CITYBIKES_URL = 'https://api.citybik.es/v2/networks?fields=id,name,gbfs_href,location';
+
+/** Entur's list of the Norwegian systems it republishes as GBFS. */
+export const ENTUR_GBFS_URL = 'https://api.entur.io/mobility/v2/gbfs';
+
+/** Hosts whose GBFS feeds need a key the URL doesn't show (Deutsche Bahn's API marketplace). */
+const KEYED_HOSTS = new Set(['apis.deutschebahn.com']);
+
+/** Whether a listed auto-discovery URL can be fetched without a key. */
+const keylessDiscovery = (url) =>
+  /^https:\/\//.test(url || '') && !hasCredential(url) && !KEYED_HOSTS.has(hostOfUrl(url));
+
 const json = (bytes) => JSON.parse(new TextDecoder().decode(bytes));
+
+/** GBFS version path segments: `v2`, `v2.3`, `v3.0`, `3.0`. */
+const VERSION_SEGMENT = /^(v\d+(\.\d+)*|\d+\.\d+)$/i;
+/** Feed language path segments (`/en/gbfs.json`, `/fr/station_information.json`). */
+const LANGUAGE_SEGMENT = /^(en|fr|de|nl|es|it|nb|nn|no|sv|da|fi|pt|pl|ca|eu)([-_][a-z]{2})?$/i;
+
+/**
+ * One key for the copies of a GBFS URL that differ only in version or
+ * language: host and path without version segments, a language segment
+ * among the last two, or a trailing gbfs.json / manifest.json.
+ */
+export function gbfsUrlKey(url) {
+  let u;
+  try {
+    u = new URL(url);
+  } catch {
+    return String(url);
+  }
+  let path = u.pathname.split('/').filter((p) => p && !VERSION_SEGMENT.test(p));
+  if (/^(gbfs|manifest)\.json$/i.test(path.at(-1) || '')) path = path.slice(0, -1);
+  path = path.filter((p, i) => i < path.length - 2 || !LANGUAGE_SEGMENT.test(p));
+  return `${u.host.toLowerCase()}/${path.join('/')}${u.search}`;
+}
 
 /**
  * Feed list from a gbfs.json document: v3 `data.feeds`, v1/v2
@@ -57,6 +93,46 @@ export function keylessSystems(rows) {
       /^https:\/\//.test(r['Auto-Discovery URL']) &&
       !hasCredential(r['Auto-Discovery URL']),
   );
+}
+
+/**
+ * GBFS systems from CityBikes' network list: networks with a keyless
+ * gbfs_href, so licences come from each operator's own feed.
+ * @param {{networks?: object[]}} doc
+ */
+export function citybikesSystems(doc) {
+  return (Array.isArray(doc?.networks) ? doc.networks : [])
+    .filter((n) => n?.id && keylessDiscovery(n.gbfs_href))
+    .map((n) => ({
+      id: slugId('citybikes', n.id),
+      vehicleId: slugId('citybikes', `${n.id}-vehicles`),
+      name: `${n.name || n.id}${n.location?.city ? ` — ${n.location.city}` : ''}`,
+      provider: n.name || n.id,
+      country: n.location?.country || null,
+      discoveryUrl: n.gbfs_href,
+      systemId: null,
+      provenance: [`citybikes:${n.id}`],
+    }));
+}
+
+/**
+ * GBFS systems from Entur's list. Its ids are the System IDs systems.csv
+ * uses for the same systems, so they share entry ids.
+ * @param {{systems?: Array<{id: string, url: string}>}} doc
+ */
+export function enturSystems(doc) {
+  return (Array.isArray(doc?.systems) ? doc.systems : [])
+    .filter((s) => s?.id && keylessDiscovery(s.url))
+    .map((s) => ({
+      id: slugId('gbfs', s.id),
+      vehicleId: slugId('gbfs', `${s.id}-vehicles`),
+      name: s.id,
+      provider: 'Entur',
+      country: 'NO',
+      discoveryUrl: s.url,
+      systemId: s.id,
+      provenance: [`entur:${s.id}`],
+    }));
 }
 
 export { FORM_FACTORS };
@@ -247,7 +323,51 @@ export async function resolveGbfsSystem(system, { want, fetchImpl, anyRedirect =
       }
     }
   }
+  // system_id and name, to tell a copy of a system served from another host.
+  if ((out.stations || out.vehicles) && sysInfo)
+    try {
+      const res = await fetchCapped(sysInfo, { fetchImpl, timeoutMs: 15_000, maxBytes: 2 ** 20 });
+      const data = res.status === 200 ? json(res.body)?.data : null;
+      const name = Array.isArray(data?.name) ? data.name[0]?.text : data?.name;
+      if (data?.system_id && name) out.system = { id: String(data.system_id), name: String(name) };
+    } catch {
+      out.system = null;
+    }
   return out;
+}
+
+const VEHICLES = 'sharedmobility.vehicles';
+
+/** Lower-case letters and digits only, accents dropped: `Vélo'v` → `velov`. */
+const plain = (text) =>
+  String(text)
+    .normalize('NFKD')
+    .replace(/[^\p{L}\p{N}]/gu, '')
+    .toLowerCase();
+
+/**
+ * Keys that identify one GBFS output whichever host, version or language
+ * serves it: its feed URLs (gbfsUrlKey), a stations entry's bbox, and the
+ * system's id and name together.
+ * @param {object} entry
+ * @param {{id?: string|null, name?: string|null}} [system]
+ */
+export function systemKeys(entry, system) {
+  const kind = entry.domain === VEHICLES ? 'vehicles' : 'stations';
+  const keys = [`${kind} url ${gbfsUrlKey(entry.access.url)}`];
+  const info = entry.access.related?.station_information;
+  if (info) keys.push(`${kind} url ${gbfsUrlKey(info)}`);
+  if (kind === 'stations' && entry.coverage?.bbox) keys.push(`stations bbox ${entry.coverage.bbox.join(',')}`);
+  if (system?.id && system?.name) keys.push(`${kind} system ${plain(system.id)} ${plain(system.name)}`);
+  return keys;
+}
+
+/** systemKeys of the directory's GBFS entries (their name is the provider's). */
+export function knownSystemKeysOf(entries) {
+  const keys = new Set();
+  for (const e of entries.values())
+    if (e.access.related?.gbfs) for (const k of systemKeys(e, { id: e.gbfs?.system_id, name: e.provider })) keys.add(k);
+  return keys;
 }
 
 /**
@@ -321,16 +441,23 @@ export const GBFS_REQUEST_GAP_MS = 250;
  * wanting only vehicles are capped at `vehicleBudget`; no system starts after
  * `deadlineMs`; each host gets one request at a time, `requestGapMs` apart; a
  * host is skipped after 3 consecutive network failures or rate limits.
- * Peer-to-peer car sharing is skipped entirely (isPeerToPeer).
+ * Peer-to-peer car sharing is skipped entirely (isPeerToPeer). A resolved
+ * output whose systemKeys match a directory entry (`knownSystems`) or an
+ * output resolved earlier in the list is a copy: rejected as a duplicate.
  * @param {object[]} systems as for resolveGbfsSystem
- * @param {{knownIds: Set<string>, knownOutputs: Set<string>, rejects: object, now: number,
- *   fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number, deadlineMs?: number,
+ * @param {{knownIds: Set<string>, knownOutputs: Set<string>, knownSystems?: Set<string>, rejects: object,
+ *   now: number, fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number, deadlineMs?: number,
  *   requestGapMs?: number}} options
  * @returns {Promise<object[]>} new entries; `rejects` is updated in place
  */
 export async function resolveGbfsSystems(systems, options) {
   const { knownIds, knownOutputs, rejects, now, fetchImpl, anyRedirect = false } = options;
-  const { vehicleBudget = Infinity, deadlineMs = Infinity, requestGapMs = GBFS_REQUEST_GAP_MS } = options;
+  const {
+    vehicleBudget = Infinity,
+    deadlineMs = Infinity,
+    requestGapMs = GBFS_REQUEST_GAP_MS,
+    knownSystems = new Set(),
+  } = options;
   const limiter = hostLimiter(requestGapMs);
   const wanted = (s, kind) =>
     !knownIds.has(kind === 'stations' ? s.id : s.vehicleId) &&
@@ -355,19 +482,45 @@ export async function resolveGbfsSystems(systems, options) {
     { global: 24, perHost: 3, deadlineMs, breakAfter: 3 },
   );
   const entries = [];
+  const seen = new Set(knownSystems);
   todo.forEach(({ s }, i) => {
     const r = results[i];
     if (!r || r.error || r.skipped) return;
     for (const kind of ['stations', 'vehicles']) {
-      if (r[kind]) entries.push(r[kind]);
-      else if (r.reasons[kind]) rejects[outputKey(s.discoveryUrl, kind)] = { reason: r.reasons[kind], at: now };
+      if (r[kind]) {
+        const keys = systemKeys(r[kind], r.system);
+        if (keys.some((k) => seen.has(k))) rejects[outputKey(s.discoveryUrl, kind)] = { reason: 'duplicate', at: now };
+        else {
+          for (const k of keys) seen.add(k);
+          entries.push(r[kind]);
+        }
+      } else if (r.reasons[kind]) rejects[outputKey(s.discoveryUrl, kind)] = { reason: r.reasons[kind], at: now };
     }
   });
   return entries;
 }
 
 /**
- * systems.csv: the stations and vehicles entries keyless systems still lack.
+ * Systems from one extra list, or none if the list is unreachable or
+ * malformed: the other lists still run.
+ */
+async function listedSystems(label, url, toSystems, { fetchImpl }) {
+  try {
+    // Entur's ET-Client-Name is added by fetchCapped.
+    const res = await fetchCapped(url, { fetchImpl });
+    if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
+    return toSystems(json(res.body));
+  } catch (error) {
+    console.log(`harvest: ${label} list skipped: ${error.message}`);
+    return [];
+  }
+}
+
+/**
+ * systems.csv, then CityBikes' and Entur's lists: the stations and vehicles
+ * entries keyless systems still lack. A listed system whose id or discovery
+ * URL (gbfsUrlKey) systems.csv, the directory or an earlier list item
+ * already has is left out.
  * @param {Parameters<typeof resolveGbfsSystems>[1]} options
  */
 export async function harvestGbfs(options) {
@@ -383,5 +536,18 @@ export async function harvestGbfs(options) {
     systemId: r['System ID'],
     provenance: [`gbfs-systems:${r['System ID']}`],
   }));
-  return resolveGbfsSystems(systems, options);
+  const { fetchImpl, knownOutputs } = options;
+  const citybikes = await listedSystems('citybikes', CITYBIKES_URL, citybikesSystems, { fetchImpl });
+  const entur = await listedSystems('entur', ENTUR_GBFS_URL, enturSystems, { fetchImpl });
+  const ids = new Set(systems.map((s) => s.id));
+  const known = [...systems.map((s) => s.discoveryUrl), ...[...knownOutputs].map((k) => k.replace(/#[^#]*$/, ''))];
+  const urls = new Set(known.map(gbfsUrlKey));
+  const listed = [...citybikes, ...entur].filter((s) => {
+    const url = gbfsUrlKey(s.discoveryUrl);
+    if (ids.has(s.id) || urls.has(url)) return false;
+    ids.add(s.id);
+    urls.add(url);
+    return true;
+  });
+  return resolveGbfsSystems([...systems, ...listed], options);
 }
