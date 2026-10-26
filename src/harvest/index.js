@@ -118,13 +118,15 @@ export function redirectChecks(merged, existing, health) {
 
 /**
  * Normalized URLs of entries retired as duplicates of an entry still in the
- * directory: a copy stays out under any id another catalogue gives its URL.
+ * directory: a copy stays out under any id another catalogue gives its URL,
+ * over http or https (a plain-http feed moves to https only after merging).
  * Once the kept entry is gone, the URL may come back.
  */
 export function duplicateUrlsOf(existing, tombstones) {
   const urls = new Set();
   for (const t of Object.values(tombstones))
-    if (t.reason === 'duplicate' && t.url && existing.has(t.of)) urls.add(normalizeUrl(t.url));
+    if (t.reason === 'duplicate' && t.url && existing.has(t.of))
+      for (const scheme of ['http:', 'https:']) urls.add(normalizeUrl(t.url.replace(/^https?:/i, scheme)));
   return urls;
 }
 

@@ -209,3 +209,11 @@ test('duplicates: a retired copy\'s URL is free again once the entry it duplicat
   assert.deepEqual(mergeCandidates(new Map([['kept', entry('kept')]]), [relisted], tombstones), []);
   assert.deepEqual(mergeCandidates(new Map(), [relisted], tombstones).map((e) => e.id), ['transitous-copy']);
 });
+
+test('duplicates: a retired copy\'s URL is blocked over http and https alike', () => {
+  const existing = new Map([['kept', entry('kept')]]);
+  const tombstone = (url) => ({ copy: { url, at: 2000, reason: 'duplicate', of: 'kept' } });
+  const listed = (url) => ({ ...entry('copy'), id: 'transitous-copy', access: { url } });
+  assert.deepEqual(mergeCandidates(existing, [listed('http://copy.example/vp')], tombstone('https://copy.example/vp')), []);
+  assert.deepEqual(mergeCandidates(existing, [listed('https://copy.example/vp')], tombstone('http://copy.example/vp')), []);
+});
