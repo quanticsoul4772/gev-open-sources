@@ -1,6 +1,6 @@
 /**
- * Shared by the catalogue harvesters (Transitland Atlas, Transitous, the
- * Mobility Database's untagged feeds): the
+ * Shared by the catalogue harvesters (Transitland Atlas, Transitous,
+ * transport.data.gouv.fr, the Mobility Database's untagged feeds): the
  * licence a catalogue declares, and a one-off check that a GTFS-RT URL really
  * serves vehicle positions, which also gives the entry its coverage.
  */
@@ -34,7 +34,7 @@ export const rejectRetryS = (key, reject) =>
 
 /**
  * Time the catalogue vehicle checks of one run may take together (Mobility
- * Database untagged feeds, Atlas, Transitous);
+ * Database untagged feeds, Atlas, Transitous, transport.data.gouv.fr);
  * candidates not started by then wait for a later run.
  */
 export const CHECK_PHASE_MS = 10 * 60_000;
