@@ -1166,3 +1166,18 @@ test('gbfs: a discovery URL listed twice in one list is fetched once and not rej
   assert.equal(fetched.filter((u) => u === 'https://op.example/gbfs.json').length, 1);
   assert.equal(rejects[outputKey('https://op.example/gbfs.json', 'stations')], undefined);
 });
+
+test('gbfs: a vehicles-only system not started in time gives its cap slot back to later lists', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const system = (id) => ({ id, vehicleId: `${id}-vehicles`, name: id, provider: id, country: null, discoveryUrl: `https://${id}.example/gbfs.json`, systemId: null, provenance: ['test'] });
+  const fetched = [];
+  const fetchImpl = async (url) => {
+    fetched.push(url);
+    return new Response('', { status: 404 });
+  };
+  const options = { knownIds: new Set(['a', 'b']), knownOutputs: new Set(), knownSystems: new Set(), vehicleBudget: 1, vehiclesOnly: { count: 0 }, rejects: {}, now: 1000, fetchImpl, requestGapMs: 0 };
+  await resolveGbfsSystems([system('a')], { ...options, gbfsPhase: { leftMs: -1 } });
+  assert.equal(options.vehiclesOnly.count, 0);
+  await resolveGbfsSystems([system('b')], options);
+  assert.deepEqual(fetched.map((u) => new URL(u).hostname), ['b.example']);
+});

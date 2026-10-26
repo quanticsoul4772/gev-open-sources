@@ -501,9 +501,13 @@ export async function resolveGbfsSystems(systems, options) {
     ),
   );
   const entries = [];
-  todo.forEach(({ s }, i) => {
+  todo.forEach(({ s, want }, i) => {
     const r = results[i];
-    if (!r || r.error || r.skipped) return;
+    if (!r || r.error || r.skipped) {
+      // Nothing was learned, so the next run queues it again: give its cap slot back for later lists.
+      if (!want.stations) vehiclesOnly.count -= 1;
+      return;
+    }
     for (const kind of ['stations', 'vehicles']) {
       if (r[kind]) {
         const keys = systemKeys(r[kind], r.system);
