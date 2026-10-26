@@ -1198,6 +1198,15 @@ test('gbfs: a vehicles-only system not started in time gives its cap slot back t
   assert.deepEqual(fetched.map((u) => new URL(u).hostname), ['b.example']);
 });
 
+test('gbfs: a system wanting both outputs that is not started in time leaves the vehicles-only count alone', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const system = { id: 'a', vehicleId: 'a-vehicles', name: 'a', provider: 'a', country: null, discoveryUrl: 'https://a.example/gbfs.json', systemId: null, provenance: ['test'] };
+  const vehiclesOnly = { count: 1 };
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownSystems: new Set(), vehicleBudget: 5, vehiclesOnly, rejects: {}, now: 1000, requestGapMs: 0, gbfsPhase: { leftMs: -1 } };
+  await resolveGbfsSystems([system], { ...options, fetchImpl: async () => assert.fail('not started') });
+  assert.equal(vehiclesOnly.count, 1);
+});
+
 test('gbfs: a vehicles-only copy listed before a copy wanting both shares its fetch and takes no cap slot', async () => {
   const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
   const fake = fakeFetch({
