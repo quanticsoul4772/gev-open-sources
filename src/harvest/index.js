@@ -2,7 +2,8 @@
  * Discovery: add catalogued keyless feeds as entries. Feeds already present
  * (by id, exact URL or a permalink that led to it) and tombstoned dead feeds
  * are skipped; cross-domain permalinks are pointed at their final URL; catalogue URLs
- * that failed a check are remembered in harvest-rejects.json for a week.
+ * that failed a check are remembered in harvest-rejects.json for a week (an
+ * empty feed for 30 hours).
  */
 import { pathToFileURL } from 'node:url';
 import { readEntries, readState, removeEntry, writeEntry, writeState } from '../store.js';
@@ -10,7 +11,7 @@ import { entryHasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas, withAtlasLicences } from './atlas.js';
 import { harvestCameras } from './cameras.js';
-import { REJECT_RETRY_S, fillTransitCoverage } from './catalogue.js';
+import { fillTransitCoverage, recentlyRejected } from './catalogue.js';
 import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
@@ -166,7 +167,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const tombstones = readState('tombstones.json', {});
   const rejects = readState('harvest-rejects.json', {});
   // Expired rejects are retried anyway; drop them so the file doesn't grow forever.
-  for (const [key, r] of Object.entries(rejects)) if (now - r.at >= REJECT_RETRY_S) delete rejects[key];
+  for (const key of Object.keys(rejects)) if (!recentlyRejected(rejects, key, now)) delete rejects[key];
   const knownIds = new Set(existing.keys());
   const knownOutputs = knownOutputsOf(existing);
   // Vehicle systems resolved beyond what the add limit can take are thrown away, so cap them.

@@ -3,15 +3,33 @@
  * licence a catalogue declares, and a one-off check that a GTFS-RT URL really
  * serves vehicle positions, which also gives the entry its coverage.
  */
+import { createHash } from 'node:crypto';
 import { decodeVehiclePositions } from '../adapters/gtfsRealtime.js';
 import { knownLicence } from '../licence/known.js';
-import { fetchCapped } from '../util/http.js';
+import { fetchCapped, notNow } from '../util/http.js';
 import { hasCredential } from '../util/secrets.js';
 import { normalizeUrl } from '../util/ids.js';
 import { hostOfUrl, runPooled } from '../util/pool.js';
 
-/** A rejected catalogue URL is checked again after this long. */
+/** A rejected catalogue URL is checked again after this long, plus spreadS. */
 export const REJECT_RETRY_S = 7 * 86_400;
+
+/**
+ * An empty feed (no vehicles at night) is checked again after this long: a
+ * different time of day than the run that saw it empty, without retrying it
+ * every run.
+ */
+export const EMPTY_RETRY_S = 30 * 3_600;
+
+/**
+ * 0–24 h per key, from a hash of it: rejects stamped by one big sweep don't
+ * all come due in the same run.
+ */
+export const spreadS = (key) => createHash('sha256').update(key).digest().readUInt32BE(0) % 86_400;
+
+/** How long a reject (`{reason, at}`) under `key` is kept. */
+export const rejectRetryS = (key, reject) =>
+  reject.reason === 'empty feed' ? EMPTY_RETRY_S : REJECT_RETRY_S + spreadS(key);
 
 /**
  * Licence URL for an entry from a catalogue's SPDX id and/or licence URL. A
@@ -43,8 +61,8 @@ export function pointsBbox(points, pad = 0.02) {
 
 /**
  * Fetch a GTFS-RT URL once and decide whether it is a live vehicle-positions
- * feed. `retry` marks an answer that says nothing yet (an empty feed at
- * night); other rejections are remembered for REJECT_RETRY_S.
+ * feed. `retry` marks an answer that says nothing about the feed (rate
+ * limited, notNow); other rejections are remembered (rejectRetryS).
  * @returns {Promise<{ok: true, bbox: number[]} |
  *   {ok: false, reason: string, retry?: boolean}>}
  */
@@ -55,6 +73,7 @@ export async function checkVehicleFeed(url, { fetchImpl } = {}) {
   } catch (error) {
     return { ok: false, reason: `fetch: ${error.message}`.slice(0, 120) };
   }
+  if (notNow(res)) return { ok: false, reason: `HTTP ${res.status}`, retry: true };
   if (res.status !== 200) return { ok: false, reason: `HTTP ${res.status}` };
   let feed;
   try {
@@ -65,13 +84,13 @@ export async function checkVehicleFeed(url, { fetchImpl } = {}) {
   const points = feed.vehicles.map((v) => [v.lat, v.lon]);
   const bbox = robustBbox(points);
   if (bbox) return { ok: true, bbox, strays: splitStrays(points).strays };
-  if (feed.entityCount === 0) return { ok: false, reason: 'empty feed', retry: true };
+  if (feed.entityCount === 0) return { ok: false, reason: 'empty feed' };
   return { ok: false, reason: 'no vehicle positions' };
 }
 
 /** Whether a catalogue URL was rejected recently enough to skip. */
 export const recentlyRejected = (rejects, url, now) =>
-  Boolean(rejects[url]) && now - rejects[url].at < REJECT_RETRY_S;
+  Boolean(rejects[url]) && now - rejects[url].at < rejectRetryS(url, rejects[url]);
 
 /**
  * Turn catalogue GTFS-RT candidates into entries: skip URLs already in the
