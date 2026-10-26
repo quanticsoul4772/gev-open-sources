@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-82713",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Hobus",
+  "provider": "Syndicat mixte Atoumod",
+  "coverage": {
+    "bbox": [
+      49.3579,
+      0.2284,
+      49.3979,
+      0.2684
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/hobus-honfleur-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Syndicat mixte Atoumod"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.844Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:6780d441ff240aee47bd194f/82713"
+  ]
+}

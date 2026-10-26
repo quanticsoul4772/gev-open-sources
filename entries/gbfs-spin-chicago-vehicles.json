@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-spin-chicago-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Spin Chicago — Chicago, IL",
+  "provider": "Spin Chicago",
+  "licence": {
+    "id": null,
+    "url": "https://www.bird.co/wp-content/uploads/2019/03/GBFS-Data-License-Agreement-2018-09-25.pdf",
+    "display": false,
+    "commercial": null,
+    "attribution": "Spin Chicago"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "terms page unreachable"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.798Z"
+  },
+  "provenance": [
+    "gbfs-systems:spin chicago"
+  ],
+  "coverage": {
+    "bbox": [
+      41.8651,
+      -87.7212,
+      41.9051,
+      -87.6812
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.spin.pm/api/gbfs/v2_3/chicago/free_bike_status",
+    "related": {
+      "vehicle_types": "https://gbfs.spin.pm/api/gbfs/v2_3/chicago/vehicle_types",
+      "system_information": "https://gbfs.spin.pm/api/gbfs/v2_3/chicago/system_information",
+      "gbfs": "https://mds.bird.co/gbfs/v2/public/provider/spin/chicago/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "spin chicago",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

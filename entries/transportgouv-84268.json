@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-84268",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Vitobus",
+  "provider": "VITRE COMMUNAUTE",
+  "coverage": {
+    "bbox": [
+      48.0483,
+      -1.2798,
+      48.143,
+      -1.1723
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/vitre/",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "VITRE COMMUNAUTE"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.846Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:6ad5cb9119b05c9e577a85e2/84268"
+  ]
+}

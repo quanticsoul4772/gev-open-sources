@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-84249",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Artis",
+  "provider": "Communauté Urbaine d'Arras",
+  "coverage": {
+    "bbox": [
+      50.2662,
+      2.7469,
+      50.3128,
+      2.816
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.pysae.com/api/v4/groups/keolis-arras-8H8k/gtfs-rt",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté Urbaine d'Arras"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.846Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:68b169c0157d0b9b1d417479/84249"
+  ]
+}

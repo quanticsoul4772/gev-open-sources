@@ -1,0 +1,56 @@
+{
+  "id": "transportgouv-84258",
+  "domain": "bikeshare.stations",
+  "name": "Vélos Lime Antony",
+  "provider": "Lime",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.811Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:6ab65cb75ffb64dc0d9034b8/84258"
+  ],
+  "coverage": {
+    "bbox": [
+      48.7508,
+      2.2979,
+      48.7508,
+      2.2979
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/antony/station_status",
+    "related": {
+      "station_information": "https://data.lime.bike/api/partners/v2/gbfs/antony/station_information",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/antony/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/antony/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  }
+}

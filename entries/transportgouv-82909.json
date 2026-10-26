@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-82909",
+  "domain": "transit.vehicles",
+  "name": "Navette de la CC Sel et Vermois",
+  "provider": "Fluo Grand Est",
+  "coverage": {
+    "bbox": [
+      48.5762,
+      6.3142,
+      48.6162,
+      6.3542
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/fluo-sel-et-vermois-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Fluo Grand Est"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.844Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:63b4c3d206d317f5caa80dcc/82909"
+  ]
+}

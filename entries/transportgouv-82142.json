@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-82142",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Astrobus",
+  "provider": "Syndicat mixte Atoumod",
+  "coverage": {
+    "bbox": [
+      49.1237,
+      0.2492,
+      49.1637,
+      0.2892
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/astrobus-lisieux-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Syndicat mixte Atoumod"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.843Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:66a0ad19939764ceea2ac82b/82142"
+  ]
+}

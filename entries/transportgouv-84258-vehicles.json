@@ -1,0 +1,60 @@
+{
+  "id": "transportgouv-84258-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Vélos Lime Antony",
+  "provider": "Lime",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.811Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:6ab65cb75ffb64dc0d9034b8/84258"
+  ],
+  "coverage": {
+    "bbox": [
+      48.7151,
+      2.2643,
+      48.7867,
+      2.3332
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/antony/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/antony/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/antony/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/antony/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  }
+}

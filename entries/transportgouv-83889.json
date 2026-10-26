@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-83889",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Jybus",
+  "provider": "J'ybus",
+  "coverage": {
+    "bbox": [
+      45.8357,
+      5.9174,
+      45.9102,
+      6.0396
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/jybus-rumilly-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "J'ybus"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.845Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:616853a698450ae104dcab37/83889"
+  ]
+}

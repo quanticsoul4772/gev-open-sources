@@ -1,0 +1,55 @@
+{
+  "id": "transportgouv-84257",
+  "domain": "bikeshare.stations",
+  "name": "Vélos Voi Nantes",
+  "provider": "Voi Technology",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Voi Technology"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.810Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:6ace1e85ad3a4e955baf9b71/84257"
+  ],
+  "coverage": {
+    "bbox": [
+      47.1655,
+      -1.6122,
+      47.3095,
+      -1.4301
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/421/station_status.json",
+    "related": {
+      "station_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/421/station_information.json",
+      "system_information": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/421/system_information.json",
+      "gbfs": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/421/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  }
+}

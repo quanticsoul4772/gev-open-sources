@@ -1,0 +1,47 @@
+{
+  "id": "mdb-tdg-84194",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain TCVO",
+  "provider": "Communauté de Communes du Pays d'Orange en Provence",
+  "coverage": {
+    "bbox": [
+      44.1235,
+      4.7769,
+      44.1671,
+      4.8289
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://tcvo.2cloud.app/api/gtfsrt/2.0/vehiclepositions/TCVO-8420-1937-5506/bin",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté de Communes du Pays d'Orange en Provence"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://opendatacommons.org/licenses/odbl/1.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.836Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84194",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/7695b3c3-f4ad-454f-9565-ed7be11a78fc"
+  ]
+}

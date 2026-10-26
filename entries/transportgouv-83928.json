@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-83928",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Mouvéo",
+  "provider": "Communauté d'Agglomération du Pays de Saint-Omer",
+  "coverage": {
+    "bbox": [
+      50.5765,
+      2.181,
+      50.803,
+      2.3262
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/mouveo-saint-omer-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté d'Agglomération du Pays de Saint-Omer"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.845Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:5ed7997e20371802a7ee1400/83928"
+  ]
+}

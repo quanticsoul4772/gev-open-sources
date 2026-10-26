@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-82296",
+  "domain": "transit.vehicles",
+  "name": "Agrégat des réseaux urbains et interurbains de Normandie",
+  "provider": "Syndicat mixte Atoumod",
+  "coverage": {
+    "bbox": [
+      48.4075,
+      -1.7931,
+      49.9435,
+      1.4948
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/atoumod-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Syndicat mixte Atoumod"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.843Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:5ced52ed8b4c4177b679d377/82296"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "transportgouv-84259-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Vélos Lime Paris Sceaux",
+  "provider": "Lime",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.811Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:6ab65d47eac49a0fc722c577/84259"
+  ],
+  "coverage": {
+    "bbox": [
+      48.7509,
+      2.2631,
+      48.8016,
+      2.3332
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/sceaux/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/sceaux/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/sceaux/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/sceaux/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://spdx.org/licenses/etalab-2.0"
+  }
+}

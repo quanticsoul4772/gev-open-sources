@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-79746",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain et scolaire Guingamp-Paimpol Mobilité",
+  "provider": "Armor Argoat Mobilité • Guingamp-Paimpol Mobilité",
+  "coverage": {
+    "bbox": [
+      48.5341,
+      -3.1674,
+      48.5914,
+      -3.0988
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/axeo-guingamp-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Armor Argoat Mobilité • Guingamp-Paimpol Mobilité"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.843Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:60a60327c7e5bc1ceacd5a95/79746"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-82163",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain STAR",
+  "provider": "STAR",
+  "coverage": {
+    "bbox": [
+      47.9743,
+      -1.8991,
+      48.2326,
+      -1.5255
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/star-rennes-integration-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "STAR"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T18:45:10.843Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:580defb1a3a7292dcfa9d33f/82163"
+  ]
+}
