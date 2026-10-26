@@ -1076,3 +1076,67 @@ test('gbfs: a system resolved by one list in a run is a duplicate when a later l
   assert.deepEqual(second, []);
   assert.equal(rejects[outputKey('https://mirror.example/gbfs.json', 'stations')].reason, 'duplicate');
 });
+
+test('gbfs: a discovery URL resolved by one list is left alone by later lists, so its entry can still be added next run', async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const routes = {
+    'https://op.example/gbfs.json': {
+      body: JSON.stringify({ version: '2.3', data: { en: { feeds: [
+        { name: 'station_information', url: 'https://op.example/info' },
+        { name: 'station_status', url: 'https://op.example/status' },
+      ] } } }),
+    },
+    'https://op.example/info': { body: JSON.stringify({ data: { stations: [{ lat: 47.2, lon: -1.5 }, { lat: 47.3, lon: -1.6 }] } }) },
+  };
+  const fetched = [];
+  const fake = fakeFetch(routes);
+  const fetchImpl = (url, init) => {
+    fetched.push(url);
+    return fake(url, init);
+  };
+  const system = (id) => ({ id, vehicleId: `${id}-vehicles`, name: 'V', provider: 'V', country: null, discoveryUrl: 'https://op.example/gbfs.json', systemId: null, provenance: ['test'] });
+  const rejects = {};
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownSystems: new Set(), rejects, now: 1000, fetchImpl, requestGapMs: 0 };
+  assert.equal((await resolveGbfsSystems([system('transitous-x')], options)).length, 1);
+  const calls = fetched.length;
+  assert.deepEqual(await resolveGbfsSystems([system('transportgouv-x')], options), []);
+  assert.equal(fetched.length, calls);
+  assert.equal(rejects[outputKey('https://op.example/gbfs.json', 'stations')], undefined);
+});
+
+test("gbfs: a tombstoned copy of a system is not resolved, so another list's copy is added", async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const gbfs = (host) => ({
+    [`https://${host}/gbfs.json`]: {
+      body: JSON.stringify({ version: '2.3', data: { en: { feeds: [
+        { name: 'system_information', url: `https://${host}/system` },
+        { name: 'station_information', url: `https://${host}/info` },
+        { name: 'station_status', url: `https://${host}/status` },
+      ] } } }),
+    },
+    [`https://${host}/system`]: { body: JSON.stringify({ data: { system_id: 'velo-x', name: 'Vélo X' } }) },
+    [`https://${host}/info`]: { body: JSON.stringify({ data: { stations: [{ lat: 47.2, lon: -1.5 }, { lat: 47.3, lon: -1.6 }] } }) },
+  });
+  const fetchImpl = fakeFetch({ ...gbfs('old.example'), ...gbfs('op.example') });
+  const system = (id, host) => ({ id, vehicleId: `${id}-vehicles`, name: 'Vélo X', provider: 'X', country: null, discoveryUrl: `https://${host}/gbfs.json`, systemId: null, provenance: ['test'] });
+  const options = { knownIds: new Set(), knownOutputs: new Set(), knownSystems: new Set(), tombstones: { 'transitous-x': { at: 1 } }, rejects: {}, now: 1000, fetchImpl, requestGapMs: 0 };
+  assert.deepEqual(await resolveGbfsSystems([system('transitous-x', 'old.example')], options), []);
+  const added = await resolveGbfsSystems([system('gbfs-x', 'op.example')], options);
+  assert.deepEqual(added.map((e) => e.id), ['gbfs-x']);
+});
+
+test("gbfs: the vehicles-only cap counts across the run's lists", async () => {
+  const { resolveGbfsSystems } = await import('../src/harvest/gbfs.js');
+  const system = (id) => ({ id, vehicleId: `${id}-vehicles`, name: id, provider: id, country: null, discoveryUrl: `https://${id}.example/gbfs.json`, systemId: null, provenance: ['test'] });
+  const fetched = [];
+  const fetchImpl = async (url) => {
+    fetched.push(url);
+    return new Response('', { status: 404 });
+  };
+  // Stations are known, so each system wants only vehicles.
+  const knownIds = new Set(['a', 'b', 'c']);
+  const options = { knownIds, knownOutputs: new Set(), knownSystems: new Set(), vehicleBudget: 2, vehiclesOnly: { count: 0 }, rejects: {}, now: 1000, fetchImpl, requestGapMs: 0 };
+  await resolveGbfsSystems([system('a'), system('b')], options);
+  await resolveGbfsSystems([system('c')], options);
+  assert.deepEqual(fetched.map((u) => new URL(u).hostname).sort(), ['a.example', 'b.example']);
+});

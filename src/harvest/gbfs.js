@@ -439,9 +439,10 @@ export const GBFS_REQUEST_GAP_MS = 250;
 
 /**
  * Resolve the outputs systems still lack. An output is wanted unless its id is
- * known, a directory entry already serves it (`knownOutputs` holds
- * `<normalized discovery URL>#<kind>`), or it was rejected recently. Systems
- * wanting only vehicles are capped at `vehicleBudget`; no system starts after
+ * known or tombstoned, a directory entry already serves it (`knownOutputs` holds
+ * `<normalized discovery URL>#<kind>`), an earlier list resolved it this run,
+ * or it was rejected recently. Systems wanting only vehicles are capped at
+ * `vehicleBudget`, counted across the run's lists in `vehiclesOnly`; no system starts after
  * the run's `gbfsPhase` budget is spent; each host gets one request at a time,
  * `requestGapMs` apart; a host is skipped after 3 consecutive network failures
  * or rate limits. Peer-to-peer car sharing is skipped entirely (isPeerToPeer).
@@ -451,7 +452,8 @@ export const GBFS_REQUEST_GAP_MS = 250;
  * @param {object[]} systems as for resolveGbfsSystem
  * @param {{knownIds: Set<string>, knownOutputs: Set<string>, knownSystems?: Set<string>, rejects: object,
  *   now: number, fetchImpl?: typeof fetch, anyRedirect?: boolean, vehicleBudget?: number,
- *   gbfsPhase?: {leftMs: number}, requestGapMs?: number}} options
+ *   vehiclesOnly?: {count: number}, tombstones?: Record<string, unknown>, gbfsPhase?: {leftMs: number},
+ *   requestGapMs?: number}} options
  * @returns {Promise<object[]>} new entries; `rejects` is updated in place
  */
 export async function resolveGbfsSystems(systems, options) {
@@ -461,21 +463,28 @@ export async function resolveGbfsSystems(systems, options) {
     gbfsPhase = { leftMs: Infinity },
     requestGapMs = GBFS_REQUEST_GAP_MS,
     knownSystems = new Set(),
+    vehiclesOnly = { count: 0 },
+    tombstones = {},
   } = options;
   const limiter = hostLimiter(requestGapMs);
+  // Shared across the run's calls, so a system two lists name is added once.
+  const seen = knownSystems;
+  // An output resolved this run, by discovery URL: later lists leave it alone.
+  const resolvedKey = (s, kind) => `resolved:${outputKey(normalizeUrl(s.discoveryUrl), kind)}`;
   const wanted = (s, kind) =>
     !knownIds.has(kind === 'stations' ? s.id : s.vehicleId) &&
+    !tombstones[kind === 'stations' ? s.id : s.vehicleId] &&
+    !seen.has(resolvedKey(s, kind)) &&
     !knownOutputs.has(outputKey(normalizeUrl(s.discoveryUrl), kind)) &&
     !recentlyRejected(rejects, outputKey(s.discoveryUrl, kind), now);
-  let vehiclesOnly = 0;
   const todo = [];
   for (const s of systems) {
     if (isPeerToPeer(s)) continue;
     const want = { stations: wanted(s, 'stations'), vehicles: wanted(s, 'vehicles') };
     if (!want.stations && !want.vehicles) continue;
     if (!want.stations) {
-      if (vehiclesOnly >= vehicleBudget) continue;
-      vehiclesOnly += 1;
+      if (vehiclesOnly.count >= vehicleBudget) continue;
+      vehiclesOnly.count += 1;
     }
     todo.push({ s, want });
   }
@@ -488,8 +497,6 @@ export async function resolveGbfsSystems(systems, options) {
     ),
   );
   const entries = [];
-  // Shared across the run's calls, so a system two lists name is added once.
-  const seen = knownSystems;
   todo.forEach(({ s }, i) => {
     const r = results[i];
     if (!r || r.error || r.skipped) return;
@@ -498,7 +505,7 @@ export async function resolveGbfsSystems(systems, options) {
         const keys = systemKeys(r[kind], r.system);
         if (keys.some((k) => seen.has(k))) rejects[outputKey(s.discoveryUrl, kind)] = { reason: 'duplicate', at: now };
         else {
-          for (const k of keys) seen.add(k);
+          for (const k of [...keys, resolvedKey(s, kind)]) seen.add(k);
           entries.push(r[kind]);
         }
       } else if (r.reasons[kind]) rejects[outputKey(s.discoveryUrl, kind)] = { reason: r.reasons[kind], at: now };
