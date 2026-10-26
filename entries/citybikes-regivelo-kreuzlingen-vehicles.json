@@ -1,0 +1,59 @@
+{
+  "id": "citybikes-regivelo-kreuzlingen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Regivelo — Kreuzlingen",
+  "provider": "Regivelo",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.831Z"
+  },
+  "provenance": [
+    "citybikes:regivelo-kreuzlingen"
+  ],
+  "coverage": {
+    "bbox": [
+      47.6047,
+      9.1327,
+      47.6597,
+      9.2664
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/en/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/en/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

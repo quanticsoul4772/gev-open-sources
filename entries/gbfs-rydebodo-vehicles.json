@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-rydebodo-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "rydebodo",
+  "provider": "Entur",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Entur"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.876Z"
+  },
+  "provenance": [
+    "entur:rydebodo"
+  ],
+  "coverage": {
+    "bbox": [
+      67.2502,
+      14.3234,
+      67.3354,
+      14.6289
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v2/rydebodo/free_bike_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v2/rydebodo/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v2/rydebodo/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v2/rydebodo/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "rydebodo",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

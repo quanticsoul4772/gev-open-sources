@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-rydelorenskog",
+  "domain": "bikeshare.stations",
+  "name": "rydelorenskog",
+  "provider": "Entur",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Entur"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.877Z"
+  },
+  "provenance": [
+    "entur:rydelorenskog"
+  ],
+  "coverage": {
+    "bbox": [
+      59.9227,
+      10.9429,
+      59.9344,
+      10.9629
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v2/rydelorenskog/station_status",
+    "related": {
+      "station_information": "https://api.entur.io/mobility/v2/gbfs/v2/rydelorenskog/station_information",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v2/rydelorenskog/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v2/rydelorenskog/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "rydelorenskog",
+    "version": "2.3"
+  }
+}

@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 403"
+        "quote": "terms page has no readable text"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-26T06:57:49.061Z"
+    "at": "2026-10-26T14:06:55.898Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2229"

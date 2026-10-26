@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-rydebaerum-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "rydebaerum",
+  "provider": "Entur",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Entur"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.876Z"
+  },
+  "provenance": [
+    "entur:rydebaerum"
+  ],
+  "coverage": {
+    "bbox": [
+      59.8568,
+      10.4534,
+      59.9682,
+      10.6572
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v2/rydebaerum/free_bike_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v2/rydebaerum/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v2/rydebaerum/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v2/rydebaerum/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "rydebaerum",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

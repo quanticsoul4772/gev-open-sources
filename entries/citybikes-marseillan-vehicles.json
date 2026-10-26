@@ -1,0 +1,59 @@
+{
+  "id": "citybikes-marseillan-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Marseillan vélo libre-service — Marseillan",
+  "provider": "Marseillan vélo libre-service",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Marseillan vélo libre-service"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.830Z"
+  },
+  "provenance": [
+    "citybikes:marseillan"
+  ],
+  "coverage": {
+    "bbox": [
+      43.2981,
+      3.5073,
+      43.3757,
+      3.5671
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/marseillan/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://api.gbfs.v3.0.ecovelo.mobi/vehicle_types.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/marseillan/system_information.json",
+      "gbfs": "https://api.gbfs.ecovelo.mobi/marseillan/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

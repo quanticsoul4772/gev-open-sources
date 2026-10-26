@@ -1,0 +1,55 @@
+{
+  "id": "citybikes-denver",
+  "domain": "bikeshare.stations",
+  "name": "Lyft — Denver, CO",
+  "provider": "Lyft",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lyft"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.830Z"
+  },
+  "provenance": [
+    "citybikes:denver"
+  ],
+  "coverage": {
+    "bbox": [
+      39.6803,
+      -105.0157,
+      39.7684,
+      -104.9591
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/station_status.json",
+    "related": {
+      "station_information": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/station_information.json",
+      "system_information": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/system_information.json",
+      "gbfs": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": null
+  }
+}

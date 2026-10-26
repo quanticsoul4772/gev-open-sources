@@ -1,0 +1,55 @@
+{
+  "id": "citybikes-bixi-montreal",
+  "domain": "bikeshare.stations",
+  "name": "Bixi — Montréal, QC",
+  "provider": "Bixi",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Bixi"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.829Z"
+  },
+  "provenance": [
+    "citybikes:bixi-montreal"
+  ],
+  "coverage": {
+    "bbox": [
+      45.4163,
+      -73.9415,
+      45.7023,
+      -73.2632
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.velobixi.com/gbfs/en/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.velobixi.com/gbfs/en/station_information.json",
+      "system_information": "https://gbfs.velobixi.com/gbfs/en/system_information.json",
+      "gbfs": "https://gbfs.velobixi.com/gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": null
+  }
+}

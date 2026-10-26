@@ -1,0 +1,55 @@
+{
+  "id": "citybikes-denver-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lyft — Denver, CO",
+  "provider": "Lyft",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Lyft"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-26T14:06:55.830Z"
+  },
+  "provenance": [
+    "citybikes:denver"
+  ],
+  "coverage": {
+    "bbox": [
+      39.6177,
+      -105.073,
+      39.8053,
+      -104.8744
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/free_bike_status.json",
+    "related": {
+      "system_information": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/system_information.json",
+      "gbfs": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": null,
+    "form_factors": []
+  }
+}
