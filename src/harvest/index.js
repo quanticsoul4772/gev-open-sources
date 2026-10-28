@@ -12,7 +12,7 @@ import { normalizeUrl } from '../util/ids.js';
 import { harvestAtlas, withAtlasLicences } from './atlas.js';
 import { harvestCameras } from './cameras.js';
 import { CHECK_PHASE_MS, fillTransitCoverage, recentlyRejected } from './catalogue.js';
-import { withCoveredCountries } from './countries.js';
+import { withCoveredCountries, withInferredCountries } from './countries.js';
 import { GBFS_PHASE_MS, fillGbfsCoverage, harvestGbfs, isPeerToPeer, knownSystemKeysOf, outputKey } from './gbfs.js';
 import { upgradeToHttps } from './https.js';
 import { harvestMobilityDatabase } from './mobilitydatabase.js';
@@ -312,18 +312,23 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     .map((e) => licensed.get(e.id) || covered.get(e.id) || e)
     .filter((e) => e.domain !== 'transit.vehicles' || e.coverage.bbox);
   const added = withinAddLimits(ready, existing);
-  // A catalogue country that the feed's own coverage misses is dropped.
-  for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withCoveredCountries(withAsciiUrls(entry)));
-  for (const entry of updated)
-    if (redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id) || licensed.has(entry.id))
-      writeEntry(licensed.get(entry.id) || covered.get(entry.id) || entry);
+  // A catalogue country that the feed's own coverage misses is dropped; an
+  // entry left without one takes the country holding most of its bbox.
+  for (const entry of added) if (!entryHasCredential(entry)) writeEntry(withInferredCountries(withCoveredCountries(withAsciiUrls(entry))));
+  let countried = 0;
+  for (const entry of updated) {
+    const next = licensed.get(entry.id) || covered.get(entry.id) || entry;
+    const filled = withInferredCountries(next);
+    if (filled !== next) countried += 1;
+    if (filled !== next || redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id) || licensed.has(entry.id)) writeEntry(filled);
+  }
   rememberDuplicates({ mdb, atlas, transitous, transportGouv }, deduped, rejects, now);
   writeState('harvest-rejects.json', rejects);
   console.log(
     `harvest: mobility database ${mdb.entries.length} keyless vp (rejected ${mdb.rejected.keyed} keyed, ${mdb.rejected.inactive} inactive; ${mdb.untagged} untagged candidates), ` +
       `atlas ${atlas.entries.length}/${atlas.candidates} checked ok, transitous ${transitous.entries.length}/${transitous.candidates}, ` +
       `transport.data.gouv.fr ${transportGouv.entries.length}/${transportGouv.candidates}, ` +
-      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, firms ${FIRMS_ENTRIES.length}, perimeters ${PERIMETER_ENTRIES.length}, air quality ${AIRQUALITY_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
+      `gbfs ${gbfs.length} resolved (${gbfs.filter((e) => e.domain === VEHICLES).length} vehicles), usgs ${USGS_ENTRIES.length}, gdacs ${GDACS_ENTRIES.length}, firms ${FIRMS_ENTRIES.length}, perimeters ${PERIMETER_ENTRIES.length}, air quality ${AIRQUALITY_ENTRIES.length}, cameras ${cameras.length}; ${added.length} new entries (${ready.length - added.length} staged for later runs), ${redirected.size} redirected to their final URL, ${upgraded.size} moved to https, ${covered.size} bboxes filled, ${countried} countries filled, ${[...licensed.keys()].filter((id) => existing.has(id)).length} licences from Atlas,${Object.keys(rejects).length} catalogue URLs rejected`,
   );
 }
 

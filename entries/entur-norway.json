@@ -10,7 +10,9 @@
       70.4678,
       26.2543
     ],
-    "countries": []
+    "countries": [
+      "NO"
+    ]
   },
   "access": {
     "url": "https://api.entur.io/realtime/v1/gtfs-rt/vehicle-positions",
