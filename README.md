@@ -186,8 +186,10 @@ Version policy:
 - `coverage.countries` comes from the catalogue, dropping a code whose
   country misses the bbox. An entry the catalogue gave none (every Transitland
   Atlas feed) takes the one country holding most of its bbox, from simplified
-  Natural Earth outlines (`src/harvest/country-outlines.json`); global and
-  continental feeds, and feeds whose bbox is all sea, keep an empty list.
+  Natural Earth outlines (`src/harvest/country-outlines.json`), or, for a
+  small coastal bbox the outlines put all at sea, the country whose coast is
+  nearest its centre within 25 km. Global and continental feeds, and feeds
+  whose bbox lies farther out at sea, keep an empty list.
 - Hand-written entries (USGS, GDACS, FIRMS, fire perimeters,
   Sensor.Community) are never
   redirect-rewritten and never tombstoned: after a long outage they stay
