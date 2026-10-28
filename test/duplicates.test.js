@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { PbfWriter } from 'pbf';
 import * as adapters from '../src/adapters/index.js';
-import { duplicateUrlsOf, knownUrlsOf, mergeCandidates } from '../src/harvest/index.js';
+import { duplicateUrlsOf, knownUrlsOf, mergeCandidates, releaseDuplicates } from '../src/harvest/index.js';
 import { PERIMETER_ENTRIES } from '../src/harvest/perimeters.js';
 import { DAY_S, emptyHealth } from '../src/health.js';
 import { probeEntry, probeRun } from '../src/probe.js';
@@ -206,6 +206,28 @@ test('duplicates: the copy cleared for display is kept over an older referral-on
   assert.equal(tombstones.referral.of, 'shown');
 });
 
+test('duplicates: a verified copy is kept over an older degraded one', async () => {
+  const entries = new Map([['limping', entry('limping')], ['steady', entry('steady')]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { limping: fleet(40), steady: fleet(40) }, 1000);
+  health.limping.firstSeen = 10;
+  // Failed twice since: degraded until 3 passes in a row.
+  Object.assign(health.limping, { status: 'degraded', passes: 0 });
+  assert.deepEqual(await run(entries, health, tombstones, { limping: fleet(40), steady: fleet(40) }, 2000), ['limping']);
+  assert.equal(tombstones.limping.of, 'steady');
+});
+
+test('duplicates: a degraded copy cleared for display is still kept over a verified referral-only one', async () => {
+  const entries = new Map([['shown', entry('shown')], ['referral', entry('referral', { display: false })]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { shown: fleet(40), referral: fleet(40) }, 1000);
+  Object.assign(health.shown, { status: 'degraded', passes: 0 });
+  assert.deepEqual(await run(entries, health, tombstones, { shown: fleet(40), referral: fleet(40) }, 2000), ['referral']);
+  assert.equal(tombstones.referral.of, 'shown');
+});
+
 test('duplicates: a hand-written entry is never retired; the harvested copy goes', async () => {
   const hand = PERIMETER_ENTRIES[0];
   const harvested = entry('harvested', { bbox: hand.coverage.bbox });
@@ -313,4 +335,46 @@ test('duplicates: the URL block ends where the chain of kept entries reaches a d
     kept: { url: 'https://kept.example/vp', at: 3000 },
   };
   assert.deepEqual([...duplicateUrlsOf(new Map(), tombstones)], []);
+});
+
+test('duplicates: a copy is released once the entry it duplicated is dead, and discovery adds it again', () => {
+  const entries = new Map([['kept', entry('kept')]]);
+  const tombstones = { copy: { url: entry('copy').access.url, at: 2000, reason: 'duplicate', of: 'kept' } };
+  assert.deepEqual(releaseDuplicates({ kept: { ...emptyHealth(1), status: 'degraded' } }, entries, tombstones), [], 'kept entry alive');
+  assert.ok(tombstones.copy);
+  assert.deepEqual(releaseDuplicates({ kept: { ...emptyHealth(1), status: 'dead' } }, entries, tombstones), ['copy']);
+  assert.deepEqual(tombstones, {});
+  assert.deepEqual(mergeCandidates(entries, [entry('copy')], tombstones).map((e) => e.id), ['copy'], 'under its own id');
+});
+
+test('duplicates: a copy is released when the entry it duplicated is retired as dead in the same run', async () => {
+  const entries = new Map([['kept', entry('kept')]]);
+  const deadSince = 100 * DAY_S;
+  const now = deadSince + 31 * DAY_S;
+  const health = { kept: { ...emptyHealth(1), status: 'dead', deadSince, lastProbe: now - DAY_S } };
+  const tombstones = { copy: { url: entry('copy').access.url, at: 2000, reason: 'duplicate', of: 'kept' } };
+  assert.deepEqual(await run(entries, health, tombstones, {}, now), ['kept']);
+  assert.equal(tombstones.copy, undefined);
+  assert.equal(tombstones.kept.reason, undefined, 'the kept entry is tombstoned as dead');
+});
+
+test('duplicates: release follows the chain of kept entries and leaves other tombstones alone', () => {
+  const health = { last: { ...emptyHealth(1), status: 'verified' } };
+  const tombstones = {
+    copy: { url: entry('copy').access.url, at: 2000, reason: 'duplicate', of: 'middle' },
+    middle: { url: entry('middle').access.url, at: 3000, reason: 'duplicate', of: 'last' },
+    gone: { url: entry('gone').access.url, at: 1000 },
+  };
+  assert.deepEqual(releaseDuplicates(health, new Map([['last', entry('last')]]), tombstones), [], 'the end of the chain is alive');
+  assert.deepEqual(releaseDuplicates(health, new Map(), tombstones).sort(), ['copy', 'middle']);
+  assert.deepEqual(Object.keys(tombstones), ['gone'], 'a dead feed stays tombstoned');
+});
+
+test('duplicates: copies retired in a cycle with no kept entry left are all released', () => {
+  const tombstones = {
+    a: { url: entry('a').access.url, at: 2000, reason: 'duplicate', of: 'b' },
+    b: { url: entry('b').access.url, at: 3000, reason: 'duplicate', of: 'a' },
+  };
+  assert.deepEqual(releaseDuplicates({}, new Map(), tombstones).sort(), ['a', 'b']);
+  assert.deepEqual(tombstones, {});
 });

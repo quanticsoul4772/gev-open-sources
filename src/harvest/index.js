@@ -117,6 +117,36 @@ export function redirectChecks(merged, existing, health) {
   ].filter((e) => !isStaticEntry(e));
 }
 
+/** The entry a duplicate tombstone leads to through retired kept entries, or null. */
+function keptOf(t, existing, tombstones) {
+  const seen = new Set();
+  let id = t.of;
+  while (!existing.has(id) && tombstones[id]?.reason === 'duplicate' && !seen.has(id)) {
+    seen.add(id);
+    id = tombstones[id].of;
+  }
+  return existing.has(id) ? id : null;
+}
+
+/**
+ * Release copies retired as duplicates of an entry that is now dead or gone:
+ * their tombstones are dropped, so discovery adds them again under their own
+ * id and URL and the probe judges them afresh. Run by the harvest before
+ * discovery (an entry it removes releases its copies before a catalogue
+ * offers them) and by the probe after retiring dead entries (an entry retired
+ * that run has no health left). Updates `tombstones` in place.
+ * @returns {string[]} ids released
+ */
+export function releaseDuplicates(health, existing, tombstones) {
+  const released = Object.keys(tombstones).filter((id) => {
+    if (tombstones[id].reason !== 'duplicate') return false;
+    const kept = keptOf(tombstones[id], existing, tombstones);
+    return !kept || !health[kept] || health[kept].status === 'dead';
+  });
+  for (const id of released) delete tombstones[id];
+  return released;
+}
+
 /**
  * Normalized URLs of entries retired as duplicates of an entry still in the
  * directory: a copy stays out under any id another catalogue gives its URL,
@@ -125,19 +155,9 @@ export function redirectChecks(merged, existing, health) {
  * that one. Once no kept entry is left, the URL may come back.
  */
 export function duplicateUrlsOf(existing, tombstones) {
-  // The entry a duplicate tombstone leads to through retired kept entries, or null.
-  const keptOf = (t) => {
-    const seen = new Set();
-    let id = t.of;
-    while (!existing.has(id) && tombstones[id]?.reason === 'duplicate' && !seen.has(id)) {
-      seen.add(id);
-      id = tombstones[id].of;
-    }
-    return existing.has(id) ? id : null;
-  };
   const urls = new Set();
   for (const t of Object.values(tombstones))
-    if (t.reason === 'duplicate' && t.url && keptOf(t))
+    if (t.reason === 'duplicate' && t.url && keptOf(t, existing, tombstones))
       // Normalized first, so a default port (`:80`, `:443`) goes before the scheme changes.
       for (const scheme of ['http:', 'https:']) urls.add(normalizeUrl(normalizeUrl(t.url).replace(/^https?:/i, scheme)));
   return urls;
@@ -218,6 +238,10 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     console.log(`harvest: ${id}: debug switch dropped from its URL`);
   }
   const tombstones = readState('tombstones.json', {});
+  const health = readState('health.json', {});
+  const released = releaseDuplicates(health, existing, tombstones);
+  for (const id of released) console.log(`harvest: released ${id}: the entry it duplicated is dead or gone`);
+  if (released.length) writeState('tombstones.json', tombstones);
   const rejects = readState('harvest-rejects.json', {});
   // Expired rejects are retried anyway; drop them so the file doesn't grow forever.
   for (const key of Object.keys(rejects)) if (!recentlyRejected(rejects, key, now)) delete rejects[key];
@@ -268,7 +292,6 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   // that redirect to another domain: point them at the final URL. Two
   // catalogues can reach one feed through different permalinks, so new
   // entries are deduplicated again on their final URLs.
-  const health = readState('health.json', {});
   const toCheck = redirectChecks(merged, existing, health);
   const redirected = new Map((await resolveRedirects(toCheck)).map((e) => [e.id, e]));
   const deduped = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);

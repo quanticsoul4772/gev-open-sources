@@ -7,10 +7,13 @@
  * A vehicle-position entry with nearly the same vehicle ids as another, in an
  * overlapping area, two runs in a row serves the same feed under another URL:
  * all but one are retired the same way (retireDuplicates), so the app doesn't
- * draw every vehicle twice.
+ * draw every vehicle twice. Once the kept entry is dead or gone, its retired
+ * copies are released (releaseDuplicates, harvest/index.js) and discovery adds
+ * them again.
  */
 import { pathToFileURL } from 'node:url';
 import { ADAPTERS, fingerprintSimilarity } from './adapters/index.js';
+import { releaseDuplicates } from './harvest/index.js';
 import { isStaticEntry } from './harvest/static.js';
 import { DAY_S, HISTORY_CAP, applyProbe, classify, emptyHealth } from './health.js';
 import { readEntries, readState, removeEntry, writeState } from './store.js';
@@ -145,15 +148,18 @@ export function takeFingerprints(health) {
 
 /**
  * The entry of a duplicate group to keep: a hand-written one, else one not
- * dead (a dead one is retired after 30 days), else one cleared for display, else the one probed first (health firstSeen: longest in the
- * directory, so the URL consumers already know), else the lowest id.
+ * dead (a dead one is retired after 30 days), else one cleared for display,
+ * else a verified one (over a degraded one that keeps failing), else the one
+ * probed first (health firstSeen: longest in the directory, so the URL
+ * consumers already know), else the lowest id.
  */
 function keeperOf(ids, entries, health) {
   const harvested = (id) => (isStaticEntry(entries.get(id)) ? 0 : 1);
   const dead = (id) => (health[id].status === 'dead' ? 1 : 0);
   const referral = (id) => (entries.get(id).licence?.display ? 0 : 1);
+  const unverified = (id) => (health[id].status === 'verified' ? 0 : 1);
   const seen = (id) => health[id].firstSeen ?? Infinity;
-  return [...ids].sort((a, b) => harvested(a) - harvested(b) || dead(a) - dead(b) || referral(a) - referral(b) || seen(a) - seen(b) || a.localeCompare(b))[0];
+  return [...ids].sort((a, b) => harvested(a) - harvested(b) || dead(a) - dead(b) || referral(a) - referral(b) || unverified(a) - unverified(b) || seen(a) - seen(b) || a.localeCompare(b))[0];
 }
 
 /**
@@ -261,8 +267,8 @@ export function retireDead(health, entries, tombstones, now) {
 
 /**
  * One run over loaded state, in order: take the last run's fingerprints, probe
- * the due entries (dead ones once a day), retire entries dead for 30 days, then
- * retire duplicates among the rest. Updates `health` and `tombstones` in place.
+ * the due entries (dead ones once a day), retire entries dead for 30 days,
+ * release copies of entries dead or gone, then retire duplicates among the rest. Updates `health` and `tombstones` in place.
  * @param {{now: number, probe: (entry: object, at: number) => Promise<object>,
  *   clock?: () => number, sleep?: (ms: number) => Promise<void>}} options
  * @returns {Promise<{due: number, counts: Record<string, number>, rounds: number, retired: string[]}>}
@@ -276,6 +282,7 @@ export async function probeRun(entries, health, tombstones, { now, probe, clock,
   const previous = takeFingerprints(health);
   const { counts, rounds } = await probeRounds(due, health, { probe, clock, sleep });
   const retired = retireDead(health, entries, tombstones, now);
+  for (const id of releaseDuplicates(health, entries, tombstones)) console.log(`probe: released ${id}: the entry it duplicated is dead or gone`);
   for (const id of retireDuplicates(health, previous, entries, tombstones, now)) {
     retired.push(id);
     console.log(`probe: retired ${id}: same vehicles as ${tombstones[id].of}, two runs in a row`);
