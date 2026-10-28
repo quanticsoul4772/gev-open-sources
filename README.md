@@ -1,8 +1,9 @@
 # gev-open-sources
 
-A self-maintaining directory of live data sources that need no API key, for
-[God's Eye View](https://github.com/bilawalsidhu/gods-eye-view). Every six
-hours a GitHub Actions run:
+A self-maintaining directory of live data sources that need no API key, built
+for [God's Eye View](https://github.com/bilawalsidhu/gods-eye-view). Upstream
+God's Eye View does not read it yet; [a fork's `local` branch](https://github.com/quanticsoul4772/gods-eye-view/tree/local)
+does. Every six hours a GitHub Actions run:
 
 1. **Discovers** keyless feeds:
    - GTFS-Realtime vehicle positions from the [Mobility Database](https://mobilitydatabase.org)
@@ -142,8 +143,8 @@ hours a GitHub Actions run:
    first) and the others are removed and tombstoned (`reason: 'duplicate'`,
    `of`: the kept id). Once the kept entry is dead or removed, the tombstones
    of its copies are dropped and discovery adds them again.
-4. **Publishes** `directory.json` to GitHub Pages:
-   `https://quanticsoul4772.github.io/gev-open-sources/directory.json`.
+4. **Publishes** `v1/directory.json` to GitHub Pages:
+   `https://quanticsoul4772.github.io/gev-open-sources/v1/directory.json`.
 
 An entry is usable when `health.status === 'verified'` and
 `licence.display === true`. Schema: `schema/entry.schema.json`.
@@ -224,10 +225,14 @@ Version policy:
   IP address or a non-default port: apply your own URL policy. New `domain`
   and `format` values may appear: ignore the ones you don't decode.
 
+Requires Node 22 or later (CI runs 24). Without `ANTHROPIC_API_KEY`, step 2
+still fetches operator terms pages but has Claude read none: feeds that need
+one keep the result cached from an earlier run, or stay referral-only.
+
 ```
 npm ci
 npm test
-npm run cycle        # harvest → licence → probe → build (ANTHROPIC_API_KEY for tier 2)
+npm run cycle        # harvest → licence → probe → build
 node src/scan-secrets.js entries dist   # gate: no credentials in any output
 node src/validate-dist.js entries dist  # gate: every entry valid against the schema
 ```
