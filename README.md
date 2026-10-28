@@ -24,6 +24,10 @@ One `domain` per kind of data:
 - `airquality.sensors`: Sensor.Community particulate sensors
 - `cameras.stills`: still traffic cameras
 
+On 28 October 2026 it held 2,263 entries, 1,124 of them usable; the current
+counts per domain are in
+[`v1/index.json`](https://quanticsoul4772.github.io/gev-open-sources/v1/index.json).
+
 Where each one comes from, and the rules for discovery, licences, health and
 duplicates: [docs/how-it-works.md](docs/how-it-works.md).
 
@@ -35,7 +39,8 @@ https://quanticsoul4772.github.io/gev-open-sources/v1/directory.json
 
 An entry is usable when `health.status === 'verified'` and
 `licence.display === true`. The published files, the version policy and the
-rules a consumer should follow: [docs/consumers.md](docs/consumers.md).
+rules a consumer should follow, with a quick start, a sample entry and the
+field and format reference: [docs/consumers.md](docs/consumers.md).
 Schema: [`schema/entry.schema.json`](schema/entry.schema.json).
 
 ## Contributing

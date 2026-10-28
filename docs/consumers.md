@@ -1,5 +1,125 @@
 # Using the directory
 
+## Quick start
+
+Fetch the domain you decode, check the contract version, and keep the usable
+entries:
+
+```js
+const url = 'https://quanticsoul4772.github.io/gev-open-sources/v1/transit.vehicles.json';
+const { version, entries } = await (await fetch(url)).json();
+if (version !== 1) throw new Error(`expected contract version 1, got ${version}`);
+const usable = entries.filter((e) => e.health.status === 'verified' && e.licence.display === true);
+```
+
+Then validate each entry yourself before you request its URL (see
+[Rules for consumers](#rules-for-consumers)), and credit
+`licence.attribution` wherever you show its data.
+
+## An entry
+
+From `v1/transit.vehicles.json` on 28 October 2026:
+
+```json
+{
+  "id": "atlas-f-75cj-mobi-rio-rt",
+  "domain": "transit.vehicles",
+  "name": "dados.mobilidade.rio",
+  "provider": "dados.mobilidade.rio",
+  "coverage": { "bbox": [-23.0411, -43.7248, -22.7752, -43.1616], "countries": ["BR"] },
+  "access": {
+    "url": "https://dados.mobilidade.rio/gtfs/realtime",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "dados.mobilidade.rio"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [{ "field": "licence", "quote": "https://spdx.org/licenses/CC-BY-4.0" }],
+    "terms_sha256": null,
+    "at": "2026-10-14T16:46:39.562Z"
+  },
+  "provenance": ["transitland-atlas:f-75cj-mobi~rio~rt"],
+  "health": {
+    "status": "verified",
+    "success_7d": 1,
+    "median_age_s": 6,
+    "records": 199,
+    "last_ok": 1793212117,
+    "last_probe": 1793212117
+  }
+}
+```
+
+## Fields
+
+The schema ([`schema/entry.schema.json`](../schema/entry.schema.json)) is the
+authority; in short:
+
+- `coverage.bbox`: `[minLat, minLon, maxLat, maxLon]`, latitude first. This
+  is not GeoJSON's `[minLon, minLat, maxLon, maxLat]`. `null` means unknown.
+- `coverage.countries`: ISO 3166-1 alpha-2 codes; empty for global and
+  continental feeds, and for feeds no country can be inferred for.
+- `coverage.class`: `regional` (the default when absent), `national` or
+  `global`.
+- `access.url`: the URL to request. `access.related` (GBFS entries): the
+  system's other files by name, such as `station_information`.
+  `access.redirectHosts`: hosts a redirect may lead to besides the URL's own
+  origin. `access.unzip`: when set, the response is a zip archive and this
+  names the file inside it to read. `access.headers`: request headers to send.
+  `access.min_interval_s`: the shortest interval between requests.
+- `licence.display`: whether the data may be shown. `licence.commercial`:
+  whether commercial use is allowed, `null` if unknown.
+  `licence.attribution`: the credit to show. `licence.obligations`: the
+  conditions an operator's terms page imposes, set by an `llm-terms` decision;
+  it can remain on an entry whose terms were later rejected (referral-only).
+- `licence_decision.by`: `known-licence`, `gbfs-v3-default`, `llm-terms`
+  (an operator's terms page read by Claude) or `none`.
+- `provenance`: where the entry came from: catalogue records (such as
+  `transitland-atlas:`), hand-written source ids (such as `usgs:`), and
+  markers for an earlier URL (`via:`) or a borrowed licence
+  (`licence-borrowed:`, `licence-atlas:`).
+- `health.status`: `candidate`, `verified` or `degraded` (`dead` entries
+  are not published).
+  `health.success_7d`: share of passing probes in 7 days. `median_age_s`: the
+  median age of the newest record at probe time. `last_ok` and `last_probe`:
+  Unix seconds.
+- `gbfs` (GBFS entries) and `mapping` (cameras and fire perimeters): see
+  the format list below.
+
+## Formats
+
+- `gtfs-rt.vehicle-positions`: a GTFS-Realtime `FeedMessage` (protobuf)
+  with `VehiclePosition` entities.
+- `gbfs.station-status`: GBFS `station_status`; station positions are in
+  `access.related.station_information`.
+- `gbfs.vehicle-status`: GBFS `vehicle_status` (v3) or `free_bike_status`
+  (earlier versions); `gbfs.form_factors` lists the vehicle kinds (empty
+  means unknown).
+- `geojson.earthquakes`: a USGS GeoJSON summary feed.
+- `geojson.gdacs-events`: GDACS's event list, a GeoJSON `FeatureCollection`
+  with one Point per event.
+- `csv.firms-active-fire`: a NASA FIRMS CSV with `latitude`, `longitude`,
+  `acq_date` and `acq_time` (UTC, `HHMM`) columns.
+- `geojson.fire-perimeters`: GeoJSON polygons; `mapping` names the
+  properties holding the fire number, size and date, and the status and
+  incident page where the province publishes them; `mapping.region` is the
+  province's ISO 3166-2 code, not a property.
+- `json.sensor-community`: Sensor.Community's `data.1h.json` array.
+- `cameras.list`: a JSON list of cameras; `mapping` says where each camera's
+  id, position and image are.
+
+Each format's source is described in [how-it-works.md](how-it-works.md).
+
 ## Contract and versions
 
 Published files, contract version 1:
