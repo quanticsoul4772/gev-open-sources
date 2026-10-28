@@ -7,10 +7,13 @@
  * A vehicle-position entry with nearly the same vehicle ids as another, in an
  * overlapping area, two runs in a row serves the same feed under another URL:
  * all but one are retired the same way (retireDuplicates), so the app doesn't
- * draw every vehicle twice.
+ * draw every vehicle twice. Once the kept entry is dead or gone, its retired
+ * copies are released (releaseDuplicates, harvest/index.js) and discovery adds
+ * them again.
  */
 import { pathToFileURL } from 'node:url';
 import { ADAPTERS, fingerprintSimilarity } from './adapters/index.js';
+import { releaseDuplicates } from './harvest/index.js';
 import { isStaticEntry } from './harvest/static.js';
 import { DAY_S, HISTORY_CAP, applyProbe, classify, emptyHealth } from './health.js';
 import { readEntries, readState, removeEntry, writeState } from './store.js';
@@ -264,8 +267,8 @@ export function retireDead(health, entries, tombstones, now) {
 
 /**
  * One run over loaded state, in order: take the last run's fingerprints, probe
- * the due entries (dead ones once a day), retire entries dead for 30 days, then
- * retire duplicates among the rest. Updates `health` and `tombstones` in place.
+ * the due entries (dead ones once a day), retire entries dead for 30 days,
+ * release copies of entries dead or gone, then retire duplicates among the rest. Updates `health` and `tombstones` in place.
  * @param {{now: number, probe: (entry: object, at: number) => Promise<object>,
  *   clock?: () => number, sleep?: (ms: number) => Promise<void>}} options
  * @returns {Promise<{due: number, counts: Record<string, number>, rounds: number, retired: string[]}>}
@@ -279,6 +282,7 @@ export async function probeRun(entries, health, tombstones, { now, probe, clock,
   const previous = takeFingerprints(health);
   const { counts, rounds } = await probeRounds(due, health, { probe, clock, sleep });
   const retired = retireDead(health, entries, tombstones, now);
+  for (const id of releaseDuplicates(health, entries, tombstones)) console.log(`probe: released ${id}: the entry it duplicated is dead or gone`);
   for (const id of retireDuplicates(health, previous, entries, tombstones, now)) {
     retired.push(id);
     console.log(`probe: retired ${id}: same vehicles as ${tombstones[id].of}, two runs in a row`);

@@ -132,7 +132,8 @@ hours a GitHub Actions run:
    in a row, serves the same feed under another URL: one is kept (hand-written,
    else not dead, else cleared for display, else verified, else the one probed
    first) and the others are removed and tombstoned (`reason: 'duplicate'`,
-   `of`: the kept id).
+   `of`: the kept id). Once the kept entry is dead or removed, the tombstones
+   of its copies are dropped and discovery adds them again.
 4. **Publishes** `directory.json` to GitHub Pages:
    `https://quanticsoul4772.github.io/gev-open-sources/directory.json`.
 
