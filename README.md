@@ -116,7 +116,8 @@ hours a GitHub Actions run:
    feed `url` (for a GBFS system, its discovery URL: the whole system goes), a
    `reason` and, optionally, an entry `id`. A URL matches over http or https,
    and also matches a permalink that led to the feed. Copies retired as a
-   removed feed's duplicates stay out with it. A malformed item fails the run.
+   removed feed's duplicates stay out with it. Taking an item off the list
+   lets the feed back on the next harvest. A malformed item fails the run.
 2. **Decides licences** with no human step: a known open licence
    (`src/licence/known-licences.json`). A transit feed with no licence of its
    own takes the one Transitland Atlas records for it, or (borrowed, known
