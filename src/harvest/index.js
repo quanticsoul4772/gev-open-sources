@@ -177,6 +177,39 @@ export function duplicateUrlsOf(existing, tombstones, excluded = NOTHING_EXCLUDE
 }
 
 /**
+ * The tombstone of an entry the never-list removed: the URLs it matched by
+ * (access URL, GBFS discovery URL, permalinks), so it can be released when
+ * the list no longer names it.
+ */
+function excludedTombstone(entry, now) {
+  return {
+    url: entry.access.url,
+    gbfs: entry.access.related?.gbfs ?? null,
+    via: entry.provenance.filter((p) => p.startsWith('via:')),
+    at: now,
+    reason: 'excluded',
+  };
+}
+
+/**
+ * Release entries the never-list removed that it no longer names (an item
+ * deleted or listed by mistake): their tombstones are dropped, so discovery
+ * may add them again under their own id. Copies retired as their duplicates
+ * are released in turn by releaseDuplicates. Updates `tombstones` in place.
+ * @returns {string[]} ids released
+ */
+export function releaseUnlisted(tombstones, excluded) {
+  const released = Object.keys(tombstones).filter((id) => {
+    const t = tombstones[id];
+    if (t.reason !== 'excluded') return false;
+    const entry = { id, access: { url: t.url, related: t.gbfs ? { gbfs: t.gbfs } : undefined }, provenance: t.via ?? [] };
+    return excludedReason(entry, excluded) === null;
+  });
+  for (const id of released) delete tombstones[id];
+  return released;
+}
+
+/**
  * Remove entries on the never-list, whichever catalogue or hand-written
  * module listed them, and tombstone each (`reason: 'excluded'`): its id stays
  * out, and copies retired as its duplicates stay out with it even when the
@@ -190,7 +223,7 @@ export function dropExcluded(existing, excluded, tombstones, now, remove = remov
     if (reason === null) continue;
     remove(id);
     existing.delete(id);
-    tombstones[id] = { url: e.access.url, at: now, reason: 'excluded' };
+    tombstones[id] = excludedTombstone(e, now);
     dropped.push([id, reason]);
   }
   return dropped;
@@ -273,12 +306,14 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   }
   const excluded = readExcluded();
   const tombstones = readState('tombstones.json', {});
+  const unlisted = releaseUnlisted(tombstones, excluded);
+  for (const id of unlisted) console.log(`harvest: released ${id}: no longer on the never-list`);
   const dropped = dropExcluded(existing, excluded, tombstones, now);
   for (const [id, reason] of dropped) console.log(`harvest: removed ${id}: on the never-list (${reason})`);
   const health = readState('health.json', {});
   const released = releaseDuplicates(health, existing, tombstones, excluded);
   for (const id of released) console.log(`harvest: released ${id}: the entry it duplicated is dead or gone`);
-  if (released.length || dropped.length) writeState('tombstones.json', tombstones);
+  if (released.length || unlisted.length || dropped.length) writeState('tombstones.json', tombstones);
   const rejects = readState('harvest-rejects.json', {});
   // Expired rejects are retried anyway; drop them so the file doesn't grow forever.
   for (const key of Object.keys(rejects)) if (!recentlyRejected(rejects, key, now)) delete rejects[key];
@@ -362,7 +397,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     const reason = excludedReason(next, excluded);
     if (reason !== null) {
       removeEntry(entry.id);
-      tombstones[entry.id] = { url: next.access.url, at: now, reason: 'excluded' };
+      tombstones[entry.id] = excludedTombstone(next, now);
       writeState('tombstones.json', tombstones);
       console.log(`harvest: removed ${entry.id}: its new URL is on the never-list (${reason})`);
       continue;
