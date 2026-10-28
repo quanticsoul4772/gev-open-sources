@@ -10,7 +10,9 @@
       36.3486,
       -119.1747
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://visaliatransit.info/gtfs-rt/vehiclepositions",

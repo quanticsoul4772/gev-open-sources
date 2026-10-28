@@ -10,7 +10,9 @@
       42.8779,
       -70.806
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://meva.syncromatics.com/gtfs-rt/vehiclepositions",

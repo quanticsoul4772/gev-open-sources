@@ -10,7 +10,9 @@
       41.8093,
       140.8069
     ],
-    "countries": []
+    "countries": [
+      "JP"
+    ]
   },
   "access": {
     "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_vehicle",

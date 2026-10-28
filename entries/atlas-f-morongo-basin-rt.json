@@ -10,7 +10,9 @@
       34.1613,
       -116.0344
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ridebasintransit.com/gtfs-rt/vehiclepositions",

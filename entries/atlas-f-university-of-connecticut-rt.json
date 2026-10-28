@@ -10,7 +10,9 @@
       41.8502,
       -72.1814
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/uconn/passioTransit/gtfs/realtime/vehiclePositions",

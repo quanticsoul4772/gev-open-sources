@@ -10,7 +10,9 @@
       42.9561,
       -86.182
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.lyft.com/gbfs/2.3/chi/en/station_status.json",

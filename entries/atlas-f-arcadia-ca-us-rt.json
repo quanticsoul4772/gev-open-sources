@@ -10,7 +10,9 @@
       34.1576,
       -118.0081
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/ArcadiaCity/passioTransit/gtfs/realtime/vehiclePositions",

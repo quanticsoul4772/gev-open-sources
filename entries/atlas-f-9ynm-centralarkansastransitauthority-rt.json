@@ -10,7 +10,9 @@
       34.814,
       -92.1909
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gtfsrt.rrmetro.cadavl.com/ProfilGtfsRt2_0RSProducer-RRMETRO/VehiclePosition.pb",

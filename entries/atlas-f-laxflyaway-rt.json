@@ -10,7 +10,9 @@
       34.268,
       -118.2115
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://laxflyaway.transloc.com/subscriptions/gtfsrt/vehicles.ashx",

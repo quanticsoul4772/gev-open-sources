@@ -10,7 +10,9 @@
       20.0279,
       -155.0154
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://myheleonbus.org/gtfs-rt/vehiclepositions",

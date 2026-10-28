@@ -10,7 +10,9 @@
       35.8541,
       -84.3222
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://chat.publicbikesystem.net/customer/gbfs/v2/en/station_status.json",

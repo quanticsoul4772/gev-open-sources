@@ -10,7 +10,9 @@
       2.7413,
       101.9616
     ],
-    "countries": []
+    "countries": [
+      "MY"
+    ]
   },
   "access": {
     "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-seremban-b",

@@ -10,7 +10,9 @@
       48.3801,
       -1.1715
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://proxy.transport.data.gouv.fr/resource/surf-fougeres-gtfs-rt-vehicle-position",

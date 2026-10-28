@@ -10,7 +10,9 @@
       42.1548,
       -94.7396
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_heartland/station_status.json",

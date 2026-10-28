@@ -10,7 +10,9 @@
       39.4135,
       -76.5466
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://www.tutigerride.com/gtfs-rt/vehiclepositions",

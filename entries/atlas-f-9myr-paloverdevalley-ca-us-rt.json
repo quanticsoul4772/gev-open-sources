@@ -10,7 +10,9 @@
       33.8175,
       -114.5799
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ridepvvta.com/gtfs-rt/vehiclepositions",

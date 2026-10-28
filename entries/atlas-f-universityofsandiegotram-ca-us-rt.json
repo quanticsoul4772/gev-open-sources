@@ -10,7 +10,9 @@
       32.7971,
       -117.1619
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/UofSanDTram/passioTransit/gtfs/realtime/vehiclePositions",

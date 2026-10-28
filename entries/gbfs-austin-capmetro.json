@@ -10,7 +10,9 @@
       31.0757,
       -96.807
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://austin.publicbikesystem.net/customer/gbfs/v2/en/station_status.json",

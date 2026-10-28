@@ -10,7 +10,9 @@
       35.7509,
       -81.2993
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_greenville/station_status.json",

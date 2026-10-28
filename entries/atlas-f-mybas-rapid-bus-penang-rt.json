@@ -10,7 +10,9 @@
       5.4785,
       100.2982
     ],
-    "countries": []
+    "countries": [
+      "MY"
+    ]
   },
   "access": {
     "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/prasarana?category=rapid-bus-penang",

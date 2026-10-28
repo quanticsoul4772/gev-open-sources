@@ -10,7 +10,9 @@
       42.6178,
       -87.8001
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://kenoshatransit.com/gtfs-rt/vehiclepositions",

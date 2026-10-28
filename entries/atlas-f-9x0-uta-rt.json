@@ -10,7 +10,9 @@
       41.5116,
       -111.5907
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://apps.rideuta.com/tms/gtfs/Vehicle",

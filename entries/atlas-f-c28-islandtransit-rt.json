@@ -10,7 +10,9 @@
       48.4736,
       -122.3262
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/islandtransit/passioTransit/gtfs/realtime/vehiclePositions",

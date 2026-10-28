@@ -10,7 +10,9 @@
       35.452,
       -118.9102
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://get.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

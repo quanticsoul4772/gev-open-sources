@@ -10,7 +10,9 @@
       33.807,
       -118.091
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/longbeachcal/passioTransit/gtfs/realtime/vehiclePositions",

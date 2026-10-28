@@ -10,7 +10,9 @@
       46.1362,
       18.3645
     ],
-    "countries": []
+    "countries": [
+      "HU"
+    ]
   },
   "access": {
     "url": "http://menobusz.tukebusz.hu:30080/mobilapp/GTFS/RTx_positions.x",

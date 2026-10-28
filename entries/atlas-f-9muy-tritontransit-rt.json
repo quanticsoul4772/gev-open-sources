@@ -10,7 +10,9 @@
       32.9007,
       -117.1986
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/VehiclePositions.pb",

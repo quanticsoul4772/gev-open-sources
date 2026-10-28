@@ -10,7 +10,9 @@
       34.3339,
       -118.1499
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ladotbus.com/gtfs-rt/vehiclepositions",

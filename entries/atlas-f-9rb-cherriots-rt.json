@@ -10,7 +10,9 @@
       45.0266,
       -122.8097
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://cherriots.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

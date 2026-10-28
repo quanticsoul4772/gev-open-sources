@@ -10,7 +10,9 @@
       48.0828,
       0.3554
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://proxy.transport.data.gouv.fr/resource/setram-lemans-gtfs-rt-vehicle-position",

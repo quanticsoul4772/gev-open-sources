@@ -10,7 +10,9 @@
       32.3576,
       -110.7532
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gtfs-rt.suntran.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",

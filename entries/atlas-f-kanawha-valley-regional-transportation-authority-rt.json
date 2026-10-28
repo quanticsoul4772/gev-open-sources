@@ -10,7 +10,9 @@
       38.5099,
       -81.4733
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gtfsrt.krt.cadavl.com/ProfilGtfsRt2_0RSProducer-KRT/VehiclePosition.pb",

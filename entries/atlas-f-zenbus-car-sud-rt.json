@@ -10,7 +10,9 @@
       -21.2481,
       55.5306
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=carsud-reunion",

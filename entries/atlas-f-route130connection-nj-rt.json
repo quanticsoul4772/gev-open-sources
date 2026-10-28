@@ -10,7 +10,9 @@
       40.3526,
       -74.4712
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://route130connection.tripshot.com/v1/gtfs/realtime/vehiclePosition",

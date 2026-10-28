@@ -10,7 +10,9 @@
       37.061,
       -85.6689
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_nashville/station_status.json",

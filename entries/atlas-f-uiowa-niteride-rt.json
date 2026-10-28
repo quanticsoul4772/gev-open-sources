@@ -10,7 +10,9 @@
       41.6984,
       -91.5127
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://uiowaniteride.com/gtfs-rt/vehiclepositions",

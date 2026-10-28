@@ -10,7 +10,9 @@
       35.3335,
       -80.7074
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/uncc/passioTransit/gtfs/realtime/vehiclePositions",

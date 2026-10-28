@@ -10,7 +10,9 @@
       40.7599,
       -74.1541
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://rutgers.tripshot.com/v1/gtfs/realtime/vehiclePosition",

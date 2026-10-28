@@ -10,7 +10,9 @@
       26.7887,
       -81.3706
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/hendrycounty/passioTransit/gtfs/realtime/vehiclePositions",

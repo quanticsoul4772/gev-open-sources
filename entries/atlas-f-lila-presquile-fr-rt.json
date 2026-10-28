@@ -10,7 +10,9 @@
       47.502,
       -2.2762
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://proxy.transport.data.gouv.fr/resource/lila-presquile-cap-atlantique-gtfs-rt",

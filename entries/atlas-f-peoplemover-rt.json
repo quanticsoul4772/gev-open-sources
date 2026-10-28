@@ -10,7 +10,9 @@
       61.3386,
       -149.5514
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://bustracker.muni.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

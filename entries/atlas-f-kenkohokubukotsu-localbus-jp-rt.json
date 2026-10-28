@@ -1,0 +1,47 @@
+{
+  "id": "atlas-f-kenkohokubukotsu-localbus-jp-rt",
+  "domain": "transit.vehicles",
+  "name": "株式会社県交北部交通",
+  "provider": "株式会社県交北部交通",
+  "coverage": {
+    "bbox": [
+      33.5331,
+      133.1859,
+      33.635,
+      133.4237
+    ],
+    "countries": [
+      "JP"
+    ]
+  },
+  "access": {
+    "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KenkoHokubuKotsu_Localbus_vehicle",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "株式会社県交北部交通"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-28T06:35:29.224Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-kenkohokubukotsu~localbus~jp~rt",
+    "licence-borrowed:atlas:f-kenkohokubukotsu~localbus~jp"
+  ]
+}

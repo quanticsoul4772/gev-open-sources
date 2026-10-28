@@ -10,7 +10,9 @@
       42.4614,
       -83.412
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://mbus.ltp.umich.edu/gtfsrt/vehicles",

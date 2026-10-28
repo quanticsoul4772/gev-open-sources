@@ -10,7 +10,9 @@
       42.8446,
       3.055
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sankeo-scolaire",

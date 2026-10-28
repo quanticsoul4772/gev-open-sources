@@ -10,7 +10,9 @@
       40.3068,
       -84.0432
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ridetime.greaterdaytonrta.org/gtfsrt/vehicles",

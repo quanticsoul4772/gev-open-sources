@@ -10,7 +10,9 @@
       43.2584,
       -69.8432
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bluebikes.com/gbfs/en/station_status.json",

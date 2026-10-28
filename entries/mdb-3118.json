@@ -10,7 +10,9 @@
       38.9703,
       16.6327
     ],
-    "countries": []
+    "countries": [
+      "IT"
+    ]
   },
   "access": {
     "url": "https://autolineefederico.selfip.com:8080/gtfs-rt/vehicle_positions.pb",

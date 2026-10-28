@@ -10,7 +10,9 @@
       30.5046,
       -81.372
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://bustime.jtafla.com/gtfsrt/vehicles",

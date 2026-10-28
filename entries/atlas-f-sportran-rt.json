@@ -10,7 +10,9 @@
       32.5587,
       -93.6829
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://sportran.rideralerts.com/infopoint/GTFS-Realtime.ashx?Type=VehiclePosition",

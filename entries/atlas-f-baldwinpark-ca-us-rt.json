@@ -10,7 +10,9 @@
       34.1231,
       -117.9372
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/baldwinpark/passioTransit/gtfs/realtime/vehiclePositions",

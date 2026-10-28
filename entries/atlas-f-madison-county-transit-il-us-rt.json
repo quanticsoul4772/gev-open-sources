@@ -10,7 +10,9 @@
       38.9449,
       -89.9233
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://nextmctbus.org/gtfs-rt/vehiclepositions",

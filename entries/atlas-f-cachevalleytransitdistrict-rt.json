@@ -10,7 +10,9 @@
       41.9368,
       -111.7746
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://mycvtdbus.org/gtfs-rt/vehiclepositions",

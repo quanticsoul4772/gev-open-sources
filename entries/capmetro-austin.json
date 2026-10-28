@@ -10,7 +10,9 @@
       30.8062,
       -97.119
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://data.texas.gov/download/eiei-9rpf/application%2Foctet-stream",

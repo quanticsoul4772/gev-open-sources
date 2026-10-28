@@ -10,7 +10,9 @@
       42.2905,
       -70.9544
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/brockton/passioTransit/gtfs/realtime/vehiclePositions",

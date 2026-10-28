@@ -10,7 +10,9 @@
       45.7277,
       -111.0028
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ridestreamline.com/gtfs-rt/vehiclepositions",

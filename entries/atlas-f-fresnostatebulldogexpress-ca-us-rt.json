@@ -10,7 +10,9 @@
       36.8357,
       -119.7129
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/fresnostate/passioTransit/gtfs/realtime/vehiclePositions",

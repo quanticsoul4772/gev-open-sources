@@ -10,7 +10,9 @@
       6.1615,
       100.5256
     ],
-    "countries": []
+    "countries": [
+      "MY"
+    ]
   },
   "access": {
     "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-alor-setar",

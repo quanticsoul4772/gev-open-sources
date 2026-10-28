@@ -10,7 +10,9 @@
       14.6549,
       -60.8238
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://api.pysae.com/api/v4/groups/sud_lib/gtfs-rt",

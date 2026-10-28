@@ -10,7 +10,9 @@
       48.4741,
       -70.9918
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://saguenay.tmix.se/gtfs-realtime/vehicleupdates.pb",

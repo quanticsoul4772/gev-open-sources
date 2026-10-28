@@ -10,7 +10,9 @@
       35.3156,
       -120.6226
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://slocity.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

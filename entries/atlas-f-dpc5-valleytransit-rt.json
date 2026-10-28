@@ -10,7 +10,9 @@
       44.3057,
       -88.2516
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ridemyvalleytransit.com/gtfs-rt/vehiclepositions",

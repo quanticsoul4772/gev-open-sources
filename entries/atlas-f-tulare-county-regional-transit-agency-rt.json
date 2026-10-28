@@ -10,7 +10,9 @@
       36.5617,
       -119.0249
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://data.peaktransit.com/gtfsrt/120/VehiclePosition.pb",

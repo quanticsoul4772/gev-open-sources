@@ -10,7 +10,9 @@
       34.1199,
       -116.1161
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://sunlinebus.com/gtfs-rt/vehiclepositions",

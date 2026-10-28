@@ -10,7 +10,9 @@
       39.2645,
       -85.8666
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://columbusindianatransit.com/gtfs-rt/vehiclepositions",

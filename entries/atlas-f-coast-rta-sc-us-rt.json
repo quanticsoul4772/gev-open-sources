@@ -10,7 +10,9 @@
       33.852,
       -78.6424
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://coastrta.transloc.com/subscriptions/gtfsrt/vehicles.ashx",

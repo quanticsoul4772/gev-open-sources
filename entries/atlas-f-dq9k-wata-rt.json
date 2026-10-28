@@ -10,7 +10,9 @@
       37.3981,
       -76.5516
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/VehiclePosition.pb",

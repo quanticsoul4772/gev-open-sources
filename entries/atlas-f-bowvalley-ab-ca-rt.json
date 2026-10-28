@@ -10,7 +10,9 @@
       51.317,
       -114.4468
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://bowvalley.tmix.se/gtfs-realtime/vehicleupdates.pb",

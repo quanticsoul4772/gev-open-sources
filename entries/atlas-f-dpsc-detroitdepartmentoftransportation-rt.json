@@ -10,7 +10,9 @@
       42.4788,
       -82.8918
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://www.myddotbus.com/gtfsrt/vehicles",

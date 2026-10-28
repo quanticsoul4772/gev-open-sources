@@ -10,7 +10,9 @@
       34.2014,
       -118.3004
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://rideburbankbus.com/gtfs-rt/vehiclepositions",

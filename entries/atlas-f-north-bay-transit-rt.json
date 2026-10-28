@@ -10,7 +10,9 @@
       46.3783,
       -79.3911
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://northbay.tmix.se/gtfs-realtime/vehicleupdates.pb",

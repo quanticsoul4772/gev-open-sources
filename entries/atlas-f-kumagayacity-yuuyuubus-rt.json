@@ -10,7 +10,9 @@
       36.142,
       139.4372
     ],
-    "countries": []
+    "countries": [
+      "JP"
+    ]
   },
   "access": {
     "url": "http://kumagaya.bus-go.com/GTFS-RT/encode_vehicle.php",

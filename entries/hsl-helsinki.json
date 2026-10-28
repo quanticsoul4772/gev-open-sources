@@ -10,7 +10,9 @@
       60.7987,
       26.2025
     ],
-    "countries": []
+    "countries": [
+      "FI"
+    ]
   },
   "access": {
     "url": "https://realtime.hsl.fi/realtime/vehicle-positions/v2/hsl",

@@ -10,7 +10,9 @@
       37.82,
       -122.4145
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://presidiobus.com/gtfs-rt/vehiclepositions",

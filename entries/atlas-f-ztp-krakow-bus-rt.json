@@ -10,7 +10,9 @@
       50.2236,
       20.2361
     ],
-    "countries": []
+    "countries": [
+      "PL"
+    ]
   },
   "access": {
     "url": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",

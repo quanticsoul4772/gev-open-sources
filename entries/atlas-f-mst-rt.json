@@ -10,7 +10,9 @@
       36.9295,
       -121.1069
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gtfs.mst.org/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",

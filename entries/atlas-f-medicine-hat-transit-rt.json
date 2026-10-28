@@ -10,7 +10,9 @@
       50.0681,
       -110.6187
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://medicinehat.tmix.se/gtfs-realtime/vehicleupdates.pb",

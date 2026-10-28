@@ -10,7 +10,9 @@
       34.1098,
       -118.0913
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/alhambraca/passioTransit/gtfs/realtime/vehiclePositions",

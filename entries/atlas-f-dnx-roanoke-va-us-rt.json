@@ -10,7 +10,9 @@
       37.3604,
       -79.9168
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://vmgoapp.com/gtfs-rt/vehiclepositions",

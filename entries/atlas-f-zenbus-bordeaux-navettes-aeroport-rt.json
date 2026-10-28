@@ -10,7 +10,9 @@
       44.855,
       -0.5664
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport&file=vp",

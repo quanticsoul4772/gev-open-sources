@@ -10,7 +10,9 @@
       1.1862,
       110.5868
     ],
-    "countries": []
+    "countries": [
+      "MY"
+    ]
   },
   "access": {
     "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-kuching",

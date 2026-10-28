@@ -10,7 +10,9 @@
       45.2337,
       -72.7252
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=bromemissisquoi",

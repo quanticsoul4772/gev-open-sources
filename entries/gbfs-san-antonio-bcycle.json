@@ -10,7 +10,9 @@
       30.3224,
       -97.4623
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_sanantonio/station_status.json",

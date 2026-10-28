@@ -10,7 +10,9 @@
       44.944,
       10.4153
     ],
-    "countries": []
+    "countries": [
+      "IT"
+    ]
   },
   "access": {
     "url": "https://temporeale.cl.tep.pr.it/temporeale/vehicle_positions.pb",

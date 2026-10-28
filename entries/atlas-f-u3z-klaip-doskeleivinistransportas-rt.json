@@ -10,7 +10,9 @@
       55.9344,
       21.4455
     ],
-    "countries": []
+    "countries": [
+      "LT"
+    ]
   },
   "access": {
     "url": "https://www.stops.lt/klaipeda/gtfs_realtime.pb",

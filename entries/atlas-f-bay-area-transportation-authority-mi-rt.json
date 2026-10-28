@@ -10,7 +10,9 @@
       44.7842,
       -85.5089
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://batabustracker.com/gtfs-rt/vehiclepositions",

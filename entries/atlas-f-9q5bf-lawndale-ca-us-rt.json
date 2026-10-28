@@ -10,7 +10,9 @@
       33.9068,
       -118.3376
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ridelawndalebeat.com/gtfs-rt/vehiclepositions",

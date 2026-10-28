@@ -10,7 +10,9 @@
       38.4738,
       -121.3035
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://bustime.sacrt.com/EG_gtfsrt/vehicles",

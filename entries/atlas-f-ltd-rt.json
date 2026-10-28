@@ -10,7 +10,9 @@
       44.1996,
       -122.0953
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://feed.ltd.org/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",

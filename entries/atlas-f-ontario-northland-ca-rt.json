@@ -10,7 +10,9 @@
       49.9182,
       -77.1301
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://ontarionorthland.tmix.se/gtfs-realtime/vehicleupdates.pb",

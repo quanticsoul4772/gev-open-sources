@@ -10,7 +10,9 @@
       48.3212,
       -116.5253
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/spotbus/passioTransit/gtfs/realtime/vehiclePositions",

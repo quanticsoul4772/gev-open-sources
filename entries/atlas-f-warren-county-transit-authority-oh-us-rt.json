@@ -10,7 +10,9 @@
       41.8994,
       -79.0147
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://tawc.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

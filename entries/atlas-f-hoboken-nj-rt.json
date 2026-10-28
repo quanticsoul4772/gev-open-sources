@@ -10,7 +10,9 @@
       40.7699,
       -74.0084
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/hoboken/passioTransit/gtfs/realtime/vehiclePositions",

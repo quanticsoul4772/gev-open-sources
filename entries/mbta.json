@@ -10,7 +10,9 @@
       42.9889,
       -70.2079
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://cdn.mbta.com/realtime/VehiclePositions.pb",

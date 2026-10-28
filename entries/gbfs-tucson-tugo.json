@@ -10,7 +10,9 @@
       33.1209,
       -109.9128
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_tugo/station_status.json",

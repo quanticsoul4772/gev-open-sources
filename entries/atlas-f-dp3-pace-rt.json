@@ -10,7 +10,9 @@
       42.4501,
       -87.5032
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://tmweb.pacebus.com/TMGTFSRealTimeWebService/vehicle/VehiclePositions.pb",

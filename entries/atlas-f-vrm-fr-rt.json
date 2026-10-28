@@ -10,7 +10,9 @@
       45.0978,
       5.1597
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://proxy.transport.data.gouv.fr/resource/citea-valence-gtfs-rt-vehicle-position",

@@ -10,7 +10,9 @@
       42.6571,
       -71.731
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/montachusett/passioTransit/gtfs/realtime/vehiclePositions",

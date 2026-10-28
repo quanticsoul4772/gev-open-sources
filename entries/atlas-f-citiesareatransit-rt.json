@@ -10,7 +10,9 @@
       47.9586,
       -97.0045
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://catprowler.org/gtfs-rt/vehiclepositions",

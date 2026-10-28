@@ -10,7 +10,9 @@
       40.6667,
       -84.9894
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/station_status.json",

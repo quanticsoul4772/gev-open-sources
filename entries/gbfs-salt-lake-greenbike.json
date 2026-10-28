@@ -10,7 +10,9 @@
       41.6591,
       -110.705
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_greenbikeslc/station_status.json",

@@ -10,7 +10,9 @@
       54.4944,
       18.8764
     ],
-    "countries": []
+    "countries": [
+      "PL"
+    ]
   },
   "access": {
     "url": "https://ckan2.multimediagdansk.pl/gtfs-rt?feed=vehiclePositions",

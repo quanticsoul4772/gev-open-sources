@@ -10,7 +10,9 @@
       28.4718,
       -80.0977
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://feed.gobrightline.com/position_updates.pb",

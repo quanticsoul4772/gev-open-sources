@@ -10,7 +10,9 @@
       32.6602,
       -105.4285
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_elpaso/station_status.json",

@@ -10,7 +10,9 @@
       43.2146,
       -0.5919
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=oloron",

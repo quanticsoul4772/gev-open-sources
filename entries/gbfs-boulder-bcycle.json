@@ -10,7 +10,9 @@
       40.9133,
       -104.0976
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_boulder/station_status.json",

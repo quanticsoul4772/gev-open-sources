@@ -10,7 +10,9 @@
       33.4506,
       133.4013
     ],
-    "countries": []
+    "countries": [
+      "JP"
+    ]
   },
   "access": {
     "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SusakiCity_Citybus_vehicle",

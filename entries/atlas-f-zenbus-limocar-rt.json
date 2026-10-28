@@ -10,7 +10,9 @@
       45.5059,
       -73.5306
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=limocar",

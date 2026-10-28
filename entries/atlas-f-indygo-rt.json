@@ -10,7 +10,9 @@
       39.9365,
       -85.9421
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://realtime.indygo.net/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",

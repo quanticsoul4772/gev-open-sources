@@ -10,7 +10,9 @@
       47.1669,
       5.5778
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://proxy.transport.data.gouv.fr/resource/tgd-dole-gtfs-rt-vehicle-position",

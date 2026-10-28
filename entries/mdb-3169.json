@@ -10,7 +10,9 @@
       5.7515,
       102.532
     ],
-    "countries": []
+    "countries": [
+      "MY"
+    ]
   },
   "access": {
     "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-kota-bharu",

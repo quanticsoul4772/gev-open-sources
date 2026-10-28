@@ -10,7 +10,9 @@
       44.9542,
       -74.7137
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/stlawrence/passioTransit/gtfs/realtime/vehiclePositions",

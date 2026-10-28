@@ -10,7 +10,9 @@
       37.7814,
       -121.4011
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/position_updates.pb",

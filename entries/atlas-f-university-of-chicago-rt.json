@@ -10,7 +10,9 @@
       41.8855,
       -87.5752
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/chicago/passioTransit/gtfs/realtime/vehiclePositions",

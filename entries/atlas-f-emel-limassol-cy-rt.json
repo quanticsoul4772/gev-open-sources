@@ -10,7 +10,9 @@
       34.9169,
       33.1953
     ],
-    "countries": []
+    "countries": [
+      "CY"
+    ]
   },
   "access": {
     "url": "http://20.19.98.194:8328/Api/api/gtfs-realtime/6",

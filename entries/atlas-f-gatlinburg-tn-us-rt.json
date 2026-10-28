@@ -10,7 +10,9 @@
       35.7559,
       -83.4177
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

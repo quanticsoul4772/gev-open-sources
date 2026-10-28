@@ -10,7 +10,9 @@
       40.8925,
       -74.1792
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://montclair.tripshot.com/v1/gtfs/realtime/vehiclePosition",

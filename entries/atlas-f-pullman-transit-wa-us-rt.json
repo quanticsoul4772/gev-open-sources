@@ -10,7 +10,9 @@
       46.7633,
       -117.1348
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://pullmanbusbeacon.com/gtfs-rt/vehiclepositions",

@@ -10,7 +10,9 @@
       36.1459,
       -94.1296
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/UofArkansas/passioTransit/gtfs/realtime/vehiclePositions",

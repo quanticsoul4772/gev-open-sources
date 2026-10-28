@@ -10,7 +10,9 @@
       42.4851,
       -92.424
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_desmoines/station_status.json",

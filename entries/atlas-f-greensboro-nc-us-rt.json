@@ -10,7 +10,9 @@
       36.1342,
       -79.7067
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://trackmygta.com/gtfs-rt/vehiclepositions",

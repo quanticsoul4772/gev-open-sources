@@ -10,7 +10,9 @@
       35.1302,
       -116.9426
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_lametro/station_status.json",

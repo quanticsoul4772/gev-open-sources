@@ -10,7 +10,9 @@
       48.8629,
       -1.5255
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=granville",

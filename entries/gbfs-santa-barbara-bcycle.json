@@ -10,7 +10,9 @@
       35.3191,
       -118.6092
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_santabarbara/station_status.json",

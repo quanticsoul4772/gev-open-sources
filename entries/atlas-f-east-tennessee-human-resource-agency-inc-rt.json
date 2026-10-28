@@ -10,7 +10,9 @@
       36.2377,
       -83.2591
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/ethra/passioTransit/gtfs/realtime/vehiclePositions",

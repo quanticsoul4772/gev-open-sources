@@ -10,7 +10,9 @@
       40.0014,
       -83.3544
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_cincyredbike/station_status.json",

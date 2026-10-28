@@ -10,7 +10,9 @@
       32.9532,
       -80.4852
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://trackthebreeze.com/gtfs-rt/vehiclepositions",

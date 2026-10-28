@@ -10,7 +10,9 @@
       34.1687,
       -118.6093
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://calabasas.tripshot.com/v1/gtfs/realtime/vehiclePosition",

@@ -1,0 +1,48 @@
+{
+  "id": "atlas-f-lax-flyaway-rt",
+  "domain": "transit.vehicles",
+  "name": "LAX Shuttles",
+  "provider": "LAX Shuttles",
+  "coverage": {
+    "bbox": [
+      33.915,
+      -118.4196,
+      33.9708,
+      -118.3564
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://laxtransportation.transloc.com/subscriptions/gtfsrt/vehicles.ashx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.flylax.com/flyaway-bus/faqs",
+    "display": false,
+    "commercial": null,
+    "attribution": "LAX Shuttles"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-28T06:35:29.225Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-lax~flyaway~rt",
+    "via:https://laxtransportation.ridesystems.net/subscriptions/gtfsrt/vehicles.ashx",
+    "licence-borrowed:atlas:f-lax~flyaway"
+  ]
+}

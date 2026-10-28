@@ -10,7 +10,9 @@
       2.241,
       102.2713
     ],
-    "countries": []
+    "countries": [
+      "MY"
+    ]
   },
   "access": {
     "url": "https://api.data.gov.my/gtfs-realtime/vehicle-position/mybas-melaka",

@@ -10,7 +10,9 @@
       44.9167,
       1.2422
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=Sarlat",

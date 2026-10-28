@@ -10,7 +10,9 @@
       27.0207,
       -79.1368
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_broward/station_status.json",

@@ -10,7 +10,9 @@
       40.5444,
       -88.9275
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://rideconnecttransit.com/gtfs-rt/vehiclepositions",

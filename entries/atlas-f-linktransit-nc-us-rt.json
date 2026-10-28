@@ -10,7 +10,9 @@
       36.1267,
       -79.3941
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://mylinktransit.org/gtfs-rt/vehiclepositions",

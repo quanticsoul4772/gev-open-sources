@@ -10,7 +10,9 @@
       34.7836,
       134.1663
     ],
-    "countries": []
+    "countries": [
+      "JP"
+    ]
   },
   "access": {
     "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_UnoBus_AllLines_vehicle",

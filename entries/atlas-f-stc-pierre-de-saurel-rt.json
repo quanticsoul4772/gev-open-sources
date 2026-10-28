@@ -10,7 +10,9 @@
       46.0603,
       -73.0795
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=pierre-de-saurel",

@@ -10,7 +10,9 @@
       42.1779,
       -76.2211
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/chemung/passioTransit/gtfs/realtime/vehiclePositions",

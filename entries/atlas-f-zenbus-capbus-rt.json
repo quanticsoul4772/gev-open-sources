@@ -10,7 +10,9 @@
       43.4544,
       3.514
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=agdecapbus68429531",

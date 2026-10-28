@@ -10,7 +10,9 @@
       44.2029,
       11.976
     ],
-    "countries": []
+    "countries": [
+      "IT"
+    ]
   },
   "access": {
     "url": "https://regionetoscana.smartregion.toscana.it/mobility/artifacts/gtfs-rt/vehicle-positions",

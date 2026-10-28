@@ -10,7 +10,9 @@
       42.3649,
       -71.7277
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gtfsrt.wrta.cadavl.com/ProfilGtfsRt2_0RSProducer-WRTA/VehiclePosition.pb",

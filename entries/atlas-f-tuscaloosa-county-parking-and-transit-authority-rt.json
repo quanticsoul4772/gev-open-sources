@@ -10,7 +10,9 @@
       33.2267,
       -87.497
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/tuscaloosatransit/passioTransit/gtfs/realtime/vehiclePositions",

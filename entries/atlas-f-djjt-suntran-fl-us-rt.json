@@ -10,7 +10,9 @@
       29.2225,
       -82.02
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://realtimesuntran.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

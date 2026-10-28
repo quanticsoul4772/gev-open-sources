@@ -10,7 +10,9 @@
       41.3116,
       -73.702
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://westchester.gmv.com/gtfsrtapi/api/vehiclepositions",

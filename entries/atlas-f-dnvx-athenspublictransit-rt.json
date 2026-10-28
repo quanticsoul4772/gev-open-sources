@@ -10,7 +10,9 @@
       39.3574,
       -82.0705
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/athenstransit/passioTransit/gtfs/realtime/vehiclePositions",

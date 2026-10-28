@@ -10,7 +10,9 @@
       40.8434,
       140.6808
     ],
-    "countries": []
+    "countries": [
+      "JP"
+    ]
   },
   "access": {
     "url": "https://toshisei.aomoricitybus.com/VehiclePosition.pb",

@@ -10,7 +10,9 @@
       21.0052,
       -156.2999
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://mauibus.org/gtfs-rt/vehiclepositions",

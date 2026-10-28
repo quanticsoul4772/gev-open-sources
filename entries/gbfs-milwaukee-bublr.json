@@ -10,7 +10,9 @@
       43.9372,
       -86.6774
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_bublr/station_status.json",

@@ -10,7 +10,9 @@
       40.7885,
       -79.9768
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://bcta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

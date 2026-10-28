@@ -10,7 +10,9 @@
       26.4506,
       -81.4007
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://cat.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-CAT/VehiclePosition.pb",

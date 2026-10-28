@@ -10,7 +10,9 @@
       39.6673,
       -106.284
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ride.vail.gov/gtfs-rt/vehiclepositions",

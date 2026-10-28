@@ -10,7 +10,9 @@
       37.3285,
       -89.5033
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=VehiclePosition",

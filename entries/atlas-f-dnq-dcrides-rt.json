@@ -10,7 +10,9 @@
       35.9009,
       -80.0658
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://dcridestracker.com/gtfs-rt/vehiclepositions",

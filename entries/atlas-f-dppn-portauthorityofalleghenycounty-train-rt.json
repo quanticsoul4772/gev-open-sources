@@ -10,7 +10,9 @@
       40.4681,
       -79.9777
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://truetime.rideprt.org/gtfsrt-train/vehicles",

@@ -10,7 +10,9 @@
       36.3865,
       -94.0834
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/ozark/passioTransit/gtfs/realtime/vehiclePositions",

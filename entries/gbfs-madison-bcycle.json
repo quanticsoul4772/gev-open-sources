@@ -10,7 +10,9 @@
       43.9714,
       -88.1715
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_madison/station_status.json",

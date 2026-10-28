@@ -10,7 +10,9 @@
       35.3537,
       -82.4375
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://applecountry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

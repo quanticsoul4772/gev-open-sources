@@ -10,7 +10,9 @@
       48.5185,
       -74.6641
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://metrolinx.tmix.se/gtfs-realtime-belleville/vehiclepositions.pb",

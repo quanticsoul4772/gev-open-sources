@@ -10,7 +10,9 @@
       48.6566,
       6.341
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sel-et-vermois",

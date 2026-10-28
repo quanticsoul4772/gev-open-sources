@@ -10,7 +10,9 @@
       43.0896,
       -83.5789
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://flint.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

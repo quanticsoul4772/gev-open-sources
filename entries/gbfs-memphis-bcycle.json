@@ -10,7 +10,9 @@
       36.0478,
       -88.9504
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_memphis/station_status.json",

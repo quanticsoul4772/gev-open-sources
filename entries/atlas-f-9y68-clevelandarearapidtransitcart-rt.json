@@ -10,7 +10,9 @@
       35.2262,
       -97.4242
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://www.cartgps.com/gtfs-rt/vehiclepositions",

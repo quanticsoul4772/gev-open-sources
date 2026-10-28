@@ -10,7 +10,9 @@
       40.8509,
       -73.9934
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_indego/station_status.json",

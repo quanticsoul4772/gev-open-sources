@@ -10,7 +10,9 @@
       34.4683,
       -118.6584
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://govcbus.com/gtfs-rt/vehiclepositions",

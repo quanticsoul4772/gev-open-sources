@@ -10,7 +10,9 @@
       38.7098,
       -121.4332
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://avl.yctd.org/RealTime/GTFS_VehiclePositions.pb",

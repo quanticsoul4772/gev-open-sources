@@ -10,7 +10,9 @@
       43.7847,
       -77.6524
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_reddy/station_status.json",

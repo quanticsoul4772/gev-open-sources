@@ -10,7 +10,9 @@
       45.787,
       -122.3799
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions",

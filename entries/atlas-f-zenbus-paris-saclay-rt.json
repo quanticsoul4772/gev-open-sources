@@ -10,7 +10,9 @@
       48.7502,
       2.2934
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee&file=vp",

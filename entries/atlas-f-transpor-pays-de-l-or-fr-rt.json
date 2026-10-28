@@ -10,7 +10,9 @@
       43.6569,
       4.1001
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://proxy.transport.data.gouv.fr/resource/transpor-gtfs-rt-vehicle-position",

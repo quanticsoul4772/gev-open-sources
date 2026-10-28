@@ -10,7 +10,9 @@
       39.1215,
       -84.425
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://tank.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

@@ -10,7 +10,9 @@
       50.5939,
       19.4388
     ],
-    "countries": []
+    "countries": [
+      "PL"
+    ]
   },
   "access": {
     "url": "https://gtfsrt.transportgzm.pl:5443/gtfsrt/gzm/vehiclePositions",

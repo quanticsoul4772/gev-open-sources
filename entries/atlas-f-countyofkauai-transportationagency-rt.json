@@ -10,7 +10,9 @@
       22.2218,
       -159.2924
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://thekauaibus.com/gtfs-rt/vehiclepositions",

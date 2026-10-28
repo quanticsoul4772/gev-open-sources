@@ -10,7 +10,9 @@
       40.2221,
       -87.6067
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://danvillemasstransit.tripshot.com/v1/gtfs/realtime/vehiclePosition",

@@ -10,7 +10,9 @@
       45.6066,
       -92.3761
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://svc.metrotransit.org/mtgtfs/vehiclepositions.pb",

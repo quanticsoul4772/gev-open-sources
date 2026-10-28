@@ -10,7 +10,9 @@
       33.9751,
       -118.1147
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://downey.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

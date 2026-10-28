@@ -10,7 +10,9 @@
       44.6137,
       -123.2217
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

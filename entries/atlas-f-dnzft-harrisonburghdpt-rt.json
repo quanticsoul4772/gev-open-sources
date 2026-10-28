@@ -10,7 +10,9 @@
       38.4685,
       -78.8427
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/harrisonburg/passioTransit/gtfs/realtime/vehiclePositions",

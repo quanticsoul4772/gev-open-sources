@@ -10,7 +10,9 @@
       46.7348,
       -80.8137
     ],
-    "countries": []
+    "countries": [
+      "CA"
+    ]
   },
   "access": {
     "url": "https://sudbury.tmix.se/gtfs-realtime/vehiclepositions.pb",

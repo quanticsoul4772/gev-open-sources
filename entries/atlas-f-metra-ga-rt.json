@@ -10,7 +10,9 @@
       32.5744,
       -84.8569
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://metracolumbus.com/gtfs-rt/vehiclepositions",

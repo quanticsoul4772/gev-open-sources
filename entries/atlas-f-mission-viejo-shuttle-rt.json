@@ -10,7 +10,9 @@
       33.6146,
       -117.6401
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://mvshuttle.transloc.com/subscriptions/gtfsrt/vehicles.ashx",

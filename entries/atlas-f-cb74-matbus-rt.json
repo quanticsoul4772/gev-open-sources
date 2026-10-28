@@ -10,7 +10,9 @@
       46.9347,
       -96.695
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://ridematbus.com/gtfs-rt/vehiclepositions",

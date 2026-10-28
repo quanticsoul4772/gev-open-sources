@@ -10,7 +10,9 @@
       42.8796,
       -106.2394
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://passio3.com/casper/passioTransit/gtfs/realtime/vehiclePositions",

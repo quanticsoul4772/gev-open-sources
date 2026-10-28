@@ -10,7 +10,9 @@
       40.7697,
       -81.944
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.cogobikeshare.com/gbfs/2.3/en/station_status.json",

@@ -10,7 +10,9 @@
       43.0648,
       -88.0353
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://mywaukeshametro.com/gtfs-rt/vehiclepositions",

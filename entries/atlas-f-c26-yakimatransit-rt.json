@@ -10,7 +10,9 @@
       46.6298,
       -120.4796
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://yakima.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

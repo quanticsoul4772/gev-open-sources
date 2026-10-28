@@ -10,7 +10,9 @@
       28.4845,
       -82.1599
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gopasco.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",

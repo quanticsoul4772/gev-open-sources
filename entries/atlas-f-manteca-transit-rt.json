@@ -10,7 +10,9 @@
       37.8323,
       -121.1695
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/position_updates.pb",

@@ -10,7 +10,9 @@
       -22.7752,
       -43.1616
     ],
-    "countries": []
+    "countries": [
+      "BR"
+    ]
   },
   "access": {
     "url": "https://dados.mobilidade.rio/gtfs/realtime",

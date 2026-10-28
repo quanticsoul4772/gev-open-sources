@@ -10,7 +10,9 @@
       43.5821,
       -96.6543
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://s3.amazonaws.com/etatransit.gtfs/siouxareametro.etaspot.net/position_updates.pb",

@@ -10,7 +10,9 @@
       33.6538,
       -96.2626
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_fortworth/station_status.json",

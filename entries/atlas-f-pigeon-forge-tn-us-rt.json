@@ -10,7 +10,9 @@
       35.8446,
       -83.509
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

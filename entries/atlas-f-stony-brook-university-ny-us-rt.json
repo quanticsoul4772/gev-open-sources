@@ -10,7 +10,9 @@
       40.9364,
       -72.7188
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://s3.amazonaws.com/etatransit.gtfs/stonybrook.etaspot.net/position_updates.pb",

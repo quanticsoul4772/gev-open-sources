@@ -10,7 +10,9 @@
       37.0682,
       -114.027
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://gbfs.bcycle.com/bcycle_rtcbikeshare/station_status.json",
