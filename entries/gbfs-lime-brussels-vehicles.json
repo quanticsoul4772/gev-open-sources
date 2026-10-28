@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-lime-brussels-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Lime Brussels — Brussels",
+  "provider": "Lime Brussels",
+  "licence": {
+    "id": null,
+    "url": "https://www.li.me/gbfs-terms",
+    "display": false,
+    "commercial": null,
+    "attribution": "Lime Brussels"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "HTTP 403"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-28T00:49:14.299Z"
+  },
+  "provenance": [
+    "gbfs-systems:lime_brussels"
+  ],
+  "coverage": {
+    "bbox": [
+      50.808,
+      4.4064,
+      50.894,
+      4.5265
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://data.lime.bike/api/partners/v2/gbfs/brussels/free_bike_status",
+    "related": {
+      "vehicle_types": "https://data.lime.bike/api/partners/v2/gbfs/brussels/vehicle_types",
+      "system_information": "https://data.lime.bike/api/partners/v2/gbfs/brussels/system_information",
+      "gbfs": "https://data.lime.bike/api/partners/v2/gbfs/brussels/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "lime_brussels",
+    "version": "2.2",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
