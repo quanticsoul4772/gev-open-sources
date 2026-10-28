@@ -145,15 +145,18 @@ export function takeFingerprints(health) {
 
 /**
  * The entry of a duplicate group to keep: a hand-written one, else one not
- * dead (a dead one is retired after 30 days), else one cleared for display, else the one probed first (health firstSeen: longest in the
- * directory, so the URL consumers already know), else the lowest id.
+ * dead (a dead one is retired after 30 days), else one cleared for display,
+ * else a verified one (over a degraded one that keeps failing), else the one
+ * probed first (health firstSeen: longest in the directory, so the URL
+ * consumers already know), else the lowest id.
  */
 function keeperOf(ids, entries, health) {
   const harvested = (id) => (isStaticEntry(entries.get(id)) ? 0 : 1);
   const dead = (id) => (health[id].status === 'dead' ? 1 : 0);
   const referral = (id) => (entries.get(id).licence?.display ? 0 : 1);
+  const unverified = (id) => (health[id].status === 'verified' ? 0 : 1);
   const seen = (id) => health[id].firstSeen ?? Infinity;
-  return [...ids].sort((a, b) => harvested(a) - harvested(b) || dead(a) - dead(b) || referral(a) - referral(b) || seen(a) - seen(b) || a.localeCompare(b))[0];
+  return [...ids].sort((a, b) => harvested(a) - harvested(b) || dead(a) - dead(b) || referral(a) - referral(b) || unverified(a) - unverified(b) || seen(a) - seen(b) || a.localeCompare(b))[0];
 }
 
 /**

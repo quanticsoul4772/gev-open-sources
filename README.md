@@ -130,8 +130,9 @@ hours a GitHub Actions run:
    whose vehicle ids (5 or more) are nearly the same as another's (MinHash
    similarity ≥ 0.9, vehicle counts within 10 %, overlapping areas), two runs
    in a row, serves the same feed under another URL: one is kept (hand-written,
-   else cleared for display, else the one probed first) and the others are
-   removed and tombstoned (`reason: 'duplicate'`, `of`: the kept id).
+   else not dead, else cleared for display, else verified, else the one probed
+   first) and the others are removed and tombstoned (`reason: 'duplicate'`,
+   `of`: the kept id).
 4. **Publishes** `directory.json` to GitHub Pages:
    `https://quanticsoul4772.github.io/gev-open-sources/directory.json`.
 

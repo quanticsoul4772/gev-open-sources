@@ -206,6 +206,28 @@ test('duplicates: the copy cleared for display is kept over an older referral-on
   assert.equal(tombstones.referral.of, 'shown');
 });
 
+test('duplicates: a verified copy is kept over an older degraded one', async () => {
+  const entries = new Map([['limping', entry('limping')], ['steady', entry('steady')]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { limping: fleet(40), steady: fleet(40) }, 1000);
+  health.limping.firstSeen = 10;
+  // Failed twice since: degraded until 3 passes in a row.
+  Object.assign(health.limping, { status: 'degraded', passes: 0 });
+  assert.deepEqual(await run(entries, health, tombstones, { limping: fleet(40), steady: fleet(40) }, 2000), ['limping']);
+  assert.equal(tombstones.limping.of, 'steady');
+});
+
+test('duplicates: a degraded copy cleared for display is still kept over a verified referral-only one', async () => {
+  const entries = new Map([['shown', entry('shown')], ['referral', entry('referral', { display: false })]]);
+  const health = {};
+  const tombstones = {};
+  await run(entries, health, tombstones, { shown: fleet(40), referral: fleet(40) }, 1000);
+  Object.assign(health.shown, { status: 'degraded', passes: 0 });
+  assert.deepEqual(await run(entries, health, tombstones, { shown: fleet(40), referral: fleet(40) }, 2000), ['referral']);
+  assert.equal(tombstones.referral.of, 'shown');
+});
+
 test('duplicates: a hand-written entry is never retired; the harvested copy goes', async () => {
   const hand = PERIMETER_ENTRIES[0];
   const harvested = entry('harvested', { bbox: hand.coverage.bbox });
