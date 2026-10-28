@@ -15,11 +15,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-16T16:55:37.809Z"
+    "at": "2026-10-28T12:32:01.810Z"
   },
   "provenance": [
     "gbfs-systems:dott-tel-aviv"
