@@ -110,6 +110,13 @@ hours a GitHub Actions run:
    URLs that carry a credential parameter, and catalogue entries marked as
    needing a key, are skipped. Cross-domain permalinks are pointed at their
    final URL, and plain-http feeds move to https when it serves the same data.
+
+   Feeds on the never-list, `excluded.json`, are never listed: discovery
+   skips them, and the harvest removes any entry they match. Each item has a
+   feed `url` (for a GBFS system, its discovery URL: the whole system goes), a
+   `reason` and, optionally, an entry `id`. A URL matches over http or https,
+   and also matches a permalink that led to the feed. Copies retired as a
+   removed feed's duplicates stay out with it. A malformed item fails the run.
 2. **Decides licences** with no human step: a known open licence
    (`src/licence/known-licences.json`). A transit feed with no licence of its
    own takes the one Transitland Atlas records for it, or (borrowed, known

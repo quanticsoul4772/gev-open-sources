@@ -1,9 +1,9 @@
 /**
  * Discovery: add catalogued keyless feeds as entries. Feeds already present
- * (by id, exact URL or a permalink that led to it) and tombstoned dead feeds
- * are skipped; cross-domain permalinks are pointed at their final URL; catalogue URLs
- * that failed a check are remembered in harvest-rejects.json for a week (an
- * empty feed for 30 hours).
+ * (by id, exact URL or a permalink that led to it), tombstoned dead feeds and
+ * feeds on the never-list (excluded.js) are skipped; cross-domain permalinks
+ * are pointed at their final URL; catalogue URLs that failed a check are
+ * remembered in harvest-rejects.json for a week (an empty feed for 30 hours).
  */
 import { pathToFileURL } from 'node:url';
 import { readEntries, readState, removeEntry, writeEntry, writeState } from '../store.js';
@@ -24,6 +24,7 @@ import { FIRMS_ENTRIES } from './firms.js';
 import { GDACS_ENTRIES } from './gdacs.js';
 import { PERIMETER_ENTRIES } from './perimeters.js';
 import { AIRQUALITY_ENTRIES } from './airquality.js';
+import { excludedReason, readExcluded } from './excluded.js';
 import { isStaticEntry } from './static.js';
 
 /**
@@ -117,15 +118,26 @@ export function redirectChecks(merged, existing, health) {
   ].filter((e) => !isStaticEntry(e));
 }
 
-/** The entry a duplicate tombstone leads to through retired kept entries, or null. */
-function keptOf(t, existing, tombstones) {
+/** An empty never-list, the default for callers that have none. */
+const NOTHING_EXCLUDED = { ids: new Map(), urls: new Map() };
+
+/** Whether an id was removed by the never-list: listed by id, or tombstoned when removed by URL. */
+const isExcludedId = (id, tombstones, excluded) => excluded.ids.has(id) || tombstones[id]?.reason === 'excluded';
+
+/**
+ * The entry a duplicate tombstone leads to through retired kept entries, or
+ * null. An entry removed by the never-list (a listed id, or an `excluded`
+ * tombstone) still counts as kept, so its copies stay out with it.
+ */
+function keptOf(t, existing, tombstones, excluded = NOTHING_EXCLUDED) {
+  const kept = (id) => existing.has(id) || isExcludedId(id, tombstones, excluded);
   const seen = new Set();
   let id = t.of;
-  while (!existing.has(id) && tombstones[id]?.reason === 'duplicate' && !seen.has(id)) {
+  while (!kept(id) && tombstones[id]?.reason === 'duplicate' && !seen.has(id)) {
     seen.add(id);
     id = tombstones[id].of;
   }
-  return existing.has(id) ? id : null;
+  return kept(id) ? id : null;
 }
 
 /**
@@ -137,10 +149,11 @@ function keptOf(t, existing, tombstones) {
  * that run has no health left). Updates `tombstones` in place.
  * @returns {string[]} ids released
  */
-export function releaseDuplicates(health, existing, tombstones) {
+export function releaseDuplicates(health, existing, tombstones, excluded = NOTHING_EXCLUDED) {
   const released = Object.keys(tombstones).filter((id) => {
     if (tombstones[id].reason !== 'duplicate') return false;
-    const kept = keptOf(tombstones[id], existing, tombstones);
+    const kept = keptOf(tombstones[id], existing, tombstones, excluded);
+    if (kept && isExcludedId(kept, tombstones, excluded)) return false;
     return !kept || !health[kept] || health[kept].status === 'dead';
   });
   for (const id of released) delete tombstones[id];
@@ -154,22 +167,42 @@ export function releaseDuplicates(health, existing, tombstones) {
  * A kept entry later retired as a duplicate of a third passes the block on to
  * that one. Once no kept entry is left, the URL may come back.
  */
-export function duplicateUrlsOf(existing, tombstones) {
+export function duplicateUrlsOf(existing, tombstones, excluded = NOTHING_EXCLUDED) {
   const urls = new Set();
   for (const t of Object.values(tombstones))
-    if (t.reason === 'duplicate' && t.url && keptOf(t, existing, tombstones))
+    if (t.reason === 'duplicate' && t.url && keptOf(t, existing, tombstones, excluded))
       // Normalized first, so a default port (`:80`, `:443`) goes before the scheme changes.
       for (const scheme of ['http:', 'https:']) urls.add(normalizeUrl(normalizeUrl(t.url).replace(/^https?:/i, scheme)));
   return urls;
 }
 
-export function mergeCandidates(existing, candidates, tombstones) {
+/**
+ * Remove entries on the never-list, whichever catalogue or hand-written
+ * module listed them, and tombstone each (`reason: 'excluded'`): its id stays
+ * out, and copies retired as its duplicates stay out with it even when the
+ * list names only its URL. Updates `existing` and `tombstones` in place.
+ * @returns {Array<[string, string]>} removed ids and their reasons
+ */
+export function dropExcluded(existing, excluded, tombstones, now, remove = removeEntry) {
+  const dropped = [];
+  for (const [id, e] of existing) {
+    const reason = excludedReason(e, excluded);
+    if (reason === null) continue;
+    remove(id);
+    existing.delete(id);
+    tombstones[id] = { url: e.access.url, at: now, reason: 'excluded' };
+    dropped.push([id, reason]);
+  }
+  return dropped;
+}
+
+export function mergeCandidates(existing, candidates, tombstones, excluded = NOTHING_EXCLUDED) {
   const urls = new Set([...existing.values()].map((e) => normalizeUrl(e.access.url)));
-  for (const url of duplicateUrlsOf(existing, tombstones)) urls.add(url);
+  for (const url of duplicateUrlsOf(existing, tombstones, excluded)) urls.add(url);
   const added = [];
   for (const entry of candidates) {
     const url = normalizeUrl(entry.access.url);
-    if (existing.has(entry.id) || urls.has(url) || tombstones[entry.id]) continue;
+    if (existing.has(entry.id) || urls.has(url) || tombstones[entry.id] || excludedReason(entry, excluded) !== null) continue;
     urls.add(url);
     added.push(entry);
   }
@@ -178,11 +211,12 @@ export function mergeCandidates(existing, candidates, tombstones) {
 
 /**
  * Normalized access, GBFS discovery and permalink (`via:`) URLs of the
- * directory's entries, and the URLs blocked as duplicates (duplicateUrlsOf),
- * so catalogue harvesters don't check those again every run.
+ * directory's entries, and the URLs blocked as duplicates (duplicateUrlsOf)
+ * or by the never-list, so catalogue harvesters don't check those again every run.
  */
-export function knownUrlsOf(entries, tombstones = {}) {
-  const urls = duplicateUrlsOf(entries, tombstones);
+export function knownUrlsOf(entries, tombstones = {}, excluded = NOTHING_EXCLUDED) {
+  const urls = duplicateUrlsOf(entries, tombstones, excluded);
+  for (const url of excluded.urls.keys()) urls.add(url);
   for (const e of entries.values()) {
     urls.add(normalizeUrl(e.access.url));
     if (e.access.related?.gbfs) urls.add(normalizeUrl(e.access.related.gbfs));
@@ -237,16 +271,21 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
     writeEntry(clean);
     console.log(`harvest: ${id}: debug switch dropped from its URL`);
   }
+  const excluded = readExcluded();
   const tombstones = readState('tombstones.json', {});
+  const dropped = dropExcluded(existing, excluded, tombstones, now);
+  for (const [id, reason] of dropped) console.log(`harvest: removed ${id}: on the never-list (${reason})`);
   const health = readState('health.json', {});
-  const released = releaseDuplicates(health, existing, tombstones);
+  const released = releaseDuplicates(health, existing, tombstones, excluded);
   for (const id of released) console.log(`harvest: released ${id}: the entry it duplicated is dead or gone`);
-  if (released.length) writeState('tombstones.json', tombstones);
+  if (released.length || dropped.length) writeState('tombstones.json', tombstones);
   const rejects = readState('harvest-rejects.json', {});
   // Expired rejects are retried anyway; drop them so the file doesn't grow forever.
   for (const key of Object.keys(rejects)) if (!recentlyRejected(rejects, key, now)) delete rejects[key];
-  const knownIds = new Set(existing.keys());
+  // Listed feeds count as known, so the GBFS resolvers don't fetch them every run.
+  const knownIds = new Set([...existing.keys(), ...excluded.ids.keys()]);
   const knownOutputs = knownOutputsOf(existing);
+  for (const url of excluded.urls.keys()) for (const kind of ['stations', 'vehicles']) knownOutputs.add(outputKey(url, kind));
   // Vehicle systems resolved beyond what the add limit can take are thrown away, so cap them.
   const vehicleSize = [...existing.values()].filter((e) => e.domain === VEHICLES).length;
   const vehicleBudget = 2 * addLimit(vehicleSize || existing.size);
@@ -256,10 +295,10 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   const knownSystems = knownSystemKeysOf(existing);
   const vehiclesOnly = { count: 0 };
   const gbfsOptions = { knownIds, knownOutputs, knownSystems, tombstones, rejects, now, vehicleBudget, vehiclesOnly, gbfsPhase, checkPhase };
-  const mdb = await harvestMobilityDatabase({ knownUrls: knownUrlsOf(existing, tombstones), rejects, now, checkPhase });
+  const mdb = await harvestMobilityDatabase({ knownUrls: knownUrlsOf(existing, tombstones, excluded), rejects, now, checkPhase });
   // Atlas, Transitous and transport.data.gouv.fr see the Mobility Database's
   // feeds as known, so they only check URLs that would be new.
-  const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]), tombstones);
+  const knownUrls = knownUrlsOf(new Map([...existing, ...mdb.entries.map((e) => [e.id, e])]), tombstones, excluded);
   const atlas = await harvestAtlas({ knownUrls, rejects, now, checkPhase });
   for (const e of atlas.entries) knownUrls.add(normalizeUrl(e.access.url));
   const transitous = await harvestTransitous({ ...gbfsOptions, knownUrls });
@@ -287,6 +326,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
       ...transportGouv.entries.filter((e) => e.domain === VEHICLES),
     ].map(withoutDebugSwitch),
     tombstones,
+    excluded,
   );
   // New entries, and existing ones whose last probe failed, may be permalinks
   // that redirect to another domain: point them at the final URL. Two
@@ -294,7 +334,7 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   // entries are deduplicated again on their final URLs.
   const toCheck = redirectChecks(merged, existing, health);
   const redirected = new Map((await resolveRedirects(toCheck)).map((e) => [e.id, e]));
-  const deduped = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones);
+  const deduped = mergeCandidates(existing, merged.map((e) => redirected.get(e.id) || e), tombstones, excluded);
   // Transit entries need a bbox: fill missing ones from their vehicles. A new
   // entry still without one waits for a later run; an existing one keeps trying.
   // Existing GBFS entries with a broken box are rebuilt from their stations.
@@ -318,6 +358,15 @@ export async function harvest(now = Math.floor(Date.now() / 1000)) {
   let countried = 0;
   for (const entry of updated) {
     const next = licensed.get(entry.id) || covered.get(entry.id) || entry;
+    // A redirect or https upgrade can land an existing entry on a listed URL.
+    const reason = excludedReason(next, excluded);
+    if (reason !== null) {
+      removeEntry(entry.id);
+      tombstones[entry.id] = { url: next.access.url, at: now, reason: 'excluded' };
+      writeState('tombstones.json', tombstones);
+      console.log(`harvest: removed ${entry.id}: its new URL is on the never-list (${reason})`);
+      continue;
+    }
     const filled = withInferredCountries(next);
     if (filled !== next) countried += 1;
     if (filled !== next || redirected.has(entry.id) || upgraded.has(entry.id) || covered.has(entry.id) || licensed.has(entry.id)) writeEntry(filled);

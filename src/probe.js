@@ -13,6 +13,7 @@
  */
 import { pathToFileURL } from 'node:url';
 import { ADAPTERS, fingerprintSimilarity } from './adapters/index.js';
+import { readExcluded } from './harvest/excluded.js';
 import { releaseDuplicates } from './harvest/index.js';
 import { isStaticEntry } from './harvest/static.js';
 import { DAY_S, HISTORY_CAP, applyProbe, classify, emptyHealth } from './health.js';
@@ -282,7 +283,7 @@ export async function probeRun(entries, health, tombstones, { now, probe, clock,
   const previous = takeFingerprints(health);
   const { counts, rounds } = await probeRounds(due, health, { probe, clock, sleep });
   const retired = retireDead(health, entries, tombstones, now);
-  for (const id of releaseDuplicates(health, entries, tombstones)) console.log(`probe: released ${id}: the entry it duplicated is dead or gone`);
+  for (const id of releaseDuplicates(health, entries, tombstones, readExcluded())) console.log(`probe: released ${id}: the entry it duplicated is dead or gone`);
   for (const id of retireDuplicates(health, previous, entries, tombstones, now)) {
     retired.push(id);
     console.log(`probe: retired ${id}: same vehicles as ${tombstones[id].of}, two runs in a row`);
