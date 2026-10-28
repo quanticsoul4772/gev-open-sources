@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { EXCLUDED_FILE, excludedReason, parseExcluded, readExcluded } from '../src/harvest/excluded.js';
-import { dropExcluded, duplicateUrlsOf, knownUrlsOf, mergeCandidates, releaseDuplicates } from '../src/harvest/index.js';
+import { dropExcluded, duplicateUrlsOf, knownUrlsOf, mergeCandidates, releaseDuplicates, releaseUnlisted } from '../src/harvest/index.js';
 import { emptyHealth } from '../src/health.js';
 
 const entry = (id, url, { gbfs, via } = {}) => ({
@@ -47,9 +47,30 @@ test('never-list: entries already in the directory are removed and tombstoned', 
   assert.deepEqual(dropExcluded(existing, excluded, tombstones, 5, (id) => removed.push(id)), [['gone', 'operator request']]);
   assert.deepEqual(removed, ['gone']);
   assert.deepEqual([...existing.keys()], ['kept']);
-  assert.deepEqual(tombstones, { gone: { url: 'https://gone.example/vp', at: 5, reason: 'excluded' } });
+  assert.deepEqual(tombstones, { gone: { url: 'https://gone.example/vp', gbfs: null, via: [], at: 5, reason: 'excluded' } });
   // The id stays out under any URL.
   assert.deepEqual(mergeCandidates(existing, [entry('gone', 'https://elsewhere.example/vp')], tombstones), []);
+});
+
+test('never-list: an entry the list no longer names is released, and its copies with it', () => {
+  const listed = parseExcluded([
+    { url: 'https://bikes.example/gbfs.json', reason: 'operator request' },
+    { url: 'https://permalink.example/vp', reason: 'operator request' },
+  ]);
+  const existing = new Map([
+    ['station', entry('station', 'https://bikes.example/en/station_status.json', { gbfs: 'https://bikes.example/gbfs.json' })],
+    ['moved', entry('moved', 'https://final.example/vp', { via: 'https://permalink.example/vp' })],
+    ['other', entry('other', 'https://other.example/vp')],
+  ]);
+  const tombstones = { copy: { reason: 'duplicate', of: 'moved', url: 'https://copy.example/vp', at: 1 } };
+  dropExcluded(existing, listed, tombstones, 5, () => {});
+  // Still listed (by GBFS discovery URL and by permalink): nothing is released.
+  assert.deepEqual(releaseUnlisted(tombstones, listed), []);
+  // The items are deleted from the list: both entries and then the copy come back.
+  const empty = parseExcluded([]);
+  assert.deepEqual(releaseUnlisted(tombstones, empty).sort(), ['moved', 'station']);
+  assert.deepEqual(releaseDuplicates({}, existing, tombstones, empty), ['copy']);
+  assert.deepEqual(tombstones, {});
 });
 
 test('never-list: copies of an entry removed by URL alone stay out with it', () => {

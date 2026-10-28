@@ -10,7 +10,8 @@
  * redirect moves onto a listed URL, and tombstones them (`reason:
  * 'excluded'`) so copies retired as their duplicates stay out too. Unlike
  * tombstones, the list is committed, so it survives a state reset; a listed
- * `id` keeps those copies out across one as well.
+ * `id` keeps those copies out across one as well. Taking an item off the list
+ * releases its tombstones on the next harvest (releaseUnlisted).
  */
 import fs from 'node:fs';
 import path from 'node:path';
