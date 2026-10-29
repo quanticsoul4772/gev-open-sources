@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-sanjoaquinrtd-rt",
+  "domain": "transit.vehicles",
+  "name": "sanjoaquinrtd.com",
+  "provider": "sanjoaquinrtd.com",
+  "coverage": {
+    "bbox": [
+      37.7343,
+      -121.3845,
+      38.1024,
+      -121.188
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://rtdgtfs.s3.us-west-1.amazonaws.com/VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "sanjoaquinrtd.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T18:29:27.770Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-sanjoaquinrtd~rt"
+  ]
+}

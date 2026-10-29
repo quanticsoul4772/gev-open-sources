@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-otto",
+  "domain": "bikeshare.stations",
+  "name": "Otto — Norway",
+  "provider": "Otto",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Otto Mobility AS"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T18:29:27.752Z"
+  },
+  "provenance": [
+    "gbfs-systems:otto"
+  ],
+  "coverage": {
+    "bbox": [
+      67.2756,
+      14.3764,
+      67.2862,
+      14.459
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/otto/station_status",
+    "related": {
+      "station_information": "https://api.entur.io/mobility/v2/gbfs/v3/otto/station_information",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/otto/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/otto/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "otto",
+    "version": "3.0"
+  }
+}

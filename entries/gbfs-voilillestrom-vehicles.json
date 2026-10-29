@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-voilillestrom-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Voi Lillestrom — Lillestrom",
+  "provider": "Voi Lillestrom",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "VOI Technology AB"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T18:29:27.764Z"
+  },
+  "provenance": [
+    "gbfs-systems:voilillestrom"
+  ],
+  "coverage": {
+    "bbox": [
+      59.8919,
+      10.9076,
+      60.0306,
+      11.094
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/voilillestrom/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v3/voilillestrom/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/voilillestrom/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/voilillestrom/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "voilillestrom",
+    "version": "3.0",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

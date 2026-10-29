@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-voikristiansand",
+  "domain": "bikeshare.stations",
+  "name": "Voi Kristiansand — Kristiansand",
+  "provider": "Voi Kristiansand",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "VOI Technology AB"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T18:29:27.764Z"
+  },
+  "provenance": [
+    "gbfs-systems:voikristiansand"
+  ],
+  "coverage": {
+    "bbox": [
+      58.0969,
+      7.8117,
+      58.1826,
+      8.0954
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/voikristiansand/station_status",
+    "related": {
+      "station_information": "https://api.entur.io/mobility/v2/gbfs/v3/voikristiansand/station_information",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/voikristiansand/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/voikristiansand/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "voikristiansand",
+    "version": "3.0"
+  }
+}
