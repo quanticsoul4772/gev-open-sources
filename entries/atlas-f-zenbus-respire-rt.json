@@ -10,7 +10,9 @@
       46.2217,
       -1.3473
     ],
-    "countries": []
+    "countries": [
+      "FR"
+    ]
   },
   "access": {
     "url": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=iledere75923021",

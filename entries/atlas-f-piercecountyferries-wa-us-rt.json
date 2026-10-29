@@ -10,7 +10,9 @@
       47.2011,
       -122.6306
     ],
-    "countries": []
+    "countries": [
+      "US"
+    ]
   },
   "access": {
     "url": "https://hbwest.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",

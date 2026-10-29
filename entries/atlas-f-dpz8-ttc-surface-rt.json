@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-dpz8-ttc-surface-rt",
+  "domain": "transit.vehicles",
+  "name": "Toronto Transit Commission",
+  "provider": "Toronto Transit Commission",
+  "coverage": {
+    "bbox": [
+      43.5955,
+      -79.63,
+      43.8466,
+      -79.1654
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://bustime.ttc.ca/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://open.toronto.ca/dataset/ttc-bustime-real-time-next-vehicle-arrival-nvas/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Contains information licensed under the Open Government Licence - Toronto"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T00:48:45.514Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dpz8-ttc~surface~rt"
+  ]
+}
