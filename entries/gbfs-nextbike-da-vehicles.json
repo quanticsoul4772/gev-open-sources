@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-da-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Graben - ready4green — Graben",
+  "provider": "Graben - ready4green",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T12:34:03.427Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_da"
+  ],
+  "coverage": {
+    "bbox": [
+      48.1803,
+      10.8195,
+      48.2203,
+      10.8595
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_da",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-voitrondheim",
+  "domain": "bikeshare.stations",
+  "name": "Voi Trondheim — Trondheim",
+  "provider": "Voi Trondheim",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "VOI Technology AB"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T12:34:03.443Z"
+  },
+  "provenance": [
+    "gbfs-systems:voitrondheim"
+  ],
+  "coverage": {
+    "bbox": [
+      63.3509,
+      10.322,
+      63.4541,
+      10.5271
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/voitrondheim/station_status",
+    "related": {
+      "station_information": "https://api.entur.io/mobility/v2/gbfs/v3/voitrondheim/station_information",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/voitrondheim/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/voitrondheim/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "voitrondheim",
+    "version": "3.0"
+  }
+}

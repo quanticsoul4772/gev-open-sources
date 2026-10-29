@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-donkey-kreuzlingen-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Kreuzlingen — Kreuzlingen",
+  "provider": "Donkey Republic Kreuzlingen",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T12:34:03.413Z"
+  },
+  "provenance": [
+    "gbfs-systems:donkey_kreuzlingen"
+  ],
+  "coverage": {
+    "bbox": [
+      47.6001,
+      9.1327,
+      47.6597,
+      9.2462
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/donkey_kreuzlingen/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "donkey_kreuzlingen",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

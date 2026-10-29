@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-bigbluebus-rt",
+  "domain": "transit.vehicles",
+  "name": "Big Blue Bus",
+  "provider": "Big Blue Bus",
+  "coverage": {
+    "bbox": [
+      33.9416,
+      -118.5158,
+      34.0845,
+      -118.2942
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cleverapi.bigbluebus.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "http://gtfs.bigbluebus.com/terms-and-conditions",
+    "display": false,
+    "commercial": null,
+    "attribution": "Big Blue Bus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T12:34:03.448Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-bigbluebus~rt"
+  ]
+}

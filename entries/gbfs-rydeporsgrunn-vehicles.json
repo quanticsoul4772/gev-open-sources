@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-rydeporsgrunn-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Ryde Porsgrunn — Porsgrunn",
+  "provider": "Ryde Porsgrunn",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Ryde"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T12:34:03.439Z"
+  },
+  "provenance": [
+    "gbfs-systems:rydeporsgrunn"
+  ],
+  "coverage": {
+    "bbox": [
+      59.1036,
+      9.6125,
+      59.1755,
+      9.705
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/rydeporsgrunn/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v3/rydeporsgrunn/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/rydeporsgrunn/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/rydeporsgrunn/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "rydeporsgrunn",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

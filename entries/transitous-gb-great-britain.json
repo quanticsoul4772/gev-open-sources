@@ -1,0 +1,46 @@
+{
+  "id": "transitous-gb-great-britain",
+  "domain": "transit.vehicles",
+  "name": "great-britain",
+  "provider": "great-britain",
+  "coverage": {
+    "bbox": [
+      50.3929,
+      -4.1769,
+      55.0966,
+      1.3173
+    ],
+    "countries": [
+      "GB"
+    ]
+  },
+  "access": {
+    "url": "https://realtime.aubin.app/great_britain_gtfsrt.binpb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://transitous.org/sources-great-britain",
+    "display": false,
+    "commercial": null,
+    "attribution": "great-britain"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "confidence below 0.9"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T12:34:03.465Z"
+  },
+  "provenance": [
+    "transitous:gb/great-britain"
+  ]
+}

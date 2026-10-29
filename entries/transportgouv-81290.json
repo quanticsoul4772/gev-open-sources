@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-81290",
+  "domain": "transit.vehicles",
+  "name": "Navette estivale SNGO! Giverny Vernon - Gare SNCF",
+  "provider": "Syndicat mixte Atoumod",
+  "coverage": {
+    "bbox": [
+      49.0693,
+      1.4628,
+      49.1123,
+      1.5259
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/giverny-vernon-gtfs-rt",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Syndicat mixte Atoumod"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T12:34:03.467Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:64c7be0e1e2104f03ce37cd6/81290"
+  ]
+}
