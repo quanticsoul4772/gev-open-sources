@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-vo-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "VMOBIL Rad — Dornbirn",
+  "provider": "VMOBIL Rad",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "nextbike GmbH, Karl-Heine-Str. 46, 04229 Leipzig"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T06:36:03.382Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_vo"
+  ],
+  "coverage": {
+    "bbox": [
+      47.3895,
+      9.6897,
+      47.4327,
+      9.7554
+    ],
+    "countries": [
+      "AT"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vo/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vo/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vo/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vo/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_vo",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

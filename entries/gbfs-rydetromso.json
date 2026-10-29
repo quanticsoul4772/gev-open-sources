@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-rydetromso",
+  "domain": "bikeshare.stations",
+  "name": "Ryde Tromsø — Tromsø",
+  "provider": "Ryde Tromsø",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Ryde"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-29T06:36:03.385Z"
+  },
+  "provenance": [
+    "gbfs-systems:rydetromso"
+  ],
+  "coverage": {
+    "bbox": [
+      69.6329,
+      18.9052,
+      69.6818,
+      18.9741
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/rydetromso/station_status",
+    "related": {
+      "station_information": "https://api.entur.io/mobility/v2/gbfs/v3/rydetromso/station_information",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/rydetromso/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/rydetromso/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "rydetromso",
+    "version": "3.0"
+  }
+}
