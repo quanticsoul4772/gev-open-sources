@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-rydelarvik-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "rydelarvik",
+  "provider": "Entur",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Entur"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-30T18:23:53.707Z"
+  },
+  "provenance": [
+    "entur:rydelarvik"
+  ],
+  "coverage": {
+    "bbox": [
+      59.0087,
+      9.9673,
+      59.1047,
+      10.1019
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v2/rydelarvik/free_bike_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v2/rydelarvik/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v2/rydelarvik/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v2/rydelarvik/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "rydelarvik",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}
