@@ -4,22 +4,22 @@
   "name": "nextbike Jablonec — Jablonec nad Nisou",
   "provider": "nextbike Jablonec",
   "licence": {
-    "id": "CC0-1.0",
+    "id": null,
     "url": null,
-    "display": true,
-    "commercial": true,
+    "display": false,
+    "commercial": null,
     "attribution": "nextbike Czech Republic, Libusina 526/101, 779 00 Olomouc"
   },
   "licence_decision": {
-    "by": "known-licence",
+    "by": "none",
     "evidence": [
       {
-        "field": "licence",
-        "quote": "CC0-1.0"
+        "field": "reason",
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T23:36:06.208Z"
+    "at": "2026-10-30T12:32:15.152Z"
   },
   "provenance": [
     "gbfs-systems:nextbike_ud"

@@ -1,0 +1,47 @@
+{
+  "id": "atlas-f-dnh-grtaxpress-rt",
+  "domain": "transit.vehicles",
+  "name": "Atlanta-Region Transit Link Authority",
+  "provider": "Atlanta-Region Transit Link Authority",
+  "coverage": {
+    "bbox": [
+      33.7235,
+      -84.4141,
+      33.9782,
+      -84.1593
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://myxpress2.xpressga.com/gtfsrt/vehicles",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://spdx.org/licenses/CC-BY-4.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Atlanta-Region Transit Link Authority"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-30T12:32:15.162Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dnh-grtaxpress~rt",
+    "licence-borrowed:atlas:f-dnh-grtaxpress"
+  ]
+}
