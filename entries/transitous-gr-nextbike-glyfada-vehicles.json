@@ -1,0 +1,58 @@
+{
+  "id": "transitous-gr-nextbike-glyfada-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Nextbike-Glyfada",
+  "provider": "Nextbike-Glyfada",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "AMCO S.A. Area Pyrgos, Korinthos, PO 20100, Greece"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-30T00:49:36.337Z"
+  },
+  "provenance": [
+    "transitous:gr/Nextbike-Glyfada"
+  ],
+  "coverage": {
+    "bbox": [
+      37.8603,
+      23.692,
+      37.93,
+      23.7663
+    ],
+    "countries": [
+      "GR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gx/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gx/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gx/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gx/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}

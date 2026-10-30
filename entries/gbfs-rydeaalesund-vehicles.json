@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-rydeaalesund-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Ryde Ålesund — Ålesund",
+  "provider": "Ryde Ålesund",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Ryde"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-30T00:49:36.325Z"
+  },
+  "provenance": [
+    "gbfs-systems:rydeaalesund"
+  ],
+  "coverage": {
+    "bbox": [
+      62.4112,
+      6.0887,
+      62.5001,
+      6.4325
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/rydeaalesund/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v3/rydeaalesund/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/rydeaalesund/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/rydeaalesund/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "rydeaalesund",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

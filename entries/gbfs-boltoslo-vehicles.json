@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-boltoslo-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Bolt Oslo — Oslo",
+  "provider": "Bolt Oslo",
+  "licence": {
+    "id": null,
+    "url": "https://bolt.eu/en/legal/security-gbfs-license/?category=micromobility",
+    "display": false,
+    "commercial": null,
+    "attribution": "Bolt Oslo"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "obligation no_redistribution"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-30T00:49:36.279Z"
+  },
+  "provenance": [
+    "gbfs-systems:boltoslo"
+  ],
+  "coverage": {
+    "bbox": [
+      59.8107,
+      10.6196,
+      59.9874,
+      10.951
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/boltoslo/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "boltoslo",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

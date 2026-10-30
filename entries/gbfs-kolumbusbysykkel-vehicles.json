@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-kolumbusbysykkel-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Kolumbus Bysykkel — Stavanger",
+  "provider": "Kolumbus Bysykkel",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Kolumbus"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-30T00:49:36.294Z"
+  },
+  "provenance": [
+    "gbfs-systems:kolumbusbysykkel"
+  ],
+  "coverage": {
+    "bbox": [
+      58.4364,
+      5.1807,
+      59.4235,
+      6.0188
+    ],
+    "countries": [
+      "NO"
+    ]
+  },
+  "access": {
+    "url": "https://api.entur.io/mobility/v2/gbfs/v3/kolumbusbysykkel/vehicle_status",
+    "related": {
+      "vehicle_types": "https://api.entur.io/mobility/v2/gbfs/v3/kolumbusbysykkel/vehicle_types",
+      "system_information": "https://api.entur.io/mobility/v2/gbfs/v3/kolumbusbysykkel/system_information",
+      "gbfs": "https://api.entur.io/mobility/v2/gbfs/v3/kolumbusbysykkel/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "kolumbusbysykkel",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}
