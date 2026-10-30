@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.9"
+        "quote": "HTTP 403"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-30T00:49:36.346Z"
+    "at": "2026-10-30T06:35:12.652Z"
   },
   "provenance": [
     "cameras:tfl-jamcams"
