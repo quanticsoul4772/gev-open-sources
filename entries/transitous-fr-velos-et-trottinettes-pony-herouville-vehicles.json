@@ -1,0 +1,60 @@
+{
+  "id": "transitous-fr-velos-et-trottinettes-pony-herouville-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "velos-et-trottinettes-pony-herouville",
+  "provider": "velos-et-trottinettes-pony-herouville",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "pony"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-31T00:41:32.935Z"
+  },
+  "provenance": [
+    "transitous:fr/velos-et-trottinettes-pony-herouville"
+  ],
+  "coverage": {
+    "bbox": [
+      49.1855,
+      -0.3658,
+      49.292,
+      -0.247
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/pony-herouville-gbfs/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://proxy.transport.data.gouv.fr/resource/pony-herouville-gbfs/vehicle_types.json",
+      "system_information": "https://proxy.transport.data.gouv.fr/resource/pony-herouville-gbfs/system_information.json",
+      "gbfs": "https://proxy.transport.data.gouv.fr/resource/pony-herouville-gbfs/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/velos-et-trottinettes-pony-herouville"
+  }
+}
