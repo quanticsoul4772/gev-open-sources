@@ -1,0 +1,46 @@
+{
+  "id": "transitous-hu-volan-lenti-https-jbb-ghsq-de-gtfs-hu-hki-6a23db13",
+  "domain": "transit.vehicles",
+  "name": "volan-lenti",
+  "provider": "volan-lenti",
+  "coverage": {
+    "bbox": [
+      46.6145,
+      16.5451,
+      46.6545,
+      16.5851
+    ],
+    "countries": [
+      "HU"
+    ]
+  },
+  "access": {
+    "url": "https://jbb.ghsq.de/gtfs/hu/hkir_hkir_V-12575/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "volan-lenti"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-10-31T12:24:59.522Z"
+  },
+  "provenance": [
+    "transitous:hu/volan-lenti"
+  ]
+}
