@@ -1,0 +1,55 @@
+{
+  "id": "transportgouv-82761",
+  "domain": "bikeshare.stations",
+  "name": "Vélos et trottinettes Dott Bourgoin-Jaillieu",
+  "provider": "Dott",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-02T18:26:09.287Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:67a226125919814a71957f64/82761"
+  ],
+  "coverage": {
+    "bbox": [
+      45.5812,
+      5.2338,
+      45.6178,
+      5.304
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3"
+  }
+}
