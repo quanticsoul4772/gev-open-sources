@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-84282",
+  "domain": "transit.vehicles",
+  "name": "Cars Région Loire - lignes 19 et 32",
+  "provider": "LOIRE FOREZ AGGLOMERATION",
+  "coverage": {
+    "bbox": [
+      45.4386,
+      4.0376,
+      45.5527,
+      4.2586
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.pysae.com/api/v4/groups/philibert-loire/gtfs-rt",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://spdx.org/licenses/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "LOIRE FOREZ AGGLOMERATION"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-03T12:28:45.573Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:69fb39923d2358a0d2d6de1c/84282"
+  ]
+}

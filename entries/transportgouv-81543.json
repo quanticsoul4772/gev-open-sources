@@ -1,0 +1,46 @@
+{
+  "id": "transportgouv-81543",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain TCAT",
+  "provider": "TCAT - Transports en Commun de l'Agglomération Troyenne",
+  "coverage": {
+    "bbox": [
+      48.2311,
+      4.006,
+      48.3463,
+      4.1363
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://proxy.transport.data.gouv.fr/resource/tcat-troyes-gtfs-rt-vehicle-position",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "ODbL-1.0",
+    "url": "https://spdx.org/licenses/ODbL-1.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "TCAT - Transports en Commun de l'Agglomération Troyenne"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://spdx.org/licenses/ODbL-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-03T12:28:45.573Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:5c0933e88b4c4177a394acd1/81543"
+  ]
+}
