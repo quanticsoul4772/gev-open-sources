@@ -21,22 +21,22 @@
   },
   "format": "geojson.gdacs-events",
   "licence": {
-    "id": null,
+    "id": "GDACS-public-domain",
     "url": "https://www.gdacs.org/xml/rss.xml",
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "GDACS"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "licence declaration not found at https://www.gdacs.org/xml/rss.xml (wording not on the page)"
+        "field": "licence",
+        "quote": "https://www.gdacs.org/xml/rss.xml"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-03T12:28:45.554Z"
+    "at": "2026-11-03T18:24:22.841Z"
   },
   "provenance": [
     "gdacs:geteventlist-latest"

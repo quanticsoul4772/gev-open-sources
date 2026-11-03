@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-dott-liege-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Liege — Liege",
+  "provider": "Dott Liege",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Liege"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-03T18:24:22.799Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-liege"
+  ],
+  "coverage": {
+    "bbox": [
+      50.5691,
+      5.5095,
+      50.7082,
+      5.6834
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/liege/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/liege/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/liege/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/liege/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-liege",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

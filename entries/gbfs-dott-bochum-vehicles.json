@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-dott-bochum-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Dott Bochum — Bochum",
+  "provider": "Dott Bochum",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Bochum"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-03T18:24:22.797Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-bochum"
+  ],
+  "coverage": {
+    "bbox": [
+      51.4223,
+      7.0992,
+      51.5139,
+      7.2965
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/bochum/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/bochum/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/bochum/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/bochum/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "dott-bochum",
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}

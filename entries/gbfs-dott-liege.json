@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-dott-liege",
+  "domain": "bikeshare.stations",
+  "name": "Dott Liege — Liege",
+  "provider": "Dott Liege",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott Liege"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-03T18:24:22.799Z"
+  },
+  "provenance": [
+    "gbfs-systems:dott-liege"
+  ],
+  "coverage": {
+    "bbox": [
+      50.5746,
+      5.5356,
+      50.6887,
+      5.6627
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/liege/station_status.json",
+    "related": {
+      "station_information": "https://gbfs.api.ridedott.com/public/v2/liege/station_information.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/liege/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/liege/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "dott-liege",
+    "version": "2.3"
+  }
+}

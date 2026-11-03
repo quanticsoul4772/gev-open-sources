@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-lesherbiers",
+  "domain": "bikeshare.stations",
+  "name": "Pays des Herbiers Mobilités — Les Herbiers",
+  "provider": "Pays des Herbiers Mobilités",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Pays des Herbiers Mobilités"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-03T18:24:22.804Z"
+  },
+  "provenance": [
+    "gbfs-systems:lesherbiers"
+  ],
+  "coverage": {
+    "bbox": [
+      46.7793,
+      -1.1,
+      46.8839,
+      -0.9001
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://api.gbfs.v3.0.ecovelo.mobi/lesherbiers/station_status.json",
+    "related": {
+      "station_information": "https://api.gbfs.v3.0.ecovelo.mobi/lesherbiers/station_information.json",
+      "system_information": "https://api.gbfs.v3.0.ecovelo.mobi/lesherbiers/system_information.json",
+      "gbfs": "https://api.gbfs.v3.0.ecovelo.mobi/lesherbiers/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "lesherbiers",
+    "version": "3.0"
+  }
+}
