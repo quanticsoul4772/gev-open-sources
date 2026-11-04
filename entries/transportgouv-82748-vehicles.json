@@ -1,0 +1,59 @@
+{
+  "id": "transportgouv-82748-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Vélos et trottinettes Dott France",
+  "provider": "Dott",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Dott"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-04T00:41:18.787Z"
+  },
+  "provenance": [
+    "transport.data.gouv.fr:675815f48647957f99cb8fa1/82748"
+  ],
+  "coverage": {
+    "bbox": [
+      45.5641,
+      5.2259,
+      45.6269,
+      5.3134
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/system_information.json",
+      "gbfs": "https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle",
+      "scooter_standing"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-dr7-ulstercountyareatransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Ulster County Area Transit",
+  "provider": "Ulster County Area Transit",
+  "coverage": {
+    "bbox": [
+      41.7218,
+      -74.3905,
+      41.9988,
+      -73.9642
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://data.peaktransit.com/gtfsrt/72/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Ulster County Area Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-04T00:41:18.790Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dr7-ulstercountyareatransit~rt"
+  ]
+}
