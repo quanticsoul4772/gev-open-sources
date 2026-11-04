@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://cdn.zbiorkom.live/gtfs-rt/lodz-lka.pb",
+    "url": "https://api.zbiorkom.live/api6-open/docs",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-10-15T02:25:33.383Z"
   },
   "provenance": [
-    "transitous:pl/Łódzka-Kolej-Aglomeracyjna-bus"
+    "transitous:pl/Łódzka-Kolej-Aglomeracyjna-bus",
+    "via:https://cdn.zbiorkom.live/gtfs-rt/lodz-lka.pb"
   ]
 }
