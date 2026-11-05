@@ -4,13 +4,18 @@
   "name": "Grand River Transit",
   "provider": "Grand River Transit",
   "coverage": {
-    "bbox": null,
+    "bbox": [
+      43.3268,
+      -80.5804,
+      43.5181,
+      -80.2782
+    ],
     "countries": [
       "CA"
     ]
   },
   "access": {
-    "url": "http://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions",
+    "url": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -36,6 +41,7 @@
     "at": "2026-10-14T15:21:58.321Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1521"
+    "mobilitydatabase:mdb-1521",
+    "via:http://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions"
   ]
 }
