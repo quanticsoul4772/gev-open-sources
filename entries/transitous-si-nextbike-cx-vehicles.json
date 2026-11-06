@@ -1,0 +1,58 @@
+{
+  "id": "transitous-si-nextbike-cx-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "nextbike-cx",
+  "provider": "nextbike-cx",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Nomago d.o.o., Vošnjakova 3, 1000 Ljubljana, Slovenia"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-06T12:27:45.083Z"
+  },
+  "provenance": [
+    "transitous:si/nextbike-cx"
+  ],
+  "coverage": {
+    "bbox": [
+      46.5209,
+      14.9123,
+      46.561,
+      14.9858
+    ],
+    "countries": [
+      "SI"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cx/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cx/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cx/en/system_information.json",
+      "gbfs": "https://api.nextbike.net/maps/gbfs/v2/nextbike_cx/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}
