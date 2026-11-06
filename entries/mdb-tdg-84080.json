@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84080",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain de la zone Sud (CAESM)",
+  "provider": "Martinique Transport",
+  "coverage": {
+    "bbox": [
+      14.40277003,
+      -61.089023805,
+      14.65330188585593,
+      -60.831872782243
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/092ad091-b0c1-4094-9897-198a3c78faa7",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Martinique Transport"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-06T06:32:12.394Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84080"
+  ]
+}
