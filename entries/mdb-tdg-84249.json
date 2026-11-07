@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84249",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Artis",
+  "provider": "Communauté Urbaine d'Arras",
+  "coverage": {
+    "bbox": [
+      50.200292,
+      2.64385,
+      50.366026,
+      2.902618
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/058d6107-7dd7-4caf-a22d-127cb3f6e0e3",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté Urbaine d'Arras"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-07T18:22:51.936Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84249"
+  ]
+}

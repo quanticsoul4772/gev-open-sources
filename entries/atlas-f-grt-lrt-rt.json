@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-grt-lrt-rt",
+  "domain": "transit.vehicles",
+  "name": "Grand River Transit",
+  "provider": "Grand River Transit",
+  "coverage": {
+    "bbox": [
+      43.4002,
+      -80.5622,
+      43.5182,
+      -80.437
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions/2",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Grand River Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-07T18:22:51.924Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-grt~lrt~rt"
+  ]
+}
