@@ -1,0 +1,55 @@
+{
+  "id": "gbfs-moqo-team-277065271",
+  "domain": "bikeshare.stations",
+  "name": "VCD Carsharing Aschaffenburg — Aschaffenburg",
+  "provider": "VCD Carsharing Aschaffenburg",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "VCD Carsharing Aschaffenburg"
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-09T12:28:44.520Z"
+  },
+  "provenance": [
+    "gbfs-systems:moqo_team_277065271"
+  ],
+  "coverage": {
+    "bbox": [
+      49.9639,
+      9.0723,
+      49.9994,
+      9.1812
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://portal.moqo.de/api/data_sharing/7nFoN9f8iX1yFHR4oQa5omHk/gbfs/station_status",
+    "related": {
+      "station_information": "https://portal.moqo.de/api/data_sharing/7nFoN9f8iX1yFHR4oQa5omHk/gbfs/station_information",
+      "system_information": "https://portal.moqo.de/api/data_sharing/7nFoN9f8iX1yFHR4oQa5omHk/gbfs/system_information",
+      "gbfs": "https://portal.moqo.de/api/data_sharing/7nFoN9f8iX1yFHR4oQa5omHk/gbfs"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": "moqo_team_277065271",
+    "version": "3.0"
+  }
+}
