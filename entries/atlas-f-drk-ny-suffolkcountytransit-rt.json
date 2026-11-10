@@ -1,0 +1,47 @@
+{
+  "id": "atlas-f-drk-ny-suffolkcountytransit-rt",
+  "domain": "transit.vehicles",
+  "name": "Suffolk County Transit",
+  "provider": "Suffolk County Transit",
+  "coverage": {
+    "bbox": [
+      40.6752,
+      -73.4408,
+      41.0366,
+      -72.2314
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://tracksctbus.org/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://www.suffolkcountyny.gov/Departments/Public-Works/Transportation/General-Transit-Feed-Specification-Details",
+    "display": false,
+    "commercial": null,
+    "attribution": "Suffolk County Transit"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-10T00:40:56.265Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-drk-ny~suffolkcountytransit~rt",
+    "licence-borrowed:atlas:f-drk-ny~suffolkcountytransit"
+  ]
+}

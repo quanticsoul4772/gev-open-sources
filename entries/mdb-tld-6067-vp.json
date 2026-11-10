@@ -23,25 +23,24 @@
   },
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
-    "id": "CC0-1.0",
-    "url": "https://spdx.org/licenses/CC0-1.0",
-    "display": true,
-    "commercial": true,
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
     "attribution": "Zarząd Transportu Miejskiego w Warszawie"
   },
   "licence_decision": {
-    "by": "known-licence",
+    "by": "none",
     "evidence": [
       {
-        "field": "licence",
-        "quote": "https://spdx.org/licenses/CC0-1.0"
+        "field": "reason",
+        "quote": "no licence published"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T19:05:30.479Z"
+    "at": "2026-11-10T00:40:56.289Z"
   },
   "provenance": [
-    "mobilitydatabase:tld-6067-vp",
-    "licence-atlas:f-u3q-warszawski~transport~publiczny~rt~alerts"
+    "mobilitydatabase:tld-6067-vp"
   ]
 }
