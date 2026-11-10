@@ -1,0 +1,47 @@
+{
+  "id": "mdb-3625",
+  "domain": "transit.vehicles",
+  "name": "AUCORSA (Autobuses de Córdoba S.A.)",
+  "provider": "AUCORSA (Autobuses de Córdoba S.A.)",
+  "coverage": {
+    "bbox": [
+      37.8321641308938,
+      -4.93702277559176,
+      38.0169323991046,
+      -4.65447049593993
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://api.aucorsa.es/GTFSRTapi/api/vehicleposition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://nap.transportes.gob.es/licencia-datos",
+    "display": false,
+    "commercial": null,
+    "attribution": "AUCORSA (Autobuses de Córdoba S.A.)"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-10T06:30:28.884Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3625",
+    "licence-borrowed:mdb-2713"
+  ]
+}

@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb",
+    "url": "https://gtfs.metrostlouis.org/StlRealTimeVehicles.pb",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -49,6 +49,7 @@
     "at": "2026-10-15T17:03:30.917Z"
   },
   "provenance": [
-    "mobilitydatabase:mdb-1414"
+    "mobilitydatabase:mdb-1414",
+    "via:https://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb"
   ]
 }
