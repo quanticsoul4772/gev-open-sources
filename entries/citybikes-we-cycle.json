@@ -1,0 +1,55 @@
+{
+  "id": "citybikes-we-cycle",
+  "domain": "bikeshare.stations",
+  "name": "WE-cycle — Aspen, CO",
+  "provider": "WE-cycle",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "WE-cycle"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-11T00:41:26.161Z"
+  },
+  "provenance": [
+    "citybikes:we-cycle"
+  ],
+  "coverage": {
+    "bbox": [
+      39.3568,
+      -107.2219,
+      39.4131,
+      -107.0232
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://aspen.publicbikesystem.net/customer/ube/gbfs/v1/en/station_status",
+    "related": {
+      "station_information": "https://aspen.publicbikesystem.net/customer/ube/gbfs/v1/en/station_information",
+      "system_information": "https://aspen.publicbikesystem.net/customer/ube/gbfs/v1/en/system_information",
+      "gbfs": "https://asp.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": null
+  }
+}
