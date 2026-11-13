@@ -24,7 +24,7 @@
   "format": "gtfs-rt.vehicle-positions",
   "licence": {
     "id": null,
-    "url": "https://ftis.org/FTDEDisclaimer.aspx",
+    "url": null,
     "display": false,
     "commercial": null,
     "attribution": "Palm Tran"
@@ -34,15 +34,14 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "borrowed licence is not a known licence"
+        "quote": "no licence published"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T19:05:30.476Z"
+    "at": "2026-11-13T06:31:51.626Z"
   },
   "provenance": [
     "mobilitydatabase:tld-4678-vp",
-    "licence-borrowed:atlas:f-dhx-palmtran",
     "via:https://www.palmtran.org/TripPlanner/GTFS-Realtime.ashx?Type=VehiclePosition"
   ]
 }

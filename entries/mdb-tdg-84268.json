@@ -1,0 +1,46 @@
+{
+  "id": "mdb-tdg-84268",
+  "domain": "transit.vehicles",
+  "name": "Réseau urbain Vitobus",
+  "provider": "VITRE COMMUNAUTE",
+  "coverage": {
+    "bbox": [
+      47.894756,
+      -1.445023,
+      48.254876,
+      -1.018779
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://www.data.gouv.fr/api/1/datasets/r/19c43179-d9c2-46b1-972b-508729e9cc5b",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "VITRE COMMUNAUTE"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-13T06:31:51.625Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-84268"
+  ]
+}

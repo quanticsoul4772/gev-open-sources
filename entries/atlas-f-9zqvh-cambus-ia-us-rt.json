@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-9zqvh-cambus-ia-us-rt",
+  "domain": "transit.vehicles",
+  "name": "University of Iowa",
+  "provider": "University of Iowa",
+  "coverage": {
+    "bbox": [
+      41.6426,
+      -91.6033,
+      41.6829,
+      -91.5146
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cambus.syncromatics.com/gtfs-rt/vehiclepositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "University of Iowa"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-13T06:31:51.611Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-9zqvh-cambus~ia~us~rt"
+  ]
+}

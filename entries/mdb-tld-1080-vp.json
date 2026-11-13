@@ -16,7 +16,9 @@
   },
   "access": {
     "url": "https://data.calgary.ca/download/am7c-qe3u/application%2Foctet-stream",
-    "redirectHosts": [],
+    "redirectHosts": [
+      "sa-core-blob-storage-us-east-1-fedramp-prod.s3-fips.us-east-1.amazonaws.com"
+    ],
     "unzip": null,
     "headers": {},
     "min_interval_s": 15
