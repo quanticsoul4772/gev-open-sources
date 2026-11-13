@@ -15,7 +15,7 @@
     ]
   },
   "access": {
-    "url": "https://www.data.gouv.fr/api/1/datasets/r/19c43179-d9c2-46b1-972b-508729e9cc5b",
+    "url": "https://gtfs.bus-tracker.fr/gtfs-rt/vitre/",
     "redirectHosts": [],
     "unzip": null,
     "headers": {},
@@ -41,6 +41,7 @@
     "at": "2026-11-13T06:31:51.625Z"
   },
   "provenance": [
-    "mobilitydatabase:tdg-84268"
+    "mobilitydatabase:tdg-84268",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/19c43179-d9c2-46b1-972b-508729e9cc5b"
   ]
 }
