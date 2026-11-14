@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "obligation no_redistribution"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T18:51:37.505Z"
+    "at": "2026-11-14T00:41:01.524Z"
   },
   "provenance": [
     "gbfs-systems:BoltEU_Liverpool"

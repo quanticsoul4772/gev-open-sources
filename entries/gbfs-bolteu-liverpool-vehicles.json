@@ -15,11 +15,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "obligation no_redistribution"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-16T15:03:21.856Z"
+    "at": "2026-11-14T00:41:01.523Z"
   },
   "provenance": [
     "gbfs-systems:BoltEU_Liverpool"

@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.8"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T19:05:30.456Z"
+    "at": "2026-11-14T00:41:01.571Z"
   },
   "provenance": [
     "cameras:caltrans-d11"

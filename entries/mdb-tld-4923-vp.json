@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "requires acceptance"
+        "quote": "runs disagree on requires_acceptance"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T19:05:30.477Z"
+    "at": "2026-11-14T00:41:01.588Z"
   },
   "provenance": [
     "mobilitydatabase:tld-4923-vp",

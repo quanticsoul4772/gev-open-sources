@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "obligation indemnify"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-23T06:45:20.870Z"
+    "at": "2026-11-14T00:41:01.573Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1542"
