@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "quote not found in terms text"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-14T23:36:06.230Z"
+    "at": "2026-11-14T06:28:55.724Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2670"

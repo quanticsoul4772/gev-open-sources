@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.8"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T02:25:33.383Z"
+    "at": "2026-11-14T06:28:55.730Z"
   },
   "provenance": [
     "transitous:pl/Łódzka-Kolej-Aglomeracyjna-bus",
