@@ -1,0 +1,47 @@
+{
+  "id": "mdb-tdg-83628",
+  "domain": "transit.vehicles",
+  "name": "Navettes saisonnières Tignes",
+  "provider": "Communauté de Communes Haute-Tarentaise",
+  "coverage": {
+    "bbox": [
+      45.4488,
+      6.8878,
+      45.4888,
+      6.9278
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=tignes",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté de Communes Haute-Tarentaise"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T12:25:55.643Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83628",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/a93d2e49-c4c3-4f8c-8e03-ce346c2d53b2"
+  ]
+}
