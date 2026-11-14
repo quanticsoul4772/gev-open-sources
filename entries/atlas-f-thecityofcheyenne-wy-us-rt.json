@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-thecityofcheyenne-wy-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Cheyenne Transit Program",
+  "provider": "Cheyenne Transit Program",
+  "coverage": {
+    "bbox": [
+      41.0966,
+      -104.8117,
+      41.1823,
+      -104.7467
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://api.sparelabs.com/v1/fixedRoute/public/e599d785-76b9-46df-bb67-e9e99a8d47a7/gtfs-rt/vehicle-positions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Cheyenne Transit Program"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T18:23:48.819Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-thecityofcheyenne~wy~us~rt"
+  ]
+}

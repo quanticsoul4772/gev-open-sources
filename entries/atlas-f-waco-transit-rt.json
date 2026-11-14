@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-waco-transit-rt",
+  "domain": "transit.vehicles",
+  "name": "Waco Transit System",
+  "provider": "Waco Transit System",
+  "coverage": {
+    "bbox": [
+      31.4762,
+      -97.2191,
+      31.5838,
+      -97.0928
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://wacotransit.transloc.com/subscriptions/gtfsrt/vehicles.ashx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Waco Transit System"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T18:23:48.820Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-waco~transit~rt"
+  ]
+}

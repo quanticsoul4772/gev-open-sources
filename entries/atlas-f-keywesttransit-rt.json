@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-keywesttransit-rt",
+  "domain": "transit.vehicles",
+  "name": "passio3.com",
+  "provider": "passio3.com",
+  "coverage": {
+    "bbox": [
+      24.5401,
+      -81.8212,
+      24.7523,
+      -80.9995
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://passio3.com/keywest/passioTransit/gtfs/realtime/vehiclePositions",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "passio3.com"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T18:23:48.817Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-keywesttransit~rt"
+  ]
+}

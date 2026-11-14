@@ -1,0 +1,47 @@
+{
+  "id": "atlas-f-green-bay-wi-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Green Bay Metro",
+  "provider": "Green Bay Metro",
+  "coverage": {
+    "bbox": [
+      44.4778,
+      -88.1218,
+      44.5528,
+      -87.9056
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://gtfsrt.gbm.cadavl.com/ProfilGtfsRt2_0RSProducer-GBM/VehiclePosition.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://greenbaywi.gov/496/Transit-Data-Developer",
+    "display": false,
+    "commercial": null,
+    "attribution": "Data provided under license granted by the City of Green Bay, Metro Transit."
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T18:23:48.817Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-green~bay~wi~us~rt",
+    "licence-borrowed:atlas:f-green~bay~wi~us"
+  ]
+}

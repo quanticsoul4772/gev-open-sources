@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-citibus-ia-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Davenport Citibus",
+  "provider": "Davenport Citibus",
+  "coverage": {
+    "bbox": [
+      41.5008,
+      -90.6411,
+      41.6,
+      -90.5379
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://s3.amazonaws.com/etatransit.gtfs/citibuspublic.etaspot.net/position_updates.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Davenport Citibus"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T18:23:48.814Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-citibus~ia~us~rt"
+  ]
+}

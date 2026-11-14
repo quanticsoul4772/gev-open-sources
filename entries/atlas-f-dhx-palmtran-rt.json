@@ -1,0 +1,47 @@
+{
+  "id": "atlas-f-dhx-palmtran-rt",
+  "domain": "transit.vehicles",
+  "name": "Palm Tran",
+  "provider": "Palm Tran",
+  "coverage": {
+    "bbox": [
+      26.3209,
+      -80.6733,
+      26.8841,
+      -80.0182
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://infopoint.palmtran.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://ftis.org/FTDEDisclaimer.aspx",
+    "display": false,
+    "commercial": null,
+    "attribution": "Palm Tran"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "borrowed licence is not a known licence"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T18:23:48.815Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dhx-palmtran~rt",
+    "licence-borrowed:atlas:f-dhx-palmtran"
+  ]
+}

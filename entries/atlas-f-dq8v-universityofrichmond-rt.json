@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-dq8v-universityofrichmond-rt",
+  "domain": "transit.vehicles",
+  "name": "University of Richmond",
+  "provider": "University of Richmond",
+  "coverage": {
+    "bbox": [
+      37.6828,
+      -77.456,
+      37.7228,
+      -77.416
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://richmond.transloc.com/subscriptions/gtfsrt/vehicles.ashx",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "University of Richmond"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-14T18:23:48.816Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dq8v-universityofrichmond~rt"
+  ]
+}

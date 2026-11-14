@@ -43,11 +43,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unavailable"
+        "quote": "no licence published"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-13T12:28:06.818Z"
+    "at": "2026-11-14T18:23:48.789Z"
   },
   "provenance": [
     "gbfs-systems:dott-trondheim"
