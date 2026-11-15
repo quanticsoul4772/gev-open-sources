@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "runs disagree on commercial"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-26T14:06:55.896Z"
+    "at": "2026-11-15T18:23:06.716Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1530"
