@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.9"
+        "quote": "terms page unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-31T18:22:22.301Z"
+    "at": "2026-11-15T12:25:37.614Z"
   },
   "provenance": [
     "mobilitydatabase:tld-6068-vp",
