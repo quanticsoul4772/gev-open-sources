@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "runs disagree on commercial"
+        "quote": "runs disagree on display"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T19:05:30.475Z"
+    "at": "2026-11-15T00:48:06.436Z"
   },
   "provenance": [
     "mobilitydatabase:tld-4358-vp",
