@@ -15,11 +15,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unavailable"
+        "quote": "no licence published"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-13T12:28:06.814Z"
+    "at": "2026-11-16T12:37:07.452Z"
   },
   "provenance": [
     "gbfs-systems:dott-melhus"
