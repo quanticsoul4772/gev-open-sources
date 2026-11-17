@@ -32,22 +32,22 @@
     "version": "2.3"
   },
   "licence": {
-    "id": null,
+    "id": "CC0-1.0",
     "url": null,
-    "display": false,
-    "commercial": null,
+    "display": true,
+    "commercial": true,
     "attribution": "C. Sierra de María, 9, 04720 El Parador de las Hortichuelas, Almería, Spanien"
   },
   "licence_decision": {
-    "by": "none",
+    "by": "known-licence",
     "evidence": [
       {
-        "field": "reason",
-        "quote": "system_information unavailable"
+        "field": "licence",
+        "quote": "CC0-1.0"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-05T12:31:19.966Z"
+    "at": "2026-11-17T12:29:00.618Z"
   },
   "provenance": [
     "gbfs-systems:nextbike_ra"

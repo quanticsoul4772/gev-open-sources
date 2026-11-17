@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "terms page unreachable"
+        "quote": "terms page has no readable text"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-15T18:23:06.717Z"
+    "at": "2026-11-17T12:29:00.635Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-1910"

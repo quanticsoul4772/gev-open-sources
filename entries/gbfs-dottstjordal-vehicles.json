@@ -15,11 +15,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unavailable"
+        "quote": "no licence published"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-13T18:23:00.248Z"
+    "at": "2026-11-17T12:29:00.611Z"
   },
   "provenance": [
     "entur:dottstjordal"
