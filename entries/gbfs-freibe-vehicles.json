@@ -15,11 +15,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "HTTP 403"
+        "quote": "system_information unreachable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T02:25:33.353Z"
+    "at": "2026-11-18T18:23:43.850Z"
   },
   "provenance": [
     "gbfs-systems:freibe"

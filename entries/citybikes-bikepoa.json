@@ -1,0 +1,55 @@
+{
+  "id": "citybikes-bikepoa",
+  "domain": "bikeshare.stations",
+  "name": "BikePOA — Porto Alegre",
+  "provider": "BikePOA",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BikePOA"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-18T18:23:43.834Z"
+  },
+  "provenance": [
+    "citybikes:bikepoa"
+  ],
+  "coverage": {
+    "bbox": [
+      -30.1359,
+      -51.2541,
+      -30.0065,
+      -51.1594
+    ],
+    "countries": [
+      "BR"
+    ]
+  },
+  "access": {
+    "url": "https://portoalegre.publicbikesystem.net/customer/ube/gbfs/v1/en/station_status",
+    "related": {
+      "station_information": "https://portoalegre.publicbikesystem.net/customer/ube/gbfs/v1/en/station_information",
+      "system_information": "https://portoalegre.publicbikesystem.net/customer/ube/gbfs/v1/en/system_information",
+      "gbfs": "https://poa.publicbikesystem.net/ube/gbfs/v1/"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": null
+  }
+}
