@@ -15,11 +15,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "no licence published"
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-17T18:25:19.797Z"
+    "at": "2026-11-19T06:32:24.521Z"
   },
   "provenance": [
     "gbfs-systems:CKL"

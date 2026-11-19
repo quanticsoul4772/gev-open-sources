@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.9"
+        "quote": "terms page has no readable text"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-17T18:25:19.832Z"
+    "at": "2026-11-19T06:32:24.548Z"
   },
   "provenance": [
     "transitland-atlas:f-dngy-transitauthorityofnorthernkentucky~rt"
