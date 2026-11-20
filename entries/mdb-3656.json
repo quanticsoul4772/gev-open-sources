@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3656",
+  "domain": "transit.vehicles",
+  "name": "West Hollywood",
+  "provider": "West Hollywood",
+  "coverage": {
+    "bbox": [
+      34.075231,
+      -118.387657319149,
+      34.101173,
+      -118.338818
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://cityofwesthollywood.tripshot.com/v2/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "West Hollywood"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-20T06:31:43.717Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3656"
+  ]
+}
