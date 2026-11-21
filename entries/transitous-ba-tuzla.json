@@ -1,0 +1,46 @@
+{
+  "id": "transitous-ba-tuzla",
+  "domain": "transit.vehicles",
+  "name": "Tuzla",
+  "provider": "Tuzla",
+  "coverage": {
+    "bbox": [
+      44.4498,
+      18.2791,
+      44.744,
+      18.7645
+    ],
+    "countries": [
+      "BA"
+    ]
+  },
+  "access": {
+    "url": "http://ontrack.baguette.pirnet.si/gtfsrt/tuzla?format=pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Tuzla"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-21T18:23:11.058Z"
+  },
+  "provenance": [
+    "transitous:ba/Tuzla"
+  ]
+}

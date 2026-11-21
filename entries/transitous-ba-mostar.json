@@ -1,0 +1,46 @@
+{
+  "id": "transitous-ba-mostar",
+  "domain": "transit.vehicles",
+  "name": "Mostar",
+  "provider": "Mostar",
+  "coverage": {
+    "bbox": [
+      43.3294,
+      17.7927,
+      43.3694,
+      17.8327
+    ],
+    "countries": [
+      "BA"
+    ]
+  },
+  "access": {
+    "url": "http://ontrack.baguette.pirnet.si/gtfsrt/mostar?format=pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Mostar"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-21T18:23:11.058Z"
+  },
+  "provenance": [
+    "transitous:ba/Mostar"
+  ]
+}
