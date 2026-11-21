@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-epfl-lausanne-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey EPFL - Lausanne — Lausanne",
+  "provider": "Donkey EPFL - Lausanne",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "EPFL"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-21T00:41:50.775Z"
+  },
+  "provenance": [
+    "gbfs-systems:epfl_lausanne"
+  ],
+  "coverage": {
+    "bbox": [
+      46.4996,
+      6.5443,
+      46.5396,
+      6.5843
+    ],
+    "countries": [
+      "CH"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/epfl_lausanne/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "epfl_lausanne",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}
