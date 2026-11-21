@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "runs disagree on display"
+        "quote": "runs disagree on applies_to_this_data"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-22T01:00:00.636Z"
+    "at": "2026-11-21T06:30:11.591Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-3410"
