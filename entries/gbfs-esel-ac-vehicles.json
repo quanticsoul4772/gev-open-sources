@@ -4,22 +4,22 @@
   "name": "esel.ac — Aachen",
   "provider": "esel.ac",
   "licence": {
-    "id": "CC0-1.0",
+    "id": null,
     "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "display": true,
-    "commercial": true,
+    "display": false,
+    "commercial": null,
     "attribution": "esel.ac"
   },
   "licence_decision": {
-    "by": "known-licence",
+    "by": "none",
     "evidence": [
       {
-        "field": "licence",
-        "quote": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "field": "reason",
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-15T02:25:33.352Z"
+    "at": "2026-11-22T00:44:00.487Z"
   },
   "provenance": [
     "gbfs-systems:esel_ac"

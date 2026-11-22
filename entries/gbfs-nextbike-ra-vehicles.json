@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-nextbike-ra-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Roquebike — Almería",
+  "provider": "Roquebike",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "C. Sierra de María, 9, 04720 El Parador de las Hortichuelas, Almería, Spanien"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-22T00:44:00.494Z"
+  },
+  "provenance": [
+    "gbfs-systems:nextbike_ra"
+  ],
+  "coverage": {
+    "bbox": [
+      36.712,
+      -2.6501,
+      36.8254,
+      -2.5701
+    ],
+    "countries": [
+      "ES"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ra/en/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ra/en/vehicle_types.json",
+      "system_information": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ra/en/system_information.json",
+      "gbfs": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ra/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "nextbike_ra",
+    "version": "2.3",
+    "form_factors": [
+      "bicycle"
+    ]
+  }
+}
