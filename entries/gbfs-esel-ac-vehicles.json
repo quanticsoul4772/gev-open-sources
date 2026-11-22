@@ -22,7 +22,8 @@
     "at": "2026-11-22T00:44:00.487Z"
   },
   "provenance": [
-    "gbfs-systems:esel_ac"
+    "gbfs-systems:esel_ac",
+    "via:https://di.esel.ac/gbfs/free_bike_status.json"
   ],
   "coverage": {
     "bbox": [
@@ -36,7 +37,7 @@
     ]
   },
   "access": {
-    "url": "https://di.esel.ac/gbfs/free_bike_status.json",
+    "url": "https://esel.ac/gbfs/free_bike_status.json",
     "related": {
       "vehicle_types": "https://di.esel.ac/gbfs/vehicle_types.json",
       "system_information": "https://di.esel.ac/gbfs/system_information.json",
