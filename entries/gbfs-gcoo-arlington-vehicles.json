@@ -1,0 +1,58 @@
+{
+  "id": "gbfs-gcoo-arlington-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "GCOO Arlington — Arlington, VA",
+  "provider": "GCOO Arlington",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "GBIKE USA INC."
+  },
+  "licence_decision": {
+    "by": "gbfs-v3-default",
+    "evidence": [
+      {
+        "field": "version",
+        "quote": "GBFS 3.0: no license_id/license_url, default CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-23T18:24:17.745Z"
+  },
+  "provenance": [
+    "gbfs-systems:gcoo-arlington"
+  ],
+  "coverage": {
+    "bbox": [
+      38.828,
+      -77.1777,
+      38.9259,
+      -77.0298
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "https://us.gbfs.gbike.io/arlington/v3.0/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://us.gbfs.gbike.io/arlington/v3.0/vehicle_types.json",
+      "system_information": "https://us.gbfs.gbike.io/arlington/v3.0/system_information.json",
+      "gbfs": "https://us.gbfs.gbike.io/arlington/v3.0/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "gcoo-arlington",
+    "version": "3.0",
+    "form_factors": [
+      "scooter_standing"
+    ]
+  }
+}
