@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3662",
+  "domain": "transit.vehicles",
+  "name": "STC Società Trasporti Cerignola",
+  "provider": "STC Società Trasporti Cerignola",
+  "coverage": {
+    "bbox": [
+      41.260088,
+      15.858547,
+      41.394241,
+      15.91828435
+    ],
+    "countries": [
+      "IT"
+    ]
+  },
+  "access": {
+    "url": "https://zibus.superdriver.it/GTFSRT.WebApi/api/gtfs/VehiclePosition/binary",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "display": true,
+    "commercial": true,
+    "attribution": "STC Società Trasporti Cerignola"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-24T06:33:03.592Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3662"
+  ]
+}
