@@ -1,0 +1,46 @@
+{
+  "id": "atlas-f-dpq-lakecounty-oh-us-rt",
+  "domain": "transit.vehicles",
+  "name": "Laketran",
+  "provider": "Laketran",
+  "coverage": {
+    "bbox": [
+      41.5716,
+      -81.5229,
+      41.8214,
+      -81.0345
+    ],
+    "countries": [
+      "US"
+    ]
+  },
+  "access": {
+    "url": "http://40.87.96.49/GTFS_VehiclePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": "https://laketran.com/about-laketran/use-of-laketran-data/",
+    "display": false,
+    "commercial": null,
+    "attribution": "Laketran"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "classifier error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-24T18:25:04.319Z"
+  },
+  "provenance": [
+    "transitland-atlas:f-dpq-lakecounty~oh~us~rt"
+  ]
+}
