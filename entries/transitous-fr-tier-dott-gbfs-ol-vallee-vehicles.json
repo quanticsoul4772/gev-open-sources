@@ -1,0 +1,59 @@
+{
+  "id": "transitous-fr-tier-dott-gbfs-ol-vallee-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "tier-dott-gbfs-ol-vallee",
+  "provider": "tier-dott-gbfs-ol-vallee",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "tier-dott-gbfs-ol-vallee"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-25T00:43:31.939Z"
+  },
+  "provenance": [
+    "transitous:fr/tier-dott-gbfs-ol-vallee"
+  ],
+  "coverage": {
+    "bbox": [
+      45.7496,
+      4.9294,
+      45.7937,
+      4.9961
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://gbfs.api.ridedott.com/public/v2/ol-vallee/free_bike_status.json",
+    "related": {
+      "vehicle_types": "https://gbfs.api.ridedott.com/public/v2/ol-vallee/vehicle_types.json",
+      "system_information": "https://gbfs.api.ridedott.com/public/v2/ol-vallee/system_information.json",
+      "gbfs": "https://www.data.gouv.fr/api/1/datasets/r/492c8fff-1f2b-4667-a5df-09f5dcefa7e3"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": null,
+    "version": "2.3",
+    "form_factors": [
+      "scooter_standing"
+    ],
+    "catalogue_licence": "https://transport.data.gouv.fr/datasets/tier-dott-gbfs-ol-vallee"
+  }
+}
