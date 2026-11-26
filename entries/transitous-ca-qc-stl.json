@@ -1,0 +1,46 @@
+{
+  "id": "transitous-ca-qc-stl",
+  "domain": "transit.vehicles",
+  "name": "STL",
+  "provider": "STL",
+  "coverage": {
+    "bbox": [
+      45.5007,
+      -73.8813,
+      45.6894,
+      -73.5844
+    ],
+    "countries": [
+      "CA"
+    ]
+  },
+  "access": {
+    "url": "https://apps.stl.laval.qc.ca/googlefeedtempsreel/v2/VehiculePositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "STL"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-26T18:25:41.009Z"
+  },
+  "provenance": [
+    "transitous:ca-qc/STL"
+  ]
+}
