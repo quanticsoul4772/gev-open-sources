@@ -15,11 +15,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "system_information unreachable"
+        "quote": "system_information unavailable"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-18T18:23:43.850Z"
+    "at": "2026-11-26T12:30:02.933Z"
   },
   "provenance": [
     "gbfs-systems:freibe"
