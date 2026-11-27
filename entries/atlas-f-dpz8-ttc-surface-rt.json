@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "confidence below 0.9"
+        "quote": "classifier error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-10-29T00:48:45.514Z"
+    "at": "2026-11-27T18:24:48.823Z"
   },
   "provenance": [
     "transitland-atlas:f-dpz8-ttc~surface~rt"

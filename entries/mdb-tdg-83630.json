@@ -1,0 +1,47 @@
+{
+  "id": "mdb-tdg-83630",
+  "domain": "transit.vehicles",
+  "name": "Navettes saisonnières Val d'Isère",
+  "provider": "Communauté de Communes Haute-Tarentaise",
+  "coverage": {
+    "bbox": [
+      45.4276,
+      6.9498,
+      45.4752,
+      7.0192
+    ],
+    "countries": [
+      "FR"
+    ]
+  },
+  "access": {
+    "url": "https://zenbus.net/gtfs/rt/poll.proto?dataset=valdisere",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": "etalab-2.0",
+    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "display": true,
+    "commercial": true,
+    "attribution": "Communauté de Communes Haute-Tarentaise"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-27T18:24:48.834Z"
+  },
+  "provenance": [
+    "mobilitydatabase:tdg-83630",
+    "via:https://www.data.gouv.fr/api/1/datasets/r/28c1bf4a-90d8-4360-baf3-ceaea2a1941f"
+  ]
+}
