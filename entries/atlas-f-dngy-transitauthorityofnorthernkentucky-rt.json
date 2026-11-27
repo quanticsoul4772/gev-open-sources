@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "classifier error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase"
+        "quote": "terms page has no readable text"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-26T18:25:40.978Z"
+    "at": "2026-11-27T06:33:17.878Z"
   },
   "provenance": [
     "transitland-atlas:f-dngy-transitauthorityofnorthernkentucky~rt"

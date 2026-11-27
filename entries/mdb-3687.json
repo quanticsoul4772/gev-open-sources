@@ -1,0 +1,46 @@
+{
+  "id": "mdb-3687",
+  "domain": "transit.vehicles",
+  "name": "Belgium National GTFS",
+  "provider": "Belgium National GTFS",
+  "coverage": {
+    "bbox": [
+      45.48649,
+      -0.126133,
+      52.507809,
+      16.37901
+    ],
+    "countries": [
+      "BE"
+    ]
+  },
+  "access": {
+    "url": "https://data.gtfs.be/rt/belgium/vehiclepositions.pb",
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 15
+  },
+  "format": "gtfs-rt.vehicle-positions",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "Belgium National GTFS"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-27T06:33:17.885Z"
+  },
+  "provenance": [
+    "mobilitydatabase:mdb-3687"
+  ]
+}
