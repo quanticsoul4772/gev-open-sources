@@ -1,0 +1,55 @@
+{
+  "id": "citybikes-bikesalvador",
+  "domain": "bikeshare.stations",
+  "name": "BikeSalvador — Salvador",
+  "provider": "BikeSalvador",
+  "licence": {
+    "id": null,
+    "url": null,
+    "display": false,
+    "commercial": null,
+    "attribution": "BikeSalvador"
+  },
+  "licence_decision": {
+    "by": "none",
+    "evidence": [
+      {
+        "field": "reason",
+        "quote": "no licence published"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-27T12:28:56.930Z"
+  },
+  "provenance": [
+    "citybikes:bikesalvador"
+  ],
+  "coverage": {
+    "bbox": [
+      -13.0135,
+      -38.5329,
+      -12.9364,
+      -38.327
+    ],
+    "countries": [
+      "BR"
+    ]
+  },
+  "access": {
+    "url": "https://salvador.publicbikesystem.net/customer/ube/gbfs/v1/en/station_status",
+    "related": {
+      "station_information": "https://salvador.publicbikesystem.net/customer/ube/gbfs/v1/en/station_information",
+      "system_information": "https://salvador.publicbikesystem.net/customer/ube/gbfs/v1/en/system_information",
+      "gbfs": "https://salvador.publicbikesystem.net/ube/gbfs/v1/"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.station-status",
+  "gbfs": {
+    "system_id": null,
+    "version": null
+  }
+}
