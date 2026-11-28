@@ -1,0 +1,59 @@
+{
+  "id": "gbfs-augsburg-vehicles",
+  "domain": "sharedmobility.vehicles",
+  "name": "Donkey Republic Augsburg — Augsburg",
+  "provider": "Donkey Republic Augsburg",
+  "licence": {
+    "id": "CC0-1.0",
+    "url": null,
+    "display": true,
+    "commercial": true,
+    "attribution": "Donkey Republic Augsburg"
+  },
+  "licence_decision": {
+    "by": "known-licence",
+    "evidence": [
+      {
+        "field": "licence",
+        "quote": "CC0-1.0"
+      }
+    ],
+    "terms_sha256": null,
+    "at": "2026-11-28T12:26:51.826Z"
+  },
+  "provenance": [
+    "gbfs-systems:Augsburg"
+  ],
+  "coverage": {
+    "bbox": [
+      48.3257,
+      10.8719,
+      48.3799,
+      10.9159
+    ],
+    "countries": [
+      "DE"
+    ]
+  },
+  "access": {
+    "url": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/vehicle_status.json",
+    "related": {
+      "vehicle_types": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/vehicle_types.json",
+      "system_information": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/system_information.json",
+      "gbfs": "https://stables.donkey.bike/api/public/gbfs/3.0/Augsburg/gbfs.json"
+    },
+    "redirectHosts": [],
+    "unzip": null,
+    "headers": {},
+    "min_interval_s": 60
+  },
+  "format": "gbfs.vehicle-status",
+  "gbfs": {
+    "system_id": "Augsburg",
+    "version": "3.0",
+    "form_factors": [
+      "bicycle",
+      "cargo_bicycle"
+    ]
+  }
+}

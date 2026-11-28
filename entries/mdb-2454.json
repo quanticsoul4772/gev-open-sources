@@ -37,11 +37,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "terms page has no readable text"
+        "quote": "confidence below 0.9"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-27T18:24:48.829Z"
+    "at": "2026-11-28T12:26:51.908Z"
   },
   "provenance": [
     "mobilitydatabase:mdb-2454"

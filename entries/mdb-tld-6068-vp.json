@@ -34,11 +34,11 @@
     "evidence": [
       {
         "field": "reason",
-        "quote": "terms page unreachable"
+        "quote": "classifier error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase"
       }
     ],
     "terms_sha256": null,
-    "at": "2026-11-24T18:25:04.333Z"
+    "at": "2026-11-28T12:26:51.919Z"
   },
   "provenance": [
     "mobilitydatabase:tld-6068-vp",
